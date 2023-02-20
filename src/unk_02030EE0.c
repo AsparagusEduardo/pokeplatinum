@@ -49,41 +49,41 @@ typedef struct {
 } UnkStruct_021C07AC;
 
 void include_unk_021C07A8(void);
-static void sub_02031C58(void * param0);
+static void sub_02031C58(void *param0);
 static BOOL sub_02031C70(BOOL param0);
-static void sub_02031CBC(void * param0);
+static void sub_02031CBC(void *param0);
 static u16 sub_020319F8(u16 param0);
-static void sub_02031A74(void * param0);
+static void sub_02031A74(void *param0);
 static WMErrCode sub_02031AF0(WMCallbackFunc param0, u16 param1);
 static s16 sub_02031B30(u16 param0);
 static BOOL sub_02030F10(void);
-static void sub_02030F40(void * param0);
+static void sub_02030F40(void *param0);
 static BOOL sub_02030F64(void);
-static void sub_02030FD0(void * param0);
+static void sub_02030FD0(void *param0);
 static BOOL sub_020310DC(void);
-static void sub_0203114C(void * param0);
+static void sub_0203114C(void *param0);
 static BOOL sub_02031320(void);
-static void sub_020313E8(void * param0);
+static void sub_020313E8(void *param0);
 static BOOL sub_020314E4(void);
-static void sub_02031500(void * param0);
+static void sub_02031500(void *param0);
 static BOOL sub_02031538(void);
-static void sub_020315A8(void * param0);
+static void sub_020315A8(void *param0);
 static BOOL sub_02031668(void);
-static void sub_020316B8(void * param0);
-static BOOL sub_020317E8(void * param0, u16 param1, int param2, UnkFuncPtr_02031E9C param3);
-static void sub_02031840(void * param0);
-static void sub_02031868(void * param0);
+static void sub_020316B8(void *param0);
+static BOOL sub_020317E8(void *param0, u16 param1, int param2, UnkFuncPtr_02031E9C param3);
+static void sub_02031840(void *param0);
+static void sub_02031868(void *param0);
 static BOOL sub_020311A8(void);
-static void sub_020311CC(void * param0);
+static void sub_020311CC(void *param0);
 static BOOL sub_020311EC(void);
-static void sub_02031208(void * param0);
+static void sub_02031208(void *param0);
 static BOOL sub_0203171C(void);
-static void sub_02031740(void * param0);
+static void sub_02031740(void *param0);
 static BOOL sub_02031764(void);
-static void sub_0203178C(void * param0);
-static void sub_020318B0(void * param0);
+static void sub_0203178C(void *param0);
+static void sub_020318B0(void *param0);
 static BOOL sub_020317A4(void);
-static void sub_020317C8(void * param0);
+static void sub_020317C8(void *param0);
 static u16 sub_02031900(void);
 
 static UnkStruct_021C07AC * Unk_021C07AC;
@@ -125,7 +125,7 @@ static BOOL sub_02030F10 (void)
     return 1;
 }
 
-static void sub_02030F40 (void * param0)
+static void sub_02030F40 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -170,7 +170,7 @@ static BOOL sub_02030F64 (void)
     return 1;
 }
 
-static void sub_02030FD0 (void * param0)
+static void sub_02030FD0 (void *param0)
 {
     WMStartParentCallback * v0 = (WMStartParentCallback *)param0;
     const u16 v1 = (u16)(1 << v0->aid);
@@ -249,7 +249,7 @@ static BOOL sub_020310DC (void)
     return 1;
 }
 
-static void sub_0203114C (void * param0)
+static void sub_0203114C (void *param0)
 {
     WMstartMPCallback * v0 = (WMstartMPCallback *)param0;
 
@@ -299,7 +299,7 @@ static BOOL sub_020311A8 (void)
     return 1;
 }
 
-static void sub_020311CC (void * param0)
+static void sub_020311CC (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -329,7 +329,7 @@ static BOOL sub_020311EC (void)
     return 1;
 }
 
-static void sub_02031208 (void * param0)
+static void sub_02031208 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -437,7 +437,7 @@ static BOOL sub_02031320 (void)
     return 1;
 }
 
-static void sub_020313E8 (void * param0)
+static void sub_020313E8 (void *param0)
 {
     WMstartScanCallback * v0 = (WMstartScanCallback *)param0;
 
@@ -523,7 +523,7 @@ static BOOL sub_020314E4 (void)
     return 1;
 }
 
-static void sub_02031500 (void * param0)
+static void sub_02031500 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -568,7 +568,7 @@ static BOOL sub_02031538 (void)
     return 1;
 }
 
-static void sub_020315A8 (void * param0)
+static void sub_020315A8 (void *param0)
 {
     WMStartConnectCallback * v0 = (WMStartConnectCallback *)param0;
 
@@ -643,7 +643,7 @@ static BOOL sub_02031668 (void)
     return 1;
 }
 
-static void sub_020316B8 (void * param0)
+static void sub_020316B8 (void *param0)
 {
     WMstartMPCallback * v0 = (WMstartMPCallback *)param0;
 
@@ -704,7 +704,7 @@ static BOOL sub_0203171C (void)
     return 1;
 }
 
-static void sub_02031740 (void * param0)
+static void sub_02031740 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -736,7 +736,7 @@ static BOOL sub_02031764 (void)
     return 1;
 }
 
-static void sub_0203178C (void * param0)
+static void sub_0203178C (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -763,7 +763,7 @@ static BOOL sub_020317A4 (void)
     return 1;
 }
 
-static void sub_020317C8 (void * param0)
+static void sub_020317C8 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -777,7 +777,7 @@ static void sub_020317C8 (void * param0)
     sub_02030EE0(1);
 }
 
-static BOOL sub_020317E8 (void * param0, u16 param1, int param2, UnkFuncPtr_02031E9C param3)
+static BOOL sub_020317E8 (void *param0, u16 param1, int param2, UnkFuncPtr_02031E9C param3)
 {
     WMErrCode v0;
 
@@ -792,7 +792,7 @@ static BOOL sub_020317E8 (void * param0, u16 param1, int param2, UnkFuncPtr_0203
     return 1;
 }
 
-static void sub_02031840 (void * param0)
+static void sub_02031840 (void *param0)
 {
     WMPortSendCallback * v0 = (WMPortSendCallback *)param0;
 
@@ -808,7 +808,7 @@ static void sub_02031840 (void * param0)
     }
 }
 
-static void sub_02031868 (void * param0)
+static void sub_02031868 (void *param0)
 {
     WMPortRecvCallback * v0 = (WMPortRecvCallback *)param0;
 
@@ -829,7 +829,7 @@ static void sub_02031868 (void * param0)
     }
 }
 
-static void sub_020318B0 (void * param0)
+static void sub_020318B0 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -847,7 +847,7 @@ void sub_020318D0 (u32 param0)
     Unk_021C07AC->unk_00.ggid = param0;
 }
 
-void sub_020318DC (u16 * param0, u16 param1)
+void sub_020318DC (u16 *param0, u16 param1)
 {
     Unk_021C07AC->unk_00.userGameInfo = param0;
     Unk_021C07AC->unk_00.userGameInfoLength = param1;
@@ -958,7 +958,7 @@ static u16 sub_020319F8 (u16 param0)
     return v1;
 }
 
-static void sub_02031A74 (void * param0)
+static void sub_02031A74 (void *param0)
 {
     u16 v0;
     u16 v1;
@@ -1044,7 +1044,7 @@ static s16 sub_02031B30 (u16 param0)
     return 0;
 }
 
-BOOL sub_02031BC4 (void * param0, BOOL param1)
+BOOL sub_02031BC4 (void *param0, BOOL param1)
 {
     u32 v0 = (u32)param0;
 
@@ -1079,7 +1079,7 @@ int sub_02031C50 (void)
     return sizeof(UnkStruct_021C07AC) + 32;
 }
 
-static void sub_02031C58 (void * param0)
+static void sub_02031C58 (void *param0)
 {
     WMindCallback * v0 = (WMindCallback *)param0;
 
@@ -1110,7 +1110,7 @@ static BOOL sub_02031C70 (BOOL param0)
     return 1;
 }
 
-static void sub_02031CBC (void * param0)
+static void sub_02031CBC (void *param0)
 {
     WMErrCode v0;
     WMCallback * v1 = (WMCallback *)param0;
@@ -1138,7 +1138,7 @@ static void sub_02031CBC (void * param0)
     sub_02030EE0(1);
 }
 
-static void sub_02031D00 (void * param0)
+static void sub_02031D00 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 }
@@ -1236,7 +1236,7 @@ void sub_02031E6C (UnkFuncPtr_02031E6C param0, int param1)
     }
 }
 
-BOOL sub_02031E9C (void * param0, u16 param1, int param2, UnkFuncPtr_02031E9C param3)
+BOOL sub_02031E9C (void *param0, u16 param1, int param2, UnkFuncPtr_02031E9C param3)
 {
     if ((sub_02031F90() == 0) && !(0xfe & sub_020318EC())) {
         return 0;
@@ -1343,7 +1343,7 @@ BOOL sub_02032010 (void)
     return 0;
 }
 
-void sub_02032034 (void * param0, int param1, int param2, int param3)
+void sub_02032034 (void *param0, int param1, int param2, int param3)
 {
     if (Unk_021C07AC->unk_1384 == 4) {
         WM_SetGameInfo(NULL, param0, param1, param2, param3, WM_ATTR_FLAG_ENTRY);
@@ -1352,7 +1352,7 @@ void sub_02032034 (void * param0, int param1, int param2, int param3)
     }
 }
 
-static void sub_02032070 (void * param0)
+static void sub_02032070 (void *param0)
 {
     WMCallback * v0 = param0;
 

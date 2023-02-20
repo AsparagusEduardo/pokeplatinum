@@ -23,7 +23,7 @@ static const UnkStruct_02039A58 Unk_ov117_02266FE4[] = {
     {ov117_0226663C, sub_0203294C, NULL}
 };
 
-void ov117_022665FC (void * param0)
+void ov117_022665FC (void *param0)
 {
     int v0 = sizeof(Unk_ov117_02266FE4) / sizeof(UnkStruct_02039A58);
 
@@ -47,7 +47,7 @@ static void ov117_02266618 (int param0, int param1, void * param2, void * param3
     ov117_02262044(v0, param0, param2);
 }
 
-BOOL ov117_02266624 (UnkStruct_ov117_02261280 * param0, UnkStruct_ov117_022621D4 * param1)
+BOOL ov117_02266624 (UnkStruct_ov117_02261280 *param0, UnkStruct_ov117_022621D4 * param1)
 {
     if (sub_020359DC(24, param1, sizeof(UnkStruct_ov117_022621D4)) == 1) {
         return 1;
@@ -62,7 +62,7 @@ static void ov117_0226663C (int param0, int param1, void * param2, void * param3
     v0->unk_2FC0 = 1;
 }
 
-BOOL ov117_02266648 (UnkStruct_ov117_02261280 * param0)
+BOOL ov117_02266648 (UnkStruct_ov117_02261280 *param0)
 {
     if (sub_020359DC(25, NULL, 0) == 1) {
         return 1;
@@ -91,7 +91,7 @@ static void ov117_02266660 (int param0, int param1, void * param2, void * param3
     v0->unk_08++;
 }
 
-BOOL ov117_022666A4 (UnkStruct_ov117_02261280 * param0)
+BOOL ov117_022666A4 (UnkStruct_ov117_02261280 *param0)
 {
     u32 v0 = 100;
 

@@ -81,7 +81,7 @@ static const UnkStruct_ov99_021D5394 Unk_ov99_021D52B4[] = {
     {0x62, 0x56, 0x66, 0x0, 0x0}
 };
 
-void ov99_021D4134 (UnkStruct_ov99_021D2CB0 * param0, int param1)
+void ov99_021D4134 (UnkStruct_ov99_021D2CB0 *param0, int param1)
 {
     int v0;
 
@@ -90,7 +90,7 @@ void ov99_021D4134 (UnkStruct_ov99_021D2CB0 * param0, int param1)
     }
 }
 
-void ov99_021D4170 (UnkStruct_ov99_021D2CB0 * param0)
+void ov99_021D4170 (UnkStruct_ov99_021D2CB0 *param0)
 {
     int v0, v1;
     UnkStruct_ov99_021D5434 * v2;
@@ -113,7 +113,7 @@ void ov99_021D4170 (UnkStruct_ov99_021D2CB0 * param0)
     }
 }
 
-BOOL ov99_021D425C (UnkStruct_ov99_021D2CB0 * param0, s32 param1)
+BOOL ov99_021D425C (UnkStruct_ov99_021D2CB0 *param0, s32 param1)
 {
     fx32 v0, v1, v2;
     fx32 v3, v4, v5;
@@ -151,7 +151,7 @@ BOOL ov99_021D425C (UnkStruct_ov99_021D2CB0 * param0, s32 param1)
     return v9;
 }
 
-void ov99_021D439C (UnkStruct_ov99_021D2CB0 * param0, int param1, int param2, int param3)
+void ov99_021D439C (UnkStruct_ov99_021D2CB0 *param0, int param1, int param2, int param3)
 {
     UnkStruct_02018340 * v0 = param0->unk_08;
     NNSG2dPaletteData * v1;
@@ -204,7 +204,7 @@ void ov99_021D439C (UnkStruct_ov99_021D2CB0 * param0, int param1, int param2, in
     sub_02019184(v0, param2, 3, v3->unk_08);
 }
 
-void ov99_021D44CC (UnkStruct_ov99_021D2CB0 * param0, UnkStruct_0200D0F4 * param1)
+void ov99_021D44CC (UnkStruct_ov99_021D2CB0 *param0, UnkStruct_0200D0F4 * param1)
 {
     void * v0;
     u32 v1;

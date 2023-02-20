@@ -6,7 +6,7 @@
 
 #include "library/crypto.h"
 
-void * ov97_0223752C(u32 param0);
+void *ov97_0223752C(u32 param0);
 
 static u32 Unk_ov97_0223EF9C[] = {
     'B5BE',
@@ -170,7 +170,7 @@ void ov97_02237520 (u32 param0)
     Unk_ov97_0223F54C = param0;
 }
 
-void * ov97_0223752C (u32 param0)
+void *ov97_0223752C (u32 param0)
 {
     return Heap_AllocFromHeap(Unk_ov97_0223F54C, param0);
 }
@@ -239,7 +239,7 @@ int ov97_02237624 (void)
     return v0;
 }
 
-BOOL ov97_0223764C (void * param0, int param1)
+BOOL ov97_0223764C (void *param0, int param1)
 {
     BOOL v0;
 

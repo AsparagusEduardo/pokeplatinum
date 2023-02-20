@@ -21,7 +21,7 @@ int sub_0202EEC0 (void)
     return sizeof(UnkStruct_02024440);
 }
 
-void sub_0202EEC8 (UnkStruct_02024440 * param0)
+void sub_0202EEC8 (UnkStruct_02024440 *param0)
 {
     int v0;
 
@@ -33,7 +33,7 @@ void sub_0202EEC8 (UnkStruct_02024440 * param0)
     }
 }
 
-void sub_0202EF04 (UnkStruct_02024440 * param0)
+void sub_0202EF04 (UnkStruct_02024440 *param0)
 {
     int v0;
 
@@ -45,7 +45,7 @@ void sub_0202EF04 (UnkStruct_02024440 * param0)
     }
 }
 
-static int sub_0202EF40 (UnkStruct_02024440 * param0, u32 param1)
+static int sub_0202EF40 (UnkStruct_02024440 *param0, u32 param1)
 {
     int v0, v1;
     s64 v2;
@@ -74,12 +74,12 @@ static int sub_0202EF40 (UnkStruct_02024440 * param0, u32 param1)
     return v1;
 }
 
-void sub_0202EFA4 (UnkStruct_02024440 * param0, UnkStruct_02073C74_sub1 * param1, int param2)
+void sub_0202EFA4 (UnkStruct_02024440 *param0, UnkStruct_02073C74_sub1 * param1, int param2)
 {
     sub_020774C8(param1, &param0->unk_00[param2]);
 }
 
-void sub_0202EFB8 (UnkStruct_02024440 * param0, u32 param1)
+void sub_0202EFB8 (UnkStruct_02024440 *param0, u32 param1)
 {
     int v0 = sub_0202EF40(param0, param1);
 

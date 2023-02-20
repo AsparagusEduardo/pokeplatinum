@@ -28,12 +28,12 @@ typedef struct {
     u8 unk_04[20];
 } UnkStruct_0209BE84;
 
-static BOOL sub_0209BE84(UnkStruct_0209BDF8 * param0, u32 param1, const void * param2, u32 param3);
+static BOOL sub_0209BE84(UnkStruct_0209BDF8 *param0, u32 param1, const void * param2, u32 param3);
 
 static const UnkStruct_02039A58 Unk_020F8EA8[135];
 static const UnkFuncPtr_020F8E60 Unk_020F8E60[18];
 
-UnkStruct_0209BDF8 * sub_0209BDF8 (UnkStruct_0209C194 * param0, u32 param1)
+UnkStruct_0209BDF8 *sub_0209BDF8 (UnkStruct_0209C194 * param0, u32 param1)
 {
     UnkStruct_0209BDF8 * v0;
 
@@ -48,19 +48,19 @@ UnkStruct_0209BDF8 * sub_0209BDF8 (UnkStruct_0209C194 * param0, u32 param1)
     return v0;
 }
 
-void sub_0209BE38 (UnkStruct_0209BDF8 * param0)
+void sub_0209BE38 (UnkStruct_0209BDF8 *param0)
 {
     Heap_FreeToHeap(param0->unk_4C);
     Heap_FreeToHeap(param0->unk_50);
     Heap_FreeToHeap(param0);
 }
 
-void sub_0209BE50 (UnkStruct_0209BDF8 * param0)
+void sub_0209BE50 (UnkStruct_0209BDF8 *param0)
 {
     sub_02032798(Unk_020F8EA8, 135, param0);
 }
 
-void sub_0209BE64 (UnkStruct_0209BDF8 * param0)
+void sub_0209BE64 (UnkStruct_0209BDF8 *param0)
 {
     sub_02037B58(2);
     sub_02036AC4();
@@ -68,7 +68,7 @@ void sub_0209BE64 (UnkStruct_0209BDF8 * param0)
     sub_0205BEA8(0);
 }
 
-static BOOL sub_0209BE84 (UnkStruct_0209BDF8 * param0, u32 param1, const void * param2, u32 param3)
+static BOOL sub_0209BE84 (UnkStruct_0209BDF8 *param0, u32 param1, const void * param2, u32 param3)
 {
     GF_ASSERT(param1 < 18);
     GF_ASSERT(param3 + 4 <= 24);
@@ -85,7 +85,7 @@ static BOOL sub_0209BE84 (UnkStruct_0209BDF8 * param0, u32 param1, const void * 
     }
 }
 
-BOOL sub_0209BEBC (UnkStruct_0209BDF8 * param0, u32 param1, const void * param2, u32 param3)
+BOOL sub_0209BEBC (UnkStruct_0209BDF8 *param0, u32 param1, const void * param2, u32 param3)
 {
     if (param0->unk_1C == 1) {
         return 0;
@@ -351,7 +351,7 @@ int sub_0209C16C (void)
     return result;
 }
 
-void * sub_0209C188 (UnkStruct_0209BDF8 * param0, int param1)
+void *sub_0209C188 (UnkStruct_0209BDF8 * param0, int param1)
 {
     u32 v0;
 

@@ -29,7 +29,7 @@ static const struct {
     {0x2A0, 0x10}
 };
 
-UnkStruct_0200C440 * sub_0200C440 (u32 param0, u32 param1, u32 param2, u32 param3)
+UnkStruct_0200C440 *sub_0200C440 (u32 param0, u32 param1, u32 param2, u32 param3)
 {
     UnkStruct_0200C440 * v0 = Heap_AllocFromHeap(param3, sizeof(UnkStruct_0200C440));
 
@@ -78,7 +78,7 @@ UnkStruct_0200C440 * sub_0200C440 (u32 param0, u32 param1, u32 param2, u32 param
     return v0;
 }
 
-void sub_0200C560 (UnkStruct_0200C440 * param0)
+void sub_0200C560 (UnkStruct_0200C440 *param0)
 {
     if (param0) {
         if (param0->unk_00) {
@@ -89,12 +89,12 @@ void sub_0200C560 (UnkStruct_0200C440 * param0)
     }
 }
 
-void sub_0200C578 (UnkStruct_0200C440 * param0, int param1, UnkStruct_0205AA50 * param2, u32 param3, u32 param4)
+void sub_0200C578 (UnkStruct_0200C440 *param0, int param1, UnkStruct_0205AA50 * param2, u32 param3, u32 param4)
 {
     sub_0201ADDC(param2, (u8 *)(param0->unk_04->pRawData) + Unk_020E4FEC[param1].unk_00, 0, 0, Unk_020E4FEC[param1].unk_02, 8, param3, param4, Unk_020E4FEC[param1].unk_02, 8);
 }
 
-void sub_0200C5BC (UnkStruct_0200C440 * param0, s32 param1, u32 param2, int param3, UnkStruct_0205AA50 * param4, u32 param5, u32 param6)
+void sub_0200C5BC (UnkStruct_0200C440 *param0, s32 param1, u32 param2, int param3, UnkStruct_0205AA50 * param4, u32 param5, u32 param6)
 {
     int v0;
 
@@ -111,13 +111,13 @@ void sub_0200C5BC (UnkStruct_0200C440 * param0, s32 param1, u32 param2, int para
     }
 }
 
-void sub_0200C648 (UnkStruct_0200C440 * param0, int param1, s32 param2, u32 param3, int param4, UnkStruct_0205AA50 * param5, u32 param6, u32 param7)
+void sub_0200C648 (UnkStruct_0200C440 *param0, int param1, s32 param2, u32 param3, int param4, UnkStruct_0205AA50 * param5, u32 param6, u32 param7)
 {
     sub_0200C578(param0, param1, param5, param6, param7);
     sub_0200C5BC(param0, param2, param3, param4, param5, param6 + 16, param7);
 }
 
-void sub_0200C67C (UnkStruct_0200C440 * param0, s32 param1, u32 param2, int param3, void * param4)
+void sub_0200C67C (UnkStruct_0200C440 *param0, s32 param1, u32 param2, int param3, void * param4)
 {
     int v0;
     u8 v1;

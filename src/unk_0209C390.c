@@ -11,7 +11,7 @@
 #include "unk_0209C390.h"
 #include "overlay065/ov65_0223648C.h"
 
-void sub_0209C390 (UnkStruct_ov65_02236744 * param0)
+void sub_0209C390 (UnkStruct_ov65_02236744 *param0)
 {
     sub_02032798(sub_02039A58(), sub_02039A60(), param0);
 }

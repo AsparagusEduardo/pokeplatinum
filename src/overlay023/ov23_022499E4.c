@@ -26,7 +26,7 @@
 #include "overlay023/ov23_0224A1D0.h"
 #include "overlay023/ov23_0224B05C.h"
 
-static void ov97_0222D19C(UnkStruct_0201CD38 * param0, void * param1);
+static void ov97_0222D19C(UnkStruct_0201CD38 *param0, void * param1);
 static void ov23_02249C24(UnkFuncPtr_020598EC param0, int param1);
 static void ov23_02249C34(void);
 static void ov23_02249C98(void);
@@ -59,12 +59,12 @@ static void ov23_0224A180(void);
 static void ov23_0224A184(void);
 static void ov23_0224A024(void);
 static void ov23_0224A064(void);
-static void ov23_022499E4 (char * param0)
+static void ov23_022499E4 (char *param0)
 {
     return;
 }
 
-void ov23_022499E8 (UnkStruct_0203CDB0 * param0)
+void ov23_022499E8 (UnkStruct_0203CDB0 *param0)
 {
     UnkStruct_0205964C * v0 = sub_0205964C();
 
@@ -224,7 +224,7 @@ BOOL ov23_02249BD4 (void)
     return 0;
 }
 
-static void ov97_0222D19C (UnkStruct_0201CD38 * param0, void * param1)
+static void ov97_0222D19C (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_0205964C * v0 = sub_0205964C();
 

@@ -6,10 +6,10 @@
 #include "unk_02032188.h"
 #include "unk_02034198.h"
 
-static int sub_020322BC(UnkStruct_02032188 * param0, int param1);
-static int sub_0203229C(UnkStruct_02032188 * param0);
+static int sub_020322BC(UnkStruct_02032188 *param0, int param1);
+static int sub_0203229C(UnkStruct_02032188 *param0);
 
-void sub_02032188 (UnkStruct_02032188 * param0, u8 * param1, int param2)
+void sub_02032188 (UnkStruct_02032188 *param0, u8 * param1, int param2)
 {
     param0->unk_00 = param1;
     param0->unk_0A = param2;
@@ -18,7 +18,7 @@ void sub_02032188 (UnkStruct_02032188 * param0, u8 * param1, int param2)
     param0->unk_08 = 0;
 }
 
-void sub_02032198 (UnkStruct_02032188 * param0, u8 * param1, int param2, int param3)
+void sub_02032198 (UnkStruct_02032188 *param0, u8 * param1, int param2, int param3)
 {
     int v0, v1;
 
@@ -37,7 +37,7 @@ void sub_02032198 (UnkStruct_02032188 * param0, u8 * param1, int param2, int par
     param0->unk_08 = sub_020322BC(param0, v0);
 }
 
-int sub_020321F4 (UnkStruct_02032188 * param0, u8 * param1, int param2)
+int sub_020321F4 (UnkStruct_02032188 *param0, u8 * param1, int param2)
 {
     int v0, v1;
 
@@ -47,7 +47,7 @@ int sub_020321F4 (UnkStruct_02032188 * param0, u8 * param1, int param2)
     return v0;
 }
 
-u8 sub_02032210 (UnkStruct_02032188 * param0)
+u8 sub_02032210 (UnkStruct_02032188 *param0)
 {
     u8 v0;
 
@@ -55,7 +55,7 @@ u8 sub_02032210 (UnkStruct_02032188 * param0)
     return v0;
 }
 
-int sub_02032220 (UnkStruct_02032188 * param0, u8 * param1, int param2)
+int sub_02032220 (UnkStruct_02032188 *param0, u8 * param1, int param2)
 {
     int v0, v1;
 
@@ -72,7 +72,7 @@ int sub_02032220 (UnkStruct_02032188 * param0, u8 * param1, int param2)
     return v1;
 }
 
-int sub_0203226C (UnkStruct_02032188 * param0)
+int sub_0203226C (UnkStruct_02032188 *param0)
 {
     if (param0->unk_04 > param0->unk_06) {
         return param0->unk_0A + param0->unk_06 - param0->unk_04;
@@ -81,12 +81,12 @@ int sub_0203226C (UnkStruct_02032188 * param0)
     return param0->unk_06 - param0->unk_04;
 }
 
-int sub_0203228C (UnkStruct_02032188 * param0)
+int sub_0203228C (UnkStruct_02032188 *param0)
 {
     return param0->unk_0A - sub_0203226C(param0);
 }
 
-static int sub_0203229C (UnkStruct_02032188 * param0)
+static int sub_0203229C (UnkStruct_02032188 *param0)
 {
     if (param0->unk_04 > param0->unk_08) {
         return param0->unk_04 - param0->unk_08;
@@ -95,12 +95,12 @@ static int sub_0203229C (UnkStruct_02032188 * param0)
     return param0->unk_0A - (param0->unk_08 - param0->unk_04);
 }
 
-int sub_020322BC (UnkStruct_02032188 * param0, int param1)
+int sub_020322BC (UnkStruct_02032188 *param0, int param1)
 {
     return param1 % param0->unk_0A;
 }
 
-void sub_020322D0 (UnkStruct_02032188 * param0)
+void sub_020322D0 (UnkStruct_02032188 *param0)
 {
     param0->unk_06 = param0->unk_08;
 }

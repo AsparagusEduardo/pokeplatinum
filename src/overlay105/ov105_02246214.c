@@ -10,10 +10,10 @@
 #include "unk_02018340.h"
 #include "overlay105/ov105_02246214.h"
 
-void ov105_02246214(UnkStruct_02018340 * param0, UnkStruct_0205AA50 * param1);
-void ov105_02246244(UnkStruct_0205AA50 * param0);
-void ov105_02246260(UnkStruct_02018340 * param0, UnkStruct_0205AA50 * param1);
-void ov105_0224628C(UnkStruct_0205AA50 * param0, int param1);
+void ov105_02246214(UnkStruct_02018340 *param0, UnkStruct_0205AA50 * param1);
+void ov105_02246244(UnkStruct_0205AA50 *param0);
+void ov105_02246260(UnkStruct_02018340 *param0, UnkStruct_0205AA50 * param1);
+void ov105_0224628C(UnkStruct_0205AA50 *param0, int param1);
 
 static const UnkStruct_ov61_0222C884 Unk_ov105_02246458[] = {
     {0x1, 0x1, 0x1, 0xA, 0x2, 0xD, 0x1},
@@ -28,7 +28,7 @@ static const UnkStruct_ov61_0222C884 Unk_ov105_02246458[] = {
     {0x1, 0x16, 0x6, 0x9, 0x2, 0xD, 0x105}
 };
 
-void ov105_02246214 (UnkStruct_02018340 * param0, UnkStruct_0205AA50 * param1)
+void ov105_02246214 (UnkStruct_02018340 *param0, UnkStruct_0205AA50 * param1)
 {
     u8 v0;
     const UnkStruct_ov61_0222C884 * v1 = Unk_ov105_02246458;
@@ -41,7 +41,7 @@ void ov105_02246214 (UnkStruct_02018340 * param0, UnkStruct_0205AA50 * param1)
     return;
 }
 
-void ov105_02246244 (UnkStruct_0205AA50 * param0)
+void ov105_02246244 (UnkStruct_0205AA50 *param0)
 {
     u16 v0;
 
@@ -52,7 +52,7 @@ void ov105_02246244 (UnkStruct_0205AA50 * param0)
     return;
 }
 
-void ov105_02246260 (UnkStruct_02018340 * param0, UnkStruct_0205AA50 * param1)
+void ov105_02246260 (UnkStruct_02018340 *param0, UnkStruct_0205AA50 * param1)
 {
     sub_0200DAA4(param0, 1, (1024 - 9), 11, 0, 93);
     sub_0200DC48(param1, 1, (1024 - 9), 11);
@@ -60,7 +60,7 @@ void ov105_02246260 (UnkStruct_02018340 * param0, UnkStruct_0205AA50 * param1)
     return;
 }
 
-void ov105_0224628C (UnkStruct_0205AA50 * param0, int param1)
+void ov105_0224628C (UnkStruct_0205AA50 *param0, int param1)
 {
     sub_0200DD0C(param0->unk_00, sub_0201C290(param0), ((1024 - 9) - ((18 + 12))), 10, param1, 93);
     sub_0201ADA4(param0, 15);

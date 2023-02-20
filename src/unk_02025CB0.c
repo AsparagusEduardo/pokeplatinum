@@ -25,18 +25,18 @@ int sub_02025CB0 (void)
     return sizeof(UnkStruct_02025CCC);
 }
 
-void sub_02025CB4 (UnkStruct_02025CCC * param0)
+void sub_02025CB4 (UnkStruct_02025CCC *param0)
 {
     MI_CpuClearFast(param0, sizeof(UnkStruct_02025CCC));
     sub_02025D84(&param0->unk_10);
 }
 
-UnkStruct_02025CCC * sub_02025CCC (UnkStruct_021C0794 * param0)
+UnkStruct_02025CCC *sub_02025CCC (UnkStruct_021C0794 * param0)
 {
     return sub_020245BC(param0, 0);
 }
 
-UnkStruct_02055BA8 * sub_02025CD8 (UnkStruct_021C0794 * param0)
+UnkStruct_02055BA8 *sub_02025CD8 (UnkStruct_021C0794 * param0)
 {
     UnkStruct_02025CCC * v0;
 
@@ -44,7 +44,7 @@ UnkStruct_02055BA8 * sub_02025CD8 (UnkStruct_021C0794 * param0)
     return &v0->unk_10;
 }
 
-void sub_02025CE4 (UnkStruct_02025CCC * param0)
+void sub_02025CE4 (UnkStruct_02025CCC *param0)
 {
     OSOwnerInfo v0;
 
@@ -93,7 +93,7 @@ BOOL sub_02025D64 (const UnkStruct_02025CCC * param0)
     return param0->unk_48;
 }
 
-void sub_02025D6C (UnkStruct_02025CCC * param0, BOOL param1)
+void sub_02025D6C (UnkStruct_02025CCC *param0, BOOL param1)
 {
     param0->unk_48 = param1;
 }
@@ -103,14 +103,14 @@ s32 sub_02025D74 (const UnkStruct_02025CCC * param0)
     return param0->unk_4C;
 }
 
-void sub_02025D78 (UnkStruct_02025CCC * param0, s32 param1)
+void sub_02025D78 (UnkStruct_02025CCC *param0, s32 param1)
 {
     if (param0->unk_4C == 0) {
         param0->unk_4C = param1;
     }
 }
 
-void sub_02025D84 (UnkStruct_02055BA8 * param0)
+void sub_02025D84 (UnkStruct_02055BA8 *param0)
 {
     param0->unk_00 = 1;
     sub_0201384C(&param0->unk_04, &param0->unk_14);
@@ -129,7 +129,7 @@ BOOL sub_02025DB8 (const UnkStruct_02055BA8 * param0)
     }
 }
 
-void sub_02025DC8 (UnkStruct_02055BA8 * param0, int param1)
+void sub_02025DC8 (UnkStruct_02055BA8 *param0, int param1)
 {
     if (param0->unk_34 > 24 * 60) {
         param0->unk_34 = 24 * 60;
@@ -142,7 +142,7 @@ void sub_02025DC8 (UnkStruct_02055BA8 * param0, int param1)
     }
 }
 
-void sub_02025DE8 (UnkStruct_02055BA8 * param0)
+void sub_02025DE8 (UnkStruct_02055BA8 *param0)
 {
     param0->unk_34 = 60 * 24;
     sub_0201384C(&param0->unk_04, &param0->unk_14);

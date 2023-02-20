@@ -22,12 +22,12 @@ typedef struct UnkStruct_02023FCC_t {
     UnkStruct_02024028 * unk_10;
 } UnkStruct_02023FCC;
 
-static void sub_02024028(UnkStruct_02024028 * param0);
-static u32 sub_020240F4(UnkStruct_02024028 * param0, BOOL param1, BOOL param2);
-static u32 sub_02024110(UnkStruct_02024028 * param0, BOOL param1, BOOL param2);
-static void sub_02024144(UnkStruct_02024028 * param0, u32 param1);
+static void sub_02024028(UnkStruct_02024028 *param0);
+static u32 sub_020240F4(UnkStruct_02024028 *param0, BOOL param1, BOOL param2);
+static u32 sub_02024110(UnkStruct_02024028 *param0, BOOL param1, BOOL param2);
+static void sub_02024144(UnkStruct_02024028 *param0, u32 param1);
 
-UnkStruct_02023FCC * sub_02023FCC (const UnkUnion_020225E0 * param0, u32 param1, UnkFuncPtr_02023FCC param2, void * param3, u32 param4)
+UnkStruct_02023FCC *sub_02023FCC (const UnkUnion_020225E0 * param0, u32 param1, UnkFuncPtr_02023FCC param2, void * param3, u32 param4)
 {
     UnkStruct_02023FCC * v0;
 
@@ -57,14 +57,14 @@ UnkStruct_02023FCC * sub_02023FCC (const UnkUnion_020225E0 * param0, u32 param1,
     return v0;
 }
 
-static void sub_02024028 (UnkStruct_02024028 * param0)
+static void sub_02024028 (UnkStruct_02024028 *param0)
 {
     param0->unk_00 = 0;
     param0->unk_01 = 0;
     param0->unk_02 = 0;
 }
 
-void sub_02024034 (UnkStruct_02023FCC * param0)
+void sub_02024034 (UnkStruct_02023FCC *param0)
 {
     GF_ASSERT(param0);
 
@@ -72,7 +72,7 @@ void sub_02024034 (UnkStruct_02023FCC * param0)
     Heap_FreeToHeap(param0);
 }
 
-void sub_0202404C (UnkStruct_02023FCC * param0)
+void sub_0202404C (UnkStruct_02023FCC *param0)
 {
     static u32(*const v0[])(UnkStruct_02024028 *, BOOL, BOOL) = {
         sub_020240F4,
@@ -111,7 +111,7 @@ void sub_0202404C (UnkStruct_02023FCC * param0)
     }
 }
 
-static u32 sub_020240F4 (UnkStruct_02024028 * param0, BOOL param1, BOOL param2)
+static u32 sub_020240F4 (UnkStruct_02024028 *param0, BOOL param1, BOOL param2)
 {
     if (param0->unk_01) {
         if (param2) {
@@ -123,7 +123,7 @@ static u32 sub_020240F4 (UnkStruct_02024028 * param0, BOOL param1, BOOL param2)
     return 4294967295;
 }
 
-static u32 sub_02024110 (UnkStruct_02024028 * param0, BOOL param1, BOOL param2)
+static u32 sub_02024110 (UnkStruct_02024028 *param0, BOOL param1, BOOL param2)
 {
     if (param0->unk_01) {
         if (param0->unk_02 < 65535) {
@@ -142,7 +142,7 @@ static u32 sub_02024110 (UnkStruct_02024028 * param0, BOOL param1, BOOL param2)
     return 4294967295;
 }
 
-static void sub_02024144 (UnkStruct_02024028 * param0, u32 param1)
+static void sub_02024144 (UnkStruct_02024028 *param0, u32 param1)
 {
     param0->unk_00 = param1;
     param0->unk_02 = 0;

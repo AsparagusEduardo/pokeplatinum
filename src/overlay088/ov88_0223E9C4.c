@@ -27,7 +27,7 @@
 #include "unk_020279FC.h"
 #include "overlay088/ov88_0223E9C4.h"
 
-static void ov88_0223EE14(UnkStruct_0200112C * param0, u32 param1, u8 param2);
+static void ov88_0223EE14(UnkStruct_0200112C *param0, u32 param1, u8 param2);
 
 static const u16 Unk_ov88_0223F1A8[][5] = {
     {0x4, 0x1, 0x9, 0x2, 0x1},
@@ -57,7 +57,7 @@ static const u16 Unk_ov88_0223F170[][2] = {
     {0x14, 0xA}
 };
 
-void ov88_0223E9C4 (UnkStruct_02018340 * param0, UnkStruct_0205AA50 * param1, UnkStruct_020279FC * param2)
+void ov88_0223E9C4 (UnkStruct_02018340 *param0, UnkStruct_0205AA50 * param1, UnkStruct_020279FC * param2)
 {
     int v0;
 
@@ -96,7 +96,7 @@ void ov88_0223E9C4 (UnkStruct_02018340 * param0, UnkStruct_0205AA50 * param1, Un
     }
 }
 
-void ov88_0223EC04 (UnkStruct_0205AA50 * param0)
+void ov88_0223EC04 (UnkStruct_0205AA50 *param0)
 {
     int v0;
 
@@ -119,7 +119,7 @@ void ov88_0223EC04 (UnkStruct_0205AA50 * param0)
     sub_0201A8FC(&param0[25]);
 }
 
-void ov88_0223EC78 (UnkStruct_0205AA50 * param0, UnkStruct_02023790 * param1, int param2, u32 param3, int param4, int param5)
+void ov88_0223EC78 (UnkStruct_0205AA50 *param0, UnkStruct_02023790 * param1, int param2, u32 param3, int param4, int param5)
 {
     int v0 = 0;
 
@@ -135,7 +135,7 @@ void ov88_0223EC78 (UnkStruct_0205AA50 * param0, UnkStruct_02023790 * param1, in
     sub_0201D78C(param0, 0, param1, v0, param5, param3, (u32)(((11 & 0xff) << 16) | ((12 & 0xff) << 8) | ((0 & 0xff) << 0)), NULL);
 }
 
-int ov88_0223ECBC (UnkStruct_0205AA50 * param0, int param1, int param2, UnkStruct_0200B144 * param3, UnkStruct_0200B358 * param4)
+int ov88_0223ECBC (UnkStruct_0205AA50 *param0, int param1, int param2, UnkStruct_0200B144 * param3, UnkStruct_0200B358 * param4)
 {
     UnkStruct_02023790 * v0;
     int v1;
@@ -165,7 +165,7 @@ static const UnkStruct_ov61_0222C884 Unk_ov88_0223F148 = {
     0x112
 };
 
-u32 ov88_0223ED2C (UnkStruct_02018340 * param0, UnkStruct_02001AF4 ** param1, int * param2)
+u32 ov88_0223ED2C (UnkStruct_02018340 *param0, UnkStruct_02001AF4 ** param1, int * param2)
 {
     u32 v0 = 0xffffffff;
 
@@ -185,7 +185,7 @@ u32 ov88_0223ED2C (UnkStruct_02018340 * param0, UnkStruct_02001AF4 ** param1, in
     return v0;
 }
 
-void ov88_0223ED80 (UnkStruct_0205AA50 * param0)
+void ov88_0223ED80 (UnkStruct_0205AA50 *param0)
 {
     sub_0200DC48(param0, 0, (512 - 9), 11);
 }
@@ -212,7 +212,7 @@ static const UnkStruct_ov84_02240FA8 Unk_ov88_0223F150 = {
     NULL
 };
 
-UnkStruct_0200112C * ov88_0223ED94 (UnkStruct_02013A04 * param0, int param1, UnkStruct_0205AA50 * param2, UnkStruct_02018340 * param3)
+UnkStruct_0200112C *ov88_0223ED94 (UnkStruct_02013A04 * param0, int param1, UnkStruct_0205AA50 * param2, UnkStruct_02018340 * param3)
 {
     UnkStruct_0200112C * v0;
     UnkStruct_ov84_02240FA8 v1;
@@ -232,7 +232,7 @@ UnkStruct_0200112C * ov88_0223ED94 (UnkStruct_02013A04 * param0, int param1, Unk
     return v0;
 }
 
-static void ov88_0223EE14 (UnkStruct_0200112C * param0, u32 param1, u8 param2)
+static void ov88_0223EE14 (UnkStruct_0200112C *param0, u32 param1, u8 param2)
 {
     if (param2 == 0) {
         sub_02005748(1500);

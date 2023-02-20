@@ -96,7 +96,7 @@ int sub_0205CA14 (int param0, int param1, int param2)
     return 0;
 }
 
-u16 * sub_0205CA4C (int param0)
+u16 *sub_0205CA4C (int param0)
 {
     u8 * v0, * v1;
     NNSG2dPaletteData * v2, * v3;

@@ -33,7 +33,7 @@ struct UnkStruct_0209747C_t {
     u16 unk_20[2];
 };
 
-UnkStruct_0209747C * sub_0209747C (u32 param0, u32 param1, UnkStruct_021C0794 * param2, u32 param3)
+UnkStruct_0209747C *sub_0209747C (u32 param0, u32 param1, UnkStruct_021C0794 * param2, u32 param3)
 {
     UnkStruct_0209747C * v0 = Heap_AllocFromHeap(param3, sizeof(UnkStruct_0209747C));
 
@@ -60,34 +60,34 @@ UnkStruct_0209747C * sub_0209747C (u32 param0, u32 param1, UnkStruct_021C0794 * 
     return v0;
 }
 
-void sub_020974EC (UnkStruct_0209747C * param0)
+void sub_020974EC (UnkStruct_0209747C *param0)
 {
     Heap_FreeToHeap(param0);
 }
 
-void sub_020974F4 (UnkStruct_0209747C * param0, u16 param1)
+void sub_020974F4 (UnkStruct_0209747C *param0, u16 param1)
 {
     param0->unk_1C[0] = param1;
 }
 
-void sub_020974F8 (UnkStruct_0209747C * param0, u16 param1, u16 param2)
+void sub_020974F8 (UnkStruct_0209747C *param0, u16 param1, u16 param2)
 {
     param0->unk_1C[0] = param1;
     param0->unk_1C[1] = param2;
 }
 
-void sub_02097500 (UnkStruct_0209747C * param0, const UnkStruct_02014A84 * param1)
+void sub_02097500 (UnkStruct_0209747C *param0, const UnkStruct_02014A84 * param1)
 {
     param0->unk_14 = *param1;
 }
 
-void sub_02097514 (UnkStruct_0209747C * param0)
+void sub_02097514 (UnkStruct_0209747C *param0)
 {
     param0->unk_02 = 1;
     param0->unk_03 = 0;
 }
 
-void sub_02097520 (UnkStruct_0209747C * param0)
+void sub_02097520 (UnkStruct_0209747C *param0)
 {
     param0->unk_05 = 1;
 }
@@ -182,7 +182,7 @@ BOOL sub_020975A0 (const UnkStruct_0209747C * param0, const u16 * param1, const 
     }
 }
 
-void sub_020975E4 (UnkStruct_0209747C * param0, const u16 * param1, const UnkStruct_02014A84 * param2)
+void sub_020975E4 (UnkStruct_0209747C *param0, const u16 * param1, const UnkStruct_02014A84 * param2)
 {
     int v0;
 

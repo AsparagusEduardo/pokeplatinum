@@ -12,7 +12,7 @@
 #include "unk_02056720.h"
 #include "unk_02073C2C.h"
 
-void sub_0202F180 (UnkStruct_021C0794 * param0, const UnkStruct_02073C74 * param1)
+void sub_0202F180 (UnkStruct_021C0794 *param0, const UnkStruct_02073C74 * param1)
 {
     if (sub_02074470((UnkStruct_02073C74 *)param1, 76, NULL) == 0) {
         UnkStruct_02026324 * v0 = sub_02027560(param0);

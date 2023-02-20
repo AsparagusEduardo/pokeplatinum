@@ -64,9 +64,9 @@ typedef struct UnkStruct_ov23_02253598_t {
 };
 
 static UnkStruct_ov23_02253598 * Unk_ov23_022577BC = NULL;
-static void ov23_022537D4(UnkStruct_0201CD38 * param0, void * param1);
+static void ov23_022537D4(UnkStruct_0201CD38 *param0, void * param1);
 
-void ov23_02253598 (UnkStruct_ov23_02253598 * param0, UnkStruct_0202855C * param1, UnkStruct_021C0794 * param2)
+void ov23_02253598 (UnkStruct_ov23_02253598 *param0, UnkStruct_0202855C * param1, UnkStruct_021C0794 * param2)
 {
     MI_CpuFill8(param0, 0, sizeof(UnkStruct_ov23_02253598));
 
@@ -120,7 +120,7 @@ static UnkFuncPtr_ov23_022576EC Unk_ov23_022576EC[] = {
     sub_020295B8
 };
 
-asm static void ov23_0225360C (UnkStruct_0205AA50 * param0, UnkStruct_0200B144 * param1, UnkStruct_02025E6C * param2, const UnkStruct_0202855C * param3)
+asm static void ov23_0225360C (UnkStruct_0205AA50 *param0, UnkStruct_0200B144 * param1, UnkStruct_02025E6C * param2, const UnkStruct_0202855C * param3)
 {
     push {r3, r4, r5, r6, r7, lr}
     sub sp, #0x20
@@ -322,7 +322,7 @@ asm static void ov23_0225360C (UnkStruct_0205AA50 * param0, UnkStruct_0200B144 *
     nop
 }
 
-static void ov23_022537D4 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov23_022537D4 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov23_022537D4 * v0 = param1;
 
@@ -345,7 +345,7 @@ static void ov23_022537D4 (UnkStruct_0201CD38 * param0, void * param1)
     Unk_ov23_022577BC->unk_00 = NULL;
 }
 
-static void ov23_0225381C (UnkStruct_0201CD38 * param0, void * param1)
+static void ov23_0225381C (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov23_022537D4 * v0 = param1;
 
@@ -354,7 +354,7 @@ static void ov23_0225381C (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-void ov23_02253834 (UnkStruct_02018340 * param0, UnkStruct_02025E6C * param1, UnkFuncPtr_ov23_02253834 param2, void * param3, BOOL param4)
+void ov23_02253834 (UnkStruct_02018340 *param0, UnkStruct_02025E6C * param1, UnkFuncPtr_ov23_02253834 param2, void * param3, BOOL param4)
 {
     UnkStruct_0202855C * v0;
     UnkStruct_0200B144 * v1;
@@ -452,7 +452,7 @@ static void ov23_022539F8 (int param0)
     sub_02059514();
 }
 
-void ov23_02253A00 (UnkStruct_0202855C * param0, int param1)
+void ov23_02253A00 (UnkStruct_0202855C *param0, int param1)
 {
     s32 v0;
     UnkStruct_0202855C * v1;
@@ -474,7 +474,7 @@ void ov23_02253A00 (UnkStruct_0202855C * param0, int param1)
     ov23_02253F40(ov23_022421BC(), param1, 1, ov23_022539F8);
 }
 
-static void ov23_02253A78 (UnkStruct_0205AA50 * param0, UnkStruct_0200B144 * param1, UnkStruct_02025E6C * param2, const UnkStruct_0202855C * param3, const UnkStruct_020298B0 * param4)
+static void ov23_02253A78 (UnkStruct_0205AA50 *param0, UnkStruct_0200B144 * param1, UnkStruct_02025E6C * param2, const UnkStruct_0202855C * param3, const UnkStruct_020298B0 * param4)
 {
     UnkStruct_0200B358 * v0;
     UnkStruct_02023790 * v1;
@@ -537,7 +537,7 @@ static void ov23_02253A78 (UnkStruct_0205AA50 * param0, UnkStruct_0200B144 * par
     sub_0200B3F0(v0);
 }
 
-void * ov23_02253C64 (UnkStruct_02018340 * param0, UnkStruct_02025E6C * param1, UnkStruct_020298B0 * param2, UnkFuncPtr_ov23_02253834 param3, void * param4)
+void *ov23_02253C64 (UnkStruct_02018340 * param0, UnkStruct_02025E6C * param1, UnkStruct_020298B0 * param2, UnkFuncPtr_ov23_02253834 param3, void * param4)
 {
     UnkStruct_0202855C * v0;
     UnkStruct_0200B144 * v1;
@@ -566,7 +566,7 @@ void * ov23_02253C64 (UnkStruct_02018340 * param0, UnkStruct_02025E6C * param1, 
     return v4;
 }
 
-void ov23_02253D10 (void * param0)
+void ov23_02253D10 (void *param0)
 {
     UnkStruct_ov23_022537D4 * v0 = param0;
 

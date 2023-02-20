@@ -28,7 +28,7 @@ typedef struct UnkStruct_02039EBC_t {
     u16 unk_00[900];
 } UnkStruct_02039EBC;
 
-static void sub_02039C80 (UnkStruct_02039C80 * param0, const u16 param1, int param2)
+static void sub_02039C80 (UnkStruct_02039C80 *param0, const u16 param1, int param2)
 {
     u8 v0, v1;
     u8 v2;
@@ -91,12 +91,12 @@ static void sub_02039C80 (UnkStruct_02039C80 * param0, const u16 param1, int par
     Heap_FreeToHeap(v3);
 }
 
-UnkStruct_02039E30 * sub_02039D6C (void)
+UnkStruct_02039E30 *sub_02039D6C (void)
 {
     return sub_02039D78(11);
 }
 
-UnkStruct_02039E30 * sub_02039D78 (u32 param0)
+UnkStruct_02039E30 *sub_02039D78 (u32 param0)
 {
     UnkStruct_02039E30 * v0;
 
@@ -109,7 +109,7 @@ UnkStruct_02039E30 * sub_02039D78 (u32 param0)
     return v0;
 }
 
-void sub_02039D90 (UnkStruct_02039E30 * param0, UnkStruct_02039E30 * param1)
+void sub_02039D90 (UnkStruct_02039E30 *param0, UnkStruct_02039E30 * param1)
 {
     GF_ASSERT(param1 != NULL);
     GF_ASSERT(param0 != NULL);
@@ -130,7 +130,7 @@ void sub_02039DC0 (const int param0, UnkStruct_02039E30 * param1)
     param1->unk_00 = param1->unk_04.unk_01;
 }
 
-void sub_02039DE4 (UnkStruct_02039E30 * const param0)
+void sub_02039DE4 (UnkStruct_02039E30 *const param0)
 {
     Heap_FreeToHeap(param0);
 }
@@ -185,7 +185,7 @@ int sub_02039E8C (const UnkStruct_02039E30 * param0, const int param1, const int
     return param0->unk_04.unk_70A[param2 + param3 * param4];
 }
 
-UnkStruct_02039EBC * sub_02039EBC (const u32 param0)
+UnkStruct_02039EBC *sub_02039EBC (const u32 param0)
 {
     int v0;
     void * v1;
@@ -212,7 +212,7 @@ UnkStruct_02039EBC * sub_02039EBC (const u32 param0)
     return v3;
 }
 
-void sub_02039EF0 (UnkStruct_02039EBC * param0)
+void sub_02039EF0 (UnkStruct_02039EBC *param0)
 {
     GF_ASSERT(param0 != NULL);
     Heap_FreeToHeap(param0);
@@ -248,7 +248,7 @@ const u16 sub_02039F74 (const int param0, const UnkStruct_02039E30 * param1)
     return v0;
 }
 
-void sub_02039F8C (UnkStruct_02039E30 * param0)
+void sub_02039F8C (UnkStruct_02039E30 *param0)
 {
     u16 * Unk_ov5_0220210C = param0->unk_04.unk_A8E;
     u8 * v1 = param0->unk_04.unk_70A;
@@ -271,7 +271,7 @@ void sub_02039F8C (UnkStruct_02039E30 * param0)
     v1[24 + v3 * 22] = 2;
 }
 
-void sub_02039FE0 (UnkStruct_02039E30 * param0)
+void sub_02039FE0 (UnkStruct_02039E30 *param0)
 {
     int v0, v1;
     u16 * Unk_ov5_0220210C = param0->unk_04.unk_A8E;

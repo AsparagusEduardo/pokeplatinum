@@ -16,13 +16,13 @@ int sub_02030EA4 (void)
     return sizeof(UnkStruct_02030EC4);
 }
 
-void sub_02030EA8 (UnkStruct_02030EC4 * param0)
+void sub_02030EA8 (UnkStruct_02030EC4 *param0)
 {
     MI_CpuFill32(param0, 0, sub_02030EA4());
     param0->unk_00 = 0xffffffff;
 }
 
-UnkStruct_02030EC4 * sub_02030EC4 (UnkStruct_021C0794 * param0)
+UnkStruct_02030EC4 *sub_02030EC4 (UnkStruct_021C0794 * param0)
 {
     UnkStruct_02030EC4 * v0;
 
@@ -40,12 +40,12 @@ u32 sub_02030ED4 (const UnkStruct_02030EC4 * param0)
     return param0->unk_04;
 }
 
-void sub_02030ED8 (UnkStruct_02030EC4 * param0, u32 param1)
+void sub_02030ED8 (UnkStruct_02030EC4 *param0, u32 param1)
 {
     param0->unk_00 = param1;
 }
 
-void sub_02030EDC (UnkStruct_02030EC4 * param0, u32 param1)
+void sub_02030EDC (UnkStruct_02030EC4 *param0, u32 param1)
 {
     param0->unk_04 = param1;
 }

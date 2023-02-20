@@ -18,7 +18,7 @@
 static UnkStruct_02101D44 Unk_02101D44;
 
 
-int sub_02002328 (UnkStruct_0201D834 * param0)
+int sub_02002328 (UnkStruct_0201D834 *param0)
 {
     const UnkStruct_02002328 * v0;
     UnkStruct_02002D18 * v1;
@@ -247,7 +247,7 @@ void sub_020027A8 (u16 param0)
     Unk_02101D46 = param0;
 }
 
-void sub_020027B4 (UnkStruct_0201D834 * param0)
+void sub_020027B4 (UnkStruct_0201D834 *param0)
 {
     UnkStruct_02002D18 * v0;
 
@@ -268,7 +268,7 @@ static const u8 Unk_020E4CD0[] = {
     0x1
 };
 
-void sub_020027E0 (UnkStruct_0201D834 * param0)
+void sub_020027E0 (UnkStruct_0201D834 *param0)
 {
     UnkStruct_02002D18 * v0;
     void * v1;
@@ -305,7 +305,7 @@ void sub_020027E0 (UnkStruct_0201D834 * param0)
     }
 }
 
-void sub_02002968 (UnkStruct_0201D834 * param0)
+void sub_02002968 (UnkStruct_0201D834 *param0)
 {
     u16 v0;
     u8 v1, v2, v3, v4;
@@ -321,7 +321,7 @@ void sub_02002968 (UnkStruct_0201D834 * param0)
     sub_02019448(param0->unk_00.unk_04->unk_00, v1);
 }
 
-static BOOL sub_020029FC (UnkStruct_0201D834 * param0)
+static BOOL sub_020029FC (UnkStruct_0201D834 *param0)
 {
     if ((Unk_021BF67C.unk_48 & (PAD_BUTTON_A | PAD_BUTTON_B)) || ((Unk_021BF67C.unk_60) && (Unk_02101D44.unk_00_4))) {
         sub_02005748(1500);
@@ -332,7 +332,7 @@ static BOOL sub_020029FC (UnkStruct_0201D834 * param0)
     return 0;
 }
 
-BOOL sub_02002A44 (UnkStruct_0201D834 * param0)
+BOOL sub_02002A44 (UnkStruct_0201D834 *param0)
 {
     UnkStruct_02002D18 * v0;
     u16 v1;
@@ -353,7 +353,7 @@ BOOL sub_02002A44 (UnkStruct_0201D834 * param0)
     return 0;
 }
 
-BOOL sub_02002A80 (UnkStruct_0201D834 * param0)
+BOOL sub_02002A80 (UnkStruct_0201D834 *param0)
 {
     BOOL v0 = 0;
 
@@ -367,7 +367,7 @@ BOOL sub_02002A80 (UnkStruct_0201D834 * param0)
     return v0;
 }
 
-BOOL sub_02002AA4 (UnkStruct_0201D834 * param0)
+BOOL sub_02002AA4 (UnkStruct_0201D834 *param0)
 {
     u8 v0 = 0;
 

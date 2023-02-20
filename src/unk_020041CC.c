@@ -44,23 +44,23 @@ void sub_02004AD4(u16 param0, int param1);
 BOOL sub_02004AE8(int param0, int param1, u16 param2);
 int sub_02004B04(int param0);
 u8 sub_02004B18(u16 param0);
-int sub_02004B34(NNSSndHandle * param0);
+int sub_02004B34(NNSSndHandle *param0);
 const NNSSndArcBankInfo * sub_02004B3C(int param0);
 u16 sub_02004B48(int param0);
-MICResult sub_02004B5C(MICAutoParam * param0);
+MICResult sub_02004B5C(MICAutoParam *param0);
 MICResult sub_02004B64(void);
-NNSSndWaveOutHandle * sub_02004B78(u32 param0);
+NNSSndWaveOutHandle *sub_02004B78(u32 param0);
 BOOL sub_02004BCC(u32 param0);
 void sub_02004C4C(u32 param0);
 void sub_02004D14(u32 param0, u8 param1);
 void sub_02004D2C(u32 param0, u32 param1);
 void sub_02004D40(u32 param0, int param1);
-BOOL sub_02004CB4(UnkStruct_02004CB4 * param0, u32 param1);
+BOOL sub_02004CB4(UnkStruct_02004CB4 *param0, u32 param1);
 void sub_02004CF4(u32 param0);
 BOOL sub_02004D04(u32 param0);
 BOOL sub_02004D78(u16 param0, int param1, int param2, u32 param3, int param4);
 void sub_02004E84(u32 param0);
-static void sub_02004E64(u8 * param0, u32 param1);
+static void sub_02004E64(u8 *param0, u32 param1);
 BOOL sub_02004EC0(void);
 BOOL sub_02004EC8(int param0);
 void sub_02004EEC(int param0);
@@ -68,7 +68,7 @@ void sub_02004EF4(int param0, int param1);
 BOOL sub_02004EFC(void);
 void sub_02004F44(void);
 void sub_02004F4C(int param0);
-void sub_020052C8(void * param0, void * param1, u32 param2, NNSSndCaptureFormat param3, void * param4);
+void sub_020052C8(void *param0, void * param1, u32 param2, NNSSndCaptureFormat param3, void * param4);
 void sub_02004F68(int param0, u16 param1, int param2);
 void sub_02004F7C(u16 param0, u16 param1, int param2);
 void sub_02004F94(int param0, u16 param1, int param2);
@@ -78,7 +78,7 @@ void sub_02004FCC(int param0);
 void sub_02004FDC(int param0);
 int sub_02004FEC(void);
 void sub_0200500C(int param0);
-void * sub_02005014(void);
+void *sub_02005014(void);
 void sub_0200501C(int param0);
 BOOL sub_0200502C(u8 param0, u16 param1, int param2, int param3, u8 param4, void * param5);
 BOOL sub_02005068(u8 param0, u16 param1, int param2, int param3, int param4, u8 param5, void * param6);
@@ -769,7 +769,7 @@ u8 sub_02004B18 (u16 param0)
     return v0->playerNo;
 }
 
-int sub_02004B34 (NNSSndHandle * param0)
+int sub_02004B34 (NNSSndHandle *param0)
 {
     return NNS_SndPlayerGetSeqNo(param0);
 }
@@ -800,7 +800,7 @@ u16 sub_02004B48 (int param0)
     return v0->bankNo;
 }
 
-MICResult sub_02004B5C (MICAutoParam * param0)
+MICResult sub_02004B5C (MICAutoParam *param0)
 {
     MICResult v0;
 
@@ -840,7 +840,7 @@ MICResult sub_02004B70 (MICSamplingType param0, void * param1, MICCallback param
     return v0;
 }
 
-NNSSndWaveOutHandle * sub_02004B78 (u32 param0)
+NNSSndWaveOutHandle *sub_02004B78 (u32 param0)
 {
     UnkStruct_02003D54 * v0 = sub_02003D54();
     u8 * v1 = sub_02003D5C(16);
@@ -943,7 +943,7 @@ void sub_02004C4C (u32 param0)
     return;
 }
 
-BOOL sub_02004CB4 (UnkStruct_02004CB4 * param0, u32 param1)
+BOOL sub_02004CB4 (UnkStruct_02004CB4 *param0, u32 param1)
 {
     int v0;
 
@@ -1070,7 +1070,7 @@ BOOL sub_02004D78 (u16 param0, int param1, int param2, u32 param3, int param4)
     return v4;
 }
 
-static void sub_02004E64 (u8 * param0, u32 param1)
+static void sub_02004E64 (u8 *param0, u32 param1)
 {
     int v0;
     u8 v1;
@@ -1230,7 +1230,7 @@ void sub_0200500C (int param0)
     return;
 }
 
-void * sub_02005014 (void)
+void *sub_02005014 (void)
 {
     return &Unk_021BEBA0[0];
 }
@@ -1472,7 +1472,7 @@ void sub_020051D0 (const SNDWaveData * param0, u8 * param1, int param2, int para
     return;
 }
 
-static void sub_020052C8 (void * param0, void * param1, u32 param2, NNSSndCaptureFormat param3, void * param4)
+static void sub_020052C8 (void *param0, void * param1, u32 param2, NNSSndCaptureFormat param3, void * param4)
 {
     s16 v0[8][2];
     s16 * v1 = (s16 *)param0;

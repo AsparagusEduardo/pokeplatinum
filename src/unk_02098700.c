@@ -22,12 +22,12 @@ typedef struct UnkStruct_02098700_t {
 
 static int * sub_020988C8(NARC * param0, int param1);
 static int * sub_020988D8(NARC * param0, int param1);
-static void sub_020988E8(NARC * param0, short ** param1, short ** param2, int param3);
-static void sub_02098910(NARC * param0, short ** param1, short ** param2, int param3);
-static void sub_02098938(NARC * param0, short ** param1, short ** param2, int param3);
-static void sub_02098960(NARC * param0, short ** param1, short ** param2, int param3);
+static void sub_020988E8(NARC *param0, short ** param1, short ** param2, int param3);
+static void sub_02098910(NARC *param0, short ** param1, short ** param2, int param3);
+static void sub_02098938(NARC *param0, short ** param1, short ** param2, int param3);
+static void sub_02098960(NARC *param0, short ** param1, short ** param2, int param3);
 
-UnkStruct_02098700 * sub_02098700 (int param0)
+UnkStruct_02098700 *sub_02098700 (int param0)
 {
     UnkStruct_02098700 * v0;
 
@@ -37,7 +37,7 @@ UnkStruct_02098700 * sub_02098700 (int param0)
     return v0;
 }
 
-void sub_02098718 (UnkStruct_02098700 * param0)
+void sub_02098718 (UnkStruct_02098700 *param0)
 {
     GF_ASSERT(param0);
 
@@ -45,7 +45,7 @@ void sub_02098718 (UnkStruct_02098700 * param0)
     param0 = NULL;
 }
 
-void sub_0209872C (UnkStruct_02098700 * param0, int param1, int param2)
+void sub_0209872C (UnkStruct_02098700 *param0, int param1, int param2)
 {
     NARC * v0;
     u32 v1;
@@ -71,7 +71,7 @@ void sub_0209872C (UnkStruct_02098700 * param0, int param1, int param2)
     NARC_dtor(v0);
 }
 
-void sub_020987BC (UnkStruct_02098700 * param0)
+void sub_020987BC (UnkStruct_02098700 *param0)
 {
     GF_ASSERT(param0->unk_00);
     GF_ASSERT(param0->unk_04);
@@ -134,7 +134,7 @@ short sub_020988A8 (const UnkStruct_02098700 * param0, int param1)
     return param0->unk_14[param1];
 }
 
-static int * sub_020988C8 (NARC * param0, int param1)
+static int *sub_020988C8 (NARC *param0, int param1)
 {
     void * v0;
 
@@ -142,7 +142,7 @@ static int * sub_020988C8 (NARC * param0, int param1)
     return (int *)v0;
 }
 
-static int * sub_020988D8 (NARC * param0, int param1)
+static int *sub_020988D8 (NARC *param0, int param1)
 {
     void * v0;
 
@@ -150,25 +150,25 @@ static int * sub_020988D8 (NARC * param0, int param1)
     return (int *)v0;
 }
 
-static void sub_020988E8 (NARC * param0, short ** param1, short ** param2, int param3)
+static void sub_020988E8 (NARC *param0, short ** param1, short ** param2, int param3)
 {
     *param1 = (short *)sub_0200723C(param0, 9, 0, param3, 0);
     *param2 = (short *)sub_0200723C(param0, 10, 0, param3, 0);
 }
 
-static void sub_02098910 (NARC * param0, short ** param1, short ** param2, int param3)
+static void sub_02098910 (NARC *param0, short ** param1, short ** param2, int param3)
 {
     *param1 = (short *)sub_0200723C(param0, 7, 0, param3, 0);
     *param2 = (short *)sub_0200723C(param0, 8, 0, param3, 0);
 }
 
-static void sub_02098938 (NARC * param0, short ** param1, short ** param2, int param3)
+static void sub_02098938 (NARC *param0, short ** param1, short ** param2, int param3)
 {
     *param1 = (short *)sub_0200723C(param0, 5, 0, param3, 0);
     *param2 = (short *)sub_0200723C(param0, 6, 0, param3, 0);
 }
 
-static void sub_02098960 (NARC * param0, short ** param1, short ** param2, int param3)
+static void sub_02098960 (NARC *param0, short ** param1, short ** param2, int param3)
 {
     *param1 = (short *)sub_0200723C(param0, 3, 0, param3, 0);
     *param2 = (short *)sub_0200723C(param0, 4, 0, param3, 0);

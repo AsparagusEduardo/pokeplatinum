@@ -31,10 +31,10 @@ typedef struct UnkStruct_ov70_0226C39C_t {
 } UnkStruct_ov70_0226C39C;
 
 static void ov70_0226C4CC(const UnkStruct_ov70_0226C4CC * param0, GXRgb * param1);
-static void ov70_0226C4E8(UnkStruct_ov70_0226C4CC * param0, const GXRgb * param1);
+static void ov70_0226C4E8(UnkStruct_ov70_0226C4CC *param0, const GXRgb * param1);
 static void ov70_0226C50C(const UnkStruct_ov70_0226C4CC * param0, const UnkStruct_ov70_0226C4CC * param1, UnkStruct_ov70_0226C4CC * param2, s32 param3, s32 param4);
-static void ov70_0226C568(UnkStruct_ov70_0226C568 * param0, const UnkStruct_ov70_0226E678 * param1);
-static void ov70_0226C58C(UnkStruct_ov70_0226C568 * param0, const UnkStruct_ov70_0226E670 * param1);
+static void ov70_0226C568(UnkStruct_ov70_0226C568 *param0, const UnkStruct_ov70_0226E678 * param1);
+static void ov70_0226C58C(UnkStruct_ov70_0226C568 *param0, const UnkStruct_ov70_0226E670 * param1);
 static void ov70_0226C598(const UnkStruct_ov70_0226C568 * param0);
 
 static const UnkStruct_ov70_0226E678 Unk_ov70_0226E678[6] = {
@@ -101,7 +101,7 @@ static const UnkStruct_ov70_0226E670 Unk_ov70_0226E670[4] = {
     {GX_RGB(8, 8, 8)},
 };
 
-UnkStruct_ov70_0226C39C * ov70_0226C338 (u32 param0, int param1, int param2, int param3)
+UnkStruct_ov70_0226C39C *ov70_0226C338 (u32 param0, int param1, int param2, int param3)
 {
     UnkStruct_ov70_0226C39C * v0;
     int v1;
@@ -125,12 +125,12 @@ UnkStruct_ov70_0226C39C * ov70_0226C338 (u32 param0, int param1, int param2, int
     return v0;
 }
 
-void ov70_0226C39C (UnkStruct_ov70_0226C39C * param0)
+void ov70_0226C39C (UnkStruct_ov70_0226C39C *param0)
 {
     Heap_FreeToHeap(param0);
 }
 
-void ov70_0226C3A4 (UnkStruct_ov70_0226C39C * param0)
+void ov70_0226C3A4 (UnkStruct_ov70_0226C39C *param0)
 {
     int v0;
     BOOL v1 = 0;
@@ -156,7 +156,7 @@ void ov70_0226C3A4 (UnkStruct_ov70_0226C39C * param0)
     }
 }
 
-void ov70_0226C430 (UnkStruct_ov70_0226C39C * param0, int param1)
+void ov70_0226C430 (UnkStruct_ov70_0226C39C *param0, int param1)
 {
     int v0;
 
@@ -173,7 +173,7 @@ void ov70_0226C430 (UnkStruct_ov70_0226C39C * param0, int param1)
     }
 }
 
-void ov70_0226C4A0 (UnkStruct_ov70_0226C39C * param0, int param1)
+void ov70_0226C4A0 (UnkStruct_ov70_0226C39C *param0, int param1)
 {
     param0->unk_18.unk_00[1] = param0->unk_00.unk_00[1];
     param0->unk_48[1] = 0;
@@ -181,7 +181,7 @@ void ov70_0226C4A0 (UnkStruct_ov70_0226C39C * param0, int param1)
     ov70_0226C4E8(&param0->unk_30.unk_00[1], &Unk_ov70_0226E670[param1].unk_00);
 }
 
-void ov70_0226C4C8 (UnkStruct_ov70_0226C39C * param0, int param1)
+void ov70_0226C4C8 (UnkStruct_ov70_0226C39C *param0, int param1)
 {
     return;
 }
@@ -191,7 +191,7 @@ static void ov70_0226C4CC (const UnkStruct_ov70_0226C4CC * param0, GXRgb * param
     *param1 = GX_RGB(param0->unk_00[0], param0->unk_00[1], param0->unk_00[2]);
 }
 
-static void ov70_0226C4E8 (UnkStruct_ov70_0226C4CC * param0, const GXRgb * param1)
+static void ov70_0226C4E8 (UnkStruct_ov70_0226C4CC *param0, const GXRgb * param1)
 {
     param0->unk_00[0] = ((*param1) & GX_RGB_R_MASK) >> GX_RGB_R_SHIFT;
     param0->unk_00[1] = ((*param1) & GX_RGB_G_MASK) >> GX_RGB_G_SHIFT;
@@ -213,7 +213,7 @@ static void ov70_0226C50C (const UnkStruct_ov70_0226C4CC * param0, const UnkStru
     param2->unk_00[2] = param0->unk_00[2] + ((param3 * v2) / param4);
 }
 
-static void ov70_0226C568 (UnkStruct_ov70_0226C568 * param0, const UnkStruct_ov70_0226E678 * param1)
+static void ov70_0226C568 (UnkStruct_ov70_0226C568 *param0, const UnkStruct_ov70_0226E678 * param1)
 {
     int v0;
 
@@ -224,7 +224,7 @@ static void ov70_0226C568 (UnkStruct_ov70_0226C568 * param0, const UnkStruct_ov7
     }
 }
 
-static void ov70_0226C58C (UnkStruct_ov70_0226C568 * param0, const UnkStruct_ov70_0226E670 * param1)
+static void ov70_0226C58C (UnkStruct_ov70_0226C568 *param0, const UnkStruct_ov70_0226E670 * param1)
 {
     ov70_0226C4E8(&param0->unk_00[1], &param1->unk_00);
 }

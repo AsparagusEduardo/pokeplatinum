@@ -3,13 +3,13 @@
 
 #include "unk_0202309C.h"
 
-void sub_0202309C (NNSG2dRendererInstance * param0, fx32 param1)
+void sub_0202309C (NNSG2dRendererInstance *param0, fx32 param1)
 {
     NNS_G2dInitRenderer(param0);
     NNS_G2dSetRendererSpriteZoffset(param0, param1);
 }
 
-void sub_020230AC (NNSG2dRenderSurface * param0, NNSG2dViewRect * param1, NNSG2dOamRegisterFunction param2, NNSG2dAffineRegisterFunction param3, NNSG2dRndCellCullingFunction param4, NNSG2dSurfaceType param5, NNSG2dRendererInstance * param6)
+void sub_020230AC (NNSG2dRenderSurface *param0, NNSG2dViewRect * param1, NNSG2dOamRegisterFunction param2, NNSG2dAffineRegisterFunction param3, NNSG2dRndCellCullingFunction param4, NNSG2dSurfaceType param5, NNSG2dRendererInstance * param6)
 {
     NNS_G2dInitRenderSurface(param0);
 
@@ -24,7 +24,7 @@ void sub_020230AC (NNSG2dRenderSurface * param0, NNSG2dViewRect * param1, NNSG2d
     }
 }
 
-void sub_020230E0 (NNSG2dRenderSurface * param0, NNSG2dViewRect * param1)
+void sub_020230E0 (NNSG2dRenderSurface *param0, NNSG2dViewRect * param1)
 {
     param0->viewRect = *param1;
 }

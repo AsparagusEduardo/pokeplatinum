@@ -21,8 +21,8 @@
 
 static NNSFndHeapHandle Unk_021BF678;
 
-static void sub_0201767C(UnkStruct_02017498 * param0);
-static void sub_020176B4(UnkStruct_02017498 * param0);
+static void sub_0201767C(UnkStruct_02017498 *param0);
+static void sub_020176B4(UnkStruct_02017498 *param0);
 static void * sub_020176DC(DWCAllocType param0, u32 param1, int param2);
 static void sub_02017704(DWCAllocType param0, void * param1, u32 param2);
 
@@ -33,7 +33,7 @@ static const UnkStruct_0208BE5C Unk_020E5664 = {
     0xffffffff,
 };
 
-int sub_02017498 (UnkStruct_020067E8 * param0, int * param1)
+int sub_02017498 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_02017498 * v0;
 
@@ -60,7 +60,7 @@ int sub_02017498 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-int sub_02017524 (UnkStruct_020067E8 * param0, int * param1)
+int sub_02017524 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_02017498 * v0 = sub_0200682C(param0);
 
@@ -133,7 +133,7 @@ int sub_02017524 (UnkStruct_020067E8 * param0, int * param1)
     return 0;
 }
 
-int sub_02017658 (UnkStruct_020067E8 * param0, int * param1)
+int sub_02017658 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_02017498 * v0 = sub_0200682C(param0);
 
@@ -145,7 +145,7 @@ int sub_02017658 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-static void sub_0201767C (UnkStruct_02017498 * param0)
+static void sub_0201767C (UnkStruct_02017498 *param0)
 {
     if (param0->unk_88 == 0) {
         param0->unk_18 = Heap_AllocFromHeap(116, 0x20000 + 32);
@@ -157,7 +157,7 @@ static void sub_0201767C (UnkStruct_02017498 * param0)
     }
 }
 
-static void sub_020176B4 (UnkStruct_02017498 * param0)
+static void sub_020176B4 (UnkStruct_02017498 *param0)
 {
     if (param0->unk_88 == 1) {
         NNS_FndDestroyExpHeap(param0->unk_1C);

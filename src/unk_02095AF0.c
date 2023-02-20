@@ -45,7 +45,7 @@ static const UnkStruct_02039A58 Unk_020F58FC[] = {
     {ov6_02248DA0, sub_02032944, NULL}
 };
 
-void sub_02095AF0 (void * param0)
+void sub_02095AF0 (void *param0)
 {
     int v0 = sizeof(Unk_020F58FC) / sizeof(UnkStruct_02039A58);
     sub_02032798(Unk_020F58FC, v0, param0);
@@ -90,7 +90,7 @@ static void sub_02095B30 (int param0, int param1, void * param2, void * param3)
     v0->unk_568++;
 }
 
-BOOL sub_02095B5C (UnkStruct_02095C48 * param0, int param1, const UnkStruct_02029C88 * param2)
+BOOL sub_02095B5C (UnkStruct_02095C48 *param0, int param1, const UnkStruct_02029C88 * param2)
 {
     u8 * v0;
     int v1;
@@ -131,7 +131,7 @@ static void sub_02095B9C (int param0, int param1, void * param2, void * param3)
     v0->unk_568++;
 }
 
-BOOL sub_02095BEC (UnkStruct_02095C48 * param0, UnkStruct_02029C88 ** param1)
+BOOL sub_02095BEC (UnkStruct_02095C48 *param0, UnkStruct_02029C88 ** param1)
 {
     u8 * v0;
     int v1, v2;
@@ -164,7 +164,7 @@ static void sub_02095C48 (int param0, int param1, void * param2, void * param3)
     MI_CpuCopy8(param2, &v0->unk_1984.unk_00, param1);
 }
 
-BOOL sub_02095C60 (UnkStruct_02095C60 * param0, u32 param1)
+BOOL sub_02095C60 (UnkStruct_02095C60 *param0, u32 param1)
 {
     if (param0->unk_16 == 0) {
         param0->unk_00.unk_00 = param1;
@@ -193,7 +193,7 @@ static void sub_02095C98 (int param0, int param1, void * param2, void * param3)
     v0->unk_1984.unk_10[param0] = v1->unk_04;
 }
 
-BOOL sub_02095CA8 (UnkStruct_02095C60 * param0, int param1)
+BOOL sub_02095CA8 (UnkStruct_02095C60 *param0, int param1)
 {
     if (param0->unk_16 == 0) {
         param0->unk_10[0] = param1;

@@ -23,32 +23,32 @@ typedef struct UnkStruct_020973A8_t {
     u8 unk_0B;
 } UnkStruct_020973A8;
 
-NARC * sub_0209739C (u32 param0)
+NARC *sub_0209739C (u32 param0)
 {
     return NARC_ctor(68, param0);
 }
 
-UnkStruct_020973A8 * sub_020973A8 (NARC * param0, u32 param1, u32 param2)
+UnkStruct_020973A8 *sub_020973A8 (NARC * param0, u32 param1, u32 param2)
 {
     return NARC_AllocAndReadWholeMember(param0, 0 + param1, param2);
 }
 
-void sub_020973B0 (NARC * param0)
+void sub_020973B0 (NARC *param0)
 {
     NARC_dtor(param0);
 }
 
-UnkStruct_020973A8 * sub_020973B8 (u32 param0, u32 param1)
+UnkStruct_020973A8 *sub_020973B8 (u32 param0, u32 param1)
 {
     return NARC_AllocAndReadWholeMemberByIndexPair(68, 0 + param0, param1);
 }
 
-UnkStruct_020973A8 * sub_020973C8 (u32 param0, u32 param1)
+UnkStruct_020973A8 *sub_020973C8 (u32 param0, u32 param1)
 {
     return sub_020973B8(param0 - 149, param1);
 }
 
-u32 sub_020973D4 (UnkStruct_020973A8 * param0, u32 param1)
+u32 sub_020973D4 (UnkStruct_020973A8 *param0, u32 param1)
 {
     switch (param1) {
     case 0:
@@ -78,7 +78,7 @@ u32 sub_020973D4 (UnkStruct_020973A8 * param0, u32 param1)
     return 0;
 }
 
-UnkStruct_02023790 * sub_0209742C (u16 param0, u32 param1)
+UnkStruct_02023790 *sub_0209742C (u16 param0, u32 param1)
 {
     UnkStruct_0200B144 * v0;
     UnkStruct_02023790 * v1;
@@ -90,7 +90,7 @@ UnkStruct_02023790 * sub_0209742C (u16 param0, u32 param1)
     return v1;
 }
 
-UnkStruct_02023790 * sub_02097454 (u16 param0, u16 param1)
+UnkStruct_02023790 *sub_02097454 (u16 param0, u16 param1)
 {
     UnkStruct_0200B144 * v0;
     UnkStruct_02023790 * v1;

@@ -7,9 +7,9 @@
 #include "unk_020170BC.h"
 #include "overlay100/ov100_021D44C0.h"
 
-void ov100_021D44C0(UnkStruct_ov100_021D49B4 * param0, UnkStruct_ov100_021D54D0 * param1);
-void ov100_021D4510(UnkStruct_ov100_021D49B4 * param0);
-void ov100_021D45A4(UnkStruct_ov100_021D49B4 * param0);
+void ov100_021D44C0(UnkStruct_ov100_021D49B4 *param0, UnkStruct_ov100_021D54D0 * param1);
+void ov100_021D4510(UnkStruct_ov100_021D49B4 *param0);
+void ov100_021D45A4(UnkStruct_ov100_021D49B4 *param0);
 
 static const int Unk_ov100_021D5344[][5] = {
     {0x1, 0x2, 0x3, 0x2, 0xFF},
@@ -27,7 +27,7 @@ static const int Unk_ov100_021D5344[][5] = {
     {0xC, 0xD, 0xE, 0xF, 0xFF}
 };
 
-void ov100_021D44C0 (UnkStruct_ov100_021D49B4 * param0, UnkStruct_ov100_021D54D0 * param1)
+void ov100_021D44C0 (UnkStruct_ov100_021D49B4 *param0, UnkStruct_ov100_021D54D0 * param1)
 {
     param0->unk_160 = 1;
     param0->unk_184 = param1;
@@ -37,7 +37,7 @@ void ov100_021D44C0 (UnkStruct_ov100_021D49B4 * param0, UnkStruct_ov100_021D54D0
     param0->unk_158 = param1[param0->unk_180].unk_00;
 }
 
-void ov100_021D4510 (UnkStruct_ov100_021D49B4 * param0)
+void ov100_021D4510 (UnkStruct_ov100_021D49B4 *param0)
 {
     int v0;
     int v1;
@@ -67,7 +67,7 @@ void ov100_021D4510 (UnkStruct_ov100_021D49B4 * param0)
     sub_02017240(&param0->unk_88[0], v3);
 }
 
-void ov100_021D45A4 (UnkStruct_ov100_021D49B4 * param0)
+void ov100_021D45A4 (UnkStruct_ov100_021D49B4 *param0)
 {
     int v0;
     UnkStruct_ov100_021D54D0 * v1 = param0->unk_184;

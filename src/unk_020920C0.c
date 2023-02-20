@@ -19,8 +19,8 @@ typedef struct {
     u8 unk_03;
 } UnkStruct_020F5164;
 
-static void sub_0223D0BC(UnkStruct_0208D7BC * param0);
-static int sub_020921FC(UnkStruct_0208D7BC * param0);
+static void sub_0223D0BC(UnkStruct_0208D7BC *param0);
+static int sub_020921FC(UnkStruct_0208D7BC *param0);
 
 static const UnkStruct_020F5164 Unk_020F5164[] = {
     {0x0, 0x1, 0x1, 0x4},
@@ -88,7 +88,7 @@ static const UnkUnion_02022594 * Unk_02100D78[] = {
     Unk_020F511C
 };
 
-void sub_020920C0 (UnkStruct_0208D7BC * param0)
+void sub_020920C0 (UnkStruct_0208D7BC *param0)
 {
     switch (param0->unk_24C->unk_12) {
     case 0:
@@ -109,7 +109,7 @@ void sub_020920C0 (UnkStruct_0208D7BC * param0)
     sub_0209219C(param0);
 }
 
-static void sub_0209212C (UnkStruct_0208D7BC * param0, const UnkStruct_020F5164 * param1, u8 param2)
+static void sub_0209212C (UnkStruct_0208D7BC *param0, const UnkStruct_020F5164 * param1, u8 param2)
 {
     u16 * v0;
     u16 v1;
@@ -126,7 +126,7 @@ static void sub_0209212C (UnkStruct_0208D7BC * param0, const UnkStruct_020F5164 
     }
 }
 
-void sub_0209219C (UnkStruct_0208D7BC * param0)
+void sub_0209219C (UnkStruct_0208D7BC *param0)
 {
     const UnkStruct_020F5164 * v0;
     u8 v1;
@@ -150,7 +150,7 @@ void sub_0209219C (UnkStruct_0208D7BC * param0)
     sub_0201C3C0(param0->unk_00, 4);
 }
 
-u8 sub_020921E4 (UnkStruct_0208D7BC * param0)
+u8 sub_020921E4 (UnkStruct_0208D7BC *param0)
 {
     int v0;
 
@@ -163,7 +163,7 @@ u8 sub_020921E4 (UnkStruct_0208D7BC * param0)
     return 0xff;
 }
 
-static int sub_020921FC (UnkStruct_0208D7BC * param0)
+static int sub_020921FC (UnkStruct_0208D7BC *param0)
 {
     int v0;
 
@@ -176,7 +176,7 @@ static int sub_020921FC (UnkStruct_0208D7BC * param0)
     return v0;
 }
 
-static int sub_02092224 (UnkStruct_0208D7BC * param0)
+static int sub_02092224 (UnkStruct_0208D7BC *param0)
 {
     int v0;
 
@@ -197,7 +197,7 @@ static int sub_02092224 (UnkStruct_0208D7BC * param0)
     return v0;
 }
 
-u8 sub_0209228C (UnkStruct_0208D7BC * param0)
+u8 sub_0209228C (UnkStruct_0208D7BC *param0)
 {
     const UnkStruct_020F5164 * v0 = Unk_02100D84[param0->unk_6A7_0];
 
@@ -239,7 +239,7 @@ u8 sub_0209228C (UnkStruct_0208D7BC * param0)
     return 0;
 }
 
-void sub_02092368 (UnkStruct_0208D7BC * param0, s16 * param1, s16 * param2)
+void sub_02092368 (UnkStruct_0208D7BC *param0, s16 * param1, s16 * param2)
 {
     const UnkStruct_020F5164 * v0 = Unk_02100D84[param0->unk_6A7_0];
 
@@ -247,7 +247,7 @@ void sub_02092368 (UnkStruct_0208D7BC * param0, s16 * param1, s16 * param2)
     *param2 = v0[param0->unk_6AE].unk_03 * 8 + (5 * 8) / 2;
 }
 
-u8 sub_020923A4 (UnkStruct_0208D7BC * param0, u8 param1)
+u8 sub_020923A4 (UnkStruct_0208D7BC *param0, u8 param1)
 {
     const UnkStruct_020F5164 * v0 = Unk_02100D84[param0->unk_6A7_0];
     return v0[param1].unk_00;

@@ -48,7 +48,7 @@ void sub_0200592C(int param0);
 int sub_0200598C(void);
 BOOL sub_020059D0(int param0, u16 param1, int param2, int param3, int param4, u8 param5);
 void sub_02005E64(int param0, int param1);
-static void sub_02005EB0(UnkStruct_0201CD38 * param0, void * param1);
+static void sub_02005EB0(UnkStruct_0201CD38 *param0, void * param1);
 void sub_02005F24(void);
 void sub_02005F4C(int param0, u16 param1, int param2, int param3, int param4, u8 param5, u8 param6);
 static BOOL sub_02006038(u16 param0, u8 param1);
@@ -728,7 +728,7 @@ void sub_02005E64 (int param0, int param1)
     return;
 }
 
-static void sub_02005EB0 (UnkStruct_0201CD38 * param0, void * param1)
+static void sub_02005EB0 (UnkStruct_0201CD38 *param0, void * param1)
 {
     u8 * v0 = sub_02003D5C(16);
     u8 * v1 = sub_02003D5C(17);

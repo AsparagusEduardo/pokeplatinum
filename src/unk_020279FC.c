@@ -11,7 +11,7 @@
 #include "unk_02025E08.h"
 #include "unk_020279FC.h"
 
-UnkStruct_020279FC * sub_020279FC (u32 param0)
+UnkStruct_020279FC *sub_020279FC (u32 param0)
 {
     UnkStruct_020279FC * v0;
 
@@ -26,7 +26,7 @@ void sub_02027A10 (const UnkStruct_020279FC * param0, UnkStruct_020279FC * param
     MI_CpuCopy8(param0, param1, sizeof(UnkStruct_020279FC));
 }
 
-void sub_02027A1C (UnkStruct_020279FC * param0)
+void sub_02027A1C (UnkStruct_020279FC *param0)
 {
     MI_CpuFill8(param0, 0, sizeof(UnkStruct_020279FC));
 
@@ -38,7 +38,7 @@ void sub_02027A1C (UnkStruct_020279FC * param0)
     param0->unk_02_2 = 0;
 }
 
-void sub_02027A68 (UnkStruct_021C0794 * param0, int param1)
+void sub_02027A68 (UnkStruct_021C0794 *param0, int param1)
 {
     UnkStruct_020279FC * v0;
 
@@ -65,7 +65,7 @@ int sub_02027AA4 (const UnkStruct_020279FC * param0)
     return param0->unk_00_0;
 }
 
-void sub_02027AAC (UnkStruct_020279FC * param0, int param1)
+void sub_02027AAC (UnkStruct_020279FC *param0, int param1)
 {
     param0->unk_00_0 = param1;
 }
@@ -88,7 +88,7 @@ int sub_02027ADC (const UnkStruct_020279FC * param0)
     return param0->unk_00_4;
 }
 
-void sub_02027AE4 (UnkStruct_020279FC * param0, int param1)
+void sub_02027AE4 (UnkStruct_020279FC *param0, int param1)
 {
     param0->unk_00_4 = param1;
 }
@@ -98,7 +98,7 @@ int sub_02027AF8 (const UnkStruct_020279FC * param0)
     return param0->unk_00_7;
 }
 
-void sub_02027B00 (UnkStruct_020279FC * param0, int param1)
+void sub_02027B00 (UnkStruct_020279FC *param0, int param1)
 {
     param0->unk_00_7 = param1;
 }
@@ -108,7 +108,7 @@ int sub_02027B14 (const UnkStruct_020279FC * param0)
     return param0->unk_00_6;
 }
 
-void sub_02027B1C (UnkStruct_020279FC * param0, int param1)
+void sub_02027B1C (UnkStruct_020279FC *param0, int param1)
 {
     param0->unk_00_6 = param1;
 }
@@ -118,7 +118,7 @@ int sub_02027B30 (const UnkStruct_020279FC * param0)
     return param0->unk_02_0;
 }
 
-void sub_02027B38 (UnkStruct_020279FC * param0, int param1)
+void sub_02027B38 (UnkStruct_020279FC *param0, int param1)
 {
     param0->unk_02_0 = param1;
 }
@@ -128,7 +128,7 @@ int sub_02027B50 (const UnkStruct_020279FC * param0)
     return param0->unk_02_2;
 }
 
-void sub_02027B58 (UnkStruct_020279FC * param0, int param1)
+void sub_02027B58 (UnkStruct_020279FC *param0, int param1)
 {
     param0->unk_02_2 = param1;
 }

@@ -9,7 +9,7 @@
 #include "overlay099/ov99_021D3A40.h"
 #include "overlay099/ov99_021D4134.h"
 
-BOOL ov99_021D3A40 (UnkStruct_ov99_021D2CB0 * param0, UnkStruct_ov99_021D3A40 * param1)
+BOOL ov99_021D3A40 (UnkStruct_ov99_021D2CB0 *param0, UnkStruct_ov99_021D3A40 * param1)
 {
     UnkStruct_ov99_021D3B2C * v0 = &param1->unk_08_val4;
 
@@ -56,7 +56,7 @@ BOOL ov99_021D3A40 (UnkStruct_ov99_021D2CB0 * param0, UnkStruct_ov99_021D3A40 * 
     return 0;
 }
 
-BOOL ov99_021D3B2C (UnkStruct_ov99_021D2CB0 * param0, UnkStruct_ov99_021D3A40 * param1)
+BOOL ov99_021D3B2C (UnkStruct_ov99_021D2CB0 *param0, UnkStruct_ov99_021D3A40 * param1)
 {
     UnkStruct_ov99_021D3B2C * v0 = &param1->unk_08_val4;
 

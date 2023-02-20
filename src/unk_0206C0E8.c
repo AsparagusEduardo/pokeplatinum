@@ -37,9 +37,9 @@ typedef struct {
     u8 unk_0E;
 } UnkStruct_0206C0E8;
 
-static BOOL sub_0206C120(UnkStruct_020508D4 * param0);
+static BOOL sub_0206C120(UnkStruct_020508D4 *param0);
 
-void sub_0206C0E8 (UnkStruct_0203CDB0 * param0)
+void sub_0206C0E8 (UnkStruct_0203CDB0 *param0)
 {
     UnkStruct_0206C0E8 * v0 = Heap_AllocFromHeapAtEnd(11, sizeof(UnkStruct_0206C0E8));
 
@@ -51,7 +51,7 @@ void sub_0206C0E8 (UnkStruct_0203CDB0 * param0)
     sub_02050944(param0->unk_10, sub_0206C120, v0);
 }
 
-static BOOL sub_0206C120 (UnkStruct_020508D4 * param0)
+static BOOL sub_0206C120 (UnkStruct_020508D4 *param0)
 {
     UnkStruct_0203CDB0 * v0 = sub_02050A60(param0);
     UnkStruct_0206C0E8 * v1 = sub_02050A64(param0);

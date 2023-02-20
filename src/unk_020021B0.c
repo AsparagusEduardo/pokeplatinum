@@ -35,7 +35,7 @@ static const int Unk_020E4CA8[] = {
     1000000000,
 };
 
-u16 * sub_020021B0 (u16 * param0, const u16 * param1)
+u16 *sub_020021B0 (u16 * param0, const u16 * param1)
 {
     while (*param1 != 0xffff) {
         *param0 = *param1;
@@ -47,7 +47,7 @@ u16 * sub_020021B0 (u16 * param0, const u16 * param1)
     return param0;
 }
 
-u16 * sub_020021D0 (u16 * param0, const u16 * param1, u32 param2)
+u16 *sub_020021D0 (u16 * param0, const u16 * param1, u32 param2)
 {
     u32 v0;
 
@@ -102,7 +102,7 @@ BOOL sub_02002238 (const u16 * param0, const u16 * param1, u32 param2)
     return 1;
 }
 
-u16 * sub_02002278 (u16 * param0, u16 param1, u32 param2)
+u16 *sub_02002278 (u16 * param0, u16 param1, u32 param2)
 {
     u32 v0;
 
@@ -113,12 +113,12 @@ u16 * sub_02002278 (u16 * param0, u16 param1, u32 param2)
     return &param0[v0];
 }
 
-u16 * sub_02002294 (u16 * param0, u32 param1)
+u16 *sub_02002294 (u16 * param0, u32 param1)
 {
     return sub_02002278(param0, 0xffff, param1);
 }
 
-u16 * sub_020022A4 (u16 * param0, s32 param1, u32 param2, u32 param3)
+u16 *sub_020022A4 (u16 * param0, s32 param1, u32 param2, u32 param3)
 {
     u32 v0;
     u32 v1;

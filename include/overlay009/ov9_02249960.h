@@ -27,7 +27,7 @@ void ov9_0224F158(UnkStruct_0203CDB0 * param0, u16 param1);
 void ov9_0224F16C(UnkStruct_0203CDB0 * param0, u16 param1);
 BOOL ov9_0224F240(const UnkStruct_02061AB4 * param0, int param1);
 BOOL ov9_0224F2B0(const UnkStruct_02061AB4 * param0);
-UnkStruct_ov9_0224F6EC * ov9_0224F2BC(UnkStruct_0203CDB0 * param0, UnkStruct_020508D4 * param1, UnkStruct_02061AB4 * param2);
+UnkStruct_ov9_0224F6EC *ov9_0224F2BC(UnkStruct_0203CDB0 * param0, UnkStruct_020508D4 * param1, UnkStruct_02061AB4 * param2);
 BOOL ov9_0224F6EC(UnkStruct_ov9_0224F6EC * param0);
 void ov9_02250780(UnkStruct_0203CDB0 * param0);
 BOOL ov9_02250F74(UnkStruct_0203CDB0 * param0);

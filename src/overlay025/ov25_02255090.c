@@ -26,10 +26,10 @@ struct UnkStruct_ov25_02255224_t {
     UnkStruct_0201CD38 * unk_14;
 };
 
-static BOOL ov25_022550B0(u32 * param0, u32 param1);
-static void ov25_022550F0(u32 * param0, u32 param1);
+static BOOL ov25_022550B0(u32 *param0, u32 param1);
+static void ov25_022550F0(u32 *param0, u32 param1);
 
-void ov25_02255090 (u32 * param0, u32 param1)
+void ov25_02255090 (u32 *param0, u32 param1)
 {
     u32 v0;
 
@@ -41,7 +41,7 @@ void ov25_02255090 (u32 * param0, u32 param1)
     }
 }
 
-static BOOL ov25_022550B0 (u32 * param0, u32 param1)
+static BOOL ov25_022550B0 (u32 *param0, u32 param1)
 {
     u32 v0;
 
@@ -57,7 +57,7 @@ static BOOL ov25_022550B0 (u32 * param0, u32 param1)
     return 0;
 }
 
-static void ov25_022550F0 (u32 * param0, u32 param1)
+static void ov25_022550F0 (u32 *param0, u32 param1)
 {
     u32 v0;
 
@@ -73,7 +73,7 @@ static void ov25_022550F0 (u32 * param0, u32 param1)
     GF_ASSERT(0);
 }
 
-BOOL ov25_02255130 (u32 * param0, u32 param1)
+BOOL ov25_02255130 (u32 *param0, u32 param1)
 {
     u32 v0;
 
@@ -86,7 +86,7 @@ BOOL ov25_02255130 (u32 * param0, u32 param1)
     return 1;
 }
 
-BOOL ov25_02255154 (u32 * param0)
+BOOL ov25_02255154 (u32 *param0)
 {
     u32 v0;
 
@@ -143,7 +143,7 @@ void ov25_0225517C (const UnkStruct_ov25_0225517C * param0, u32 param1, void * p
     GF_ASSERT(0);
 }
 
-void ov25_02255224 (u32 * param0, UnkStruct_ov25_02255224 * param1)
+void ov25_02255224 (u32 *param0, UnkStruct_ov25_02255224 * param1)
 {
     ov25_022550F0(param0, param1->unk_00);
 
@@ -151,37 +151,37 @@ void ov25_02255224 (u32 * param0, UnkStruct_ov25_02255224 * param1)
     Heap_FreeToHeap(param1);
 }
 
-void * ov25_0225523C (UnkStruct_ov25_02255224 * param0)
+void *ov25_0225523C (UnkStruct_ov25_02255224 * param0)
 {
     return param0->unk_08;
 }
 
-const void * ov25_02255240 (UnkStruct_ov25_02255224 * param0)
+const void *ov25_02255240 (UnkStruct_ov25_02255224 *param0)
 {
     return param0->unk_10;
 }
 
-void * ov25_02255244 (UnkStruct_ov25_02255224 * param0)
+void *ov25_02255244 (UnkStruct_ov25_02255224 * param0)
 {
     return param0->unk_0C;
 }
 
-u32 ov25_02255248 (UnkStruct_ov25_02255224 * param0)
+u32 ov25_02255248 (UnkStruct_ov25_02255224 *param0)
 {
     return param0->unk_04;
 }
 
-void ov25_0225524C (UnkStruct_ov25_02255224 * param0)
+void ov25_0225524C (UnkStruct_ov25_02255224 *param0)
 {
     param0->unk_04++;
 }
 
-void ov25_02255254 (UnkStruct_ov25_02255224 * param0, u32 param1)
+void ov25_02255254 (UnkStruct_ov25_02255224 *param0, u32 param1)
 {
     param0->unk_04 = param1;
 }
 
-void ov25_02255258 (u16 * param0, u32 param1, u32 param2, u32 param3, u32 param4, u32 param5, u32 param6)
+void ov25_02255258 (u16 *param0, u32 param1, u32 param2, u32 param3, u32 param4, u32 param5, u32 param6)
 {
     param6 <<= 12;
     param0 += ((param3 * param2) + param1);
@@ -191,7 +191,7 @@ void ov25_02255258 (u16 * param0, u32 param1, u32 param2, u32 param3, u32 param4
     param0[param3 + 1] = param6 | (param4 + param5 + 1);
 }
 
-void ov25_02255290 (u16 * param0, u32 param1)
+void ov25_02255290 (u16 *param0, u32 param1)
 {
     u16 * v0;
 
@@ -294,7 +294,7 @@ void ov25_022553A0 (u32 param0, const u32 * param1, u32 param2, BOOL param3)
     }
 }
 
-void ov25_02255440 (UnkStruct_02018340 * param0, u32 param1, u32 param2)
+void ov25_02255440 (UnkStruct_02018340 *param0, u32 param1, u32 param2)
 {
     u16 v0[4];
     u32 v1;

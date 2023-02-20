@@ -219,7 +219,7 @@ void ov5_021D5B40 (const VecFx32 * param0, UnkStruct_0203CDB0 * param1, const in
     }
 }
 
-void ov5_021D5BA8 (UnkStruct_0203CDB0 * param0)
+void ov5_021D5BA8 (UnkStruct_0203CDB0 *param0)
 {
     sub_020203E0();
     sub_02020390(param0->unk_24);

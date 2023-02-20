@@ -49,23 +49,23 @@
 static int sub_020581CC(int param0, int param1);
 static BOOL sub_02058A18(int param0, int param1);
 static BOOL sub_020586A8(int param0, int param1, int param2, int param3);
-static void sub_02057BC4(void * param0);
-static void sub_02057C2C(void * param0);
+static void sub_02057BC4(void *param0);
+static void sub_02057C2C(void *param0);
 static void sub_02057C8C(u8 param0);
-static void sub_0205820C(UnkStruct_0201CD38 * param0, void * param1);
-static void sub_02057E80(UnkStruct_0201CD38 * param0, void * param1);
-static void sub_02057EF8(void * param0);
+static void sub_0205820C(UnkStruct_0201CD38 *param0, void * param1);
+static void sub_02057E80(UnkStruct_0201CD38 *param0, void * param1);
+static void sub_02057EF8(void *param0);
 static void sub_020587C0(int param0);
 static void sub_020591A8(void);
 
 static UnkStruct_ov23_0224A294 * Unk_021C0848 = NULL;
 
-UnkStruct_ov23_0224A294 * sub_02057518 (void)
+UnkStruct_ov23_0224A294 *sub_02057518 (void)
 {
     return Unk_021C0848;
 }
 
-BOOL sub_02057524 (void * param0, UnkStruct_0203CDB0 * param1, BOOL param2)
+BOOL sub_02057524 (void *param0, UnkStruct_0203CDB0 * param1, BOOL param2)
 {
     int v0, v1;
 
@@ -346,7 +346,7 @@ static void sub_02057B48 (int param0, const UnkStruct_02057B48 * param1)
     sub_02035AC4(23, v0, 0);
 }
 
-void sub_02057BC4 (void * param0)
+void sub_02057BC4 (void *param0)
 {
     int v0 = sub_0205EB0C(Unk_021C0848->unk_54->unk_3C);
     int v1 = sub_0205EB14(Unk_021C0848->unk_54->unk_3C);
@@ -363,7 +363,7 @@ void sub_02057BC4 (void * param0)
     }
 }
 
-static void sub_02057C2C (void * param0)
+static void sub_02057C2C (void *param0)
 {
     int v0;
 
@@ -505,7 +505,7 @@ static void sub_02057E68 ()
     sub_02035E5C(v0);
 }
 
-static void sub_02057E80 (UnkStruct_0201CD38 * param0, void * param1)
+static void sub_02057E80 (UnkStruct_0201CD38 *param0, void * param1)
 {
     int v0;
 
@@ -537,7 +537,7 @@ static void sub_02057E80 (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-static void sub_02057EF8 (void * param0)
+static void sub_02057EF8 (void *param0)
 {
     int v0, v1;
 
@@ -615,7 +615,7 @@ void sub_02058018 (int param0, int param1, void * param2, void * param3)
     }
 }
 
-void sub_0205805C (UnkStruct_0203CDB0 * param0, BOOL param1)
+void sub_0205805C (UnkStruct_0203CDB0 *param0, BOOL param1)
 {
     if (Unk_021C0848 == NULL) {
         return;
@@ -729,7 +729,7 @@ static int sub_020581E0 (int param0)
     return v0[param0];
 }
 
-static void sub_0205820C (UnkStruct_0201CD38 * param0, void * param1)
+static void sub_0205820C (UnkStruct_0201CD38 *param0, void * param1)
 {
     u16 v0;
     u8 v1;

@@ -33,9 +33,9 @@ typedef struct UnkStruct_ov70_0226C6F8_t {
 static u32 ov70_0226C81C(PPW_LOBBY_TIME_EVENT param0);
 static u32 ov70_0226C848(PPW_LOBBY_TIME_EVENT param0);
 static u32 ov70_0226C87C(PPW_LOBBY_TIME_EVENT param0);
-static void ov70_0226C8A8(UnkStruct_ov70_0226C6F8 * param0);
+static void ov70_0226C8A8(UnkStruct_ov70_0226C6F8 *param0);
 
-UnkStruct_ov70_0226C6F8 * ov70_0226C60C (u32 param0, UnkStruct_ov70_0225DEE8 * param1)
+UnkStruct_ov70_0226C6F8 *ov70_0226C60C (u32 param0, UnkStruct_ov70_0225DEE8 * param1)
 {
     UnkStruct_ov70_0226C6F8 * v0;
     u32 v1, v2, v3;
@@ -95,7 +95,7 @@ UnkStruct_ov70_0226C6F8 * ov70_0226C60C (u32 param0, UnkStruct_ov70_0225DEE8 * p
     return v0;
 }
 
-void ov70_0226C6F8 (UnkStruct_ov70_0226C6F8 * param0)
+void ov70_0226C6F8 (UnkStruct_ov70_0226C6F8 *param0)
 {
     ov70_0226C914(param0->unk_18);
     ov70_0226CF38(param0->unk_14);
@@ -104,7 +104,7 @@ void ov70_0226C6F8 (UnkStruct_ov70_0226C6F8 * param0)
     Heap_FreeToHeap(param0);
 }
 
-void ov70_0226C718 (UnkStruct_ov70_0226C6F8 * param0)
+void ov70_0226C718 (UnkStruct_ov70_0226C6F8 *param0)
 {
     if (ov66_0222E084(param0->unk_04, 1)) {
         u32 v0;
@@ -216,7 +216,7 @@ static u32 ov70_0226C87C (PPW_LOBBY_TIME_EVENT param0)
     return 0;
 }
 
-static void ov70_0226C8A8 (UnkStruct_ov70_0226C6F8 * param0)
+static void ov70_0226C8A8 (UnkStruct_ov70_0226C6F8 *param0)
 {
     NNS_G3dGlbLightColor(2, GX_RGB(0, 0, 0));
 }

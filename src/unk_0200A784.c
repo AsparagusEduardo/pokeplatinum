@@ -92,7 +92,7 @@ void sub_0200A878 (void)
     Unk_021BF430 = NULL;
 }
 
-void sub_0200A8B0 (NNSG2dRenderSurface * param0, NNSG2dViewRect * param1, NNSG2dSurfaceType param2, NNSG2dRendererInstance * param3)
+void sub_0200A8B0 (NNSG2dRenderSurface *param0, NNSG2dViewRect * param1, NNSG2dSurfaceType param2, NNSG2dRendererInstance * param3)
 {
     GF_ASSERT(Unk_021BF430);
 
@@ -103,7 +103,7 @@ void sub_0200A8B0 (NNSG2dRenderSurface * param0, NNSG2dViewRect * param1, NNSG2d
     }
 }
 
-NNSG2dOamManagerInstance * sub_0200A914 (int param0)
+NNSG2dOamManagerInstance *sub_0200A914 (int param0)
 {
     NNSG2dOamManagerInstance * v0;
 

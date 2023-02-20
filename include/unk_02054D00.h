@@ -13,7 +13,7 @@ BOOL sub_02054F68(const UnkStruct_0203CDB0 * param0, const int param1, const int
 u8 sub_02054F94(const UnkStruct_0203CDB0 * param0, const int param1, const int param2);
 const fx32 sub_02054FBC(const UnkStruct_0203CDB0 * param0, const fx32 param1, const fx32 param2, const fx32 param3, u8 * param4);
 BOOL sub_02055024(const UnkStruct_0203CDB0 * param0, const VecFx32 * param1, const int param2, const int param3, s8 * param4);
-BOOL sub_0205507C(UnkStruct_0203CDB0 * param0, const VecFx32 * param1, const int param2, const int param3, s8 * param4);
+BOOL sub_0205507C(UnkStruct_0203CDB0 *param0, const VecFx32 * param1, const int param2, const int param3, s8 * param4);
 void sub_020550F4(const int param0, const int param1, const int param2, const int param3, const u32 param4, const u32 param5, UnkStruct_02055130 * param6);
 BOOL sub_02055130(const UnkStruct_ov5_021E1890 * param0, const UnkStruct_02055130 * param1, const VecFx32 * param2);
 BOOL sub_02055178(const UnkStruct_0203CDB0 * param0, const int param1, const UnkStruct_02055130 * param2, UnkStruct_ov5_021E1890 ** param3);

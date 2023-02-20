@@ -22,7 +22,7 @@ int Party_sizeof (void)
     return sizeof(Party);
 }
 
-Party * sub_02079FF4 (u32 param0)
+Party *sub_02079FF4 (u32 param0)
 {
     Party * v0;
 
@@ -32,12 +32,12 @@ Party * sub_02079FF4 (u32 param0)
     return v0;
 }
 
-void sub_0207A008 (Party * param0)
+void sub_0207A008 (Party *param0)
 {
     Party_InitWithCapacity(param0, 6);
 }
 
-void Party_InitWithCapacity (Party * party, int capacity)
+void Party_InitWithCapacity (Party *party, int capacity)
 {
     int i;
 
@@ -52,7 +52,7 @@ void Party_InitWithCapacity (Party * party, int capacity)
     }
 }
 
-BOOL Party_AddPokemon (Party * party, UnkStruct_02073C74 * pokemon)
+BOOL Party_AddPokemon (Party *party, UnkStruct_02073C74 * pokemon)
 {
     if (party->currentCount >= party->capacity) {
         return FALSE;
@@ -64,7 +64,7 @@ BOOL Party_AddPokemon (Party * party, UnkStruct_02073C74 * pokemon)
     return TRUE;
 }
 
-BOOL Party_RemovePokemonBySlotIndex (Party * party, int slot)
+BOOL Party_RemovePokemonBySlotIndex (Party *party, int slot)
 {
     int i;
 
@@ -91,13 +91,13 @@ int Party_GetCurrentCount (const Party * party)
     return party->currentCount;
 }
 
-UnkStruct_02073C74 * Party_GetPokemonBySlotIndex (const Party * party, int slot)
+UnkStruct_02073C74 *Party_GetPokemonBySlotIndex (const Party * party, int slot)
 {
     PARTY_ASSERT_SLOT(party, slot);
     return (UnkStruct_02073C74 *)&party->pokemon[slot];
 }
 
-void sub_0207A128 (Party * party, int slot, UnkStruct_02073C74 * param2)
+void sub_0207A128 (Party *party, int slot, UnkStruct_02073C74 * param2)
 {
     int v0;
 
@@ -108,7 +108,7 @@ void sub_0207A128 (Party * party, int slot, UnkStruct_02073C74 * param2)
     party->currentCount += v0;
 }
 
-BOOL Party_SwapSlots (Party * party, int slotA, int slotB)
+BOOL Party_SwapSlots (Party *party, int slotA, int slotB)
 {
     struct UnkStruct_02073C74_t * tempPokemon;
 
@@ -144,7 +144,7 @@ BOOL Party_HasSpecies (const Party * party, int species)
     return i != party->currentCount;
 }
 
-Party * Party_GetFromSavedata (UnkStruct_021C0794 * param0)
+Party *Party_GetFromSavedata (UnkStruct_021C0794 * param0)
 {
     Party * v0;
 

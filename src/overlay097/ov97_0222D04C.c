@@ -38,7 +38,7 @@ typedef struct {
     u8 unk_3C1[16];
 } UnkStruct_ov97_0223F1A4;
 
-static void ov97_0222D19C(UnkStruct_0201CD38 * param0, void * param1);
+static void ov97_0222D19C(UnkStruct_0201CD38 *param0, void * param1);
 static void ov97_0222D0B4(void);
 static void ov97_0222D0F0(void);
 static void ov97_0222D128(void);
@@ -49,7 +49,7 @@ static void ov97_0222D198(void);
 
 static UnkStruct_ov97_0223F1A4 * Unk_ov97_0223F1A4 = NULL;
 
-static void ov97_0222D04C (UnkStruct_ov97_0222D04C * param0)
+static void ov97_0222D04C (UnkStruct_ov97_0222D04C *param0)
 {
     void * v0;
 
@@ -145,7 +145,7 @@ static void ov97_0222D198 (void)
     return;
 }
 
-void ov97_0222D19C (UnkStruct_0201CD38 * param0, void * param1)
+void ov97_0222D19C (UnkStruct_0201CD38 *param0, void * param1)
 {
     if (Unk_ov97_0223F1A4 == NULL) {
         sub_0200DA58(param0);
@@ -160,7 +160,7 @@ void ov97_0222D19C (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-void ov97_0222D1C4 (UnkStruct_ov97_0222D04C * param0, UnkStruct_021C0794 * param1, int param2)
+void ov97_0222D1C4 (UnkStruct_ov97_0222D04C *param0, UnkStruct_021C0794 * param1, int param2)
 {
     if (sub_02035E38()) {
         return;
@@ -177,7 +177,7 @@ void ov97_0222D1F0 (const void * param0, int param1)
     sub_02035A3C(22, param0, param1);
 }
 
-void ov97_0222D200 (UnkStruct_ov97_0222D04C * param0, int param1)
+void ov97_0222D200 (UnkStruct_ov97_0222D04C *param0, int param1)
 {
     UnkStruct_021C0794 * v0;
 
@@ -198,7 +198,7 @@ void ov97_0222D234 (int param0)
     ov97_0222D0A4(ov97_0222D144, 0);
 }
 
-int ov97_0222D250 (UnkStruct_ov97_0222D04C * param0)
+int ov97_0222D250 (UnkStruct_ov97_0222D04C *param0)
 {
     int v0;
     UnkStruct_ov97_0222D250 * v1;
@@ -236,7 +236,7 @@ int ov97_0222D2B0 (void)
     return sizeof(UnkUnion_ov97_0222D2B0);
 }
 
-u8 * ov97_0222D2B8 (int param0, void * param1, int param2)
+u8 *ov97_0222D2B8 (int param0, void * param1, int param2)
 {
     return (u8 *)&Unk_ov97_0223F1A4->unk_68;
 }

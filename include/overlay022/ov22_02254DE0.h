@@ -7,9 +7,9 @@
 
 #include <nnsys.h>
 
-UnkStruct_ov22_02254DE0 * ov22_02254DE0(int param0, int param1);
+UnkStruct_ov22_02254DE0 *ov22_02254DE0(int param0, int param1);
 void ov22_02254E0C(UnkStruct_ov22_02254DE0 * param0);
-UnkStruct_ov22_02255040 * ov22_02254E20(UnkStruct_ov22_0225500C * param0);
+UnkStruct_ov22_02255040 *ov22_02254E20(UnkStruct_ov22_0225500C * param0);
 BOOL ov22_02254E44(UnkStruct_ov22_02255040 * param0);
 BOOL ov22_02254E54(UnkStruct_ov22_02255040 * param0, int * param1, int * param2, NNSG2dCharacterData * param3);
 BOOL ov22_02254EDC(UnkStruct_ov22_02255040 * param0, int param1, int param2);

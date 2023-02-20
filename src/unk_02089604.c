@@ -19,7 +19,7 @@
 #include "unk_02089604.h"
 #include "unk_0208A3F4.h"
 
-void sub_02089604 (UnkStruct_02089688 * param0, int param1)
+void sub_02089604 (UnkStruct_02089688 *param0, int param1)
 {
     int v0;
 
@@ -41,7 +41,7 @@ void sub_02089604 (UnkStruct_02089688 * param0, int param1)
     }
 }
 
-asm void sub_02089688 (UnkStruct_02089688 * param0)
+asm void sub_02089688 (UnkStruct_02089688 *param0)
 {
     push {r3, r4, r5, r6, r7, lr}
     add r4, r0, #0
@@ -245,7 +245,7 @@ asm void sub_02089688 (UnkStruct_02089688 * param0)
     nop
 }
 
-void sub_02089808 (UnkStruct_02089688 * param0, int param1)
+void sub_02089808 (UnkStruct_02089688 *param0, int param1)
 {
     param0->unk_294 = param1;
     param0->unk_298 = 0;
@@ -253,7 +253,7 @@ void sub_02089808 (UnkStruct_02089688 * param0, int param1)
     param0->unk_2A0 = 0;
 }
 
-BOOL sub_02089820 (UnkStruct_02089688 * param0)
+BOOL sub_02089820 (UnkStruct_02089688 *param0)
 {
     sub_0208A490(param0);
     sub_0208ADA4(param0);
@@ -281,7 +281,7 @@ BOOL sub_02089820 (UnkStruct_02089688 * param0)
     return 0;
 }
 
-BOOL sub_020898DC (UnkStruct_02089688 * param0)
+BOOL sub_020898DC (UnkStruct_02089688 *param0)
 {
     switch (param0->unk_29C) {
     case 0:
@@ -300,7 +300,7 @@ BOOL sub_020898DC (UnkStruct_02089688 * param0)
     return 0;
 }
 
-BOOL sub_02089938 (UnkStruct_02089688 * param0)
+BOOL sub_02089938 (UnkStruct_02089688 *param0)
 {
     switch (param0->unk_29C) {
     case 0:
@@ -318,7 +318,7 @@ BOOL sub_02089938 (UnkStruct_02089688 * param0)
     return 0;
 }
 
-BOOL sub_02089974 (UnkStruct_02089688 * param0)
+BOOL sub_02089974 (UnkStruct_02089688 *param0)
 {
     int v0;
     static f32 v1[] = {
@@ -430,7 +430,7 @@ static BOOL(*const Unk_020F2EB8[])(UnkStruct_02089688 *) = {
     sub_020898DC,
 };
 
-BOOL sub_02089BEC (UnkStruct_02089688 * param0)
+BOOL sub_02089BEC (UnkStruct_02089688 *param0)
 {
     BOOL v0;
 
@@ -449,7 +449,7 @@ const int Unk_020F2EC8[][5] = {
 
 extern void _s32_div_f(void);
 
-asm void sub_02089C20 (UnkStruct_02089688 * param0)
+asm void sub_02089C20 (UnkStruct_02089688 *param0)
 {
     push {r3, r4, r5, r6, r7, lr}
     sub sp, #0x40
@@ -891,7 +891,7 @@ asm void sub_02089C20 (UnkStruct_02089688 * param0)
     pop {r3, r4, r5, r6, r7, pc}
 }
 
-void sub_02089F80 (UnkStruct_02089688 * param0)
+void sub_02089F80 (UnkStruct_02089688 *param0)
 {
     int v0;
     u32 v1 = 0;
@@ -915,7 +915,7 @@ void sub_02089F80 (UnkStruct_02089688 * param0)
     sub_02089808(param0, 3);
 }
 
-void sub_02089FFC (UnkStruct_02089688 * param0)
+void sub_02089FFC (UnkStruct_02089688 *param0)
 {
     int v0;
     int v1;
@@ -958,7 +958,7 @@ void sub_02089FFC (UnkStruct_02089688 * param0)
     }
 }
 
-void sub_0208A0B8 (UnkStruct_02089688 * param0)
+void sub_0208A0B8 (UnkStruct_02089688 *param0)
 {
     int v0;
 
@@ -1085,7 +1085,7 @@ void sub_0208A180 (u32 param0, u32 param1, void * param2)
     }
 }
 
-void sub_0208A328 (UnkStruct_02089688 * param0)
+void sub_0208A328 (UnkStruct_02089688 *param0)
 {
     switch (param0->unk_380.unk_00) {
     case 0:
@@ -1106,14 +1106,14 @@ void sub_0208A328 (UnkStruct_02089688 * param0)
     }
 }
 
-void sub_0208A384 (UnkStruct_02089688 * param0)
+void sub_0208A384 (UnkStruct_02089688 *param0)
 {
     param0->unk_380.unk_00 = 0;
     param0->unk_380.unk_04 = 0;
     param0->unk_380.unk_08 = 0;
 }
 
-int sub_0208A398 (UnkStruct_02089688 * param0, int param1)
+int sub_0208A398 (UnkStruct_02089688 *param0, int param1)
 {
     int v0;
 
@@ -1126,7 +1126,7 @@ int sub_0208A398 (UnkStruct_02089688 * param0, int param1)
     return 0;
 }
 
-int sub_0208A3C0 (UnkStruct_02089688 * param0, int param1)
+int sub_0208A3C0 (UnkStruct_02089688 *param0, int param1)
 {
     int v0;
     int v1 = 0;

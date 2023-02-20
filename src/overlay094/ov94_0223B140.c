@@ -566,7 +566,7 @@ void ov94_0223B834 (void)
     }
 }
 
-void ov94_0223B888 (UnkStruct_ov94_0223BA88 * param0)
+void ov94_0223B888 (UnkStruct_ov94_0223BA88 *param0)
 {
     Unk_ov94_02246AC0.unk_140 = (u8 *)param0;
 
@@ -581,7 +581,7 @@ void ov94_0223B888 (UnkStruct_ov94_0223BA88 * param0)
     }
 }
 
-void ov94_0223B8D8 (UnkStruct_ov94_0223BA88 * param0)
+void ov94_0223B8D8 (UnkStruct_ov94_0223BA88 *param0)
 {
     Unk_ov94_02246AC0.unk_140 = (u8 *)param0;
 

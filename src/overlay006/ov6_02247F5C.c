@@ -12,9 +12,9 @@
 #include "overlay005/ov5_021D37AC.h"
 #include "overlay006/ov6_02247F5C.h"
 
-static BOOL ov6_02247FD0(UnkStruct_020508D4 * param0);
+static BOOL ov6_02247FD0(UnkStruct_020508D4 *param0);
 
-void ov6_02247F5C (UnkStruct_0203CDB0 * param0)
+void ov6_02247F5C (UnkStruct_0203CDB0 *param0)
 {
     UnkStruct_ov5_021D3CE4 * v0;
 
@@ -32,12 +32,12 @@ void ov6_02247F5C (UnkStruct_0203CDB0 * param0)
     }
 }
 
-void ov6_02247FBC (UnkStruct_0203CDB0 * param0)
+void ov6_02247FBC (UnkStruct_0203CDB0 *param0)
 {
     sub_02050944(param0->unk_10, ov6_02247FD0, NULL);
 }
 
-static BOOL ov6_02247FD0 (UnkStruct_020508D4 * param0)
+static BOOL ov6_02247FD0 (UnkStruct_020508D4 *param0)
 {
     int * v0;
     UnkStruct_ov5_021D3CE4 * v1;

@@ -169,7 +169,7 @@ void sub_020133D4 (int param0, int param1, int param2, int param3, int param4, i
     Heap_FreeToHeap(v0);
 }
 
-void * sub_020134A8 (int param0, int param1, int param2, int param3, int param4, int param5, int param6)
+void *sub_020134A8 (int param0, int param1, int param2, int param3, int param4, int param5, int param6)
 {
     void * v0;
     int v1;
@@ -253,7 +253,7 @@ void sub_02013610 (int param0, int param1, int param2, void * param3)
     sub_020135F0(param0, param1, param2, &v0, param3);
 }
 
-void * sub_0201363C (int param0, int param1, int param2)
+void *sub_0201363C (int param0, int param1, int param2)
 {
     void * v0 = NULL;
     int v1;
@@ -266,7 +266,7 @@ void * sub_0201363C (int param0, int param1, int param2)
     return v0;
 }
 
-void * sub_02013660 (int param0, int param1, int param2)
+void *sub_02013660 (int param0, int param1, int param2)
 {
     NNSG2dPaletteData * v0;
     void * v1;

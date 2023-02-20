@@ -10,7 +10,7 @@
 #include "unk_02034198.h"
 #include "unk_02038F8C.h"
 
-void sub_02038F8C (UnkStruct_0202C878 * param0)
+void sub_02038F8C (UnkStruct_0202C878 *param0)
 {
     int v0;
     int v1, v2, v3;
@@ -33,7 +33,7 @@ void sub_02038F8C (UnkStruct_0202C878 * param0)
     }
 }
 
-void sub_02038FDC (UnkStruct_0202C878 * param0, int param1, int param2, int param3)
+void sub_02038FDC (UnkStruct_0202C878 *param0, int param1, int param2, int param3)
 {
     if (sub_0202C8C8(param0, param1, param2) == 0) {
         sub_0202C918(param0, param1, param2, 1);

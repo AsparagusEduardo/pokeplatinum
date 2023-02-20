@@ -39,20 +39,20 @@ typedef struct UnkStruct_02023350_t {
     u8 * unk_74;
 } UnkStruct_02023350;
 
-static void sub_02023350(UnkStruct_02023350 * param0, u32 param1, u32 param2, BOOL param3, u32 param4);
-static void sub_02023408(UnkStruct_02023350 * param0);
-static void sub_02023424(UnkStruct_02023350 * param0, int param1, u32 param2);
-static void sub_0202343C(UnkStruct_02023350 * param0, u32 param1);
-static void sub_0202346C(UnkStruct_02023350 * param0, u32 param1);
-static void sub_02023478(UnkStruct_02023350 * param0);
-static void sub_0202348C(UnkStruct_02023350 * param0);
-static void sub_0202349C(UnkStruct_02023350 * param0);
+static void sub_02023350(UnkStruct_02023350 *param0, u32 param1, u32 param2, BOOL param3, u32 param4);
+static void sub_02023408(UnkStruct_02023350 *param0);
+static void sub_02023424(UnkStruct_02023350 *param0, int param1, u32 param2);
+static void sub_0202343C(UnkStruct_02023350 *param0, u32 param1);
+static void sub_0202346C(UnkStruct_02023350 *param0, u32 param1);
+static void sub_02023478(UnkStruct_02023350 *param0);
+static void sub_0202348C(UnkStruct_02023350 *param0);
+static void sub_0202349C(UnkStruct_02023350 *param0);
 static void sub_020234BC(const UnkStruct_02023350 * param0, u16 param1, UnkStruct_02002328 * param2);
 static void sub_02023564(const UnkStruct_02023350 * param0, u16 param1, UnkStruct_02002328 * param2);
 static u8 sub_020236B0(const UnkStruct_02023350 * param0, u32 param1);
 static u8 sub_020236C8(const UnkStruct_02023350 * param0, u32 param1);
 
-UnkStruct_02023350 * sub_020232E0 (u32 param0, u32 param1, int param2, BOOL param3, u32 param4)
+UnkStruct_02023350 *sub_020232E0 (u32 param0, u32 param1, int param2, BOOL param3, u32 param4)
 {
     UnkStruct_02023350 * v0 = Heap_AllocFromHeap(param4, sizeof(UnkStruct_02023350));
 
@@ -64,14 +64,14 @@ UnkStruct_02023350 * sub_020232E0 (u32 param0, u32 param1, int param2, BOOL para
     return v0;
 }
 
-void sub_02023318 (UnkStruct_02023350 * param0)
+void sub_02023318 (UnkStruct_02023350 *param0)
 {
     sub_02023478(param0);
     sub_02023408(param0);
     Heap_FreeToHeap(param0);
 }
 
-void sub_02023330 (UnkStruct_02023350 * param0, int param1, u32 param2)
+void sub_02023330 (UnkStruct_02023350 *param0, int param1, u32 param2)
 {
     if (param0->unk_00 != param1) {
         sub_02023478(param0);
@@ -79,7 +79,7 @@ void sub_02023330 (UnkStruct_02023350 * param0, int param1, u32 param2)
     }
 }
 
-static void sub_02023350 (UnkStruct_02023350 * param0, u32 param1, u32 param2, BOOL param3, u32 param4)
+static void sub_02023350 (UnkStruct_02023350 *param0, u32 param1, u32 param2, BOOL param3, u32 param4)
 {
     param0->unk_54 = NARC_ctor(param1, param4);
 
@@ -116,7 +116,7 @@ static void sub_02023350 (UnkStruct_02023350 * param0, u32 param1, u32 param2, B
     }
 }
 
-static void sub_02023408 (UnkStruct_02023350 * param0)
+static void sub_02023408 (UnkStruct_02023350 *param0)
 {
     if (param0->unk_74) {
         Heap_FreeToHeap(param0->unk_74);
@@ -127,7 +127,7 @@ static void sub_02023408 (UnkStruct_02023350 * param0)
     }
 }
 
-static void sub_02023424 (UnkStruct_02023350 * param0, int param1, u32 param2)
+static void sub_02023424 (UnkStruct_02023350 *param0, int param1, u32 param2)
 {
     static void(*const v0[])(UnkStruct_02023350 *, u32) = {
         sub_0202343C, sub_0202346C,
@@ -137,7 +137,7 @@ static void sub_02023424 (UnkStruct_02023350 * param0, int param1, u32 param2)
     v0[param1](param0, param2);
 }
 
-static void sub_0202343C (UnkStruct_02023350 * param0, u32 param1)
+static void sub_0202343C (UnkStruct_02023350 *param0, u32 param1)
 {
     u32 v0 = param0->unk_0C * param0->unk_5C.unk_08;
 
@@ -147,12 +147,12 @@ static void sub_0202343C (UnkStruct_02023350 * param0, u32 param1)
     NARC_ReadFromMember(param0->unk_54, param0->unk_58, param0->unk_5C.unk_00, v0, param0->unk_10);
 }
 
-static void sub_0202346C (UnkStruct_02023350 * param0, u32 param1)
+static void sub_0202346C (UnkStruct_02023350 *param0, u32 param1)
 {
     param0->unk_04 = sub_02023564;
 }
 
-static void sub_02023478 (UnkStruct_02023350 * param0)
+static void sub_02023478 (UnkStruct_02023350 *param0)
 {
     static void(*const v0[])(UnkStruct_02023350 *) = {
         sub_0202348C,
@@ -162,13 +162,13 @@ static void sub_02023478 (UnkStruct_02023350 * param0)
     v0[param0->unk_00](param0);
 }
 
-static void sub_0202348C (UnkStruct_02023350 * param0)
+static void sub_0202348C (UnkStruct_02023350 *param0)
 {
     Heap_FreeToHeap(param0->unk_10);
     param0->unk_10 = NULL;
 }
 
-static void sub_0202349C (UnkStruct_02023350 * param0)
+static void sub_0202349C (UnkStruct_02023350 *param0)
 {
     (void)0;
 }

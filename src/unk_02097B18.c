@@ -67,9 +67,9 @@ typedef struct {
     int unk_14;
 } UnkStruct_02097F38;
 
-static int sub_02097B18(UnkStruct_020067E8 * param0, int * param1);
-static int sub_02097D30(UnkStruct_020067E8 * param0, int * param1);
-static int sub_02097D88(UnkStruct_020067E8 * param0, int * param1);
+static int sub_02097B18(UnkStruct_020067E8 *param0, int * param1);
+static int sub_02097D30(UnkStruct_020067E8 *param0, int * param1);
+static int sub_02097D88(UnkStruct_020067E8 *param0, int * param1);
 
 const UnkStruct_0208BE5C Unk_020F64C0 = {
     sub_02097B18,
@@ -78,7 +78,7 @@ const UnkStruct_0208BE5C Unk_020F64C0 = {
     FS_OVERLAY_ID(overlay76),
 };
 
-static int sub_02097B18 (UnkStruct_020067E8 * param0, int * param1)
+static int sub_02097B18 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_ov76_0223DE00 * v0;
     UnkStruct_02097F18 * v1;
@@ -188,7 +188,7 @@ static int sub_02097B18 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-static int sub_02097D30 (UnkStruct_020067E8 * param0, int * param1)
+static int sub_02097D30 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_ov76_0223DE00 * v0;
 
@@ -223,7 +223,7 @@ static int sub_02097D30 (UnkStruct_020067E8 * param0, int * param1)
     return 0;
 }
 
-static int sub_02097D88 (UnkStruct_020067E8 * param0, int * param1)
+static int sub_02097D88 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_ov76_0223DE00 * v0;
 
@@ -281,7 +281,7 @@ static int sub_02097D88 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-UnkStruct_02073C74 * sub_02097F00 (UnkStruct_02097F18 * param0, int param1)
+UnkStruct_02073C74 *sub_02097F00 (UnkStruct_02097F18 * param0, int param1)
 {
     int v0 = param1;
 
@@ -293,27 +293,27 @@ UnkStruct_02073C74 * sub_02097F00 (UnkStruct_02097F18 * param0, int param1)
     return param0->unk_04[v0];
 }
 
-u8 sub_02097F18 (UnkStruct_02097F18 * param0)
+u8 sub_02097F18 (UnkStruct_02097F18 *param0)
 {
     return param0->unk_2C;
 }
 
-void sub_02097F20 (UnkStruct_02097F18 * param0, u8 param1)
+void sub_02097F20 (UnkStruct_02097F18 *param0, u8 param1)
 {
     param0->unk_2C = param1;
 }
 
-u8 sub_02097F28 (UnkStruct_02097F18 * param0)
+u8 sub_02097F28 (UnkStruct_02097F18 *param0)
 {
     return param0->unk_2D;
 }
 
-void sub_02097F30 (UnkStruct_02097F18 * param0, u8 param1)
+void sub_02097F30 (UnkStruct_02097F18 *param0, u8 param1)
 {
     param0->unk_2D = param1;
 }
 
-static BOOL sub_02097F38 (UnkStruct_020508D4 * param0)
+static BOOL sub_02097F38 (UnkStruct_020508D4 *param0)
 {
     UnkStruct_02097F38 * v0 = sub_02050A64(param0);
     UnkStruct_02097F18 * v1 = v0->unk_08;
@@ -426,7 +426,7 @@ static BOOL sub_02097F38 (UnkStruct_020508D4 * param0)
     return 0;
 }
 
-void sub_020980DC (UnkStruct_020508D4 * param0, UnkStruct_021C0794 * param1)
+void sub_020980DC (UnkStruct_020508D4 *param0, UnkStruct_021C0794 * param1)
 {
     UnkStruct_02097F38 * v0 = Heap_AllocFromHeapAtEnd(11, sizeof(UnkStruct_02097F38));
 

@@ -30,7 +30,7 @@
 #include "overlay100/ov100_021D44C0.h"
 #include "overlay100/ov100_021D46C8.h"
 
-int ov100_021D46C8 (UnkStruct_ov100_021D46C8 * param0, UnkStruct_020985E4 * param1, int param2)
+int ov100_021D46C8 (UnkStruct_ov100_021D46C8 *param0, UnkStruct_020985E4 * param1, int param2)
 {
     int v0;
     UnkStruct_0200B144 * v1;
@@ -68,13 +68,13 @@ int ov100_021D46C8 (UnkStruct_ov100_021D46C8 * param0, UnkStruct_020985E4 * para
     return v0;
 }
 
-void ov100_021D4788 (UnkStruct_ov100_021D46C8 * param0)
+void ov100_021D4788 (UnkStruct_ov100_021D46C8 *param0)
 {
     sub_0200E084(&param0->unk_30, 1);
     sub_0201ACF4(&param0->unk_30);
 }
 
-void ov100_021D47A0 (UnkStruct_ov100_021D46C8 * param0)
+void ov100_021D47A0 (UnkStruct_ov100_021D46C8 *param0)
 {
     VecFx32 v0 = {0, -FX32_ONE, -FX32_ONE};
     VecFx32 v1 = {-2043, -3548, 110};
@@ -91,7 +91,7 @@ void ov100_021D47A0 (UnkStruct_ov100_021D46C8 * param0)
     NNS_G3dGlbMaterialColorSpecEmi(GX_RGB(20, 20, 20), GX_RGB(16, 16, 16), 0);
 }
 
-void ov100_021D4844 (UnkStruct_ov100_021D46C8 * param0)
+void ov100_021D4844 (UnkStruct_ov100_021D46C8 *param0)
 {
     UnkStruct_ov115_0226527C v0 = sub_02020A94(param0->unk_18);
     VecFx32 v1 = sub_02020ABC(param0->unk_18);
@@ -100,7 +100,7 @@ void ov100_021D4844 (UnkStruct_ov100_021D46C8 * param0)
     sub_020209D4(&v0, param0->unk_18);
 }
 
-void ov100_021D4890 (UnkStruct_ov100_021D4890 * param0)
+void ov100_021D4890 (UnkStruct_ov100_021D4890 *param0)
 {
     UnkStruct_ov115_0226527C v0;
 
@@ -120,7 +120,7 @@ void ov100_021D4890 (UnkStruct_ov100_021D4890 * param0)
     param0->unk_4C.unk_04 = v0.unk_04 + ((65535 / 360) * param0->unk_14);
 }
 
-BOOL ov100_021D4920 (UnkStruct_ov100_021D4890 * param0)
+BOOL ov100_021D4920 (UnkStruct_ov100_021D4890 *param0)
 {
     BOOL v0 = 0;
     UnkStruct_ov115_0226527C v1 = sub_02020A94(param0->unk_00);
@@ -149,7 +149,7 @@ BOOL ov100_021D4920 (UnkStruct_ov100_021D4890 * param0)
     return v0;
 }
 
-void ov100_021D49B4 (UnkStruct_ov100_021D49B4 * param0)
+void ov100_021D49B4 (UnkStruct_ov100_021D49B4 *param0)
 {
     if (param0->unk_174 == 0) {
         return;
@@ -195,7 +195,7 @@ void ov100_021D49B4 (UnkStruct_ov100_021D49B4 * param0)
     NNS_G3dGePopMtx(1);
 }
 
-void ov100_021D4A84 (UnkStruct_ov100_021D49B4 * param0)
+void ov100_021D4A84 (UnkStruct_ov100_021D49B4 *param0)
 {
     sub_02017110(&param0->unk_78);
 }
@@ -205,7 +205,7 @@ void ov100_021D4A90 (int param0, UnkStruct_ov100_021D49B4 * param1, NNSFndAlloca
     sub_020171A0(&param1->unk_88[param0], param2);
 }
 
-void ov100_021D4AA4 (UnkStruct_ov100_021D49B4 * param0, NNSFndAllocator * param1, int param2)
+void ov100_021D4AA4 (UnkStruct_ov100_021D49B4 *param0, NNSFndAllocator * param1, int param2)
 {
     int v0;
 
@@ -216,7 +216,7 @@ void ov100_021D4AA4 (UnkStruct_ov100_021D49B4 * param0, NNSFndAllocator * param1
     }
 }
 
-void ov100_021D4AC8 (UnkStruct_ov100_021D49B4 * param0, int param1, NARC * param2)
+void ov100_021D4AC8 (UnkStruct_ov100_021D49B4 *param0, int param1, NARC * param2)
 {
     sub_020170D8(&param0->unk_78, param2, param1, 111);
     sub_02017258(&param0->unk_00, &param0->unk_78);
@@ -227,7 +227,7 @@ void ov100_021D4AC8 (UnkStruct_ov100_021D49B4 * param0, int param1, NARC * param
     param0->unk_174 = 1;
 }
 
-void ov100_021D4B10 (UnkStruct_ov100_021D49B4 * param0, UnkStruct_ov100_021D49B4 * param1, int param2, NARC * param3)
+void ov100_021D4B10 (UnkStruct_ov100_021D49B4 *param0, UnkStruct_ov100_021D49B4 * param1, int param2, NARC * param3)
 {
     sub_02017258(&param1->unk_00, &param0->unk_78);
     sub_02017350(&param1->unk_00, 0, 0, 0);
@@ -259,7 +259,7 @@ void ov100_021D4BA0 (int param0, UnkStruct_ov100_021D49B4 * param1, UnkStruct_ov
     param2->unk_178 = 0xFF;
 }
 
-void ov100_021D4BF0 (UnkStruct_ov100_021D46C8 * param0)
+void ov100_021D4BF0 (UnkStruct_ov100_021D46C8 *param0)
 {
     if (param0->unk_C0 == 0) {
         if (param0->unk_C1 < 31) {
@@ -279,7 +279,7 @@ void ov100_021D4BF0 (UnkStruct_ov100_021D46C8 * param0)
     sub_020039B0(param0->unk_10, 1, 4, 6, param0->unk_C1 / 8, 0xCCCC);
 }
 
-void ov100_021D4C94 (UnkStruct_ov100_021D46C8 * param0, int param1)
+void ov100_021D4C94 (UnkStruct_ov100_021D46C8 *param0, int param1)
 {
     int v0;
     const u8 v1[] = {
@@ -339,7 +339,7 @@ void ov100_021D4DC8 (int param0)
     GXLayers_SwapDisplay();
 }
 
-void ov100_021D4DD8 (UnkStruct_ov100_021D4DD8 * param0, int param1)
+void ov100_021D4DD8 (UnkStruct_ov100_021D4DD8 *param0, int param1)
 {
     param0->unk_0C.unk_50.unk_03 = param1;
     G2_SetBlendBrightness((GX_BLEND_PLANEMASK_BG0 | GX_BLEND_PLANEMASK_OBJ | GX_BLEND_PLANEMASK_BD), param0->unk_0C.unk_50.unk_03);

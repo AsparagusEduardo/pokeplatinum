@@ -31,15 +31,15 @@ typedef struct {
 static void NitroStaticInit(void);
 
 static BOOL ov49_022561D4(void ** param0, UnkStruct_ov25_0225424C * param1, UnkStruct_02018340 * param2, u32 param3);
-static BOOL ov49_0225621C(UnkStruct_ov49_0225621C * param0, UnkStruct_ov25_0225424C * param1, UnkStruct_02018340 * param2, u32 param3);
-static void ov49_02256258(UnkStruct_ov49_0225621C * param0);
-static void ov49_0225626C(UnkStruct_0201CD38 * param0, void * param1);
-static void ov49_022562A0(void * param0);
-static void ov49_022562A8(UnkStruct_ov49_0225621C * param0, u32 param1);
-static BOOL ov49_022562BC(UnkStruct_ov49_0225621C * param0);
-static BOOL ov49_022562FC(UnkStruct_ov49_0225621C * param0);
-static BOOL ov49_02256348(UnkStruct_ov49_0225621C * param0);
-static BOOL ov49_022563A0(UnkStruct_ov49_0225621C * param0);
+static BOOL ov49_0225621C(UnkStruct_ov49_0225621C *param0, UnkStruct_ov25_0225424C * param1, UnkStruct_02018340 * param2, u32 param3);
+static void ov49_02256258(UnkStruct_ov49_0225621C *param0);
+static void ov49_0225626C(UnkStruct_0201CD38 *param0, void * param1);
+static void ov49_022562A0(void *param0);
+static void ov49_022562A8(UnkStruct_ov49_0225621C *param0, u32 param1);
+static BOOL ov49_022562BC(UnkStruct_ov49_0225621C *param0);
+static BOOL ov49_022562FC(UnkStruct_ov49_0225621C *param0);
+static BOOL ov49_02256348(UnkStruct_ov49_0225621C *param0);
+static BOOL ov49_022563A0(UnkStruct_ov49_0225621C *param0);
 
 static void NitroStaticInit (void)
 {
@@ -64,7 +64,7 @@ static BOOL ov49_022561D4 (void ** param0, UnkStruct_ov25_0225424C * param1, Unk
     return 0;
 }
 
-static BOOL ov49_0225621C (UnkStruct_ov49_0225621C * param0, UnkStruct_ov25_0225424C * param1, UnkStruct_02018340 * param2, u32 param3)
+static BOOL ov49_0225621C (UnkStruct_ov49_0225621C *param0, UnkStruct_ov25_0225424C * param1, UnkStruct_02018340 * param2, u32 param3)
 {
     param0->unk_10 = ov25_02254540(param1);
     param0->unk_04.unk_00 = sub_02056888(param0->unk_10);
@@ -81,13 +81,13 @@ static BOOL ov49_0225621C (UnkStruct_ov49_0225621C * param0, UnkStruct_ov25_0225
     return 0;
 }
 
-static void ov49_02256258 (UnkStruct_ov49_0225621C * param0)
+static void ov49_02256258 (UnkStruct_ov49_0225621C *param0)
 {
     ov49_02256480(param0->unk_08);
     Heap_FreeToHeap(param0);
 }
 
-static void ov49_0225626C (UnkStruct_0201CD38 * param0, void * param1)
+static void ov49_0225626C (UnkStruct_0201CD38 *param0, void * param1)
 {
     static BOOL(*const v0[])(UnkStruct_ov49_0225621C *) = {
         ov49_022562BC,
@@ -107,12 +107,12 @@ static void ov49_0225626C (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-static void ov49_022562A0 (void * param0)
+static void ov49_022562A0 (void *param0)
 {
     ((UnkStruct_ov49_0225621C *)param0)->unk_02 = 1;
 }
 
-static void ov49_022562A8 (UnkStruct_ov49_0225621C * param0, u32 param1)
+static void ov49_022562A8 (UnkStruct_ov49_0225621C *param0, u32 param1)
 {
     if (param0->unk_02 == 0) {
         param0->unk_00 = param1;
@@ -123,7 +123,7 @@ static void ov49_022562A8 (UnkStruct_ov49_0225621C * param0, u32 param1)
     param0->unk_01 = 0;
 }
 
-static BOOL ov49_022562BC (UnkStruct_ov49_0225621C * param0)
+static BOOL ov49_022562BC (UnkStruct_ov49_0225621C *param0)
 {
     switch (param0->unk_01) {
     case 0:
@@ -141,7 +141,7 @@ static BOOL ov49_022562BC (UnkStruct_ov49_0225621C * param0)
     return 0;
 }
 
-static BOOL ov49_022562FC (UnkStruct_ov49_0225621C * param0)
+static BOOL ov49_022562FC (UnkStruct_ov49_0225621C *param0)
 {
     if (param0->unk_02) {
         ov49_022562A8(param0, 2);
@@ -165,7 +165,7 @@ static BOOL ov49_022562FC (UnkStruct_ov49_0225621C * param0)
     return 0;
 }
 
-static BOOL ov49_02256348 (UnkStruct_ov49_0225621C * param0)
+static BOOL ov49_02256348 (UnkStruct_ov49_0225621C *param0)
 {
     if (ov25_0225450C(param0->unk_0C) == 0) {
         u32 v0, v1;
@@ -191,7 +191,7 @@ static BOOL ov49_02256348 (UnkStruct_ov49_0225621C * param0)
     return 0;
 }
 
-static BOOL ov49_022563A0 (UnkStruct_ov49_0225621C * param0)
+static BOOL ov49_022563A0 (UnkStruct_ov49_0225621C *param0)
 {
     switch (param0->unk_01) {
     case 0:

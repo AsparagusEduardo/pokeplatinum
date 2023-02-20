@@ -56,31 +56,31 @@ FS_EXTERN_OVERLAY(overlay108);
 
 #include <nitro/code16.h>
 
-BOOL ov104_02237378(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_022373DC(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_022373F8(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_0223740C(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02237460(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_022375F8(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02237720(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02237734(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02237748(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02237CAC(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02237CC8(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02237CF8(UnkStruct_ov104_0222E930 * param0);
-static BOOL ov104_02237D18(UnkStruct_ov104_0222E930 * param0);
-static void ov104_02237634(UnkStruct_ov104_02238240 * param0, UnkStruct_ov104_0223BFFC * param1);
-BOOL ov104_02237D48(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02236090(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_022360A8(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_022360C0(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02237D84(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02237D98(UnkStruct_ov104_0222E930 * param0);
-static void ov104_02237C30(UnkSPLStruct6 * param0);
-static void ov104_02237C0C(UnkStruct_ov104_0222E930 * param0, UnkStruct_ov104_0223BFFC * param1, u16 param2);
-static void ov104_0223770C(void * param0);
+BOOL ov104_02237378(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_022373DC(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_022373F8(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_0223740C(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02237460(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_022375F8(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02237720(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02237734(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02237748(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02237CAC(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02237CC8(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02237CF8(UnkStruct_ov104_0222E930 *param0);
+static BOOL ov104_02237D18(UnkStruct_ov104_0222E930 *param0);
+static void ov104_02237634(UnkStruct_ov104_02238240 *param0, UnkStruct_ov104_0223BFFC * param1);
+BOOL ov104_02237D48(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02236090(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_022360A8(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_022360C0(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02237D84(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02237D98(UnkStruct_ov104_0222E930 *param0);
+static void ov104_02237C30(UnkSPLStruct6 *param0);
+static void ov104_02237C0C(UnkStruct_ov104_0222E930 *param0, UnkStruct_ov104_0223BFFC * param1, u16 param2);
+static void ov104_0223770C(void *param0);
 
-BOOL ov104_02237378 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02237378 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_ov104_0223BFFC * v0;
     UnkStruct_ov104_02230BE4 * v1;
@@ -98,7 +98,7 @@ BOOL ov104_02237378 (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-BOOL ov104_022373DC (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_022373DC (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_ov104_0223BFFC * v0;
     u16 v1 = ov104_0222FC00(param0);
@@ -109,7 +109,7 @@ BOOL ov104_022373DC (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-BOOL ov104_022373F8 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_022373F8 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_ov104_0223BFFC * v0;
 
@@ -119,7 +119,7 @@ BOOL ov104_022373F8 (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-BOOL ov104_0223740C (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_0223740C (UnkStruct_ov104_0222E930 *param0)
 {
     int v0;
     UnkStruct_ov104_0223BFFC * v1;
@@ -147,7 +147,7 @@ BOOL ov104_0223740C (UnkStruct_ov104_0222E930 * param0)
     return 1;
 }
 
-BOOL ov104_02237460 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02237460 (UnkStruct_ov104_0222E930 *param0)
 {
     u8 v0;
     int v1, v2, v3, v4, v5;
@@ -224,7 +224,7 @@ BOOL ov104_02237460 (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-BOOL ov104_022375F8 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_022375F8 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_ov6_02240D5C * v0;
     UnkStruct_ov104_0223BFFC * v1;
@@ -239,7 +239,7 @@ BOOL ov104_022375F8 (UnkStruct_ov104_0222E930 * param0)
     return 1;
 }
 
-static void ov104_02237634 (UnkStruct_ov104_02238240 * param0, UnkStruct_ov104_0223BFFC * param1)
+static void ov104_02237634 (UnkStruct_ov104_02238240 *param0, UnkStruct_ov104_0223BFFC * param1)
 {
     int v0, v1;
     UnkStruct_02073C74 * v2;
@@ -277,7 +277,7 @@ static void ov104_02237634 (UnkStruct_ov104_02238240 * param0, UnkStruct_ov104_0
     return;
 }
 
-static void ov104_0223770C (void * param0)
+static void ov104_0223770C (void *param0)
 {
     int v0;
     UnkStruct_ov104_02238240 * v1 = param0;
@@ -288,7 +288,7 @@ static void ov104_0223770C (void * param0)
     return;
 }
 
-BOOL ov104_02237720 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02237720 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_ov104_0223BFFC * v0;
 
@@ -298,7 +298,7 @@ BOOL ov104_02237720 (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-BOOL ov104_02237734 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02237734 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_ov104_0223BFFC * v0;
 
@@ -308,7 +308,7 @@ BOOL ov104_02237734 (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-BOOL ov104_02237748 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02237748 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_02023790 * v0;
     UnkStruct_02073C74 * v1;
@@ -572,7 +572,7 @@ BOOL ov104_02237748 (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-static void ov104_02237C0C (UnkStruct_ov104_0222E930 * param0, UnkStruct_ov104_0223BFFC * param1, u16 param2)
+static void ov104_02237C0C (UnkStruct_ov104_0222E930 *param0, UnkStruct_ov104_0223BFFC * param1, u16 param2)
 {
     UnkStruct_ov104_022320B4 * v0 = param0->unk_00;
     UnkStruct_ov104_0223C4CC * v1 = ov104_0222E924(param0->unk_00);
@@ -584,7 +584,7 @@ static void ov104_02237C0C (UnkStruct_ov104_0222E930 * param0, UnkStruct_ov104_0
     return;
 }
 
-static void ov104_02237C30 (UnkSPLStruct6 * param0)
+static void ov104_02237C30 (UnkSPLStruct6 *param0)
 {
     VecFx32 v0;
     VecFx16 v1;
@@ -602,7 +602,7 @@ static void ov104_02237C30 (UnkSPLStruct6 * param0)
     return;
 }
 
-BOOL ov104_02237CAC (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02237CAC (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_ov104_0223BFFC * v0;
     u16 * v1 = ov104_0222FBE4(param0);
@@ -613,7 +613,7 @@ BOOL ov104_02237CAC (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-BOOL ov104_02237CC8 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02237CC8 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_ov104_0223BFFC * v0;
     u16 v1 = ov104_0222FC00(param0);
@@ -626,7 +626,7 @@ BOOL ov104_02237CC8 (UnkStruct_ov104_0222E930 * param0)
     return 1;
 }
 
-BOOL ov104_02237CF8 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02237CF8 (UnkStruct_ov104_0222E930 *param0)
 {
     u16 v0 = ov104_0222EA48(param0);
 
@@ -636,7 +636,7 @@ BOOL ov104_02237CF8 (UnkStruct_ov104_0222E930 * param0)
     return 1;
 }
 
-static BOOL ov104_02237D18 (UnkStruct_ov104_0222E930 * param0)
+static BOOL ov104_02237D18 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_ov104_0223BFFC * v0;
     u16 v1 = ov104_0222FC8C(param0, param0->unk_78[0]);
@@ -651,7 +651,7 @@ static BOOL ov104_02237D18 (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-BOOL ov104_02237D48 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02237D48 (UnkStruct_ov104_0222E930 *param0)
 {
     u16 * v0;
     UnkStruct_ov104_0223BFFC * v1;
@@ -670,7 +670,7 @@ BOOL ov104_02237D48 (UnkStruct_ov104_0222E930 * param0)
     return 1;
 }
 
-BOOL ov104_02237D84 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02237D84 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_ov104_0223BFFC * v0;
 
@@ -680,7 +680,7 @@ BOOL ov104_02237D84 (UnkStruct_ov104_0222E930 * param0)
     return 1;
 }
 
-BOOL ov104_02237D98 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02237D98 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_ov104_0223BFFC * v0;
     UnkStruct_ov104_0223C4CC * v1 = ov104_0222E924(param0->unk_00);

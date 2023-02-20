@@ -24,12 +24,12 @@ int sub_0202DF8C (void)
     return sizeof(UnkStruct_0202DF8C);
 }
 
-void sub_0202DF94 (UnkStruct_0202DF8C * param0)
+void sub_0202DF94 (UnkStruct_0202DF8C *param0)
 {
     MI_CpuClear32(param0, sizeof(UnkStruct_0202DF8C));
 }
 
-void sub_0202DFA8 (UnkStruct_0202DF8C * param0, const Party * param1, const RTCDate * param2)
+void sub_0202DFA8 (UnkStruct_0202DF8C *param0, const Party * param1, const RTCDate * param2)
 {
     UnkStruct_0202DFA8 * v0;
     UnkStruct_02073C74 * v1;

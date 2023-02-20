@@ -6,7 +6,7 @@
 #include "heap.h"
 #include "unk_0209C370.h"
 
-UnkStruct_0209C370 * sub_0209C370 (int param0)
+UnkStruct_0209C370 *sub_0209C370 (int param0)
 {
     UnkStruct_0209C370 * v0;
 
@@ -15,7 +15,7 @@ UnkStruct_0209C370 * sub_0209C370 (int param0)
     return v0;
 }
 
-void sub_0209C388 (UnkStruct_0209C370 * param0)
+void sub_0209C388 (UnkStruct_0209C370 *param0)
 {
     Heap_FreeToHeap(param0);
 }

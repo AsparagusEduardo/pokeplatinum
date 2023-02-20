@@ -41,7 +41,7 @@ static const UnkFuncPtr_ov6_0224984C Unk_ov6_0224984C[3] = {
     ov6_02248480
 };
 
-static void ov6_02248948 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov6_02248948 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov6_02248948 * v0 = param1;
 
@@ -60,7 +60,7 @@ static void ov6_02248948 (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-void ov6_0224899C (UnkStruct_0203CDB0 * param0, u16 * param1, u32 param2, u32 param3)
+void ov6_0224899C (UnkStruct_0203CDB0 *param0, u16 * param1, u32 param2, u32 param3)
 {
     UnkStruct_ov6_02248948 * v0 = Heap_AllocFromHeap(param3, sizeof(UnkStruct_ov6_02248948));
 

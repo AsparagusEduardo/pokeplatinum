@@ -30,7 +30,7 @@
 #include "unk_020923C0.h"
 #include "overlay005/ov5_021E622C.h"
 
-BOOL sub_0204CFFC (UnkStruct_0203E724 * param0)
+BOOL sub_0204CFFC (UnkStruct_0203E724 *param0)
 {
     int v0 = sub_0203A138(param0->unk_34->unk_1C->unk_00);
     int v1 = 24;
@@ -47,7 +47,7 @@ BOOL sub_0204CFFC (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D08C (UnkStruct_0203E724 * param0)
+BOOL sub_0204D08C (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -65,7 +65,7 @@ BOOL sub_0204D08C (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D0E8 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D0E8 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -87,7 +87,7 @@ BOOL sub_0204D0E8 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D154 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D154 (UnkStruct_0203E724 *param0)
 {
     int v0;
     u8 v1;
@@ -116,7 +116,7 @@ BOOL sub_0204D154 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D1DC (UnkStruct_0203E724 * param0)
+BOOL sub_0204D1DC (UnkStruct_0203E724 *param0)
 {
     u16 v0, v1, v2;
 
@@ -128,7 +128,7 @@ BOOL sub_0204D1DC (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D234 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D234 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -151,7 +151,7 @@ BOOL sub_0204D234 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D2D8 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D2D8 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -178,7 +178,7 @@ BOOL sub_0204D2D8 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D398 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D398 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02073C74 * v0;
     u16 v1;
@@ -192,7 +192,7 @@ BOOL sub_0204D398 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D3DC (UnkStruct_0203E724 * param0)
+BOOL sub_0204D3DC (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -218,7 +218,7 @@ BOOL sub_0204D3DC (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D470 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D470 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -235,7 +235,7 @@ BOOL sub_0204D470 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D4CC (UnkStruct_0203E724 * param0)
+BOOL sub_0204D4CC (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -262,7 +262,7 @@ BOOL sub_0204D4CC (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D540 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D540 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -287,7 +287,7 @@ BOOL sub_0204D540 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D5CC (UnkStruct_0203E724 * param0)
+BOOL sub_0204D5CC (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -300,7 +300,7 @@ BOOL sub_0204D5CC (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D614 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D614 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -336,7 +336,7 @@ BOOL sub_0204D614 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D6E4 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D6E4 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -357,7 +357,7 @@ BOOL sub_0204D6E4 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D74C (UnkStruct_0203E724 * param0)
+BOOL sub_0204D74C (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02073C74 * v0;
     u16 v1 = inline_02049538(param0);
@@ -370,7 +370,7 @@ BOOL sub_0204D74C (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D7AC (UnkStruct_0203E724 * param0)
+BOOL sub_0204D7AC (UnkStruct_0203E724 *param0)
 {
     u16 * v0 = inline_0204FCAC(param0);
 
@@ -378,7 +378,7 @@ BOOL sub_0204D7AC (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D7D4 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D7D4 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -393,7 +393,7 @@ BOOL sub_0204D7D4 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D840 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D840 (UnkStruct_0203E724 *param0)
 {
     int v0;
     UnkStruct_02073C74 * v1;
@@ -406,7 +406,7 @@ BOOL sub_0204D840 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D86C (UnkStruct_0203E724 * param0)
+BOOL sub_0204D86C (UnkStruct_0203E724 *param0)
 {
     int v0, v1, v2;
     UnkStruct_02073C74 * v3;
@@ -428,7 +428,7 @@ BOOL sub_0204D86C (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D8C4 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D8C4 (UnkStruct_0203E724 *param0)
 {
     int v0, v1, v2;
     UnkStruct_02073C74 * v3;
@@ -457,7 +457,7 @@ BOOL sub_0204D8C4 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D94C (UnkStruct_0203E724 * param0)
+BOOL sub_0204D94C (UnkStruct_0203E724 *param0)
 {
     int v0, v1, v2;
     UnkStruct_02073C74 * v3;
@@ -483,7 +483,7 @@ BOOL sub_0204D94C (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204D9C8 (UnkStruct_0203E724 * param0)
+BOOL sub_0204D9C8 (UnkStruct_0203E724 *param0)
 {
     int v0, v1, v2;
     UnkStruct_02073C74 * v3;
@@ -505,7 +505,7 @@ BOOL sub_0204D9C8 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DA20 (UnkStruct_0203E724 * param0)
+BOOL sub_0204DA20 (UnkStruct_0203E724 *param0)
 {
     u16 v0, v1;
     u16 * v2;
@@ -531,7 +531,7 @@ BOOL sub_0204DA20 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DA84 (UnkStruct_0203E724 * param0)
+BOOL sub_0204DA84 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02073C74 * v0;
     u16 v1 = inline_02049538(param0);
@@ -543,7 +543,7 @@ BOOL sub_0204DA84 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DACC (UnkStruct_0203E724 * param0)
+BOOL sub_0204DACC (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -580,7 +580,7 @@ BOOL sub_0204DACC (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DB74 (UnkStruct_0203E724 * param0)
+BOOL sub_0204DB74 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -595,7 +595,7 @@ BOOL sub_0204DB74 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DBB8 (UnkStruct_0203E724 * param0)
+BOOL sub_0204DBB8 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -609,7 +609,7 @@ BOOL sub_0204DBB8 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DC18 (UnkStruct_0203E724 * param0)
+BOOL sub_0204DC18 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -622,7 +622,7 @@ BOOL sub_0204DC18 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DC60 (UnkStruct_0203E724 * param0)
+BOOL sub_0204DC60 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -637,7 +637,7 @@ BOOL sub_0204DC60 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DC98 (UnkStruct_0203E724 * param0)
+BOOL sub_0204DC98 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -667,7 +667,7 @@ BOOL sub_0204DC98 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DD28 (UnkStruct_0203E724 * param0)
+BOOL sub_0204DD28 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -712,7 +712,7 @@ BOOL sub_0204DD28 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DE00 (UnkStruct_0203E724 * param0)
+BOOL sub_0204DE00 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02073C74 * v1;
@@ -742,7 +742,7 @@ BOOL sub_0204DE00 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DE94 (UnkStruct_0203E724 * param0)
+BOOL sub_0204DE94 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02073C74 * v0;
     u16 * v1 = inline_0204FCAC(param0);
@@ -762,7 +762,7 @@ BOOL sub_0204DE94 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DF08 (UnkStruct_0203E724 * param0)
+BOOL sub_0204DF08 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02073C74 * v0;
     Party * v1;
@@ -790,7 +790,7 @@ BOOL sub_0204DF08 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204DFB0 (UnkStruct_0203E724 * param0)
+BOOL sub_0204DFB0 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02073C74 * v0;
     u16 * v1 = inline_0204FCAC(param0);
@@ -804,7 +804,7 @@ BOOL sub_0204DFB0 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E01C (UnkStruct_0203E724 * param0)
+BOOL sub_0204E01C (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02073C74 * v0;
     u16 v1 = inline_02049538(param0);
@@ -819,7 +819,7 @@ BOOL sub_0204E01C (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E094 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E094 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02073C74 * v0;
     Party * v1;
@@ -847,12 +847,12 @@ BOOL sub_0204E094 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E128 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E128 (UnkStruct_0203E724 *param0)
 {
     return 0;
 }
 
-BOOL sub_0204E12C (UnkStruct_0203E724 * param0)
+BOOL sub_0204E12C (UnkStruct_0203E724 *param0)
 {
     u8 v0, v1;
     u16 v2;
@@ -884,7 +884,7 @@ BOOL sub_0204E12C (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E1D0 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E1D0 (UnkStruct_0203E724 *param0)
 {
     int v0, v1;
     Party * v2;

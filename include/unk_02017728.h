@@ -9,7 +9,7 @@ void sub_020177A4(void);
 BOOL sub_020177BC(UnkFuncPtr_02017798 param0, void * param1);
 void sub_0201789C(void);
 void sub_020179E4(void);
-void * sub_02017A40(int param0, const char * param1);
+void *sub_02017A40(int param0, const char * param1);
 void sub_02017A94(const char * param0, void ** param1);
 void sub_02017ACC(void);
 void sub_02017AF4(void);

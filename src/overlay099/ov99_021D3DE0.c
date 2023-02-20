@@ -10,7 +10,7 @@
 #include "unk_0200F174.h"
 #include "overlay099/ov99_021D3DE0.h"
 
-BOOL ov99_021D3DE0 (UnkStruct_ov99_021D2CB0 * param0, UnkStruct_ov99_021D3A40 * param1)
+BOOL ov99_021D3DE0 (UnkStruct_ov99_021D2CB0 *param0, UnkStruct_ov99_021D3A40 * param1)
 {
     UnkStruct_ov99_021D3DE0 * v0 = &param1->unk_08_val6;
 

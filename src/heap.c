@@ -216,7 +216,7 @@ static void AllocFail (void)
     }
 }
 
-void * Heap_AllocFromHeap (u32 heapID, u32 size)
+void *Heap_AllocFromHeap (u32 heapID, u32 size)
 {
     void * ptr = NULL;
 
@@ -235,7 +235,7 @@ void * Heap_AllocFromHeap (u32 heapID, u32 size)
     return ptr;
 }
 
-void * Heap_AllocFromHeapAtEnd (u32 heapID, u32 size)
+void *Heap_AllocFromHeapAtEnd (u32 heapID, u32 size)
 {
     void * ptr = NULL;
 
@@ -254,7 +254,7 @@ void * Heap_AllocFromHeapAtEnd (u32 heapID, u32 size)
     return ptr;
 }
 
-void Heap_FreeToHeap (void * ptr)
+void Heap_FreeToHeap (void *ptr)
 {
     (u8 *)ptr -= sizeof(MemoryBlock);
     u32 heapID = ((MemoryBlock *)ptr)->heapID;
@@ -322,7 +322,7 @@ u32 Heap_FndGetTotalFreeSizeForExpHeap (u32 heapID)
     return 0;
 }
 
-void Heap_FndInitAllocatorForExpHeap (NNSFndAllocator * pAllocator, u32 heapID, int alignment)
+void Heap_FndInitAllocatorForExpHeap (NNSFndAllocator *pAllocator, u32 heapID, int alignment)
 {
     if (heapID < sHeapInfo.totalNumHeaps) {
         u8 index = sHeapInfo.heapIdxs[heapID];
@@ -333,7 +333,7 @@ void Heap_FndInitAllocatorForExpHeap (NNSFndAllocator * pAllocator, u32 heapID, 
     }
 }
 
-void Heap_ReallocFromHeap (void * ptr, u32 newSize)
+void Heap_ReallocFromHeap (void *ptr, u32 newSize)
 {
     GF_ASSERT(OS_GetProcMode() != OS_PROCMODE_IRQ);
 

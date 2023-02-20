@@ -53,13 +53,13 @@ typedef struct UnkStruct_0203CDB0_sub1_t {
 };
 
 static UnkStruct_0203CDB0 * sub_0203CDB0(UnkStruct_020067E8 * param0);
-static BOOL sub_0203CEEC(UnkStruct_0203CDB0 * param0);
-static void sub_0203CE6C(UnkStruct_020067E8 * param0);
-static void sub_0203CF5C(UnkStruct_0203CDB0 * param0);
+static BOOL sub_0203CEEC(UnkStruct_0203CDB0 *param0);
+static void sub_0203CE6C(UnkStruct_020067E8 *param0);
+static void sub_0203CF5C(UnkStruct_0203CDB0 *param0);
 
 static UnkStruct_0203CDB0 * Unk_021C07DC;
 
-static int sub_0203CC84 (UnkStruct_020067E8 * param0, int * param1)
+static int sub_0203CC84 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_0203CC84 * v0 = sub_02006840(param0);
 
@@ -75,14 +75,14 @@ static int sub_0203CC84 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-static int sub_0203CCB4 (UnkStruct_020067E8 * param0, int * param1)
+static int sub_0203CCB4 (UnkStruct_020067E8 *param0, int * param1)
 {
     Unk_021C07DC = sub_0203CDB0(param0);
     sub_020535CC(Unk_021C07DC);
     return 1;
 }
 
-static int sub_0203CCCC (UnkStruct_020067E8 * param0, int * param1)
+static int sub_0203CCCC (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_0203CDB0 * v0 = sub_0200682C(param0);
 
@@ -93,7 +93,7 @@ static int sub_0203CCCC (UnkStruct_020067E8 * param0, int * param1)
     }
 }
 
-static int sub_0203CCE4 (UnkStruct_020067E8 * param0, int * param1)
+static int sub_0203CCE4 (UnkStruct_020067E8 *param0, int * param1)
 {
     sub_0203CE6C(param0);
     sub_02000EC4(FS_OVERLAY_ID(overlay77), &Unk_ov77_021D742C);
@@ -114,7 +114,7 @@ const UnkStruct_0208BE5C Unk_020EA11C = {
     0xffffffff
 };
 
-void sub_0203CD00 (UnkStruct_0203CDB0 * param0)
+void sub_0203CD00 (UnkStruct_0203CDB0 *param0)
 {
     GF_ASSERT(param0->unk_00->unk_04 == NULL);
     GF_ASSERT(param0->unk_00->unk_00 == NULL);
@@ -125,17 +125,17 @@ void sub_0203CD00 (UnkStruct_0203CDB0 * param0)
     param0->unk_00->unk_00 = sub_020067E8(&Unk_ov5_021F89B0, param0, 11);
 }
 
-void sub_0203CD44 (UnkStruct_0203CDB0 * param0)
+void sub_0203CD44 (UnkStruct_0203CDB0 *param0)
 {
     param0->unk_68 = 0;
 }
 
-BOOL sub_0203CD4C (UnkStruct_0203CDB0 * param0)
+BOOL sub_0203CD4C (UnkStruct_0203CDB0 *param0)
 {
     return param0->unk_00->unk_00 != NULL;
 }
 
-BOOL sub_0203CD5C (UnkStruct_0203CDB0 * param0)
+BOOL sub_0203CD5C (UnkStruct_0203CDB0 *param0)
 {
     if ((param0->unk_00->unk_00 != NULL) && param0->unk_68) {
         return 1;
@@ -144,19 +144,19 @@ BOOL sub_0203CD5C (UnkStruct_0203CDB0 * param0)
     }
 }
 
-BOOL sub_0203CD74 (UnkStruct_0203CDB0 * param0)
+BOOL sub_0203CD74 (UnkStruct_0203CDB0 *param0)
 {
     return param0->unk_00->unk_04 != NULL;
 }
 
-void sub_0203CD84 (UnkStruct_0203CDB0 * param0, const UnkStruct_0208BE5C * param1, void * param2)
+void sub_0203CD84 (UnkStruct_0203CDB0 *param0, const UnkStruct_0208BE5C * param1, void * param2)
 {
     GF_ASSERT(param0->unk_00->unk_04 == NULL);
     sub_0203CD44(param0);
     param0->unk_00->unk_04 = sub_020067E8(param1, param2, 11);
 }
 
-static UnkStruct_0203CDB0 * sub_0203CDB0 (UnkStruct_020067E8 * param0)
+static UnkStruct_0203CDB0 *sub_0203CDB0 (UnkStruct_020067E8 *param0)
 {
     UnkStruct_0203CC84 * v0;
     UnkStruct_0203CDB0 * v1;
@@ -194,7 +194,7 @@ static UnkStruct_0203CDB0 * sub_0203CDB0 (UnkStruct_020067E8 * param0)
     return v1;
 }
 
-static void sub_0203CE6C (UnkStruct_020067E8 * param0)
+static void sub_0203CE6C (UnkStruct_020067E8 *param0)
 {
     UnkStruct_0203CDB0 * v0 = sub_0200682C(param0);
 
@@ -222,7 +222,7 @@ static void sub_0203CECC (UnkStruct_020067E8 ** param0)
     }
 }
 
-BOOL sub_0203CEEC (UnkStruct_0203CDB0 * param0)
+BOOL sub_0203CEEC (UnkStruct_0203CDB0 *param0)
 {
     BOOL v0;
 
@@ -250,7 +250,7 @@ BOOL sub_0203CEEC (UnkStruct_0203CDB0 * param0)
     return 0;
 }
 
-void sub_0203CF5C (UnkStruct_0203CDB0 * param0)
+void sub_0203CF5C (UnkStruct_0203CDB0 *param0)
 {
     int v0;
     UnkStruct_ov5_021D1CAC v1;
@@ -380,13 +380,13 @@ struct UnkStruct_ov25_02253CE0_t * sub_0203D158 (void)
     return Unk_021C07DC->unk_04->unk_14;
 }
 
-UnkStruct_02018340 * sub_0203D170 (void * param0)
+UnkStruct_02018340 *sub_0203D170 (void * param0)
 {
     UnkStruct_0203CDB0 * v0 = (UnkStruct_0203CDB0 *)param0;
     return v0->unk_08;
 }
 
-UnkStruct_021C0794 * sub_0203D174 (void * param0)
+UnkStruct_021C0794 *sub_0203D174 (void * param0)
 {
     return ((UnkStruct_0203CDB0 *)param0)->unk_0C;
 }

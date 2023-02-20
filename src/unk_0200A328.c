@@ -129,7 +129,7 @@ void sub_0200A4C0 (const UnkStruct_02009DC8 * param0)
     sub_0201EB08(v0, v1);
 }
 
-void sub_0200A4E4 (UnkStruct_02009DC8 * param0)
+void sub_0200A4E4 (UnkStruct_02009DC8 *param0)
 {
     int v0;
 
@@ -140,7 +140,7 @@ void sub_0200A4E4 (UnkStruct_02009DC8 * param0)
     sub_0201EB50(v0);
 }
 
-void sub_0200A508 (UnkStruct_02009CFC * param0)
+void sub_0200A508 (UnkStruct_02009CFC *param0)
 {
     int v0;
 
@@ -153,7 +153,7 @@ void sub_0200A508 (UnkStruct_02009CFC * param0)
     }
 }
 
-NNSG2dImageProxy * sub_0200A534 (const UnkStruct_02009DC8 * param0)
+NNSG2dImageProxy *sub_0200A534 (const UnkStruct_02009DC8 * param0)
 {
     int v0;
 
@@ -164,7 +164,7 @@ NNSG2dImageProxy * sub_0200A534 (const UnkStruct_02009DC8 * param0)
     return sub_0201EBDC(v0);
 }
 
-NNSG2dImageProxy * sub_0200A558 (const UnkStruct_02009DC8 * param0, const UnkStruct_02009DC8 * param1)
+NNSG2dImageProxy *sub_0200A558 (const UnkStruct_02009DC8 * param0, const UnkStruct_02009DC8 * param1)
 {
     int v0;
     NNSG2dCellDataBank * v1;
@@ -269,7 +269,7 @@ void sub_0200A6B8 (const UnkStruct_02009DC8 * param0)
     sub_0201F990(v1, v0);
 }
 
-void sub_0200A6DC (UnkStruct_02009DC8 * param0)
+void sub_0200A6DC (UnkStruct_02009DC8 *param0)
 {
     int v0;
 
@@ -280,7 +280,7 @@ void sub_0200A6DC (UnkStruct_02009DC8 * param0)
     sub_0201F9F0(v0);
 }
 
-void sub_0200A700 (UnkStruct_02009CFC * param0)
+void sub_0200A700 (UnkStruct_02009CFC *param0)
 {
     int v0;
 

@@ -7,17 +7,17 @@
 #include <nitro/fx/fx.h>
 
 void sub_02020304(const int param0, const int param1, const int param2, const int param3, UnkStruct_020203AC * param4);
-void sub_02020390(UnkStruct_020203AC * param0);
-UnkStruct_020203AC * sub_020203AC(const int param0);
-void sub_020203B8(UnkStruct_020203AC * param0);
+void sub_02020390(UnkStruct_020203AC *param0);
+UnkStruct_020203AC *sub_020203AC(const int param0);
+void sub_020203B8(UnkStruct_020203AC *param0);
 void sub_020203C0(UnkStruct_020203AC const * param0, UnkStruct_020203AC * param1);
-void sub_020203D4(UnkStruct_020203AC * param0);
+void sub_020203D4(UnkStruct_020203AC *param0);
 void sub_020203E0(void);
 void sub_020203EC();
 void sub_0202049C(void);
 void sub_02020680(const VecFx32 * param0, UnkStruct_020203AC * param1);
 void sub_02020690(const VecFx32 * param0, UnkStruct_020203AC * param1);
-void sub_020206B0(UnkStruct_020203AC * param0);
+void sub_020206B0(UnkStruct_020203AC *param0);
 void sub_020206BC(const fx32 param0, const fx32 param1, UnkStruct_020203AC * param2);
 void sub_020206D0(const VecFx32 * param0, const fx32 param1, const UnkStruct_ov115_0226527C * param2, const u16 param3, const u8 param4, const BOOL param5, UnkStruct_020203AC * param6);
 void sub_02020738(const VecFx32 * param0, const fx32 param1, const UnkStruct_ov115_0226527C * param2, const u16 param3, const u8 param4, UnkStruct_020203AC * param5);

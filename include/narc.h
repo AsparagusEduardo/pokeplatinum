@@ -35,8 +35,8 @@ void NARC_ReadWholeMemberByIndexPair(void * dest, int narcIndex, int memberIndex
  *
  * @returns: Pointer to the allocated buffer which contains the data that was read.
  */
-void * NARC_AllocAndReadWholeMemberByIndexPair(int narcIndex, int memberIndex, int heapID);
-void * NARC_AllocAtEndAndReadWholeMemberByIndexPair(int narcIndex, int memberIndex, int heapID);
+void *NARC_AllocAndReadWholeMemberByIndexPair(int narcIndex, int memberIndex, int heapID);
+void *NARC_AllocAtEndAndReadWholeMemberByIndexPair(int narcIndex, int memberIndex, int heapID);
 
 /*
  * Reads a portion of an archive member into an existing buffer
@@ -61,8 +61,8 @@ void NARC_ReadFromMemberByIndexPair(void * dest, int narcIndex, int memberIndex,
  *
  * @returns: Pointer to the allocated buffer which contains the data that was read.
  */
-void * NARC_AllocAndReadFromMemberByIndexPair(int narcIndex, int memberIndex, int heapID, int offset, int bytesToRead);
-void * NARC_AllocAtEndAndReadFromMemberByIndexPair(int narcIndex, int memberIndex, int heapID, int offset, int bytesToRead);
+void *NARC_AllocAndReadFromMemberByIndexPair(int narcIndex, int memberIndex, int heapID, int offset, int bytesToRead);
+void *NARC_AllocAtEndAndReadFromMemberByIndexPair(int narcIndex, int memberIndex, int heapID, int offset, int bytesToRead);
 
 /*
  * Gets the size of a NARC member. Useful when managing the read buffer yourself and the NARC has variable
@@ -84,7 +84,7 @@ u32 NARC_GetMemberSizeByIndexPair(int narcIndex, int memberIndex);
  *
  * @returns: Pointer to the newly-allocated NARC
  */
-NARC * NARC_ctor(u32 narcIndex, u32 heapID);
+NARC *NARC_ctor(u32 narcIndex, u32 heapID);
 
 /*
  * Closes the wrapped FSFile and returns the NARC allocation to the heap from whence it came.
@@ -102,7 +102,7 @@ void NARC_dtor(NARC * narc);
  *
  * @returns: Pointer to the allocated buffer which contains the data that was read.
  */
-void * NARC_AllocAndReadWholeMember(NARC * narc, u32 memberIndex, u32 heapID);
+void *NARC_AllocAndReadWholeMember(NARC * narc, u32 memberIndex, u32 heapID);
 
 /*
  * Reads NARC member to preallocated buffer dest, which should be large enough to hold the data.

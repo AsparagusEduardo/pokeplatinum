@@ -17,11 +17,11 @@ typedef struct UnkStruct_ov5_021E20E8_t {
     UnkStruct_0201CD38 * unk_34;
 } UnkStruct_ov5_021E20E8;
 
-static void ov5_021E21B8(UnkStruct_0201CD38 * param0, void * param1);
-static void ov5_021E2178(UnkStruct_0201CD38 * param0, void * param1);
-static void ov5_021E2218(UnkStruct_ov5_021E2098 * param0);
+static void ov5_021E21B8(UnkStruct_0201CD38 *param0, void * param1);
+static void ov5_021E2178(UnkStruct_0201CD38 *param0, void * param1);
+static void ov5_021E2218(UnkStruct_ov5_021E2098 *param0);
 
-UnkStruct_ov5_021E20E8 * ov5_021E2098 (UnkStruct_ov5_021E2098 * param0)
+UnkStruct_ov5_021E20E8 *ov5_021E2098 (UnkStruct_ov5_021E2098 * param0)
 {
     UnkStruct_0201CD38 * v0;
     UnkStruct_ov5_021E20E8 * v1;
@@ -67,7 +67,7 @@ void ov5_021E20E8 (UnkStruct_ov5_021E20E8 ** param0, GXDispMode param1, GXBGMode
     *param0 = NULL;
 }
 
-static void ov5_021E2178 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov5_021E2178 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov5_021E20E8 * v0 = param1;
 
@@ -76,7 +76,7 @@ static void ov5_021E2178 (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-static void ov5_021E21B8 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov5_021E21B8 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov5_021E20E8 * v0 = (UnkStruct_ov5_021E20E8 *)param1;
 
@@ -103,7 +103,7 @@ static void ov5_021E21B8 (UnkStruct_0201CD38 * param0, void * param1)
     sub_0200DA58(param0);
 }
 
-static void ov5_021E2218 (UnkStruct_ov5_021E2098 * param0)
+static void ov5_021E2218 (UnkStruct_ov5_021E2098 *param0)
 {
     switch (param0->unk_00) {
     case GX_DISPMODE_VRAM_A:

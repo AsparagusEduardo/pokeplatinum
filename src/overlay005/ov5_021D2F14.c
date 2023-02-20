@@ -25,11 +25,11 @@
 #include "unk_020218BC.h"
 #include "overlay005/ov5_021D2F14.h"
 
-static BOOL ov5_021D3478(UnkStruct_02009CFC * param0, UnkStruct_02009DC8 * param1);
-static void ov5_021D34AC(UnkStruct_ov5_021D30A8 * param0, int param1, int param2, int param3, int param4, int param5);
-static void ov5_021D3518(UnkStruct_ov5_021D30A8 * param0, NARC * param1, int param2, int param3, int param4, int param5);
+static BOOL ov5_021D3478(UnkStruct_02009CFC *param0, UnkStruct_02009DC8 * param1);
+static void ov5_021D34AC(UnkStruct_ov5_021D30A8 *param0, int param1, int param2, int param3, int param4, int param5);
+static void ov5_021D3518(UnkStruct_ov5_021D30A8 *param0, NARC * param1, int param2, int param3, int param4, int param5);
 
-void ov5_021D2F14 (UnkStruct_ov5_021D30A8 * param0, const UnkStruct_ov7_0224F2EC * param1, u32 param2, u32 param3)
+void ov5_021D2F14 (UnkStruct_ov5_021D30A8 *param0, const UnkStruct_ov7_0224F2EC * param1, u32 param2, u32 param3)
 {
     UnkStruct_02009F38 * v0;
     UnkStruct_02009F38 * v1;
@@ -84,7 +84,7 @@ void ov5_021D2F14 (UnkStruct_ov5_021D30A8 * param0, const UnkStruct_ov7_0224F2EC
     Heap_FreeToHeap(v2);
 }
 
-void ov5_021D30A8 (UnkStruct_ov5_021D30A8 * param0)
+void ov5_021D30A8 (UnkStruct_ov5_021D30A8 *param0)
 {
     u32 v0;
 
@@ -99,7 +99,7 @@ void ov5_021D30A8 (UnkStruct_ov5_021D30A8 * param0)
     }
 }
 
-UnkStruct_02022550 * ov5_021D3104 (UnkStruct_ov5_021D30A8 * param0, const UnkStruct_ov7_0224F358 * param1)
+UnkStruct_02022550 *ov5_021D3104 (UnkStruct_ov5_021D30A8 * param0, const UnkStruct_ov7_0224F358 * param1)
 {
     UnkStruct_ov115_02261520 v0;
     UnkStruct_02022550 * v1;
@@ -128,7 +128,7 @@ UnkStruct_02022550 * ov5_021D3104 (UnkStruct_ov5_021D30A8 * param0, const UnkStr
     return v1;
 }
 
-void ov5_021D3190 (UnkStruct_ov5_021D30A8 * param0, UnkStruct_ov104_02241308 * param1, u32 param2, u32 param3)
+void ov5_021D3190 (UnkStruct_ov5_021D30A8 *param0, UnkStruct_ov104_02241308 * param1, u32 param2, u32 param3)
 {
     UnkStruct_02009F38 * v0;
     UnkStruct_02009F38 * v1;
@@ -164,7 +164,7 @@ void ov5_021D3190 (UnkStruct_ov5_021D30A8 * param0, UnkStruct_ov104_02241308 * p
     }
 }
 
-void ov5_021D3270 (UnkStruct_ov5_021D30A8 * param0, int param1, int param2, int param3, int param4, int param5, int param6)
+void ov5_021D3270 (UnkStruct_ov5_021D30A8 *param0, int param1, int param2, int param3, int param4, int param5, int param6)
 {
     UnkStruct_02009DC8 * v0;
     int v1;
@@ -188,7 +188,7 @@ void ov5_021D3270 (UnkStruct_ov5_021D30A8 * param0, int param1, int param2, int 
     GF_ASSERT(0);
 }
 
-void ov5_021D32E8 (UnkStruct_ov5_021D30A8 * param0, NARC * param1, int param2, int param3, int param4, int param5, int param6)
+void ov5_021D32E8 (UnkStruct_ov5_021D30A8 *param0, NARC * param1, int param2, int param3, int param4, int param5, int param6)
 {
     UnkStruct_02009DC8 * v0;
     int v1;
@@ -212,27 +212,27 @@ void ov5_021D32E8 (UnkStruct_ov5_021D30A8 * param0, NARC * param1, int param2, i
     GF_ASSERT(0);
 }
 
-void ov5_021D3360 (UnkStruct_ov5_021D30A8 * param0, int param1, int param2, int param3, int param4)
+void ov5_021D3360 (UnkStruct_ov5_021D30A8 *param0, int param1, int param2, int param3, int param4)
 {
     ov5_021D34AC(param0, param1, param2, param3, 2, param4);
 }
 
-void ov5_021D3374 (UnkStruct_ov5_021D30A8 * param0, NARC * param1, int param2, int param3, int param4)
+void ov5_021D3374 (UnkStruct_ov5_021D30A8 *param0, NARC * param1, int param2, int param3, int param4)
 {
     ov5_021D3518(param0, param1, param2, param3, 2, param4);
 }
 
-void ov5_021D3388 (UnkStruct_ov5_021D30A8 * param0, int param1, int param2, int param3, int param4)
+void ov5_021D3388 (UnkStruct_ov5_021D30A8 *param0, int param1, int param2, int param3, int param4)
 {
     ov5_021D34AC(param0, param1, param2, param3, 3, param4);
 }
 
-void ov5_021D339C (UnkStruct_ov5_021D30A8 * param0, NARC * param1, int param2, int param3, int param4)
+void ov5_021D339C (UnkStruct_ov5_021D30A8 *param0, NARC * param1, int param2, int param3, int param4)
 {
     ov5_021D3518(param0, param1, param2, param3, 3, param4);
 }
 
-void ov5_021D33B0 (UnkStruct_ov5_021D30A8 * param0, int param1, int param2, BOOL param3, int param4, int param5)
+void ov5_021D33B0 (UnkStruct_ov5_021D30A8 *param0, int param1, int param2, BOOL param3, int param4, int param5)
 {
     UnkStruct_02009DC8 * v0;
 
@@ -252,7 +252,7 @@ void ov5_021D33B0 (UnkStruct_ov5_021D30A8 * param0, int param1, int param2, BOOL
     GF_ASSERT(0);
 }
 
-void ov5_021D3414 (UnkStruct_ov5_021D30A8 * param0, NARC * param1, int param2, BOOL param3, int param4, int param5)
+void ov5_021D3414 (UnkStruct_ov5_021D30A8 *param0, NARC * param1, int param2, BOOL param3, int param4, int param5)
 {
     UnkStruct_02009DC8 * v0;
 
@@ -273,7 +273,7 @@ void ov5_021D3414 (UnkStruct_ov5_021D30A8 * param0, NARC * param1, int param2, B
     GF_ASSERT(0);
 }
 
-static BOOL ov5_021D3478 (UnkStruct_02009CFC * param0, UnkStruct_02009DC8 * param1)
+static BOOL ov5_021D3478 (UnkStruct_02009CFC *param0, UnkStruct_02009DC8 * param1)
 {
     int v0;
 
@@ -291,7 +291,7 @@ static BOOL ov5_021D3478 (UnkStruct_02009CFC * param0, UnkStruct_02009DC8 * para
     return 0;
 }
 
-static void ov5_021D34AC (UnkStruct_ov5_021D30A8 * param0, int param1, int param2, int param3, int param4, int param5)
+static void ov5_021D34AC (UnkStruct_ov5_021D30A8 *param0, int param1, int param2, int param3, int param4, int param5)
 {
     UnkStruct_02009DC8 * v0;
     int v1;
@@ -312,7 +312,7 @@ static void ov5_021D34AC (UnkStruct_ov5_021D30A8 * param0, int param1, int param
     GF_ASSERT(0);
 }
 
-static void ov5_021D3518 (UnkStruct_ov5_021D30A8 * param0, NARC * param1, int param2, int param3, int param4, int param5)
+static void ov5_021D3518 (UnkStruct_ov5_021D30A8 *param0, NARC * param1, int param2, int param3, int param4, int param5)
 {
     UnkStruct_02009DC8 * v0;
     int v1;
@@ -334,7 +334,7 @@ static void ov5_021D3518 (UnkStruct_ov5_021D30A8 * param0, NARC * param1, int pa
     GF_ASSERT(0);
 }
 
-UnkStruct_0200D0F4 * ov5_021D3584 (UnkStruct_ov5_021D30A8 * param0, const UnkStruct_ov104_0223F9E0 * param1)
+UnkStruct_0200D0F4 *ov5_021D3584 (UnkStruct_ov5_021D30A8 * param0, const UnkStruct_ov104_0223F9E0 * param1)
 {
     int v0;
     int v1;
@@ -398,7 +398,7 @@ UnkStruct_0200D0F4 * ov5_021D3584 (UnkStruct_ov5_021D30A8 * param0, const UnkStr
     return v2;
 }
 
-void ov5_021D375C (UnkStruct_ov5_021D30A8 * param0)
+void ov5_021D375C (UnkStruct_ov5_021D30A8 *param0)
 {
     u32 v0;
 

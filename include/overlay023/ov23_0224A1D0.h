@@ -11,7 +11,7 @@ BOOL ov23_0224A658(int param0, int param1, BOOL param2);
 BOOL ov23_0224A6B8(int param0);
 void ov23_0224A77C(int param0, int param1, void * param2, void * param3);
 void ov23_0224AA84(void);
-u8 * ov23_0224AAA0(int param0, void * param1, int param2);
+u8 *ov23_0224AAA0(int param0, void * param1, int param2);
 void ov23_0224AAB0(void);
 int ov23_0224AB2C(void);
 void ov23_0224AB30(int param0, int param1, void * param2, void * param3);

@@ -57,14 +57,14 @@ void sub_0201CA24 (const u8 param0, const char * param1, NNSG3dRenderObj * param
     NNS_G3dRenderObjInit(param2, *param3);
 }
 
-void sub_0201CA3C (NNSG3dRenderObj * param0, NNSG3dResMdl ** param1, NNSG3dResFileHeader ** param2)
+void sub_0201CA3C (NNSG3dRenderObj *param0, NNSG3dResMdl ** param1, NNSG3dResFileHeader ** param2)
 {
     sub_0201C9CC(param1, param2);
     GF_ASSERT(param1);
     NNS_G3dRenderObjInit(param0, *param1);
 }
 
-BOOL sub_0201CA5C (NNSG3dResTex * param0)
+BOOL sub_0201CA5C (NNSG3dResTex *param0)
 {
     if ((param0->texInfo.flag & NNS_G3D_RESTEX_LOADED) || (param0->tex4x4Info.flag & NNS_G3D_RESTEX4x4_LOADED)) {
         return 1;
@@ -73,7 +73,7 @@ BOOL sub_0201CA5C (NNSG3dResTex * param0)
     return 0;
 }
 
-void sub_0201CA74 (NNSG3dRenderObj * param0, const VecFx32 * param1, const MtxFx33 * param2, const VecFx32 * param3)
+void sub_0201CA74 (NNSG3dRenderObj *param0, const VecFx32 * param1, const MtxFx33 * param2, const VecFx32 * param3)
 {
     NNS_G3dGlbSetBaseTrans(param1);
     NNS_G3dGlbSetBaseRot(param2);
@@ -82,7 +82,7 @@ void sub_0201CA74 (NNSG3dRenderObj * param0, const VecFx32 * param1, const MtxFx
     NNS_G3dDraw(param0);
 }
 
-void sub_0201CAB0 (NNSG3dRenderObj * param0, const VecFx32 * param1, const MtxFx33 * param2, const VecFx32 * param3)
+void sub_0201CAB0 (NNSG3dRenderObj *param0, const VecFx32 * param1, const MtxFx33 * param2, const VecFx32 * param3)
 {
     NNS_G3dGlbSetBaseTrans(param1);
     NNS_G3dGlbSetBaseRot(param2);
@@ -119,7 +119,7 @@ void sub_0201CBA0 (void)
     sub_020242C4(Unk_021BFB0C);
 }
 
-BOOL sub_0201CBB0 (void * param0, NNSG3dResTex * param1)
+BOOL sub_0201CBB0 (void *param0, NNSG3dResTex * param1)
 {
     NNSG3dResMdlSet * v0 = NNS_G3dGetMdlSet((NNSG3dResFileHeader *)param0);
 
@@ -135,7 +135,7 @@ BOOL sub_0201CBB0 (void * param0, NNSG3dResTex * param1)
     return 0;
 }
 
-BOOL sub_0201CBCC (NNSG3dResTex * param0)
+BOOL sub_0201CBCC (NNSG3dResTex *param0)
 {
     if (param0 == NULL) {
         return 0;

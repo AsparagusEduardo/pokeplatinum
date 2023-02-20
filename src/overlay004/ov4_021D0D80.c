@@ -101,7 +101,7 @@ static void ov4_021D24AC(int param0, void * param1);
 
 static UnkStruct_ov4_0221A400 * Unk_ov4_0221A400 = NULL;
 
-int ov4_021D0D80 (UnkStruct_021C0794 * param0, int param1, int param2, int param3)
+int ov4_021D0D80 (UnkStruct_021C0794 *param0, int param1, int param2, int param3)
 {
     void * v0;
 
@@ -271,7 +271,7 @@ void ov4_021D1150 (UnkFuncPtr_ov4_021D1150 param0, void * param1)
 
 const static char Unk_ov4_02215870[] = "%s = \'%s\'";
 
-int ov4_021D116C (u8 * param0, int param1, BOOL param2, u32 param3)
+int ov4_021D116C (u8 *param0, int param1, BOOL param2, u32 param3)
 {
     GF_ASSERT(Unk_ov4_0221A400 != NULL);
 
@@ -404,7 +404,7 @@ BOOL ov4_021D1404 ()
     return (Unk_ov4_0221A400->unk_106C == 0) && ov4_021D1C5C();
 }
 
-int ov4_021D142C (void * param0, int param1)
+int ov4_021D142C (void *param0, int param1)
 {
     if (!(param1 < 256)) {
         return 0;
@@ -433,7 +433,7 @@ int ov4_021D142C (void * param0, int param1)
     }
 }
 
-int ov4_021D14D4 (void * param0, int param1)
+int ov4_021D14D4 (void *param0, int param1)
 {
     if (!(param1 < 256)) {
         return 0;
@@ -466,7 +466,7 @@ int ov4_021D14D4 (void * param0, int param1)
     return 1;
 }
 
-int ov4_021D1590 (void * param0, int param1)
+int ov4_021D1590 (void *param0, int param1)
 {
     u16 v0;
 
@@ -737,7 +737,7 @@ static void ov4_021D1A20 (DWCError param0, BOOL param1, BOOL param2, u8 param3, 
     }
 }
 
-void * ov4_021D1AA0 (DWCAllocType param0, u32 param1, int param2)
+void *ov4_021D1AA0 (DWCAllocType param0, u32 param1, int param2)
 {
 #pragma unused( param0 )
     void * v0;
@@ -1215,7 +1215,7 @@ void ov4_021D2184 (void)
     ov4_021D0F68();
 }
 
-void ov4_021D2198 (void * param0, int param1)
+void ov4_021D2198 (void *param0, int param1)
 {
     Unk_ov4_0221A400->unk_1058 = param0;
     Unk_ov4_0221A400->unk_105C = param1;
@@ -1509,7 +1509,7 @@ void ov4_021D2598 (BOOL param0)
     Unk_ov4_0221A400->unk_10CA = param0;
 }
 
-static void ov4_021D25AC (void * param0)
+static void ov4_021D25AC (void *param0)
 {
     Unk_ov4_0221A400->unk_10D4 = 2;
 }

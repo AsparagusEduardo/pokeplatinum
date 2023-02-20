@@ -47,10 +47,10 @@
 #include "overlay062/ov62_02231690.h"
 #include "overlay062/ov62_0224112C.h"
 
-static void ov62_0222F670(UnkStruct_02018340 * param0);
-static void ov62_0222F848(UnkStruct_0208C06C * param0);
+static void ov62_0222F670(UnkStruct_02018340 *param0);
+static void ov62_0222F848(UnkStruct_0208C06C *param0);
 
-void ov62_0222F2C0 (UnkStruct_0208C06C * param0)
+void ov62_0222F2C0 (UnkStruct_0208C06C *param0)
 {
     sub_02017798(NULL, NULL);
     sub_020177A4();
@@ -143,7 +143,7 @@ void ov62_0222F2C0 (UnkStruct_0208C06C * param0)
     ov62_022337D4(param0);
 }
 
-void ov62_0222F514 (UnkStruct_0208C06C * param0)
+void ov62_0222F514 (UnkStruct_0208C06C *param0)
 {
     GXLayers_EngineAToggleLayers(GX_PLANEMASK_BG0, 0);
     GXLayers_EngineAToggleLayers(GX_PLANEMASK_BG1, 0);
@@ -230,7 +230,7 @@ static const UnkStruct_ov97_0222DB78 Unk_ov62_02248820[] = {
     {0x0, 0x0, 0x800, 0x0, 0x1, GX_BG_COLORMODE_16, GX_BG_SCRBASE_0xd800, GX_BG_CHARBASE_0x00000, GX_BG_EXTPLTT_01, 0x1, 0x0, 0x0, 0x0}
 };
 
-static void ov62_0222F670 (UnkStruct_02018340 * param0)
+static void ov62_0222F670 (UnkStruct_02018340 *param0)
 {
     GXLayers_DisableEngineALayers();
 
@@ -312,12 +312,12 @@ void ov62_0222F824 (int param0)
     GXLayers_SwapDisplay();
 }
 
-void ov62_0222F834 (UnkStruct_0208C06C * param0)
+void ov62_0222F834 (UnkStruct_0208C06C *param0)
 {
     sub_020183C4(param0->unk_14.unk_10, 2, &Unk_ov62_022487B0[2], 0);
 }
 
-static void ov62_0222F848 (UnkStruct_0208C06C * param0)
+static void ov62_0222F848 (UnkStruct_0208C06C *param0)
 {
     param0->unk_14.unk_04 = sub_0200C6E4(102);
     {
@@ -350,7 +350,7 @@ static void ov62_0222F848 (UnkStruct_0208C06C * param0)
     sub_0200964C(sub_0200C738(param0->unk_14.unk_04), 0, (256 * FX32_ONE));
 }
 
-void ov62_0222F8E4 (void * param0)
+void ov62_0222F8E4 (void *param0)
 {
     UnkStruct_0208C06C * v0 = param0;
 
@@ -361,7 +361,7 @@ void ov62_0222F8E4 (void * param0)
     OS_SetIrqCheckFlag(OS_IE_V_BLANK);
 }
 
-BOOL ov62_0222F910 (UnkStruct_0208C06C * param0, int * param1)
+BOOL ov62_0222F910 (UnkStruct_0208C06C *param0, int * param1)
 {
     BOOL v0 = 0;
 
@@ -455,7 +455,7 @@ BOOL ov62_0222F910 (UnkStruct_0208C06C * param0, int * param1)
     return 0;
 }
 
-void ov62_0222FB44 (UnkStruct_0208C06C * param0, int param1, BOOL param2, int * param3)
+void ov62_0222FB44 (UnkStruct_0208C06C *param0, int param1, BOOL param2, int * param3)
 {
     if (param2) {
         (*param3) = param1;
@@ -464,20 +464,20 @@ void ov62_0222FB44 (UnkStruct_0208C06C * param0, int param1, BOOL param2, int * 
     }
 }
 
-void ov62_0222FB60 (UnkStruct_0208C06C * param0, int param1)
+void ov62_0222FB60 (UnkStruct_0208C06C *param0, int param1)
 {
     param0->unk_04 = param1;
     param0->unk_08 = 0;
     param0->unk_0C = 0;
 }
 
-void ov62_0222FB6C (UnkStruct_0208C06C * param0, int param1)
+void ov62_0222FB6C (UnkStruct_0208C06C *param0, int param1)
 {
     param0->unk_08 = param1;
     param0->unk_0C = 0;
 }
 
-void ov62_0222FB74 (UnkStruct_0208C06C * param0)
+void ov62_0222FB74 (UnkStruct_0208C06C *param0)
 {
     sub_0208C06C(param0);
     ov62_02230A5C(param0);
@@ -485,7 +485,7 @@ void ov62_0222FB74 (UnkStruct_0208C06C * param0)
     param0->unk_534.unk_1B0 = 0;
 }
 
-BOOL ov62_0222FB90 (UnkStruct_0208C06C * param0)
+BOOL ov62_0222FB90 (UnkStruct_0208C06C *param0)
 {
     param0->unk_81C[param0->unk_534.unk_1A4] = param0->unk_818;
     param0->unk_534.unk_190[param0->unk_534.unk_1A4] = &param0->unk_818[param0->unk_534.unk_1B0];
@@ -502,7 +502,7 @@ BOOL ov62_0222FB90 (UnkStruct_0208C06C * param0)
     return 1;
 }
 
-BOOL ov62_0222FBF8 (UnkStruct_0208C06C * param0)
+BOOL ov62_0222FBF8 (UnkStruct_0208C06C *param0)
 {
     param0->unk_818 = param0->unk_81C[param0->unk_534.unk_1A4];
 
@@ -511,7 +511,7 @@ BOOL ov62_0222FBF8 (UnkStruct_0208C06C * param0)
     return 1;
 }
 
-void ov62_0222FC1C (UnkStruct_0208C06C * param0)
+void ov62_0222FC1C (UnkStruct_0208C06C *param0)
 {
     int v0 = param0->unk_818[param0->unk_534.unk_1B0].unk_10;
 
@@ -573,7 +573,7 @@ void ov62_0222FC1C (UnkStruct_0208C06C * param0)
     }
 }
 
-BOOL ov62_0222FD3C (UnkStruct_0208C06C * param0)
+BOOL ov62_0222FD3C (UnkStruct_0208C06C *param0)
 {
     int v0 = param0->unk_818[param0->unk_534.unk_1B0].unk_18;
     BOOL v1 = 1;
@@ -675,7 +675,7 @@ static void ov62_0222FE1C (u32 param0, u32 param1, void * param2)
     }
 }
 
-void ov62_0222FF40 (UnkStruct_0208C06C * param0)
+void ov62_0222FF40 (UnkStruct_0208C06C *param0)
 {
     int v0;
 
@@ -686,7 +686,7 @@ void ov62_0222FF40 (UnkStruct_0208C06C * param0)
     param0->unk_14.unk_18 = sub_02023FCC(param0->unk_14.unk_1C, 5, ov62_0222FE1C, param0, 102);
 }
 
-void ov62_0222FF7C (UnkStruct_0208C06C * param0)
+void ov62_0222FF7C (UnkStruct_0208C06C *param0)
 {
     int v0;
     s16 v1, v2;
@@ -713,7 +713,7 @@ void ov62_0222FF7C (UnkStruct_0208C06C * param0)
     }
 }
 
-void ov62_02230014 (UnkStruct_0208C06C * param0)
+void ov62_02230014 (UnkStruct_0208C06C *param0)
 {
     int v0;
     s16 v1, v2;
@@ -727,12 +727,12 @@ void ov62_02230014 (UnkStruct_0208C06C * param0)
     }
 }
 
-void ov62_02230054 (UnkStruct_0208C06C * param0)
+void ov62_02230054 (UnkStruct_0208C06C *param0)
 {
     sub_0202404C(param0->unk_14.unk_18);
 }
 
-void ov62_02230060 (UnkStruct_0208C06C * param0)
+void ov62_02230060 (UnkStruct_0208C06C *param0)
 {
     if (param0->unk_534.unk_1A4 > 0) {
         param0->unk_534.unk_1A4--;
@@ -746,7 +746,7 @@ void ov62_02230060 (UnkStruct_0208C06C * param0)
     param0->unk_818 = param0->unk_81C[param0->unk_534.unk_1A4];
 }
 
-void ov62_02230098 (UnkStruct_0208C06C * param0)
+void ov62_02230098 (UnkStruct_0208C06C *param0)
 {
     param0->unk_838.unk_00 = 0;
     param0->unk_838.unk_04 = 0xFF;
@@ -760,12 +760,12 @@ void ov62_02230098 (UnkStruct_0208C06C * param0)
     }
 }
 
-BOOL ov62_022300BC (UnkStruct_0208C06C * param0)
+BOOL ov62_022300BC (UnkStruct_0208C06C *param0)
 {
     return param0->unk_838.unk_00;
 }
 
-void ov62_022300C8 (UnkStruct_0208C06C * param0, int param1)
+void ov62_022300C8 (UnkStruct_0208C06C *param0, int param1)
 {
     param0->unk_838.unk_00 = 1;
     param0->unk_838.unk_04 = param1;

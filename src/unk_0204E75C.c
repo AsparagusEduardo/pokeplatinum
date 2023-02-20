@@ -13,7 +13,7 @@
 #include "item.h"
 #include "unk_0207D3B8.h"
 
-BOOL sub_0204E75C (UnkStruct_0203E724 * param0)
+BOOL sub_0204E75C (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     u16 v1 = inline_02049538(param0);
@@ -24,7 +24,7 @@ BOOL sub_0204E75C (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E7B4 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E7B4 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     u16 v1 = inline_02049538(param0);
@@ -35,7 +35,7 @@ BOOL sub_0204E7B4 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E80C (UnkStruct_0203E724 * param0)
+BOOL sub_0204E80C (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     u16 v1 = inline_02049538(param0);
@@ -46,7 +46,7 @@ BOOL sub_0204E80C (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E864 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E864 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     u16 v1 = inline_02049538(param0);
@@ -57,7 +57,7 @@ BOOL sub_0204E864 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E8BC (UnkStruct_0203E724 * param0)
+BOOL sub_0204E8BC (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     u16 v1 = inline_02049538(param0);
@@ -67,7 +67,7 @@ BOOL sub_0204E8BC (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E900 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E900 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     u16 v1 = inline_02049538(param0);
@@ -77,7 +77,7 @@ BOOL sub_0204E900 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E934 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E934 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     u16 v1 = inline_02049538(param0);
@@ -87,12 +87,12 @@ BOOL sub_0204E934 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E96C (UnkStruct_0203E724 * param0)
+BOOL sub_0204E96C (UnkStruct_0203E724 *param0)
 {
     return 0;
 }
 
-BOOL sub_0204E970 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E970 (UnkStruct_0203E724 *param0)
 {
     return 0;
 }

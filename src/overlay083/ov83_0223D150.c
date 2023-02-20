@@ -19,7 +19,7 @@
 #include "overlay083/ov83_0223D4CC.h"
 #include "overlay083/ov83_0223F7F4.h"
 
-void ov83_0223D150 (UnkStruct_ov83_0223B784 * param0, UnkStruct_02025E6C * param1)
+void ov83_0223D150 (UnkStruct_ov83_0223B784 *param0, UnkStruct_02025E6C * param1)
 {
     int v0;
     int v1;
@@ -50,7 +50,7 @@ void ov83_0223D150 (UnkStruct_ov83_0223B784 * param0, UnkStruct_02025E6C * param
     }
 }
 
-void ov83_0223D1EC (UnkStruct_ov83_0223B784 * param0)
+void ov83_0223D1EC (UnkStruct_ov83_0223B784 *param0)
 {
     ov83_0223D558(param0->unk_148C);
     param0->unk_148C = NULL;

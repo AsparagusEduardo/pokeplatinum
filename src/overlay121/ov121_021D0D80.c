@@ -49,20 +49,20 @@ typedef struct {
     NNSFndAllocator unk_D8;
 } UnkStruct_ov121_021D0FF4;
 
-static void ov121_021D0F68(UnkStruct_0201CD38 * param0, void * param1);
-static void ov121_021D0F7C(void * param0);
+static void ov121_021D0F68(UnkStruct_0201CD38 *param0, void * param1);
+static void ov121_021D0F7C(void *param0);
 static void ov121_021D0F94(void);
-static void ov121_021D0FF4(UnkStruct_ov121_021D0FF4 * param0);
-static void ov121_021D1068(UnkStruct_ov121_021D0FF4 * param0);
-static void ov121_021D1074(UnkStruct_ov121_021D0FF4 * param0);
-static void ov121_021D1184(UnkStruct_ov121_021D0FF4 * param0);
-static void ov121_021D11A8(UnkStruct_ov121_021D0FF4 * param0);
+static void ov121_021D0FF4(UnkStruct_ov121_021D0FF4 *param0);
+static void ov121_021D1068(UnkStruct_ov121_021D0FF4 *param0);
+static void ov121_021D1074(UnkStruct_ov121_021D0FF4 *param0);
+static void ov121_021D1184(UnkStruct_ov121_021D0FF4 *param0);
+static void ov121_021D11A8(UnkStruct_ov121_021D0FF4 *param0);
 static UnkStruct_0207C690 * ov121_021D1270(int param0);
 static void ov121_021D128C(void);
-static void ov121_021D1310(UnkStruct_0207C690 * param0);
-static void ov121_021D1318(UnkStruct_ov121_021D0FF4 * param0);
+static void ov121_021D1310(UnkStruct_0207C690 *param0);
+static void ov121_021D1318(UnkStruct_ov121_021D0FF4 *param0);
 
-int ov121_021D0D80 (UnkStruct_020067E8 * param0, int * param1)
+int ov121_021D0D80 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_ov121_021D0FF4 * v0;
 
@@ -107,7 +107,7 @@ int ov121_021D0D80 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-int ov121_021D0E7C (UnkStruct_020067E8 * param0, int * param1)
+int ov121_021D0E7C (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_ov121_021D0FF4 * v0 = sub_0200682C(param0);
 
@@ -145,7 +145,7 @@ int ov121_021D0E7C (UnkStruct_020067E8 * param0, int * param1)
     return 0;
 }
 
-int ov121_021D0F14 (UnkStruct_020067E8 * param0, int * param1)
+int ov121_021D0F14 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_ov121_021D0FF4 * v0 = sub_0200682C(param0);
 
@@ -167,7 +167,7 @@ int ov121_021D0F14 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-static void ov121_021D0F68 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov121_021D0F68 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov121_021D0FF4 * v0 = param1;
 
@@ -175,7 +175,7 @@ static void ov121_021D0F68 (UnkStruct_0201CD38 * param0, void * param1)
     sub_020241BC(GX_SORTMODE_MANUAL, GX_BUFFERMODE_W);
 }
 
-static void ov121_021D0F7C (void * param0)
+static void ov121_021D0F7C (void *param0)
 {
     UnkStruct_ov121_021D0FF4 * v0 = param0;
     OS_SetIrqCheckFlag(OS_IE_V_BLANK);
@@ -209,7 +209,7 @@ static void ov121_021D0F94 (void)
     }
 }
 
-static void ov121_021D0FF4 (UnkStruct_ov121_021D0FF4 * param0)
+static void ov121_021D0FF4 (UnkStruct_ov121_021D0FF4 *param0)
 {
     {
         static const UnkStruct_ov115_0226527C v0 = {
@@ -237,12 +237,12 @@ static void ov121_021D0FF4 (UnkStruct_ov121_021D0FF4 * param0)
     }
 }
 
-static void ov121_021D1068 (UnkStruct_ov121_021D0FF4 * param0)
+static void ov121_021D1068 (UnkStruct_ov121_021D0FF4 *param0)
 {
     sub_020203B8(param0->unk_04);
 }
 
-static void ov121_021D1074 (UnkStruct_ov121_021D0FF4 * param0)
+static void ov121_021D1074 (UnkStruct_ov121_021D0FF4 *param0)
 {
     NARC * v0;
 
@@ -279,14 +279,14 @@ static void ov121_021D1074 (UnkStruct_ov121_021D0FF4 * param0)
     param0->unk_D4 = (60 << 8);
 }
 
-static void ov121_021D1184 (UnkStruct_ov121_021D0FF4 * param0)
+static void ov121_021D1184 (UnkStruct_ov121_021D0FF4 *param0)
 {
     sub_02017110(&param0->unk_B4);
     sub_020171A0(&param0->unk_8C, &param0->unk_D8);
     sub_020171A0(&param0->unk_A0, &param0->unk_D8);
 }
 
-static void ov121_021D11A8 (UnkStruct_ov121_021D0FF4 * param0)
+static void ov121_021D11A8 (UnkStruct_ov121_021D0FF4 *param0)
 {
     VecFx32 v0, v1;
     MtxFx33 v2;
@@ -350,12 +350,12 @@ static void ov121_021D128C (void)
     G3_ViewPort(0, 0, 255, 191);
 }
 
-static void ov121_021D1310 (UnkStruct_0207C690 * param0)
+static void ov121_021D1310 (UnkStruct_0207C690 *param0)
 {
     sub_020242C4(param0);
 }
 
-static void ov121_021D1318 (UnkStruct_ov121_021D0FF4 * param0)
+static void ov121_021D1318 (UnkStruct_ov121_021D0FF4 *param0)
 {
     VecFx32 v0 = {0, 0, 0};
     UnkStruct_ov115_0226527C v1 = {0, 0, 0, 0};

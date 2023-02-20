@@ -17,12 +17,12 @@ struct UnkStruct_ov105_02245E1C_t {
     UnkStruct_02022550 * unk_08;
 };
 
-UnkStruct_ov105_02245E1C * ov105_02245DC4(UnkStruct_ov105_02245AAC * param0, u32 param1, int param2, int param3, u32 param4);
-void * ov105_02245E1C(UnkStruct_ov105_02245E1C * param0);
-void ov105_02245E30(UnkStruct_ov105_02245E1C * param0, int param1, int param2);
-BOOL ov105_02245E48(UnkStruct_ov105_02245E1C * param0);
+UnkStruct_ov105_02245E1C *ov105_02245DC4(UnkStruct_ov105_02245AAC * param0, u32 param1, int param2, int param3, u32 param4);
+void *ov105_02245E1C(UnkStruct_ov105_02245E1C * param0);
+void ov105_02245E30(UnkStruct_ov105_02245E1C *param0, int param1, int param2);
+BOOL ov105_02245E48(UnkStruct_ov105_02245E1C *param0);
 
-UnkStruct_ov105_02245E1C * ov105_02245DC4 (UnkStruct_ov105_02245AAC * param0, u32 param1, int param2, int param3, u32 param4)
+UnkStruct_ov105_02245E1C *ov105_02245DC4 (UnkStruct_ov105_02245AAC * param0, u32 param1, int param2, int param3, u32 param4)
 {
     UnkStruct_ov105_02245E1C * v0;
 
@@ -38,7 +38,7 @@ UnkStruct_ov105_02245E1C * ov105_02245DC4 (UnkStruct_ov105_02245AAC * param0, u3
     return v0;
 }
 
-void * ov105_02245E1C (UnkStruct_ov105_02245E1C * param0)
+void *ov105_02245E1C (UnkStruct_ov105_02245E1C * param0)
 {
     sub_02021BD4(param0->unk_08);
     Heap_FreeToHeap(param0);
@@ -46,7 +46,7 @@ void * ov105_02245E1C (UnkStruct_ov105_02245E1C * param0)
     return NULL;
 }
 
-void ov105_02245E30 (UnkStruct_ov105_02245E1C * param0, int param1, int param2)
+void ov105_02245E30 (UnkStruct_ov105_02245E1C *param0, int param1, int param2)
 {
     VecFx32 v0;
 
@@ -57,7 +57,7 @@ void ov105_02245E30 (UnkStruct_ov105_02245E1C * param0, int param1, int param2)
     return;
 }
 
-BOOL ov105_02245E48 (UnkStruct_ov105_02245E1C * param0)
+BOOL ov105_02245E48 (UnkStruct_ov105_02245E1C *param0)
 {
     return sub_02021FD0(param0->unk_08);
 }

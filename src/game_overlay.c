@@ -21,7 +21,7 @@ typedef struct {
     PMiLoadedOverlay unk_80[8];
 } UnkStruct_021BF370;
 
-static void FreeOverlayAllocation(PMiLoadedOverlay * param0);
+static void FreeOverlayAllocation(PMiLoadedOverlay *param0);
 static BOOL CanOverlayBeLoaded(const FSOverlayID param0);
 static PMiLoadedOverlay * GetLoadedOverlaysInRegion(int param0);
 static BOOL GetOverlayRamBounds(const FSOverlayID param0, u32 * param1, u32 * param2);
@@ -34,7 +34,7 @@ BOOL Overlay_LoadByID(const FSOverlayID param0, int param1);
 
 static UnkStruct_021BF370 Unk_021BF370;
 
-static void FreeOverlayAllocation (PMiLoadedOverlay * param0)
+static void FreeOverlayAllocation (PMiLoadedOverlay *param0)
 {
     GF_ASSERT(param0->isActive == 1);
     GF_ASSERT(FS_UnloadOverlay(MI_PROCESSOR_ARM9, param0->id) == TRUE);

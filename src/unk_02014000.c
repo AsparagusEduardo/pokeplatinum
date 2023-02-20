@@ -93,12 +93,12 @@ static void * sub_02014440(u32 param0);
 static void * sub_0201446C(u32 param0);
 static void * sub_02014498(u32 param0);
 static inline void * Particle_LocalAlloc(UnkStruct_02014014 * param0, u32 param1);
-static void sub_02014560(UnkStruct_02014014 * param0);
-static void sub_020145A0(UnkStruct_0201CD38 * param0, void * param1);
+static void sub_02014560(UnkStruct_02014014 *param0);
+static void sub_020145A0(UnkStruct_0201CD38 *param0, void * param1);
 
-void sub_0201411C(UnkStruct_02014014 * param0);
-void sub_02014718(UnkStruct_02014014 * param0);
-void sub_020144CC(UnkStruct_02014014 * param0, void * param1, int param2, int param3);
+void sub_0201411C(UnkStruct_02014014 *param0);
+void sub_02014718(UnkStruct_02014014 *param0);
+void sub_020144CC(UnkStruct_02014014 *param0, void * param1, int param2, int param3);
 
 static const UnkFuncPtr_0209CD00 Unk_020E5454[] = {
     sub_02014204,
@@ -128,7 +128,7 @@ void sub_02014000 (void)
     }
 }
 
-UnkStruct_02014014 * sub_02014014 (UnkFuncPtr_02014014 param0, UnkFuncPtr_02014014 param1, void * param2, int param3, int param4, int param5)
+UnkStruct_02014014 *sub_02014014 (UnkFuncPtr_02014014 param0, UnkFuncPtr_02014014 param1, void * param2, int param3, int param4, int param5)
 {
     UnkStruct_02014014 * v0;
     int v1;
@@ -187,7 +187,7 @@ UnkStruct_02014014 * sub_02014014 (UnkFuncPtr_02014014 param0, UnkFuncPtr_020140
     return v0;
 }
 
-void sub_0201411C (UnkStruct_02014014 * param0)
+void sub_0201411C (UnkStruct_02014014 *param0)
 {
     int v0;
 
@@ -249,7 +249,7 @@ void sub_020141E4 (void)
     }
 }
 
-static inline void * Particle_LocalAlloc (UnkStruct_02014014 * param0, u32 param1)
+static inline void *Particle_LocalAlloc (UnkStruct_02014014 *param0, u32 param1)
 {
     void * v0;
     u32 v1, v2;
@@ -397,12 +397,12 @@ static void * sub_02014498 (u32 param0)
     return Particle_LocalAlloc(v0, param0);
 }
 
-void * sub_020144C4 (int param0, int param1, int param2)
+void *sub_020144C4 (int param0, int param1, int param2)
 {
     return NARC_AllocAndReadWholeMemberByIndexPair(param0, param1, param2);
 }
 
-void sub_020144CC (UnkStruct_02014014 * param0, void * param1, int param2, int param3)
+void sub_020144CC (UnkStruct_02014014 *param0, void * param1, int param2, int param3)
 {
     GF_ASSERT(param0->unk_00 != NULL);
     GF_ASSERT(param0->unk_04 == NULL);
@@ -436,7 +436,7 @@ void sub_020144CC (UnkStruct_02014014 * param0, void * param1, int param2, int p
     }
 }
 
-static void sub_02014560 (UnkStruct_02014014 * param0)
+static void sub_02014560 (UnkStruct_02014014 *param0)
 {
     SPL_0209C988(param0->unk_00, param0->unk_04);
 
@@ -459,7 +459,7 @@ static void sub_02014560 (UnkStruct_02014014 * param0)
     }
 }
 
-static void sub_020145A0 (UnkStruct_0201CD38 * param0, void * param1)
+static void sub_020145A0 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_02014014 * v0 = param1;
 
@@ -505,7 +505,7 @@ void sub_020145F4 (NNSGfdPlttKey param0)
     GF_ASSERT(FALSE);
 }
 
-void sub_02014638 (UnkStruct_02014014 * param0)
+void sub_02014638 (UnkStruct_02014014 *param0)
 {
     const MtxFx43 * v0;
 
@@ -527,7 +527,7 @@ void sub_02014638 (UnkStruct_02014014 * param0)
     NNS_G3dGlbFlush();
 }
 
-void sub_02014674 (UnkStruct_02014014 * param0)
+void sub_02014674 (UnkStruct_02014014 *param0)
 {
     SPL_0209C6A8(param0->unk_00);
 }
@@ -573,7 +573,7 @@ int sub_020146C0 (void)
     return count;
 }
 
-UnkSPLStruct6 * sub_020146E4 (UnkStruct_02014014 * param0, int param1, const VecFx32 * param2)
+UnkSPLStruct6 *sub_020146E4 (UnkStruct_02014014 * param0, int param1, const VecFx32 * param2)
 {
     UnkSPLStruct6 * v0;
 
@@ -583,7 +583,7 @@ UnkSPLStruct6 * sub_020146E4 (UnkStruct_02014014 * param0, int param1, const Vec
     return v0;
 }
 
-UnkSPLStruct6 * sub_020146F4 (UnkStruct_02014014 * param0, int param1, UnkFuncPtr_020146F4 param2, void * param3)
+UnkSPLStruct6 *sub_020146F4 (UnkStruct_02014014 * param0, int param1, UnkFuncPtr_020146F4 param2, void * param3)
 {
     UnkSPLStruct6 * v0;
 
@@ -595,68 +595,68 @@ UnkSPLStruct6 * sub_020146F4 (UnkStruct_02014014 * param0, int param1, UnkFuncPt
     return v0;
 }
 
-s32 sub_02014710 (UnkStruct_02014014 * param0)
+s32 sub_02014710 (UnkStruct_02014014 *param0)
 {
     return param0->unk_00->unk_04.unk_04;
 }
 
-void sub_02014718 (UnkStruct_02014014 * param0)
+void sub_02014718 (UnkStruct_02014014 *param0)
 {
     SPL_0209C400(param0->unk_00);
 }
 
-void sub_02014724 (UnkStruct_02014014 * param0, UnkSPLStruct6 * param1)
+void sub_02014724 (UnkStruct_02014014 *param0, UnkSPLStruct6 * param1)
 {
     SPL_0209C444(param0->unk_00, param1);
 }
 
-void * sub_02014730 (UnkStruct_02014014 * param0)
+void *sub_02014730 (UnkStruct_02014014 * param0)
 {
     return param0->unk_0C;
 }
 
-void sub_02014734 (UnkStruct_02014014 * param0, VecFx32 * param1)
+void sub_02014734 (UnkStruct_02014014 *param0, VecFx32 * param1)
 {
     *param1 = param0->unk_40;
 }
 
-void sub_02014744 (UnkStruct_02014014 * param0, const VecFx32 * param1)
+void sub_02014744 (UnkStruct_02014014 *param0, const VecFx32 * param1)
 {
     param0->unk_40 = *param1;
     sub_02020680(param1, param0->unk_20);
 }
 
-void * sub_02014764 (void)
+void *sub_02014764 (void)
 {
     return Unk_021BF614;
 }
 
-void sub_02014770 (VecFx32 * param0)
+void sub_02014770 (VecFx32 *param0)
 {
     *param0 = Unk_020E5430;
 }
 
-UnkStruct_020203AC * sub_02014784 (UnkStruct_02014014 * param0)
+UnkStruct_020203AC *sub_02014784 (UnkStruct_02014014 * param0)
 {
     return param0->unk_20;
 }
 
-void sub_02014788 (UnkStruct_02014014 * param0, int param1)
+void sub_02014788 (UnkStruct_02014014 *param0, int param1)
 {
     param0->unk_DB = param1;
 }
 
-u8 sub_02014790 (UnkStruct_02014014 * param0)
+u8 sub_02014790 (UnkStruct_02014014 *param0)
 {
     return param0->unk_DB;
 }
 
-void sub_02014798 (UnkSPLStruct6 * param0, VecFx16 * param1)
+void sub_02014798 (UnkSPLStruct6 *param0, VecFx16 * param1)
 {
     *param1 = param0->unk_C0;
 }
 
-void sub_020147B0 (UnkSPLStruct6 * param0, fx32 param1)
+void sub_020147B0 (UnkSPLStruct6 *param0, fx32 param1)
 {
     param0->unk_90->unk_00->unk_10 = param1;
 }
@@ -670,7 +670,7 @@ enum {
     SPL_FLD_TYPE_CONVERGENCE,
 };
 
-static const void * sub_020147B8 (UnkSPLStruct6 * param0, int param1)
+static const void *sub_020147B8 (UnkSPLStruct6 *param0, int param1)
 {
     int v0;
     int v1;
@@ -728,7 +728,7 @@ static const void * sub_020147B8 (UnkSPLStruct6 * param0, int param1)
     return NULL;
 }
 
-void sub_02014874 (UnkSPLStruct6 * param0, VecFx16 * param1)
+void sub_02014874 (UnkSPLStruct6 *param0, VecFx16 * param1)
 {
     UnkStruct_02014874 * v0;
 
@@ -741,7 +741,7 @@ void sub_02014874 (UnkSPLStruct6 * param0, VecFx16 * param1)
     v0->unk_00 = *param1;
 }
 
-void sub_02014890 (UnkSPLStruct6 * param0, VecFx32 * param1)
+void sub_02014890 (UnkSPLStruct6 *param0, VecFx32 * param1)
 {
     UnkStruct_02014890 * v0;
 
@@ -754,7 +754,7 @@ void sub_02014890 (UnkSPLStruct6 * param0, VecFx32 * param1)
     v0->unk_00 = *param1;
 }
 
-void sub_020148A8 (UnkSPLStruct6 * param0, VecFx32 * param1)
+void sub_020148A8 (UnkSPLStruct6 *param0, VecFx32 * param1)
 {
     UnkStruct_02014890 * v0;
 
@@ -769,7 +769,7 @@ void sub_020148A8 (UnkSPLStruct6 * param0, VecFx32 * param1)
     *param1 = v0->unk_00;
 }
 
-void sub_020148DC (UnkSPLStruct6 * param0, fx16 * param1)
+void sub_020148DC (UnkSPLStruct6 *param0, fx16 * param1)
 {
     UnkStruct_02014890 * v0;
 
@@ -782,7 +782,7 @@ void sub_020148DC (UnkSPLStruct6 * param0, fx16 * param1)
     v0->unk_0C = *param1;
 }
 
-void sub_020148F4 (UnkSPLStruct6 * param0, fx16 * param1)
+void sub_020148F4 (UnkSPLStruct6 *param0, fx16 * param1)
 {
     UnkStruct_02014890 * v0;
 
@@ -796,7 +796,7 @@ void sub_020148F4 (UnkSPLStruct6 * param0, fx16 * param1)
     *param1 = v0->unk_0C;
 }
 
-void sub_02014910 (UnkSPLStruct6 * param0, u16 * param1)
+void sub_02014910 (UnkSPLStruct6 *param0, u16 * param1)
 {
     UnkStruct_02014910 * v0;
 
@@ -809,7 +809,7 @@ void sub_02014910 (UnkSPLStruct6 * param0, u16 * param1)
     v0->unk_00 = *param1;
 }
 
-void sub_02014924 (UnkSPLStruct6 * param0, u16 * param1)
+void sub_02014924 (UnkSPLStruct6 *param0, u16 * param1)
 {
     UnkStruct_02014910 * v0;
 
@@ -823,7 +823,7 @@ void sub_02014924 (UnkSPLStruct6 * param0, u16 * param1)
     *param1 = v0->unk_00;
 }
 
-void sub_02014940 (UnkSPLStruct6 * param0, u16 * param1)
+void sub_02014940 (UnkSPLStruct6 *param0, u16 * param1)
 {
     UnkStruct_02014910 * v0;
 
@@ -836,7 +836,7 @@ void sub_02014940 (UnkSPLStruct6 * param0, u16 * param1)
     v0->unk_02 = *param1;
 }
 
-void sub_02014954 (UnkSPLStruct6 * param0, u16 * param1)
+void sub_02014954 (UnkSPLStruct6 *param0, u16 * param1)
 {
     UnkStruct_02014910 * v0;
 
@@ -850,7 +850,7 @@ void sub_02014954 (UnkSPLStruct6 * param0, u16 * param1)
     *param1 = v0->unk_02;
 }
 
-void sub_02014970 (UnkSPLStruct6 * param0, VecFx32 * param1)
+void sub_02014970 (UnkSPLStruct6 *param0, VecFx32 * param1)
 {
     UnkStruct_02014970 * v0;
 
@@ -863,7 +863,7 @@ void sub_02014970 (UnkSPLStruct6 * param0, VecFx32 * param1)
     v0->unk_00 = *param1;
 }
 
-void sub_02014988 (UnkSPLStruct6 * param0, VecFx32 * param1)
+void sub_02014988 (UnkSPLStruct6 *param0, VecFx32 * param1)
 {
     UnkStruct_02014970 * v0;
 
@@ -878,7 +878,7 @@ void sub_02014988 (UnkSPLStruct6 * param0, VecFx32 * param1)
     *param1 = v0->unk_00;
 }
 
-void sub_020149BC (UnkSPLStruct6 * param0, fx16 * param1)
+void sub_020149BC (UnkSPLStruct6 *param0, fx16 * param1)
 {
     UnkStruct_02014970 * v0;
 
@@ -891,7 +891,7 @@ void sub_020149BC (UnkSPLStruct6 * param0, fx16 * param1)
     v0->unk_0C = *param1;
 }
 
-void sub_020149D4 (UnkSPLStruct6 * param0, fx16 * param1)
+void sub_020149D4 (UnkSPLStruct6 *param0, fx16 * param1)
 {
     UnkStruct_02014970 * v0;
 

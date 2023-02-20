@@ -7,7 +7,7 @@
 
 #include <dwc.h>
 
-void sub_020329E0(UnkStruct_021C0794 * param0, const UnkStruct_0202610C * param1);
+void sub_020329E0(UnkStruct_021C0794 *param0, const UnkStruct_0202610C * param1);
 void sub_02032A70(void);
 BOOL sub_02032AAC(void);
 void sub_02032AC0(void);
@@ -27,17 +27,17 @@ void sub_02032E30(int param0);
 int sub_02032E44(void);
 int sub_02032E64(void);
 BOOL sub_02032E90(void);
-UnkStruct_02025E6C * sub_02032EE8(int param0);
-DWCFriendData * sub_02032F1C(int param0);
+UnkStruct_02025E6C *sub_02032EE8(int param0);
+DWCFriendData *sub_02032F1C(int param0);
 int sub_02032F40(int param0);
-u16 * sub_02032F54(int param0);
+u16 *sub_02032F54(int param0);
 int sub_02032F78(int param0);
 int sub_02032F9C(int param0);
 int sub_02032FC0(int param0);
 BOOL sub_02032FE4(void);
-void sub_02033114(UnkStruct_021C0794 * param0);
-void sub_020331B4(UnkStruct_021C0794 * param0, int param1);
-void sub_020331E0(UnkStruct_021C0794 * param0, int param1);
-void sub_020331F4(UnkStruct_02025E6C * param0);
+void sub_02033114(UnkStruct_021C0794 *param0);
+void sub_020331B4(UnkStruct_021C0794 *param0, int param1);
+void sub_020331E0(UnkStruct_021C0794 *param0, int param1);
+void sub_020331F4(UnkStruct_02025E6C *param0);
 
 #endif // POKEPLATINUM_UNK_020329E0_H

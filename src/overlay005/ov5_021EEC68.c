@@ -54,7 +54,7 @@ static void ov5_021EED08 (const UnkStruct_ov5_021EF13C * param0, u16 param1, fx3
     *param2 = param0->unk_04[param0->unk_00[param1].unk_06];
 }
 
-static void ov5_021EED20 (UnkStruct_ov5_021EED20 * param0)
+static void ov5_021EED20 (UnkStruct_ov5_021EED20 *param0)
 {
     int v0;
 

@@ -21,15 +21,15 @@
 #include "unk_020218BC.h"
 #include "overlay111/ov111_021D2F80.h"
 
-void ov111_021D2F80(UnkStruct_ov111_021D2F80 * param0);
-UnkStruct_02022550 * ov111_021D3280(UnkStruct_ov111_021D2F80 * param0, u32 param1, u32 param2, u32 param3, u32 param4, u8 param5);
-void ov111_021D3320(UnkStruct_ov111_021D2F80 * param0);
-void ov111_021D33B0(UnkStruct_ov111_021D2F80 * param0, int param1);
+void ov111_021D2F80(UnkStruct_ov111_021D2F80 *param0);
+UnkStruct_02022550 *ov111_021D3280(UnkStruct_ov111_021D2F80 * param0, u32 param1, u32 param2, u32 param3, u32 param4, u8 param5);
+void ov111_021D3320(UnkStruct_ov111_021D2F80 *param0);
+void ov111_021D33B0(UnkStruct_ov111_021D2F80 *param0, int param1);
 static void ov111_021D3378(void);
-static void ov111_021D30D8(UnkStruct_ov111_021D2F80 * param0, int param1, int param2, int param3);
-static void ov111_021D304C(UnkStruct_ov111_021D2F80 * param0, int param1);
-static void ov111_021D3168(UnkStruct_ov111_021D2F80 * param0, int param1);
-static void ov111_021D31F4(UnkStruct_ov111_021D2F80 * param0, int param1);
+static void ov111_021D30D8(UnkStruct_ov111_021D2F80 *param0, int param1, int param2, int param3);
+static void ov111_021D304C(UnkStruct_ov111_021D2F80 *param0, int param1);
+static void ov111_021D3168(UnkStruct_ov111_021D2F80 *param0, int param1);
+static void ov111_021D31F4(UnkStruct_ov111_021D2F80 *param0, int param1);
 
 static const u8 Unk_ov111_021D3820[4] = {
     0x5,
@@ -38,7 +38,7 @@ static const u8 Unk_ov111_021D3820[4] = {
     0x5
 };
 
-void ov111_021D2F80 (UnkStruct_ov111_021D2F80 * param0)
+void ov111_021D2F80 (UnkStruct_ov111_021D2F80 *param0)
 {
     int v0;
     NARC * v1;
@@ -73,7 +73,7 @@ void ov111_021D2F80 (UnkStruct_ov111_021D2F80 * param0)
     return;
 }
 
-static void ov111_021D304C (UnkStruct_ov111_021D2F80 * param0, int param1)
+static void ov111_021D304C (UnkStruct_ov111_021D2F80 *param0, int param1)
 {
     param0->unk_1A0[2][0] = sub_0200985C(param0->unk_190[0], 184, 12, 0, 2, NNS_G2D_VRAM_TYPE_2DMAIN, 115);
     param0->unk_1A0[2][1] = sub_020098B8(param0->unk_190[1], 184, 13, 0, 2, NNS_G2D_VRAM_TYPE_2DMAIN, 4, 115);
@@ -83,7 +83,7 @@ static void ov111_021D304C (UnkStruct_ov111_021D2F80 * param0, int param1)
     return;
 }
 
-static void ov111_021D30D8 (UnkStruct_ov111_021D2F80 * param0, int param1, int param2, int param3)
+static void ov111_021D30D8 (UnkStruct_ov111_021D2F80 *param0, int param1, int param2, int param3)
 {
     param0->unk_1A0[param1][0] = sub_0200985C(param0->unk_190[0], 184, 32, 0, param2, param3, 115);
     param0->unk_1A0[param1][1] = sub_020098B8(param0->unk_190[1], 184, 33, 0, param2, param3, 5, 115);
@@ -93,7 +93,7 @@ static void ov111_021D30D8 (UnkStruct_ov111_021D2F80 * param0, int param1, int p
     return;
 }
 
-static void ov111_021D3168 (UnkStruct_ov111_021D2F80 * param0, int param1)
+static void ov111_021D3168 (UnkStruct_ov111_021D2F80 *param0, int param1)
 {
     param0->unk_1A0[3][0] = sub_0200985C(param0->unk_190[0], 184, 16, 0, 3, NNS_G2D_VRAM_TYPE_2DMAIN, 115);
     param0->unk_1A0[3][1] = sub_020098B8(param0->unk_190[1], 184, 17, 0, 3, NNS_G2D_VRAM_TYPE_2DMAIN, 4, 115);
@@ -103,7 +103,7 @@ static void ov111_021D3168 (UnkStruct_ov111_021D2F80 * param0, int param1)
     return;
 }
 
-static void ov111_021D31F4 (UnkStruct_ov111_021D2F80 * param0, int param1)
+static void ov111_021D31F4 (UnkStruct_ov111_021D2F80 *param0, int param1)
 {
     param0->unk_1A0[4][0] = sub_0200985C(param0->unk_190[0], 184, 20, 0, 4, NNS_G2D_VRAM_TYPE_2DMAIN, 115);
     param0->unk_1A0[4][1] = sub_020098B8(param0->unk_190[1], 184, 21, 0, 4, NNS_G2D_VRAM_TYPE_2DMAIN, 1, 115);
@@ -113,7 +113,7 @@ static void ov111_021D31F4 (UnkStruct_ov111_021D2F80 * param0, int param1)
     return;
 }
 
-UnkStruct_02022550 * ov111_021D3280 (UnkStruct_ov111_021D2F80 * param0, u32 param1, u32 param2, u32 param3, u32 param4, u8 param5)
+UnkStruct_02022550 *ov111_021D3280 (UnkStruct_ov111_021D2F80 * param0, u32 param1, u32 param2, u32 param3, u32 param4, u8 param5)
 {
     int v0;
     UnkStruct_ov19_021DA864 v1;
@@ -152,7 +152,7 @@ UnkStruct_02022550 * ov111_021D3280 (UnkStruct_ov111_021D2F80 * param0, u32 para
     return v2;
 }
 
-void ov111_021D3320 (UnkStruct_ov111_021D2F80 * param0)
+void ov111_021D3320 (UnkStruct_ov111_021D2F80 *param0)
 {
     u8 v0;
 
@@ -201,7 +201,7 @@ static u8 Unk_ov111_021D3940[8] = {
     0x1D
 };
 
-void ov111_021D33B0 (UnkStruct_ov111_021D2F80 * param0, int param1)
+void ov111_021D33B0 (UnkStruct_ov111_021D2F80 *param0, int param1)
 {
     UnkStruct_02009DC8 * v0;
 

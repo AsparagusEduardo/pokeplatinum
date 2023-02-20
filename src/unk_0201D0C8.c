@@ -4,7 +4,7 @@
 
 #include "unk_0201D0C8.h"
 
-u16 * sub_0201D0C8 (const u16 * param0)
+u16 *sub_0201D0C8 (const u16 * param0)
 {
     GF_ASSERT(*param0 == 0xfffe);
 

@@ -17,7 +17,7 @@ void ov17_0224F0BC(UnkStruct_0200C6E4 * param0, UnkStruct_0200C704 * param1, NNS
 void ov17_0224F0F0(UnkStruct_0200C6E4 * param0, UnkStruct_0200C704 * param1, u32 param2, u32 param3);
 void ov17_0224F138(UnkStruct_0200C704 * param0, u32 param1);
 void ov17_0224F140(UnkStruct_0200C704 * param0, u32 param1, u32 param2);
-UnkStruct_0200D0F4 * ov17_0224F154(UnkStruct_0200C6E4 * param0, UnkStruct_0200C704 * param1, int param2, const UnkStruct_ov104_0223F9E0 * param3);
+UnkStruct_0200D0F4 *ov17_0224F154(UnkStruct_0200C6E4 * param0, UnkStruct_0200C704 * param1, int param2, const UnkStruct_ov104_0223F9E0 * param3);
 void ov17_0224F184(UnkStruct_0200D0F4 * param0);
 
 #endif // POKEPLATINUM_OV17_0224F080_H

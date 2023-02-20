@@ -10,12 +10,12 @@
 #include "unk_0201DBEC.h"
 #include "gx_layers.h"
 
-void ov80_021D2A08(UnkStruct_ov80_021D2A08 * param0);
-void ov80_021D2AC0(UnkStruct_ov80_021D2A08 * param0);
-void ov80_021D2AE0(UnkStruct_ov80_021D2A08 * param0);
-void ov80_021D2AEC(UnkStruct_ov80_021D2A08 * param0);
+void ov80_021D2A08(UnkStruct_ov80_021D2A08 *param0);
+void ov80_021D2AC0(UnkStruct_ov80_021D2A08 *param0);
+void ov80_021D2AE0(UnkStruct_ov80_021D2A08 *param0);
+void ov80_021D2AEC(UnkStruct_ov80_021D2A08 *param0);
 
-void ov80_021D2A08 (UnkStruct_ov80_021D2A08 * param0)
+void ov80_021D2A08 (UnkStruct_ov80_021D2A08 *param0)
 {
     GXLayers_EngineAToggleLayers(GX_PLANEMASK_OBJ, 1);
     GXLayers_EngineBToggleLayers(GX_PLANEMASK_OBJ, 1);
@@ -51,19 +51,19 @@ void ov80_021D2A08 (UnkStruct_ov80_021D2A08 * param0)
     }
 }
 
-void ov80_021D2AC0 (UnkStruct_ov80_021D2A08 * param0)
+void ov80_021D2AC0 (UnkStruct_ov80_021D2A08 *param0)
 {
     sub_0200C8B0(param0->unk_D8, param0->unk_DC);
     sub_0200C8D4(param0->unk_D8);
     sub_0201DC3C();
 }
 
-void ov80_021D2AE0 (UnkStruct_ov80_021D2A08 * param0)
+void ov80_021D2AE0 (UnkStruct_ov80_021D2A08 *param0)
 {
     sub_0200C7EC(param0->unk_DC);
 }
 
-void ov80_021D2AEC (UnkStruct_ov80_021D2A08 * param0)
+void ov80_021D2AEC (UnkStruct_ov80_021D2A08 *param0)
 {
     sub_0200C800();
 }

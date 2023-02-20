@@ -12,7 +12,7 @@
 #include "overlay115/ov115_02265A18.h"
 #include "overlay115/ov115_02265A24.h"
 
-void ov115_02265A24 (UnkStruct_ov115_0226095C * param0)
+void ov115_02265A24 (UnkStruct_ov115_0226095C *param0)
 {
     sub_02032798(ov115_02265A18(), ov115_02265A20(), param0);
 }

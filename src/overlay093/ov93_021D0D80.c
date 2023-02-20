@@ -42,7 +42,7 @@ typedef struct {
 
 static void ov93_021D0FA8(void);
 static void ov93_021D100C(void);
-static void ov93_021D102C(UnkStruct_ov93_021D102C * param0);
+static void ov93_021D102C(UnkStruct_ov93_021D102C *param0);
 
 static const UnkStruct_ov9_02249FF4 Unk_ov93_021D14B8 = {
     0x29AEC1,
@@ -82,7 +82,7 @@ static UnkStruct_ov93_021D15A0 Unk_ov93_021D15A0[4] = {
     }
 };
 
-int ov93_021D0D80 (UnkStruct_020067E8 * param0, int * param1)
+int ov93_021D0D80 (UnkStruct_020067E8 *param0, int * param1)
 {
     u8 v0;
     UnkStruct_ov93_021D102C * v1;
@@ -121,7 +121,7 @@ int ov93_021D0D80 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-int ov93_021D0E70 (UnkStruct_020067E8 * param0, int * param1)
+int ov93_021D0E70 (UnkStruct_020067E8 *param0, int * param1)
 {
     u8 v0;
     BOOL v1;
@@ -181,7 +181,7 @@ int ov93_021D0E70 (UnkStruct_020067E8 * param0, int * param1)
     return 0;
 }
 
-int ov93_021D0F58 (UnkStruct_020067E8 * param0, int * param1)
+int ov93_021D0F58 (UnkStruct_020067E8 *param0, int * param1)
 {
     u8 v0;
     UnkStruct_ov93_021D102C * v1 = sub_0200682C(param0);
@@ -237,7 +237,7 @@ static void ov93_021D100C (void)
     GXLayers_SetBanks(&v0);
 }
 
-static void ov93_021D102C (UnkStruct_ov93_021D102C * param0)
+static void ov93_021D102C (UnkStruct_ov93_021D102C *param0)
 {
     u8 v0;
     NNSG3dResTex * v1;

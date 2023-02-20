@@ -18,7 +18,7 @@ void sub_02017428 (void)
     Unk_021BF658 = 0;
 }
 
-void sub_02017434 (UnkStruct_02025E5C * param0)
+void sub_02017434 (UnkStruct_02025E5C *param0)
 {
     Unk_021BF658 = 1;
     Unk_021BF668 = 0;

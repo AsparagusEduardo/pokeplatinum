@@ -18,7 +18,7 @@ typedef struct {
 } UnkStruct_021BF5C8;
 
 static void sub_020137EC(RTCResult param0, void * param1);
-static void sub_02013824(UnkStruct_021BF5C8 * param0);
+static void sub_02013824(UnkStruct_021BF5C8 *param0);
 
 static UnkStruct_021BF5C8 Unk_021BF5C8;
 
@@ -62,24 +62,24 @@ static void sub_020137EC (RTCResult param0, void * param1)
     v0->unk_04 = 0;
 }
 
-static void sub_02013824 (UnkStruct_021BF5C8 * param0)
+static void sub_02013824 (UnkStruct_021BF5C8 *param0)
 {
     param0->unk_04 = 1;
     param0->unk_0C = RTC_GetDateTimeAsync(&param0->unk_2C, &param0->unk_3C, sub_020137EC, param0);
     GF_ASSERT(param0->unk_0C == RTC_RESULT_SUCCESS);
 }
 
-static inline RTCDate * inline_0201384C (UnkStruct_021BF5C8 * param0)
+static inline RTCDate *inline_0201384C (UnkStruct_021BF5C8 *param0)
 {
     return &param0->unk_10;
 }
 
-static inline RTCTime * inline_02013880 (UnkStruct_021BF5C8 * param0)
+static inline RTCTime *inline_02013880 (UnkStruct_021BF5C8 *param0)
 {
     return &param0->unk_20;
 }
 
-void sub_0201384C (RTCDate * param0, RTCTime * param1)
+void sub_0201384C (RTCDate *param0, RTCTime * param1)
 {
     GF_ASSERT(Unk_021BF5C8.unk_00 == 1);
 
@@ -87,13 +87,13 @@ void sub_0201384C (RTCDate * param0, RTCTime * param1)
     *param1 = *inline_02013880(&Unk_021BF5C8);
 }
 
-void sub_02013880 (RTCTime * param0)
+void sub_02013880 (RTCTime *param0)
 {
     GF_ASSERT(Unk_021BF5C8.unk_00 == 1);
     *param0 = *inline_02013880(&Unk_021BF5C8);
 }
 
-void sub_020138A4 (RTCDate * param0)
+void sub_020138A4 (RTCDate *param0)
 {
     GF_ASSERT(Unk_021BF5C8.unk_00 == 1);
     *param0 = *inline_0201384C(&Unk_021BF5C8);

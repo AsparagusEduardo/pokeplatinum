@@ -9,7 +9,7 @@ typedef struct UnkStruct_0209ACBC_t {
     u32 unk_04;
 } UnkStruct_0209ACBC;
 
-UnkStruct_0209ACBC * sub_0209ACBC (u32 param0)
+UnkStruct_0209ACBC *sub_0209ACBC (u32 param0)
 {
     UnkStruct_0209ACBC * v0;
 
@@ -19,7 +19,7 @@ UnkStruct_0209ACBC * sub_0209ACBC (u32 param0)
     return v0;
 }
 
-void sub_0209ACDC (UnkStruct_0209ACBC * param0)
+void sub_0209ACDC (UnkStruct_0209ACBC *param0)
 {
     Heap_FreeToHeap(param0);
 }
@@ -29,7 +29,7 @@ u32 sub_0209ACE4 (const UnkStruct_0209ACBC * param0)
     return param0->unk_00;
 }
 
-void sub_0209ACE8 (UnkStruct_0209ACBC * param0, u32 param1)
+void sub_0209ACE8 (UnkStruct_0209ACBC *param0, u32 param1)
 {
     param0->unk_00 = param1;
 }
@@ -39,7 +39,7 @@ u32 sub_0209ACEC (const UnkStruct_0209ACBC * param0)
     return param0->unk_04;
 }
 
-void sub_0209ACF0 (UnkStruct_0209ACBC * param0, u32 param1)
+void sub_0209ACF0 (UnkStruct_0209ACBC *param0, u32 param1)
 {
     param0->unk_04 = param1;
 }

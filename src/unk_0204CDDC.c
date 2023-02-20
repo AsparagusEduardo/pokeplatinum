@@ -12,17 +12,17 @@
 #include "unk_020507CC.h"
 #include "unk_0206AFE0.h"
 
-BOOL sub_0204CF68(UnkStruct_0203E724 * param0);
-BOOL sub_0204CF8C(UnkStruct_0203E724 * param0);
-BOOL sub_0204CFC4(UnkStruct_0203E724 * param0);
+BOOL sub_0204CF68(UnkStruct_0203E724 *param0);
+BOOL sub_0204CF8C(UnkStruct_0203E724 *param0);
+BOOL sub_0204CFC4(UnkStruct_0203E724 *param0);
 
-BOOL sub_0204CDDC (UnkStruct_0203E724 * param0)
+BOOL sub_0204CDDC (UnkStruct_0203E724 *param0)
 {
     sub_0206B218(sub_020507E4(param0->unk_34->unk_0C));
     return 0;
 }
 
-BOOL sub_0204CDF0 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CDF0 (UnkStruct_0203E724 *param0)
 {
     u16 * v0 = inline_0204FCAC(param0);
 
@@ -39,7 +39,7 @@ static const u16 Unk_020EBF84[6][10] = {
     {0xC, 0x1E, 0x2, 0x14, 0x1D, 0x4, 0x9, 0x1B, 0xE, 0xA}
 };
 
-BOOL sub_0204CE1C (UnkStruct_0203E724 * param0)
+BOOL sub_0204CE1C (UnkStruct_0203E724 *param0)
 {
     u8 v0, v1;
     u16 v2;
@@ -132,7 +132,7 @@ static const u16 Unk_020EBF64[] = {
     0x21
 };
 
-BOOL sub_0204CF68 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CF68 (UnkStruct_0203E724 *param0)
 {
     u16 * v0 = inline_0204FCAC(param0);
 
@@ -140,7 +140,7 @@ BOOL sub_0204CF68 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CF8C (UnkStruct_0203E724 * param0)
+BOOL sub_0204CF8C (UnkStruct_0203E724 *param0)
 {
     u16 v0 = inline_02049538(param0);
     u16 * v1 = inline_0204FCAC(param0);
@@ -154,7 +154,7 @@ BOOL sub_0204CF8C (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CFC4 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CFC4 (UnkStruct_0203E724 *param0)
 {
     u16 v0 = inline_02049538(param0);
     u16 * v1 = inline_0204FCAC(param0);

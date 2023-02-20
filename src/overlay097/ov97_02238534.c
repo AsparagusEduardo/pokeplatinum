@@ -42,18 +42,18 @@ typedef struct {
 
 typedef void (* UnkFuncPtr_020312B8)(WMBssDesc *);
 
-static void ov97_02238AB4(UnkStruct_ov97_02238AB4 * param0);
-static int ov97_02238B34(UnkStruct_ov97_02238AB4 * param0);
-static void ov97_022388E0(void * param0);
+static void ov97_02238AB4(UnkStruct_ov97_02238AB4 *param0);
+static int ov97_02238B34(UnkStruct_ov97_02238AB4 *param0);
+static void ov97_022388E0(void *param0);
 static BOOL ov97_02238908(void);
-static void ov97_0223893C(void * param0);
+static void ov97_0223893C(void *param0);
 static BOOL ov97_02238624(void);
-static void ov97_02238720(void * param0);
+static void ov97_02238720(void *param0);
 static BOOL ov97_02238858(void);
-static void ov97_02238874(void * param0);
-static void ov97_0223888C(void * param0);
+static void ov97_02238874(void *param0);
+static void ov97_0223888C(void *param0);
 static BOOL ov97_022389EC(void);
-static void ov97_02238A10(void * param0);
+static void ov97_02238A10(void *param0);
 
 static UnkStruct_ov97_022403F8 * Unk_ov97_022403F8;
 static void (* Unk_ov97_022403FC)(const char *, ...) = NULL;
@@ -189,7 +189,7 @@ static BOOL ov97_02238624 (void)
     return 1;
 }
 
-static void ov97_02238720 (void * param0)
+static void ov97_02238720 (void *param0)
 {
     WMstartScanCallback * v0 = (WMstartScanCallback *)param0;
 
@@ -289,7 +289,7 @@ static BOOL ov97_02238858 (void)
     return 1;
 }
 
-static void ov97_02238874 (void * param0)
+static void ov97_02238874 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -304,7 +304,7 @@ static void ov97_02238874 (void * param0)
     ov97_02238534(1);
 }
 
-static void ov97_0223888C (void * param0)
+static void ov97_0223888C (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -331,7 +331,7 @@ static BOOL ov97_022388BC (void)
     return 1;
 }
 
-static void ov97_022388E0 (void * param0)
+static void ov97_022388E0 (void *param0)
 {
     WMindCallback * v0 = (WMindCallback *)param0;
 
@@ -363,7 +363,7 @@ static BOOL ov97_02238908 (void)
     return 1;
 }
 
-static void ov97_0223893C (void * param0)
+static void ov97_0223893C (void *param0)
 {
     WMErrCode v0;
     WMCallback * v1 = (WMCallback *)param0;
@@ -438,7 +438,7 @@ static BOOL ov97_022389EC (void)
     return 1;
 }
 
-static void ov97_02238A10 (void * param0)
+static void ov97_02238A10 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -459,7 +459,7 @@ static void ov97_02238A10 (void * param0)
     ov97_02238978();
 }
 
-BOOL ov97_02238A4C (void * param0, UnkFuncPtr_ov97_02238A4C param1, void * param2)
+BOOL ov97_02238A4C (void *param0, UnkFuncPtr_ov97_02238A4C param1, void * param2)
 {
     Unk_ov97_022403F8 = (UnkStruct_ov97_022403F8 *)(((u32)param2 + 31) / 32 * 32);
     (*Unk_ov97_022403F8).unk_11C4 = 0;
@@ -475,7 +475,7 @@ BOOL ov97_02238A4C (void * param0, UnkFuncPtr_ov97_02238A4C param1, void * param
     return ov97_022388BC();
 }
 
-static void ov97_02238AB4 (UnkStruct_ov97_02238AB4 * param0)
+static void ov97_02238AB4 (UnkStruct_ov97_02238AB4 *param0)
 {
     int v0;
 
@@ -492,7 +492,7 @@ static void ov97_02238AB4 (UnkStruct_ov97_02238AB4 * param0)
     }
 }
 
-static int ov97_02238B34 (UnkStruct_ov97_02238AB4 * param0)
+static int ov97_02238B34 (UnkStruct_ov97_02238AB4 *param0)
 {
     if (((*Unk_ov97_022403F8).unk_11CE != param0->unk_00) || ((*Unk_ov97_022403F8).unk_11D4 != param0->unk_04)) {
         if ((*Unk_ov97_022403F8).unk_11D8++ >= 16) {
@@ -544,7 +544,7 @@ static int ov97_02238B34 (UnkStruct_ov97_02238AB4 * param0)
     return 0;
 }
 
-static u16 ov97_02238C70 (u8 * param0, u32 param1)
+static u16 ov97_02238C70 (u8 *param0, u32 param1)
 {
     u16 v0, v1;
     u16 * v2 = (u16 *)param0;
@@ -604,7 +604,7 @@ int ov97_02238D4C (void)
     return sizeof(UnkStruct_ov97_022403F8) + 32;
 }
 
-void * ov97_02238D54 (void)
+void *ov97_02238D54 (void)
 {
     if ((*Unk_ov97_022403F8).unk_10BC) {
         return &((*Unk_ov97_022403F8).unk_1054[0]);

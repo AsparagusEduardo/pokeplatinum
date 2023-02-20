@@ -98,9 +98,9 @@ void ov16_0225E4C8(UnkStruct_0207ADB4 * param0, UnkStruct_ov16_0225BFFC * param1
 void ov16_02263730(UnkStruct_0207ADB4 * param0, UnkStruct_ov16_0225BFFC * param1);
 u8 ov16_02263AE4(UnkStruct_ov16_0225BFFC * param0);
 u8 ov16_02263AF0(UnkStruct_ov16_0225BFFC * param0);
-UnkStruct_02007C7C * ov16_02263AFC(UnkStruct_ov16_0225BFFC * param0);
-UnkStruct_ov16_022674C4 * ov16_02263B08(UnkStruct_ov16_0225BFFC * param0);
-UnkStruct_ov16_0226C378 * ov16_02263B0C(UnkStruct_ov16_0225BFFC * param0);
+UnkStruct_02007C7C *ov16_02263AFC(UnkStruct_ov16_0225BFFC * param0);
+UnkStruct_ov16_022674C4 *ov16_02263B08(UnkStruct_ov16_0225BFFC * param0);
+UnkStruct_ov16_0226C378 *ov16_02263B0C(UnkStruct_ov16_0225BFFC * param0);
 void ov16_02263B10(UnkStruct_ov16_0225BFFC * param0);
 void ov16_02263B20(UnkStruct_ov16_0225BFFC * param0, int param1);
 

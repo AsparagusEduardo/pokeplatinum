@@ -16,7 +16,7 @@
 #include "unk_02073C2C.h"
 #include "overlay012/ov12_022380BC.h"
 
-static void ov12_022380DC(UnkStruct_ov12_022380DC * param0, int param1, int param2, int param3);
+static void ov12_022380DC(UnkStruct_ov12_022380DC *param0, int param1, int param2, int param3);
 
 const s16 Unk_ov12_0223B0B8[][3] = {
     {0x150, 0x70, 0xFFFFFFFFFFFFFE00},
@@ -45,17 +45,17 @@ const s16 Unk_ov12_0223B0DC[][3] = {
     {0x150, 0x32, 0xFFFFFFFFFFFFFE00}
 };
 
-void ov12_022380BC (UnkStruct_ov12_022380DC * param0, int param1)
+void ov12_022380BC (UnkStruct_ov12_022380DC *param0, int param1)
 {
     ov12_022380DC(param0, param0->unk_00, 0, param1);
 }
 
-void ov12_022380CC (UnkStruct_ov12_022380DC * param0, int param1)
+void ov12_022380CC (UnkStruct_ov12_022380DC *param0, int param1)
 {
     ov12_022380DC(param0, param0->unk_04, 1, param1);
 }
 
-static void ov12_022380DC (UnkStruct_ov12_022380DC * param0, int param1, int param2, int param3)
+static void ov12_022380DC (UnkStruct_ov12_022380DC *param0, int param1, int param2, int param3)
 {
     UnkStruct_02008A90 v0;
     UnkStruct_02008A90 * v1;
@@ -125,7 +125,7 @@ static void ov12_022380DC (UnkStruct_ov12_022380DC * param0, int param1, int par
     }
 }
 
-void ov12_022382BC (UnkStruct_ov12_022380DC * param0, int param1)
+void ov12_022382BC (UnkStruct_ov12_022380DC *param0, int param1)
 {
     UnkStruct_02008A90 * v0;
     int v1;
@@ -160,7 +160,7 @@ void ov12_022382BC (UnkStruct_ov12_022380DC * param0, int param1)
     sub_02007DEC(param0->unk_18[param0->unk_00], 1, v6);
 }
 
-void ov12_02238390 (UnkStruct_ov12_022380DC * param0, int param1)
+void ov12_02238390 (UnkStruct_ov12_022380DC *param0, int param1)
 {
     UnkStruct_02008A90 v0;
     UnkStruct_02008A90 * v1;

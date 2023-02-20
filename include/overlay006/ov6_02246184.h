@@ -6,7 +6,7 @@
 #include "overlay006/struct_ov6_02246204_decl.h"
 #include "overlay006/struct_ov6_02246254.h"
 
-UnkStruct_ov6_02246204 * ov6_02246184(u32 param0, u32 param1);
+UnkStruct_ov6_02246204 *ov6_02246184(u32 param0, u32 param1);
 void ov6_02246204(UnkStruct_ov6_02246204 * param0);
 u32 ov6_02246224(const UnkStruct_ov6_02246204 * param0);
 u32 ov6_0224622C(const UnkStruct_ov6_02246204 * param0);

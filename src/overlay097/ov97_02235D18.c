@@ -23,7 +23,7 @@ typedef struct {
 } UnkStruct_ov97_02235F4C;
 
 static int ov97_02235DC8(const UnkStruct_ov97_02235DC8 * param0, int param1);
-static u16 ov97_02235FFC(void * param0, int * param1, u32 * param2);
+static u16 ov97_02235FFC(void *param0, int * param1, u32 * param2);
 static u32 ov97_02236244(struct CTRDGTaskInfo_tag * param0);
 static UnkStruct_ov97_0223F450 Unk_ov97_0223F450;
 
@@ -33,7 +33,7 @@ static u8 Unk_ov97_0223EC04[0xa0 - 4];
 static const UnkStruct_ov97_02235DC8 * Unk_ov97_0223EBFC = NULL;
 static int Unk_ov97_0223F438;
 static u32 Unk_ov97_0223F448;
-UnkStruct_ov97_0223F440 * Unk_ov97_0223F440;
+UnkStruct_ov97_0223F440 *Unk_ov97_0223F440;
 static int Unk_ov97_0223F43C = 0;
 static int Unk_ov97_0223F444;
 
@@ -46,7 +46,7 @@ static BOOL ov97_02235D18 ()
     return 1;
 }
 
-int ov97_02235D2C (void * param0)
+int ov97_02235D2C (void *param0)
 {
     Unk_ov97_0223F440 = (UnkStruct_ov97_0223F440 *)param0;
 
@@ -158,7 +158,7 @@ static int ov97_02235DC8 (const UnkStruct_ov97_02235DC8 * param0, int param1)
     return 0;
 }
 
-static u16 ov97_02235E7C (u32 * param0, u16 param1)
+static u16 ov97_02235E7C (u32 *param0, u16 param1)
 {
     u16 v0;
     u32 v1;
@@ -249,7 +249,7 @@ static u16 ov97_02235F4C (int param0, void * param1, u32 * param2)
     }
 }
 
-static u16 ov97_02235FFC (void * param0, int * param1, u32 * param2)
+static u16 ov97_02235FFC (void *param0, int * param1, u32 * param2)
 {
     u16 v0, v1;
     u32 v2, v3;
@@ -472,12 +472,12 @@ int ov97_02236308 (void)
     }
 }
 
-UnkStruct_ov97_02236340 * ov97_02236340 (void)
+UnkStruct_ov97_02236340 *ov97_02236340 (void)
 {
     return &(Unk_ov97_0223F440->unk_6000);
 }
 
-void * ov97_02236350 (void)
+void *ov97_02236350 (void)
 {
     return ov97_02235EF8(0);
 }

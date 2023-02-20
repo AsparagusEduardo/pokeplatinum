@@ -23,7 +23,7 @@ static BOOL ov63_0222CC04(const UnkStruct_ov63_0222BEC0 * param0, const UnkStruc
 static BOOL ov63_0222CC14(const UnkStruct_ov63_0222BEC0 * param0, const UnkStruct_ov63_0222BCE8 * param1, const UnkStruct_ov63_0222BE18 * param2, const UnkStruct_ov63_0222D894 * param3, UnkStruct_ov63_0222CCB8 * param4);
 static BOOL ov63_0222CC3C(const UnkStruct_ov63_0222BEC0 * param0, const UnkStruct_ov63_0222BCE8 * param1, int param2);
 static BOOL ov63_0222CCA4(const UnkStruct_ov63_0222BEC0 * param0, const UnkStruct_ov63_0222BE18 * param1, int param2);
-static void ov63_0222CCB8(UnkStruct_ov63_0222CCB8 * param0, const UnkStruct_ov63_0222BEC0 * param1, int param2, u32 param3, int param4);
+static void ov63_0222CCB8(UnkStruct_ov63_0222CCB8 *param0, const UnkStruct_ov63_0222BEC0 * param1, int param2, u32 param3, int param4);
 
 BOOL ov63_0222CA88 (const UnkStruct_ov63_0222BCE8 * param0, const UnkStruct_ov63_0222BE18 * param1, const UnkStruct_ov63_0222D894 * param2, UnkStruct_ov63_0222CCB8 * param3)
 {
@@ -197,7 +197,7 @@ static BOOL ov63_0222CCA4 (const UnkStruct_ov63_0222BEC0 * param0, const UnkStru
     return 1;
 }
 
-static void ov63_0222CCB8 (UnkStruct_ov63_0222CCB8 * param0, const UnkStruct_ov63_0222BEC0 * param1, int param2, u32 param3, int param4)
+static void ov63_0222CCB8 (UnkStruct_ov63_0222CCB8 *param0, const UnkStruct_ov63_0222BEC0 * param1, int param2, u32 param3, int param4)
 {
     param0->unk_00 = ov63_0222C0E4(param1);
     param0->unk_04 = param2;

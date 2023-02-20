@@ -31,18 +31,18 @@
 
 #include <nitro/code16.h>
 
-BOOL ov104_02239130(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_022392C0(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02239300(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02239314(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02239364(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_0223939C(UnkStruct_ov104_0222E930 * param0);
-BOOL ov104_02239400(UnkStruct_ov104_0222E930 * param0);
-static BOOL ov104_0223942C(UnkStruct_ov104_0222E930 * param0);
-static u16 ov104_0223927C(UnkStruct_0204AFC4 * param0, u8 param1);
-static BOOL ov104_02239464(UnkStruct_ov104_0222E930 * param0, UnkStruct_0204AFC4 * param1, UnkStruct_021C0794 * param2, u16 param3, u16 param4);
+BOOL ov104_02239130(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_022392C0(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02239300(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02239314(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02239364(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_0223939C(UnkStruct_ov104_0222E930 *param0);
+BOOL ov104_02239400(UnkStruct_ov104_0222E930 *param0);
+static BOOL ov104_0223942C(UnkStruct_ov104_0222E930 *param0);
+static u16 ov104_0223927C(UnkStruct_0204AFC4 *param0, u8 param1);
+static BOOL ov104_02239464(UnkStruct_ov104_0222E930 *param0, UnkStruct_0204AFC4 * param1, UnkStruct_021C0794 * param2, u16 param3, u16 param4);
 
-BOOL ov104_02239130 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02239130 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_0202440C * v0;
     UnkStruct_02073C74 * v1;
@@ -124,7 +124,7 @@ BOOL ov104_02239130 (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-static u16 ov104_0223927C (UnkStruct_0204AFC4 * param0, u8 param1)
+static u16 ov104_0223927C (UnkStruct_0204AFC4 *param0, u8 param1)
 {
     static const u16 v0[] = {
         0x8d,
@@ -157,7 +157,7 @@ static u16 ov104_0223927C (UnkStruct_0204AFC4 * param0, u8 param1)
     }
 }
 
-BOOL ov104_022392C0 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_022392C0 (UnkStruct_ov104_0222E930 *param0)
 {
     u8 v0;
     u16 * v1;
@@ -177,7 +177,7 @@ BOOL ov104_022392C0 (UnkStruct_ov104_0222E930 * param0)
     return 1;
 }
 
-BOOL ov104_02239300 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02239300 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_0204AFC4 * v0;
 
@@ -187,7 +187,7 @@ BOOL ov104_02239300 (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-BOOL ov104_02239314 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02239314 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_ov6_02240D5C * v0;
     UnkStruct_0204AFC4 * v1;
@@ -204,7 +204,7 @@ BOOL ov104_02239314 (UnkStruct_ov104_0222E930 * param0)
     return 1;
 }
 
-BOOL ov104_02239364 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02239364 (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_0204AFC4 * v0;
     UnkStruct_ov6_02240D5C * v1;
@@ -221,7 +221,7 @@ BOOL ov104_02239364 (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-BOOL ov104_0223939C (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_0223939C (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_0204AFC4 * v0;
     UnkStruct_ov104_02230BE4 * v1 = sub_0209B970(param0->unk_00->unk_00);
@@ -250,7 +250,7 @@ BOOL ov104_0223939C (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-BOOL ov104_02239400 (UnkStruct_ov104_0222E930 * param0)
+BOOL ov104_02239400 (UnkStruct_ov104_0222E930 *param0)
 {
     u16 v0 = ov104_0222EA48(param0);
     u16 v1 = ov104_0222EA48(param0);
@@ -262,7 +262,7 @@ BOOL ov104_02239400 (UnkStruct_ov104_0222E930 * param0)
     return 1;
 }
 
-static BOOL ov104_0223942C (UnkStruct_ov104_0222E930 * param0)
+static BOOL ov104_0223942C (UnkStruct_ov104_0222E930 *param0)
 {
     UnkStruct_0204AFC4 * v0;
     UnkStruct_ov104_02230BE4 * v1 = sub_0209B970(param0->unk_00->unk_00);
@@ -276,7 +276,7 @@ static BOOL ov104_0223942C (UnkStruct_ov104_0222E930 * param0)
     return 0;
 }
 
-static BOOL ov104_02239464 (UnkStruct_ov104_0222E930 * param0, UnkStruct_0204AFC4 * param1, UnkStruct_021C0794 * param2, u16 param3, u16 param4)
+static BOOL ov104_02239464 (UnkStruct_ov104_0222E930 *param0, UnkStruct_0204AFC4 * param1, UnkStruct_021C0794 * param2, u16 param3, u16 param4)
 {
     u16 * v0;
     const void * v1;

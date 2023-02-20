@@ -25,7 +25,7 @@ static const u16 Unk_020E5498[] = {
     0x1C1
 };
 
-void sub_02014A84 (UnkStruct_02014A84 * param0)
+void sub_02014A84 (UnkStruct_02014A84 *param0)
 {
     int v0;
 
@@ -36,7 +36,7 @@ void sub_02014A84 (UnkStruct_02014A84 * param0)
     }
 }
 
-void sub_02014A9C (UnkStruct_02014A84 * param0, u32 param1)
+void sub_02014A9C (UnkStruct_02014A84 *param0, u32 param1)
 {
     int v0;
 
@@ -48,13 +48,13 @@ void sub_02014A9C (UnkStruct_02014A84 * param0, u32 param1)
     }
 }
 
-void sub_02014AB4 (UnkStruct_02014A84 * param0)
+void sub_02014AB4 (UnkStruct_02014A84 *param0)
 {
     sub_02014A9C(param0, 4);
     param0->unk_02 = 5;
 }
 
-void sub_02014AC4 (UnkStruct_02014A84 * param0, int param1)
+void sub_02014AC4 (UnkStruct_02014A84 *param0, int param1)
 {
     static const struct {
         u8 unk_00;
@@ -88,7 +88,7 @@ void sub_02014AC4 (UnkStruct_02014A84 * param0, int param1)
     }
 }
 
-UnkStruct_02023790 * sub_02014B34 (const UnkStruct_02014A84 * param0, u32 param1)
+UnkStruct_02023790 *sub_02014B34 (const UnkStruct_02014A84 * param0, u32 param1)
 {
     UnkStruct_02023790 * v0;
     UnkStruct_0200B358 * v1;
@@ -114,7 +114,7 @@ UnkStruct_02023790 * sub_02014B34 (const UnkStruct_02014A84 * param0, u32 param1
     return v0;
 }
 
-UnkStruct_02023790 * sub_02014BA0 (const UnkStruct_02014A84 * param0, u32 param1)
+UnkStruct_02023790 *sub_02014BA0 (const UnkStruct_02014A84 * param0, u32 param1)
 {
     return sub_0200B010(26, Unk_020E5498[param0->unk_00], param0->unk_02, param1);
 }
@@ -200,7 +200,7 @@ BOOL sub_02014C88 (const UnkStruct_02014A84 * param0, const UnkStruct_02014A84 *
     return 1;
 }
 
-void sub_02014CC0 (UnkStruct_02014A84 * param0, const UnkStruct_02014A84 * param1)
+void sub_02014CC0 (UnkStruct_02014A84 *param0, const UnkStruct_02014A84 * param1)
 {
     *param0 = *param1;
 }
@@ -214,7 +214,7 @@ u32 sub_02014CD4 (u32 param0)
     return 0;
 }
 
-void sub_02014CE0 (UnkStruct_02014A84 * param0, u32 param1, u32 param2)
+void sub_02014CE0 (UnkStruct_02014A84 *param0, u32 param1, u32 param2)
 {
     GF_ASSERT(param1 < 5);
 
@@ -222,13 +222,13 @@ void sub_02014CE0 (UnkStruct_02014A84 * param0, u32 param1, u32 param2)
     param0->unk_02 = param2;
 }
 
-void sub_02014CF8 (UnkStruct_02014A84 * param0, u32 param1, u16 param2)
+void sub_02014CF8 (UnkStruct_02014A84 *param0, u32 param1, u16 param2)
 {
     GF_ASSERT(param1 < 2);
     param0->unk_04[param1] = param2;
 }
 
-void sub_02014D10 (UnkStruct_02014A84 * param0)
+void sub_02014D10 (UnkStruct_02014A84 *param0)
 {
     u32 v0, v1;
 

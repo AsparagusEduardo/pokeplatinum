@@ -31,7 +31,7 @@ static const u64 Unk_ov28_02257A50[] = {
 
 static u32 ov28_02257498(const UnkStruct_ov28_02256E9C * param0);
 static u32 ov28_022574E8(const UnkStruct_ov28_02256E9C * param0);
-static void ov28_022574FC(UnkStruct_ov28_02256E9C * param0);
+static void ov28_022574FC(UnkStruct_ov28_02256E9C *param0);
 static void ov28_022575EC(const UnkStruct_ov28_02256E9C * param0, const UnkStruct_ov28_02256E9C * param1, UnkStruct_ov28_02256E9C * param2, UnkStruct_ov28_02256E9C * param3);
 
 BOOL ov28_02256E9C (UnkStruct_ov28_02256E9C ** param0, u32 param1)
@@ -47,12 +47,12 @@ BOOL ov28_02256E9C (UnkStruct_ov28_02256E9C ** param0, u32 param1)
     return 0;
 }
 
-void ov28_02256EC0 (UnkStruct_ov28_02256E9C * param0)
+void ov28_02256EC0 (UnkStruct_ov28_02256E9C *param0)
 {
     Heap_FreeToHeap(param0);
 }
 
-void ov28_02256EC8 (UnkStruct_ov28_02256E9C * param0)
+void ov28_02256EC8 (UnkStruct_ov28_02256E9C *param0)
 {
     param0->unk_00 = 0;
     param0->unk_09 = 0;
@@ -60,7 +60,7 @@ void ov28_02256EC8 (UnkStruct_ov28_02256E9C * param0)
     param0->unk_0B = 0;
 }
 
-void ov28_02256ED8 (UnkStruct_ov28_02256E9C * param0, const UnkStruct_ov28_02256E9C * param1)
+void ov28_02256ED8 (UnkStruct_ov28_02256E9C *param0, const UnkStruct_ov28_02256E9C * param1)
 {
     *param0 = *param1;
 }
@@ -187,7 +187,7 @@ void ov28_02257058 (const UnkStruct_ov28_02256E9C * param0, const UnkStruct_ov28
     param2->unk_09 = param0->unk_09 ^ param1->unk_09;
 }
 
-BOOL ov28_0225717C (UnkStruct_ov28_02256E9C * param0, u32 param1)
+BOOL ov28_0225717C (UnkStruct_ov28_02256E9C *param0, u32 param1)
 {
     if (ov28_022574E8(param0) >= param0->unk_0A) {
         return 0;
@@ -201,7 +201,7 @@ BOOL ov28_0225717C (UnkStruct_ov28_02256E9C * param0, u32 param1)
     return 1;
 }
 
-BOOL ov28_022571B8 (UnkStruct_ov28_02256E9C * param0, u32 param1)
+BOOL ov28_022571B8 (UnkStruct_ov28_02256E9C *param0, u32 param1)
 {
     if (ov28_022574E8(param0) >= param0->unk_0A) {
         return 0;
@@ -390,7 +390,7 @@ static u32 ov28_022574E8 (const UnkStruct_ov28_02256E9C * param0)
     return v0;
 }
 
-static void ov28_022574FC (UnkStruct_ov28_02256E9C * param0)
+static void ov28_022574FC (UnkStruct_ov28_02256E9C *param0)
 {
     u32 v0;
 

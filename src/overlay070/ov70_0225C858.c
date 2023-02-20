@@ -12,7 +12,7 @@ typedef struct UnkStruct_ov70_0225C894_t {
     UnkStruct_ov63_0222BCE8 * unk_00;
 } UnkStruct_ov70_0225C894;
 
-UnkStruct_ov70_0225C894 * ov70_0225C858 (u32 param0)
+UnkStruct_ov70_0225C894 *ov70_0225C858 (u32 param0)
 {
     UnkStruct_ov70_0225C894 * v0;
     void * v1;
@@ -28,7 +28,7 @@ UnkStruct_ov70_0225C894 * ov70_0225C858 (u32 param0)
     return v0;
 }
 
-void ov70_0225C894 (UnkStruct_ov70_0225C894 * param0)
+void ov70_0225C894 (UnkStruct_ov70_0225C894 *param0)
 {
     ov63_0222BD30(param0->unk_00);
     Heap_FreeToHeap(param0);

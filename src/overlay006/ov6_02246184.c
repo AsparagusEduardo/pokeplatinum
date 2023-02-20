@@ -57,9 +57,9 @@ typedef struct UnkStruct_ov6_02246204_t {
 };
 
 static UnkStruct_02023790 * ov6_022462E4(u32 param0, u32 param1);
-static void ov6_0224630C(UnkStruct_02073C74 * param0, UnkStruct_ov6_0224630C * param1, u32 param2, u32 param3, u32 param4, u32 param5);
+static void ov6_0224630C(UnkStruct_02073C74 *param0, UnkStruct_ov6_0224630C * param1, u32 param2, u32 param3, u32 param4, u32 param5);
 
-UnkStruct_ov6_02246204 * ov6_02246184 (u32 param0, u32 param1)
+UnkStruct_ov6_02246204 *ov6_02246184 (u32 param0, u32 param1)
 {
     UnkStruct_ov6_02246204 * v0;
     UnkStruct_02023790 * v1;
@@ -87,7 +87,7 @@ UnkStruct_ov6_02246204 * ov6_02246184 (u32 param0, u32 param1)
     return v0;
 }
 
-void ov6_02246204 (UnkStruct_ov6_02246204 * param0)
+void ov6_02246204 (UnkStruct_ov6_02246204 *param0)
 {
     Heap_FreeToHeap(param0->unk_00);
     Heap_FreeToHeap(param0->unk_04);
@@ -105,7 +105,7 @@ u32 ov6_0224622C (const UnkStruct_ov6_02246204 * param0)
     return param0->unk_00->unk_4C;
 }
 
-void ov6_02246234 (UnkStruct_0203CDB0 * param0, UnkStruct_ov6_02246204 * param1, int param2)
+void ov6_02246234 (UnkStruct_0203CDB0 *param0, UnkStruct_ov6_02246204 * param1, int param2)
 {
     Party * v0 = Party_GetFromSavedata(param0->unk_0C);
 
@@ -113,7 +113,7 @@ void ov6_02246234 (UnkStruct_0203CDB0 * param0, UnkStruct_ov6_02246204 * param1,
     sub_0202F180(param0->unk_0C, param1->unk_04);
 }
 
-void ov6_02246254 (UnkStruct_0203CDB0 * param0, UnkStruct_ov6_02246204 * param1, int param2, UnkStruct_ov6_02246254 * param3, UnkStruct_02073C74 * param4, UnkStruct_02073C74 * param5)
+void ov6_02246254 (UnkStruct_0203CDB0 *param0, UnkStruct_ov6_02246204 * param1, int param2, UnkStruct_ov6_02246254 * param3, UnkStruct_02073C74 * param4, UnkStruct_02073C74 * param5)
 {
     Party * v0 = Party_GetFromSavedata(param0->unk_0C);
     UnkStruct_02073C74 * v1;
@@ -156,7 +156,7 @@ static UnkStruct_02023790 * ov6_022462E4 (u32 param0, u32 param1)
     return v0;
 }
 
-static void ov6_0224630C (UnkStruct_02073C74 * param0, UnkStruct_ov6_0224630C * param1, u32 param2, u32 param3, u32 param4, u32 param5)
+static void ov6_0224630C (UnkStruct_02073C74 *param0, UnkStruct_ov6_0224630C * param1, u32 param2, u32 param3, u32 param4, u32 param5)
 {
     UnkStruct_02023790 * v0;
     u8 v1;

@@ -10,7 +10,7 @@
 #include "unk_0200B358.h"
 #include "unk_02023790.h"
 
-UnkStruct_02023790 * sub_0200B29C (UnkStruct_0200B358 * param0, UnkStruct_0200B144 * param1, u32 param2, u32 param3)
+UnkStruct_02023790 *sub_0200B29C (UnkStruct_0200B358 * param0, UnkStruct_0200B144 * param1, u32 param2, u32 param3)
 {
     UnkStruct_02023790 * v0 = NULL;
     UnkStruct_02023790 * v1;
@@ -32,7 +32,7 @@ UnkStruct_02023790 * sub_0200B29C (UnkStruct_0200B358 * param0, UnkStruct_0200B1
     return v0;
 }
 
-UnkStruct_02023790 * sub_0200B2EC (u32 param0, u32 param1)
+UnkStruct_02023790 *sub_0200B2EC (u32 param0, u32 param1)
 {
     UnkStruct_0200B144 * v0 = sub_0200B144(1, 26, 647, param1);
 
@@ -50,7 +50,7 @@ UnkStruct_02023790 * sub_0200B2EC (u32 param0, u32 param1)
     return NULL;
 }
 
-UnkStruct_02023790 * sub_0200B32C (u32 param0, u32 param1)
+UnkStruct_02023790 *sub_0200B32C (u32 param0, u32 param1)
 {
     UnkStruct_0200B144 * v0 = sub_0200B144(1, 26, 412, param1);
 

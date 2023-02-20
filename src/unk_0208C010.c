@@ -216,7 +216,7 @@ const UnkStruct_020F3DCC * sub_0208C010 (int param0)
     return Unk_020F3F34[param0].unk_20;
 }
 
-const UnkStruct_020F3DCC * sub_0208C034 (UnkStruct_0208C06C * param0, int param1)
+const UnkStruct_020F3DCC *sub_0208C034 (UnkStruct_0208C06C *param0, int param1)
 {
     if (param1 == 0) {
         if (sub_0208BE68(param0) == 0) {
@@ -233,7 +233,7 @@ const UnkStruct_020F3DCC * sub_0208C034 (UnkStruct_0208C06C * param0, int param1
     return sub_0208C010(param1);
 }
 
-void sub_0208C06C (UnkStruct_0208C06C * param0)
+void sub_0208C06C (UnkStruct_0208C06C *param0)
 {
     int v0;
     const UnkStruct_020F3DCC * v1;

@@ -21,7 +21,7 @@ const u16 Unk_020EBFFC[7][2] = {
     {0x69, 0x198}
 };
 
-BOOL sub_0204E240 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E240 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     u8 v1;
@@ -37,7 +37,7 @@ BOOL sub_0204E240 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E28C (UnkStruct_0203E724 * param0)
+BOOL sub_0204E28C (UnkStruct_0203E724 *param0)
 {
     u16 v0;
     u16 * v1 = inline_0204FCAC(param0);
@@ -55,7 +55,7 @@ BOOL sub_0204E28C (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E2E0 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E2E0 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     u8 v1;
@@ -80,12 +80,12 @@ BOOL sub_0204E2E0 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204E370 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E370 (UnkStruct_0203E724 *param0)
 {
     return 0;
 }
 
-BOOL sub_0204E374 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E374 (UnkStruct_0203E724 *param0)
 {
     return 0;
 }

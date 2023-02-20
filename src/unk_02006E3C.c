@@ -9,13 +9,13 @@
 #include "heap.h"
 #include "unk_02018340.h"
 
-static u32 sub_020072D0(void * param0, UnkStruct_02018340 * param1, u32 param2, u32 param3, u32 param4);
-static void sub_02007314(void * param0, UnkStruct_02018340 * param1, u32 param2, u32 param3, u32 param4);
-static u32 sub_02007374(void * param0, int param1, u32 param2, u32 param3);
-static void sub_020073BC(void * param0, int param1, u32 param2, u32 param3, u32 param4);
-static void sub_0200749C(void * param0, NNS_G2D_VRAM_TYPE param1, u32 param2, NNSG2dImagePaletteProxy * param3);
-static u32 sub_020074EC(void * param0, int param1, u32 param2, NNS_G2D_VRAM_TYPE param3, u32 param4, NNSG2dImageProxy * param5);
-static void sub_02007534(void * param0, int param1, u32 param2, NNS_G2D_VRAM_TYPE param3, u32 param4, NNSG2dImageProxy * param5);
+static u32 sub_020072D0(void *param0, UnkStruct_02018340 * param1, u32 param2, u32 param3, u32 param4);
+static void sub_02007314(void *param0, UnkStruct_02018340 * param1, u32 param2, u32 param3, u32 param4);
+static u32 sub_02007374(void *param0, int param1, u32 param2, u32 param3);
+static void sub_020073BC(void *param0, int param1, u32 param2, u32 param3, u32 param4);
+static void sub_0200749C(void *param0, NNS_G2D_VRAM_TYPE param1, u32 param2, NNSG2dImagePaletteProxy * param3);
+static u32 sub_020074EC(void *param0, int param1, u32 param2, NNS_G2D_VRAM_TYPE param3, u32 param4, NNSG2dImageProxy * param5);
+static void sub_02007534(void *param0, int param1, u32 param2, NNS_G2D_VRAM_TYPE param3, u32 param4, NNSG2dImageProxy * param5);
 static void * sub_020075A0(void * param0, NNSG2dCharacterData ** param1);
 static void * sub_020075BC(void * param0, NNSG2dScreenData ** param1);
 static void * sub_020075D8(void * param0, NNSG2dPaletteData ** param1);
@@ -69,26 +69,26 @@ void sub_02006F28 (u32 param0, u32 param1, BOOL param2, int param3, u32 param4, 
     sub_02007534(v0, param3, param4, param5, param6, param8);
 }
 
-void * sub_02006F50 (u32 param0, u32 param1, BOOL param2, NNSG2dCharacterData ** param3, u32 param4)
+void *sub_02006F50 (u32 param0, u32 param1, BOOL param2, NNSG2dCharacterData ** param3, u32 param4)
 {
     void * v0 = sub_02006FE8(param0, param1, param2, param4, 0);
 
     return sub_020075A0(v0, param3);
 }
 
-void * sub_02006F6C (u32 param0, u32 param1, BOOL param2, NNSG2dScreenData ** param3, u32 param4)
+void *sub_02006F6C (u32 param0, u32 param1, BOOL param2, NNSG2dScreenData ** param3, u32 param4)
 {
     void * v0 = sub_02006FE8(param0, param1, param2, param4, 0);
     return sub_020075BC(v0, param3);
 }
 
-void * sub_02006F88 (u32 param0, u32 param1, NNSG2dPaletteData ** param2, u32 param3)
+void *sub_02006F88 (u32 param0, u32 param1, NNSG2dPaletteData ** param2, u32 param3)
 {
     void * v0 = sub_02006FE8(param0, param1, 0, param3, 0);
     return sub_020075D8(v0, param2);
 }
 
-void * sub_02006FA0 (u32 param0, u32 param1, BOOL param2, NNSG2dCellDataBank ** param3, u32 param4)
+void *sub_02006FA0 (u32 param0, u32 param1, BOOL param2, NNSG2dCellDataBank ** param3, u32 param4)
 {
     void * v0;
 
@@ -96,18 +96,18 @@ void * sub_02006FA0 (u32 param0, u32 param1, BOOL param2, NNSG2dCellDataBank ** 
     return sub_020075F4(v0, param3);
 }
 
-void * sub_02006FBC (u32 param0, u32 param1, BOOL param2, NNSG2dAnimBankData ** param3, u32 param4)
+void *sub_02006FBC (u32 param0, u32 param1, BOOL param2, NNSG2dAnimBankData ** param3, u32 param4)
 {
     void * v0 = sub_02006FE8(param0, param1, param2, param4, 0);
     return sub_02007610(v0, param3);
 }
 
-void * sub_02006FD8 (u32 param0, u32 param1, u32 param2)
+void *sub_02006FD8 (u32 param0, u32 param1, u32 param2)
 {
     return sub_02006FE8(param0, param1, 1, param2, 0);
 }
 
-void * sub_02006FE8 (u32 param0, u32 param1, BOOL param2, u32 param3, int param4)
+void *sub_02006FE8 (u32 param0, u32 param1, BOOL param2, u32 param3, int param4)
 {
     void * v0;
 
@@ -141,7 +141,7 @@ void * sub_02006FE8 (u32 param0, u32 param1, BOOL param2, u32 param3, int param4
     return v0;
 }
 
-void * sub_02007068 (u32 param0, u32 param1, BOOL param2, u32 param3, int param4, u32 * param5)
+void *sub_02007068 (u32 param0, u32 param1, BOOL param2, u32 param3, int param4, u32 * param5)
 {
     void * v0;
 
@@ -179,60 +179,60 @@ void * sub_02007068 (u32 param0, u32 param1, BOOL param2, u32 param3, int param4
     return v0;
 }
 
-u32 sub_020070E8 (NARC * param0, u32 param1, UnkStruct_02018340 * param2, u32 param3, u32 param4, u32 param5, BOOL param6, u32 param7)
+u32 sub_020070E8 (NARC *param0, u32 param1, UnkStruct_02018340 * param2, u32 param3, u32 param4, u32 param5, BOOL param6, u32 param7)
 {
     void * v0 = sub_0200723C(param0, param1, param6, param7, 0);
     return sub_020072D0(v0, param2, param3, param4, param5);
 }
 
-void sub_0200710C (NARC * param0, u32 param1, UnkStruct_02018340 * param2, u32 param3, u32 param4, u32 param5, BOOL param6, u32 param7)
+void sub_0200710C (NARC *param0, u32 param1, UnkStruct_02018340 * param2, u32 param3, u32 param4, u32 param5, BOOL param6, u32 param7)
 {
     void * v0 = sub_0200723C(param0, param1, param6, param7, 1);
     sub_02007314(v0, param2, param3, param4, param5);
 }
 
-void sub_02007130 (NARC * param0, u32 param1, int param2, u32 param3, u32 param4, u32 param5)
+void sub_02007130 (NARC *param0, u32 param1, int param2, u32 param3, u32 param4, u32 param5)
 {
     sub_02007148(param0, param1, param2, 0, param3, param4, param5);
 }
 
-void sub_02007148 (NARC * param0, u32 param1, int param2, u32 param3, u32 param4, u32 param5, u32 param6)
+void sub_02007148 (NARC *param0, u32 param1, int param2, u32 param3, u32 param4, u32 param5, u32 param6)
 {
     void * v0 = sub_0200723C(param0, param1, 0, param6, 1);
     sub_020073BC(v0, param2, param3, param4, param5);
 }
 
-void sub_0200716C (NARC * param0, u32 param1, NNS_G2D_VRAM_TYPE param2, u32 param3, u32 param4, NNSG2dImagePaletteProxy * param5)
+void sub_0200716C (NARC *param0, u32 param1, NNS_G2D_VRAM_TYPE param2, u32 param3, u32 param4, NNSG2dImagePaletteProxy * param5)
 {
     void * v0 = sub_0200723C(param0, param1, 0, param4, 1);
     sub_0200749C(v0, param2, param3, param5);
 }
 
-u32 sub_0200718C (NARC * param0, u32 param1, BOOL param2, int param3, u32 param4, NNS_G2D_VRAM_TYPE param5, u32 param6, u32 param7, NNSG2dImageProxy * param8)
+u32 sub_0200718C (NARC *param0, u32 param1, BOOL param2, int param3, u32 param4, NNS_G2D_VRAM_TYPE param5, u32 param6, u32 param7, NNSG2dImageProxy * param8)
 {
     void * v0 = sub_0200723C(param0, param1, param2, param7, 1);
     return sub_020074EC(v0, param3, param4, param5, param6, param8);
 }
 
-void * sub_020071B4 (NARC * param0, u32 param1, BOOL param2, NNSG2dCharacterData ** param3, u32 param4)
+void *sub_020071B4 (NARC * param0, u32 param1, BOOL param2, NNSG2dCharacterData ** param3, u32 param4)
 {
     void * v0 = sub_0200723C(param0, param1, param2, param4, 0);
     return sub_020075A0(v0, param3);
 }
 
-void * sub_020071D0 (NARC * param0, u32 param1, BOOL param2, NNSG2dScreenData ** param3, u32 param4)
+void *sub_020071D0 (NARC * param0, u32 param1, BOOL param2, NNSG2dScreenData ** param3, u32 param4)
 {
     void * v0 = sub_0200723C(param0, param1, param2, param4, 0);
     return sub_020075BC(v0, param3);
 }
 
-void * sub_020071EC (NARC * param0, u32 param1, NNSG2dPaletteData ** param2, u32 param3)
+void *sub_020071EC (NARC * param0, u32 param1, NNSG2dPaletteData ** param2, u32 param3)
 {
     void * v0 = sub_0200723C(param0, param1, 0, param3, 0);
     return sub_020075D8(v0, param2);
 }
 
-void * sub_02007204 (NARC * param0, u32 param1, BOOL param2, NNSG2dCellDataBank ** param3, u32 param4)
+void *sub_02007204 (NARC * param0, u32 param1, BOOL param2, NNSG2dCellDataBank ** param3, u32 param4)
 {
     void * v0;
 
@@ -240,20 +240,20 @@ void * sub_02007204 (NARC * param0, u32 param1, BOOL param2, NNSG2dCellDataBank 
     return sub_020075F4(v0, param3);
 }
 
-void * sub_02007220 (NARC * param0, u32 param1, BOOL param2, NNSG2dAnimBankData ** param3, u32 param4)
+void *sub_02007220 (NARC * param0, u32 param1, BOOL param2, NNSG2dAnimBankData ** param3, u32 param4)
 {
     void * v0 = sub_0200723C(param0, param1, param2, param4, 0);
     return sub_02007610(v0, param3);
 }
 
-void * sub_0200723C (NARC * param0, u32 param1, BOOL param2, u32 param3, int param4)
+void *sub_0200723C (NARC * param0, u32 param1, BOOL param2, u32 param3, int param4)
 {
     u32 v0;
 
     return sub_02007250(param0, param1, param2, param3, param4, &v0);
 }
 
-void * sub_02007250 (NARC * param0, u32 param1, BOOL param2, u32 param3, int param4, u32 * param5)
+void *sub_02007250 (NARC * param0, u32 param1, BOOL param2, u32 param3, int param4, u32 * param5)
 {
     void * v0;
 
@@ -291,7 +291,7 @@ void * sub_02007250 (NARC * param0, u32 param1, BOOL param2, u32 param3, int par
     return v0;
 }
 
-static u32 sub_020072D0 (void * param0, UnkStruct_02018340 * param1, u32 param2, u32 param3, u32 param4)
+static u32 sub_020072D0 (void *param0, UnkStruct_02018340 * param1, u32 param2, u32 param3, u32 param4)
 {
     if (param0 != NULL) {
         NNSG2dCharacterData * v0;
@@ -310,7 +310,7 @@ static u32 sub_020072D0 (void * param0, UnkStruct_02018340 * param1, u32 param2,
     return param4;
 }
 
-static void sub_02007314 (void * param0, UnkStruct_02018340 * param1, u32 param2, u32 param3, u32 param4)
+static void sub_02007314 (void *param0, UnkStruct_02018340 * param1, u32 param2, u32 param3, u32 param4)
 {
     if (param0 != NULL) {
         NNSG2dScreenData * v0;
@@ -331,7 +331,7 @@ static void sub_02007314 (void * param0, UnkStruct_02018340 * param1, u32 param2
     }
 }
 
-static u32 sub_02007374 (void * param0, int param1, u32 param2, u32 param3)
+static u32 sub_02007374 (void *param0, int param1, u32 param2, u32 param3)
 {
     static void(*const v0[])(const void *, u32, u32) = {
         GX_LoadOBJ,
@@ -356,7 +356,7 @@ static u32 sub_02007374 (void * param0, int param1, u32 param2, u32 param3)
     return param3;
 }
 
-static void sub_020073BC (void * param0, int param1, u32 param2, u32 param3, u32 param4)
+static void sub_020073BC (void *param0, int param1, u32 param2, u32 param3, u32 param4)
 {
     static void(*const v0[])(const void *, u32, u32) = {
         GX_LoadBGPltt,
@@ -412,7 +412,7 @@ static void sub_020073BC (void * param0, int param1, u32 param2, u32 param3, u32
     }
 }
 
-static void sub_0200749C (void * param0, NNS_G2D_VRAM_TYPE param1, u32 param2, NNSG2dImagePaletteProxy * param3)
+static void sub_0200749C (void *param0, NNS_G2D_VRAM_TYPE param1, u32 param2, NNSG2dImagePaletteProxy * param3)
 {
     if (param0 != NULL) {
         NNSG2dPaletteData * v0;
@@ -433,7 +433,7 @@ static void sub_0200749C (void * param0, NNS_G2D_VRAM_TYPE param1, u32 param2, N
     }
 }
 
-static u32 sub_020074EC (void * param0, int param1, u32 param2, NNS_G2D_VRAM_TYPE param3, u32 param4, NNSG2dImageProxy * param5)
+static u32 sub_020074EC (void *param0, int param1, u32 param2, NNS_G2D_VRAM_TYPE param3, u32 param4, NNSG2dImageProxy * param5)
 {
     static void(*const v0[])(const NNSG2dCharacterData *, u32, NNS_G2D_VRAM_TYPE, NNSG2dImageProxy *) = {
         NNS_G2dLoadImage1DMapping,
@@ -460,7 +460,7 @@ static u32 sub_020074EC (void * param0, int param1, u32 param2, NNS_G2D_VRAM_TYP
     return v1;
 }
 
-static void sub_02007534 (void * param0, int param1, u32 param2, NNS_G2D_VRAM_TYPE param3, u32 param4, NNSG2dImageProxy * param5)
+static void sub_02007534 (void *param0, int param1, u32 param2, NNS_G2D_VRAM_TYPE param3, u32 param4, NNSG2dImageProxy * param5)
 {
     static void(*const v0[])(const NNSG2dCharacterData *, u32, NNS_G2D_VRAM_TYPE, NNSG2dImageProxy *) = {
         NNS_G2dLoadImage1DMapping,
@@ -491,7 +491,7 @@ static void sub_02007534 (void * param0, int param1, u32 param2, NNS_G2D_VRAM_TY
     }
 }
 
-static void * sub_020075A0 (void * param0, NNSG2dCharacterData ** param1)
+static void *sub_020075A0 (void *param0, NNSG2dCharacterData ** param1)
 {
     if (param0 != NULL) {
         if (NNS_G2dGetUnpackedBGCharacterData(param0, param1) == 0) {
@@ -503,7 +503,7 @@ static void * sub_020075A0 (void * param0, NNSG2dCharacterData ** param1)
     return param0;
 }
 
-static void * sub_020075BC (void * param0, NNSG2dScreenData ** param1)
+static void *sub_020075BC (void *param0, NNSG2dScreenData ** param1)
 {
     if (param0 != NULL) {
         if (NNS_G2dGetUnpackedScreenData(param0, param1) == 0) {
@@ -515,7 +515,7 @@ static void * sub_020075BC (void * param0, NNSG2dScreenData ** param1)
     return param0;
 }
 
-static void * sub_020075D8 (void * param0, NNSG2dPaletteData ** param1)
+static void *sub_020075D8 (void *param0, NNSG2dPaletteData ** param1)
 {
     if (param0 != NULL) {
         if (NNS_G2dGetUnpackedPaletteData(param0, param1) == 0) {
@@ -527,7 +527,7 @@ static void * sub_020075D8 (void * param0, NNSG2dPaletteData ** param1)
     return param0;
 }
 
-static void * sub_020075F4 (void * param0, NNSG2dCellDataBank ** param1)
+static void *sub_020075F4 (void *param0, NNSG2dCellDataBank ** param1)
 {
     if (param0 != NULL) {
         if (NNS_G2dGetUnpackedCellBank(param0, param1) == 0) {
@@ -539,7 +539,7 @@ static void * sub_020075F4 (void * param0, NNSG2dCellDataBank ** param1)
     return param0;
 }
 
-static void * sub_02007610 (void * param0, NNSG2dAnimBankData ** param1)
+static void *sub_02007610 (void *param0, NNSG2dAnimBankData ** param1)
 {
     if (param0 != NULL) {
         if (NNS_G2dGetUnpackedAnimBank(param0, param1) == 0) {

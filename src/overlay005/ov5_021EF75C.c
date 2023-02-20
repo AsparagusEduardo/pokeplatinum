@@ -61,7 +61,7 @@ static const GXRgb Unk_ov5_021FF598[8] = {
     GX_RGB(4, 4, 4)
 };
 
-static void ov5_021EF75C (void * param0, NNSG3dResTex * param1)
+static void ov5_021EF75C (void *param0, NNSG3dResTex * param1)
 {
     u8 * v0;
     u32 v1;
@@ -72,7 +72,7 @@ static void ov5_021EF75C (void * param0, NNSG3dResTex * param1)
     Heap_ReallocFromHeap(param0, v1);
 }
 
-UnkStruct_ov5_021EF76C * ov5_021EF76C (const int param0, UnkStruct_ov5_021D3CAC * param1)
+UnkStruct_ov5_021EF76C *ov5_021EF76C (const int param0, UnkStruct_ov5_021D3CAC * param1)
 {
     UnkStruct_ov5_021EF76C * v0;
 
@@ -86,7 +86,7 @@ UnkStruct_ov5_021EF76C * ov5_021EF76C (const int param0, UnkStruct_ov5_021D3CAC 
     return v0;
 }
 
-void ov5_021EF7A0 (UnkStruct_ov5_021EF76C * param0)
+void ov5_021EF7A0 (UnkStruct_ov5_021EF76C *param0)
 {
     NARC * v0;
     UnkStruct_ov5_021EF7A0 * v1 = param0->unk_C20;
@@ -248,13 +248,13 @@ void ov5_021EFA10 (UnkStruct_ov5_021EF76C ** param0)
     (*param0) = NULL;
 }
 
-NNSG3dResTex * ov5_021EFA8C (const UnkStruct_ov5_021EF76C * param0)
+NNSG3dResTex *ov5_021EFA8C (const UnkStruct_ov5_021EF76C * param0)
 {
     GF_ASSERT((param0 != NULL));
     return param0->unk_C0C;
 }
 
-NNSG3dResTex * ov5_021EFAA0 (const UnkStruct_ov5_021EF76C * param0)
+NNSG3dResTex *ov5_021EFAA0 (const UnkStruct_ov5_021EF76C * param0)
 {
     GF_ASSERT((param0 != NULL));
     return param0->unk_C10;

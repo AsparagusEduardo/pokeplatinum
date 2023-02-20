@@ -11,14 +11,14 @@
 #include "overlay019/struct_ov19_021DB6F0.h"
 #include "overlay019/struct_ov19_021DF964.h"
 
-BOOL ov19_021DB2FC(UnkStruct_ov19_021DB6F0 * param0, UnkStruct_ov19_021D61B0 * param1, const UnkStruct_ov19_021D4DF0 * param2, UnkStruct_02018340 * param3, UnkStruct_020218BC * param4, UnkStruct_0200B144 * param5, const UnkStruct_0200B358 * param6, int param7, NARC * param8);
-void ov19_021DB370(UnkStruct_ov19_021DB6F0 * param0);
-void ov19_021DB3C4(UnkStruct_ov19_021DB6F0 * param0);
-void ov19_021DB448(UnkStruct_ov19_021DB6F0 * param0, u32 param1);
-void ov19_021DB57C(UnkStruct_ov19_021DB6F0 * param0, const UnkStruct_ov19_021DF964 * param1);
-void ov19_021DB6F0(UnkStruct_ov19_021DB6F0 * param0);
-void ov19_021DB724(UnkStruct_ov19_021DB6F0 * param0);
-void ov19_021DB748(UnkStruct_ov19_021DB6F0 * param0, const UnkStruct_ov19_021DF964 * param1);
-void ov19_021DB790(UnkStruct_ov19_021DB6F0 * param0, const UnkStruct_ov19_021DF964 * param1);
+BOOL ov19_021DB2FC(UnkStruct_ov19_021DB6F0 *param0, UnkStruct_ov19_021D61B0 * param1, const UnkStruct_ov19_021D4DF0 * param2, UnkStruct_02018340 * param3, UnkStruct_020218BC * param4, UnkStruct_0200B144 * param5, const UnkStruct_0200B358 * param6, int param7, NARC * param8);
+void ov19_021DB370(UnkStruct_ov19_021DB6F0 *param0);
+void ov19_021DB3C4(UnkStruct_ov19_021DB6F0 *param0);
+void ov19_021DB448(UnkStruct_ov19_021DB6F0 *param0, u32 param1);
+void ov19_021DB57C(UnkStruct_ov19_021DB6F0 *param0, const UnkStruct_ov19_021DF964 * param1);
+void ov19_021DB6F0(UnkStruct_ov19_021DB6F0 *param0);
+void ov19_021DB724(UnkStruct_ov19_021DB6F0 *param0);
+void ov19_021DB748(UnkStruct_ov19_021DB6F0 *param0, const UnkStruct_ov19_021DF964 * param1);
+void ov19_021DB790(UnkStruct_ov19_021DB6F0 *param0, const UnkStruct_ov19_021DF964 * param1);
 
 #endif // POKEPLATINUM_OV19_021DB2FC_H

@@ -56,7 +56,7 @@ typedef struct {
 
 static UnkStruct_021C07B4 * Unk_021C07B4;
 
-void sub_020329E0 (UnkStruct_021C0794 * param0, const UnkStruct_0202610C * param1)
+void sub_020329E0 (UnkStruct_021C0794 *param0, const UnkStruct_0202610C * param1)
 {
     int v0;
     UnkStruct_02025E6C * v1 = sub_02025E38(param0);
@@ -326,7 +326,7 @@ BOOL sub_02032E90 (void)
     return v1;
 }
 
-UnkStruct_02025E6C * sub_02032EE8 (int param0)
+UnkStruct_02025E6C *sub_02032EE8 (int param0)
 {
     if (!Unk_021C07B4) {
         return NULL;
@@ -342,7 +342,7 @@ UnkStruct_02025E6C * sub_02032EE8 (int param0)
     return NULL;
 }
 
-DWCFriendData * sub_02032F1C (int param0)
+DWCFriendData *sub_02032F1C (int param0)
 {
     if (Unk_021C07B4->unk_38C[param0] != 0) {
         return &Unk_021C07B4->unk_0C[param0].unk_40;
@@ -356,7 +356,7 @@ int sub_02032F40 (int param0)
     return sub_02039390(Unk_021C07B4->unk_08, param0);
 }
 
-u16 * sub_02032F54 (int param0)
+u16 *sub_02032F54 (int param0)
 {
     if (Unk_021C07B4->unk_38C[param0] != 0) {
         return Unk_021C07B4->unk_0C[param0].unk_4C;
@@ -445,7 +445,7 @@ static void sub_02033054 (int param0, int param1)
     }
 }
 
-void sub_02033114 (UnkStruct_021C0794 * param0)
+void sub_02033114 (UnkStruct_021C0794 *param0)
 {
     UnkStruct_0202B370 * v0 = sub_0202B370(param0);
     int v1, v2, v3;
@@ -476,7 +476,7 @@ void sub_02033114 (UnkStruct_021C0794 * param0)
     }
 }
 
-void sub_020331B4 (UnkStruct_021C0794 * param0, int param1)
+void sub_020331B4 (UnkStruct_021C0794 *param0, int param1)
 {
     if (param1 == 1) {
         sub_02033054(0, 1);
@@ -487,13 +487,13 @@ void sub_020331B4 (UnkStruct_021C0794 * param0, int param1)
     sub_02033114(param0);
 }
 
-void sub_020331E0 (UnkStruct_021C0794 * param0, int param1)
+void sub_020331E0 (UnkStruct_021C0794 *param0, int param1)
 {
     sub_02033054(2, param1);
     sub_02033114(param0);
 }
 
-void sub_020331F4 (UnkStruct_02025E6C * param0)
+void sub_020331F4 (UnkStruct_02025E6C *param0)
 {
     Unk_021C07B4->unk_00 = param0;
 }

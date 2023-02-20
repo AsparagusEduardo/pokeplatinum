@@ -29,15 +29,15 @@
 #include "overlay062/ov62_02231690.h"
 #include "overlay062/ov62_02234A10.h"
 
-static void ov62_02234A10(UnkStruct_0208C06C * param0);
-static void ov62_02234A90(UnkStruct_0208C06C * param0);
-static BOOL ov62_02234AB4(UnkStruct_0208C06C * param0);
-static BOOL ov62_02234CDC(UnkStruct_0208C06C * param0);
-static BOOL ov62_02234EF8(UnkStruct_0208C06C * param0);
-static BOOL ov62_02234FCC(UnkStruct_0208C06C * param0);
-BOOL ov62_02235008(UnkStruct_0208C06C * param0);
+static void ov62_02234A10(UnkStruct_0208C06C *param0);
+static void ov62_02234A90(UnkStruct_0208C06C *param0);
+static BOOL ov62_02234AB4(UnkStruct_0208C06C *param0);
+static BOOL ov62_02234CDC(UnkStruct_0208C06C *param0);
+static BOOL ov62_02234EF8(UnkStruct_0208C06C *param0);
+static BOOL ov62_02234FCC(UnkStruct_0208C06C *param0);
+BOOL ov62_02235008(UnkStruct_0208C06C *param0);
 
-static void ov62_02234A10 (UnkStruct_0208C06C * param0)
+static void ov62_02234A10 (UnkStruct_0208C06C *param0)
 {
     UnkStruct_02023790 * v0;
     int v1;
@@ -56,14 +56,14 @@ static void ov62_02234A10 (UnkStruct_0208C06C * param0)
     GXLayers_EngineAToggleLayers(GX_PLANEMASK_BG2, 1);
 }
 
-static void ov62_02234A90 (UnkStruct_0208C06C * param0)
+static void ov62_02234A90 (UnkStruct_0208C06C *param0)
 {
     sub_0201ACF4(&param0->unk_8A4);
     sub_0201A8FC(&param0->unk_8A4);
     GXLayers_EngineAToggleLayers(GX_PLANEMASK_BG2, 0);
 }
 
-static BOOL ov62_02234AB4 (UnkStruct_0208C06C * param0)
+static BOOL ov62_02234AB4 (UnkStruct_0208C06C *param0)
 {
     switch (param0->unk_08) {
     case 0:
@@ -149,7 +149,7 @@ static BOOL ov62_02234AB4 (UnkStruct_0208C06C * param0)
     return 0;
 }
 
-static BOOL ov62_02234CDC (UnkStruct_0208C06C * param0)
+static BOOL ov62_02234CDC (UnkStruct_0208C06C *param0)
 {
     switch (param0->unk_08) {
     case 0:
@@ -223,7 +223,7 @@ static BOOL ov62_02234CDC (UnkStruct_0208C06C * param0)
     return 0;
 }
 
-static BOOL ov62_02234EF8 (UnkStruct_0208C06C * param0)
+static BOOL ov62_02234EF8 (UnkStruct_0208C06C *param0)
 {
     switch (param0->unk_08) {
     case 0:
@@ -259,7 +259,7 @@ static BOOL ov62_02234EF8 (UnkStruct_0208C06C * param0)
     return 0;
 }
 
-static BOOL ov62_02234FCC (UnkStruct_0208C06C * param0)
+static BOOL ov62_02234FCC (UnkStruct_0208C06C *param0)
 {
     BOOL v0 = ov62_02235008(param0);
 
@@ -273,7 +273,7 @@ static BOOL ov62_02234FCC (UnkStruct_0208C06C * param0)
     return v0;
 }
 
-BOOL ov62_02235008 (UnkStruct_0208C06C * param0)
+BOOL ov62_02235008 (UnkStruct_0208C06C *param0)
 {
     UnkStruct_ov62_02235008 * v0;
 

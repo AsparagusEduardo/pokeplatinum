@@ -164,7 +164,7 @@ void sub_02099510 (int param0, int param1, void * param2, void * param3)
     return;
 }
 
-void sub_02099514 (void * param0)
+void sub_02099514 (void *param0)
 {
     int v0 = sizeof(Unk_020F68A4) / sizeof(UnkStruct_02039A58);
     sub_02032798(Unk_020F68A4, v0, param0);

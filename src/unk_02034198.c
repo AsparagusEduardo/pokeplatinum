@@ -104,7 +104,7 @@ typedef struct {
 } UnkStruct_021C07CC;
 
 static void sub_0203463C(void);
-static void sub_0203498C(UnkStruct_0201CD38 * param0, void * param1);
+static void sub_0203498C(UnkStruct_0201CD38 *param0, void * param1);
 static void sub_02034B50(void);
 static void sub_02034DC8(void);
 static void sub_02034F68(void);
@@ -117,10 +117,10 @@ static void sub_02035534(void);
 static void sub_020353CC(void);
 static void sub_02035CA8(void);
 static void sub_02035CF8(void);
-static BOOL sub_020357F0(u8 * param0);
-static void sub_020358C0(u8 * param0);
-static BOOL sub_020356A0(u8 * param0, int param1);
-static BOOL sub_02035730(u8 * param0);
+static BOOL sub_020357F0(u8 *param0);
+static void sub_020358C0(u8 *param0);
+static BOOL sub_020356A0(u8 *param0, int param1);
+static BOOL sub_02035730(u8 *param0);
 static void sub_02035F84(void);
 static BOOL sub_0203594C(void);
 
@@ -472,7 +472,7 @@ BOOL sub_02034984 (u16 param0)
     return sub_020339E8(param0);
 }
 
-static void sub_0203498C (UnkStruct_0201CD38 * param0, void * param1)
+static void sub_0203498C (UnkStruct_0201CD38 *param0, void * param1)
 {
     if (Unk_021C07C5) {
         sub_020353CC();
@@ -1174,7 +1174,7 @@ void sub_0203568C (void)
     Unk_021C07CC->unk_658 = 0;
 }
 
-static BOOL sub_020356A0 (u8 * param0, int param1)
+static BOOL sub_020356A0 (u8 *param0, int param1)
 {
     int v0;
     u8 v1[2];
@@ -1205,7 +1205,7 @@ void sub_0203572C (void)
     return;
 }
 
-static BOOL sub_02035730 (u8 * param0)
+static BOOL sub_02035730 (u8 *param0)
 {
     int v0, v1;
 
@@ -1239,7 +1239,7 @@ static BOOL sub_02035730 (u8 * param0)
     return 0;
 }
 
-static BOOL sub_020357F0 (u8 * param0)
+static BOOL sub_020357F0 (u8 *param0)
 {
     int v0;
     int v1 = sub_02036128(sub_0203895C());
@@ -1283,7 +1283,7 @@ static BOOL sub_020357F0 (u8 * param0)
     return 1;
 }
 
-static void sub_020358C0 (u8 * param0)
+static void sub_020358C0 (u8 *param0)
 {
     int v0;
 
@@ -1442,7 +1442,7 @@ static void sub_02035B6C (int param0, int param1, int param2, void * param3, Unk
     param4->unk_00 = 0;
 }
 
-static void sub_02035B88 (UnkStruct_02032188 * param0, int param1, u8 * param2, UnkStruct_02035B6C * param3)
+static void sub_02035B88 (UnkStruct_02032188 *param0, int param1, u8 * param2, UnkStruct_02035B6C * param3)
 {
     int v0;
     u8 v1;
@@ -1870,7 +1870,7 @@ void sub_0203619C (int param0, int param1, void * param2, void * param3)
     sub_0203408C();
 }
 
-void sub_020361BC (MATHRandContext32 * param0)
+void sub_020361BC (MATHRandContext32 *param0)
 {
     u64 v0 = 0;
     RTCDate v1;

@@ -21,20 +21,20 @@
 #include "overlay119/ov119_021D0D80.h"
 #include "overlay119/ov119_021D191C.h"
 
-static BOOL ov119_021D1930(UnkStruct_ov119_021D0FD0 * param0);
-static BOOL ov119_021D1BD0(UnkStruct_ov119_021D0FD0 * param0);
-static BOOL ov119_021D1E38(UnkStruct_ov119_021D0FD0 * param0);
-static BOOL ov119_021D1E80(UnkStruct_ov119_021D0FD0 * param0);
-static BOOL ov119_021D1EF0(UnkStruct_ov119_021D0FD0 * param0);
-static BOOL ov119_021D1F48(UnkStruct_ov119_021D0FD0 * param0);
-static BOOL ov119_021D1FAC(UnkStruct_ov119_021D0FD0 * param0);
-static BOOL ov119_021D21BC(UnkStruct_ov119_021D0FD0 * param0);
+static BOOL ov119_021D1930(UnkStruct_ov119_021D0FD0 *param0);
+static BOOL ov119_021D1BD0(UnkStruct_ov119_021D0FD0 *param0);
+static BOOL ov119_021D1E38(UnkStruct_ov119_021D0FD0 *param0);
+static BOOL ov119_021D1E80(UnkStruct_ov119_021D0FD0 *param0);
+static BOOL ov119_021D1EF0(UnkStruct_ov119_021D0FD0 *param0);
+static BOOL ov119_021D1F48(UnkStruct_ov119_021D0FD0 *param0);
+static BOOL ov119_021D1FAC(UnkStruct_ov119_021D0FD0 *param0);
+static BOOL ov119_021D21BC(UnkStruct_ov119_021D0FD0 *param0);
 
 static BOOL(*const Unk_ov119_021D26AC[])(UnkStruct_ov119_021D0FD0 *) = {
     ov119_021D1930, ov119_021D1BD0,
 };
 
-BOOL ov119_021D191C (UnkStruct_ov119_021D0FD0 * param0)
+BOOL ov119_021D191C (UnkStruct_ov119_021D0FD0 *param0)
 {
     BOOL v0;
 
@@ -42,7 +42,7 @@ BOOL ov119_021D191C (UnkStruct_ov119_021D0FD0 * param0)
     return v0;
 }
 
-static BOOL ov119_021D1930 (UnkStruct_ov119_021D0FD0 * param0)
+static BOOL ov119_021D1930 (UnkStruct_ov119_021D0FD0 *param0)
 {
     BOOL v0 = 1;
 
@@ -236,7 +236,7 @@ static BOOL ov119_021D1930 (UnkStruct_ov119_021D0FD0 * param0)
     return v0;
 }
 
-static BOOL ov119_021D1BD0 (UnkStruct_ov119_021D0FD0 * param0)
+static BOOL ov119_021D1BD0 (UnkStruct_ov119_021D0FD0 *param0)
 {
     BOOL v0 = 1;
 
@@ -393,7 +393,7 @@ static BOOL ov119_021D1BD0 (UnkStruct_ov119_021D0FD0 * param0)
     return v0;
 }
 
-static BOOL ov119_021D1E38 (UnkStruct_ov119_021D0FD0 * param0)
+static BOOL ov119_021D1E38 (UnkStruct_ov119_021D0FD0 *param0)
 {
     switch (param0->unk_68) {
     case 0:
@@ -416,7 +416,7 @@ static BOOL ov119_021D1E38 (UnkStruct_ov119_021D0FD0 * param0)
     return 1;
 }
 
-static BOOL ov119_021D1E80 (UnkStruct_ov119_021D0FD0 * param0)
+static BOOL ov119_021D1E80 (UnkStruct_ov119_021D0FD0 *param0)
 {
     switch (param0->unk_68) {
     case 0:
@@ -461,7 +461,7 @@ static BOOL ov119_021D1E80 (UnkStruct_ov119_021D0FD0 * param0)
     return 1;
 }
 
-static BOOL ov119_021D1EF0 (UnkStruct_ov119_021D0FD0 * param0)
+static BOOL ov119_021D1EF0 (UnkStruct_ov119_021D0FD0 *param0)
 {
     switch (param0->unk_68) {
     case 0:
@@ -494,7 +494,7 @@ static BOOL ov119_021D1EF0 (UnkStruct_ov119_021D0FD0 * param0)
     return 1;
 }
 
-static BOOL ov119_021D1F48 (UnkStruct_ov119_021D0FD0 * param0)
+static BOOL ov119_021D1F48 (UnkStruct_ov119_021D0FD0 *param0)
 {
     switch (param0->unk_68) {
     case 0:
@@ -532,7 +532,7 @@ static BOOL ov119_021D1F48 (UnkStruct_ov119_021D0FD0 * param0)
     return 1;
 }
 
-static BOOL ov119_021D1FAC (UnkStruct_ov119_021D0FD0 * param0)
+static BOOL ov119_021D1FAC (UnkStruct_ov119_021D0FD0 *param0)
 {
     switch (param0->unk_68) {
     case 0:
@@ -650,7 +650,7 @@ static BOOL ov119_021D1FAC (UnkStruct_ov119_021D0FD0 * param0)
     return 1;
 }
 
-static BOOL ov119_021D21BC (UnkStruct_ov119_021D0FD0 * param0)
+static BOOL ov119_021D21BC (UnkStruct_ov119_021D0FD0 *param0)
 {
     switch (param0->unk_68) {
     case 0:

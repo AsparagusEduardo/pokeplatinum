@@ -29,9 +29,9 @@ typedef struct {
     UnkStruct_0201CD38 * unk_0C;
 } UnkStruct_ov66_0222DD90;
 
-static void ov66_0222DDDC(UnkStruct_0201CD38 * param0, void * param1);
+static void ov66_0222DDDC(UnkStruct_0201CD38 *param0, void * param1);
 
-int ov66_0222DCE0 (UnkStruct_020067E8 * param0, int * param1)
+int ov66_0222DCE0 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_ov66_0222DD90 * v0;
     UnkStruct_ov66_0222DCE0 * v1;
@@ -64,7 +64,7 @@ int ov66_0222DCE0 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-int ov66_0222DD6C (UnkStruct_020067E8 * param0, int * param1)
+int ov66_0222DD6C (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_ov66_0222DD90 * v0;
     int v1;
@@ -81,7 +81,7 @@ int ov66_0222DD6C (UnkStruct_020067E8 * param0, int * param1)
     return 0;
 }
 
-int ov66_0222DD90 (UnkStruct_020067E8 * param0, int * param1)
+int ov66_0222DD90 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_ov66_0222DD90 * v0;
 
@@ -107,7 +107,7 @@ int ov66_0222DD90 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-static void ov66_0222DDDC (UnkStruct_0201CD38 * param0, void * param1)
+static void ov66_0222DDDC (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov66_0222DD90 * v0;
 

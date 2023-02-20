@@ -4,7 +4,7 @@
 
 #include "unk_0201E0A4.h"
 
-int sub_0201E0A4 (char * param0)
+int sub_0201E0A4 (char *param0)
 {
     int v0 = 0;
 
@@ -15,7 +15,7 @@ int sub_0201E0A4 (char * param0)
     return v0;
 }
 
-char * sub_0201E0B8 (char * param0, char * param1, char param2)
+char *sub_0201E0B8 (char * param0, char * param1, char param2)
 {
     int v0;
 
@@ -36,7 +36,7 @@ char * sub_0201E0B8 (char * param0, char * param1, char param2)
     return NULL;
 }
 
-int sub_0201E0FC (char * param0)
+int sub_0201E0FC (char *param0)
 {
     int v0, v1, v2, v3;
 
@@ -63,7 +63,7 @@ int sub_0201E0FC (char * param0)
     return v3;
 }
 
-void sub_0201E140 (NNSG3dResName * param0, const char * param1)
+void sub_0201E140 (NNSG3dResName *param0, const char * param1)
 {
     u8 v0;
     u8 v1;

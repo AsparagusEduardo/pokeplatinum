@@ -203,7 +203,7 @@ void sub_020179E4 (void)
     MI_CpuClearFast((void *)HW_DB_PLTT, HW_DB_PLTT_SIZE);
 }
 
-void * sub_02017A40 (int param0, const char * param1)
+void *sub_02017A40 (int param0, const char * param1)
 {
     FSFile v0;
     void * v1;

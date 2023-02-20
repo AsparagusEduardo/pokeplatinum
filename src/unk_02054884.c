@@ -15,7 +15,7 @@
 #include "party.h"
 #include "overlay005/ov5_021E622C.h"
 
-BOOL sub_02054884 (UnkStruct_02073C74 * param0)
+BOOL sub_02054884 (UnkStruct_02073C74 *param0)
 {
     if (sub_02074470(param0, 163, NULL) == 0) {
         return 0;
@@ -76,12 +76,12 @@ BOOL sub_02054930 (int param0, UnkStruct_021C0794 * param1, u16 param2, u8 param
     return v1;
 }
 
-void sub_02054988 (Party * param0, int param1, int param2, u16 param3)
+void sub_02054988 (Party *param0, int param1, int param2, u16 param3)
 {
     sub_020771F8(Party_GetPokemonBySlotIndex(param0, param1), param3, param2);
 }
 
-int sub_020549A0 (Party * param0, u16 param1)
+int sub_020549A0 (Party *param0, u16 param1)
 {
     int v0, v1;
     UnkStruct_02073C74 * v2;
@@ -123,7 +123,7 @@ int sub_02054A10 (const Party * param0)
     return v2;
 }
 
-UnkStruct_02073C74 * sub_02054A40 (const Party * param0)
+UnkStruct_02073C74 *sub_02054A40 (const Party * param0)
 {
     int v0, v1;
     UnkStruct_02073C74 * v2;
@@ -142,7 +142,7 @@ UnkStruct_02073C74 * sub_02054A40 (const Party * param0)
     return NULL;
 }
 
-UnkStruct_02073C74 * sub_02054A74 (const Party * param0)
+UnkStruct_02073C74 *sub_02054A74 (const Party * param0)
 {
     u16 v0, v1;
     UnkStruct_02073C74 * v2;
@@ -169,7 +169,7 @@ BOOL sub_02054AB0 (const Party * param0)
     }
 }
 
-void sub_02054AC4 (Party * param0)
+void sub_02054AC4 (Party *param0)
 {
     int v0, v1;
     u8 v2 = 1;
@@ -186,7 +186,7 @@ void sub_02054AC4 (Party * param0)
     }
 }
 
-int sub_02054B04 (Party * param0, u16 param1)
+int sub_02054B04 (Party *param0, u16 param1)
 {
     int v0 = 0;
     int v1 = 0;
@@ -227,7 +227,7 @@ int sub_02054B04 (Party * param0, u16 param1)
     }
 }
 
-BOOL sub_02054B94 (UnkStruct_02073C74 * param0)
+BOOL sub_02054B94 (UnkStruct_02073C74 *param0)
 {
     if ((sub_02074470(param0, 160, NULL) & (0x80 | 0x8)) && (sub_02074470(param0, 163, NULL) == 1)) {
         u32 v0 = 0;

@@ -28,7 +28,7 @@ void sub_02026034 (const UnkStruct_0202610C * param0, UnkStruct_0202610C * param
     MI_CpuCopy8(param0, param1, sizeof(UnkStruct_0202610C));
 }
 
-void sub_02026040 (UnkStruct_02026030 * param0)
+void sub_02026040 (UnkStruct_02026030 *param0)
 {
     memset(param0, 0, sizeof(UnkStruct_02026030));
 }
@@ -38,7 +38,7 @@ void sub_0202604C (const UnkStruct_0202610C * param0, UnkStruct_02023790 * param
     sub_02023D8C(param1, param0->unk_00, (11 + 1));
 }
 
-UnkStruct_02023790 * sub_0202605C (const UnkStruct_0202610C * param0, int param1)
+UnkStruct_02023790 *sub_0202605C (const UnkStruct_0202610C * param0, int param1)
 {
     UnkStruct_02023790 * v0 = sub_02023790((11 + 1) * 2, param1);
 
@@ -100,7 +100,7 @@ int sub_02026074 (const UnkStruct_0202610C * param0, int param1)
     return v0;
 }
 
-UnkStruct_0202610C * sub_0202610C (UnkStruct_021C0794 * param0, int param1)
+UnkStruct_0202610C *sub_0202610C (UnkStruct_021C0794 * param0, int param1)
 {
     UnkStruct_02026030 * v0 = NULL;
 
@@ -114,7 +114,7 @@ UnkStruct_0202610C * sub_0202610C (UnkStruct_021C0794 * param0, int param1)
     return NULL;
 }
 
-void sub_0202613C (UnkStruct_021C0794 * param0, const UnkStruct_0202610C * param1)
+void sub_0202613C (UnkStruct_021C0794 *param0, const UnkStruct_0202610C * param1)
 {
     UnkStruct_02026030 * v0 = NULL;
 

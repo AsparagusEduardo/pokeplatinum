@@ -22,7 +22,7 @@ BOOL ov22_02258258(UnkStruct_ov22_02257F50 * param0, int param1, int param2);
 void ov22_022582C0(UnkStruct_ov22_02257F50 * param0, int param1, int param2);
 BOOL ov22_022582E8(UnkStruct_ov22_02257F50 * param0);
 BOOL ov22_02258304(UnkStruct_ov22_02257F50 * param0, int param1, int param2);
-UnkStruct_ov22_02259560 * ov22_02258320(UnkStruct_ov22_02257F50 * param0, int * param1, int * param2, NNSG2dCharacterData ** param3);
+UnkStruct_ov22_02259560 *ov22_02258320(UnkStruct_ov22_02257F50 * param0, int * param1, int * param2, NNSG2dCharacterData ** param3);
 void ov22_02258354(UnkStruct_ov22_02257F50 * param0, int param1);
 void ov22_022583A0(UnkStruct_ov22_02257F50 * param0, int param1, int param2, int param3, BOOL * param4);
 void ov22_02258408(UnkStruct_ov22_02257F50 * param0);

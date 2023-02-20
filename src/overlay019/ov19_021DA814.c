@@ -15,7 +15,7 @@
 #include "overlay019/ov19_021D61B0.h"
 #include "overlay019/ov19_021DA814.h"
 
-BOOL ov19_021DA814 (UnkStruct_ov19_021DA8D8 * param0, UnkStruct_ov19_021D61B0 * param1, const UnkStruct_ov19_021D4DF0 * param2, UnkStruct_020218BC * param3, NARC * param4)
+BOOL ov19_021DA814 (UnkStruct_ov19_021DA8D8 *param0, UnkStruct_ov19_021D61B0 * param1, const UnkStruct_ov19_021D4DF0 * param2, UnkStruct_020218BC * param3, NARC * param4)
 {
     param0->unk_44 = param1;
     param0->unk_3C = param3;
@@ -32,7 +32,7 @@ BOOL ov19_021DA814 (UnkStruct_ov19_021DA8D8 * param0, UnkStruct_ov19_021D61B0 * 
     return 1;
 }
 
-void ov19_021DA864 (UnkStruct_ov19_021DA8D8 * param0, NARC * param1)
+void ov19_021DA864 (UnkStruct_ov19_021DA8D8 *param0, NARC * param1)
 {
     UnkStruct_ov19_021DA864 v0;
 
@@ -44,7 +44,7 @@ void ov19_021DA864 (UnkStruct_ov19_021DA8D8 * param0, NARC * param1)
     sub_02021E90(param0->unk_04, 1);
 }
 
-void ov19_021DA8D8 (UnkStruct_ov19_021DA8D8 * param0)
+void ov19_021DA8D8 (UnkStruct_ov19_021DA8D8 *param0)
 {
     if (param0->unk_08 != NULL) {
         Heap_FreeToHeap(param0->unk_08);
@@ -57,7 +57,7 @@ void ov19_021DA8D8 (UnkStruct_ov19_021DA8D8 * param0)
     }
 }
 
-void ov19_021DA8FC (UnkStruct_ov19_021DA8D8 * param0, int param1)
+void ov19_021DA8FC (UnkStruct_ov19_021DA8D8 *param0, int param1)
 {
     switch (param1) {
     case 0:

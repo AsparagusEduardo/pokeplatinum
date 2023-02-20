@@ -6,10 +6,10 @@
 #include "struct_decls/struct_0200D0F4_decl.h"
 #include "overlay012/struct_ov12_0221FCDC_decl.h"
 
-void ov12_0222AE68(UnkStruct_ov12_0221FCDC * param0, UnkStruct_0200C6E4 * param1, UnkStruct_0200C704 * param2, UnkStruct_0200D0F4 * param3);
-void ov12_0222B194(UnkStruct_ov12_0221FCDC * param0);
-void ov12_0222B45C(UnkStruct_ov12_0221FCDC * param0);
-void ov12_0222B68C(UnkStruct_ov12_0221FCDC * param0);
+void ov12_0222AE68(UnkStruct_ov12_0221FCDC *param0, UnkStruct_0200C6E4 * param1, UnkStruct_0200C704 * param2, UnkStruct_0200D0F4 * param3);
+void ov12_0222B194(UnkStruct_ov12_0221FCDC *param0);
+void ov12_0222B45C(UnkStruct_ov12_0221FCDC *param0);
+void ov12_0222B68C(UnkStruct_ov12_0221FCDC *param0);
 void ov12_0222B9E0(UnkStruct_ov12_0221FCDC * param0);
 void ov12_0222BAE4(UnkStruct_ov12_0221FCDC * param0);
 void ov12_0222BCF4(UnkStruct_ov12_0221FCDC * param0);

@@ -8,7 +8,7 @@
 
 static void LoadMoveEntry(int moveID, MoveTable * moveTable);
 
-void MoveTable_Load (void * dest) {
+void MoveTable_Load (void *dest) {
     NARC_ReadFromMemberByIndexPair(dest, 9, 0, 0, sizeof(MoveTable) * (467 + 1));
 }
 
@@ -34,7 +34,7 @@ u8 MoveTable_GetMoveMaxPP (u16 moveID, u8 ppUps)
     return pp;
 }
 
-u32 MoveTable_GetAttribute (MoveTable * moveTable, int attribute)
+u32 MoveTable_GetAttribute (MoveTable *moveTable, int attribute)
 {
     u32 ret;
 

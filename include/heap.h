@@ -8,8 +8,8 @@
 BOOL Heap_Create(u32 parent, u32 child, u32 size);
 BOOL Heap_CreateAtEnd(u32 parent, u32 child, u32 size);
 void Heap_Destroy(u32 heapID);
-void * Heap_AllocFromHeap(u32 heapID, u32 size);
-void * Heap_AllocFromHeapAtEnd(u32 heapID, u32 size);
+void *Heap_AllocFromHeap(u32 heapID, u32 size);
+void *Heap_AllocFromHeapAtEnd(u32 heapID, u32 size);
 void Heap_FreeToHeap(void * ptr);
 void Heap_FreeToHeapExplicit(u32 heapID, void * ptr);
 u32 Heap_FndGetTotalFreeSizeForExpHeap(u32 heapID);

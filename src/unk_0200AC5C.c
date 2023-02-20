@@ -33,14 +33,14 @@ typedef struct UnkStruct_0200B144_t {
     };
 } UnkStruct_0200B144;
 
-static void sub_0200AD98(u16 * param0, const u16 * param1, const UnkStruct_0200AC6C * param2);
+static void sub_0200AD98(u16 *param0, const u16 * param1, const UnkStruct_0200AC6C * param2);
 
-UnkStruct_0200AC5C * sub_0200AC5C (u32 param0, u32 param1, u32 param2)
+UnkStruct_0200AC5C *sub_0200AC5C (u32 param0, u32 param1, u32 param2)
 {
     return NARC_AllocAndReadWholeMemberByIndexPair(param0, param1, param2);
 }
 
-void sub_0200AC64 (UnkStruct_0200AC5C * param0)
+void sub_0200AC64 (UnkStruct_0200AC5C *param0)
 {
     Heap_FreeToHeap(param0);
 }
@@ -50,7 +50,7 @@ static inline int inline_0200ACF0 (u32 param0)
     return sizeof(UnkStruct_0200AC5C) + sizeof(UnkStruct_0200AC6C) * param0;
 }
 
-static inline void inline_0200AC6C (UnkStruct_0200AC6C * param0, u32 param1, u32 param2)
+static inline void inline_0200AC6C (UnkStruct_0200AC6C *param0, u32 param1, u32 param2)
 {
     param2 = (param2 * 765 * (param1 + 1)) & 0xffff;
     param2 |= (param2 << 16);
@@ -59,7 +59,7 @@ static inline void inline_0200AC6C (UnkStruct_0200AC6C * param0, u32 param1, u32
     param0->unk_04 ^= param2;
 }
 
-static inline void inline_0200AC6C_1 (u16 * param0, u32 param1, u32 param2, u16 param3)
+static inline void inline_0200AC6C_1 (u16 *param0, u32 param1, u32 param2, u16 param3)
 {
     param3 = (param2 + 1) * 596947;
 
@@ -109,7 +109,7 @@ void sub_0200ACF0 (u32 param0, u32 param1, u32 param2, u32 param3, u16 * param4)
     }
 }
 
-static void sub_0200AD98 (u16 * param0, const u16 * param1, const UnkStruct_0200AC6C * param2)
+static void sub_0200AD98 (u16 *param0, const u16 * param1, const UnkStruct_0200AC6C * param2)
 {
     MI_CpuCopy16(param1, param0, param2->unk_04 * sizeof(u16));
 }
@@ -140,7 +140,7 @@ void sub_0200ADAC (const UnkStruct_0200AC5C * param0, u32 param1, UnkStruct_0202
     }
 }
 
-UnkStruct_02023790 * sub_0200AE5C (const UnkStruct_0200AC5C * param0, u32 param1, u32 param2)
+UnkStruct_02023790 *sub_0200AE5C (const UnkStruct_0200AC5C * param0, u32 param1, u32 param2)
 {
     if (param1 < param0->unk_00) {
         UnkStruct_0200AC6C v0;
@@ -187,7 +187,7 @@ void sub_0200AF20 (u32 param0, u32 param1, u32 param2, u32 param3, UnkStruct_020
     }
 }
 
-void sub_0200AF48 (NARC * param0, u32 param1, u32 param2, u32 param3, UnkStruct_02023790 * param4)
+void sub_0200AF48 (NARC *param0, u32 param1, u32 param2, u32 param3, UnkStruct_02023790 * param4)
 {
     UnkStruct_0200AC5C v0;
     UnkStruct_0200AC6C v1;
@@ -215,7 +215,7 @@ void sub_0200AF48 (NARC * param0, u32 param1, u32 param2, u32 param3, UnkStruct_
     }
 }
 
-UnkStruct_02023790 * sub_0200B010 (u32 param0, u32 param1, u32 param2, u32 param3)
+UnkStruct_02023790 *sub_0200B010 (u32 param0, u32 param1, u32 param2, u32 param3)
 {
     NARC * v0;
     UnkStruct_02023790 * v1;
@@ -232,7 +232,7 @@ UnkStruct_02023790 * sub_0200B010 (u32 param0, u32 param1, u32 param2, u32 param
     return v1;
 }
 
-UnkStruct_02023790 * sub_0200B044 (NARC * param0, u32 param1, u32 param2, u32 param3)
+UnkStruct_02023790 *sub_0200B044 (NARC * param0, u32 param1, u32 param2, u32 param3)
 {
     UnkStruct_0200AC5C v0;
 
@@ -282,7 +282,7 @@ u32 sub_0200B124 (u32 param0, u32 param1)
     return v0.unk_00;
 }
 
-UnkStruct_0200B144 * sub_0200B144 (int param0, u32 param1, u32 param2, u32 param3)
+UnkStruct_0200B144 *sub_0200B144 (int param0, u32 param1, u32 param2, u32 param3)
 {
     UnkStruct_0200B144 * v0 = Heap_AllocFromHeapAtEnd(param3, sizeof(UnkStruct_0200B144));
 
@@ -307,7 +307,7 @@ UnkStruct_0200B144 * sub_0200B144 (int param0, u32 param1, u32 param2, u32 param
     return v0;
 }
 
-void sub_0200B190 (UnkStruct_0200B144 * param0)
+void sub_0200B190 (UnkStruct_0200B144 *param0)
 {
     if (param0) {
         switch (param0->unk_00) {
@@ -335,7 +335,7 @@ void sub_0200B1B8 (const UnkStruct_0200B144 * param0, u32 param1, UnkStruct_0202
     }
 }
 
-UnkStruct_02023790 * sub_0200B1EC (const UnkStruct_0200B144 * param0, u32 param1)
+UnkStruct_02023790 *sub_0200B1EC (const UnkStruct_0200B144 * param0, u32 param1)
 {
     switch (param0->unk_00) {
     case 0:

@@ -25,7 +25,7 @@ typedef struct {
     int unk_10;
 } UnkStruct_ov5_021E135C;
 
-static void ov5_021E135C (UnkStruct_ov5_021E135C * param0)
+static void ov5_021E135C (UnkStruct_ov5_021E135C *param0)
 {
     switch (param0->unk_10) {
     case 0:
@@ -45,7 +45,7 @@ static void ov5_021E135C (UnkStruct_ov5_021E135C * param0)
     sub_0205EA84(param0->unk_00->unk_3C, param0->unk_10);
 }
 
-static void ov5_021E139C (UnkStruct_0201CD38 * param0, void * param1)
+static void ov5_021E139C (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov5_021E135C * v0 = param1;
     UnkStruct_02061AB4 * v1 = sub_0205EB3C(v0->unk_00->unk_3C);
@@ -78,7 +78,7 @@ static void ov5_021E139C (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-static void ov5_021E1470 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov5_021E1470 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov5_021E135C * v0 = param1;
     UnkStruct_02061AB4 * v1 = sub_0205EB3C(v0->unk_00->unk_3C);
@@ -128,7 +128,7 @@ static void ov5_021E1470 (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-void ov5_021E15A8 (UnkStruct_0203CDB0 * param0, BOOL param1, BOOL * param2)
+void ov5_021E15A8 (UnkStruct_0203CDB0 *param0, BOOL param1, BOOL * param2)
 {
     UnkStruct_ov5_021E135C * v0 = Heap_AllocFromHeapAtEnd(4, sizeof(UnkStruct_ov5_021E135C));
 

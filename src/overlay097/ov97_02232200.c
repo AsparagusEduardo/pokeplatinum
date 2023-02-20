@@ -22,12 +22,12 @@ static void ov97_02232200 (void)
     (void)ov97_02233AD8();
 }
 
-static UnkStruct_ov97_022335A8 ov97_02232210 (u8 * param0)
+static UnkStruct_ov97_022335A8 ov97_02232210 (u8 *param0)
 {
     return ov97_022335A8(param0);
 }
 
-static UnkStruct_ov97_022335C8 ov97_0223221C (u8 * param0)
+static UnkStruct_ov97_022335C8 ov97_0223221C (u8 *param0)
 {
     return ov97_022335C8(param0);
 }
@@ -138,7 +138,7 @@ static void ov97_02232360 (void)
     }
 }
 
-void ov97_022323B0 (void * param0)
+void ov97_022323B0 (void *param0)
 {
     WMindCallback * v0 = (WMindCallback *)param0;
     ov97_02233800((WMStateCode)v0->state);
@@ -149,7 +149,7 @@ void ov97_022323B0 (void * param0)
     }
 }
 
-void ov97_022323CC (void * param0)
+void ov97_022323CC (void *param0)
 {
     WMPortSendCallback * v0 = (WMPortSendCallback *)param0;
 
@@ -163,7 +163,7 @@ void ov97_022323CC (void * param0)
     }
 }
 
-void ov97_022323E4 (void * param0)
+void ov97_022323E4 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -187,7 +187,7 @@ void ov97_022323E4 (void * param0)
     }
 }
 
-void ov97_02232424 (void * param0)
+void ov97_02232424 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -206,7 +206,7 @@ void ov97_02232424 (void * param0)
     }
 }
 
-void ov97_0223245C (void * param0)
+void ov97_0223245C (void *param0)
 {
     WMMeasureChannelCallback * v0 = (WMMeasureChannelCallback *)param0;
 
@@ -243,7 +243,7 @@ void ov97_0223245C (void * param0)
     }
 }
 
-void ov97_022324C4 (void * param0)
+void ov97_022324C4 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -261,7 +261,7 @@ void ov97_022324C4 (void * param0)
     }
 }
 
-void ov97_022324EC (void * param0)
+void ov97_022324EC (void *param0)
 {
     WMstartParentCallback * v0 = (WMstartParentCallback *)param0;
 
@@ -332,7 +332,7 @@ void ov97_022324EC (void * param0)
     }
 }
 
-static BOOL ov97_02232620 (WMstartScanCallback * param0, WMBssDesc * param1)
+static BOOL ov97_02232620 (WMstartScanCallback *param0, WMBssDesc * param1)
 {
     int v0;
     UnkStruct_ov97_02232620 * v1 = ov97_02233508();
@@ -369,7 +369,7 @@ static void ov97_022326C0 (void)
     }
 }
 
-static BOOL ov97_022326D4 (WMstartScanCallback * param0)
+static BOOL ov97_022326D4 (WMstartScanCallback *param0)
 {
     WMBssDesc * v0 = ov97_022334B4();
     UnkStruct_ov97_02232620 * v1 = ov97_02233508();
@@ -429,7 +429,7 @@ static BOOL ov97_022326D4 (WMstartScanCallback * param0)
     return 0;
 }
 
-void ov97_022327B8 (void * param0)
+void ov97_022327B8 (void *param0)
 {
     WMstartScanCallback * v0 = (WMstartScanCallback *)param0;
     ov97_02233800((WMStateCode)v0->state);
@@ -507,7 +507,7 @@ static BOOL ov97_0223282C (void)
     return 0;
 }
 
-void ov97_022328D4 (void * param0)
+void ov97_022328D4 (void *param0)
 {
     WMstartScanCallback * v0 = (WMstartScanCallback *)param0;
 
@@ -546,7 +546,7 @@ void ov97_022328D4 (void * param0)
     }
 }
 
-void ov97_02232944 (void * param0)
+void ov97_02232944 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -574,7 +574,7 @@ void ov97_02232944 (void * param0)
     }
 }
 
-void ov97_02232998 (void * param0)
+void ov97_02232998 (void *param0)
 {
     WMstartConnectCallback * v0 = (WMstartConnectCallback *)param0;
 
@@ -650,7 +650,7 @@ static void ov97_02232A28 (void)
     }
 }
 
-void ov97_02232A7C (void * param0)
+void ov97_02232A7C (void *param0)
 {
     WMstartMPCallback * v0 = (WMstartMPCallback *)param0;
 
@@ -691,7 +691,7 @@ void ov97_02232A7C (void * param0)
     }
 }
 
-static void ov97_02232AC8 (WMPortRecvCallback * param0)
+static void ov97_02232AC8 (WMPortRecvCallback *param0)
 {
     UnkStruct_ov97_02232AC8 * v0 = ov97_02233538();
 
@@ -719,7 +719,7 @@ static void ov97_02232AC8 (WMPortRecvCallback * param0)
     }
 }
 
-static void ov97_02232B40 (WMPortRecvCallback * param0)
+static void ov97_02232B40 (WMPortRecvCallback *param0)
 {
     UnkStruct_ov97_02232AC8 * v0 = ov97_02233538();
 
@@ -752,7 +752,7 @@ static void ov97_02232B40 (WMPortRecvCallback * param0)
     }
 }
 
-static void ov97_02232BCC (WMPortRecvCallback * param0)
+static void ov97_02232BCC (WMPortRecvCallback *param0)
 {
     UnkStruct_ov97_02232AC8 * v0 = ov97_02233538();
 
@@ -793,7 +793,7 @@ static void ov97_02232BCC (WMPortRecvCallback * param0)
     }
 }
 
-void ov97_02232C94 (void * param0)
+void ov97_02232C94 (void *param0)
 {
     WMPortRecvCallback * v0 = (WMPortRecvCallback *)param0;
 
@@ -844,7 +844,7 @@ void ov97_02232C94 (void * param0)
     }
 }
 
-void ov97_02232D18 (void * param0)
+void ov97_02232D18 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -860,7 +860,7 @@ void ov97_02232D18 (void * param0)
     }
 }
 
-void ov97_02232D3C (void * param0)
+void ov97_02232D3C (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -876,7 +876,7 @@ void ov97_02232D3C (void * param0)
     }
 }
 
-void ov97_02232D60 (void * param0)
+void ov97_02232D60 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 
@@ -902,7 +902,7 @@ void ov97_02232D60 (void * param0)
     }
 }
 
-void ov97_02232DA4 (void * param0)
+void ov97_02232DA4 (void *param0)
 {
     WMCallback * v0 = (WMCallback *)param0;
 

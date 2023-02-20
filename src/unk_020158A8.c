@@ -10,7 +10,7 @@
 #include "heap.h"
 #include "unk_02023790.h"
 
-UnkStruct_020158A8 * sub_020158A8 (int param0)
+UnkStruct_020158A8 *sub_020158A8 (int param0)
 {
     UnkStruct_020158A8 * v0;
     int v1;
@@ -28,7 +28,7 @@ UnkStruct_020158A8 * sub_020158A8 (int param0)
     return v0;
 }
 
-void sub_020158F4 (UnkStruct_020158A8 * param0)
+void sub_020158F4 (UnkStruct_020158A8 *param0)
 {
     int v0;
 
@@ -40,7 +40,7 @@ void sub_020158F4 (UnkStruct_020158A8 * param0)
     Heap_FreeToHeap(param0);
 }
 
-const UnkStruct_02023790 * sub_02015918 (UnkStruct_020158A8 * param0, int param1)
+const UnkStruct_02023790 *sub_02015918 (UnkStruct_020158A8 *param0, int param1)
 {
     return (const UnkStruct_02023790 *)param0->unk_04[param1];
 }

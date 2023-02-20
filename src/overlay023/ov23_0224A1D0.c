@@ -57,7 +57,7 @@ typedef struct {
     u8 unk_02;
 } UnkStruct_ov23_0224A570;
 
-UnkStruct_ov23_0224A294 * sub_02057518(void);
+UnkStruct_ov23_0224A294 *sub_02057518(void);
 
 void ov23_0224A1D0 (void)
 {
@@ -283,7 +283,7 @@ static void ov23_0224A5B0 (int param0)
     sub_0205948C(0x4);
 }
 
-static void ov23_0224A5CC (UnkStruct_0201CD38 * param0, void * param1)
+static void ov23_0224A5CC (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov23_0224A294 * v0 = sub_02057518();
     UnkStruct_ov23_0224A5CC * v1 = param1;
@@ -366,7 +366,7 @@ BOOL ov23_0224A6B8 (int param0)
     return 1;
 }
 
-static void ov23_0224A6E4 (UnkStruct_ov23_0224A570 * param0, BOOL param1, UnkStruct_0202855C * param2)
+static void ov23_0224A6E4 (UnkStruct_ov23_0224A570 *param0, BOOL param1, UnkStruct_0202855C * param2)
 {
     UnkStruct_ov23_0224A294 * v0 = sub_02057518();
 
@@ -517,7 +517,7 @@ void ov23_0224AA84 (void)
     }
 }
 
-u8 * ov23_0224AAA0 (int param0, void * param1, int param2)
+u8 *ov23_0224AAA0 (int param0, void * param1, int param2)
 {
     UnkStruct_ov23_0224A294 * v0 = sub_02057518();
     return (u8 *)&v0->unk_14A[(7 + 1)];

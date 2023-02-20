@@ -141,7 +141,7 @@ BOOL sub_02022798 (void)
     return Unk_021BF67C.unk_60;
 }
 
-BOOL sub_020227A4 (u32 * param0, u32 * param1)
+BOOL sub_020227A4 (u32 *param0, u32 * param1)
 {
     if (Unk_021BF67C.unk_62) {
         *param0 = Unk_021BF67C.unk_5C;
@@ -152,7 +152,7 @@ BOOL sub_020227A4 (u32 * param0, u32 * param1)
     return 0;
 }
 
-BOOL sub_020227C0 (u32 * param0, u32 * param1)
+BOOL sub_020227C0 (u32 *param0, u32 * param1)
 {
     if (Unk_021BF67C.unk_60) {
         *param0 = Unk_021BF67C.unk_5C;

@@ -16,7 +16,7 @@ typedef struct UnkStruct_ov5_021D5778_t {
     UnkStruct_ov5_021D57B4 * unk_04;
 } UnkStruct_ov5_021D5778;
 
-UnkStruct_ov5_021D5778 * ov5_021D56BC (void)
+UnkStruct_ov5_021D5778 *ov5_021D56BC (void)
 {
     UnkStruct_ov5_021D5778 * v0;
 
@@ -66,7 +66,7 @@ void ov5_021D56D4 (const char * param0, UnkStruct_ov5_021D5778 * param1)
     }
 }
 
-void ov5_021D5778 (UnkStruct_ov5_021D5778 * param0)
+void ov5_021D5778 (UnkStruct_ov5_021D5778 *param0)
 {
     Heap_FreeToHeap(param0->unk_04);
     Heap_FreeToHeap(param0->unk_00);

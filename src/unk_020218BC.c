@@ -76,28 +76,28 @@ typedef struct UnkStruct_020218BC_t {
 typedef void (* UnkFuncPtr_020219F8)(const UnkStruct_020218BC *, UnkStruct_02022550 *);
 typedef void (* UnkFuncPtr_020219F8_1)(UnkStruct_02022550 *);
 
-static void sub_02021A50(UnkStruct_020218BC * param0);
+static void sub_02021A50(UnkStruct_020218BC *param0);
 static u32 sub_020221B8(const UnkStruct_ov19_021DA864 * param0);
 static void sub_020221D0(const NNSG2dCellDataBank * param0, UnkStruct_02022550 * param1);
 static void sub_020221D4(const NNSG2dCellAnimBankData * param0, UnkStruct_02022550 * param1);
 static void sub_020221D8(const NNSG2dMultiCellDataBank * param0, UnkStruct_02022550 * param1);
 static void sub_020221E0(const NNSG2dMultiCellAnimBankData * param0, UnkStruct_02022550 * param1);
-static void sub_020221E8(UnkStruct_02022550 * param0, int param1);
+static void sub_020221E8(UnkStruct_02022550 *param0, int param1);
 static void sub_02022208(const UnkStruct_ov19_021DA864 * param0, UnkStruct_02022550 * param1, int param2);
-static void sub_02022264(UnkStruct_02022550 * param0, int param1);
+static void sub_02022264(UnkStruct_02022550 *param0, int param1);
 static BOOL sub_02022110(const UnkStruct_020218BC * param0, const UnkStruct_ov19_021DA864 * param1, UnkStruct_02022550 * param2, int param3);
 static u32 sub_020222C4(const NNSG2dImagePaletteProxy * param0, u32 param1);
 static void sub_020222F4(const UnkStruct_020218BC * param0, UnkStruct_02022550 * param1);
 static void sub_02022450(const UnkStruct_020218BC * param0, UnkStruct_02022550 * param1);
-static void sub_02022454(UnkStruct_02022550 * param0);
-static void sub_02022460(UnkStruct_02022550 * param0);
-static void sub_02022464(UnkStruct_020218BC * param0, UnkStruct_02022550 * param1);
-static void sub_020224FC(UnkStruct_02022550 * param0);
-static void sub_02022518(UnkStruct_020218BC * param0);
+static void sub_02022454(UnkStruct_02022550 *param0);
+static void sub_02022460(UnkStruct_02022550 *param0);
+static void sub_02022464(UnkStruct_020218BC *param0, UnkStruct_02022550 * param1);
+static void sub_020224FC(UnkStruct_02022550 *param0);
+static void sub_02022518(UnkStruct_020218BC *param0);
 static UnkStruct_02022550 * sub_02022550(UnkStruct_020218BC * param0);
-static BOOL sub_0202256C(UnkStruct_020218BC * param0, UnkStruct_02022550 * param1);
+static BOOL sub_0202256C(UnkStruct_020218BC *param0, UnkStruct_02022550 * param1);
 
-UnkStruct_020218BC * sub_020218BC (const UnkStruct_020095C4 * param0)
+UnkStruct_020218BC *sub_020218BC (const UnkStruct_020095C4 * param0)
 {
     UnkStruct_020218BC * v0;
     int v1;
@@ -131,7 +131,7 @@ UnkStruct_020218BC * sub_020218BC (const UnkStruct_020095C4 * param0)
     return v0;
 }
 
-BOOL sub_02021964 (UnkStruct_020218BC * param0)
+BOOL sub_02021964 (UnkStruct_020218BC *param0)
 {
     if (param0 == NULL) {
         return 0;
@@ -155,7 +155,7 @@ BOOL sub_02021964 (UnkStruct_020218BC * param0)
     return 1;
 }
 
-BOOL sub_020219A4 (UnkStruct_020218BC * param0, u8 param1)
+BOOL sub_020219A4 (UnkStruct_020218BC *param0, u8 param1)
 {
     if (param0 == NULL) {
         return 0;
@@ -170,7 +170,7 @@ BOOL sub_020219A4 (UnkStruct_020218BC * param0, u8 param1)
     return 1;
 }
 
-BOOL sub_020219C0 (UnkStruct_020218BC * param0)
+BOOL sub_020219C0 (UnkStruct_020218BC *param0)
 {
     UnkStruct_02022550 * v0;
     UnkStruct_02022550 * v1;
@@ -221,7 +221,7 @@ void sub_020219F8 (const UnkStruct_020218BC * param0)
     }
 }
 
-static void sub_02021A50 (UnkStruct_020218BC * param0)
+static void sub_02021A50 (UnkStruct_020218BC *param0)
 {
     param0->unk_00 = NULL;
     param0->unk_04 = 0;
@@ -233,7 +233,7 @@ static void sub_02021A50 (UnkStruct_020218BC * param0)
     param0->unk_11C = 0;
 }
 
-void sub_02021A78 (UnkStruct_02022550 * param0)
+void sub_02021A78 (UnkStruct_02022550 *param0)
 {
     int v0;
 
@@ -246,7 +246,7 @@ void sub_02021A78 (UnkStruct_02022550 * param0)
     param0->unk_30 = GX_OAM_MODE_NORMAL;
 }
 
-UnkStruct_02022550 * sub_02021AA0 (const UnkStruct_ov115_02261520 * param0)
+UnkStruct_02022550 *sub_02021AA0 (const UnkStruct_ov115_02261520 * param0)
 {
     UnkStruct_02022550 * v0;
 
@@ -289,7 +289,7 @@ UnkStruct_02022550 * sub_02021AA0 (const UnkStruct_ov115_02261520 * param0)
     return v0;
 }
 
-UnkStruct_02022550 * sub_02021B90 (const UnkStruct_ov83_0223D9A8 * param0)
+UnkStruct_02022550 *sub_02021B90 (const UnkStruct_ov83_0223D9A8 * param0)
 {
     UnkStruct_ov115_02261520 v0;
 
@@ -307,7 +307,7 @@ UnkStruct_02022550 * sub_02021B90 (const UnkStruct_ov83_0223D9A8 * param0)
     return sub_02021AA0(&v0);
 }
 
-void sub_02021BD4 (UnkStruct_02022550 * param0)
+void sub_02021BD4 (UnkStruct_02022550 *param0)
 {
     UnkStruct_020218BC * v0;
 
@@ -345,39 +345,39 @@ void sub_02021BD4 (UnkStruct_02022550 * param0)
     }
 }
 
-void sub_02021C50 (UnkStruct_02022550 * param0, const VecFx32 * param1)
+void sub_02021C50 (UnkStruct_02022550 *param0, const VecFx32 * param1)
 {
     param0->unk_00 = *param1;
 }
 
-void sub_02021C60 (UnkStruct_02022550 * param0, const VecFx32 * param1)
+void sub_02021C60 (UnkStruct_02022550 *param0, const VecFx32 * param1)
 {
     param0->unk_0C = *param1;
 }
 
-void sub_02021C70 (UnkStruct_02022550 * param0, const VecFx32 * param1)
+void sub_02021C70 (UnkStruct_02022550 *param0, const VecFx32 * param1)
 {
     param0->unk_18 = *param1;
 }
 
-void sub_02021C80 (UnkStruct_02022550 * param0, const VecFx32 * param1, int param2)
+void sub_02021C80 (UnkStruct_02022550 *param0, const VecFx32 * param1, int param2)
 {
     sub_02021C70(param0, param1);
     sub_02021CF8(param0, param2);
 }
 
-void sub_02021C94 (UnkStruct_02022550 * param0, u16 param1)
+void sub_02021C94 (UnkStruct_02022550 *param0, u16 param1)
 {
     param0->unk_24 = param1;
 }
 
-void sub_02021C98 (UnkStruct_02022550 * param0, u16 param1, int param2)
+void sub_02021C98 (UnkStruct_02022550 *param0, u16 param1, int param2)
 {
     sub_02021C94(param0, param1);
     sub_02021CF8(param0, param2);
 }
 
-void sub_02021CAC (UnkStruct_02022550 * param0, int param1)
+void sub_02021CAC (UnkStruct_02022550 *param0, int param1)
 {
     GF_ASSERT(param0);
     GF_ASSERT(param1 < 2);
@@ -385,7 +385,7 @@ void sub_02021CAC (UnkStruct_02022550 * param0, int param1)
     param0->unk_34 = param1;
 }
 
-void sub_02021CC8 (UnkStruct_02022550 * param0, int param1)
+void sub_02021CC8 (UnkStruct_02022550 *param0, int param1)
 {
     GF_ASSERT(param0);
     GF_ASSERT(param1 < 2);
@@ -393,21 +393,21 @@ void sub_02021CC8 (UnkStruct_02022550 * param0, int param1)
     param0->unk_35 = param1;
 }
 
-void sub_02021CE4 (UnkStruct_02022550 * param0, fx32 param1)
+void sub_02021CE4 (UnkStruct_02022550 *param0, fx32 param1)
 {
     GF_ASSERT(param0);
 
     param0->unk_38 = param1;
 }
 
-void sub_02021CF8 (UnkStruct_02022550 * param0, int param1)
+void sub_02021CF8 (UnkStruct_02022550 *param0, int param1)
 {
     GF_ASSERT(param0);
 
     param0->unk_26 = param1;
 }
 
-void sub_02021D0C (UnkStruct_02022550 * param0, int param1)
+void sub_02021D0C (UnkStruct_02022550 *param0, int param1)
 {
     GF_ASSERT(param0);
 
@@ -457,7 +457,7 @@ u32 sub_02021D44 (const UnkStruct_02022550 * param0)
     return v0;
 }
 
-void sub_02021D6C (UnkStruct_02022550 * param0, u32 param1)
+void sub_02021D6C (UnkStruct_02022550 *param0, u32 param1)
 {
     const NNSG2dAnimSequence * v0;
 
@@ -479,14 +479,14 @@ void sub_02021D6C (UnkStruct_02022550 * param0, u32 param1)
     }
 }
 
-void sub_02021DCC (UnkStruct_02022550 * param0, u32 param1)
+void sub_02021DCC (UnkStruct_02022550 *param0, u32 param1)
 {
     if (param0->unk_F0 != param1) {
         sub_02021D6C(param0, param1);
     }
 }
 
-void sub_02021DE0 (UnkStruct_02022550 * param0)
+void sub_02021DE0 (UnkStruct_02022550 *param0)
 {
     if ((param0->unk_EC == 1) || (param0->unk_EC == 3)) {
         UnkStruct_02021D44 * v0 = (UnkStruct_02021D44 *)&param0->unk_40;
@@ -508,7 +508,7 @@ u32 sub_02021E24 (const UnkStruct_02022550 * param0)
     return param0->unk_F0;
 }
 
-void sub_02021E2C (UnkStruct_02022550 * param0, fx32 param1)
+void sub_02021E2C (UnkStruct_02022550 *param0, fx32 param1)
 {
     if ((param0->unk_EC == 1) || (param0->unk_EC == 3)) {
         UnkStruct_02021D44 * v0 = (UnkStruct_02021D44 *)&param0->unk_40;
@@ -519,7 +519,7 @@ void sub_02021E2C (UnkStruct_02022550 * param0, fx32 param1)
     }
 }
 
-void sub_02021E50 (UnkStruct_02022550 * param0, u16 param1)
+void sub_02021E50 (UnkStruct_02022550 *param0, u16 param1)
 {
     if ((param0->unk_EC == 1) || (param0->unk_EC == 3)) {
         UnkStruct_02021D44 * v0 = (UnkStruct_02021D44 *)&param0->unk_40;
@@ -545,7 +545,7 @@ u16 sub_02021E74 (const UnkStruct_02022550 * param0)
     return NNS_G2dGetAnimCtrlCurrentFrame(v0);
 }
 
-void sub_02021E80 (UnkStruct_02022550 * param0, u8 param1)
+void sub_02021E80 (UnkStruct_02022550 *param0, u8 param1)
 {
     param0->unk_F2 = param1;
 }
@@ -555,7 +555,7 @@ u8 sub_02021E88 (const UnkStruct_02022550 * param0)
     return param0->unk_F2;
 }
 
-void sub_02021E90 (UnkStruct_02022550 * param0, u32 param1)
+void sub_02021E90 (UnkStruct_02022550 *param0, u32 param1)
 {
     GF_ASSERT(param0);
 
@@ -564,7 +564,7 @@ void sub_02021E90 (UnkStruct_02022550 * param0, u32 param1)
     param0->unk_28 &= ~NNS_G2D_RND_OVERWRITE_PLTTNO_OFFS;
 }
 
-void sub_02021EC4 (UnkStruct_02022550 * param0, u32 param1)
+void sub_02021EC4 (UnkStruct_02022550 *param0, u32 param1)
 {
     sub_02021E90(param0, param1);
     param0->unk_29 += sub_020222C4(&param0->unk_D8, param0->unk_F8);
@@ -575,7 +575,7 @@ u32 sub_02021EE8 (const UnkStruct_02022550 * param0)
     return param0->unk_29;
 }
 
-void sub_02021EF0 (UnkStruct_02022550 * param0, u32 param1)
+void sub_02021EF0 (UnkStruct_02022550 *param0, u32 param1)
 {
     GF_ASSERT(param0);
 
@@ -584,7 +584,7 @@ void sub_02021EF0 (UnkStruct_02022550 * param0, u32 param1)
     param0->unk_28 &= ~NNS_G2D_RND_OVERWRITE_PLTTNO;
 }
 
-void sub_02021F24 (UnkStruct_02022550 * param0, u32 param1)
+void sub_02021F24 (UnkStruct_02022550 *param0, u32 param1)
 {
     sub_02021EF0(param0, param1);
     param0->unk_2A += sub_020222C4(&param0->unk_D8, param0->unk_F8);
@@ -596,7 +596,7 @@ u32 sub_02021F48 (const UnkStruct_02022550 * param0)
     return param0->unk_2A;
 }
 
-void sub_02021F58 (UnkStruct_02022550 * param0, u32 param1)
+void sub_02021F58 (UnkStruct_02022550 *param0, u32 param1)
 {
     UnkStruct_020218BC * v0 = (UnkStruct_020218BC *)param0->unk_3C;
 
@@ -611,22 +611,22 @@ u32 sub_02021F74 (const UnkStruct_02022550 * param0)
     return param0->unk_F4;
 }
 
-void sub_02021F7C (UnkStruct_02022550 * param0, const NNSG2dImageProxy * param1)
+void sub_02021F7C (UnkStruct_02022550 *param0, const NNSG2dImageProxy * param1)
 {
     param0->unk_B4 = *param1;
 }
 
-NNSG2dImageProxy * sub_02021F98 (UnkStruct_02022550 * param0)
+NNSG2dImageProxy *sub_02021F98 (UnkStruct_02022550 * param0)
 {
     return &param0->unk_B4;
 }
 
-NNSG2dImagePaletteProxy * sub_02021F9C (UnkStruct_02022550 * param0)
+NNSG2dImagePaletteProxy *sub_02021F9C (UnkStruct_02022550 * param0)
 {
     return &param0->unk_D8;
 }
 
-void sub_02021FA0 (UnkStruct_02022550 * param0, BOOL param1)
+void sub_02021FA0 (UnkStruct_02022550 *param0, BOOL param1)
 {
     param0->unk_2C = param1;
 
@@ -642,7 +642,7 @@ NNS_G2D_VRAM_TYPE sub_02021FC8 (const UnkStruct_02022550 * param0)
     return param0->unk_F8;
 }
 
-BOOL sub_02021FD0 (UnkStruct_02022550 * param0)
+BOOL sub_02021FD0 (UnkStruct_02022550 *param0)
 {
     GF_ASSERT(param0);
 
@@ -655,7 +655,7 @@ BOOL sub_02021FD0 (UnkStruct_02022550 * param0)
     }
 }
 
-void sub_02021FE0 (UnkStruct_02022550 * param0, GXOamMode param1)
+void sub_02021FE0 (UnkStruct_02022550 *param0, GXOamMode param1)
 {
     GF_ASSERT(param0);
 
@@ -813,7 +813,7 @@ static void sub_020221E0 (const NNSG2dMultiCellAnimBankData * param0, UnkStruct_
     v0->unk_70 = param0;
 }
 
-static void sub_020221E8 (UnkStruct_02022550 * param0, int param1)
+static void sub_020221E8 (UnkStruct_02022550 *param0, int param1)
 {
     UnkStruct_02021D44 * v0;
 
@@ -833,7 +833,7 @@ static void sub_02022208 (const UnkStruct_ov19_021DA864 * param0, UnkStruct_0202
     NNS_G2dInitCellAnimationVramTransfered((NNSG2dCellAnimation *)&v0->unk_08, NNS_G2dGetAnimSequenceByIdx(v0->unk_04, 0), v0->unk_00, v0->unk_60, NNS_G2D_VRAM_ADDR_NONE, NNS_G2dGetImageLocation(&param1->unk_B4, NNS_G2D_VRAM_TYPE_2DMAIN), NNS_G2dGetImageLocation(&param1->unk_B4, NNS_G2D_VRAM_TYPE_2DSUB), v1->pRawData, NULL, v1->szByte);
 }
 
-static void sub_02022264 (UnkStruct_02022550 * param0, int param1)
+static void sub_02022264 (UnkStruct_02022550 *param0, int param1)
 {
     UnkStruct_02021E2C * v0;
     const NNSG2dMultiCellAnimSequence * v1;
@@ -927,17 +927,17 @@ static void sub_02022450 (const UnkStruct_020218BC * param0, UnkStruct_02022550 
     return;
 }
 
-static void sub_02022454 (UnkStruct_02022550 * param0)
+static void sub_02022454 (UnkStruct_02022550 *param0)
 {
     sub_02021E2C(param0, param0->unk_38);
 }
 
-static void sub_02022460 (UnkStruct_02022550 * param0)
+static void sub_02022460 (UnkStruct_02022550 *param0)
 {
     return;
 }
 
-static void sub_02022464 (UnkStruct_020218BC * param0, UnkStruct_02022550 * param1)
+static void sub_02022464 (UnkStruct_020218BC *param0, UnkStruct_02022550 * param1)
 {
     UnkStruct_02022550 * v0;
 
@@ -970,13 +970,13 @@ static void sub_02022464 (UnkStruct_020218BC * param0, UnkStruct_02022550 * para
     }
 }
 
-static void sub_020224FC (UnkStruct_02022550 * param0)
+static void sub_020224FC (UnkStruct_02022550 *param0)
 {
     param0->unk_FC->unk_100 = param0->unk_100;
     param0->unk_100->unk_FC = param0->unk_FC;
 }
 
-static void sub_02022518 (UnkStruct_020218BC * param0)
+static void sub_02022518 (UnkStruct_020218BC *param0)
 {
     int v0;
 
@@ -988,7 +988,7 @@ static void sub_02022518 (UnkStruct_020218BC * param0)
     param0->unk_0C = 0;
 }
 
-static UnkStruct_02022550 * sub_02022550 (UnkStruct_020218BC * param0)
+static UnkStruct_02022550 *sub_02022550 (UnkStruct_020218BC *param0)
 {
     UnkStruct_02022550 * v0;
 
@@ -1002,7 +1002,7 @@ static UnkStruct_02022550 * sub_02022550 (UnkStruct_020218BC * param0)
     return v0;
 }
 
-static BOOL sub_0202256C (UnkStruct_020218BC * param0, UnkStruct_02022550 * param1)
+static BOOL sub_0202256C (UnkStruct_020218BC *param0, UnkStruct_02022550 * param1)
 {
     if (param0->unk_0C <= 0) {
         return 0;

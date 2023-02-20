@@ -21,15 +21,15 @@ typedef struct UnkStruct_0202CD88_t {
     UnkStruct_0202CD88_sub1 unk_1B8;
 } UnkStruct_0202CD88;
 
-static void sub_0202CD94(UnkStruct_0202CD88 * param0, int param1);
-static void sub_0202CDC0(UnkStruct_0202CD88 * param0, int param1);
+static void sub_0202CD94(UnkStruct_0202CD88 *param0, int param1);
+static void sub_0202CDC0(UnkStruct_0202CD88 *param0, int param1);
 
 int sub_0202CD50 (void)
 {
     return sizeof(UnkStruct_0202CD88);
 }
 
-void sub_0202CD58 (UnkStruct_0202CD88 * param0)
+void sub_0202CD58 (UnkStruct_0202CD88 *param0)
 {
     MI_CpuClear32(param0, sizeof(UnkStruct_0202CD88));
     param0->unk_1B8.unk_02 = OS_GetVBlankCount() | (OS_GetVBlankCount() << 8);
@@ -37,12 +37,12 @@ void sub_0202CD58 (UnkStruct_0202CD88 * param0)
     sub_0202CD94(param0, (0 + 1));
 }
 
-UnkStruct_0202CD88 * sub_0202CD88 (UnkStruct_021C0794 * param0)
+UnkStruct_0202CD88 *sub_0202CD88 (UnkStruct_021C0794 * param0)
 {
     return sub_020245BC(param0, 20);
 }
 
-static void sub_0202CD94 (UnkStruct_0202CD88 * param0, int param1)
+static void sub_0202CD94 (UnkStruct_0202CD88 *param0, int param1)
 {
     if (param1 == (0 + 0)) {
         return;
@@ -52,7 +52,7 @@ static void sub_0202CD94 (UnkStruct_0202CD88 * param0, int param1)
     sub_0201D5D4(&param0->unk_00[1], sizeof(UnkStruct_0202CD88) - sizeof(UnkStruct_0202CD88_sub1) - sizeof(u32), param0->unk_1B8.unk_00 + (param0->unk_1B8.unk_02 << 16));
 }
 
-static void sub_0202CDC0 (UnkStruct_0202CD88 * param0, int param1)
+static void sub_0202CDC0 (UnkStruct_0202CD88 *param0, int param1)
 {
     if (param1 == (0 + 0)) {
         return;
@@ -73,7 +73,7 @@ static u32 sub_0202CDE0 (const UnkStruct_0202CD88 * param0, int param1)
     return 0;
 }
 
-static u32 sub_0202CE08 (UnkStruct_0202CD88 * param0, int param1, u32 param2)
+static u32 sub_0202CE08 (UnkStruct_0202CD88 *param0, int param1, u32 param2)
 {
     if (param1 < ((70 + 1))) {
         param0->unk_00[param1] = param2;
@@ -287,7 +287,7 @@ static int sub_0202CE84 (int param0)
     return v0[param0];
 }
 
-u32 sub_0202CE90 (UnkStruct_0202CD88 * param0, int param1, u32 param2)
+u32 sub_0202CE90 (UnkStruct_0202CD88 *param0, int param1, u32 param2)
 {
     u32 v0 = sub_0202CE3C(param1);
     u32 v1;
@@ -305,7 +305,7 @@ u32 sub_0202CE90 (UnkStruct_0202CD88 * param0, int param1, u32 param2)
     return v1;
 }
 
-u32 sub_0202CED0 (UnkStruct_0202CD88 * param0, int param1, u32 param2)
+u32 sub_0202CED0 (UnkStruct_0202CD88 *param0, int param1, u32 param2)
 {
     u32 v0 = sub_0202CE3C(param1);
     u32 v1;
@@ -333,7 +333,7 @@ u32 sub_0202CED0 (UnkStruct_0202CD88 * param0, int param1, u32 param2)
     return v2;
 }
 
-u32 sub_0202CF28 (UnkStruct_0202CD88 * param0, int param1)
+u32 sub_0202CF28 (UnkStruct_0202CD88 *param0, int param1)
 {
     u32 v0 = sub_0202CE3C(param1);
     u32 v1;
@@ -354,7 +354,7 @@ u32 sub_0202CF28 (UnkStruct_0202CD88 * param0, int param1)
     return v2;
 }
 
-u32 sub_0202CF70 (UnkStruct_0202CD88 * param0, int param1, u32 param2)
+u32 sub_0202CF70 (UnkStruct_0202CD88 *param0, int param1, u32 param2)
 {
     u32 v0 = sub_0202CE3C(param1);
     u32 v1;
@@ -375,7 +375,7 @@ u32 sub_0202CF70 (UnkStruct_0202CD88 * param0, int param1, u32 param2)
     return v2;
 }
 
-u32 sub_0202CFB8 (UnkStruct_0202CD88 * param0, int param1)
+u32 sub_0202CFB8 (UnkStruct_0202CD88 *param0, int param1)
 {
     u32 v0 = sub_0202CE3C(param1);
     u32 v1;
@@ -391,7 +391,7 @@ u32 sub_0202CFB8 (UnkStruct_0202CD88 * param0, int param1)
     }
 }
 
-void sub_0202CFEC (UnkStruct_0202CD88 * param0, int param1)
+void sub_0202CFEC (UnkStruct_0202CD88 *param0, int param1)
 {
     u32 v0;
 
@@ -406,12 +406,12 @@ void sub_0202CFEC (UnkStruct_0202CD88 * param0, int param1)
     }
 }
 
-u32 sub_0202D034 (UnkStruct_0202CD88 * param0)
+u32 sub_0202D034 (UnkStruct_0202CD88 *param0)
 {
     return sub_0202CFB8(param0, (0 + 1));
 }
 
-void sub_0202D040 (UnkStruct_0202CD88 * param0, const UnkStruct_02026324 * param1, u16 const param2)
+void sub_0202D040 (UnkStruct_0202CD88 *param0, const UnkStruct_02026324 * param1, u16 const param2)
 {
     if (!sub_02026F9C(param1, param2)) {
         sub_0202CFEC(param0, 22);

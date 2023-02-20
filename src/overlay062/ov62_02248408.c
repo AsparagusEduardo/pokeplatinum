@@ -24,11 +24,11 @@
 #include "party.h"
 #include "overlay062/ov62_02248408.h"
 
-static void ov62_0224856C(UnkStruct_02023790 * param0, int param1);
+static void ov62_0224856C(UnkStruct_02023790 *param0, int param1);
 
 extern UnkStruct_0202F264 * Unk_021C07A4;
 
-void ov62_02248408 (UnkStruct_0202F264 * param0, UnkStruct_ov6_02240D5C * param1, int param2)
+void ov62_02248408 (UnkStruct_0202F264 *param0, UnkStruct_ov6_02240D5C * param1, int param2)
 {
     UnkStruct_0202F298 * v0 = &param0->unk_E8;
     UnkStruct_0202F41C * v1 = &param0->unk_84;
@@ -95,7 +95,7 @@ void ov62_02248408 (UnkStruct_0202F264 * param0, UnkStruct_ov6_02240D5C * param1
     Heap_FreeToHeap(v8);
 }
 
-static void ov62_0224856C (UnkStruct_02023790 * param0, int param1)
+static void ov62_0224856C (UnkStruct_02023790 *param0, int param1)
 {
     UnkStruct_0200B144 * v0;
 
@@ -107,7 +107,7 @@ static void ov62_0224856C (UnkStruct_02023790 * param0, int param1)
     sub_0200B190(v0);
 }
 
-int ov62_02248598 (UnkStruct_021C0794 * param0, int param1, u8 param2, u16 * param3, u16 * param4)
+int ov62_02248598 (UnkStruct_021C0794 *param0, int param1, u8 param2, u16 * param3, u16 * param4)
 {
     int v0;
 
@@ -133,13 +133,13 @@ int ov62_02248598 (UnkStruct_021C0794 * param0, int param1, u8 param2, u16 * par
     return 0;
 }
 
-void ov62_02248624 (UnkStruct_021C0794 * param0)
+void ov62_02248624 (UnkStruct_021C0794 *param0)
 {
     GF_ASSERT(Unk_021C07A4);
     sub_0202F858(&Unk_021C07A4->unk_E8, sizeof(UnkStruct_0202F298) - (sizeof(UnkStruct_0202F298_sub1)), Unk_021C07A4->unk_E8.unk_1BEC.unk_00 + ((Unk_021C07A4->unk_E8.unk_1BEC.unk_00 ^ 0xffff) << 16));
 }
 
-int ov62_02248658 (UnkStruct_021C0794 * param0, u64 param1, u16 * param2, u16 * param3)
+int ov62_02248658 (UnkStruct_021C0794 *param0, u64 param1, u16 * param2, u16 * param3)
 {
     int v0;
 
@@ -158,7 +158,7 @@ int ov62_02248658 (UnkStruct_021C0794 * param0, u64 param1, u16 * param2, u16 * 
     return 0;
 }
 
-int ov62_022486A4 (UnkStruct_021C0794 * param0, int param1)
+int ov62_022486A4 (UnkStruct_021C0794 *param0, int param1)
 {
     int v0;
 

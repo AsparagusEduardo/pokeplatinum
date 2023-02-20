@@ -8,9 +8,9 @@
 
 #include <nitro/gx.h>
 
-UnkStruct_ov22_0225B1BC * ov22_0225AF8C(const UnkStruct_ov22_0225AF8C * param0, const UnkStruct_02029C68 * param1);
-UnkStruct_ov22_0225B1BC * ov22_0225AFB0(const UnkStruct_ov22_0225AF8C * param0, const UnkStruct_02029C88 * param1);
-UnkStruct_ov22_0225B1BC * ov22_0225AFD4(const UnkStruct_ov22_0225AF8C * param0, const UnkStruct_02029C88 * param1);
+UnkStruct_ov22_0225B1BC *ov22_0225AF8C(const UnkStruct_ov22_0225AF8C * param0, const UnkStruct_02029C68 * param1);
+UnkStruct_ov22_0225B1BC *ov22_0225AFB0(const UnkStruct_ov22_0225AF8C * param0, const UnkStruct_02029C88 * param1);
+UnkStruct_ov22_0225B1BC *ov22_0225AFD4(const UnkStruct_ov22_0225AF8C * param0, const UnkStruct_02029C88 * param1);
 void ov22_0225AFF8(UnkStruct_ov22_0225B1BC * param0);
 void ov22_0225B020(UnkStruct_ov22_0225B1BC * param0);
 void ov22_0225B06C(UnkStruct_ov22_0225B1BC * param0);

@@ -55,7 +55,7 @@ typedef struct UnkStruct_020203AC_t {
 
 static UnkStruct_020203AC * Unk_021C0770 = NULL;
 
-static void sub_02020020 (UnkStruct_020203AC * param0)
+static void sub_02020020 (UnkStruct_020203AC *param0)
 {
     u16 v0;
 
@@ -68,7 +68,7 @@ static void sub_02020020 (UnkStruct_020203AC * param0)
     VEC_Add(&param0->unk_14.unk_00, &param0->unk_14.unk_0C, &param0->unk_14.unk_00);
 }
 
-static void sub_02020100 (UnkStruct_020203AC * param0)
+static void sub_02020100 (UnkStruct_020203AC *param0)
 {
     u16 v0;
 
@@ -197,7 +197,7 @@ void sub_02020304 (const int param0, const int param1, const int param2, const i
     param4->unk_64 = v1;
 }
 
-void sub_02020390 (UnkStruct_020203AC * param0)
+void sub_02020390 (UnkStruct_020203AC *param0)
 {
     if (param0->unk_64 != NULL) {
         Heap_FreeToHeap(param0->unk_64->unk_20);
@@ -206,7 +206,7 @@ void sub_02020390 (UnkStruct_020203AC * param0)
     }
 }
 
-UnkStruct_020203AC * sub_020203AC (const int param0)
+UnkStruct_020203AC *sub_020203AC (const int param0)
 {
     UnkStruct_020203AC * v0;
 
@@ -214,7 +214,7 @@ UnkStruct_020203AC * sub_020203AC (const int param0)
     return v0;
 }
 
-void sub_020203B8 (UnkStruct_020203AC * param0)
+void sub_020203B8 (UnkStruct_020203AC *param0)
 {
     Heap_FreeToHeap(param0);
 }
@@ -224,7 +224,7 @@ void sub_020203C0 (UnkStruct_020203AC const * param0, UnkStruct_020203AC * param
     *param1 = (*param0);
 }
 
-void sub_020203D4 (UnkStruct_020203AC * param0)
+void sub_020203D4 (UnkStruct_020203AC *param0)
 {
     Unk_021C0770 = param0;
 }
@@ -312,7 +312,7 @@ void sub_02020690 (const VecFx32 * param0, UnkStruct_020203AC * param1)
     param1->unk_60 = 1;
 }
 
-void sub_020206B0 (UnkStruct_020203AC * param0)
+void sub_020206B0 (UnkStruct_020203AC *param0)
 {
     param0->unk_54 = NULL;
     param0->unk_58 = 0;

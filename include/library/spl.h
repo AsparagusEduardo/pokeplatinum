@@ -366,16 +366,16 @@ typedef struct UnkSPLStruct1_t {
 
 void SPL_0209C400(UnkSPLStruct1 * param0);
 void SPL_0209C444(UnkSPLStruct1 * param0, UnkSPLStruct6 * param1);
-UnkSPLStruct6 * SPL_0209C4D8(UnkSPLStruct1 * param0, int param1, void (* param2)(struct UnkSPLStruct6_t *));
+UnkSPLStruct6 *SPL_0209C4D8(UnkSPLStruct1 * param0, int param1, void (* param2)(struct UnkSPLStruct6_t *));
 void SPL_0209C5E0(UnkSPLStruct1 * param0, const MtxFx43 * param1);
-UnkSPLStruct6 * SPL_0209C56C(UnkSPLStruct1 * param0, int param1, const VecFx32 * param2);
+UnkSPLStruct6 *SPL_0209C56C(UnkSPLStruct1 * param0, int param1, const VecFx32 * param2);
 void SPL_0209C6A8(UnkSPLStruct1 * param0);
 BOOL SPL_0209C7E0(UnkSPLStruct1 * param0);
 BOOL SPL_0209C7F4(UnkSPLStruct1 * param0);
 BOOL SPL_0209C808(UnkSPLStruct1 * param0, u32 (* param1)(u32, BOOL));
 BOOL SPL_0209C8BC(UnkSPLStruct1 * param0, u32 (* param1)(u32, BOOL));
 void SPL_0209C988(UnkSPLStruct1 * param0, const void * param1);
-UnkSPLStruct1 * SPL_0209CD00(UnkFuncPtr_0209CD00 param0, u16 param1, u16 param2, u16 param3, u16 param4, u16 param5);
+UnkSPLStruct1 *SPL_0209CD00(UnkFuncPtr_0209CD00 param0, u16 param1, u16 param2, u16 param3, u16 param4, u16 param5);
 
 void SPL_020A1E30(const void * param0, UnkSPLStruct8 * param1, VecFx32 * param2, struct UnkSPLStruct6_t * param3);
 void SPL_020A1EC4(const void * param0, UnkSPLStruct8 * param1, VecFx32 * param2, struct UnkSPLStruct6_t * param3);
@@ -384,29 +384,29 @@ void SPL_020A20B8(const void * param0, UnkSPLStruct8 * param1, VecFx32 * param2,
 void SPL_020A213C(const void * param0, UnkSPLStruct8 * param1, VecFx32 * param2, struct UnkSPLStruct6_t * param3);
 void SPL_020A2204(const void * param0, UnkSPLStruct8 * param1, VecFx32 * param2, struct UnkSPLStruct6_t * param3);
 
-static inline void SPL_UnkInline1 (UnkSPLStruct6 * param0, const VecFx32 * param1)
+static inline void SPL_UnkInline1 (UnkSPLStruct6 *param0, const VecFx32 * param1)
 {
     param0->unk_98.x = param1->x + param0->unk_90->unk_00->unk_04.x;
     param0->unk_98.y = param1->y + param0->unk_90->unk_00->unk_04.y;
     param0->unk_98.z = param1->z + param0->unk_90->unk_00->unk_04.z;
 }
 
-static inline void SPL_UnkInline2 (UnkSPLStruct6 * param0, fx32 param1)
+static inline void SPL_UnkInline2 (UnkSPLStruct6 *param0, fx32 param1)
 {
     param0->unk_98.x = param1 + param0->unk_90->unk_00->unk_04.x;
 }
 
-static inline void SPL_UnkInline3 (UnkSPLStruct6 * param0, fx32 param1)
+static inline void SPL_UnkInline3 (UnkSPLStruct6 *param0, fx32 param1)
 {
     param0->unk_98.y = param1 + param0->unk_90->unk_00->unk_04.y;
 }
 
-static inline void SPL_UnkInline4 (UnkSPLStruct6 * param0, fx32 param1)
+static inline void SPL_UnkInline4 (UnkSPLStruct6 *param0, fx32 param1)
 {
     param0->unk_98.z = param1 + param0->unk_90->unk_00->unk_04.z;
 }
 
-static inline void SPL_UnkInline5 (UnkSPLStruct6 * param0, const VecFx16 * param1)
+static inline void SPL_UnkInline5 (UnkSPLStruct6 *param0, const VecFx16 * param1)
 {
     param0->unk_C0 = *param1;
 }

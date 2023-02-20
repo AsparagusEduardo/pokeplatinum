@@ -18,7 +18,7 @@ int ov12_02237E54 (s16 param0, s16 param1, s16 param2, s16 param3)
     return v0;
 }
 
-int ov12_02237E80 (UnkStruct_0202CA64 * param0)
+int ov12_02237E80 (UnkStruct_0202CA64 *param0)
 {
     int v0;
     s16 v1, v2;
@@ -30,7 +30,7 @@ int ov12_02237E80 (UnkStruct_0202CA64 * param0)
     return v0;
 }
 
-int ov12_02237EA0 (UnkStruct_0202CA64 * param0)
+int ov12_02237EA0 (UnkStruct_0202CA64 *param0)
 {
     int v0;
     int v1;

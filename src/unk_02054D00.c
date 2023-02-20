@@ -385,7 +385,7 @@ BOOL sub_02055024 (const UnkStruct_0203CDB0 * param0, const VecFx32 * param1, co
     }
 }
 
-BOOL sub_0205507C (UnkStruct_0203CDB0 * param0, const VecFx32 * param1, const int param2, const int param3, s8 * param4)
+BOOL sub_0205507C (UnkStruct_0203CDB0 *param0, const VecFx32 * param1, const int param2, const int param3, s8 * param4)
 {
     int v0;
     u8 v1;

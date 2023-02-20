@@ -19,7 +19,7 @@
 #include "overlay005/ov5_021DC018.h"
 
 
-BOOL sub_0204C8F0 (UnkStruct_0203E724 * param0)
+BOOL sub_0204C8F0 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02025E6C * v0 = sub_02025E38(sub_0203D174(param0->unk_34));
     u32 v1;
@@ -30,7 +30,7 @@ BOOL sub_0204C8F0 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204C914 (UnkStruct_0203E724 * param0)
+BOOL sub_0204C914 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02025E6C * v0 = sub_02025E38(sub_0203D174(param0->unk_34));
     u32 v1;
@@ -41,7 +41,7 @@ BOOL sub_0204C914 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204C938 (UnkStruct_0203E724 * param0)
+BOOL sub_0204C938 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02025E6C * v0 = sub_02025E38(sub_0203D174(param0->unk_34));
     u32 v1;
@@ -52,7 +52,7 @@ BOOL sub_0204C938 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204C968 (UnkStruct_0203E724 * param0)
+BOOL sub_0204C968 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02025E6C * v0 = sub_02025E38(sub_0203D174(param0->unk_34));
     u16 * v1;
@@ -71,7 +71,7 @@ BOOL sub_0204C968 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204C9AC (UnkStruct_0203E724 * param0)
+BOOL sub_0204C9AC (UnkStruct_0203E724 *param0)
 {
     UnkStruct_02025E6C * v0 = sub_02025E38(sub_0203D174(param0->unk_34));
     u16 * v1;
@@ -90,7 +90,7 @@ BOOL sub_0204C9AC (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204C9FC (UnkStruct_0203E724 * param0)
+BOOL sub_0204C9FC (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     u16 v1 = inline_02049538(param0);
@@ -103,7 +103,7 @@ BOOL sub_0204C9FC (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CA4C (UnkStruct_0203E724 * param0)
+BOOL sub_0204CA4C (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_0205AA50 ** v1 = sub_0203F098(v0, 39);
@@ -112,7 +112,7 @@ BOOL sub_0204CA4C (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CA64 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CA64 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_0205AA50 ** v1 = sub_0203F098(v0, 39);

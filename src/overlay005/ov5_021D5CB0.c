@@ -35,9 +35,9 @@ typedef struct UnkStruct_ov5_021D5CB0_t {
     UnkStruct_ov5_021D5DEC unk_08[16];
 } UnkStruct_ov5_021D5CB0;
 
-static int ov5_021D5D30(UnkStruct_ov5_021D5CB0 * param0, NNSG3dResTex * param1, int param2, NARC * param3);
+static int ov5_021D5D30(UnkStruct_ov5_021D5CB0 *param0, NNSG3dResTex * param1, int param2, NARC * param3);
 
-UnkStruct_ov5_021D5CB0 * ov5_021D5CB0 (void)
+UnkStruct_ov5_021D5CB0 *ov5_021D5CB0 (void)
 {
     int v0;
     UnkStruct_ov5_021D5CB0 * v1 = NULL;
@@ -58,7 +58,7 @@ UnkStruct_ov5_021D5CB0 * ov5_021D5CB0 (void)
     return v1;
 }
 
-int ov5_021D5CE4 (UnkStruct_ov5_021D5CB0 * param0, NNSG3dResTex * param1)
+int ov5_021D5CE4 (UnkStruct_ov5_021D5CB0 *param0, NNSG3dResTex * param1)
 {
     int v0, v1 = 0;
     NARC * v2;
@@ -79,7 +79,7 @@ int ov5_021D5CE4 (UnkStruct_ov5_021D5CB0 * param0, NNSG3dResTex * param1)
     return v1;
 }
 
-static int ov5_021D5D30 (UnkStruct_ov5_021D5CB0 * param0, NNSG3dResTex * param1, int param2, NARC * param3)
+static int ov5_021D5D30 (UnkStruct_ov5_021D5CB0 *param0, NNSG3dResTex * param1, int param2, NARC * param3)
 {
     int v0, v1;
     char v2[40];
@@ -113,7 +113,7 @@ static int ov5_021D5D30 (UnkStruct_ov5_021D5CB0 * param0, NNSG3dResTex * param1,
     return v0;
 }
 
-void ov5_021D5DEC (UnkStruct_ov5_021D5CB0 * param0)
+void ov5_021D5DEC (UnkStruct_ov5_021D5CB0 *param0)
 {
     int v0;
 
@@ -147,7 +147,7 @@ void ov5_021D5DEC (UnkStruct_ov5_021D5CB0 * param0)
     }
 }
 
-void ov5_021D5E5C (UnkStruct_ov5_021D5CB0 * param0, int param1)
+void ov5_021D5E5C (UnkStruct_ov5_021D5CB0 *param0, int param1)
 {
     if (param0 == NULL) {
         return;
@@ -165,7 +165,7 @@ void ov5_021D5E5C (UnkStruct_ov5_021D5CB0 * param0, int param1)
     param0->unk_08[param1].unk_16 = 0;
 }
 
-void ov5_021D5E8C (UnkStruct_ov5_021D5CB0 * param0)
+void ov5_021D5E8C (UnkStruct_ov5_021D5CB0 *param0)
 {
     int v0;
 
@@ -180,7 +180,7 @@ void ov5_021D5E8C (UnkStruct_ov5_021D5CB0 * param0)
     Heap_FreeToHeap(param0->unk_00);
 }
 
-void ov5_021D5EAC (UnkStruct_ov5_021D5CB0 * param0)
+void ov5_021D5EAC (UnkStruct_ov5_021D5CB0 *param0)
 {
     if (param0 != NULL) {
         Heap_FreeToHeap(param0);

@@ -39,7 +39,7 @@ typedef struct {
 } UnkStruct_ov4_0221A408;
 
 static void ov4_021D2E8C(void);
-static void ov4_021D2B04(VCTSession * param0);
+static void ov4_021D2B04(VCTSession *param0);
 
 static UnkStruct_ov4_0221A408 * Unk_ov4_0221A408 = NULL;
 static OSTick Unk_ov4_0221A40C;
@@ -294,7 +294,7 @@ static void ov4_021D2A38 (u8 param0, VCTEvent param1, VCTSession * param2, void 
     }
 }
 
-static void ov4_021D2B04 (VCTSession * param0)
+static void ov4_021D2B04 (VCTSession *param0)
 {
     VCT_StopStreaming(param0);
     VCT_DeleteSession(param0);

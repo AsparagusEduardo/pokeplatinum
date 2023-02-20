@@ -11,12 +11,12 @@ int sub_0202D778 (void)
     return 14;
 }
 
-void sub_0202D77C (u8 * param0)
+void sub_0202D77C (u8 *param0)
 {
     memset(param0, 0, 14);
 }
 
-u8 * sub_0202D79C (UnkStruct_021C0794 * param0)
+u8 *sub_0202D79C (UnkStruct_021C0794 * param0)
 {
     return sub_020245BC(param0, 24);
 }

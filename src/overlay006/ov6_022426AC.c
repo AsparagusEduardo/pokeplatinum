@@ -38,9 +38,9 @@ typedef struct UnkStruct_ov6_022426B8_t {
     BOOL unk_1D0;
 } UnkStruct_ov6_022426B8;
 
-static void ov6_022428F8(UnkStruct_ov6_022426B8 * param0);
-static void ov6_02242860(UnkStruct_0201CD38 * param0, void * param1);
-static void ov6_02242880(UnkStruct_02009714 * param0, UnkStruct_02009714 * param1, void * param2, void * param3);
+static void ov6_022428F8(UnkStruct_ov6_022426B8 *param0);
+static void ov6_02242860(UnkStruct_0201CD38 *param0, void * param1);
+static void ov6_02242880(UnkStruct_02009714 *param0, UnkStruct_02009714 * param1, void * param2, void * param3);
 
 static const u8 Unk_ov6_02249030[] = {
     0x1,
@@ -49,7 +49,7 @@ static const u8 Unk_ov6_02249030[] = {
     0x1
 };
 
-UnkStruct_ov6_022426B8 * ov6_022426AC (const int param0)
+UnkStruct_ov6_022426B8 *ov6_022426AC (const int param0)
 {
     UnkStruct_ov6_022426B8 * v0;
 
@@ -57,12 +57,12 @@ UnkStruct_ov6_022426B8 * ov6_022426AC (const int param0)
     return v0;
 }
 
-void ov6_022426B8 (UnkStruct_ov6_022426B8 * param0)
+void ov6_022426B8 (UnkStruct_ov6_022426B8 *param0)
 {
     Heap_FreeToHeap(param0);
 }
 
-void ov6_022426C0 (UnkStruct_ov6_022426B8 * param0, const int param1)
+void ov6_022426C0 (UnkStruct_ov6_022426B8 *param0, const int param1)
 {
     int v0;
     NARC * v1;
@@ -119,7 +119,7 @@ void ov6_022426C0 (UnkStruct_ov6_022426B8 * param0, const int param1)
     ov6_022428F8(param0);
 }
 
-void ov6_022427F4 (UnkStruct_ov6_022426B8 * param0)
+void ov6_022427F4 (UnkStruct_ov6_022426B8 *param0)
 {
     param0->unk_1CC = 1;
     param0->unk_1D0 = 0;
@@ -127,17 +127,17 @@ void ov6_022427F4 (UnkStruct_ov6_022426B8 * param0)
     sub_0200D9E8(ov6_02242860, param0, 0);
 }
 
-void ov6_02242814 (UnkStruct_ov6_022426B8 * param0)
+void ov6_02242814 (UnkStruct_ov6_022426B8 *param0)
 {
     param0->unk_1CC = 0;
 }
 
-BOOL ov6_02242820 (UnkStruct_ov6_022426B8 * param0)
+BOOL ov6_02242820 (UnkStruct_ov6_022426B8 *param0)
 {
     return param0->unk_1D0;
 }
 
-void ov6_02242828 (UnkStruct_ov6_022426B8 * param0)
+void ov6_02242828 (UnkStruct_ov6_022426B8 *param0)
 {
     u8 v0;
 
@@ -153,7 +153,7 @@ void ov6_02242828 (UnkStruct_ov6_022426B8 * param0)
     Heap_FreeToHeap(param0->unk_24);
 }
 
-static void ov6_02242860 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov6_02242860 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov6_022426B8 * v0 = param1;
 
@@ -165,7 +165,7 @@ static void ov6_02242860 (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-static void ov6_02242880 (UnkStruct_02009714 * param0, UnkStruct_02009714 * param1, void * param2, void * param3)
+static void ov6_02242880 (UnkStruct_02009714 *param0, UnkStruct_02009714 * param1, void * param2, void * param3)
 {
     int v0;
     u32 v1, v2;
@@ -195,7 +195,7 @@ static void ov6_02242880 (UnkStruct_02009714 * param0, UnkStruct_02009714 * para
     GX_LoadOBJPltt(param3, v2, v0);
 }
 
-static void ov6_022428F8 (UnkStruct_ov6_022426B8 * param0)
+static void ov6_022428F8 (UnkStruct_ov6_022426B8 *param0)
 {
     int v0;
     UnkStruct_ov19_021DA864 v1;

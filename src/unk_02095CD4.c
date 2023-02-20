@@ -41,7 +41,7 @@ static const UnkStruct_02039A58 Unk_020F59BC[] = {
     {sub_02095DCC, sub_02095E70}
 };
 
-void sub_02095CD4 (void * param0)
+void sub_02095CD4 (void *param0)
 {
     int v0 = sizeof(Unk_020F59BC) / sizeof(UnkStruct_02039A58);
     sub_02032798(Unk_020F59BC, v0, param0);
@@ -171,7 +171,7 @@ void sub_02095E28 (int param0, int param1, void * param2, void * param3)
     }
 }
 
-void sub_02095E60 (UnkStruct_0203CDB0 * param0, UnkStruct_02095E80 * param1)
+void sub_02095E60 (UnkStruct_0203CDB0 *param0, UnkStruct_02095E80 * param1)
 {
     param0->unk_88 = param1;
 }

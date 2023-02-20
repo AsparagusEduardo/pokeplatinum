@@ -19,10 +19,10 @@
 #include "party.h"
 #include "overlay006/ov6_02246034.h"
 
-static void ov6_02246110(UnkStruct_0202D7B0 * param0, const int param1);
+static void ov6_02246110(UnkStruct_0202D7B0 *param0, const int param1);
 static UnkStruct_0206C638 * ov6_02246148(UnkStruct_0202D7B0 * param0, const int param1);
 
-void ov6_02246034 (UnkStruct_0203CDB0 * param0, UnkStruct_ov6_02240D5C * param1)
+void ov6_02246034 (UnkStruct_0203CDB0 *param0, UnkStruct_ov6_02240D5C * param1)
 {
     u16 v0;
     u8 v1;
@@ -61,7 +61,7 @@ void ov6_02246034 (UnkStruct_0203CDB0 * param0, UnkStruct_ov6_02240D5C * param1)
     }
 }
 
-static void ov6_02246110 (UnkStruct_0202D7B0 * param0, const int param1)
+static void ov6_02246110 (UnkStruct_0202D7B0 *param0, const int param1)
 {
     int v0;
     u8 v1;
@@ -77,7 +77,7 @@ static void ov6_02246110 (UnkStruct_0202D7B0 * param0, const int param1)
     }
 }
 
-static UnkStruct_0206C638 * ov6_02246148 (UnkStruct_0202D7B0 * param0, const int param1)
+static UnkStruct_0206C638 *ov6_02246148 (UnkStruct_0202D7B0 *param0, const int param1)
 {
     u8 v0;
     UnkStruct_0206C638 * v1;

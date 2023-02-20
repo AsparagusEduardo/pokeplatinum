@@ -20,7 +20,7 @@ typedef struct {
     UnkStruct_ov5_021F0468 * unk_04;
 } UnkStruct_ov5_021F101C;
 
-BOOL ov5_021F101C (UnkStruct_020508D4 * param0)
+BOOL ov5_021F101C (UnkStruct_020508D4 *param0)
 {
     UnkStruct_0203CDB0 * v0 = sub_02050A60(param0);
     UnkStruct_020711C8 * v1 = sub_02050A64(param0);

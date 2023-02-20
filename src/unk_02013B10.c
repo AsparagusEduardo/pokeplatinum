@@ -31,10 +31,10 @@ typedef struct UnkStruct_02013BE0_t {
 
 static void sub_02013FC8(void);
 static void sub_02013FD0(const UnkStruct_02013BE0 * param0);
-static void sub_02013E58(UnkStruct_0201CD38 * param0, void * param1);
-static void sub_02013F04(UnkStruct_0201CD38 * param0, void * param1);
+static void sub_02013E58(UnkStruct_0201CD38 *param0, void * param1);
+static void sub_02013F04(UnkStruct_0201CD38 *param0, void * param1);
 
-UnkStruct_02013B10 * sub_02013B10 (int param0, void * param1, void * param2)
+UnkStruct_02013B10 *sub_02013B10 (int param0, void * param1, void * param2)
 {
     UnkStruct_02013B10 * v0;
 
@@ -48,7 +48,7 @@ UnkStruct_02013B10 * sub_02013B10 (int param0, void * param1, void * param2)
     return v0;
 }
 
-void sub_02013B40 (UnkStruct_02013B10 * param0)
+void sub_02013B40 (UnkStruct_02013B10 *param0)
 {
     GF_ASSERT(param0);
 
@@ -56,7 +56,7 @@ void sub_02013B40 (UnkStruct_02013B10 * param0)
     param0 = NULL;
 }
 
-void * sub_02013B54 (const UnkStruct_02013B10 * param0)
+void *sub_02013B54 (const UnkStruct_02013B10 * param0)
 {
     GF_ASSERT(param0);
     return param0->unk_00[param0->unk_08];
@@ -68,13 +68,13 @@ const void * sub_02013B68 (const UnkStruct_02013B10 * param0)
     return param0->unk_00[param0->unk_08 ^ 1];
 }
 
-void sub_02013B80 (UnkStruct_02013B10 * param0, u8 param1)
+void sub_02013B80 (UnkStruct_02013B10 *param0, u8 param1)
 {
     GF_ASSERT(param0);
     param0->unk_09 = param1;
 }
 
-void sub_02013B94 (UnkStruct_02013B10 * param0)
+void sub_02013B94 (UnkStruct_02013B10 *param0)
 {
     if (param0 == NULL) {
         return;
@@ -102,7 +102,7 @@ void sub_02013BB8 (const void * param0, void * param1, int param2, int param3)
     }
 }
 
-UnkStruct_02013BE0 * sub_02013BE0 (int param0)
+UnkStruct_02013BE0 *sub_02013BE0 (int param0)
 {
     UnkStruct_02013BE0 * v0;
 
@@ -113,7 +113,7 @@ UnkStruct_02013BE0 * sub_02013BE0 (int param0)
     return v0;
 }
 
-void sub_02013C10 (UnkStruct_02013BE0 * param0, u8 param1, u8 param2, u16 param3, fx32 param4, s16 param5, u32 param6, u32 param7, u32 param8)
+void sub_02013C10 (UnkStruct_02013BE0 *param0, u8 param1, u8 param2, u16 param3, fx32 param4, s16 param5, u32 param6, u32 param7, u32 param8)
 {
     GF_ASSERT(param0);
     GF_ASSERT(param0->unk_604 == NULL);
@@ -133,7 +133,7 @@ void sub_02013C10 (UnkStruct_02013BE0 * param0, u8 param1, u8 param2, u16 param3
     MI_CpuFill32(param0->unk_300, param0->unk_794, sizeof(u32) * 192);
 }
 
-void sub_02013CA4 (UnkStruct_02013BE0 * param0, u8 param1, u8 param2, u16 param3, fx32 param4, s16 param5, u32 param6, u32 param7, u32 param8)
+void sub_02013CA4 (UnkStruct_02013BE0 *param0, u8 param1, u8 param2, u16 param3, fx32 param4, s16 param5, u32 param6, u32 param7, u32 param8)
 {
     GF_ASSERT(param0);
     GF_ASSERT(param0->unk_604 == NULL);
@@ -153,7 +153,7 @@ void sub_02013CA4 (UnkStruct_02013BE0 * param0, u8 param1, u8 param2, u16 param3
     MI_CpuFill32(param0->unk_300, param0->unk_794, sizeof(u32) * 192);
 }
 
-void sub_02013D38 (UnkStruct_02013BE0 * param0)
+void sub_02013D38 (UnkStruct_02013BE0 *param0)
 {
     void * v0;
 
@@ -168,7 +168,7 @@ void sub_02013D38 (UnkStruct_02013BE0 * param0)
     }
 }
 
-void sub_02013D74 (UnkStruct_02013BE0 * param0)
+void sub_02013D74 (UnkStruct_02013BE0 *param0)
 {
     sub_02013D38(param0);
     sub_02013FC8();
@@ -176,12 +176,12 @@ void sub_02013D74 (UnkStruct_02013BE0 * param0)
     Heap_FreeToHeap(param0);
 }
 
-void * sub_02013D94 (UnkStruct_02013BE0 * param0)
+void *sub_02013D94 (UnkStruct_02013BE0 * param0)
 {
     return sub_02013B54(param0->unk_600);
 }
 
-void sub_02013DA4 (UnkStruct_02013BE0 * param0)
+void sub_02013DA4 (UnkStruct_02013BE0 *param0)
 {
     void * v0;
 
@@ -197,7 +197,7 @@ void sub_02013DA4 (UnkStruct_02013BE0 * param0)
     }
 }
 
-void sub_02013DDC (UnkStruct_02013BE0 * param0)
+void sub_02013DDC (UnkStruct_02013BE0 *param0)
 {
     if (param0 == NULL) {
         return;
@@ -209,7 +209,7 @@ void sub_02013DDC (UnkStruct_02013BE0 * param0)
     }
 }
 
-void sub_02013DFC (s16 * param0, u32 param1, u16 param2, fx32 param3)
+void sub_02013DFC (s16 *param0, u32 param1, u16 param2, fx32 param3)
 {
     int v0;
     u16 v1;
@@ -222,7 +222,7 @@ void sub_02013DFC (s16 * param0, u32 param1, u16 param2, fx32 param3)
     }
 }
 
-static void sub_02013E58 (UnkStruct_0201CD38 * param0, void * param1)
+static void sub_02013E58 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_02013BE0 * v0 = param1;
     int v1;
@@ -254,7 +254,7 @@ static void sub_02013E58 (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-static void sub_02013F04 (UnkStruct_0201CD38 * param0, void * param1)
+static void sub_02013F04 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_02013BE0 * v0 = param1;
     int v1;

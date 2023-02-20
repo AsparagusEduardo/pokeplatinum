@@ -25,7 +25,7 @@ typedef struct {
     UnkStruct_ov12_02225F6C unk_60;
 } UnkStruct_ov12_0222E784;
 
-static void ov12_0222E784 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov12_0222E784 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov12_0222E784 * v0 = (UnkStruct_ov12_0222E784 *)param1;
 
@@ -61,7 +61,7 @@ static void ov12_0222E784 (UnkStruct_0201CD38 * param0, void * param1)
     sub_0200C7EC(v0->unk_00.unk_0C);
 }
 
-void ov12_0222E810 (UnkStruct_ov12_0221FCDC * param0)
+void ov12_0222E810 (UnkStruct_ov12_0221FCDC *param0)
 {
     UnkStruct_ov12_0222E784 * v0 = ov12_02235E50((param0), sizeof(UnkStruct_ov12_0222E784));
 

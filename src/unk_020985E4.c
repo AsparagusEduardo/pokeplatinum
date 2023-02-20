@@ -21,7 +21,7 @@
 
 FS_EXTERN_OVERLAY(overlay100);
 
-void sub_020985E4 (UnkStruct_020508D4 * param0, UnkStruct_021C0794 * param1)
+void sub_020985E4 (UnkStruct_020508D4 *param0, UnkStruct_021C0794 * param1)
 {
     UnkStruct_0209862C * v0;
     UnkStruct_020985E4 * v1;
@@ -39,7 +39,7 @@ void sub_020985E4 (UnkStruct_020508D4 * param0, UnkStruct_021C0794 * param1)
     sub_02050944(param0, sub_0209862C, v0);
 }
 
-BOOL sub_0209862C (UnkStruct_020508D4 * param0)
+BOOL sub_0209862C (UnkStruct_020508D4 *param0)
 {
     UnkStruct_0203CDB0 * v0;
     UnkStruct_0209862C * v1;

@@ -73,9 +73,9 @@ static const UnkStruct_ov17_0225442C Unk_ov17_0225442C[] = {
 };
 
 void include_ov17_022476F8(void);
-static void ov17_02247840(UnkStruct_0201CD38 * param0, void * param1);
+static void ov17_02247840(UnkStruct_0201CD38 *param0, void * param1);
 
-void ov17_022476F8 (UnkStruct_ov17_022476F8 * param0, int param1)
+void ov17_022476F8 (UnkStruct_ov17_022476F8 *param0, int param1)
 {
     if (param0->unk_08[param1] == NULL) {
         GF_ASSERT(param0->unk_48[param1].unk_00 == NULL);
@@ -89,7 +89,7 @@ void ov17_022476F8 (UnkStruct_ov17_022476F8 * param0, int param1)
     param0->unk_48[param1].unk_00 = NULL;
 }
 
-void ov17_02247734 (UnkStruct_ov17_022476F8 * param0)
+void ov17_02247734 (UnkStruct_ov17_022476F8 *param0)
 {
     int v0;
 
@@ -98,21 +98,21 @@ void ov17_02247734 (UnkStruct_ov17_022476F8 * param0)
     }
 }
 
-void ov17_0224774C (UnkStruct_0200C6E4 * param0, UnkStruct_0200C704 * param1, NARC * param2)
+void ov17_0224774C (UnkStruct_0200C6E4 *param0, UnkStruct_0200C704 * param1, NARC * param2)
 {
     sub_0200CC3C(param0, param1, param2, 67, 1, NNS_G2D_VRAM_TYPE_2DSUB, 33002);
     sub_0200CE24(param0, param1, param2, 68, 1, 33002);
     sub_0200CE54(param0, param1, param2, 69, 1, 33002);
 }
 
-void ov17_02247798 (UnkStruct_0200C704 * param0)
+void ov17_02247798 (UnkStruct_0200C704 *param0)
 {
     sub_0200D070(param0, 33002);
     sub_0200D090(param0, 33002);
     sub_0200D0A0(param0, 33002);
 }
 
-void ov17_022477B8 (UnkStruct_ov17_02247A48 * param0, int param1, int param2, fx32 param3, int param4)
+void ov17_022477B8 (UnkStruct_ov17_02247A48 *param0, int param1, int param2, fx32 param3, int param4)
 {
     UnkStruct_ov17_022477B8 * v0;
 
@@ -137,7 +137,7 @@ void ov17_022477B8 (UnkStruct_ov17_02247A48 * param0, int param1, int param2, fx
     sub_02005748(1761);
 }
 
-static void ov17_02247840 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov17_02247840 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov17_022477B8 * v0 = param1;
     s32 v1;
@@ -165,7 +165,7 @@ static void ov17_02247840 (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-void ov17_022478D0 (UnkStruct_ov17_02247A48 * param0, int param1)
+void ov17_022478D0 (UnkStruct_ov17_02247A48 *param0, int param1)
 {
     UnkStruct_02008A90 v0;
 
@@ -175,7 +175,7 @@ void ov17_022478D0 (UnkStruct_ov17_02247A48 * param0, int param1)
     param0->unk_0C.unk_18 = sub_02007C34(param0->unk_0C.unk_04, &v0, 320, 32, (-0x200 - 0x40), 3, NULL, NULL);
 }
 
-void ov17_02247918 (UnkStruct_ov17_02247A48 * param0)
+void ov17_02247918 (UnkStruct_ov17_02247A48 *param0)
 {
     if (param0->unk_0C.unk_18 == NULL) {
         return;
@@ -185,7 +185,7 @@ void ov17_02247918 (UnkStruct_ov17_02247A48 * param0)
     param0->unk_0C.unk_18 = NULL;
 }
 
-static void ov17_0224792C (UnkStruct_ov17_02247A48 * param0, int param1, const UnkStruct_ov17_0224792C * param2)
+static void ov17_0224792C (UnkStruct_ov17_02247A48 *param0, int param1, const UnkStruct_ov17_0224792C * param2)
 {
     if (param1 != 0) {
         GF_ASSERT(param2 != NULL);
@@ -204,7 +204,7 @@ static void ov17_0224792C (UnkStruct_ov17_02247A48 * param0, int param1, const U
     }
 }
 
-static void ov17_02247990 (UnkStruct_ov17_02247A48 * param0, UnkStruct_0200B144 * param1, u32 param2, int param3, const UnkStruct_ov17_0224792C * param4)
+static void ov17_02247990 (UnkStruct_ov17_02247A48 *param0, UnkStruct_0200B144 * param1, u32 param2, int param3, const UnkStruct_ov17_0224792C * param4)
 {
     UnkStruct_02023790 * v0;
     int v1;
@@ -225,7 +225,7 @@ static void ov17_02247990 (UnkStruct_ov17_02247A48 * param0, UnkStruct_0200B144 
     sub_020237BC(v0);
 }
 
-void ov17_02247A08 (UnkStruct_ov17_02247A48 * param0, u32 param1, const UnkStruct_ov17_0224792C * param2)
+void ov17_02247A08 (UnkStruct_ov17_02247A48 *param0, u32 param1, const UnkStruct_ov17_0224792C * param2)
 {
     u32 v0, v1;
 
@@ -237,7 +237,7 @@ void ov17_02247A08 (UnkStruct_ov17_02247A48 * param0, u32 param1, const UnkStruc
     ov17_02247990(param0, param0->unk_0C.unk_38, v0, v1, param2);
 }
 
-int ov17_02247A3C (UnkStruct_ov17_02247A48 * param0)
+int ov17_02247A3C (UnkStruct_ov17_02247A48 *param0)
 {
     return sub_0201D724(param0->unk_0C.unk_C4);
 }

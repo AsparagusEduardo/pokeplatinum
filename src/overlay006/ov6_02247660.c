@@ -12,7 +12,7 @@
 #include "unk_0205F180.h"
 #include "overlay006/ov6_02247660.h"
 
-BOOL ov6_02247660 (UnkStruct_0203CDB0 * param0)
+BOOL ov6_02247660 (UnkStruct_0203CDB0 *param0)
 {
     u8 v0;
     int v1;
@@ -87,13 +87,13 @@ BOOL ov6_02247660 (UnkStruct_0203CDB0 * param0)
     return v12;
 }
 
-void ov6_02247794 (u8 * param0, u8 * param1)
+void ov6_02247794 (u8 *param0, u8 * param1)
 {
     (*param0) = 20;
     (*param1) = 10;
 }
 
-void ov6_022477A0 (int * param0)
+void ov6_022477A0 (int *param0)
 {
     int * v0;
 

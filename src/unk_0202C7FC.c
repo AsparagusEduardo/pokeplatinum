@@ -20,7 +20,7 @@ int sub_0202C7FC (void)
     return sizeof(UnkStruct_0202C834);
 }
 
-void sub_0202C804 (UnkStruct_0202C834 * param0)
+void sub_0202C804 (UnkStruct_0202C834 *param0)
 {
     memset(param0, 0, sizeof(UnkStruct_0202C834));
 
@@ -36,17 +36,17 @@ void sub_0202C804 (UnkStruct_0202C834 * param0)
     }
 }
 
-UnkStruct_0202C834 * sub_0202C834 (UnkStruct_021C0794 * param0)
+UnkStruct_0202C834 *sub_0202C834 (UnkStruct_021C0794 * param0)
 {
     return sub_020245BC(param0, 19);
 }
 
-u8 * sub_0202C840 (UnkStruct_0202C834 * param0)
+u8 *sub_0202C840 (UnkStruct_0202C834 * param0)
 {
     return param0->unk_20;
 }
 
-UnkStruct_0202C844 * sub_0202C844 (UnkStruct_0202C834 * param0)
+UnkStruct_0202C844 *sub_0202C844 (UnkStruct_0202C834 * param0)
 {
     return param0->unk_00;
 }

@@ -32,7 +32,7 @@ typedef struct UnkStruct_ov6_02242A8C_t {
     int unk_30;
 } UnkStruct_ov6_02242A8C;
 
-int ov6_02242984 (UnkStruct_0203CDB0 * param0)
+int ov6_02242984 (UnkStruct_0203CDB0 *param0)
 {
     u8 v0;
     BOOL v1;
@@ -54,7 +54,7 @@ int ov6_02242984 (UnkStruct_0203CDB0 * param0)
     return v2[inline_020564D0(12)];
 }
 
-UnkStruct_ov6_02242A8C * ov6_02242A10 (const int param0, UnkStruct_0203CDB0 * param1)
+UnkStruct_ov6_02242A8C *ov6_02242A10 (const int param0, UnkStruct_0203CDB0 * param1)
 {
     u8 v0;
     UnkStruct_ov6_02242A8C * v1;
@@ -86,7 +86,7 @@ UnkStruct_ov6_02242A8C * ov6_02242A10 (const int param0, UnkStruct_0203CDB0 * pa
     return v1;
 }
 
-void ov6_02242A8C (UnkStruct_ov6_02242A8C * param0)
+void ov6_02242A8C (UnkStruct_ov6_02242A8C *param0)
 {
     Heap_FreeToHeap(param0);
 }
@@ -114,7 +114,7 @@ void ov6_02242A94 (const u8 param0, UnkStruct_ov6_02242A8C * param1)
     inline_02049FA8(&param1->unk_18, v0, -1, param1->unk_00[param0].unk_00, param1->unk_00[param0].unk_02, 0);
 }
 
-UnkStruct_02049FA8 * ov6_02242AEC (UnkStruct_ov6_02242A8C * param0)
+UnkStruct_02049FA8 *ov6_02242AEC (UnkStruct_ov6_02242A8C * param0)
 {
     return &param0->unk_18;
 }

@@ -279,9 +279,9 @@ struct UnkStruct_ov99_021D3E78_t {
     UnkStruct_0201CD38 * unk_34;
 };
 
-static void ov99_021D4104(UnkStruct_0201CD38 * param0, void * param1);
+static void ov99_021D4104(UnkStruct_0201CD38 *param0, void * param1);
 
-UnkStruct_ov99_021D3E78 * ov99_021D3E78 (UnkStruct_02018340 * param0, int param1, int param2, int param3, UnkStruct_0200B144 * param4)
+UnkStruct_ov99_021D3E78 *ov99_021D3E78 (UnkStruct_02018340 * param0, int param1, int param2, int param3, UnkStruct_0200B144 * param4)
 {
     UnkStruct_ov99_021D3E78 * v0 = Heap_AllocFromHeap(75, sizeof(UnkStruct_ov99_021D3E78));
 
@@ -312,7 +312,7 @@ UnkStruct_ov99_021D3E78 * ov99_021D3E78 (UnkStruct_02018340 * param0, int param1
     return v0;
 }
 
-void ov99_021D3F38 (UnkStruct_ov99_021D3E78 * param0)
+void ov99_021D3F38 (UnkStruct_ov99_021D3E78 *param0)
 {
     if (param0->unk_34) {
         sub_0200DA58(param0->unk_34);
@@ -326,7 +326,7 @@ void ov99_021D3F38 (UnkStruct_ov99_021D3E78 * param0)
     Heap_FreeToHeap(param0);
 }
 
-BOOL ov99_021D3F6C (UnkStruct_ov99_021D3E78 * param0, int param1)
+BOOL ov99_021D3F6C (UnkStruct_ov99_021D3E78 *param0, int param1)
 {
     if (param0->unk_1C == 2) {
         return 1;
@@ -394,7 +394,7 @@ BOOL ov99_021D3F6C (UnkStruct_ov99_021D3E78 * param0, int param1)
     }
 }
 
-static void ov99_021D4104 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov99_021D4104 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov99_021D3E78 * v0 = param1;
 

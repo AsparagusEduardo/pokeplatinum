@@ -30,7 +30,7 @@ int sub_02038FFC (int param0)
     return v0;
 }
 
-void sub_02039034 (UnkStruct_0202B370 * param0)
+void sub_02039034 (UnkStruct_0202B370 *param0)
 {
     DWCUserData * v0 = sub_0202AD28(param0);
 
@@ -40,7 +40,7 @@ void sub_02039034 (UnkStruct_0202B370 * param0)
     }
 }
 
-int sub_02039058 (UnkStruct_0202B370 * param0)
+int sub_02039058 (UnkStruct_0202B370 *param0)
 {
     DWCUserData * v0 = sub_0202AD28(param0);
     DWCFriendData v1;
@@ -49,7 +49,7 @@ int sub_02039058 (UnkStruct_0202B370 * param0)
     return DWC_GetGsProfileId(v0, &v1);
 }
 
-BOOL sub_02039074 (UnkStruct_021C0794 * param0)
+BOOL sub_02039074 (UnkStruct_021C0794 *param0)
 {
     UnkStruct_0202B370 * v0 = sub_0202B370(param0);
     DWCUserData * v1 = sub_0202AD28(v0);

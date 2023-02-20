@@ -17,7 +17,7 @@ typedef struct UnkStruct_ov23_0224991C_t {
     UnkStruct_ov23_02249978 unk_18[8];
 } UnkStruct_ov23_0224991C;
 
-static void ov23_02249978(UnkStruct_ov23_02249978 * param0, int param1);
+static void ov23_02249978(UnkStruct_ov23_02249978 *param0, int param1);
 
 static int Unk_ov23_02257580[] = {
     0x0,
@@ -44,7 +44,7 @@ int ov23_02249918 (void)
     return sizeof(UnkStruct_ov23_0224991C);
 }
 
-void ov23_0224991C (UnkStruct_ov23_0224991C * param0)
+void ov23_0224991C (UnkStruct_ov23_0224991C *param0)
 {
     int v0;
 
@@ -58,18 +58,18 @@ void ov23_0224991C (UnkStruct_ov23_0224991C * param0)
     }
 }
 
-void ov23_02249938 (UnkStruct_ov23_0224991C * param0)
+void ov23_02249938 (UnkStruct_ov23_0224991C *param0)
 {
     return;
 }
 
-UnkStruct_ov23_02249978 * ov23_0224993C (UnkStruct_ov23_0224991C * param0, int param1)
+UnkStruct_ov23_02249978 *ov23_0224993C (UnkStruct_ov23_0224991C * param0, int param1)
 {
     GF_ASSERT(param1 < (7 + 1));
     return &param0->unk_18[param1];
 }
 
-void ov23_02249954 (UnkStruct_ov23_0224991C * param0)
+void ov23_02249954 (UnkStruct_ov23_0224991C *param0)
 {
     int v0;
 
@@ -86,19 +86,19 @@ void ov23_02249954 (UnkStruct_ov23_0224991C * param0)
     }
 }
 
-static void ov23_02249978 (UnkStruct_ov23_02249978 * param0, int param1)
+static void ov23_02249978 (UnkStruct_ov23_02249978 *param0, int param1)
 {
     param0->unk_0A = param1;
     param0->unk_04 = Unk_ov23_02257580[param1];
     param0->unk_00 = Unk_ov23_0225759C[param1];
 }
 
-void ov23_02249994 (UnkStruct_ov23_02249978 * param0, int param1)
+void ov23_02249994 (UnkStruct_ov23_02249978 *param0, int param1)
 {
     ov23_02249978(param0, param1);
 }
 
-BOOL ov23_0224999C (UnkStruct_ov23_02249978 * param0)
+BOOL ov23_0224999C (UnkStruct_ov23_02249978 *param0)
 {
     if (0 == param0->unk_0A) {
         return 1;
@@ -107,7 +107,7 @@ BOOL ov23_0224999C (UnkStruct_ov23_02249978 * param0)
     return 0;
 }
 
-BOOL ov23_022499AC (UnkStruct_ov23_02249978 * param0)
+BOOL ov23_022499AC (UnkStruct_ov23_02249978 *param0)
 {
     if (2 == param0->unk_0A) {
         return 0;

@@ -544,7 +544,7 @@ static const UnkUnion_02022594 Unk_ov113_02260D4C[] = {
     {0xFF, 0x0, 0x0, 0x0}
 };
 
-void ov113_02260620 (UnkStruct_0200B144 * param0, UnkStruct_0200B358 * param1, UnkStruct_0205AA50 param2[], UnkStruct_ov66_0222DFF8 * param3, s32 param4)
+void ov113_02260620 (UnkStruct_0200B144 *param0, UnkStruct_0200B358 * param1, UnkStruct_0205AA50 param2[], UnkStruct_ov66_0222DFF8 * param3, s32 param4)
 {
     const UnkStruct_ov66_0222E71C * v0;
     UnkStruct_02025E6C * v1;
@@ -622,7 +622,7 @@ u16 ov113_0226072C (int param0, u32 param1)
     return Unk_ov113_02260D6C[param1 % NELEMS(Unk_ov113_02260D6C)][param0];
 }
 
-int ov113_02260748 (UnkStruct_ov113_02260818 * param0, int param1)
+int ov113_02260748 (UnkStruct_ov113_02260818 *param0, int param1)
 {
     int v0;
     int v1 = 0xff;

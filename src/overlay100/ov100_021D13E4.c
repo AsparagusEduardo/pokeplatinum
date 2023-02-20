@@ -32,13 +32,13 @@
 #include "overlay100/ov100_021D46C8.h"
 #include "overlay100/ov100_021D4E04.h"
 
-static void ov100_021D1808(UnkStruct_ov100_021D1808 * param0);
-static void ov100_021D1A24(UnkStruct_ov100_021D1808 * param0);
-static void ov100_021D1A54(UnkStruct_ov100_021D1808 * param0);
-static void ov100_021D17B4(UnkStruct_ov100_021D1808 * param0);
-static void ov100_021D1758(UnkStruct_020203AC * param0, VecFx32 * param1);
+static void ov100_021D1808(UnkStruct_ov100_021D1808 *param0);
+static void ov100_021D1A24(UnkStruct_ov100_021D1808 *param0);
+static void ov100_021D1A54(UnkStruct_ov100_021D1808 *param0);
+static void ov100_021D17B4(UnkStruct_ov100_021D1808 *param0);
+static void ov100_021D1758(UnkStruct_020203AC *param0, VecFx32 * param1);
 
-void * ov100_021D13E4 (UnkStruct_ov100_021D4DD8 * param0)
+void *ov100_021D13E4 (UnkStruct_ov100_021D4DD8 * param0)
 {
     UnkStruct_ov100_021D1808 * v0 = Heap_AllocFromHeap(111, sizeof(UnkStruct_ov100_021D1808));
 
@@ -82,7 +82,7 @@ void * ov100_021D13E4 (UnkStruct_ov100_021D4DD8 * param0)
     return v0;
 }
 
-BOOL ov100_021D14A8 (void * param0)
+BOOL ov100_021D14A8 (void *param0)
 {
     UnkStruct_ov100_021D1808 * v0 = param0;
     static const u16 v1[] = {
@@ -176,7 +176,7 @@ BOOL ov100_021D14A8 (void * param0)
     return 1;
 }
 
-BOOL ov100_021D16C4 (void * param0)
+BOOL ov100_021D16C4 (void *param0)
 {
     UnkStruct_ov100_021D1808 * v0 = param0;
 
@@ -203,7 +203,7 @@ BOOL ov100_021D16C4 (void * param0)
     return 1;
 }
 
-static void ov100_021D1758 (UnkStruct_020203AC * param0, VecFx32 * param1)
+static void ov100_021D1758 (UnkStruct_020203AC *param0, VecFx32 * param1)
 {
     UnkStruct_ov115_0226527C v0 = {1274, 0, 0};
 
@@ -213,7 +213,7 @@ static void ov100_021D1758 (UnkStruct_020203AC * param0, VecFx32 * param1)
     sub_020206BC(FX32_CONST(0.1), FX32_CONST(2048), param0);
 }
 
-static void ov100_021D17B4 (UnkStruct_ov100_021D1808 * param0)
+static void ov100_021D17B4 (UnkStruct_ov100_021D1808 *param0)
 {
     sub_020241B4();
     sub_020203EC();
@@ -229,7 +229,7 @@ static void ov100_021D17B4 (UnkStruct_ov100_021D1808 * param0)
     sub_020241BC(GX_SORTMODE_AUTO, GX_BUFFERMODE_W);
 }
 
-static void ov100_021D1808 (UnkStruct_ov100_021D1808 * param0)
+static void ov100_021D1808 (UnkStruct_ov100_021D1808 *param0)
 {
     NARC * v0 = param0->unk_7C4->unk_00;
     UnkStruct_02018340 * v1 = param0->unk_7C4->unk_0C;
@@ -272,7 +272,7 @@ static void ov100_021D1808 (UnkStruct_ov100_021D1808 * param0)
     sub_02017348(&param0->unk_1A4.unk_00[2].unk_00, 0);
 }
 
-static void ov100_021D1A24 (UnkStruct_ov100_021D1808 * param0)
+static void ov100_021D1A24 (UnkStruct_ov100_021D1808 *param0)
 {
     int v0;
 
@@ -284,7 +284,7 @@ static void ov100_021D1A24 (UnkStruct_ov100_021D1808 * param0)
     }
 }
 
-static void ov100_021D1A54 (UnkStruct_ov100_021D1808 * param0)
+static void ov100_021D1A54 (UnkStruct_ov100_021D1808 *param0)
 {
     int v0;
     NARC * v1 = param0->unk_7C4->unk_00;

@@ -7,12 +7,12 @@
 #include "unk_020363E8.h"
 #include "unk_02038ED4.h"
 
-void sub_02038ED4 (int * param0)
+void sub_02038ED4 (int *param0)
 {
     *param0 = 0;
 }
 
-int sub_02038EDC (UnkStruct_021C0794 * param0, int param1, int * param2)
+int sub_02038EDC (UnkStruct_021C0794 *param0, int param1, int * param2)
 {
     int v0;
 

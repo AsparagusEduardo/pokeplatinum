@@ -16,11 +16,11 @@
 #include "unk_02098FFC.h"
 #include "overlay079/ov79_021D20F4.h"
 
-void ov79_021D20F4(UnkStruct_ov79_021D0E1C * param0);
-void ov79_021D21CC(UnkStruct_ov79_021D0E1C * param0);
-void ov79_021D21F8(UnkStruct_ov79_021D0E1C * param0);
+void ov79_021D20F4(UnkStruct_ov79_021D0E1C *param0);
+void ov79_021D21CC(UnkStruct_ov79_021D0E1C *param0);
+void ov79_021D21F8(UnkStruct_ov79_021D0E1C *param0);
 
-void ov79_021D20F4 (UnkStruct_ov79_021D0E1C * param0)
+void ov79_021D20F4 (UnkStruct_ov79_021D0E1C *param0)
 {
     sub_0201DBEC(32, param0->unk_00);
 
@@ -66,7 +66,7 @@ void ov79_021D20F4 (UnkStruct_ov79_021D0E1C * param0)
     GXLayers_EngineBToggleLayers(GX_PLANEMASK_OBJ, 1);
 }
 
-void ov79_021D21CC (UnkStruct_ov79_021D0E1C * param0)
+void ov79_021D21CC (UnkStruct_ov79_021D0E1C *param0)
 {
     sub_0209903C(param0->unk_1F8);
     sub_0200C8B0(param0->unk_1B8, param0->unk_1BC);
@@ -74,13 +74,13 @@ void ov79_021D21CC (UnkStruct_ov79_021D0E1C * param0)
     sub_0201DC3C();
 }
 
-void ov79_021D21F8 (UnkStruct_ov79_021D0E1C * param0)
+void ov79_021D21F8 (UnkStruct_ov79_021D0E1C *param0)
 {
     sub_0200C7EC(param0->unk_1BC);
     sub_02099160(param0->unk_1F8);
 }
 
-void ov79_021D2214 (UnkStruct_ov79_021D0E1C * param0, BOOL param1)
+void ov79_021D2214 (UnkStruct_ov79_021D0E1C *param0, BOOL param1)
 {
     if (param1 == 0) {
         sub_02021E90(param0->unk_1C0[0], 0);

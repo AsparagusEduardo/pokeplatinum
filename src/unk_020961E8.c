@@ -22,7 +22,7 @@ static int sub_02096400(void);
 static int sub_02096404(void);
 static u8 * sub_0209640C(int param0, void * param1, int param2);
 static int sub_02096408(void);
-static void sub_020963C0(UnkStruct_020961E8 * param0, int param1);
+static void sub_020963C0(UnkStruct_020961E8 *param0, int param1);
 void sub_020961FC(int param0, int param1, void * param2, void * param3);
 void sub_0209620C(int param0, int param1, void * param2, void * param3);
 
@@ -139,7 +139,7 @@ static const UnkStruct_02039A58 Unk_020F5F68[] = {
     {sub_02099510, sub_02096400, NULL}
 };
 
-void sub_020961E8 (void * param0)
+void sub_020961E8 (void *param0)
 {
     UnkStruct_020961E8 * v0 = (UnkStruct_020961E8 *)param0;
     int v1;
@@ -287,7 +287,7 @@ void sub_020963A0 (int param0, int param1, void * param2, void * param3)
     }
 }
 
-static void sub_020963C0 (UnkStruct_020961E8 * param0, int param1)
+static void sub_020963C0 (UnkStruct_020961E8 *param0, int param1)
 {
     {
         int v0;

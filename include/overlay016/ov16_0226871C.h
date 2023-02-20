@@ -10,7 +10,7 @@
 
 void ov16_02268744(UnkStruct_02018340 * param0);
 void ov16_022687A0(UnkStruct_02018340 * param0);
-void * ov16_022687C8(NARC * param0, NARC * param1, UnkStruct_0207ADB4 * param2, int param3, UnkStruct_0209C370 * param4);
+void *ov16_022687C8(NARC * param0, NARC * param1, UnkStruct_0207ADB4 * param2, int param3, UnkStruct_0209C370 * param4);
 void ov16_02268A14(UnkStruct_ov16_02268A14 * param0);
 void ov16_02268A88(UnkStruct_ov16_02268A14 * param0);
 void ov16_02268B8C(UnkStruct_ov16_02268A14 * param0);

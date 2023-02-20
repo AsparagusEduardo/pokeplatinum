@@ -34,11 +34,11 @@ typedef struct UnkStruct_ov83_0223D4CC_t {
 } UnkStruct_ov83_0223D4CC;
 
 static UnkStruct_ov83_0223D584 * ov83_0223D584(const UnkStruct_02039A58 * param0, int param1, void * param2, int param3);
-static void ov83_0223D5CC(UnkStruct_0201CD38 * param0, void * param1);
-static void ov83_0223D620(UnkStruct_ov83_0223D584 * param0);
-static BOOL ov83_0223D638(UnkStruct_ov83_0223D584 * param0, int param1, const void * param2, int param3);
+static void ov83_0223D5CC(UnkStruct_0201CD38 *param0, void * param1);
+static void ov83_0223D620(UnkStruct_ov83_0223D584 *param0);
+static BOOL ov83_0223D638(UnkStruct_ov83_0223D584 *param0, int param1, const void * param2, int param3);
 
-UnkStruct_ov83_0223D4CC * ov83_0223D4CC (const UnkStruct_02039A58 * param0, int param1, void * param2, int param3, int param4)
+UnkStruct_ov83_0223D4CC *ov83_0223D4CC (const UnkStruct_02039A58 * param0, int param1, void * param2, int param3, int param4)
 {
     UnkStruct_ov83_0223D4CC * v0;
 
@@ -80,7 +80,7 @@ BOOL ov83_0223D508 (int param0, const void * param1, int param2, UnkStruct_ov83_
     }
 }
 
-void ov83_0223D558 (UnkStruct_ov83_0223D4CC * param0)
+void ov83_0223D558 (UnkStruct_ov83_0223D4CC *param0)
 {
     if (param0->unk_00 == 0) {
         ov83_0223D620(param0->unk_04);
@@ -89,7 +89,7 @@ void ov83_0223D558 (UnkStruct_ov83_0223D4CC * param0)
     Heap_FreeToHeap(param0);
 }
 
-int ov83_0223D570 (UnkStruct_ov83_0223D4CC * param0)
+int ov83_0223D570 (UnkStruct_ov83_0223D4CC *param0)
 {
     if (param0->unk_00 == 1) {
         return sub_0203608C();
@@ -113,7 +113,7 @@ static UnkStruct_ov83_0223D584 * ov83_0223D584 (const UnkStruct_02039A58 * param
     return v0;
 }
 
-static void ov83_0223D5CC (UnkStruct_0201CD38 * param0, void * param1)
+static void ov83_0223D5CC (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov83_0223D584 * v0 = param1;
     int v1;
@@ -128,13 +128,13 @@ static void ov83_0223D5CC (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-static void ov83_0223D620 (UnkStruct_ov83_0223D584 * param0)
+static void ov83_0223D620 (UnkStruct_ov83_0223D584 *param0)
 {
     sub_0200DA58(param0->unk_19C);
     Heap_FreeToHeap(param0);
 }
 
-static BOOL ov83_0223D638 (UnkStruct_ov83_0223D584 * param0, int param1, const void * param2, int param3)
+static BOOL ov83_0223D638 (UnkStruct_ov83_0223D584 *param0, int param1, const void * param2, int param3)
 {
     int v0;
     int v1;

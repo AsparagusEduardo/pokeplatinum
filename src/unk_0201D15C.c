@@ -10,7 +10,7 @@ typedef struct {
     MATHCRC16Table unk_00;
 } UnkStruct_021BFB10;
 
-static u16 sub_0201D608(u32 * param0);
+static u16 sub_0201D608(u32 *param0);
 
 fx32 sub_0201D15C (u16 param0)
 {
@@ -64,7 +64,7 @@ u16 sub_0201D278 (u16 param0)
         return 0;
     }
 
-    return FX_DEG_TO_IDX(param0 * FX32_ONE);
+    return FX_DEG_TO_IDX(param0 *FX32_ONE);
 }
 
 u16 sub_0201D2A4 (u16 param0)
@@ -159,7 +159,7 @@ u32 sub_0201D35C (void)
     return v0;
 }
 
-void sub_0201D470 (MtxFx22 * param0, u16 param1, fx32 param2, fx32 param3, u8 param4)
+void sub_0201D470 (MtxFx22 *param0, u16 param1, fx32 param2, fx32 param3, u8 param4)
 {
     if (param4 == 1) {
         param1 = (u16)((u32)(0xffff * param1) >> 8);
@@ -229,7 +229,7 @@ u32 sub_0201D5B8 (const void * param0, u32 param1)
     return v0;
 }
 
-void sub_0201D5D4 (void * param0, u32 param1, u32 param2)
+void sub_0201D5D4 (void *param0, u32 param1, u32 param2)
 {
     int v0;
     u16 * v1 = (u16 *)param0;
@@ -239,12 +239,12 @@ void sub_0201D5D4 (void * param0, u32 param1, u32 param2)
     }
 }
 
-void sub_0201D600 (void * param0, u32 param1, u32 param2)
+void sub_0201D600 (void *param0, u32 param1, u32 param2)
 {
     sub_0201D5D4(param0, param1, param2);
 }
 
-static u16 sub_0201D608 (u32 * param0)
+static u16 sub_0201D608 (u32 *param0)
 {
     param0[0] = param0[0] * 1103515245L + 24691;
     return (u16)(param0[0] / 65536L);

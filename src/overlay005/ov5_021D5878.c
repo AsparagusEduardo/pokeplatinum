@@ -6,7 +6,7 @@
 #include "heap.h"
 #include "overlay005/ov5_021D5878.h"
 
-UnkStruct_ov5_021D5894 * ov5_021D5878 (void)
+UnkStruct_ov5_021D5894 *ov5_021D5878 (void)
 {
     UnkStruct_ov5_021D5894 * v0;
 
@@ -22,7 +22,7 @@ void ov5_021D5894 (UnkStruct_ov5_021D5894 ** param0)
     *param0 = NULL;
 }
 
-void ov5_021D58A8 (UnkStruct_ov5_021D5894 * param0, int param1)
+void ov5_021D58A8 (UnkStruct_ov5_021D5894 *param0, int param1)
 {
     int v0;
 
@@ -51,7 +51,7 @@ void ov5_021D58A8 (UnkStruct_ov5_021D5894 * param0, int param1)
     }
 }
 
-void ov5_021D5948 (UnkStruct_ov5_021D5894 * param0, NNSG3dResMdl * param1, int param2)
+void ov5_021D5948 (UnkStruct_ov5_021D5894 *param0, NNSG3dResMdl * param1, int param2)
 {
     int v0;
 
@@ -112,7 +112,7 @@ void ov5_021D5948 (UnkStruct_ov5_021D5894 * param0, NNSG3dResMdl * param1, int p
     }
 }
 
-void ov5_021D5A50 (UnkStruct_ov5_021D5894 * param0, int param1, fx16 param2, fx16 param3, fx16 param4)
+void ov5_021D5A50 (UnkStruct_ov5_021D5894 *param0, int param1, fx16 param2, fx16 param3, fx16 param4)
 {
     param0->unk_00[param1].x = param2;
     param0->unk_00[param1].y = param3;
@@ -121,13 +121,13 @@ void ov5_021D5A50 (UnkStruct_ov5_021D5894 * param0, int param1, fx16 param2, fx1
     NNS_G3dGlbLightVector(param1, param0->unk_00[param1].x, param0->unk_00[param1].y, param0->unk_00[param1].z);
 }
 
-void ov5_021D5A78 (UnkStruct_ov5_021D5894 * param0, int param1, GXRgb param2)
+void ov5_021D5A78 (UnkStruct_ov5_021D5894 *param0, int param1, GXRgb param2)
 {
     param0->unk_18[param1] = param2;
     NNS_G3dGlbLightColor(param1, param0->unk_18[param1]);
 }
 
-void ov5_021D5A8C (UnkStruct_ov5_021D5894 * param0, GXRgb param1, BOOL param2, BOOL param3)
+void ov5_021D5A8C (UnkStruct_ov5_021D5894 *param0, GXRgb param1, BOOL param2, BOOL param3)
 {
     param0->unk_20 = param1;
     param0->unk_28 = param2;
@@ -137,7 +137,7 @@ void ov5_021D5A8C (UnkStruct_ov5_021D5894 * param0, GXRgb param1, BOOL param2, B
     }
 }
 
-void ov5_021D5AA0 (UnkStruct_ov5_021D5894 * param0, GXRgb param1, BOOL param2)
+void ov5_021D5AA0 (UnkStruct_ov5_021D5894 *param0, GXRgb param1, BOOL param2)
 {
     param0->unk_22 = param1;
 
@@ -146,7 +146,7 @@ void ov5_021D5AA0 (UnkStruct_ov5_021D5894 * param0, GXRgb param1, BOOL param2)
     }
 }
 
-void ov5_021D5AB4 (UnkStruct_ov5_021D5894 * param0, GXRgb param1, BOOL param2, BOOL param3)
+void ov5_021D5AB4 (UnkStruct_ov5_021D5894 *param0, GXRgb param1, BOOL param2, BOOL param3)
 {
     param0->unk_24 = param1;
     param0->unk_2C = param2;
@@ -156,7 +156,7 @@ void ov5_021D5AB4 (UnkStruct_ov5_021D5894 * param0, GXRgb param1, BOOL param2, B
     }
 }
 
-void ov5_021D5AC8 (UnkStruct_ov5_021D5894 * param0, GXRgb param1, BOOL param2)
+void ov5_021D5AC8 (UnkStruct_ov5_021D5894 *param0, GXRgb param1, BOOL param2)
 {
     param0->unk_26 = param1;
 
@@ -165,7 +165,7 @@ void ov5_021D5AC8 (UnkStruct_ov5_021D5894 * param0, GXRgb param1, BOOL param2)
     }
 }
 
-void ov5_021D5ADC (UnkStruct_ov5_021D5894 * param0, GXPolygonMode param1, BOOL param2)
+void ov5_021D5ADC (UnkStruct_ov5_021D5894 *param0, GXPolygonMode param1, BOOL param2)
 {
     param0->unk_34 = param1;
 
@@ -174,7 +174,7 @@ void ov5_021D5ADC (UnkStruct_ov5_021D5894 * param0, GXPolygonMode param1, BOOL p
     }
 }
 
-void ov5_021D5AF0 (UnkStruct_ov5_021D5894 * param0, GXCull param1, BOOL param2)
+void ov5_021D5AF0 (UnkStruct_ov5_021D5894 *param0, GXCull param1, BOOL param2)
 {
     param0->unk_38 = param1;
 
@@ -183,7 +183,7 @@ void ov5_021D5AF0 (UnkStruct_ov5_021D5894 * param0, GXCull param1, BOOL param2)
     }
 }
 
-void ov5_021D5B04 (UnkStruct_ov5_021D5894 * param0, int param1, BOOL param2)
+void ov5_021D5B04 (UnkStruct_ov5_021D5894 *param0, int param1, BOOL param2)
 {
     param0->unk_40 = param1;
 
@@ -192,7 +192,7 @@ void ov5_021D5B04 (UnkStruct_ov5_021D5894 * param0, int param1, BOOL param2)
     }
 }
 
-void ov5_021D5B18 (UnkStruct_ov5_021D5894 * param0, int param1, BOOL param2, BOOL param3)
+void ov5_021D5B18 (UnkStruct_ov5_021D5894 *param0, int param1, BOOL param2, BOOL param3)
 {
     if (param2 == 1) {
         if (param0->unk_44 & param1) {

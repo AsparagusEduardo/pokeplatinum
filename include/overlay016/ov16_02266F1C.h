@@ -9,7 +9,7 @@
 #include "overlay016/struct_ov16_022674C4.h"
 
 void ov16_02266F1C(UnkStruct_0200C6E4 * param0, UnkStruct_0200C704 * param1, NARC * param2, UnkStruct_02002F38 * param3, int param4);
-UnkStruct_0200D0F4 * ov16_02267060(UnkStruct_0200C6E4 * param0, UnkStruct_0200C704 * param1, int param2);
+UnkStruct_0200D0F4 *ov16_02267060(UnkStruct_0200C6E4 * param0, UnkStruct_0200C704 * param1, int param2);
 void ov16_02267084(UnkStruct_ov16_022674C4 * param0, u32 param1, u32 param2);
 void ov16_02267220(UnkStruct_ov16_022674C4 * param0);
 void ov16_02267258(UnkStruct_ov16_022674C4 * param0);

@@ -28,7 +28,7 @@
 #include "unk_02073C2C.h"
 #include "unk_020996D0.h"
 
-UnkStruct_02030A80 * sub_02030A80 (int param0)
+UnkStruct_02030A80 *sub_02030A80 (int param0)
 {
     UnkStruct_02030A80 * v0;
 
@@ -38,12 +38,12 @@ UnkStruct_02030A80 * sub_02030A80 (int param0)
     return v0;
 }
 
-void sub_02030A98 (UnkStruct_02030A80 * param0)
+void sub_02030A98 (UnkStruct_02030A80 *param0)
 {
     Heap_FreeToHeap(param0);
 }
 
-void sub_02030AA0 (UnkStruct_02030A80 * param0, UnkStruct_021C0794 * param1)
+void sub_02030AA0 (UnkStruct_02030A80 *param0, UnkStruct_021C0794 * param1)
 {
     UnkStruct_02025E6C * v0 = sub_02025E38(param1);
     UnkStruct_0202C878 * v1 = sub_0202C878(param1);
@@ -80,7 +80,7 @@ void sub_02030AA0 (UnkStruct_02030A80 * param0, UnkStruct_021C0794 * param1)
     param0->unk_7C.unk_00 = sub_0202486C(param1, param0, sizeof(UnkStruct_02030A80) - (sizeof(UnkStruct_0202F298_sub1)));
 }
 
-UnkStruct_02023790 * sub_02030B94 (const UnkStruct_02030A80 * param0, int param1)
+UnkStruct_02023790 *sub_02030B94 (const UnkStruct_02030A80 * param0, int param1)
 {
     UnkStruct_02023790 * v0 = sub_02023790((7 * 2) + 1, param1);
 
@@ -146,7 +146,7 @@ int sub_02030C08 (const UnkStruct_02030A80 * param0)
     return param0->unk_18;
 }
 
-UnkStruct_02023790 * sub_02030C28 (const UnkStruct_02030A80 * param0, UnkStruct_02014A84 * param1, int param2)
+UnkStruct_02023790 *sub_02030C28 (const UnkStruct_02030A80 * param0, UnkStruct_02014A84 * param1, int param2)
 {
     int v0 = 0;
 

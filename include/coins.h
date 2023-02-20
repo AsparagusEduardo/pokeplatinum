@@ -8,7 +8,7 @@
  *
  * @param coins:    Pointer to coin case amount
  */
-void Coins_Init(u16 * coins);
+void Coins_Init(u16 *coins);
 
 /*
  * Sets the amount of coins in the player's coin case
@@ -16,7 +16,7 @@ void Coins_Init(u16 * coins);
  * @param coins:    Pointer to coin case amount
  * @param value:    Value to set 
  */
-void Coins_SetValue(u16 * coins, u32 value);
+void Coins_SetValue(u16 *coins, u32 value);
 
 /*
  * Gets the amount of coins owned
@@ -36,7 +36,7 @@ u32 Coins_GetValue(const u16 * coins);
  *
  * @returns: TRUE if success, otherwise FALSE
  */
-BOOL Coins_Add(u16 * coins, u32 amount);
+BOOL Coins_Add(u16 *coins, u32 amount);
 
 /*
  * Checks if a certain amount of coins can be
@@ -58,6 +58,6 @@ BOOL Coins_CanAddAmount(const u16 * coins, u32 amount);
  *
  * @returns: TRUE if success, otherwise FALSE
  */
-BOOL Coins_Subtract(u16 * coins, u32 amount);
+BOOL Coins_Subtract(u16 *coins, u32 amount);
 
 #endif // POKEPLATINUM_UNK_0202B594_H

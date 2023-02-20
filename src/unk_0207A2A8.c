@@ -13,7 +13,7 @@
 #include "unk_0207A2A8.h"
 #include "unk_02098700.h"
 
-UnkStruct_02098700 * sub_0207A2A8 (int param0)
+UnkStruct_02098700 *sub_0207A2A8 (int param0)
 {
     UnkStruct_02098700 * v0 = sub_02098700(param0);
 
@@ -21,7 +21,7 @@ UnkStruct_02098700 * sub_0207A2A8 (int param0)
     return v0;
 }
 
-void sub_0207A2C0 (UnkStruct_02098700 * param0)
+void sub_0207A2C0 (UnkStruct_02098700 *param0)
 {
     sub_020987BC(param0);
     sub_02098718(param0);
@@ -172,7 +172,7 @@ int sub_0207A3AC (const UnkStruct_0202610C * param0, Party * param1, const UnkSt
     return 0;
 }
 
-static BOOL sub_0207A514 (u16 * param0, u16 * param1, u16 * param2, int param3, int param4, int param5, int param6)
+static BOOL sub_0207A514 (u16 *param0, u16 * param1, u16 * param2, int param3, int param4, int param5, int param6)
 {
     int v0 = param3;
     int v1;

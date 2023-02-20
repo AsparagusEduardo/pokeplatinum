@@ -48,7 +48,7 @@ fx32 sub_0201E1A0 (const VecFx32 * param0, const VecFx32 * param1)
     return v4;
 }
 
-void sub_0201E268 (MtxFx33 * param0, VecFx32 * param1)
+void sub_0201E268 (MtxFx33 *param0, VecFx32 * param1)
 {
     MtxFx33 v0;
 
@@ -59,7 +59,7 @@ void sub_0201E268 (MtxFx33 * param0, VecFx32 * param1)
     MTX_Concat33(param0, &v0, param0);
 }
 
-void sub_0201E2E0 (MtxFx33 * param0, u16 param1, u16 param2, u16 param3)
+void sub_0201E2E0 (MtxFx33 *param0, u16 param1, u16 param2, u16 param3)
 {
     MtxFx33 v0;
 

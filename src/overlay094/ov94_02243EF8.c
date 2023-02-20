@@ -27,12 +27,12 @@ typedef struct {
     UnkStruct_ov94_0223FD4C * unk_0C;
 } UnkStruct_ov94_02243FF0;
 
-static void ov94_0224400C(UnkStruct_0201CD38 * param0, void * param1);
-static void ov94_022440FC(UnkStruct_0201CD38 * param0, void * param1);
-static void ov94_022441A0(UnkStruct_02022550 * param0, int param1, int param2);
-static void ov94_02243FF0(UnkStruct_ov94_02243FF0 * param0, int param1);
-static void ov94_0224432C(UnkStruct_ov94_0223FD4C * param0);
-static void ov94_02244378(NNSG2dCharacterData * param0, NNSG2dPaletteData * param1, int param2, int param3, int param4);
+static void ov94_0224400C(UnkStruct_0201CD38 *param0, void * param1);
+static void ov94_022440FC(UnkStruct_0201CD38 *param0, void * param1);
+static void ov94_022441A0(UnkStruct_02022550 *param0, int param1, int param2);
+static void ov94_02243FF0(UnkStruct_ov94_02243FF0 *param0, int param1);
+static void ov94_0224432C(UnkStruct_ov94_0223FD4C *param0);
+static void ov94_02244378(NNSG2dCharacterData *param0, NNSG2dPaletteData * param1, int param2, int param3, int param4);
 static int ov94_022442DC(int param0);
 
 static const u16 Unk_ov94_02246322[][2] = {
@@ -45,7 +45,7 @@ static const u16 Unk_ov94_02246322[][2] = {
     {0xD0, 0x66}
 };
 
-void ov94_02243EF8 (UnkStruct_ov94_0223FD4C * param0, int param1)
+void ov94_02243EF8 (UnkStruct_ov94_0223FD4C *param0, int param1)
 {
     UnkStruct_ov115_02261520 v0;
     int v1;
@@ -74,7 +74,7 @@ void ov94_02243EF8 (UnkStruct_ov94_0223FD4C * param0, int param1)
     }
 }
 
-void ov94_02243FA8 (UnkStruct_ov94_0223FD4C * param0, int param1)
+void ov94_02243FA8 (UnkStruct_ov94_0223FD4C *param0, int param1)
 {
     ov94_02243EF8(param0, param1);
 
@@ -94,12 +94,12 @@ void ov94_02243FA8 (UnkStruct_ov94_0223FD4C * param0, int param1)
     }
 }
 
-static void ov94_02243FF0 (UnkStruct_ov94_02243FF0 * param0, int param1)
+static void ov94_02243FF0 (UnkStruct_ov94_02243FF0 *param0, int param1)
 {
     sub_02021D6C(param0->unk_0C->unk_F34[0], param1 + param0->unk_08 * 7);
 }
 
-static void ov94_0224400C (UnkStruct_0201CD38 * param0, void * param1)
+static void ov94_0224400C (UnkStruct_0201CD38 *param0, void * param1)
 {
     int v0;
     UnkStruct_ov94_02243FF0 * v1 = (UnkStruct_ov94_02243FF0 *)param1;
@@ -142,7 +142,7 @@ static void ov94_0224400C (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-void ov94_022440B8 (UnkStruct_ov94_0223FD4C * param0, int param1)
+void ov94_022440B8 (UnkStruct_ov94_0223FD4C *param0, int param1)
 {
     {
         UnkStruct_ov94_02243FF0 * v0;
@@ -160,7 +160,7 @@ void ov94_022440B8 (UnkStruct_ov94_0223FD4C * param0, int param1)
     }
 }
 
-static void ov94_022440FC (UnkStruct_0201CD38 * param0, void * param1)
+static void ov94_022440FC (UnkStruct_0201CD38 *param0, void * param1)
 {
     int v0;
     UnkStruct_ov94_02243FF0 * v1 = (UnkStruct_ov94_02243FF0 *)param1;
@@ -202,7 +202,7 @@ static void ov94_022440FC (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-static void ov94_022441A0 (UnkStruct_02022550 * param0, int param1, int param2)
+static void ov94_022441A0 (UnkStruct_02022550 *param0, int param1, int param2)
 {
     VecFx32 v0;
 
@@ -237,7 +237,7 @@ int ov94_02244214 (int param0)
     return -1;
 }
 
-void ov94_02244234 (UnkStruct_ov94_0223FD4C * param0, int param1, int param2)
+void ov94_02244234 (UnkStruct_ov94_0223FD4C *param0, int param1, int param2)
 {
     int v0;
 
@@ -270,7 +270,7 @@ static int ov94_022442DC (int param0)
     return 14 + param0 * 4;
 }
 
-void ov94_022442E4 (UnkStruct_ov94_0223FD4C * param0)
+void ov94_022442E4 (UnkStruct_ov94_0223FD4C *param0)
 {
     int v0;
 
@@ -283,7 +283,7 @@ void ov94_022442E4 (UnkStruct_ov94_0223FD4C * param0)
     }
 }
 
-static void ov94_0224432C (UnkStruct_ov94_0223FD4C * param0)
+static void ov94_0224432C (UnkStruct_ov94_0223FD4C *param0)
 {
     param0->unk_10FC = sub_02006F88(86, 7, &(param0->unk_1100), 62);
     param0->unk_10F4 = sub_02006F50(86, 9, 1, &(param0->unk_10F8), 62);
@@ -301,7 +301,7 @@ static const u16 Unk_ov94_02246314[] = {
     0x3000
 };
 
-static void ov94_02244378 (NNSG2dCharacterData * param0, NNSG2dPaletteData * param1, int param2, int param3, int param4)
+static void ov94_02244378 (NNSG2dCharacterData *param0, NNSG2dPaletteData * param1, int param2, int param3, int param4)
 {
     int v0;
     u8 * v1, * v2;
@@ -314,7 +314,7 @@ static void ov94_02244378 (NNSG2dCharacterData * param0, NNSG2dPaletteData * par
     GXS_LoadOBJPltt(&v2[v0 * 32], (param2 + 2) * 32, 32);
 }
 
-void ov94_022443B8 (UnkStruct_ov94_0223FD4C * param0)
+void ov94_022443B8 (UnkStruct_ov94_0223FD4C *param0)
 {
     if (param0->unk_10F0) {
         Heap_FreeToHeap(param0->unk_10FC);

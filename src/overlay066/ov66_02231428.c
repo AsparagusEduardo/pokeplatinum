@@ -10,7 +10,7 @@
 #include "overlay004/ov4_021D0D80.h"
 #include "overlay066/ov66_02231428.h"
 
-void ov66_02231428 (UnkStruct_ov66_02231428 * param0, const s64 * param1)
+void ov66_02231428 (UnkStruct_ov66_02231428 *param0, const s64 * param1)
 {
     RTCDate v0;
     RTCTime v1;
@@ -86,7 +86,7 @@ void ov66_022314BC (const UnkStruct_ov66_02231428 * param0, const UnkStruct_ov66
     param2->unk_00_val2_unk_00 = v2.unk_00_val2_unk_00 - v3.unk_00_val2_unk_00;
 }
 
-void ov66_02231560 (UnkStruct_ov66_02231560 * param0, u16 param1, u8 param2, BOOL param3)
+void ov66_02231560 (UnkStruct_ov66_02231560 *param0, u16 param1, u8 param2, BOOL param3)
 {
     int v0;
     BOOL v1;
@@ -158,7 +158,7 @@ BOOL ov66_0223164C (const UnkStruct_ov66_02231560 * param0, u8 param1)
     return param0->unk_00[param1].unk_03_4;
 }
 
-void ov66_02231668 (void * param0)
+void ov66_02231668 (void *param0)
 {
     NNSG3dResMdlSet * v0;
     NNSG3dResMdl * v1;

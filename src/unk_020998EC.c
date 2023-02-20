@@ -3151,18 +3151,18 @@ struct UnkStruct_020998EC_t {
 
 typedef u32 (* UnkFuncPtr_020F7864)(UnkStruct_020998EC *, const u16 *, u32, u16 *);
 
-static void sub_02099940(UnkStruct_020998EC * param0);
-static inline void inline_02099980(UnkStruct_020998EC * param0, u32 param1);
+static void sub_02099940(UnkStruct_020998EC *param0);
+static inline void inline_02099980(UnkStruct_020998EC *param0, u32 param1);
 static inline BOOL inline_02099BF4(const UnkStruct_020998EC * param0, u32 param1);
-static u32 sub_02099980(UnkStruct_020998EC * param0, const u16 * param1, u32 param2, u16 * param3);
-static u32 sub_020999E0(UnkStruct_020998EC * param0, const u16 * param1, u32 param2, u16 * param3);
-static u32 sub_02099A30(UnkStruct_020998EC * param0, const u16 * param1, u32 param2, u16 * param3);
-static u32 sub_02099AA0(UnkStruct_020998EC * param0, const u16 * param1, u32 param2, u16 * param3);
-static u32 sub_02099B28(UnkStruct_020998EC * param0, const u16 * param1, u32 param2, u16 * param3);
-static void sub_02099BAC(UnkStruct_020998EC * param0);
-static u32 sub_02099BF4(UnkStruct_020998EC * param0, const u16 * param1, u16 * param2, u32 param3);
+static u32 sub_02099980(UnkStruct_020998EC *param0, const u16 * param1, u32 param2, u16 * param3);
+static u32 sub_020999E0(UnkStruct_020998EC *param0, const u16 * param1, u32 param2, u16 * param3);
+static u32 sub_02099A30(UnkStruct_020998EC *param0, const u16 * param1, u32 param2, u16 * param3);
+static u32 sub_02099AA0(UnkStruct_020998EC *param0, const u16 * param1, u32 param2, u16 * param3);
+static u32 sub_02099B28(UnkStruct_020998EC *param0, const u16 * param1, u32 param2, u16 * param3);
+static void sub_02099BAC(UnkStruct_020998EC *param0);
+static u32 sub_02099BF4(UnkStruct_020998EC *param0, const u16 * param1, u16 * param2, u32 param3);
 
-UnkStruct_020998EC * sub_020998EC (u32 param0, const UnkStruct_0209747C * param1)
+UnkStruct_020998EC *sub_020998EC (u32 param0, const UnkStruct_0209747C * param1)
 {
     UnkStruct_020998EC * v0;
     int v1;
@@ -3181,7 +3181,7 @@ UnkStruct_020998EC * sub_020998EC (u32 param0, const UnkStruct_0209747C * param1
     return v0;
 }
 
-void sub_0209992C (UnkStruct_020998EC * param0)
+void sub_0209992C (UnkStruct_020998EC *param0)
 {
     if (param0) {
         sub_02014D70(param0->unk_04);
@@ -3208,7 +3208,7 @@ static const struct {
     {sub_02099B28, PMS_CategoryTable_12, 23},
 };
 
-static void sub_02099940 (UnkStruct_020998EC * param0)
+static void sub_02099940 (UnkStruct_020998EC *param0)
 {
     int v0, v1;
 
@@ -3219,7 +3219,7 @@ static void sub_02099940 (UnkStruct_020998EC * param0)
     }
 }
 
-static inline void inline_02099980 (UnkStruct_020998EC * param0, u32 param1)
+static inline void inline_02099980 (UnkStruct_020998EC *param0, u32 param1)
 {
     param0->unk_189E[(param1 >> 3)] |= (1 << (param1 & 7));
 }
@@ -3229,7 +3229,7 @@ static inline BOOL inline_02099BF4 (const UnkStruct_020998EC * param0, u32 param
     return (param0->unk_189E[(param1 >> 3)] & (1 << (param1 & 7))) != 0;
 }
 
-static u32 sub_02099980 (UnkStruct_020998EC * param0, const u16 * param1, u32 param2, u16 * param3)
+static u32 sub_02099980 (UnkStruct_020998EC *param0, const u16 * param1, u32 param2, u16 * param3)
 {
     const UnkStruct_02026324 * v0;
     u32 v1, v2;
@@ -3248,7 +3248,7 @@ static u32 sub_02099980 (UnkStruct_020998EC * param0, const u16 * param1, u32 pa
     return v2;
 }
 
-static u32 sub_020999E0 (UnkStruct_020998EC * param0, const u16 * param1, u32 param2, u16 * param3)
+static u32 sub_020999E0 (UnkStruct_020998EC *param0, const u16 * param1, u32 param2, u16 * param3)
 {
     u32 v0;
 
@@ -3264,7 +3264,7 @@ static u32 sub_020999E0 (UnkStruct_020998EC * param0, const u16 * param1, u32 pa
     }
 }
 
-static u32 sub_02099A30 (UnkStruct_020998EC * param0, const u16 * param1, u32 param2, u16 * param3)
+static u32 sub_02099A30 (UnkStruct_020998EC *param0, const u16 * param1, u32 param2, u16 * param3)
 {
     const UnkStruct_02014EC4 * v0 = sub_02097560(param0->unk_00);
     u32 v1, v2;
@@ -3283,7 +3283,7 @@ static u32 sub_02099A30 (UnkStruct_020998EC * param0, const u16 * param1, u32 pa
     return v2;
 }
 
-static u32 sub_02099AA0 (UnkStruct_020998EC * param0, const u16 * param1, u32 param2, u16 * param3)
+static u32 sub_02099AA0 (UnkStruct_020998EC *param0, const u16 * param1, u32 param2, u16 * param3)
 {
     const UnkStruct_02014EC4 * v0 = sub_02097560(param0->unk_00);
     u16 v1, v2;
@@ -3311,7 +3311,7 @@ static u32 sub_02099AA0 (UnkStruct_020998EC * param0, const u16 * param1, u32 pa
     return v4;
 }
 
-static u32 sub_02099B28 (UnkStruct_020998EC * param0, const u16 * param1, u32 param2, u16 * param3)
+static u32 sub_02099B28 (UnkStruct_020998EC *param0, const u16 * param1, u32 param2, u16 * param3)
 {
     u32 v0;
 
@@ -3336,7 +3336,7 @@ static u32 sub_02099B28 (UnkStruct_020998EC * param0, const u16 * param1, u32 pa
     return param2;
 }
 
-static void sub_02099BAC (UnkStruct_020998EC * param0)
+static void sub_02099BAC (UnkStruct_020998EC *param0)
 {
     int v0, v1 = 0;
 
@@ -3347,7 +3347,7 @@ static void sub_02099BAC (UnkStruct_020998EC * param0)
     }
 }
 
-static u32 sub_02099BF4 (UnkStruct_020998EC * param0, const u16 * param1, u16 * param2, u32 param3)
+static u32 sub_02099BF4 (UnkStruct_020998EC *param0, const u16 * param1, u16 * param2, u32 param3)
 {
     u32 v0 = 0;
 

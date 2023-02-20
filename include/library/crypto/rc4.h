@@ -21,7 +21,7 @@ void CRYPTO_RC4Encrypt(CRYPTORC4Context *, const void *, u32, void *);
 void CRYPTO_RC4FastInit(CRYPTORC4FastContext *, const void *, u32);
 void CRYPTO_RC4FastEncrypt(CRYPTORC4FastContext *, const void *, u32, void *);
 
-static inline void CRYPTO_RC4Decrypt (CRYPTORC4Context * param0, const void * param1, u32 param2, void * param3)
+static inline void CRYPTO_RC4Decrypt (CRYPTORC4Context *param0, const void * param1, u32 param2, void * param3)
 {
     CRYPTO_RC4Encrypt(param0, param1, param2, param3);
 }
@@ -33,7 +33,7 @@ static inline void CRYPTO_RC4 (const void * param0, u32 param1, void * param2, u
     CRYPTO_RC4Encrypt(&v0, param2, param3, param2);
 }
 
-static inline void CRYPTO_RC4FastDecrypt (CRYPTORC4FastContext * param0, const void * param1, u32 param2, void * param3)
+static inline void CRYPTO_RC4FastDecrypt (CRYPTORC4FastContext *param0, const void * param1, u32 param2, void * param3)
 {
     CRYPTO_RC4FastEncrypt(param0, param1, param2, param3);
 }

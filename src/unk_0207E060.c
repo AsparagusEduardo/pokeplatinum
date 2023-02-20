@@ -10,7 +10,7 @@
 #include "unk_0207E060.h"
 #include "overlay004/ov4_021D0D80.h"
 
-UnkStruct_0207E060 * sub_0207E060 (const UnkStruct_02025E6C * param0, u32 param1)
+UnkStruct_0207E060 *sub_0207E060 (const UnkStruct_02025E6C * param0, u32 param1)
 {
     UnkStruct_0207E060 * v0;
     BOOL v1;
@@ -30,7 +30,7 @@ UnkStruct_0207E060 * sub_0207E060 (const UnkStruct_02025E6C * param0, u32 param1
     return v0;
 }
 
-void sub_0207E0B0 (UnkStruct_0207E060 * param0)
+void sub_0207E0B0 (UnkStruct_0207E060 *param0)
 {
     Heap_FreeToHeap(param0);
 }

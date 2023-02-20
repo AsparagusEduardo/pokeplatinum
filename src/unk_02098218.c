@@ -47,9 +47,9 @@
 
 FS_EXTERN_OVERLAY(overlay119);
 
-static int sub_02098218(UnkStruct_020067E8 * param0, int * param1);
-static int sub_02098304(UnkStruct_020067E8 * param0, int * param1);
-static int sub_02098388(UnkStruct_020067E8 * param0, int * param1);
+static int sub_02098218(UnkStruct_020067E8 *param0, int * param1);
+static int sub_02098304(UnkStruct_020067E8 *param0, int * param1);
+static int sub_02098388(UnkStruct_020067E8 *param0, int * param1);
 
 
 const UnkStruct_0208BE5C Unk_020F67FC = {
@@ -59,7 +59,7 @@ const UnkStruct_0208BE5C Unk_020F67FC = {
     FS_OVERLAY_ID(overlay119)
 };
 
-static int sub_02098218 (UnkStruct_020067E8 * param0, int * param1)
+static int sub_02098218 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_0209843C * v0;
     UnkStruct_ov119_021D0FD0 * v1;
@@ -105,7 +105,7 @@ static int sub_02098218 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-static int sub_02098304 (UnkStruct_020067E8 * param0, int * param1)
+static int sub_02098304 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_ov119_021D0FD0 * v0;
 
@@ -157,7 +157,7 @@ static int sub_02098304 (UnkStruct_020067E8 * param0, int * param1)
     return 0;
 }
 
-static int sub_02098388 (UnkStruct_020067E8 * param0, int * param1)
+static int sub_02098388 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_ov119_021D0FD0 * v0;
 
@@ -198,7 +198,7 @@ static int sub_02098388 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-static BOOL sub_0209843C (UnkStruct_020508D4 * param0)
+static BOOL sub_0209843C (UnkStruct_020508D4 *param0)
 {
     UnkStruct_0209843C * v0 = sub_02050A64(param0);
 
@@ -281,7 +281,7 @@ static BOOL sub_0209843C (UnkStruct_020508D4 * param0)
     return 0;
 }
 
-void sub_020985AC (UnkStruct_020508D4 * param0, void * param1)
+void sub_020985AC (UnkStruct_020508D4 *param0, void * param1)
 {
     UnkStruct_0209843C * v0;
     UnkStruct_0203E2FC * v1;

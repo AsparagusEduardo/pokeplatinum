@@ -12,11 +12,11 @@
 #include "overlay020/ov20_021D2098.h"
 #include "overlay020/ov20_021D4E38.h"
 
-static void ov20_021D4ED8(UnkStruct_0201CD38 * param0, void * param1);
-static void ov20_021D4F74(UnkStruct_0201CD38 * param0, void * param1);
-static void ov20_021D5018(UnkStruct_0201CD38 * param0, void * param1);
+static void ov20_021D4ED8(UnkStruct_0201CD38 *param0, void * param1);
+static void ov20_021D4F74(UnkStruct_0201CD38 *param0, void * param1);
+static void ov20_021D5018(UnkStruct_0201CD38 *param0, void * param1);
 
-void ov20_021D4E38 (UnkStruct_ov20_021D4E8C * param0, UnkStruct_02018340 * param1, u32 param2, int param3, int param4, int param5)
+void ov20_021D4E38 (UnkStruct_ov20_021D4E8C *param0, UnkStruct_02018340 * param1, u32 param2, int param3, int param4, int param5)
 {
     param0->unk_00 = param1;
     param0->unk_04 = param2;
@@ -36,7 +36,7 @@ void ov20_021D4E38 (UnkStruct_ov20_021D4E8C * param0, UnkStruct_02018340 * param
     param0->unk_1A = 0;
 }
 
-BOOL ov20_021D4E8C (UnkStruct_ov20_021D4E8C * param0)
+BOOL ov20_021D4E8C (UnkStruct_ov20_021D4E8C *param0)
 {
     switch (param0->unk_1A) {
     case 0:
@@ -57,7 +57,7 @@ BOOL ov20_021D4E8C (UnkStruct_ov20_021D4E8C * param0)
     return 0;
 }
 
-static void ov20_021D4ED8 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov20_021D4ED8 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov20_021D4E8C * v0 = param1;
 
@@ -70,7 +70,7 @@ static void ov20_021D4ED8 (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-void ov20_021D4F1C (UnkStruct_ov20_021D4FF0 * param0, int param1, int param2, int param3, int param4, int param5)
+void ov20_021D4F1C (UnkStruct_ov20_021D4FF0 *param0, int param1, int param2, int param3, int param4, int param5)
 {
     param0->unk_00 = param1;
     param0->unk_04 = param2;
@@ -82,7 +82,7 @@ void ov20_021D4F1C (UnkStruct_ov20_021D4FF0 * param0, int param1, int param2, in
     param0->unk_1C = ov20_021D2170(ov20_021D4F74, param0, 0);
 }
 
-BOOL ov20_021D4F4C (UnkStruct_ov20_021D4FF0 * param0)
+BOOL ov20_021D4F4C (UnkStruct_ov20_021D4FF0 *param0)
 {
     switch (param0->unk_18) {
     case 0:
@@ -99,7 +99,7 @@ BOOL ov20_021D4F4C (UnkStruct_ov20_021D4FF0 * param0)
     return 0;
 }
 
-static void ov20_021D4F74 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov20_021D4F74 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov20_021D4FF0 * v0 = param1;
     int v1, v2;
@@ -121,7 +121,7 @@ static void ov20_021D4F74 (UnkStruct_0201CD38 * param0, void * param1)
     G2_SetBlendAlpha(v0->unk_00, v0->unk_04, v1, v2);
 }
 
-void ov20_021D4FB0 (UnkStruct_ov20_021D4FF0 * param0, int param1, int param2, int param3, int param4)
+void ov20_021D4FB0 (UnkStruct_ov20_021D4FF0 *param0, int param1, int param2, int param3, int param4)
 {
     G2_SetBlendBrightness(param1, param2);
 
@@ -134,7 +134,7 @@ void ov20_021D4FB0 (UnkStruct_ov20_021D4FF0 * param0, int param1, int param2, in
     param0->unk_1C = ov20_021D2170(ov20_021D5018, param0, 0);
 }
 
-BOOL ov20_021D4FF0 (UnkStruct_ov20_021D4FF0 * param0)
+BOOL ov20_021D4FF0 (UnkStruct_ov20_021D4FF0 *param0)
 {
     switch (param0->unk_18) {
     case 0:
@@ -151,7 +151,7 @@ BOOL ov20_021D4FF0 (UnkStruct_ov20_021D4FF0 * param0)
     return 0;
 }
 
-static void ov20_021D5018 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov20_021D5018 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov20_021D4FF0 * v0 = param1;
     int v1;

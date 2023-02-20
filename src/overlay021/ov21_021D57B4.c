@@ -12,7 +12,7 @@
 #include "unk_020218BC.h"
 #include "overlay021/ov21_021D57B4.h"
 
-void ov21_021D57B4 (UnkStruct_ov21_021D5844 * param0, int param1, int param2, int param3)
+void ov21_021D57B4 (UnkStruct_ov21_021D5844 *param0, int param1, int param2, int param3)
 {
     int v0;
     u32 v1;
@@ -54,7 +54,7 @@ void ov21_021D57B4 (UnkStruct_ov21_021D5844 * param0, int param1, int param2, in
     param0->unk_04 = v1 / sizeof(int);
 }
 
-void ov21_021D5844 (UnkStruct_ov21_021D5844 * param0)
+void ov21_021D5844 (UnkStruct_ov21_021D5844 *param0)
 {
     GF_ASSERT(param0);
     GF_ASSERT(param0->unk_00);
@@ -65,7 +65,7 @@ void ov21_021D5844 (UnkStruct_ov21_021D5844 * param0)
     param0->unk_04 = 0;
 }
 
-UnkStruct_ov21_021D5868 * ov21_021D5868 (int param0, int * param1)
+UnkStruct_ov21_021D5868 *ov21_021D5868 (int param0, int * param1)
 {
     UnkStruct_ov21_021D5868 * v0;
     u32 v1;
@@ -79,7 +79,7 @@ UnkStruct_ov21_021D5868 * ov21_021D5868 (int param0, int * param1)
     return v0;
 }
 
-UnkStruct_ov21_021D5890 * ov21_021D5890 (int param0, int * param1)
+UnkStruct_ov21_021D5890 *ov21_021D5890 (int param0, int * param1)
 {
     UnkStruct_ov21_021D5890 * v0;
     u32 v1;
@@ -93,7 +93,7 @@ UnkStruct_ov21_021D5890 * ov21_021D5890 (int param0, int * param1)
     return v0;
 }
 
-void ov21_021D58C0 (u8 * param0, u8 param1, u8 param2, const UnkStruct_ov21_021D5890 * param3)
+void ov21_021D58C0 (u8 *param0, u8 param1, u8 param2, const UnkStruct_ov21_021D5890 * param3)
 {
     int v0, v1;
 
@@ -107,7 +107,7 @@ void ov21_021D58C0 (u8 * param0, u8 param1, u8 param2, const UnkStruct_ov21_021D
     }
 }
 
-u32 ov21_021D5948 (u8 * param0, int param1, int param2, const UnkStruct_ov21_021D5890 * param3, const UnkStruct_ov21_021D5844 * param4, const u8 * param5, u32 param6)
+u32 ov21_021D5948 (u8 *param0, int param1, int param2, const UnkStruct_ov21_021D5890 * param3, const UnkStruct_ov21_021D5844 * param4, const u8 * param5, u32 param6)
 {
     int v0;
     int v1;
@@ -131,7 +131,7 @@ u32 ov21_021D5948 (u8 * param0, int param1, int param2, const UnkStruct_ov21_021
     return v2;
 }
 
-void ov21_021D59D8 (UnkStruct_02022550 * param0, int param1, int param2, int param3, int param4, const UnkStruct_ov21_021D5868 * param5, int param6, int param7)
+void ov21_021D59D8 (UnkStruct_02022550 *param0, int param1, int param2, int param3, int param4, const UnkStruct_ov21_021D5868 * param5, int param6, int param7)
 {
     VecFx32 v0;
 

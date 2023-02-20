@@ -8,7 +8,7 @@
 #include "unk_02025E68.h"
 #include "overlay006/ov6_02247830.h"
 
-static void ov6_02247830 (u8 * param0, u8 param1, u8 param2)
+static void ov6_02247830 (u8 *param0, u8 param1, u8 param2)
 {
     u8 v0;
     int v1;

@@ -21,7 +21,7 @@ typedef struct UnkStruct_02095EAC_t UnkStruct_02095EAC;
 static u8 * sub_020961D0(int param0, void * param1, int param2);
 static int sub_020961E0(void);
 static int sub_020961E4(void);
-static void sub_0209617C(UnkStruct_02095EAC * param0, int param1);
+static void sub_0209617C(UnkStruct_02095EAC *param0, int param1);
 static void sub_02096170(int param0, int param1, void * param2, void * param3);
 
 static const UnkStruct_02039A58 Unk_020F5A40[] = {
@@ -137,7 +137,7 @@ static const UnkStruct_02039A58 Unk_020F5A40[] = {
     {sub_02099510, sub_02032950, NULL}
 };
 
-void sub_02095E98 (void * param0)
+void sub_02095E98 (void *param0)
 {
     int v0 = sizeof(Unk_020F5A40) / sizeof(UnkStruct_02039A58);
     sub_02032798(Unk_020F5A40, v0, param0);
@@ -329,7 +329,7 @@ static void sub_02096170 (int param0, int param1, void * param2, void * param3)
     v0->unk_9458 = 1;
 }
 
-static void sub_0209617C (UnkStruct_02095EAC * param0, int param1)
+static void sub_0209617C (UnkStruct_02095EAC *param0, int param1)
 {
     u8 * v0 = (u8 *)param0->unk_32C.unk_0C;
 

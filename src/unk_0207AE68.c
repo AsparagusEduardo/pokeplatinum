@@ -68,19 +68,19 @@
 #include "unk_0207D3B8.h"
 #include "unk_0208C324.h"
 
-UnkStruct_0207AE68 * sub_0207AE68(Party * param0, UnkStruct_02073C74 * param1, int param2, UnkStruct_020279FC * param3, int param4, UnkStruct_02026324 * param5, UnkStruct_0207D3C0 * param6, UnkStruct_0202CD88 * param7, UnkStruct_02056B24 * param8, int param9, int param10, int param11);
-static void sub_0207B0A0(UnkStruct_0201CD38 * param0, void * param1);
-BOOL sub_0207B0D0(UnkStruct_0207AE68 * param0);
-void sub_0207B0E0(UnkStruct_0207AE68 * param0);
-static void sub_0207B180(UnkStruct_0207AE68 * param0);
-static void sub_0207C028(UnkStruct_0207AE68 * param0);
-static void sub_0207C1CC(UnkStruct_0207AE68 * param0, UnkStruct_02018340 * param1);
-static void sub_0207C460(UnkStruct_02018340 * param0);
-static void sub_0207C498(UnkStruct_0207AE68 * param0);
-static void sub_0207C520(void * param0);
-static u8 sub_0207C584(UnkStruct_0207AE68 * param0, int param1);
-static BOOL sub_0207C5CC(UnkStruct_0201D738 * param0, u16 param1);
-static void sub_0207C624(UnkStruct_0207AE68 * param0);
+UnkStruct_0207AE68 *sub_0207AE68(Party * param0, UnkStruct_02073C74 * param1, int param2, UnkStruct_020279FC * param3, int param4, UnkStruct_02026324 * param5, UnkStruct_0207D3C0 * param6, UnkStruct_0202CD88 * param7, UnkStruct_02056B24 * param8, int param9, int param10, int param11);
+static void sub_0207B0A0(UnkStruct_0201CD38 *param0, void * param1);
+BOOL sub_0207B0D0(UnkStruct_0207AE68 *param0);
+void sub_0207B0E0(UnkStruct_0207AE68 *param0);
+static void sub_0207B180(UnkStruct_0207AE68 *param0);
+static void sub_0207C028(UnkStruct_0207AE68 *param0);
+static void sub_0207C1CC(UnkStruct_0207AE68 *param0, UnkStruct_02018340 * param1);
+static void sub_0207C460(UnkStruct_02018340 *param0);
+static void sub_0207C498(UnkStruct_0207AE68 *param0);
+static void sub_0207C520(void *param0);
+static u8 sub_0207C584(UnkStruct_0207AE68 *param0, int param1);
+static BOOL sub_0207C5CC(UnkStruct_0201D738 *param0, u16 param1);
+static void sub_0207C624(UnkStruct_0207AE68 *param0);
 
 static const UnkStruct_ov61_0222C884 Unk_020F0A30 = {
     0x2,
@@ -98,7 +98,7 @@ static const u8 Unk_020F0A2C[] = {
     0x8
 };
 
-UnkStruct_0207AE68 * sub_0207AE68 (Party * param0, UnkStruct_02073C74 * param1, int param2, UnkStruct_020279FC * param3, int param4, UnkStruct_02026324 * param5, UnkStruct_0207D3C0 * param6, UnkStruct_0202CD88 * param7, UnkStruct_02056B24 * param8, int param9, int param10, int param11)
+UnkStruct_0207AE68 *sub_0207AE68 (Party * param0, UnkStruct_02073C74 * param1, int param2, UnkStruct_020279FC * param3, int param4, UnkStruct_02026324 * param5, UnkStruct_0207D3C0 * param6, UnkStruct_0202CD88 * param7, UnkStruct_02056B24 * param8, int param9, int param10, int param11)
 {
     UnkStruct_0207AE68 * v0;
     UnkStruct_02008A90 v1;
@@ -175,7 +175,7 @@ UnkStruct_0207AE68 * sub_0207AE68 (Party * param0, UnkStruct_02073C74 * param1, 
     return v0;
 }
 
-static void sub_0207B0A0 (UnkStruct_0201CD38 * param0, void * param1)
+static void sub_0207B0A0 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_0207AE68 * v0 = (UnkStruct_0207AE68 *)param1;
 
@@ -189,12 +189,12 @@ static void sub_0207B0A0 (UnkStruct_0201CD38 * param0, void * param1)
     }
 }
 
-BOOL sub_0207B0D0 (UnkStruct_0207AE68 * param0)
+BOOL sub_0207B0D0 (UnkStruct_0207AE68 *param0)
 {
     return param0->unk_67 == 1;
 }
 
-void sub_0207B0E0 (UnkStruct_0207AE68 * param0)
+void sub_0207B0E0 (UnkStruct_0207AE68 *param0)
 {
     int v0;
 
@@ -222,7 +222,7 @@ void sub_0207B0E0 (UnkStruct_0207AE68 * param0)
     sub_02002AC8(0);
 }
 
-static void sub_0207B180 (UnkStruct_0207AE68 * param0)
+static void sub_0207B180 (UnkStruct_0207AE68 *param0)
 {
     if (param0->unk_70) {
         if ((param0->unk_70 & 1) == 0) {
@@ -691,7 +691,7 @@ static void sub_0207B180 (UnkStruct_0207AE68 * param0)
     }
 }
 
-static void sub_0207C028 (UnkStruct_0207AE68 * param0)
+static void sub_0207C028 (UnkStruct_0207AE68 *param0)
 {
     int v0;
 
@@ -767,7 +767,7 @@ static void sub_0207C028 (UnkStruct_0207AE68 * param0)
     }
 }
 
-static void sub_0207C1CC (UnkStruct_0207AE68 * param0, UnkStruct_02018340 * param1)
+static void sub_0207C1CC (UnkStruct_0207AE68 *param0, UnkStruct_02018340 * param1)
 {
     GXLayers_DisableEngineALayers();
 
@@ -934,7 +934,7 @@ static void sub_0207C1CC (UnkStruct_0207AE68 * param0, UnkStruct_02018340 * para
     sub_02017798(sub_0207C520, param0);
 }
 
-static void sub_0207C460 (UnkStruct_02018340 * param0)
+static void sub_0207C460 (UnkStruct_02018340 *param0)
 {
     GXLayers_EngineAToggleLayers(GX_PLANEMASK_BG0, 0);
     GXLayers_EngineAToggleLayers(GX_PLANEMASK_BG1, 0);
@@ -944,7 +944,7 @@ static void sub_0207C460 (UnkStruct_02018340 * param0)
     sub_02019044(param0, 4);
 }
 
-static void sub_0207C498 (UnkStruct_0207AE68 * param0)
+static void sub_0207C498 (UnkStruct_0207AE68 *param0)
 {
     UnkStruct_02008A90 v0;
     UnkStruct_02073C74 * v1;
@@ -966,7 +966,7 @@ static void sub_0207C498 (UnkStruct_0207AE68 * param0)
     sub_02007DEC(param0->unk_1C[1], 13, 0x0);
 }
 
-static void sub_0207C520 (void * param0)
+static void sub_0207C520 (void *param0)
 {
     UnkStruct_0207AE68 * v0 = (UnkStruct_0207AE68 *)param0;
 
@@ -980,7 +980,7 @@ static void sub_0207C520 (void * param0)
     OS_SetIrqCheckFlag(OS_IE_V_BLANK);
 }
 
-static u8 sub_0207C584 (UnkStruct_0207AE68 * param0, int param1)
+static u8 sub_0207C584 (UnkStruct_0207AE68 *param0, int param1)
 {
     UnkStruct_02023790 * v0;
 
@@ -993,7 +993,7 @@ static u8 sub_0207C584 (UnkStruct_0207AE68 * param0, int param1)
     return sub_0201D738(param0->unk_04, 1, param0->unk_10, 0, 0, sub_02027AC0(param0->unk_2C), sub_0207C5CC);
 }
 
-static BOOL sub_0207C5CC (UnkStruct_0201D738 * param0, u16 param1)
+static BOOL sub_0207C5CC (UnkStruct_0201D738 *param0, u16 param1)
 {
     BOOL v0;
 
@@ -1022,7 +1022,7 @@ static BOOL sub_0207C5CC (UnkStruct_0201D738 * param0, u16 param1)
     return v0;
 }
 
-static void sub_0207C624 (UnkStruct_0207AE68 * param0)
+static void sub_0207C624 (UnkStruct_0207AE68 *param0)
 {
     param0->unk_38 = sub_020067E8(&Unk_020F410C, param0->unk_3C, param0->unk_5C);
 }

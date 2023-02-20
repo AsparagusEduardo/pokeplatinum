@@ -21,7 +21,7 @@ typedef struct {
 } UnkStruct_0205749C;
 
 
-static BOOL sub_020574CC(UnkStruct_020508D4 * param0);
+static BOOL sub_020574CC(UnkStruct_020508D4 *param0);
 
 static const UnkStruct_0208BE5C Unk_020ED4CC = {
     ov66_0222DCE0,
@@ -30,7 +30,7 @@ static const UnkStruct_0208BE5C Unk_020ED4CC = {
     FS_OVERLAY_ID(overlay66)
 };
 
-void sub_0205749C (UnkStruct_020508D4 * param0, BOOL param1)
+void sub_0205749C (UnkStruct_020508D4 *param0, BOOL param1)
 {
     UnkStruct_0205749C * v0;
 
@@ -41,7 +41,7 @@ void sub_0205749C (UnkStruct_020508D4 * param0, BOOL param1)
     sub_02050944(param0, sub_020574CC, v0);
 }
 
-static BOOL sub_020574CC (UnkStruct_020508D4 * param0)
+static BOOL sub_020574CC (UnkStruct_020508D4 *param0)
 {
     UnkStruct_0203CDB0 * v0 = sub_02050A60(param0);
     UnkStruct_0205749C * v1 = sub_02050A64(param0);

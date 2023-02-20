@@ -15,10 +15,10 @@
 #include "unk_02073C2C.h"
 #include "overlay079/ov79_021D3768.h"
 
-static void ov79_021D3870(UnkStruct_ov79_021D3820 * param0, int param1);
-static void ov79_021D38D0(UnkStruct_ov79_021D3820 * param0, UnkStruct_ov79_021D38D0 * param1, int param2);
+static void ov79_021D3870(UnkStruct_ov79_021D3820 *param0, int param1);
+static void ov79_021D38D0(UnkStruct_ov79_021D3820 *param0, UnkStruct_ov79_021D38D0 * param1, int param2);
 
-void ov79_021D3768 (UnkStruct_ov79_021D3820 * param0, UnkStruct_ov79_021D38D0 * param1, int param2)
+void ov79_021D3768 (UnkStruct_ov79_021D3820 *param0, UnkStruct_ov79_021D38D0 * param1, int param2)
 {
     MI_CpuClear8(param0, sizeof(UnkStruct_ov79_021D3820));
 
@@ -42,7 +42,7 @@ void ov79_021D3768 (UnkStruct_ov79_021D3820 * param0, UnkStruct_ov79_021D38D0 * 
     G2_SetBG0Priority(1);
 }
 
-void ov79_021D3820 (UnkStruct_ov79_021D3820 * param0)
+void ov79_021D3820 (UnkStruct_ov79_021D3820 *param0)
 {
     sub_020241B4();
     sub_020203EC();
@@ -59,13 +59,13 @@ void ov79_021D3820 (UnkStruct_ov79_021D3820 * param0)
     G3_SwapBuffers(GX_SORTMODE_MANUAL, GX_BUFFERMODE_Z);
 }
 
-void ov79_021D385C (UnkStruct_ov79_021D3820 * param0)
+void ov79_021D385C (UnkStruct_ov79_021D3820 *param0)
 {
     sub_020203B8(param0->unk_00);
     sub_02007B6C(param0->unk_04);
 }
 
-static void ov79_021D3870 (UnkStruct_ov79_021D3820 * param0, int param1)
+static void ov79_021D3870 (UnkStruct_ov79_021D3820 *param0, int param1)
 {
     VecFx32 v0 = {0, 0, 0x10000};
     UnkStruct_ov115_0226527C v1 = {0, 0, 0};
@@ -80,7 +80,7 @@ static void ov79_021D3870 (UnkStruct_ov79_021D3820 * param0, int param1)
     sub_020203D4(param0->unk_00);
 }
 
-static void ov79_021D38D0 (UnkStruct_ov79_021D3820 * param0, UnkStruct_ov79_021D38D0 * param1, int param2)
+static void ov79_021D38D0 (UnkStruct_ov79_021D3820 *param0, UnkStruct_ov79_021D38D0 * param1, int param2)
 {
     UnkStruct_02008A90 v0;
     UnkStruct_02007C7C * v1;

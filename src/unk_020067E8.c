@@ -17,7 +17,7 @@ typedef struct UnkStruct_020067E8_t {
     UnkStruct_020067E8 * unk_24;
 } UnkStruct_020067E8;
 
-UnkStruct_020067E8 * sub_020067E8 (const UnkStruct_0208BE5C * param0, void * param1, const int param2)
+UnkStruct_020067E8 *sub_020067E8 (const UnkStruct_0208BE5C * param0, void * param1, const int param2)
 {
     UnkStruct_020067E8 * v0;
 
@@ -34,34 +34,34 @@ UnkStruct_020067E8 * sub_020067E8 (const UnkStruct_0208BE5C * param0, void * par
     return v0;
 }
 
-void sub_02006814 (UnkStruct_020067E8 * param0)
+void sub_02006814 (UnkStruct_020067E8 *param0)
 {
     Heap_FreeToHeap(param0);
 }
 
-void * sub_0200681C (UnkStruct_020067E8 * param0, int param1, int param2)
+void *sub_0200681C (UnkStruct_020067E8 * param0, int param1, int param2)
 {
     param0->unk_1C = Heap_AllocFromHeap(param2, param1);
     return param0->unk_1C;
 }
 
-void * sub_0200682C (UnkStruct_020067E8 * param0)
+void *sub_0200682C (UnkStruct_020067E8 * param0)
 {
     return param0->unk_1C;
 }
 
-void sub_02006830 (UnkStruct_020067E8 * param0)
+void sub_02006830 (UnkStruct_020067E8 *param0)
 {
     Heap_FreeToHeap(param0->unk_1C);
     param0->unk_1C = NULL;
 }
 
-void * sub_02006840 (UnkStruct_020067E8 * param0)
+void *sub_02006840 (UnkStruct_020067E8 * param0)
 {
     return param0->unk_18;
 }
 
-BOOL sub_02006844 (UnkStruct_020067E8 * param0)
+BOOL sub_02006844 (UnkStruct_020067E8 *param0)
 {
     int v0;
 

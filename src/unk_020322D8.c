@@ -12,7 +12,7 @@
 #include "unk_020322D8.h"
 #include "unk_02032798.h"
 
-static UnkStruct_020322D8 * sub_020322D8 (UnkStruct_020322F8 * param0)
+static UnkStruct_020322D8 *sub_020322D8 (UnkStruct_020322F8 *param0)
 {
     UnkStruct_020322D8 * v0 = param0->unk_18;
     int v1;
@@ -28,7 +28,7 @@ static UnkStruct_020322D8 * sub_020322D8 (UnkStruct_020322F8 * param0)
     return NULL;
 }
 
-BOOL sub_020322F8 (UnkStruct_020322F8 * param0)
+BOOL sub_020322F8 (UnkStruct_020322F8 *param0)
 {
     UnkStruct_020322D8 * v0 = param0->unk_18;
     int v1;
@@ -44,7 +44,7 @@ BOOL sub_020322F8 (UnkStruct_020322F8 * param0)
     return 1;
 }
 
-static BOOL sub_02032318 (UnkStruct_02032318 * param0)
+static BOOL sub_02032318 (UnkStruct_02032318 *param0)
 {
     if (param0->unk_00 != NULL) {
         if (param0->unk_00->unk_08 != NULL) {
@@ -61,7 +61,7 @@ static BOOL sub_02032318 (UnkStruct_02032318 * param0)
     return 0;
 }
 
-static BOOL sub_0203233C (UnkStruct_0203233C * param0, u8 param1)
+static BOOL sub_0203233C (UnkStruct_0203233C *param0, u8 param1)
 {
     *param0->unk_00 = param1;
     param0->unk_00++;
@@ -74,7 +74,7 @@ static BOOL sub_0203233C (UnkStruct_0203233C * param0, u8 param1)
     return 0;
 }
 
-static BOOL sub_02032358 (UnkStruct_020322D8 * param0, UnkStruct_0203233C * param1)
+static BOOL sub_02032358 (UnkStruct_020322D8 *param0, UnkStruct_0203233C * param1)
 {
     int v0 = sub_02032868(param0->unk_0E);
 
@@ -103,7 +103,7 @@ static BOOL sub_02032358 (UnkStruct_020322D8 * param0, UnkStruct_0203233C * para
     return 0;
 }
 
-static BOOL sub_020323D0 (UnkStruct_020322D8 * param0, UnkStruct_0203233C * param1, UnkStruct_02032188 * param2, BOOL param3)
+static BOOL sub_020323D0 (UnkStruct_020322D8 *param0, UnkStruct_0203233C * param1, UnkStruct_02032188 * param2, BOOL param3)
 {
     int v0;
     int v1;
@@ -153,7 +153,7 @@ static BOOL sub_020323D0 (UnkStruct_020322D8 * param0, UnkStruct_0203233C * para
     return 1;
 }
 
-BOOL sub_02032498 (UnkStruct_020322F8 * param0, int param1, u8 * param2, int param3, BOOL param4, BOOL param5)
+BOOL sub_02032498 (UnkStruct_020322F8 *param0, int param1, u8 * param2, int param3, BOOL param4, BOOL param5)
 {
     UnkStruct_020322D8 * v0;
     UnkStruct_020322D8 * v1 = sub_020322D8(param0);
@@ -208,7 +208,7 @@ BOOL sub_02032498 (UnkStruct_020322F8 * param0, int param1, u8 * param2, int par
     return 1;
 }
 
-static UnkStruct_020322D8 * sub_02032530 (UnkStruct_020322F8 * param0)
+static UnkStruct_020322D8 *sub_02032530 (UnkStruct_020322F8 *param0)
 {
     UnkStruct_02032318 * v0;
 
@@ -227,7 +227,7 @@ static UnkStruct_020322D8 * sub_02032530 (UnkStruct_020322F8 * param0)
     return NULL;
 }
 
-static void sub_02032550 (UnkStruct_020322F8 * param0)
+static void sub_02032550 (UnkStruct_020322F8 *param0)
 {
     UnkStruct_02032318 * v0;
 
@@ -240,7 +240,7 @@ static void sub_02032550 (UnkStruct_020322F8 * param0)
     }
 }
 
-BOOL sub_02032574 (UnkStruct_020322F8 * param0, UnkStruct_0203233C * param1, BOOL param2)
+BOOL sub_02032574 (UnkStruct_020322F8 *param0, UnkStruct_0203233C * param1, BOOL param2)
 {
     int v0;
     int v1;
@@ -278,7 +278,7 @@ BOOL sub_02032574 (UnkStruct_020322F8 * param0, UnkStruct_0203233C * param1, BOO
     return 1;
 }
 
-void sub_020325EC (UnkStruct_020322F8 * param0, int param1, UnkStruct_02032188 * param2)
+void sub_020325EC (UnkStruct_020322F8 *param0, int param1, UnkStruct_02032188 * param2)
 {
     MI_CpuFill8(param0, 0, sizeof(UnkStruct_020322F8));
     param0->unk_18 = Heap_AllocFromHeap(15, sizeof(UnkStruct_020322D8) * param1);
@@ -288,7 +288,7 @@ void sub_020325EC (UnkStruct_020322F8 * param0, int param1, UnkStruct_02032188 *
     param0->unk_14 = param2;
 }
 
-void sub_02032618 (UnkStruct_020322F8 * param0)
+void sub_02032618 (UnkStruct_020322F8 *param0)
 {
     MI_CpuFill8(param0->unk_18, 0, sizeof(UnkStruct_020322D8) * param0->unk_1C);
 
@@ -299,12 +299,12 @@ void sub_02032618 (UnkStruct_020322F8 * param0)
     param0->unk_10 = NULL;
 }
 
-void sub_02032638 (UnkStruct_020322F8 * param0)
+void sub_02032638 (UnkStruct_020322F8 *param0)
 {
     Heap_FreeToHeap(param0->unk_18);
 }
 
-BOOL sub_02032644 (UnkStruct_020322F8 * param0, int param1)
+BOOL sub_02032644 (UnkStruct_020322F8 *param0, int param1)
 {
     int v0;
     UnkStruct_020322D8 * v1 = param0->unk_18;

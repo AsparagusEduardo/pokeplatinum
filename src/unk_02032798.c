@@ -146,7 +146,7 @@ BOOL sub_020328D0 (int param0)
     return Unk_021C07B0->unk_00[param0 - 22].unk_08 != NULL;
 }
 
-void * sub_0203290C (int param0, int param1, int param2)
+void *sub_0203290C (int param0, int param1, int param2)
 {
     UnkFuncPtr_0203290C v0;
 

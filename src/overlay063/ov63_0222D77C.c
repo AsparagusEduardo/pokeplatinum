@@ -21,7 +21,7 @@ typedef struct UnkStruct_ov63_0222D848_t {
     u16 unk_0A;
 } UnkStruct_ov63_0222D848;
 
-UnkStruct_ov63_0222D77C * ov63_0222D77C (u32 param0, u32 param1)
+UnkStruct_ov63_0222D77C *ov63_0222D77C (u32 param0, u32 param1)
 {
     UnkStruct_ov63_0222D77C * v0;
 
@@ -39,13 +39,13 @@ UnkStruct_ov63_0222D77C * ov63_0222D77C (u32 param0, u32 param1)
     return v0;
 }
 
-void ov63_0222D7B4 (UnkStruct_ov63_0222D77C * param0)
+void ov63_0222D7B4 (UnkStruct_ov63_0222D77C *param0)
 {
     Heap_FreeToHeap(param0->unk_00);
     Heap_FreeToHeap(param0);
 }
 
-void ov63_0222D7C8 (UnkStruct_ov63_0222D77C * param0, const UnkStruct_ov63_0222CCB8 * param1)
+void ov63_0222D7C8 (UnkStruct_ov63_0222D77C *param0, const UnkStruct_ov63_0222CCB8 * param1)
 {
     if (((param0->unk_0A + 1) % param0->unk_04) == param0->unk_08) {
         UnkStruct_ov63_0222CCB8 v0;
@@ -56,7 +56,7 @@ void ov63_0222D7C8 (UnkStruct_ov63_0222D77C * param0, const UnkStruct_ov63_0222C
     param0->unk_0A = (param0->unk_0A + 1) % param0->unk_04;
 }
 
-BOOL ov63_0222D810 (UnkStruct_ov63_0222D77C * param0, UnkStruct_ov63_0222CCB8 * param1)
+BOOL ov63_0222D810 (UnkStruct_ov63_0222D77C *param0, UnkStruct_ov63_0222CCB8 * param1)
 {
     if (param0->unk_0A == param0->unk_08) {
         return 0;
@@ -68,7 +68,7 @@ BOOL ov63_0222D810 (UnkStruct_ov63_0222D77C * param0, UnkStruct_ov63_0222CCB8 * 
     return 1;
 }
 
-UnkStruct_ov63_0222D848 * ov63_0222D848 (u32 param0, u32 param1)
+UnkStruct_ov63_0222D848 *ov63_0222D848 (u32 param0, u32 param1)
 {
     UnkStruct_ov63_0222D848 * v0;
 
@@ -86,13 +86,13 @@ UnkStruct_ov63_0222D848 * ov63_0222D848 (u32 param0, u32 param1)
     return v0;
 }
 
-void ov63_0222D880 (UnkStruct_ov63_0222D848 * param0)
+void ov63_0222D880 (UnkStruct_ov63_0222D848 *param0)
 {
     Heap_FreeToHeap(param0->unk_00);
     Heap_FreeToHeap(param0);
 }
 
-void ov63_0222D894 (UnkStruct_ov63_0222D848 * param0, const UnkStruct_ov63_0222D894 * param1)
+void ov63_0222D894 (UnkStruct_ov63_0222D848 *param0, const UnkStruct_ov63_0222D894 * param1)
 {
     if (((param0->unk_0A + 1) % param0->unk_04) == param0->unk_08) {
         UnkStruct_ov63_0222D894 v0;
@@ -103,7 +103,7 @@ void ov63_0222D894 (UnkStruct_ov63_0222D848 * param0, const UnkStruct_ov63_0222D
     param0->unk_0A = (param0->unk_0A + 1) % param0->unk_04;
 }
 
-BOOL ov63_0222D8D0 (UnkStruct_ov63_0222D848 * param0, UnkStruct_ov63_0222D894 * param1)
+BOOL ov63_0222D8D0 (UnkStruct_ov63_0222D848 *param0, UnkStruct_ov63_0222D894 * param1)
 {
     if (param0->unk_0A == param0->unk_08) {
         return 0;

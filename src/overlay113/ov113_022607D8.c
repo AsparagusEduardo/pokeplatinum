@@ -24,7 +24,7 @@ static const UnkStruct_ov66_022589B4 Unk_ov113_02261548[] = {
     {ov113_02260884, sizeof(UnkStruct_ov113_02260818)}
 };
 
-void ov113_022607D8 (UnkStruct_ov113_0225DBCC * param0)
+void ov113_022607D8 (UnkStruct_ov113_0225DBCC *param0)
 {
     ov66_02232D60(Unk_ov113_02261548, (NELEMS(Unk_ov113_02261548)), param0);
 }

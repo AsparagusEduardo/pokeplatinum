@@ -5,14 +5,14 @@
 
 #include "unk_0202CBE4.h"
 
-void sub_0202CBE4 (UnkStruct_02025E5C * param0)
+void sub_0202CBE4 (UnkStruct_02025E5C *param0)
 {
     param0->unk_00 = 0;
     param0->unk_02 = 0;
     param0->unk_03 = 0;
 }
 
-void sub_0202CBF0 (UnkStruct_02025E5C * param0, u32 param1)
+void sub_0202CBF0 (UnkStruct_02025E5C *param0, u32 param1)
 {
     u32 v0, v1, v2;
 

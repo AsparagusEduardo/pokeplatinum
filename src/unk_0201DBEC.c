@@ -59,7 +59,7 @@ void sub_0201DCAC (void)
     }
 }
 
-NNSG2dCellTransferState * sub_0201DCC8 (int param0, int param1)
+NNSG2dCellTransferState *sub_0201DCC8 (int param0, int param1)
 {
     NNSG2dCellTransferState * v0;
 
@@ -74,7 +74,7 @@ void sub_0201DCE8 (void)
     NNS_G2dUpdateCellTransferStateManager();
 }
 
-void sub_0201DCF0 (NNSG2dCellTransferState * param0)
+void sub_0201DCF0 (NNSG2dCellTransferState *param0)
 {
     Heap_FreeToHeap(param0);
 }

@@ -27,7 +27,7 @@ static inline BOOL inline_ov21_021D5764_1(int param0, int param1);
 static UnkStruct_02023790 * ov21_021D5724(int param0, int param1, int param2);
 static void ov21_021D5764(int param0, int param1, int * param2, int * param3, int * param4);
 
-void ov21_021D5600 (UnkStruct_02023790 * param0)
+void ov21_021D5600 (UnkStruct_02023790 *param0)
 {
     sub_020237BC(param0);
 }

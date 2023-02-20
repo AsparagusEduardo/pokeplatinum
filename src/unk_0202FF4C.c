@@ -10,41 +10,41 @@
 #include "unk_020244AC.h"
 #include "unk_0202FF4C.h"
 
-void sub_0202FF4C(UnkStruct_0202FF58 * param0);
-UnkStruct_0202FF58 * sub_0202FF58(UnkStruct_021C0794 * param0);
-void sub_020300A4(UnkStruct_020300F4 * param0);
-void sub_020300B0(UnkStruct_020300F4 * param0, u8 param1, u8 param2, const void * param3);
-u32 sub_020300E0(UnkStruct_020300F4 * param0, u8 param1, u8 param2, void * param3);
-UnkStruct_020300F4 * sub_020300F4(UnkStruct_021C0794 * param0);
-BOOL sub_0202FF68(UnkStruct_0202FF58 * param0);
-void sub_0202FF70(UnkStruct_0202FF58 * param0, BOOL param1);
-void sub_0202FF84(UnkStruct_0202FF58 * param0, u8 param1, u8 param2, const void * param3);
-u32 sub_02030030(UnkStruct_0202FF58 * param0, u8 param1, u8 param2, void * param3);
+void sub_0202FF4C(UnkStruct_0202FF58 *param0);
+UnkStruct_0202FF58 *sub_0202FF58(UnkStruct_021C0794 * param0);
+void sub_020300A4(UnkStruct_020300F4 *param0);
+void sub_020300B0(UnkStruct_020300F4 *param0, u8 param1, u8 param2, const void * param3);
+u32 sub_020300E0(UnkStruct_020300F4 *param0, u8 param1, u8 param2, void * param3);
+UnkStruct_020300F4 *sub_020300F4(UnkStruct_021C0794 * param0);
+BOOL sub_0202FF68(UnkStruct_0202FF58 *param0);
+void sub_0202FF70(UnkStruct_0202FF58 *param0, BOOL param1);
+void sub_0202FF84(UnkStruct_0202FF58 *param0, u8 param1, u8 param2, const void * param3);
+u32 sub_02030030(UnkStruct_0202FF58 *param0, u8 param1, u8 param2, void * param3);
 
-void sub_0202FF4C (UnkStruct_0202FF58 * param0)
+void sub_0202FF4C (UnkStruct_0202FF58 *param0)
 {
     MI_CpuClear8(param0, sizeof(UnkStruct_0202FF58));
     return;
 }
 
-UnkStruct_0202FF58 * sub_0202FF58 (UnkStruct_021C0794 * param0)
+UnkStruct_0202FF58 *sub_0202FF58 (UnkStruct_021C0794 * param0)
 {
     UnkStruct_0203068C * v0 = sub_020245BC(param0, 23);
     return &v0->unk_8E0_val2;
 }
 
-BOOL sub_0202FF68 (UnkStruct_0202FF58 * param0)
+BOOL sub_0202FF68 (UnkStruct_0202FF58 *param0)
 {
     return param0->unk_00_4;
 }
 
-void sub_0202FF70 (UnkStruct_0202FF58 * param0, BOOL param1)
+void sub_0202FF70 (UnkStruct_0202FF58 *param0, BOOL param1)
 {
     param0->unk_00_4 = param1;
     return;
 }
 
-void sub_0202FF84 (UnkStruct_0202FF58 * param0, u8 param1, u8 param2, const void * param3)
+void sub_0202FF84 (UnkStruct_0202FF58 *param0, u8 param1, u8 param2, const void * param3)
 {
     u32 * v0 = (u32 *)param3;
     u16 * v1 = (u16 *)param3;
@@ -86,7 +86,7 @@ void sub_0202FF84 (UnkStruct_0202FF58 * param0, u8 param1, u8 param2, const void
     return;
 }
 
-u32 sub_02030030 (UnkStruct_0202FF58 * param0, u8 param1, u8 param2, void * param3)
+u32 sub_02030030 (UnkStruct_0202FF58 *param0, u8 param1, u8 param2, void * param3)
 {
     switch (param1) {
     case 1:
@@ -114,13 +114,13 @@ u32 sub_02030030 (UnkStruct_0202FF58 * param0, u8 param1, u8 param2, void * para
     return 0;
 }
 
-void sub_020300A4 (UnkStruct_020300F4 * param0)
+void sub_020300A4 (UnkStruct_020300F4 *param0)
 {
     MI_CpuClear8(param0, sizeof(UnkStruct_020300F4));
     return;
 }
 
-void sub_020300B0 (UnkStruct_020300F4 * param0, u8 param1, u8 param2, const void * param3)
+void sub_020300B0 (UnkStruct_020300F4 *param0, u8 param1, u8 param2, const void * param3)
 {
     u32 * v0 = (u32 *)param3;
     u16 * v1 = (u16 *)param3;
@@ -139,7 +139,7 @@ void sub_020300B0 (UnkStruct_020300F4 * param0, u8 param1, u8 param2, const void
     return;
 }
 
-u32 sub_020300E0 (UnkStruct_020300F4 * param0, u8 param1, u8 param2, void * param3)
+u32 sub_020300E0 (UnkStruct_020300F4 *param0, u8 param1, u8 param2, void * param3)
 {
     switch (param1) {
     case 10:
@@ -149,7 +149,7 @@ u32 sub_020300E0 (UnkStruct_020300F4 * param0, u8 param1, u8 param2, void * para
     return 0;
 }
 
-UnkStruct_020300F4 * sub_020300F4 (UnkStruct_021C0794 * param0)
+UnkStruct_020300F4 *sub_020300F4 (UnkStruct_021C0794 * param0)
 {
     UnkStruct_0203068C * v0 = sub_020245BC(param0, 23);
     return &v0->unk_1614.unk_00;

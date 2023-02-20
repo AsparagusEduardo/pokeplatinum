@@ -13,9 +13,9 @@
 #include "overlay016/ov16_0223DF00.h"
 #include "overlay016/ov16_02264798.h"
 
-static void ov16_02264800(UnkStruct_0201CD38 * param0, void * param1);
+static void ov16_02264800(UnkStruct_0201CD38 *param0, void * param1);
 
-void ov16_02264798 (UnkStruct_ov16_0225BFFC * param0, UnkStruct_0207ADB4 * param1)
+void ov16_02264798 (UnkStruct_ov16_0225BFFC *param0, UnkStruct_0207ADB4 * param1)
 {
     if (param0->unk_194 != NULL) {
         return;
@@ -29,7 +29,7 @@ void ov16_02264798 (UnkStruct_ov16_0225BFFC * param0, UnkStruct_0207ADB4 * param
     param0->unk_194 = sub_0200D9E8(ov16_02264800, param0, 1010);
 }
 
-void ov16_022647D8 (UnkStruct_ov16_0225BFFC * param0)
+void ov16_022647D8 (UnkStruct_ov16_0225BFFC *param0)
 {
     if (param0->unk_194 == NULL) {
         return;
@@ -43,7 +43,7 @@ void ov16_022647D8 (UnkStruct_ov16_0225BFFC * param0)
     sub_02007DEC(param0->unk_20, 4, 0);
 }
 
-static void ov16_02264800 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov16_02264800 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov16_0225BFFC * v0 = param1;
     int v1;

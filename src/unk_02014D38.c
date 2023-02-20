@@ -144,7 +144,7 @@ void include_unk_020E5538 (void)
     Unk_020E5538[0];
 }
 
-UnkStruct_02014D38 * sub_02014D38 (u32 param0)
+UnkStruct_02014D38 *sub_02014D38 (u32 param0)
 {
     int v0;
     UnkStruct_02014D38 * v1 = Heap_AllocFromHeap(param0, sizeof(UnkStruct_02014D38));
@@ -157,7 +157,7 @@ UnkStruct_02014D38 * sub_02014D38 (u32 param0)
     return v1;
 }
 
-void sub_02014D70 (UnkStruct_02014D38 * param0)
+void sub_02014D70 (UnkStruct_02014D38 *param0)
 {
     int v0;
 
@@ -168,7 +168,7 @@ void sub_02014D70 (UnkStruct_02014D38 * param0)
     Heap_FreeToHeap(param0);
 }
 
-void sub_02014D90 (UnkStruct_02014D38 * param0, u16 param1, UnkStruct_02023790 * param2)
+void sub_02014D90 (UnkStruct_02014D38 *param0, u16 param1, UnkStruct_02023790 * param2)
 {
     u32 v0, v1;
 
@@ -233,7 +233,7 @@ u32 sub_02014E8C (void)
     return sizeof(UnkStruct_02014EC4);
 }
 
-void sub_02014E90 (void * param0)
+void sub_02014E90 (void *param0)
 {
     static const struct {
         u8 unk_00;
@@ -262,7 +262,7 @@ void sub_02014E90 (void * param0)
     sub_02025C84(34);
 }
 
-UnkStruct_02014EC4 * sub_02014EC4 (UnkStruct_021C0794 * param0)
+UnkStruct_02014EC4 *sub_02014EC4 (UnkStruct_021C0794 * param0)
 {
     sub_02025C48(34);
     return sub_020245BC(param0, 34);
@@ -273,7 +273,7 @@ BOOL sub_02014ED8 (const UnkStruct_02014EC4 * param0, u32 param1)
     return (param0->unk_04 >> param1) & 1;
 }
 
-u32 sub_02014EE4 (UnkStruct_02014EC4 * param0)
+u32 sub_02014EE4 (UnkStruct_02014EC4 *param0)
 {
     u32 v0, v1;
 
@@ -306,7 +306,7 @@ u32 sub_02014EE4 (UnkStruct_02014EC4 * param0)
     return 32;
 }
 
-BOOL sub_02014F48 (UnkStruct_02014EC4 * param0)
+BOOL sub_02014F48 (UnkStruct_02014EC4 *param0)
 {
     u32 v0;
 
@@ -336,14 +336,14 @@ BOOL sub_02014F8C (const UnkStruct_02014EC4 * param0, int param1)
     return (param0->unk_00 >> param1) & 1;
 }
 
-void sub_02014F98 (UnkStruct_02014EC4 * param0, int param1)
+void sub_02014F98 (UnkStruct_02014EC4 *param0, int param1)
 {
     param0->unk_00 |= (1 << param1);
 
     sub_02025C84(34);
 }
 
-UnkStruct_02014FB0 * sub_02014FB0 (u32 param0)
+UnkStruct_02014FB0 *sub_02014FB0 (u32 param0)
 {
     UnkStruct_02014FB0 * v0;
     u32 v1;
@@ -357,7 +357,7 @@ UnkStruct_02014FB0 * sub_02014FB0 (u32 param0)
     return v0;
 }
 
-void sub_02014FF0 (UnkStruct_02014FB0 * param0)
+void sub_02014FF0 (UnkStruct_02014FB0 *param0)
 {
     Heap_FreeToHeap(param0->unk_04);
 

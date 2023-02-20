@@ -54,9 +54,9 @@ typedef struct {
     UnkStruct_0200B358 * unk_20;
 } UnkStruct_02052AA4;
 
-static void sub_02052914(UnkStruct_0203CDB0 * param0, UnkStruct_020508D4 * param1);
-static BOOL sub_020529C4(UnkStruct_020508D4 * param0);
-static void sub_02052AA4(UnkStruct_02052AA4 * param0, u16 param1, u8 param2, u8 param3);
+static void sub_02052914(UnkStruct_0203CDB0 *param0, UnkStruct_020508D4 * param1);
+static BOOL sub_020529C4(UnkStruct_020508D4 *param0);
+static void sub_02052AA4(UnkStruct_02052AA4 *param0, u16 param1, u8 param2, u8 param3);
 
 static const UnkStruct_ov61_0222C884 Unk_020EC2F0 = {
     0x3,
@@ -68,7 +68,7 @@ static const UnkStruct_ov61_0222C884 Unk_020EC2F0 = {
     0x1
 };
 
-static void sub_020528D0 (UnkStruct_02018340 * param0)
+static void sub_020528D0 (UnkStruct_02018340 *param0)
 {
     static const UnkStruct_02099F80 v0 = {
         GX_VRAM_BG_128_B,
@@ -110,7 +110,7 @@ static void sub_020528D0 (UnkStruct_02018340 * param0)
     sub_02006E84(14, 6, 0, 13 * 0x20, 0x20, 11);
 }
 
-static void sub_02052914 (UnkStruct_0203CDB0 * param0, UnkStruct_020508D4 * param1)
+static void sub_02052914 (UnkStruct_0203CDB0 *param0, UnkStruct_020508D4 * param1)
 {
     UnkStruct_02052AA4 * v0;
 
@@ -146,7 +146,7 @@ static void sub_02052914 (UnkStruct_0203CDB0 * param0, UnkStruct_020508D4 * para
     return;
 }
 
-static BOOL sub_020529C4 (UnkStruct_020508D4 * param0)
+static BOOL sub_020529C4 (UnkStruct_020508D4 *param0)
 {
     UnkStruct_02052AA4 * v0 = sub_02050A64(param0);
 
@@ -187,7 +187,7 @@ static BOOL sub_020529C4 (UnkStruct_020508D4 * param0)
     return 0;
 }
 
-static void sub_02052AA4 (UnkStruct_02052AA4 * param0, u16 param1, u8 param2, u8 param3)
+static void sub_02052AA4 (UnkStruct_02052AA4 *param0, u16 param1, u8 param2, u8 param3)
 {
     UnkStruct_02023790 * v0 = sub_02023790(1024, 11);
     UnkStruct_02023790 * v1 = sub_02023790(1024, 11);
@@ -208,7 +208,7 @@ static void sub_02052AA4 (UnkStruct_02052AA4 * param0, u16 param1, u8 param2, u8
     return;
 }
 
-BOOL sub_02052B2C (UnkStruct_020508D4 * param0)
+BOOL sub_02052B2C (UnkStruct_020508D4 *param0)
 {
     UnkStruct_0203CDB0 * v0;
     int * v1;
@@ -275,7 +275,7 @@ BOOL sub_02052B2C (UnkStruct_020508D4 * param0)
     return 0;
 }
 
-void sub_02052C5C (UnkStruct_020508D4 * param0)
+void sub_02052C5C (UnkStruct_020508D4 *param0)
 {
     sub_02050944(param0, sub_02052B2C, NULL);
 }

@@ -24,7 +24,7 @@ BOOL ov61_0222DDCC(long param0, UnkStruct_ov62_022349A8_sub3_sub2 * param1, void
 BOOL ov61_0222DE34(long param0, void * param1);
 BOOL ov61_0222DE98(void * param0);
 BOOL ov61_0222DEB8(UnkStruct_ov62_0223D518_sub1 * param0, void * param1);
-void * ov61_0222DE80(void);
+void *ov61_0222DE80(void);
 long ov61_0222DE74(void);
 long ov61_0222DE8C(long param0);
 BOOL ov61_0222DF08(UnkStruct_ov62_022349A8_sub3_sub3 * param0, void * param1);

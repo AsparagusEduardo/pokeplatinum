@@ -29,14 +29,14 @@ typedef struct UnkStruct_020393C8_t {
     GXOamAttr * unk_1C;
 } UnkStruct_020393C8;
 
-static int inline inline_02039614(UnkStruct_020393C8 * param0);
+static int inline inline_02039614(UnkStruct_020393C8 *param0);
 static int inline inline_02039614_1(int param0, int param1);
-static void sub_02039428(UnkStruct_0201CD38 * param0, void * param1);
+static void sub_02039428(UnkStruct_0201CD38 *param0, void * param1);
 static void sub_020394D0(int param0, BOOL param1, u32 param2, u32 param3);
 static void sub_02039530(int param0, BOOL param1, u32 param2);
-static void sub_02039614(UnkStruct_020393C8 * param0);
+static void sub_02039614(UnkStruct_020393C8 *param0);
 
-UnkStruct_020393C8 * sub_020393C8 (u32 param0, u32 param1, int param2, int param3, BOOL param4, const UnkStruct_020E5EB4 * param5[], int param6)
+UnkStruct_020393C8 *sub_020393C8 (u32 param0, u32 param1, int param2, int param3, BOOL param4, const UnkStruct_020E5EB4 * param5[], int param6)
 {
     UnkStruct_020393C8 * v0;
 
@@ -60,13 +60,13 @@ UnkStruct_020393C8 * sub_020393C8 (u32 param0, u32 param1, int param2, int param
     return v0;
 }
 
-static void sub_02039428 (UnkStruct_0201CD38 * param0, void * param1)
+static void sub_02039428 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_020393C8 * v0 = (UnkStruct_020393C8 *)param1;
     sub_02039614(v0);
 }
 
-static int inline inline_02039614 (UnkStruct_020393C8 * param0)
+static int inline inline_02039614 (UnkStruct_020393C8 *param0)
 {
     switch (param0->unk_11) {
     case 1:
@@ -110,12 +110,12 @@ static int inline inline_02039614_1 (int param0, int param1)
     }
 }
 
-static inline void inline_02039440 (GXOamAttr * param0)
+static inline void inline_02039440 (GXOamAttr *param0)
 {
     G2_SetOBJAttr(param0, 0, 0, 0, GX_OAM_MODE_NORMAL, 0, GX_OAM_EFFECT_NODISPLAY, GX_OAM_SHAPE_16x16, GX_OAM_COLORMODE_16, 0, 0, 0);
 }
 
-void sub_02039434 (UnkStruct_020393C8 * param0, int param1)
+void sub_02039434 (UnkStruct_020393C8 *param0, int param1)
 {
     if (param1 < 4) {
         param0->unk_04 = param1;
@@ -123,7 +123,7 @@ void sub_02039434 (UnkStruct_020393C8 * param0, int param1)
     }
 }
 
-void sub_02039440 (UnkStruct_020393C8 * param0)
+void sub_02039440 (UnkStruct_020393C8 *param0)
 {
     sub_0200DA58(param0->unk_18);
     inline_02039440((GXOamAttr *)(HW_OAM));
@@ -135,7 +135,7 @@ void sub_02039440 (UnkStruct_020393C8 * param0)
     Heap_FreeToHeap(param0);
 }
 
-void sub_02039474 (UnkStruct_020393C8 * param0, BOOL param1, u32 param2)
+void sub_02039474 (UnkStruct_020393C8 *param0, BOOL param1, u32 param2)
 {
     sub_020394D0(NNS_G2D_VRAM_TYPE_2DSUB, param0->unk_10, (16 * 2 * 14), param2);
     sub_02039530(NNS_G2D_VRAM_TYPE_2DSUB, param0->unk_10, param2);
@@ -144,7 +144,7 @@ void sub_02039474 (UnkStruct_020393C8 * param0, BOOL param1, u32 param2)
     param0->unk_12 = 1;
 }
 
-void * sub_020394A8 (u32 param0)
+void *sub_020394A8 (u32 param0)
 {
     void * v0 = Heap_AllocFromHeapAtEnd(param0, 600);
 
@@ -270,7 +270,7 @@ static const UnkStruct_020E5EB4 * Unk_02100A38[] = {
 
 static UnkStruct_020393C8 * Unk_021C07D8 = NULL;
 
-static void sub_02039614 (UnkStruct_020393C8 * param0)
+static void sub_02039614 (UnkStruct_020393C8 *param0)
 {
     UnkStruct_020393C8 * v0 = param0;
     int v1, v2;

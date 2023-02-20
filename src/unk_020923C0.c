@@ -112,7 +112,7 @@ u32 sub_020923C0 (u8 param0, u8 param1)
     return 0;
 }
 
-u32 sub_02092424 (u8 * param0, u8 param1)
+u32 sub_02092424 (u8 *param0, u8 param1)
 {
     if (Unk_020F51AC[param1].unk_0A & 0x8000) {
         return 146 + param0[Unk_020F51AC[param1].unk_0A & 0xff];

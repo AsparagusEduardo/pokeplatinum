@@ -9,12 +9,12 @@
 #include "overlay114/ov114_02260038.h"
 #include "overlay114/ov114_02260044.h"
 
-void ov114_02260044 (UnkStruct_ov114_0225E854 * param0)
+void ov114_02260044 (UnkStruct_ov114_0225E854 *param0)
 {
     sub_02032798(ov114_02260038(), ov114_02260040(), param0);
 }
 
-void ov114_02260060 (UnkStruct_ov114_0225D678 * param0)
+void ov114_02260060 (UnkStruct_ov114_0225D678 *param0)
 {
     sub_02032798(ov114_02260038(), ov114_02260040(), param0);
 }

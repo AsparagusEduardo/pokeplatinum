@@ -32,7 +32,7 @@
 #include "overlay007/ov7_02249960.h"
 #include "overlay023/ov23_02241F74.h"
 
-static void sub_020598C4(UnkStruct_0201CD38 * param0, void * param1);
+static void sub_020598C4(UnkStruct_0201CD38 *param0, void * param1);
 static void sub_020598EC(UnkFuncPtr_020598EC param0, int param1);
 static void sub_020598FC(void);
 static void sub_02059920(void);
@@ -62,7 +62,7 @@ static void sub_0205A058(void);
 
 static UnkStruct_0205964C * Unk_021C084C = NULL;
 
-UnkStruct_0205964C * sub_0205964C (void)
+UnkStruct_0205964C *sub_0205964C (void)
 {
     return Unk_021C084C;
 }
@@ -72,7 +72,7 @@ static void sub_02059658 (void)
     return;
 }
 
-void sub_0205965C (UnkStruct_0203CDB0 * param0)
+void sub_0205965C (UnkStruct_0203CDB0 *param0)
 {
     void * v0;
 
@@ -119,7 +119,7 @@ void sub_020596BC (void)
     Unk_021C084C = NULL;
 }
 
-void sub_02059708 (UnkStruct_0203CDB0 * param0, int param1, int param2)
+void sub_02059708 (UnkStruct_0203CDB0 *param0, int param1, int param2)
 {
     if (sub_02035E38()) {
         return;
@@ -130,7 +130,7 @@ void sub_02059708 (UnkStruct_0203CDB0 * param0, int param1, int param2)
     sub_020598EC(sub_020598FC, 0);
 }
 
-void sub_02059748 (UnkStruct_0203CDB0 * param0, int param1, int param2)
+void sub_02059748 (UnkStruct_0203CDB0 *param0, int param1, int param2)
 {
     if (sub_02035E38()) {
         return;
@@ -152,7 +152,7 @@ void sub_020597A4 (void)
     sub_020598EC(sub_02059E80, 0);
 }
 
-void sub_020597B4 (UnkStruct_0203CDB0 * param0)
+void sub_020597B4 (UnkStruct_0203CDB0 *param0)
 {
     sub_0200F3B0(0, 0x0);
     sub_0200F3B0(1, 0x0);
@@ -208,7 +208,7 @@ void sub_020598A0 (void)
     sub_020598EC(sub_0205A018, 5);
 }
 
-void sub_020598C4 (UnkStruct_0201CD38 * param0, void * param1)
+void sub_020598C4 (UnkStruct_0201CD38 *param0, void * param1)
 {
     if (Unk_021C084C == NULL) {
         sub_0200DA58(param0);
@@ -617,7 +617,7 @@ void sub_02059EAC (int param0, int param1, void * param2, void * param3)
     Unk_021C084C->unk_10[param0] = 1;
 }
 
-u8 * sub_02059EBC (int param0, void * param1, int param2)
+u8 *sub_02059EBC (int param0, void * param1, int param2)
 {
     GF_ASSERT(param0 < 4);
     return (u8 *)Unk_021C084C->unk_00[param0];
@@ -724,7 +724,7 @@ static void sub_0205A058 (void)
     sub_020598EC(sub_020596BC, 0);
 }
 
-UnkStruct_02029894 * sub_0205A080 (UnkStruct_021C0794 * param0)
+UnkStruct_02029894 *sub_0205A080 (UnkStruct_021C0794 * param0)
 {
     if (!Unk_021C084C || !Unk_021C084C->unk_41) {
         return NULL;

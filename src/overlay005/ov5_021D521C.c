@@ -19,13 +19,13 @@ typedef struct UnkStruct_ov5_021D538C_t {
     BOOL unk_10;
 } UnkStruct_ov5_021D538C;
 
-static void ov5_021D538C(UnkStruct_ov5_021D538C * param0);
+static void ov5_021D538C(UnkStruct_ov5_021D538C *param0);
 static u32 ov5_021D53D4(u32 param0, UnkStruct_ov5_021D52F4 ** param1);
 static void ov5_021D555C(UnkStruct_ov5_021D52F4 ** param0);
 static char * ov5_021D5570(char * param0, GXRgb * param1, VecFx16 * param2);
 static char * ov5_021D5660(char * param0, GXRgb * param1);
 
-UnkStruct_ov5_021D538C * ov5_021D521C (UnkStruct_ov5_021D5894 * param0, const u8 param1)
+UnkStruct_ov5_021D538C *ov5_021D521C (UnkStruct_ov5_021D5894 * param0, const u8 param1)
 {
     int v0;
     UnkStruct_ov5_021D538C * v1;
@@ -64,7 +64,7 @@ void ov5_021D5278 (UnkStruct_ov5_021D538C ** param0)
     *param0 = NULL;
 }
 
-void ov5_021D5298 (UnkStruct_ov5_021D538C * param0)
+void ov5_021D5298 (UnkStruct_ov5_021D538C *param0)
 {
     u32 v0;
     int v1;
@@ -121,13 +121,13 @@ void ov5_021D52F4 (const UnkStruct_ov5_021D52F4 * param0, UnkStruct_ov5_021D5894
     ov5_021D5AC8(param1, param0->unk_2E, 1);
 }
 
-static void ov5_021D538C (UnkStruct_ov5_021D538C * param0)
+static void ov5_021D538C (UnkStruct_ov5_021D538C *param0)
 {
     UnkStruct_ov5_021D52F4 * v0 = &param0->unk_04[param0->unk_08];
     ov5_021D52F4(v0, param0->unk_0C);
 }
 
-void ov5_021D53A4 (NNSG3dResMdl * param0)
+void ov5_021D53A4 (NNSG3dResMdl *param0)
 {
     NNS_G3dMdlUseGlbDiff(param0);
     NNS_G3dMdlUseGlbAmb(param0);
@@ -206,7 +206,7 @@ static void ov5_021D555C (UnkStruct_ov5_021D52F4 ** param0)
     *param0 = NULL;
 }
 
-static char * ov5_021D5570 (char * param0, GXRgb * param1, VecFx16 * param2)
+static char *ov5_021D5570 (char *param0, GXRgb * param1, VecFx16 * param2)
 {
     char v0[256];
     char v1[256];
@@ -269,7 +269,7 @@ static char * ov5_021D5570 (char * param0, GXRgb * param1, VecFx16 * param2)
     return param0;
 }
 
-static char * ov5_021D5660 (char * param0, GXRgb * param1)
+static char *ov5_021D5660 (char *param0, GXRgb * param1)
 {
     char v0[256];
     char v1[256];

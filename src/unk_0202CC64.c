@@ -17,13 +17,13 @@ int sub_0202CC64 (void)
     return sizeof(UnkStruct_0202CC84);
 }
 
-void sub_0202CC6C (UnkStruct_0202CC84 * param0)
+void sub_0202CC6C (UnkStruct_0202CC84 *param0)
 {
     MI_CpuClear32(param0, sizeof(UnkStruct_0202CC84));
     param0->unk_00 = 0;
 }
 
-UnkStruct_0202CC84 * sub_0202CC84 (int param0)
+UnkStruct_0202CC84 *sub_0202CC84 (int param0)
 {
     UnkStruct_0202CC84 * v0 = Heap_AllocFromHeap(param0, sizeof(UnkStruct_0202CC84));
 
@@ -31,7 +31,7 @@ UnkStruct_0202CC84 * sub_0202CC84 (int param0)
     return v0;
 }
 
-UnkStruct_0202CC84 * sub_0202CC98 (UnkStruct_021C0794 * param0)
+UnkStruct_0202CC84 *sub_0202CC98 (UnkStruct_021C0794 * param0)
 {
     return (UnkStruct_0202CC84 *)sub_020245BC(param0, 22);
 }
@@ -41,7 +41,7 @@ BOOL sub_0202CCA4 (const UnkStruct_0202CC84 * param0)
     return param0->unk_00;
 }
 
-void sub_0202CCA8 (UnkStruct_0202CC84 * param0)
+void sub_0202CCA8 (UnkStruct_0202CC84 *param0)
 {
     param0->unk_00 = 0;
 }
@@ -51,7 +51,7 @@ const void * sub_0202CCB0 (const UnkStruct_0202CC84 * param0)
     return param0->unk_04;
 }
 
-void sub_0202CCB4 (s8 * param0, const s8 * param1)
+void sub_0202CCB4 (s8 *param0, const s8 * param1)
 {
     int v0, v1 = 0;
     s8 v2;
@@ -72,7 +72,7 @@ void sub_0202CCB4 (s8 * param0, const s8 * param1)
     }
 }
 
-void sub_0202CCEC (UnkStruct_0202CC84 * param0, const s8 * param1)
+void sub_0202CCEC (UnkStruct_0202CC84 *param0, const s8 * param1)
 {
     int v0, v1;
     s8 v2;
@@ -96,7 +96,7 @@ void sub_0202CCEC (UnkStruct_0202CC84 * param0, const s8 * param1)
     }
 }
 
-void sub_0202CD3C (UnkStruct_0202CC84 * param0, const UnkStruct_0202CC84 * param1)
+void sub_0202CD3C (UnkStruct_0202CC84 *param0, const UnkStruct_0202CC84 * param1)
 {
     MI_CpuCopyFast(param1, param0, sizeof(UnkStruct_0202CC84));
 }

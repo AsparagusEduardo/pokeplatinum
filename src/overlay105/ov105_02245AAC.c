@@ -18,9 +18,9 @@
 #include "unk_020218BC.h"
 #include "overlay105/ov105_02245AAC.h"
 
-void ov105_02245AAC(UnkStruct_ov105_02245AAC * param0);
-UnkStruct_02022550 * ov105_02245BA4(UnkStruct_ov105_02245AAC * param0, u32 param1, u32 param2, u32 param3, int param4, u8 param5);
-void ov105_02245C50(UnkStruct_ov105_02245AAC * param0);
+void ov105_02245AAC(UnkStruct_ov105_02245AAC *param0);
+UnkStruct_02022550 *ov105_02245BA4(UnkStruct_ov105_02245AAC * param0, u32 param1, u32 param2, u32 param3, int param4, u8 param5);
+void ov105_02245C50(UnkStruct_ov105_02245AAC *param0);
 static void ov105_02245C98(void);
 
 static const u8 Unk_ov105_02246444[4] = {
@@ -30,7 +30,7 @@ static const u8 Unk_ov105_02246444[4] = {
     0x1
 };
 
-void ov105_02245AAC (UnkStruct_ov105_02245AAC * param0)
+void ov105_02245AAC (UnkStruct_ov105_02245AAC *param0)
 {
     int v0;
 
@@ -60,7 +60,7 @@ void ov105_02245AAC (UnkStruct_ov105_02245AAC * param0)
     return;
 }
 
-UnkStruct_02022550 * ov105_02245BA4 (UnkStruct_ov105_02245AAC * param0, u32 param1, u32 param2, u32 param3, int param4, u8 param5)
+UnkStruct_02022550 *ov105_02245BA4 (UnkStruct_ov105_02245AAC * param0, u32 param1, u32 param2, u32 param3, int param4, u8 param5)
 {
     int v0;
     UnkStruct_ov19_021DA864 v1;
@@ -103,7 +103,7 @@ UnkStruct_02022550 * ov105_02245BA4 (UnkStruct_ov105_02245AAC * param0, u32 para
     return v2;
 }
 
-void ov105_02245C50 (UnkStruct_ov105_02245AAC * param0)
+void ov105_02245C50 (UnkStruct_ov105_02245AAC *param0)
 {
     u8 v0;
 

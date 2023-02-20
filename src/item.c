@@ -23,7 +23,7 @@ typedef struct {
     u16 gen3ID;
 } UnkStruct_020F0CC4;
 
-static s32 sub_0207D0B0(UnkStruct_0207D0B0 * param0, u16 param1);
+static s32 sub_0207D0B0(UnkStruct_0207D0B0 *param0, u16 param1);
 
 const UnkStruct_020F0CC4 sItemNarcIDs[] = {
 	{ 0x0, 0x2C3, 0x2C4, 0x0 },
@@ -681,7 +681,7 @@ const u16 sBerryItemIDs[] = {
 	0xD4
 };
 
-void sub_0207CDEC (void * param0, u16 param1, u16 param2)
+void sub_0207CDEC (void *param0, u16 param1, u16 param2)
 {
     UnkStruct_0207CDEC * v0;
     UnkStruct_0207CDEC v1;
@@ -772,7 +772,7 @@ u16 Item_GetIndexOfIconNANR (void)
     return 0;
 }
 
-void * Item_LoadDataOrGFX (u16 itemID, u16 attributeID, u32 heapID)
+void *Item_LoadDataOrGFX (u16 itemID, u16 attributeID, u32 heapID)
 {
     if (itemID > 467) {
         itemID = 0;
@@ -790,7 +790,7 @@ void * Item_LoadDataOrGFX (u16 itemID, u16 attributeID, u32 heapID)
     return NULL;
 }
 
-void Item_GetNameIntoString (UnkStruct_02023790 * dest, u16 itemID, u32 heapID)
+void Item_GetNameIntoString (UnkStruct_02023790 *dest, u16 itemID, u32 heapID)
 {
     UnkStruct_0200B144 * msgData = sub_0200B144(1, 26, 392, heapID);
 
@@ -798,7 +798,7 @@ void Item_GetNameIntoString (UnkStruct_02023790 * dest, u16 itemID, u32 heapID)
     sub_0200B190(msgData);
 }
 
-void Item_GetDescriptionIntoString (UnkStruct_02023790 * dest, u16 itemID, u16 heapID)
+void Item_GetDescriptionIntoString (UnkStruct_02023790 *dest, u16 itemID, u16 heapID)
 {
     UnkStruct_0200B144 * msgData = sub_0200B144(1, 26, 391, heapID);
 
@@ -818,7 +818,7 @@ s32 Item_GetAttribute (u16 itemID, u16 attributeID, u32 heapID)
     return v1;
 }
 
-s32 Item_GetAttributeFromStruct (UnkStruct_0207D3B0 * itemData, u16 attributeID)
+s32 Item_GetAttributeFromStruct (UnkStruct_0207D3B0 *itemData, u16 attributeID)
 {
     switch (attributeID) {
     case 0:
@@ -863,7 +863,7 @@ s32 Item_GetAttributeFromStruct (UnkStruct_0207D3B0 * itemData, u16 attributeID)
     return 0;
 }
 
-static s32 sub_0207D0B0 (UnkStruct_0207D0B0 * param0, u16 param1)
+static s32 sub_0207D0B0 (UnkStruct_0207D0B0 *param0, u16 param1)
 {
     switch (param1) {
     case 15:
@@ -1066,13 +1066,13 @@ u8 Item_IsHerbalMedicine (u16 itemID)
     return FALSE;
 }
 
-void * sub_0207D388 (int param0)
+void *sub_0207D388 (int param0)
 {
     int v0 = sub_0207CE78(467, 0);
     return NARC_AllocAndReadFromMemberByIndexPair(15, 0, param0, 0, 36 * v0);
 }
 
-UnkStruct_0207D3B0 * sub_0207D3B0 (UnkStruct_0207D3B0 * param0, u16 param1)
+UnkStruct_0207D3B0 *sub_0207D3B0 (UnkStruct_0207D3B0 * param0, u16 param1)
 {
     u8 * v0;
 

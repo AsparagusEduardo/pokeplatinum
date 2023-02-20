@@ -6,9 +6,9 @@
 
 void sub_0201378C(void);
 void sub_020137C4(void);
-void sub_0201384C(RTCDate * param0, RTCTime * param1);
-void sub_02013880(RTCTime * param0);
-void sub_020138A4(RTCDate * param0);
+void sub_0201384C(RTCDate *param0, RTCTime * param1);
+void sub_02013880(RTCTime *param0);
+void sub_020138A4(RTCDate *param0);
 int sub_020138C8(void);
 s64 sub_020138EC(void);
 int sub_02013900(const RTCDate * param0);

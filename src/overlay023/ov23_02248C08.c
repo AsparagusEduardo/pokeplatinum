@@ -21,7 +21,7 @@
 #include "unk_0202854C.h"
 #include "overlay023/ov23_02248C08.h"
 
-UnkStruct_ov23_02248D20 * ov23_02248C08 (UnkStruct_ov84_02240FA8 * param0, u16 param1, u16 param2, u8 param3, UnkFuncPtr_ov23_02248D20 param4, UnkStruct_020298B0 * param5, BOOL param6)
+UnkStruct_ov23_02248D20 *ov23_02248C08 (UnkStruct_ov84_02240FA8 * param0, u16 param1, u16 param2, u8 param3, UnkFuncPtr_ov23_02248D20 param4, UnkStruct_020298B0 * param5, BOOL param6)
 {
     UnkStruct_ov23_02248D20 * v0 = (UnkStruct_ov23_02248D20 *)Heap_AllocFromHeap(param3, sizeof(UnkStruct_ov23_02248D20));
 
@@ -83,7 +83,7 @@ static void ov23_02248CA4 (u16 param0, u16 param1, UnkStruct_ov23_02248D20 * par
     }
 }
 
-u32 ov23_02248D20 (UnkStruct_ov23_02248D20 * param0)
+u32 ov23_02248D20 (UnkStruct_ov23_02248D20 *param0)
 {
     UnkStruct_0200112C * v0 = param0->unk_0C;
     u16 v1, v2, v3;
@@ -204,7 +204,7 @@ u32 ov23_02248D20 (UnkStruct_ov23_02248D20 * param0)
     return v6;
 }
 
-void ov23_02248EF8 (UnkStruct_ov23_02248D20 * param0, u16 * param1, u16 * param2)
+void ov23_02248EF8 (UnkStruct_ov23_02248D20 *param0, u16 * param1, u16 * param2)
 {
     UnkStruct_0200112C * v0 = param0->unk_0C;
 

@@ -8,8 +8,8 @@
 #include <nitro/rtc.h>
 
 int sub_0202DF8C(void);
-void sub_0202DF94(UnkStruct_0202DF8C * param0);
-void sub_0202DFA8(UnkStruct_0202DF8C * param0, const Party * param1, const RTCDate * param2);
+void sub_0202DF94(UnkStruct_0202DF8C *param0);
+void sub_0202DFA8(UnkStruct_0202DF8C *param0, const Party * param1, const RTCDate * param2);
 u32 sub_0202E148(const UnkStruct_0202DF8C * param0);
 u32 sub_0202E174(const UnkStruct_0202DF8C * param0, int param1);
 u32 sub_0202E1A8(const UnkStruct_0202DF8C * param0, int param1);

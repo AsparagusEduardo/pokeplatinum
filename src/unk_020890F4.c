@@ -33,11 +33,11 @@
 #include "unk_02089604.h"
 #include "unk_0208A3F4.h"
 
-static void sub_0208945C(UnkStruct_02018340 * param0);
-static void sub_020895CC(void * param0);
-static int sub_020890F4(UnkStruct_020067E8 * param0, int * param1);
-static int sub_0208924C(UnkStruct_020067E8 * param0, int * param1);
-static int sub_0208927C(UnkStruct_020067E8 * param0, int * param1);
+static void sub_0208945C(UnkStruct_02018340 *param0);
+static void sub_020895CC(void *param0);
+static int sub_020890F4(UnkStruct_020067E8 *param0, int * param1);
+static int sub_0208924C(UnkStruct_020067E8 *param0, int * param1);
+static int sub_0208927C(UnkStruct_020067E8 *param0, int * param1);
 
 const UnkStruct_0208BE5C Unk_020F2DBC = {
     sub_020890F4,
@@ -46,7 +46,7 @@ const UnkStruct_0208BE5C Unk_020F2DBC = {
     0xffffffff,
 };
 
-static int sub_020890F4 (UnkStruct_020067E8 * param0, int * param1)
+static int sub_020890F4 (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_02089688 * v0;
 
@@ -96,7 +96,7 @@ static int sub_020890F4 (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-static int sub_0208924C (UnkStruct_020067E8 * param0, int * param1)
+static int sub_0208924C (UnkStruct_020067E8 *param0, int * param1)
 {
     BOOL v0;
     UnkStruct_02089688 * v1;
@@ -111,7 +111,7 @@ static int sub_0208924C (UnkStruct_020067E8 * param0, int * param1)
     return v0 ? 1 : 0;
 }
 
-static int sub_0208927C (UnkStruct_020067E8 * param0, int * param1)
+static int sub_0208927C (UnkStruct_020067E8 *param0, int * param1)
 {
     UnkStruct_02089688 * v0;
 
@@ -159,7 +159,7 @@ static int sub_0208927C (UnkStruct_020067E8 * param0, int * param1)
     return 1;
 }
 
-UnkStruct_02089438 * sub_020893B4 (int param0, int param1, int param2[], UnkStruct_020279FC * param3, u32 param4, u32 param5)
+UnkStruct_02089438 *sub_020893B4 (int param0, int param1, int param2[], UnkStruct_020279FC * param3, u32 param4, u32 param5)
 {
     int v0;
     UnkStruct_02089438 * v1 = NULL;
@@ -181,7 +181,7 @@ UnkStruct_02089438 * sub_020893B4 (int param0, int param1, int param2[], UnkStru
     return v1;
 }
 
-UnkStruct_02089438 * sub_02089400 (int param0, int param1, int param2[], UnkStruct_020279FC * param3, u32 param4, u32 param5)
+UnkStruct_02089438 *sub_02089400 (int param0, int param1, int param2[], UnkStruct_020279FC * param3, u32 param4, u32 param5)
 {
     UnkStruct_02089438 * v0 = sub_020893B4(param0, param1, param2, param3, param4, param5);
 
@@ -190,7 +190,7 @@ UnkStruct_02089438 * sub_02089400 (int param0, int param1, int param2[], UnkStru
     return v0;
 }
 
-UnkStruct_02089438 * sub_0208941C (int param0, int param1, int param2[], UnkStruct_020279FC * param3, u32 param4, u32 param5, u32 param6, u32 param7)
+UnkStruct_02089438 *sub_0208941C (int param0, int param1, int param2[], UnkStruct_020279FC * param3, u32 param4, u32 param5, u32 param6, u32 param7)
 {
     UnkStruct_02089438 * v0 = sub_020893B4(param0, param1, param2, param3, param4, param5);
 
@@ -199,7 +199,7 @@ UnkStruct_02089438 * sub_0208941C (int param0, int param1, int param2[], UnkStru
     return v0;
 }
 
-void sub_02089438 (UnkStruct_02089438 * param0)
+void sub_02089438 (UnkStruct_02089438 *param0)
 {
     GF_ASSERT(param0->unk_1C != NULL);
     GF_ASSERT(param0 != NULL);
@@ -208,7 +208,7 @@ void sub_02089438 (UnkStruct_02089438 * param0)
     Heap_FreeToHeap(param0);
 }
 
-static void sub_0208945C (UnkStruct_02018340 * param0)
+static void sub_0208945C (UnkStruct_02018340 *param0)
 {
     GXLayers_DisableEngineALayers();
 
@@ -356,7 +356,7 @@ static void sub_0208945C (UnkStruct_02018340 * param0)
     GXLayers_EngineBToggleLayers(GX_PLANEMASK_OBJ, 1);
 }
 
-static void sub_020895CC (void * param0)
+static void sub_020895CC (void *param0)
 {
     UnkStruct_02089688 * v0 = param0;
 

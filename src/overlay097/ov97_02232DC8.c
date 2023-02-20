@@ -81,7 +81,7 @@ static u32 ov97_02232E30 (void)
     return v2;
 }
 
-void ov97_02232E38 (UnkStruct_ov97_02232E38 * param0, void * param1)
+void ov97_02232E38 (UnkStruct_ov97_02232E38 *param0, void * param1)
 {
     WMParentParam * v0 = ov97_02233408();
     UnkStruct_ov97_0223222C * v1 = ov97_02233410();
@@ -461,7 +461,7 @@ void ov97_0223329C (void)
     v0->unk_1C = (u8)0xFE;
 }
 
-void ov97_022332C8 (void * param0, u32 param1, u32 param2)
+void ov97_022332C8 (void *param0, u32 param1, u32 param2)
 {
     UnkStruct_ov97_02232AC8 * v0 = ov97_02233538();
 

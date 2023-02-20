@@ -14,7 +14,7 @@
 
 static UnkStruct_02013A04 * sub_02013AAC(UnkStruct_02013A04 * param0, u32 * param1);
 
-UnkStruct_02013A04 * sub_02013A04 (u32 param0, u32 param1)
+UnkStruct_02013A04 *sub_02013A04 (u32 param0, u32 param1)
 {
     UnkStruct_02013A04 * v0 = Heap_AllocFromHeap(param1, sizeof(UnkStruct_02013A04) * (param0 + 1));
 
@@ -33,13 +33,13 @@ UnkStruct_02013A04 * sub_02013A04 (u32 param0, u32 param1)
     return v0;
 }
 
-void sub_02013A3C (UnkStruct_02013A04 * param0)
+void sub_02013A3C (UnkStruct_02013A04 *param0)
 {
     sub_02013AE8(param0);
     Heap_FreeToHeap(param0);
 }
 
-void sub_02013A4C (UnkStruct_02013A04 * param0, const UnkStruct_0200B144 * param1, u32 param2, u32 param3)
+void sub_02013A4C (UnkStruct_02013A04 *param0, const UnkStruct_0200B144 * param1, u32 param2, u32 param3)
 {
     u32 v0;
 
@@ -51,7 +51,7 @@ void sub_02013A4C (UnkStruct_02013A04 * param0, const UnkStruct_0200B144 * param
     }
 }
 
-void sub_02013A6C (UnkStruct_02013A04 * param0, const UnkStruct_02023790 * param1, u32 param2)
+void sub_02013A6C (UnkStruct_02013A04 *param0, const UnkStruct_02023790 * param1, u32 param2)
 {
     u32 v0;
 
@@ -63,7 +63,7 @@ void sub_02013A6C (UnkStruct_02013A04 * param0, const UnkStruct_02023790 * param
     }
 }
 
-void sub_02013A90 (UnkStruct_02013A04 * param0, const UnkStruct_02013A04 * param1)
+void sub_02013A90 (UnkStruct_02013A04 *param0, const UnkStruct_02013A04 * param1)
 {
     u32 v0;
 
@@ -75,7 +75,7 @@ void sub_02013A90 (UnkStruct_02013A04 * param0, const UnkStruct_02013A04 * param
     }
 }
 
-static UnkStruct_02013A04 * sub_02013AAC (UnkStruct_02013A04 * param0, u32 * param1)
+static UnkStruct_02013A04 *sub_02013AAC (UnkStruct_02013A04 *param0, u32 * param1)
 {
     UnkStruct_02013A04 * v0;
 
@@ -99,7 +99,7 @@ static UnkStruct_02013A04 * sub_02013AAC (UnkStruct_02013A04 * param0, u32 * par
     return v0;
 }
 
-void sub_02013AE8 (UnkStruct_02013A04 * param0)
+void sub_02013AE8 (UnkStruct_02013A04 *param0)
 {
     UnkStruct_02013A04 * v0 = param0;
 

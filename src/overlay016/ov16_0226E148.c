@@ -21,9 +21,9 @@ typedef struct {
     s16 unk_06;
 } UnkStruct_ov16_0226E148;
 
-static void ov16_0226E188(UnkStruct_0201CD38 * param0, void * param1);
+static void ov16_0226E188(UnkStruct_0201CD38 *param0, void * param1);
 
-UnkStruct_0201CD38 * ov16_0226E148 (UnkStruct_0207ADB4 * param0)
+UnkStruct_0201CD38 *ov16_0226E148 (UnkStruct_0207ADB4 * param0)
 {
     UnkStruct_ov16_0226E148 * v0;
     UnkStruct_0201CD38 * v1;
@@ -37,7 +37,7 @@ UnkStruct_0201CD38 * ov16_0226E148 (UnkStruct_0207ADB4 * param0)
     return v1;
 }
 
-void ov16_0226E174 (UnkStruct_0201CD38 * param0)
+void ov16_0226E174 (UnkStruct_0201CD38 *param0)
 {
     UnkStruct_ov16_0226E148 * v0;
 
@@ -47,7 +47,7 @@ void ov16_0226E174 (UnkStruct_0201CD38 * param0)
     sub_0200DA58(param0);
 }
 
-static void ov16_0226E188 (UnkStruct_0201CD38 * param0, void * param1)
+static void ov16_0226E188 (UnkStruct_0201CD38 *param0, void * param1)
 {
     UnkStruct_ov16_0226E148 * v0 = param1;
     UnkStruct_ov16_02268A14 * v1;

@@ -17,9 +17,9 @@ typedef struct UnkStruct_ov104_0223D5F0_t {
 
 static u32 ov104_0223D720(u32 param0, BOOL param1);
 static u32 ov104_0223D744(u32 param0, BOOL param1);
-static void ov104_0223D708(UnkStruct_02014014 * param0);
+static void ov104_0223D708(UnkStruct_02014014 *param0);
 
-UnkStruct_ov104_0223D5F0 * ov104_0223D5D0 (int param0)
+UnkStruct_ov104_0223D5F0 *ov104_0223D5D0 (int param0)
 {
     UnkStruct_ov104_0223D5F0 * v0;
 
@@ -32,7 +32,7 @@ UnkStruct_ov104_0223D5F0 * ov104_0223D5D0 (int param0)
     return v0;
 }
 
-void ov104_0223D5F0 (UnkStruct_ov104_0223D5F0 * param0)
+void ov104_0223D5F0 (UnkStruct_ov104_0223D5F0 *param0)
 {
     int v0;
     void * v1;
@@ -46,7 +46,7 @@ void ov104_0223D5F0 (UnkStruct_ov104_0223D5F0 * param0)
     Heap_FreeToHeap(param0);
 }
 
-UnkStruct_02014014 * ov104_0223D614 (UnkStruct_ov104_0223D5F0 * param0, int param1, int param2, int param3)
+UnkStruct_02014014 *ov104_0223D614 (UnkStruct_ov104_0223D5F0 * param0, int param1, int param2, int param3)
 {
     UnkStruct_02014014 * v0;
     void * v1;
@@ -69,7 +69,7 @@ UnkStruct_02014014 * ov104_0223D614 (UnkStruct_ov104_0223D5F0 * param0, int para
     return v0;
 }
 
-void ov104_0223D68C (UnkStruct_ov104_0223D5F0 * param0, int param1)
+void ov104_0223D68C (UnkStruct_ov104_0223D5F0 *param0, int param1)
 {
     GF_ASSERT(param0->unk_00[param1] != NULL);
 
@@ -98,13 +98,13 @@ int ov104_0223D6A8 (void)
     return 1;
 }
 
-UnkStruct_02014014 * ov104_0223D6D0 (UnkStruct_ov104_0223D5F0 * param0, int param1)
+UnkStruct_02014014 *ov104_0223D6D0 (UnkStruct_ov104_0223D5F0 * param0, int param1)
 {
     GF_ASSERT(param0->unk_00[param1] != NULL);
     return param0->unk_00[param1];
 }
 
-BOOL ov104_0223D6E4 (UnkStruct_ov104_0223D5F0 * param0)
+BOOL ov104_0223D6E4 (UnkStruct_ov104_0223D5F0 *param0)
 {
     int v0;
 
@@ -119,7 +119,7 @@ BOOL ov104_0223D6E4 (UnkStruct_ov104_0223D5F0 * param0)
     return 1;
 }
 
-static void ov104_0223D708 (UnkStruct_02014014 * param0)
+static void ov104_0223D708 (UnkStruct_02014014 *param0)
 {
     void * v0;
 

@@ -10,7 +10,7 @@
 #include "heap.h"
 #include "unk_0201CCF0.h"
 
-UnkStruct_0201CD38 * sub_0200679C (UnkFuncPtr_0201CE28 param0, int param1, u32 param2, const u32 param3)
+UnkStruct_0201CD38 *sub_0200679C (UnkFuncPtr_0201CE28 param0, int param1, u32 param2, const u32 param3)
 {
     void * v0;
 
@@ -29,7 +29,7 @@ UnkStruct_0201CD38 * sub_0200679C (UnkFuncPtr_0201CE28 param0, int param1, u32 p
     return sub_0200D9E8(param0, v0, param2);
 }
 
-void sub_020067D0 (UnkStruct_0201CD38 * param0)
+void sub_020067D0 (UnkStruct_0201CD38 *param0)
 {
     void * v0;
 

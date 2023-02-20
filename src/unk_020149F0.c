@@ -17,7 +17,7 @@ struct UnkStruct_020149F0_t {
     UnkStruct_02023790 * unk_04;
 };
 
-UnkStruct_020149F0 * sub_020149F0 (u32 param0)
+UnkStruct_020149F0 *sub_020149F0 (u32 param0)
 {
     static const u16 v0[] = {
         0x11f,
@@ -34,7 +34,7 @@ UnkStruct_020149F0 * sub_020149F0 (u32 param0)
     return v1;
 }
 
-void sub_02014A20 (UnkStruct_020149F0 * param0)
+void sub_02014A20 (UnkStruct_020149F0 *param0)
 {
     GF_ASSERT(param0 != NULL);
 
@@ -47,7 +47,7 @@ void sub_02014A20 (UnkStruct_020149F0 * param0)
     }
 }
 
-void sub_02014A40 (UnkStruct_020149F0 * param0, u32 param1)
+void sub_02014A40 (UnkStruct_020149F0 *param0, u32 param1)
 {
     GF_ASSERT(param0 != NULL);
 

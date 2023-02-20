@@ -12,7 +12,7 @@ typedef struct UnkStruct_ov63_0222BCE8_t {
     UnkUnion_ov63_0222BDAC * unk_04;
 } UnkStruct_ov63_0222BCE8;
 
-UnkStruct_ov63_0222BCE8 * ov63_0222BCE8 (u16 param0, u16 param1, u32 param2)
+UnkStruct_ov63_0222BCE8 *ov63_0222BCE8 (u16 param0, u16 param1, u32 param2)
 {
     UnkStruct_ov63_0222BCE8 * v0;
 
@@ -29,7 +29,7 @@ UnkStruct_ov63_0222BCE8 * ov63_0222BCE8 (u16 param0, u16 param1, u32 param2)
     return v0;
 }
 
-void ov63_0222BD30 (UnkStruct_ov63_0222BCE8 * param0)
+void ov63_0222BD30 (UnkStruct_ov63_0222BCE8 *param0)
 {
     GF_ASSERT(param0);
     Heap_FreeToHeap(param0->unk_04);
@@ -46,7 +46,7 @@ u16 ov63_0222BD4C (const UnkStruct_ov63_0222BCE8 * param0)
     return param0->unk_02;
 }
 
-void ov63_0222BD50 (UnkStruct_ov63_0222BCE8 * param0, const UnkUnion_ov63_0222BDAC * param1)
+void ov63_0222BD50 (UnkStruct_ov63_0222BCE8 *param0, const UnkUnion_ov63_0222BDAC * param1)
 {
     GF_ASSERT(param0);
     memcpy(param0->unk_04, param1, sizeof(UnkUnion_ov63_0222BDAC) * (param0->unk_00 * param0->unk_02));

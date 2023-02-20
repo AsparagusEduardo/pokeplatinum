@@ -22,8 +22,8 @@
 #include "unk_02079D40.h"
 #include "party.h"
 
-static int sub_020284E8(UnkStruct_0202818C * param0, int param1);
-static int sub_02028510(UnkStruct_0202818C * param0, int param1);
+static int sub_020284E8(UnkStruct_0202818C *param0, int param1);
+static int sub_02028510(UnkStruct_0202818C *param0, int param1);
 static UnkStruct_0202818C * sub_02028538(UnkStruct_02028430 * param0, int param1, int param2);
 
 static const struct {
@@ -42,7 +42,7 @@ static const struct {
     {0x1E6, 0x222, 0x1DF, 0x5}
 };
 
-void sub_02028124 (UnkStruct_0202818C * param0)
+void sub_02028124 (UnkStruct_0202818C *param0)
 {
     int v0;
 
@@ -65,7 +65,7 @@ void sub_02028124 (UnkStruct_0202818C * param0)
     }
 }
 
-BOOL sub_0202817C (UnkStruct_0202818C * param0)
+BOOL sub_0202817C (UnkStruct_0202818C *param0)
 {
     if ((param0->unk_07 >= 0) && (param0->unk_07 <= 11)) {
         return 1;
@@ -74,7 +74,7 @@ BOOL sub_0202817C (UnkStruct_0202818C * param0)
     return 0;
 }
 
-UnkStruct_0202818C * sub_0202818C (int param0)
+UnkStruct_0202818C *sub_0202818C (int param0)
 {
     UnkStruct_0202818C * v0;
 
@@ -84,12 +84,12 @@ UnkStruct_0202818C * sub_0202818C (int param0)
     return v0;
 }
 
-void sub_020281A0 (UnkStruct_0202818C * param0, UnkStruct_0202818C * param1)
+void sub_020281A0 (UnkStruct_0202818C *param0, UnkStruct_0202818C * param1)
 {
     MI_CpuCopy8(param0, param1, sizeof(UnkStruct_0202818C));
 }
 
-void sub_020281AC (UnkStruct_0202818C * param0, u8 param1, u8 param2, UnkStruct_021C0794 * param3)
+void sub_020281AC (UnkStruct_0202818C *param0, u8 param1, u8 param2, UnkStruct_021C0794 * param3)
 {
     u8 v0, v1, v2, v3;
     u16 v4;
@@ -143,7 +143,7 @@ u32 sub_02028308 (const UnkStruct_0202818C * param0)
     return param0->unk_00;
 }
 
-u16 * sub_0202830C (UnkStruct_0202818C * param0)
+u16 *sub_0202830C (UnkStruct_0202818C * param0)
 {
     return &(param0->unk_08[0]);
 }
@@ -158,7 +158,7 @@ u8 sub_02028314 (const UnkStruct_0202818C * param0)
     return param0->unk_07;
 }
 
-void sub_02028318 (UnkStruct_0202818C * param0, const u8 param1)
+void sub_02028318 (UnkStruct_0202818C *param0, const u8 param1)
 {
     if (param1 >= 12) {
         return;
@@ -218,7 +218,7 @@ u16 sub_02028408 (const UnkStruct_0202818C * param0)
     return param0->unk_1E;
 }
 
-UnkStruct_02014A84 * sub_0202840C (UnkStruct_0202818C * param0, u8 param1)
+UnkStruct_02014A84 *sub_0202840C (UnkStruct_0202818C * param0, u8 param1)
 {
     if (param1 < 3) {
         return &(param0->unk_20[param1]);
@@ -227,7 +227,7 @@ UnkStruct_02014A84 * sub_0202840C (UnkStruct_0202818C * param0, u8 param1)
     }
 }
 
-void sub_0202841C (UnkStruct_0202818C * param0, UnkStruct_02014A84 * param1, u8 param2)
+void sub_0202841C (UnkStruct_0202818C *param0, UnkStruct_02014A84 * param1, u8 param2)
 {
     if (param2 >= 3) {
         return;
@@ -236,7 +236,7 @@ void sub_0202841C (UnkStruct_0202818C * param0, UnkStruct_02014A84 * param1, u8 
     sub_02014CC0(&param0->unk_20[param2], param1);
 }
 
-UnkStruct_02028430 * sub_02028430 (UnkStruct_021C0794 * param0)
+UnkStruct_02028430 *sub_02028430 (UnkStruct_021C0794 * param0)
 {
     return sub_020245BC(param0, 15);
 }
@@ -246,7 +246,7 @@ int sub_0202843C (void)
     return sizeof(UnkStruct_0202818C) * 20;
 }
 
-void sub_02028444 (UnkStruct_02028430 * param0)
+void sub_02028444 (UnkStruct_02028430 *param0)
 {
     int v0 = 0;
 
@@ -255,7 +255,7 @@ void sub_02028444 (UnkStruct_02028430 * param0)
     }
 }
 
-int sub_0202845C (UnkStruct_02028430 * param0, int param1)
+int sub_0202845C (UnkStruct_02028430 *param0, int param1)
 {
     switch (param1) {
     case 0:
@@ -267,7 +267,7 @@ int sub_0202845C (UnkStruct_02028430 * param0, int param1)
     return 0xFFFFFFFF;
 }
 
-void sub_02028470 (UnkStruct_02028430 * param0, int param1, int param2)
+void sub_02028470 (UnkStruct_02028430 *param0, int param1, int param2)
 {
     UnkStruct_0202818C * v0 = NULL;
 
@@ -278,7 +278,7 @@ void sub_02028470 (UnkStruct_02028430 * param0, int param1, int param2)
     }
 }
 
-void sub_02028480 (UnkStruct_02028430 * param0, int param1, int param2, UnkStruct_0202818C * param3)
+void sub_02028480 (UnkStruct_02028430 *param0, int param1, int param2, UnkStruct_0202818C * param3)
 {
     UnkStruct_0202818C * v0 = NULL;
 
@@ -289,7 +289,7 @@ void sub_02028480 (UnkStruct_02028430 * param0, int param1, int param2, UnkStruc
     }
 }
 
-int sub_02028494 (UnkStruct_02028430 * param0, int param1)
+int sub_02028494 (UnkStruct_02028430 *param0, int param1)
 {
     switch (param1) {
     case 0:
@@ -301,7 +301,7 @@ int sub_02028494 (UnkStruct_02028430 * param0, int param1)
     return 0;
 }
 
-UnkStruct_0202818C * sub_020284A8 (UnkStruct_02028430 * param0, int param1, int param2, int param3)
+UnkStruct_0202818C *sub_020284A8 (UnkStruct_02028430 * param0, int param1, int param2, int param3)
 {
     UnkStruct_0202818C * v0 = NULL;
     UnkStruct_0202818C * v1;
@@ -316,7 +316,7 @@ UnkStruct_0202818C * sub_020284A8 (UnkStruct_02028430 * param0, int param1, int 
     return v1;
 }
 
-void sub_020284CC (UnkStruct_02028430 * param0, int param1, int param2, UnkStruct_0202818C * param3)
+void sub_020284CC (UnkStruct_02028430 *param0, int param1, int param2, UnkStruct_0202818C * param3)
 {
     UnkStruct_0202818C * v0 = NULL;
 
@@ -329,7 +329,7 @@ void sub_020284CC (UnkStruct_02028430 * param0, int param1, int param2, UnkStruc
     }
 }
 
-static int sub_020284E8 (UnkStruct_0202818C * param0, int param1)
+static int sub_020284E8 (UnkStruct_0202818C *param0, int param1)
 {
     int v0 = 0;
 
@@ -342,7 +342,7 @@ static int sub_020284E8 (UnkStruct_0202818C * param0, int param1)
     return 0xFFFFFFFF;
 }
 
-static int sub_02028510 (UnkStruct_0202818C * param0, int param1)
+static int sub_02028510 (UnkStruct_0202818C *param0, int param1)
 {
     int v0 = 0;
     int v1 = 0;
@@ -356,7 +356,7 @@ static int sub_02028510 (UnkStruct_0202818C * param0, int param1)
     return v1;
 }
 
-static UnkStruct_0202818C * sub_02028538 (UnkStruct_02028430 * param0, int param1, int param2)
+static UnkStruct_0202818C *sub_02028538 (UnkStruct_02028430 *param0, int param1, int param2)
 {
     UnkStruct_0202818C * v0 = NULL;
 

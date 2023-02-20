@@ -14,7 +14,7 @@ typedef struct UnkStruct_ov5_021E2310_t {
     UnkStruct_ov5_021E20E8 * unk_00;
 } UnkStruct_ov5_021E2310;
 
-UnkStruct_ov5_021E2310 * ov5_021E22B0 (int param0, int param1)
+UnkStruct_ov5_021E2310 *ov5_021E22B0 (int param0, int param1)
 {
     UnkStruct_ov5_021E2310 * v0;
 

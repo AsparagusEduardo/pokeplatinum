@@ -22,11 +22,11 @@ typedef struct {
     VecFx16 unk_0C;
 } UnkStruct_02091B78;
 
-static void sub_02091850(UnkStruct_02091850 * param0);
-static void sub_020918CC(VecFx16 * param0, VecFx16 * param1);
-static void sub_020918EC(UnkStruct_0208D7BC * param0);
+static void sub_02091850(UnkStruct_02091850 *param0);
+static void sub_020918CC(VecFx16 *param0, VecFx16 * param1);
+static void sub_020918EC(UnkStruct_0208D7BC *param0);
 static void sub_02091B78(const UnkStruct_02091B78 * param0, VecFx16 * param1, u8 param2);
-static void sub_02091BD4(VecFx16 * param0, VecFx16 * param1, VecFx16 * param2);
+static void sub_02091BD4(VecFx16 *param0, VecFx16 * param1, VecFx16 * param2);
 
 static const UnkStruct_02091B78 Unk_020F4FFC[][4] = {
     {
@@ -119,7 +119,7 @@ static const UnkStruct_02091B78 Unk_020F4FFC[][4] = {
     }
 };
 
-void sub_020916B4 (UnkStruct_0208D7BC * param0)
+void sub_020916B4 (UnkStruct_0208D7BC *param0)
 {
     NNS_G3dInit();
 
@@ -140,7 +140,7 @@ void sub_020916B4 (UnkStruct_0208D7BC * param0)
     G2_SetBG0Priority(2);
 }
 
-void sub_02091750 (UnkStruct_0208D7BC * param0)
+void sub_02091750 (UnkStruct_0208D7BC *param0)
 {
     if (param0->unk_6A4 == 4) {
         sub_020241B4();
@@ -163,7 +163,7 @@ void sub_02091750 (UnkStruct_0208D7BC * param0)
     G3_SwapBuffers(GX_SORTMODE_MANUAL, GX_BUFFERMODE_Z);
 }
 
-void sub_020917B0 (UnkStruct_0208D7BC * param0)
+void sub_020917B0 (UnkStruct_0208D7BC *param0)
 {
     sub_020203B8(param0->unk_2B4.unk_00);
     sub_02016114(param0->unk_2B4.unk_30, 0);
@@ -171,7 +171,7 @@ void sub_020917B0 (UnkStruct_0208D7BC * param0)
     sub_02007B6C(param0->unk_2B4.unk_04);
 }
 
-void sub_020917E0 (UnkStruct_0208D7BC * param0)
+void sub_020917E0 (UnkStruct_0208D7BC *param0)
 {
     VecFx32 v0 = {0, 0, 0x10000};
     UnkStruct_ov115_0226527C v1 = {0, 0, 0};
@@ -186,7 +186,7 @@ void sub_020917E0 (UnkStruct_0208D7BC * param0)
     sub_020203D4(param0->unk_2B4.unk_00);
 }
 
-static void sub_02091850 (UnkStruct_02091850 * param0)
+static void sub_02091850 (UnkStruct_02091850 *param0)
 {
     G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, GX_CULL_NONE, 18, 20, 0);
     G3_Begin(GX_BEGIN_QUADS);
@@ -209,14 +209,14 @@ static void sub_02091850 (UnkStruct_02091850 * param0)
     G3_End();
 }
 
-static void sub_020918CC (VecFx16 * param0, VecFx16 * param1)
+static void sub_020918CC (VecFx16 *param0, VecFx16 * param1)
 {
     param0->x += param1->x;
     param0->y += param1->y;
     param0->z += param1->z;
 }
 
-static void sub_020918EC (UnkStruct_0208D7BC * param0)
+static void sub_020918EC (UnkStruct_0208D7BC *param0)
 {
     u32 v0;
 
@@ -247,7 +247,7 @@ static void sub_020918EC (UnkStruct_0208D7BC * param0)
     }
 }
 
-void sub_020919E8 (UnkStruct_0208D7BC * param0)
+void sub_020919E8 (UnkStruct_0208D7BC *param0)
 {
     u32 v0;
 
@@ -291,14 +291,14 @@ static void sub_02091B78 (const UnkStruct_02091B78 * param0, VecFx16 * param1, u
     }
 }
 
-static void sub_02091BD4 (VecFx16 * param0, VecFx16 * param1, VecFx16 * param2)
+static void sub_02091BD4 (VecFx16 *param0, VecFx16 * param1, VecFx16 * param2)
 {
     param2->x = FX_F32_TO_FX16(FX_FX16_TO_F32(param1->x - param0->x) / 4);
     param2->y = FX_F32_TO_FX16(FX_FX16_TO_F32(param1->y - param0->y) / 4);
     param2->z = FX_F32_TO_FX16(FX_FX16_TO_F32(param1->z - param0->z) / 4);
 }
 
-void sub_02091D50 (UnkStruct_0208D7BC * param0)
+void sub_02091D50 (UnkStruct_0208D7BC *param0)
 {
     u32 v0;
 
@@ -332,7 +332,7 @@ void sub_02091D50 (UnkStruct_0208D7BC * param0)
     param0->unk_410 = 0;
 }
 
-void sub_02091F8C (UnkStruct_0208D7BC * param0)
+void sub_02091F8C (UnkStruct_0208D7BC *param0)
 {
     UnkStruct_02008A90 v0;
     void * v1;
@@ -355,7 +355,7 @@ void sub_02091F8C (UnkStruct_0208D7BC * param0)
     sub_02007DEC(param0->unk_2B4.unk_34, 35, param0->unk_2B4.unk_38);
 }
 
-void sub_02092028 (UnkStruct_0208D7BC * param0)
+void sub_02092028 (UnkStruct_0208D7BC *param0)
 {
     if (param0->unk_250.unk_50_28 != 0) {
         sub_020789F4(param0->unk_6A0, param0->unk_2B4.unk_30, param0->unk_2B4.unk_34, 0, 2, param0->unk_2B4.unk_38, 0);
@@ -365,7 +365,7 @@ void sub_02092028 (UnkStruct_0208D7BC * param0)
     }
 }
 
-void sub_02092098 (UnkStruct_0208D7BC * param0)
+void sub_02092098 (UnkStruct_0208D7BC *param0)
 {
     sub_02016114(param0->unk_2B4.unk_30, 0);
     sub_02007B6C(param0->unk_2B4.unk_04);

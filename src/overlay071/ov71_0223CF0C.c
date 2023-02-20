@@ -56,7 +56,7 @@ static const UnkStruct_ov71_0223D73C Unk_ov71_0223D6FC[] = {
 
 static void ov71_0223D2F4(void);
 
-void ov71_0223CF0C (UnkStruct_ov71_0223D238 * param0, NARC * param1)
+void ov71_0223CF0C (UnkStruct_ov71_0223D238 *param0, NARC * param1)
 {
     int v0;
 
@@ -101,7 +101,7 @@ void ov71_0223CF0C (UnkStruct_ov71_0223D238 * param0, NARC * param1)
     GXLayers_EngineAToggleLayers(GX_PLANEMASK_OBJ, 1);
 }
 
-void ov71_0223D070 (UnkStruct_ov71_0223D238 * param0, const u8 * param1)
+void ov71_0223D070 (UnkStruct_ov71_0223D238 *param0, const u8 * param1)
 {
     int v0;
     UnkStruct_ov19_021DA864 v1;
@@ -177,7 +177,7 @@ void ov71_0223D070 (UnkStruct_ov71_0223D238 * param0, const u8 * param1)
     }
 }
 
-void ov71_0223D238 (UnkStruct_ov71_0223D238 * param0)
+void ov71_0223D238 (UnkStruct_ov71_0223D238 *param0)
 {
     u8 v0;
 
@@ -198,7 +198,7 @@ void ov71_0223D238 (UnkStruct_ov71_0223D238 * param0)
     sub_0201F8B4();
 }
 
-void ov71_0223D298 (UnkStruct_ov71_0223D238 * param0, const u8 param1, const u8 param2)
+void ov71_0223D298 (UnkStruct_ov71_0223D238 *param0, const u8 param1, const u8 param2)
 {
     NNSG2dImagePaletteProxy * v0;
     u32 v1;

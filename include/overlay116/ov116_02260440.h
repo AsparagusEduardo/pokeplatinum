@@ -6,6 +6,6 @@
 
 const UnkStruct_02039A58 * ov116_0226049C(void);
 int ov116_022604A4(void);
-void ov116_022604A8(UnkStruct_ov116_0226139C * param0);
+void ov116_022604A8(UnkStruct_ov116_0226139C *param0);
 
 #endif // POKEPLATINUM_OV116_02260440_H

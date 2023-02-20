@@ -22,9 +22,9 @@ typedef struct {
     u8 unk_03;
 } UnkStruct_ov6_02246F00;
 
-static BOOL ov6_02246F40(UnkStruct_020508D4 * param0);
+static BOOL ov6_02246F40(UnkStruct_020508D4 *param0);
 
-void ov6_02246F00 (UnkStruct_0203CDB0 * param0, const u8 param1, const u8 param2)
+void ov6_02246F00 (UnkStruct_0203CDB0 *param0, const u8 param1, const u8 param2)
 {
     BOOL v0;
 
@@ -43,7 +43,7 @@ void ov6_02246F00 (UnkStruct_0203CDB0 * param0, const u8 param1, const u8 param2
     }
 }
 
-static BOOL ov6_02246F40 (UnkStruct_020508D4 * param0)
+static BOOL ov6_02246F40 (UnkStruct_020508D4 *param0)
 {
     UnkStruct_0203CDB0 * v0 = sub_02050A60(param0);
     UnkStruct_ov6_02246F00 * v1 = (UnkStruct_ov6_02246F00 *)sub_02050A64(param0);

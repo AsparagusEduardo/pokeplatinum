@@ -23,7 +23,7 @@
 #include "party.h"
 #include "overlay005/ov5_021E622C.h"
 
-BOOL sub_0204CA84 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CA84 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_021C0794 * v1 = v0->unk_0C;
@@ -34,7 +34,7 @@ BOOL sub_0204CA84 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CAA4 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CAA4 (UnkStruct_0203E724 *param0)
 {
     u16 * v0;
     UnkStruct_0203CDB0 * v1 = param0->unk_34;
@@ -48,7 +48,7 @@ BOOL sub_0204CAA4 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CAD4 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CAD4 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_021C0794 * v1 = v0->unk_0C;
@@ -60,7 +60,7 @@ BOOL sub_0204CAD4 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CAEC (UnkStruct_0203E724 * param0)
+BOOL sub_0204CAEC (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_021C0794 * v1 = v0->unk_0C;
@@ -72,7 +72,7 @@ BOOL sub_0204CAEC (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CB20 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CB20 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02026310 * v1;
@@ -89,7 +89,7 @@ BOOL sub_0204CB20 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CB80 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CB80 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_02026310 * v1;
@@ -104,7 +104,7 @@ BOOL sub_0204CB80 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CBD4 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CBD4 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_021C0794 * v1 = v0->unk_0C;
@@ -119,7 +119,7 @@ BOOL sub_0204CBD4 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CC24 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CC24 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     Party * v1;
@@ -134,7 +134,7 @@ BOOL sub_0204CC24 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CC78 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CC78 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_021C0794 * v1 = v0->unk_0C;
@@ -150,7 +150,7 @@ BOOL sub_0204CC78 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CCB8 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CCB8 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_021C0794 * v1 = v0->unk_0C;
@@ -164,7 +164,7 @@ BOOL sub_0204CCB8 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CD44 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CD44 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_021C0794 * v1 = v0->unk_0C;
@@ -177,7 +177,7 @@ BOOL sub_0204CD44 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CD74 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CD74 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     UnkStruct_021C0794 * v1 = v0->unk_0C;
@@ -190,7 +190,7 @@ BOOL sub_0204CD74 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CDA4 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CDA4 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     u16 * v1 = inline_0204FCAC(param0);
@@ -198,19 +198,19 @@ BOOL sub_0204CDA4 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-BOOL sub_0204CDBC (UnkStruct_0203E724 * param0)
+BOOL sub_0204CDBC (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     return 0;
 }
 
-BOOL sub_0204CDC0 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CDC0 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     return 0;
 }
 
-BOOL sub_0204CDC4 (UnkStruct_0203E724 * param0)
+BOOL sub_0204CDC4 (UnkStruct_0203E724 *param0)
 {
     UnkStruct_0203CDB0 * v0 = param0->unk_34;
     u16 * v1 = inline_0204FCAC(param0);

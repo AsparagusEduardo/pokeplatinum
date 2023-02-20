@@ -16,12 +16,12 @@ typedef struct {
     BOOL unk_1C;
 } UnkStruct_021BF454;
 
-static void sub_0200AA78(UnkStruct_021BF454 * param0, const u8 param1, const s16 param2, const s16 param3, const int param4, const u32 param5);
+static void sub_0200AA78(UnkStruct_021BF454 *param0, const u8 param1, const s16 param2, const s16 param3, const int param4, const u32 param5);
 
 static UnkStruct_021BF454 Unk_021BF454;
 static UnkStruct_021BF454 Unk_021BF434;
 
-static void sub_0200A9DC (UnkStruct_021BF454 * param0)
+static void sub_0200A9DC (UnkStruct_021BF454 *param0)
 {
     UnkStruct_0200A9DC * v0;
     BOOL v1;
@@ -58,7 +58,7 @@ static void sub_0200A9DC (UnkStruct_021BF454 * param0)
     }
 }
 
-static void sub_0200AA78 (UnkStruct_021BF454 * param0, const u8 param1, const s16 param2, const s16 param3, const int param4, const u32 param5)
+static void sub_0200AA78 (UnkStruct_021BF454 *param0, const u8 param1, const s16 param2, const s16 param3, const int param4, const u32 param5)
 {
     UnkStruct_0200A9DC * v0;
 

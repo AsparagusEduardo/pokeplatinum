@@ -12,12 +12,12 @@
 #include "overlay019/struct_ov19_021D5DF8_decl.h"
 #include "overlay019/struct_ov19_021D5FAC.h"
 
-int ov19_021D0D80(UnkStruct_020067E8 * param0, int * param1);
-int ov19_021D0DEC(UnkStruct_020067E8 * param0, int * param1);
-int ov19_021D0E58(UnkStruct_020067E8 * param0, int * param1);
+int ov19_021D0D80(UnkStruct_020067E8 *param0, int * param1);
+int ov19_021D0DEC(UnkStruct_020067E8 *param0, int * param1);
+int ov19_021D0E58(UnkStruct_020067E8 *param0, int * param1);
 BOOL ov19_021D3B18(const UnkStruct_ov19_021D5DF8 * param0);
 BOOL ov19_021D3B20(const UnkStruct_ov19_021D5DF8 * param0);
-UnkStruct_0200B144 * ov19_021D5DE8(const UnkStruct_ov19_021D5DF8 * param0);
+UnkStruct_0200B144 *ov19_021D5DE8(const UnkStruct_ov19_021D5DF8 * param0);
 const UnkStruct_0200B358 * ov19_021D5DF0(const UnkStruct_ov19_021D5DF8 * param0);
 int ov19_021D5DF8(const UnkStruct_ov19_021D5DF8 * param0);
 u32 ov19_021D5E08(const UnkStruct_ov19_021D4DF0 * param0);
@@ -36,7 +36,7 @@ u32 ov19_021D5E74(const UnkStruct_ov19_021D4DF0 * param0);
 const UnkStruct_ov19_021D4F5C * ov19_021D5E8C(const UnkStruct_ov19_021D4DF0 * param0);
 const UnkStruct_020797DC * ov19_021D5E90(const UnkStruct_ov19_021D4DF0 * param0);
 u32 ov19_021D5E94(const UnkStruct_ov19_021D4DF0 * param0);
-UnkStruct_02073C74_sub1 * ov19_021D5E9C(const UnkStruct_ov19_021D4DF0 * param0);
+UnkStruct_02073C74_sub1 *ov19_021D5E9C(const UnkStruct_ov19_021D4DF0 * param0);
 u32 ov19_021D5EA0(const UnkStruct_ov19_021D4DF0 * param0);
 u32 ov19_021D5EA8(const UnkStruct_ov19_021D4DF0 * param0);
 s32 ov19_021D5EB0(const UnkStruct_ov19_021D4DF0 * param0);

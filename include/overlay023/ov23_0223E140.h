@@ -7,7 +7,7 @@
 
 #include <nitro/math.h>
 
-void ov23_0223E1E4(void * param0, UnkStruct_0203CDB0 * param1);
+void ov23_0223E1E4(void *param0, UnkStruct_0203CDB0 * param1);
 int ov23_0223E2E8(void);
 void ov23_0223E2F0(void);
 void ov23_0223E2F4(void);
@@ -33,7 +33,7 @@ void ov23_02241364(void);
 void ov23_022413A0(int param0, int param1, void * param2, void * param3);
 void ov23_0224142C(int param0, int param1, void * param2, void * param3);
 int ov23_022414D0(void);
-BOOL ov23_022415B8(UnkStruct_02023790 * param0);
+BOOL ov23_022415B8(UnkStruct_02023790 *param0);
 void ov23_0224160C(void);
 BOOL ov23_0224162C(int param0);
 void ov23_02241648(int param0);

@@ -172,7 +172,7 @@ __attribute__((aligned(4))) static const u16 Unk_ov16_02270134[][3] = {
     0x45
 };
 
-void ov16_02268520 (UnkStruct_ov16_02268520 * param0)
+void ov16_02268520 (UnkStruct_ov16_02268520 *param0)
 {
     UnkStruct_0200C6E4 * v0;
     UnkStruct_0200C704 * v1;
@@ -211,7 +211,7 @@ void ov16_02268520 (UnkStruct_ov16_02268520 * param0)
     NARC_dtor(v10);
 }
 
-void ov16_0226862C (UnkStruct_ov16_02268520 * param0)
+void ov16_0226862C (UnkStruct_ov16_02268520 *param0)
 {
     UnkStruct_0200C6E4 * v0;
     UnkStruct_0200C704 * v1;
@@ -225,7 +225,7 @@ void ov16_0226862C (UnkStruct_ov16_02268520 * param0)
     sub_0200D324(param0->unk_00->unk_00);
 }
 
-void ov16_02268660 (UnkStruct_ov16_02268520 * param0)
+void ov16_02268660 (UnkStruct_ov16_02268520 *param0)
 {
     if (param0->unk_00 == NULL) {
         return;
@@ -235,7 +235,7 @@ void ov16_02268660 (UnkStruct_ov16_02268520 * param0)
     param0->unk_00 = NULL;
 }
 
-void ov16_02268674 (UnkStruct_ov16_02268520 * param0)
+void ov16_02268674 (UnkStruct_ov16_02268520 *param0)
 {
     UnkStruct_0200C704 * v0;
     int v1, v2, v3;
@@ -258,7 +258,7 @@ void ov16_02268674 (UnkStruct_ov16_02268520 * param0)
     sub_0200D0A0(v0, v3);
 }
 
-void ov16_022686BC (UnkStruct_ov16_02268520 * param0, int param1)
+void ov16_022686BC (UnkStruct_ov16_02268520 *param0, int param1)
 {
     if (param0->unk_00 == NULL) {
         return;
@@ -267,7 +267,7 @@ void ov16_022686BC (UnkStruct_ov16_02268520 * param0, int param1)
     sub_0200D3F4(param0->unk_00, param1);
 }
 
-void ov16_022686CC (UnkStruct_ov16_02268520 * param0, UnkStruct_0207ADB4 * param1, u16 param2, int param3)
+void ov16_022686CC (UnkStruct_ov16_02268520 *param0, UnkStruct_0207ADB4 * param1, u16 param2, int param3)
 {
     MI_CpuClearFast(param0, sizeof(UnkStruct_ov16_02268520));
 
@@ -284,7 +284,7 @@ void ov16_022686CC (UnkStruct_ov16_02268520 * param0, UnkStruct_0207ADB4 * param
     ov16_0226862C(param0);
 }
 
-void ov16_02268700 (UnkStruct_ov16_02268520 * param0)
+void ov16_02268700 (UnkStruct_ov16_02268520 *param0)
 {
     ov16_02268660(param0);
     ov16_02268674(param0);

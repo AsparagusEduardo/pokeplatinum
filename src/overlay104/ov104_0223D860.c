@@ -16,17 +16,17 @@
 
 typedef BOOL (* UnkFuncPtr_ov104_022418A8)(UnkStruct_0209B75C *, UnkStruct_ov104_0223C634 *);
 
-static void ov104_0223D898(UnkStruct_0209B75C * param0, UnkStruct_ov104_0223C634 * param1);
-void ov104_0223D860(UnkStruct_0209B75C * param0, u16 param1, u8 param2, s16 param3[], int param4);
-void ov104_0223D8C4(UnkStruct_0209B75C * param0);
-static BOOL ov104_0223D8F0(UnkStruct_0209B75C * param0, UnkStruct_ov104_0223C634 * param1);
+static void ov104_0223D898(UnkStruct_0209B75C *param0, UnkStruct_ov104_0223C634 * param1);
+void ov104_0223D860(UnkStruct_0209B75C *param0, u16 param1, u8 param2, s16 param3[], int param4);
+void ov104_0223D8C4(UnkStruct_0209B75C *param0);
+static BOOL ov104_0223D8F0(UnkStruct_0209B75C *param0, UnkStruct_ov104_0223C634 * param1);
 
 static const UnkFuncPtr_ov104_022418A8 Unk_ov104_022418A8[] = {
     NULL,
     ov104_0223D8F0
 };
 
-void ov104_0223D860 (UnkStruct_0209B75C * param0, u16 param1, u8 param2, s16 param3[], int param4)
+void ov104_0223D860 (UnkStruct_0209B75C *param0, u16 param1, u8 param2, s16 param3[], int param4)
 {
     UnkStruct_ov104_0223C634 * v0;
     int v1;
@@ -41,7 +41,7 @@ void ov104_0223D860 (UnkStruct_0209B75C * param0, u16 param1, u8 param2, s16 par
     }
 }
 
-static void ov104_0223D898 (UnkStruct_0209B75C * param0, UnkStruct_ov104_0223C634 * param1)
+static void ov104_0223D898 (UnkStruct_0209B75C *param0, UnkStruct_ov104_0223C634 * param1)
 {
     int v0;
 
@@ -56,7 +56,7 @@ static void ov104_0223D898 (UnkStruct_0209B75C * param0, UnkStruct_ov104_0223C63
     }
 }
 
-void ov104_0223D8C4 (UnkStruct_0209B75C * param0)
+void ov104_0223D8C4 (UnkStruct_0209B75C *param0)
 {
     UnkStruct_ov104_0223C634 * v0;
     int v1;
@@ -72,7 +72,7 @@ void ov104_0223D8C4 (UnkStruct_0209B75C * param0)
     }
 }
 
-static BOOL ov104_0223D8F0 (UnkStruct_0209B75C * param0, UnkStruct_ov104_0223C634 * param1)
+static BOOL ov104_0223D8F0 (UnkStruct_0209B75C *param0, UnkStruct_ov104_0223C634 * param1)
 {
     UnkStruct_ov104_0223D8F0 * v0 = &param1->unk_26;
     UnkStruct_ov63_0222CCB8 v1;

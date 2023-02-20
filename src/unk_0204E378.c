@@ -9,7 +9,7 @@
 
 #include "unk_0204E378.h"
 
-BOOL sub_0204E378 (UnkStruct_0203E724 * param0)
+BOOL sub_0204E378 (UnkStruct_0203E724 *param0)
 {
     u16 v0 = inline_02049538(param0);
     u16 * v1 = inline_0204FCAC(param0);
