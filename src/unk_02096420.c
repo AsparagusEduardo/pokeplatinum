@@ -14,15 +14,15 @@
 
 #include "constants/species.h"
 
-static u8 sub_02096F34(Pokemon *mon, u32 param1);
-static u8 sub_02096F84(Pokemon *mon, u32 param1, u32 param2);
-static u8 sub_02097004(Pokemon *mon, u32 param1, u32 param2);
-static void sub_020970AC(Pokemon *mon, u32 param1, u32 param2, u32 param3);
+static u8 sub_02096F34(Pokemon * mon, u32 param1);
+static u8 sub_02096F84(Pokemon * mon, u32 param1, u32 param2);
+static u8 sub_02097004(Pokemon * mon, u32 param1, u32 param2);
+static void sub_020970AC(Pokemon * mon, u32 param1, u32 param2, u32 param3);
 static s32 sub_020970EC(s32 param0, s32 param1, s32 param2);
-static u8 sub_020971D0(Pokemon *mon, s32 param1, s32 param2, u16 param3, u32 param4);
-static u8 sub_02097144(Pokemon *mon, UnkStruct_0207D3B0 * param1);
+static u8 sub_020971D0(Pokemon * mon, s32 param1, s32 param2, u16 param3, u32 param4);
+static u8 sub_02097144(Pokemon * mon, UnkStruct_0207D3B0 * param1);
 
-u8 sub_02096420 (Pokemon *mon, u16 param1, u16 param2, u32 param3)
+u8 sub_02096420 (Pokemon * mon, u16 param1, u16 param2, u32 param3)
 {
     UnkStruct_0207D3B0 * v0;
     s32 v1[8];
@@ -264,11 +264,11 @@ u8 sub_02096420 (Pokemon *mon, u16 param1, u16 param2, u32 param3)
 
 u8 sub_0209693C (Party * param0, u16 param1, u8 param2, u8 param3, u32 param4)
 {
-    Pokemon *v0 = Party_GetPokemonBySlotIndex(param0, param2);
+    Pokemon * v0 = Party_GetPokemonBySlotIndex(param0, param2);
     return sub_02096420(v0, param1, param3, param4);
 }
 
-u8 sub_02096954 (Pokemon *param0, u16 param1, u16 param2, u16 param3, u32 param4)
+u8 sub_02096954 (Pokemon * param0, u16 param1, u16 param2, u16 param3, u32 param4)
 {
     UnkStruct_0207D3B0 * v0;
     s32 v1[8];
@@ -530,12 +530,12 @@ u8 sub_02096954 (Pokemon *param0, u16 param1, u16 param2, u16 param3, u32 param4
 
 u8 sub_02096F14 (Party * param0, u16 param1, u8 param2, u8 param3, u16 param4, u32 param5)
 {
-    Pokemon *v0 = Party_GetPokemonBySlotIndex(param0, param2);
+    Pokemon * v0 = Party_GetPokemonBySlotIndex(param0, param2);
 
     return sub_02096954(v0, param1, param3, param4, param5);
 }
 
-static u8 sub_02096F34 (Pokemon *param0, u32 param1)
+static u8 sub_02096F34 (Pokemon * param0, u32 param1)
 {
     u16 v0;
     u8 v1;
@@ -557,7 +557,7 @@ static u8 sub_02096F34 (Pokemon *param0, u32 param1)
     return 0;
 }
 
-static u8 sub_02096F84 (Pokemon *param0, u32 param1, u32 param2)
+static u8 sub_02096F84 (Pokemon * param0, u32 param1, u32 param2)
 {
     u16 v0;
     u8 v1;
@@ -590,7 +590,7 @@ static u8 sub_02096F84 (Pokemon *param0, u32 param1, u32 param2)
     return 0;
 }
 
-static u8 sub_02097004 (Pokemon *param0, u32 param1, u32 param2)
+static u8 sub_02097004 (Pokemon * param0, u32 param1, u32 param2)
 {
     u16 v0;
     u8 v1;
@@ -626,7 +626,7 @@ static u8 sub_02097004 (Pokemon *param0, u32 param1, u32 param2)
     return 1;
 }
 
-static void sub_020970AC (Pokemon *param0, u32 param1, u32 param2, u32 param3)
+static void sub_020970AC (Pokemon * param0, u32 param1, u32 param2, u32 param3)
 {
     if (param2 == 1) {
         param3 = 1;
@@ -676,7 +676,7 @@ static s32 sub_020970EC (s32 param0, s32 param1, s32 param2)
     return param0;
 }
 
-static u8 sub_02097144 (Pokemon *param0, UnkStruct_0207D3B0 * param1)
+static u8 sub_02097144 (Pokemon * param0, UnkStruct_0207D3B0 * param1)
 {
     s32 v0;
     s32 v1;
@@ -716,7 +716,7 @@ static u8 sub_02097144 (Pokemon *param0, UnkStruct_0207D3B0 * param1)
     return 0;
 }
 
-static u8 sub_020971D0 (Pokemon *param0, s32 param1, s32 param2, u16 param3, u32 param4)
+static u8 sub_020971D0 (Pokemon * param0, s32 param1, s32 param2, u16 param3, u32 param4)
 {
     if ((param1 == 255) && (param2 > 0)) {
         return 0;
@@ -758,7 +758,7 @@ void sub_02097284 (Party * param0)
 {
     int v0, v1, v2;
     u32 v3;
-    Pokemon *v4;
+    Pokemon * v4;
 
     v2 = Party_GetCurrentCount(param0);
 

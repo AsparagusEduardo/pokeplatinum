@@ -90,7 +90,7 @@ void sub_0202EFB8 (UnkStruct_02024440 * param0, u32 param1)
     OS_GetMacAddress(param0->unk_380);
 }
 
-void sub_0202F000 (const UnkStruct_02024440 * param0, int param1, Pokemon *mon)
+void sub_0202F000 (const UnkStruct_02024440 * param0, int param1, Pokemon * mon)
 {
     GF_ASSERT(param1 < 6);
     *mon = param0->unk_00[param1];

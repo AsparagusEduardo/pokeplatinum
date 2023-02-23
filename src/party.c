@@ -51,7 +51,7 @@ void Party_InitWithCapacity (Party *party, int capacity)
     }
 }
 
-BOOL Party_AddPokemon(Party *party, Pokemon *mon)
+BOOL Party_AddPokemon(Party *party, Pokemon * mon)
 {
     if (party->currentCount >= party->capacity)
         return FALSE;
@@ -90,13 +90,13 @@ int Party_GetCurrentCount (const Party *party)
     return party->currentCount;
 }
 
-Pokemon *Party_GetPokemonBySlotIndex (const Party *party, int slot)
+Pokemon * Party_GetPokemonBySlotIndex (const Party *party, int slot)
 {
     PARTY_ASSERT_SLOT(party, slot);
     return (Pokemon *)&party->pokemon[slot];
 }
 
-void sub_0207A128 (Party *party, int slot, Pokemon *mon)
+void sub_0207A128 (Party *party, int slot, Pokemon * mon)
 {
     int v0;
 
@@ -109,7 +109,7 @@ void sub_0207A128 (Party *party, int slot, Pokemon *mon)
 
 BOOL Party_SwapSlots(Party *party, int slotA, int slotB)
 {
-    Pokemon *tempPokemon;
+    Pokemon * tempPokemon;
 
     PARTY_ASSERT_SLOT(party, slotA);
     PARTY_ASSERT_SLOT(party, slotB);

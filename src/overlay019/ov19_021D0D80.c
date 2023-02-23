@@ -142,7 +142,7 @@ typedef struct UnkStruct_ov19_021D5DF8_t {
     UnkStruct_0200B144 * unk_194;
     UnkStruct_0200B144 * unk_198;
     UnkStruct_0200B358 * unk_19C;
-    Pokemon *unk_1A0;
+    Pokemon * unk_1A0;
     UnkStruct_020279FC * unk_1A4;
     int (* unk_1A8)(struct UnkStruct_ov19_021D5DF8_t * param0);
     void (* unk_1AC)(struct UnkStruct_ov19_021D5DF8_t * param0, u32 * param1);
@@ -2169,7 +2169,7 @@ static void ov19_021D3294 (UnkStruct_ov19_021D5DF8 * param0, u32 * param1)
 
 static BOOL ov19_021D34E4 (UnkStruct_ov19_021D5DF8 * param0)
 {
-    Pokemon *v0;
+    Pokemon * v0;
     int v1, v2, v3;
     BOOL v4;
 

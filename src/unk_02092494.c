@@ -18,7 +18,7 @@
 #include "unk_02073C2C.h"
 #include "unk_02092494.h"
 
-static int sub_02092E8C(Pokemon *mon, BOOL param1, int param2);
+static int sub_02092E8C(Pokemon * mon, BOOL param1, int param2);
 static void sub_02092878(UnkStruct_02090800 * param0);
 static void sub_020928A0(UnkStruct_02090800 * param0, int param1);
 static void sub_020929C0(UnkStruct_02090800 * param0, int param1);
@@ -32,7 +32,7 @@ static void sub_02093368(BoxPokemon *boxMon, int param1);
 static void sub_020933C8(BoxPokemon *boxMon);
 static void sub_020933E8(BoxPokemon *boxMon);
 
-UnkStruct_02090800 * sub_02092494 (Pokemon *mon, BOOL param1, int param2)
+UnkStruct_02090800 * sub_02092494 (Pokemon * mon, BOOL param1, int param2)
 {
     UnkStruct_02090800 * v0;
 
@@ -638,7 +638,7 @@ static void sub_02092E4C (UnkStruct_02090800 * param0)
     sub_0200B1B8(param0->unk_04, v1, param0->unk_34.unk_04);
 }
 
-static int sub_02092E8C (Pokemon *mon, BOOL param1, int param2)
+static int sub_02092E8C (Pokemon * mon, BOOL param1, int param2)
 {
     int v0 = 0;
 
@@ -722,7 +722,7 @@ static int sub_02092E8C (Pokemon *mon, BOOL param1, int param2)
     return v0;
 }
 
-void sub_0209304C (Pokemon *mon, UnkStruct_02025E6C * param1, int param2, int param3, int param4)
+void sub_0209304C (Pokemon * mon, UnkStruct_02025E6C * param1, int param2, int param3, int param4)
 {
     sub_0209305C(&mon->box, param1, param2, param3, param4);
 }

@@ -12,7 +12,7 @@
 #include "unk_02056720.h"
 #include "unk_02073C2C.h"
 
-void sub_0202F180 (UnkStruct_021C0794 * param0, const Pokemon *mon)
+void sub_0202F180 (UnkStruct_021C0794 * param0, const Pokemon * mon)
 {
     if (GetMonData((Pokemon *)mon, MON_DATA_IS_EGG, NULL) == FALSE) {
         UnkStruct_02026324 * v0 = sub_02027560(param0);

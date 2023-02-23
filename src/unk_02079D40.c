@@ -571,7 +571,7 @@ u32 sub_02079D40(const BoxPokemon *boxMon)
     return v1;
 }
 
-u32 sub_02079D80(Pokemon *mon)
+u32 sub_02079D80(Pokemon * mon)
 {
     return sub_02079D40((const BoxPokemon *)sub_02076B10(mon));
 }
@@ -690,7 +690,7 @@ const u8 sub_02079F84 (const BoxPokemon *boxMon)
     return sub_02079EDC(species, v2, isEgg);
 }
 
-const u8 sub_02079FC4 (Pokemon *mon)
+const u8 sub_02079FC4 (Pokemon * mon)
 {
     return sub_02079F84((const BoxPokemon *)sub_02076B10(mon));
 }

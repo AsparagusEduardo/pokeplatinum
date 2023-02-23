@@ -105,7 +105,7 @@ struct UnkStruct_ov5_021F6704_t {
 static u16 * ov5_021F65FC(int param0, int param1, int * param2);
 BOOL ov5_021F6454(UnkStruct_0203E724 * param0);
 static BOOL ov5_021F65D4(UnkStruct_0203E724 * param0);
-static void ov5_021F70CC(Pokemon *param0, int * param1, int * param2);
+static void ov5_021F70CC(Pokemon * param0, int * param1, int * param2);
 BOOL ov5_021F71B8(UnkStruct_0203E724 * param0);
 BOOL ov5_021F7208(UnkStruct_0203E724 * param0);
 BOOL ov5_021F72B8(UnkStruct_0203E724 * param0);
@@ -459,7 +459,7 @@ BOOL ov5_021F6B3C (UnkStruct_0203E724 * param0)
 {
     u8 v0;
     u32 v1[6];
-    Pokemon *v2;
+    Pokemon * v2;
     UnkStruct_0203CDB0 * v3 = param0->unk_34;
     u16 v4 = inline_02049538(param0);
     u16 * v5 = inline_0204FCAC(param0);
@@ -502,7 +502,7 @@ BOOL ov5_021F6B3C (UnkStruct_0203E724 * param0)
 
 BOOL ov5_021F6C60 (UnkStruct_0203E724 * param0)
 {
-    Pokemon *mon;
+    Pokemon * mon;
     Party *party;
     int partyCount, i, v4;
     int species, form;
@@ -568,7 +568,7 @@ BOOL ov5_021F6C60 (UnkStruct_0203E724 * param0)
 
 BOOL ov5_021F6D80 (UnkStruct_0203E724 * param0)
 {
-    Pokemon *mon;
+    Pokemon * mon;
     Party *party;
     int species, form;
     u32 v4;
@@ -624,7 +624,7 @@ BOOL ov5_021F6D80 (UnkStruct_0203E724 * param0)
 
 BOOL ov5_021F6E50 (UnkStruct_0203E724 * param0)
 {
-    Pokemon *v0;
+    Pokemon * v0;
     UnkStruct_0203CDB0 * v1 = param0->unk_34;
     u16 v2 = inline_02049538(param0);
     u16 v3 = inline_02049538(param0);
@@ -639,7 +639,7 @@ BOOL ov5_021F6E9C (UnkStruct_0203E724 * param0)
 {
     u32 v0, v1, v2;
     int v3, v4, v5;
-    Pokemon *v6;
+    Pokemon * v6;
     Party * v7;
     UnkStruct_0203CDB0 * v8 = param0->unk_34;
     u16 * v9 = inline_0204FCAC(param0);
@@ -673,7 +673,7 @@ BOOL ov5_021F6F44 (UnkStruct_0203E724 * param0)
 {
     u32 v0, v1;
     u16 v2, v3;
-    Pokemon *v4;
+    Pokemon * v4;
     Party * v5;
     UnkStruct_0203CDB0 * v6 = param0->unk_34;
     u16 v7 = inline_02049538(param0);
@@ -694,7 +694,7 @@ BOOL ov5_021F6FC0 (UnkStruct_0203E724 * param0)
 {
     u16 v0;
     int v1, v2;
-    Pokemon *v3;
+    Pokemon * v3;
     UnkStruct_0203CDB0 * v4 = param0->unk_34;
     u16 v5 = inline_02049538(param0);
     u16 * v6 = inline_0204FCAC(param0);
@@ -731,7 +731,7 @@ BOOL ov5_021F6FC0 (UnkStruct_0203E724 * param0)
     return 0;
 }
 
-static void ov5_021F70CC (Pokemon *param0, int * param1, int * param2)
+static void ov5_021F70CC (Pokemon * param0, int * param1, int * param2)
 {
     int v0;
     int v1;
@@ -765,7 +765,7 @@ static void ov5_021F70CC (Pokemon *param0, int * param1, int * param2)
 BOOL ov5_021F71B8 (UnkStruct_0203E724 * param0)
 {
     UnkStruct_0202783C * v0;
-    Pokemon *v1;
+    Pokemon * v1;
     UnkStruct_0203CDB0 * v2 = param0->unk_34;
 
     v1 = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(v2->unk_0C), 0);
@@ -779,7 +779,7 @@ BOOL ov5_021F7208 (UnkStruct_0203E724 * param0)
 {
     int v0, v1, v2;
     UnkStruct_0202783C * v3;
-    Pokemon *v4;
+    Pokemon * v4;
     UnkStruct_0203CDB0 * v5 = param0->unk_34;
     u16 * v6 = inline_0204FCAC(param0);
     u16 * v7 = inline_0204FCAC(param0);
@@ -797,7 +797,7 @@ BOOL ov5_021F7208 (UnkStruct_0203E724 * param0)
 
 BOOL ov5_021F7270 (UnkStruct_0203E724 * param0)
 {
-    Pokemon *v0;
+    Pokemon * v0;
     Party * v1;
     UnkStruct_0203CDB0 * v2 = param0->unk_34;
     u16 v3 = inline_02049538(param0);
