@@ -2,7 +2,7 @@
 #include <string.h>
 
 #include "struct_defs/pokemon.h"
-#include "struct_defs/struct_02073C74_sub1.h"
+#include "struct_defs/box_pokemon.h"
 
 #include "unk_02073C2C.h"
 #include "unk_02079D40.h"
