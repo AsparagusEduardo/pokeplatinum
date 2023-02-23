@@ -26,7 +26,7 @@
 #include "struct_defs/struct_020279FC.h"
 #include "struct_defs/struct_0203CC84.h"
 #include "struct_defs/struct_0205AA50.h"
-#include "struct_defs/struct_02073C74.h"
+#include "struct_defs/pokemon.h"
 #include "struct_defs/struct_02073C74_sub1.h"
 #include "struct_defs/struct_0208BE5C.h"
 #include "struct_defs/struct_02099F80.h"

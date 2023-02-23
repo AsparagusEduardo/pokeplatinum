@@ -16,7 +16,7 @@
 #include "struct_decls/struct_02075874_decl.h"
 #include "struct_decls/struct_02078B40_decl.h"
 #include "struct_decls/struct_party_decl.h"
-#include "struct_defs/struct_02073C74.h"
+#include "struct_defs/pokemon.h"
 #include "overlay005/struct_ov5_021DE5D0.h"
 
 #include <nitro/rtc.h>

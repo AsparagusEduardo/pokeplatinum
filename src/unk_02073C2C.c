@@ -20,7 +20,7 @@
 #include "struct_defs/struct_0200D0F4.h"
 #include "struct_defs/struct_0202818C.h"
 #include "struct_defs/struct_0202CA28.h"
-#include "struct_defs/struct_02073C74.h"
+#include "struct_defs/pokemon.h"
 #include "struct_defs/struct_02073C74_sub1.h"
 #include "struct_defs/struct_02073C74_sub2_t.h"
 #include "struct_defs/struct_02075454.h"

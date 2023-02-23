@@ -9,7 +9,7 @@
 #include "struct_defs/struct_0202F298.h"
 #include "struct_defs/struct_0202F298_sub1.h"
 #include "struct_defs/struct_0202F41C.h"
-#include "struct_defs/struct_02073C74.h"
+#include "struct_defs/pokemon.h"
 #include "overlay006/struct_ov6_02240D5C.h"
 
 #include "unk_02002B7C.h"

@@ -7,7 +7,7 @@
 #include "struct_decls/struct_0203CDB0_decl.h"
 #include "struct_decls/struct_0206D140_decl.h"
 #include "struct_decls/struct_021C0794_decl.h"
-#include "struct_defs/struct_02073C74.h"
+#include "struct_defs/pokemon.h"
 #include "overlay006/struct_ov6_022465F4_decl.h"
 
 int sub_0206CD00(int param0, UnkStruct_0203CDB0 * param1, UnkStruct_0200B358 * param2, UnkStruct_ov6_022465F4 * param3, u16 * param4);

@@ -1,7 +1,7 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_defs/struct_02073C74.h"
+#include "struct_defs/pokemon.h"
 
 #include "struct_defs/struct_020997B8.h"
 

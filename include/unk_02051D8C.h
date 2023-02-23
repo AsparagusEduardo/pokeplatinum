@@ -8,7 +8,7 @@
 #include "struct_decls/struct_party_decl.h"
 #include "struct_decls/struct_0207D99C_decl.h"
 #include "struct_decls/struct_021C0794_decl.h"
-#include "struct_defs/struct_02073C74.h"
+#include "struct_defs/pokemon.h"
 #include "struct_defs/struct_0209C370.h"
 #include "overlay006/struct_ov6_02240D5C.h"
 

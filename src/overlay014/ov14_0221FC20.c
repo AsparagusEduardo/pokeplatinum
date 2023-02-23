@@ -8,7 +8,7 @@
 #include "overlay014/struct_ov14_0221FC20_decl.h"
 #include "overlay016/struct_ov16_0224B9DC_decl.h"
 
-#include "struct_defs/struct_02073C74.h"
+#include "struct_defs/pokemon.h"
 #include "struct_defs/struct_0207ADB4_t.h"
 #include "overlay014/struct_ov14_0221FC20_t.h"
 #include "overlay016/struct_ov16_0224B9DC_t.h"

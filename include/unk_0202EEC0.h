@@ -3,7 +3,7 @@
 
 #include "struct_decls/struct_02024440_decl.h"
 #include "struct_defs/struct_02073C74_sub1.h"
-#include "struct_defs/struct_02073C74.h"
+#include "struct_defs/pokemon.h"
 
 int sub_0202EEC0(void);
 void sub_0202EEC8(UnkStruct_02024440 * param0);

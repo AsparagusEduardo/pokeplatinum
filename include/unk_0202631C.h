@@ -3,7 +3,7 @@
 
 #include "struct_decls/struct_02026324_decl.h"
 #include "struct_decls/struct_021C0794_decl.h"
-#include "struct_defs/struct_02073C74.h"
+#include "struct_defs/pokemon.h"
 
 int sub_0202631C(void);
 UnkStruct_02026324 * sub_02026324(u32 param0);

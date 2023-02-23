@@ -29,7 +29,7 @@
 #include "struct_defs/struct_020127E8.h"
 #include "struct_defs/struct_0201EE28.h"
 #include "struct_defs/struct_0205AA50.h"
-#include "struct_defs/struct_02073C74.h"
+#include "struct_defs/pokemon.h"
 #include "struct_defs/struct_02075874.h"
 #include "struct_defs/struct_0207A9CC.h"
 #include "struct_defs/struct_0207ADB4_t.h"

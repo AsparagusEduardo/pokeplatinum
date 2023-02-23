@@ -9,7 +9,7 @@
 #include "struct_defs/struct_02073C74_sub1.h"
 #include "struct_decls/struct_party_decl.h"
 #include "struct_decls/struct_021C0794_decl.h"
-#include "struct_defs/struct_02073C74.h"
+#include "struct_defs/pokemon.h"
 
 u8 ov5_021E6238(UnkStruct_02026310 * param0);
 int ov5_021E6270(UnkStruct_02026310 * param0);
