@@ -116,7 +116,7 @@ static const s8 Unk_020F0695[][5] = {
 };
 
 void sub_02073C2C(Pokemon * param0);
-void sub_02073C54(BoxPokemon * boxMon);
+void ZeroBoxMonData(BoxPokemon * boxMon);
 int sub_02073C70(void);
 Pokemon * AllocMonZeroed(u32 param0);
 BOOL sub_02073C88(Pokemon * param0);
@@ -259,7 +259,7 @@ void sub_02073C2C (Pokemon * mon)
     sub_0207822C(&mon->unk_08, sizeof(UnkStruct_02073C74_sub2), mon->box.personality);
 }
 
-void sub_02073C54 (BoxPokemon * boxMon)
+void ZeroBoxMonData (BoxPokemon * boxMon)
 {
     MI_CpuClearFast(boxMon, sizeof(BoxPokemon));
     sub_0207822C(boxMon->unk_08, sizeof(PokemonSubstruct0) * 4, boxMon->unk_06);
@@ -385,7 +385,7 @@ void sub_02073E18 (BoxPokemon * boxMon, int param1, int param2, int param3, int 
     u32 v1, v2;
     BOOL v3;
 
-    sub_02073C54(boxMon);
+    ZeroBoxMonData(boxMon);
 
     v3 = sub_02073D20(boxMon);
 

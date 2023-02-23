@@ -836,7 +836,7 @@ void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
     u8 v5[10 + 1];
     u16 v6[12];
 
-    sub_02073C54(boxMon);
+    ZeroBoxMonData(boxMon);
 
     v0 = sub_02073D20(boxMon);
     value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_PERSONALITY, NULL);

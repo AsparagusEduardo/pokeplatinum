@@ -22,7 +22,7 @@
 #include <nitro/rtc.h>
 
 void sub_02073C2C(Pokemon * param0);
-void sub_02073C54(BoxPokemon * boxMon);
+void ZeroBoxMonData(BoxPokemon * boxMon);
 int sub_02073C70(void);
 Pokemon * AllocMonZeroed(u32 param0);
 BOOL sub_02073C88(Pokemon * param0);
