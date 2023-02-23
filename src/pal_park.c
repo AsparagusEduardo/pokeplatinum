@@ -205,7 +205,7 @@ struct {
     { 0x1A4, SPECIES_CHERUBI }
 };
 
-void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon *boxMon);
+void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon);
 
 static u16 Unk_ov97_0223ECA0[] = {
 	0x10,
@@ -798,7 +798,7 @@ u32 ov97_02236E00 (BoxPokemonGBA *boxMonGBA)
     return sub_02075B78(species, exp);
 }
 
-static int ov97_02236E28 (BoxPokemonGBA *boxMonGBA, BoxPokemon *boxMon)
+static int ov97_02236E28 (BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
 {
     int v0;
     int v1;
@@ -827,7 +827,7 @@ static int ov97_02236E28 (BoxPokemonGBA *boxMonGBA, BoxPokemon *boxMon)
     return v1;
 }
 
-void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon *boxMon)
+void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
 {
     BOOL v0;
     u32 value;

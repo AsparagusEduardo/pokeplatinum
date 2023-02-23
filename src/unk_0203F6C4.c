@@ -8283,7 +8283,7 @@ static u32 sub_0204676C (UnkStruct_021C0794 * param0)
 {
     int v0;
     Pokemon * v1;
-    BoxPokemon *v2;
+    BoxPokemon * v2;
     u32 v3;
 
     v3 = 0;
