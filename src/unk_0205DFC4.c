@@ -264,7 +264,7 @@ u16 sub_0205E1B4 (UnkStruct_021C0794 * param0)
 BOOL HasAllLegendaryTitansInParty(UnkStruct_021C0794 * param0)
 {
     int i, j, partyCount, titansInParty = 0;
-    Party *party;
+    Party * party;
     static const u16 titans[] = {SPECIES_REGIROCK, SPECIES_REGICE, SPECIES_REGISTEEL};
     u16 partySpecies[PARTY_SIZE];
 

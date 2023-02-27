@@ -4187,7 +4187,7 @@ BOOL sub_02077B14 (Pokemon * mon)
     return 0;
 }
 
-void sub_02077B8C(Party *party)
+void sub_02077B8C(Party * party)
 {
     int i, partyCount, species, currentForm;
     Pokemon * mon;

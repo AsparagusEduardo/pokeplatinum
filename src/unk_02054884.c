@@ -81,7 +81,7 @@ void sub_02054988 (Party * param0, int param1, int param2, u16 param3)
     sub_020771F8(Party_GetPokemonBySlotIndex(param0, param1), param3, param2);
 }
 
-int Party_PartyMonKnowsMove(Party *party, u16 move)
+int Party_PartyMonKnowsMove(Party * party, u16 move)
 {
     int i, partyCount;
     Pokemon * mon;

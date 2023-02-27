@@ -503,7 +503,7 @@ BOOL ov5_021F6B3C (UnkStruct_0203E724 * param0)
 BOOL ov5_021F6C60 (UnkStruct_0203E724 * param0)
 {
     Pokemon * mon;
-    Party *party;
+    Party * party;
     int partyCount, i, v4;
     int species, form;
     u32 v7;
@@ -569,7 +569,7 @@ BOOL ov5_021F6C60 (UnkStruct_0203E724 * param0)
 BOOL ov5_021F6D80 (UnkStruct_0203E724 * param0)
 {
     Pokemon * mon;
-    Party *party;
+    Party * party;
     int species, form;
     u32 v4;
     int item;

@@ -36,7 +36,7 @@ void sub_0207A008 (Party * param0)
     Party_InitWithCapacity(param0, 6);
 }
 
-void Party_InitWithCapacity (Party *party, int capacity)
+void Party_InitWithCapacity (Party * party, int capacity)
 {
     int i;
 
@@ -51,7 +51,7 @@ void Party_InitWithCapacity (Party *party, int capacity)
     }
 }
 
-BOOL Party_AddPokemon(Party *party, Pokemon * mon)
+BOOL Party_AddPokemon(Party * party, Pokemon * mon)
 {
     if (party->currentCount >= party->capacity)
         return FALSE;
@@ -62,7 +62,7 @@ BOOL Party_AddPokemon(Party *party, Pokemon * mon)
     return TRUE;
 }
 
-BOOL Party_RemovePokemonBySlotIndex (Party *party, int slot)
+BOOL Party_RemovePokemonBySlotIndex (Party * party, int slot)
 {
     int i;
 
@@ -80,23 +80,23 @@ BOOL Party_RemovePokemonBySlotIndex (Party *party, int slot)
     return TRUE;
 }
 
-int Party_GetCapacity (const Party *party)
+int Party_GetCapacity (const Party * party)
 {
     return party->capacity;
 }
 
-int Party_GetCurrentCount (const Party *party)
+int Party_GetCurrentCount (const Party * party)
 {
     return party->currentCount;
 }
 
-Pokemon * Party_GetPokemonBySlotIndex (const Party *party, int slot)
+Pokemon * Party_GetPokemonBySlotIndex (const Party * party, int slot)
 {
     PARTY_ASSERT_SLOT(party, slot);
     return (Pokemon *)&party->pokemon[slot];
 }
 
-void sub_0207A128 (Party *party, int slot, Pokemon * mon)
+void sub_0207A128 (Party * party, int slot, Pokemon * mon)
 {
     int v0;
 
@@ -107,7 +107,7 @@ void sub_0207A128 (Party *party, int slot, Pokemon * mon)
     party->currentCount += v0;
 }
 
-BOOL Party_SwapSlots(Party *party, int slotA, int slotB)
+BOOL Party_SwapSlots(Party * party, int slotA, int slotB)
 {
     Pokemon * tempPokemon;
 
@@ -130,7 +130,7 @@ void Party_cpy(const Party *src, Party *dest)
     *dest = *src;
 }
 
-BOOL Party_HasSpecies(const Party *party, int species)
+BOOL Party_HasSpecies(const Party * party, int species)
 {
     int i;
 
@@ -145,7 +145,7 @@ BOOL Party_HasSpecies(const Party *party, int species)
 
 Party *Party_GetFromSavedata(UnkStruct_021C0794 *param0)
 {
-    Party *party;
+    Party * party;
 
     party = (Party *)sub_020245BC(param0, 2);
     return party;
