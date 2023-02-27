@@ -115,9 +115,9 @@ static const s8 Unk_020F0695[][5] = {
     { 0x0, 0x0, 0x0, 0x0, 0x0 },
 };
 
-void sub_02073C2C(Pokemon * param0);
+void ZeroMonData(Pokemon * param0);
 void ZeroBoxMonData(BoxPokemon * boxMon);
-int sub_02073C70(void);
+int SizeOfStructPokemon(void);
 Pokemon * AllocMonZeroed(u32 param0);
 BOOL sub_02073C88(Pokemon * param0);
 BOOL sub_02073CD4(Pokemon * param0, BOOL param1);
@@ -251,7 +251,7 @@ int sub_020788D0(int param0);
 static void sub_02076300(UnkStruct_02008A90 * param0, u16 species, u8 param2, u8 param3, u8 param4, u8 param5, u32 param6);
 static u8 sub_020767BC(u16 param0, u8 param1, u8 param2, u8 param3, u32 param4);
 
-void sub_02073C2C (Pokemon * mon)
+void ZeroMonData (Pokemon * mon)
 {
     MI_CpuClearFast(mon, sizeof(Pokemon));
 
@@ -265,7 +265,7 @@ void ZeroBoxMonData (BoxPokemon * boxMon)
     sub_0207822C(boxMon->unk_08, sizeof(PokemonSubstruct0) * 4, boxMon->unk_06);
 }
 
-int sub_02073C70 (void)
+int SizeOfStructPokemon (void)
 {
     return sizeof(Pokemon);
 }
@@ -275,7 +275,7 @@ Pokemon * AllocMonZeroed (u32 param0)
     Pokemon * v0;
 
     v0 = Heap_AllocFromHeap(param0, sizeof(Pokemon));
-    sub_02073C2C(v0);
+    ZeroMonData(v0);
 
     return v0;
 }
@@ -358,7 +358,7 @@ void sub_02073D80 (Pokemon * mon, int param1, int param2, int param3, int param4
     UnkStruct_0202818C * v1;
     UnkStruct_0202CA28 v2;
 
-    sub_02073C2C(mon);
+    ZeroMonData(mon);
 
     sub_02073E18((BoxPokemon *)&mon->box, param1, param2, param3, param4, param5, param6, param7);
     sub_0207822C(&mon->unk_08, sizeof(PartyPokemon), 0);

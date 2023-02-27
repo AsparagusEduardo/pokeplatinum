@@ -12,18 +12,18 @@
 #include "struct_decls/struct_02015F84_decl.h"
 #include "struct_decls/struct_02025E6C_decl.h"
 #include "struct_decls/struct_0202CC84_decl.h"
+#include "struct_defs/pokemon.h"
 #include "struct_defs/box_pokemon.h"
 #include "struct_decls/struct_02075874_decl.h"
 #include "struct_decls/struct_02078B40_decl.h"
 #include "struct_decls/struct_party_decl.h"
-#include "struct_defs/pokemon.h"
 #include "overlay005/struct_ov5_021DE5D0.h"
 
 #include <nitro/rtc.h>
 
-void sub_02073C2C(Pokemon * param0);
+void ZeroMonData(Pokemon * param0);
 void ZeroBoxMonData(BoxPokemon * boxMon);
-int sub_02073C70(void);
+int SizeOfStructPokemon(void);
 Pokemon * AllocMonZeroed(u32 param0);
 BOOL sub_02073C88(Pokemon * param0);
 BOOL sub_02073CD4(Pokemon * param0, BOOL param1);

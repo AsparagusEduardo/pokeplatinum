@@ -6,10 +6,10 @@
 #include "struct_decls/struct_02026218_decl.h"
 #include "struct_decls/struct_02026310_decl.h"
 #include "struct_decls/struct_0203CDB0_decl.h"
+#include "struct_defs/pokemon.h"
 #include "struct_defs/box_pokemon.h"
 #include "struct_decls/struct_party_decl.h"
 #include "struct_decls/struct_021C0794_decl.h"
-#include "struct_defs/pokemon.h"
 
 u8 ov5_021E6238(UnkStruct_02026310 * param0);
 int ov5_021E6270(UnkStruct_02026310 * param0);
