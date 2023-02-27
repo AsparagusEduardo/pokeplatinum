@@ -1,7 +1,7 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "overlay012/ov12_022384F0.h"
+#include "overlay012/is_form_symmetrical.h"
 
 #include "constants/species.h"
 
