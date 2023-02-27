@@ -1,5 +1,5 @@
-#ifndef POKEPLATINUM_STRUCT_02075454_2_H
-#define POKEPLATINUM_STRUCT_02075454_2_H
+#ifndef POKEPLATINUM_POKEMON_SUBSTRUCT_2_H
+#define POKEPLATINUM_POKEMON_SUBSTRUCT_2_H
 
 typedef struct PokemonSubstruct2_t {
     u16 unk_00[11];
@@ -8,4 +8,4 @@ typedef struct PokemonSubstruct2_t {
     u64 unk_18;
 } PokemonSubstruct2;
 
-#endif // POKEPLATINUM_STRUCT_02075454_2_H
+#endif // POKEPLATINUM_POKEMON_SUBSTRUCT_2_H

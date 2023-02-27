@@ -1,6 +1,6 @@
 #ifndef POKEPLATINUM_STRUCT_02073C74_SUB2_DECL_H
 #define POKEPLATINUM_STRUCT_02073C74_SUB2_DECL_H
 
-typedef struct UnkStruct_02073C74_sub2_t UnkStruct_02073C74_sub2;
+typedef struct UnkStruct_02073C74_sub2_t PartyPokemon;
 
 #endif // POKEPLATINUM_STRUCT_02073C74_SUB2_DECL_H

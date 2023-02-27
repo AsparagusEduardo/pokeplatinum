@@ -1,5 +1,5 @@
-#ifndef POKEPLATINUM_STRUCT_02075454_H
-#define POKEPLATINUM_STRUCT_02075454_H
+#ifndef POKEPLATINUM_POKEMON_SUBSTRUCT_0_H
+#define POKEPLATINUM_POKEMON_SUBSTRUCT_0_H
 
 typedef struct PokemonSubstruct0_t {
     u16 species;
@@ -25,4 +25,4 @@ typedef struct PokemonSubstruct0_t {
     u32 unk_1C;
 } PokemonSubstruct0;
 
-#endif // POKEPLATINUM_STRUCT_02075454_H
+#endif // POKEPLATINUM_POKEMON_SUBSTRUCT_0_H

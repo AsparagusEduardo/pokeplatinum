@@ -1,5 +1,5 @@
-#ifndef POKEPLATINUM_STRUCT_02073C74_H
-#define POKEPLATINUM_STRUCT_02073C74_H
+#ifndef POKEPLATINUM_STRUCT_POKEMON_H
+#define POKEPLATINUM_STRUCT_POKEMON_H
 
 #include "struct_defs/box_pokemon.h"
 #include "struct_decls/struct_02073C74_sub2_decl.h"
@@ -7,7 +7,7 @@
 
 typedef struct {
     BoxPokemon box;
-    UnkStruct_02073C74_sub2 unk_08;
+    PartyPokemon unk_08;
 } Pokemon;
 
-#endif // POKEPLATINUM_STRUCT_02073C74_H
+#endif // POKEPLATINUM_STRUCT_POKEMON_H
