@@ -1,10 +1,10 @@
 #ifndef POKEPLATINUM_STRUCT_0207825C_1_H
 #define POKEPLATINUM_STRUCT_0207825C_1_H
 
-#include "struct_defs/struct_02075454.h"
-#include "struct_defs/struct_02075454_1.h"
-#include "struct_defs/struct_02075454_2.h"
-#include "struct_defs/struct_02075454_3.h"
+#include "struct_defs/pokemon_substruct_0.h"
+#include "struct_defs/pokemon_substruct_1.h"
+#include "struct_defs/pokemon_substruct_2.h"
+#include "struct_defs/pokemon_substruct_3.h"
 
 typedef struct UnkStruct_0207825C_1_t {
     PokemonSubstruct0 unk_00;
