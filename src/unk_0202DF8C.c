@@ -4,12 +4,12 @@
 #include "inlines.h"
 
 #include "struct_decls/struct_02023790_decl.h"
+#include "struct_defs/pokemon.h"
 #include "struct_decls/struct_party_decl.h"
 
 #include "struct_defs/struct_0202DF8C.h"
 #include "struct_defs/struct_0202DFA8.h"
 #include "struct_defs/struct_0202E1F4.h"
-#include "struct_defs/pokemon.h"
 #include "overlay087/struct_ov87_021D1640.h"
 
 #include "unk_02023790.h"

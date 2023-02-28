@@ -553,7 +553,7 @@ const u8 Unk_020F0780[] = {
 };
 
 
-u32 sub_02079D40(const BoxPokemon * boxMon)
+u32 sub_02079D40 (const BoxPokemon * boxMon)
 {
     u32 v0;
     u32 v1;
@@ -571,12 +571,12 @@ u32 sub_02079D40(const BoxPokemon * boxMon)
     return v1;
 }
 
-u32 sub_02079D80(Pokemon * mon)
+u32 sub_02079D80 (Pokemon * mon)
 {
     return sub_02079D40((const BoxPokemon *)sub_02076B10(mon));
 }
 
-u32 sub_02079D8C(u32 species, u32 param1, u32 param2)
+u32 sub_02079D8C (u32 species, u32 param1, u32 param2)
 {
     if (param1 == 1) {
         if (species == SPECIES_MANAPHY)
@@ -640,7 +640,7 @@ u16 sub_02079E44 (const BoxPokemon * boxMon)
     return 0;
 }
 
-const u8 sub_02079EDC(u32 species, u32 formId, u32 isEgg)
+const u8 sub_02079EDC (u32 species, u32 formId, u32 isEgg)
 {
     if (isEgg == TRUE) {
         if (species == SPECIES_MANAPHY)
