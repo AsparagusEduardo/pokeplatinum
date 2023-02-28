@@ -2,8 +2,8 @@
 #define POKEPLATINUM_UNK_0202631C_H
 
 #include "struct_decls/struct_02026324_decl.h"
-#include "struct_decls/struct_021C0794_decl.h"
 #include "struct_defs/pokemon.h"
+#include "struct_decls/struct_021C0794_decl.h"
 
 int sub_0202631C(void);
 UnkStruct_02026324 * sub_02026324(u32 param0);

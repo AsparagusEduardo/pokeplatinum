@@ -2,8 +2,8 @@
 #define POKEPLATINUM_UNK_0202DA40_H
 
 #include "struct_decls/struct_0202DA40_decl.h"
-#include "struct_decls/struct_021C0794_decl.h"
 #include "struct_defs/pokemon.h"
+#include "struct_decls/struct_021C0794_decl.h"
 
 UnkStruct_0202DA40 * sub_0202DA40(UnkStruct_021C0794 * param0);
 int  sub_0202DA4C(void);

@@ -3,9 +3,9 @@
 
 #include "struct_defs/struct_020279FC.h"
 #include "struct_decls/struct_0202CA1C_decl.h"
+#include "struct_defs/pokemon.h"
 #include "struct_decls/struct_party_decl.h"
 #include "struct_decls/struct_021C0794_decl.h"
-#include "struct_defs/pokemon.h"
 
 typedef struct {
     int unk_00;
