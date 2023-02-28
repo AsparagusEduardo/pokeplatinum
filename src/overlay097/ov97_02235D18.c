@@ -472,7 +472,7 @@ int ov97_02236308 (void)
     }
 }
 
-PokemonStorageGBA *ov97_02236340(void)
+PokemonStorageGBA * ov97_02236340 (void)
 {
     return &(Unk_ov97_0223F440->unk_6000);
 }
