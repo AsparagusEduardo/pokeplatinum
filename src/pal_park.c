@@ -677,7 +677,7 @@ u32 PalPark_GetGBABoxMonData(BoxPokemonGBA *boxMonGBA, int field, u8 * param2)
     case GBA_MON_DATA_MODERN_FATEFUL_ENCOUNTER:
         retVal = substruct3->modernFatefulEncounter;
         break;
-    case GBA_MON_DATA_SPECIES2:
+    case GBA_MON_DATA_SPECIES_OR_EGG:
         retVal = substruct0->species;
 
         if (retVal == SPECIES_NONE)

@@ -853,7 +853,7 @@ static BOOL ov97_0223474C (UnkStruct_ov97_02234A2C * param0, int param1)
     int v0;
     BoxPokemonGBA *boxMonGBA = &param0->unk_E8E0->boxes[param0->unk_E8E4][param1];
 
-    return PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SPECIES2, NULL) == GBA_SPECIES_EGG;
+    return PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SPECIES_OR_EGG, NULL) == GBA_SPECIES_EGG;
 }
 
 static BOOL ov97_02234784 (UnkStruct_ov97_02234A2C * param0, int param1)
