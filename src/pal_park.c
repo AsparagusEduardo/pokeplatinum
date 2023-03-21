@@ -450,7 +450,7 @@ u32 PalPark_GetGBABoxMonData(BoxPokemonGBA *boxMonGBA, int field, u8 * param2)
     PokemonGBASubstruct3 * substruct3 = 0;
     u16 checksum;
 
-    if (field > MON_GBA_DATA_ENCRYPT_SEPARATOR)
+    if (field > GBA_MON_DATA_ENCRYPT_SEPARATOR)
     {
         substruct0 = &(GetGBASubstruct(boxMonGBA, boxMonGBA->personality, 0)->type0);
         substruct1 = &(GetGBASubstruct(boxMonGBA, boxMonGBA->personality, 1)->type1);
@@ -468,13 +468,13 @@ u32 PalPark_GetGBABoxMonData(BoxPokemonGBA *boxMonGBA, int field, u8 * param2)
     }
 
     switch (field) {
-    case MON_GBA_DATA_PERSONALITY:
+    case GBA_MON_DATA_PERSONALITY:
         retVal = boxMonGBA->personality;
         break;
-    case MON_GBA_DATA_OT_ID:
+    case GBA_MON_DATA_OT_ID:
         retVal = boxMonGBA->otId;
         break;
-    case MON_GBA_DATA_NICKNAME:
+    case GBA_MON_DATA_NICKNAME:
         if (boxMonGBA->isBadEgg)
             retVal = 0;
         else {
@@ -485,199 +485,199 @@ u32 PalPark_GetGBABoxMonData(BoxPokemonGBA *boxMonGBA, int field, u8 * param2)
 
         param2[retVal] = 0xff;
         break;
-    case MON_GBA_DATA_LANGUAGE:
+    case GBA_MON_DATA_LANGUAGE:
         retVal = boxMonGBA->language;
         break;
-    case MON_GBA_DATA_SANITY_IS_BAD_EGG:
+    case GBA_MON_DATA_SANITY_IS_BAD_EGG:
         retVal = boxMonGBA->isBadEgg;
         break;
-    case MON_GBA_DATA_SANITY_HAS_SPECIES:
+    case GBA_MON_DATA_SANITY_HAS_SPECIES:
         retVal = boxMonGBA->hasSpecies;
         break;
-    case MON_GBA_DATA_SANITY_IS_EGG:
+    case GBA_MON_DATA_SANITY_IS_EGG:
         retVal = boxMonGBA->isEgg;
         break;
-    case MON_GBA_DATA_OT_NAME:
+    case GBA_MON_DATA_OT_NAME:
         for (retVal = 0; retVal < PLAYER_NAME_LENGTH; retVal++)
             param2[retVal] = boxMonGBA->otName[retVal];
 
         param2[retVal] = 0xffff;
         break;
-    case MON_GBA_DATA_MARKINGS:
+    case GBA_MON_DATA_MARKINGS:
         retVal = boxMonGBA->markings;
         break;
-    case MON_GBA_DATA_CHECKSUM:
+    case GBA_MON_DATA_CHECKSUM:
         retVal = boxMonGBA->checksum;
         break;
-    case MON_GBA_DATA_ENCRYPT_SEPARATOR:
+    case GBA_MON_DATA_ENCRYPT_SEPARATOR:
         retVal = boxMonGBA->unknown;
         break;
-    case MON_GBA_DATA_SPECIES:
+    case GBA_MON_DATA_SPECIES:
         if (boxMonGBA->isBadEgg)
             retVal = GBA_SPECIES_EGG;
         else
             retVal = substruct0->species;
         break;
-    case MON_GBA_DATA_HELD_ITEM:
+    case GBA_MON_DATA_HELD_ITEM:
         retVal = substruct0->heldItem;
         break;
-    case MON_GBA_DATA_EXP:
+    case GBA_MON_DATA_EXP:
         retVal = substruct0->experience;
         break;
-    case MON_GBA_DATA_PP_BONUSES:
+    case GBA_MON_DATA_PP_BONUSES:
         retVal = substruct0->ppBonuses;
         break;
-    case MON_GBA_DATA_FRIENDSHIP:
+    case GBA_MON_DATA_FRIENDSHIP:
         retVal = substruct0->friendship;
         break;
-    case MON_GBA_DATA_MOVE1:
-    case MON_GBA_DATA_MOVE2:
-    case MON_GBA_DATA_MOVE3:
-    case MON_GBA_DATA_MOVE4:
-        retVal = substruct1->moves[field - MON_GBA_DATA_MOVE1];
+    case GBA_MON_DATA_MOVE1:
+    case GBA_MON_DATA_MOVE2:
+    case GBA_MON_DATA_MOVE3:
+    case GBA_MON_DATA_MOVE4:
+        retVal = substruct1->moves[field - GBA_MON_DATA_MOVE1];
         break;
-    case MON_GBA_DATA_PP1:
-    case MON_GBA_DATA_PP2:
-    case MON_GBA_DATA_PP3:
-    case MON_GBA_DATA_PP4:
-        retVal = substruct1->pp[field - MON_GBA_DATA_PP1];
+    case GBA_MON_DATA_PP1:
+    case GBA_MON_DATA_PP2:
+    case GBA_MON_DATA_PP3:
+    case GBA_MON_DATA_PP4:
+        retVal = substruct1->pp[field - GBA_MON_DATA_PP1];
         break;
-    case MON_GBA_DATA_HP_EV:
+    case GBA_MON_DATA_HP_EV:
         retVal = substruct2->hpEV;
         break;
-    case MON_GBA_DATA_ATK_EV:
+    case GBA_MON_DATA_ATK_EV:
         retVal = substruct2->attackEV;
         break;
-    case MON_GBA_DATA_DEF_EV:
+    case GBA_MON_DATA_DEF_EV:
         retVal = substruct2->defenseEV;
         break;
-    case MON_GBA_DATA_SPEED_EV:
+    case GBA_MON_DATA_SPEED_EV:
         retVal = substruct2->speedEV;
         break;
-    case MON_GBA_DATA_SPATK_EV:
+    case GBA_MON_DATA_SPATK_EV:
         retVal = substruct2->spAttackEV;
         break;
-    case MON_GBA_DATA_SPDEF_EV:
+    case GBA_MON_DATA_SPDEF_EV:
         retVal = substruct2->spDefenseEV;
         break;
-    case MON_GBA_DATA_COOL:
+    case GBA_MON_DATA_COOL:
         retVal = substruct2->cool;
         break;
-    case MON_GBA_DATA_BEAUTY:
+    case GBA_MON_DATA_BEAUTY:
         retVal = substruct2->beauty;
         break;
-    case MON_GBA_DATA_CUTE:
+    case GBA_MON_DATA_CUTE:
         retVal = substruct2->cute;
         break;
-    case MON_GBA_DATA_SMART:
+    case GBA_MON_DATA_SMART:
         retVal = substruct2->smart;
         break;
-    case MON_GBA_DATA_TOUGH:
+    case GBA_MON_DATA_TOUGH:
         retVal = substruct2->tough;
         break;
-    case MON_GBA_DATA_SHEEN:
+    case GBA_MON_DATA_SHEEN:
         retVal = substruct2->sheen;
         break;
-    case MON_GBA_DATA_POKERUS:
+    case GBA_MON_DATA_POKERUS:
         retVal = substruct3->pokerus;
         break;
-    case MON_GBA_DATA_MET_LOCATION:
+    case GBA_MON_DATA_MET_LOCATION:
         retVal = substruct3->metLocation;
         break;
-    case MON_GBA_DATA_MET_LEVEL:
+    case GBA_MON_DATA_MET_LEVEL:
         retVal = substruct3->metLevel;
         break;
-    case MON_GBA_DATA_MET_GAME:
+    case GBA_MON_DATA_MET_GAME:
         retVal = substruct3->metGame;
         break;
-    case MON_GBA_DATA_POKEBALL:
+    case GBA_MON_DATA_POKEBALL:
         retVal = substruct3->pokeball;
         break;
-    case MON_GBA_DATA_OT_GENDER:
+    case GBA_MON_DATA_OT_GENDER:
         retVal = substruct3->otGender;
         break;
-    case MON_GBA_DATA_HP_IV:
+    case GBA_MON_DATA_HP_IV:
         retVal = substruct3->hpIV;
         break;
-    case MON_GBA_DATA_ATK_IV:
+    case GBA_MON_DATA_ATK_IV:
         retVal = substruct3->attackIV;
         break;
-    case MON_GBA_DATA_DEF_IV:
+    case GBA_MON_DATA_DEF_IV:
         retVal = substruct3->defenseIV;
         break;
-    case MON_GBA_DATA_SPEED_IV:
+    case GBA_MON_DATA_SPEED_IV:
         retVal = substruct3->speedIV;
         break;
-    case MON_GBA_DATA_SPATK_IV:
+    case GBA_MON_DATA_SPATK_IV:
         retVal = substruct3->spAttackIV;
         break;
-    case MON_GBA_DATA_SPDEF_IV:
+    case GBA_MON_DATA_SPDEF_IV:
         retVal = substruct3->spDefenseIV;
         break;
-    case MON_GBA_DATA_IS_EGG:
+    case GBA_MON_DATA_IS_EGG:
         retVal = substruct3->isEgg;
         break;
-    case MON_GBA_DATA_ABILITY_NUM:
+    case GBA_MON_DATA_ABILITY_NUM:
         retVal = substruct3->abilityNum;
         break;
-    case MON_GBA_DATA_COOL_RIBBON:
+    case GBA_MON_DATA_COOL_RIBBON:
         retVal = substruct3->coolRibbon;
         break;
-    case MON_GBA_DATA_BEAUTY_RIBBON:
+    case GBA_MON_DATA_BEAUTY_RIBBON:
         retVal = substruct3->beautyRibbon;
         break;
-    case MON_GBA_DATA_CUTE_RIBBON:
+    case GBA_MON_DATA_CUTE_RIBBON:
         retVal = substruct3->cuteRibbon;
         break;
-    case MON_GBA_DATA_SMART_RIBBON:
+    case GBA_MON_DATA_SMART_RIBBON:
         retVal = substruct3->smartRibbon;
         break;
-    case MON_GBA_DATA_TOUGH_RIBBON:
+    case GBA_MON_DATA_TOUGH_RIBBON:
         retVal = substruct3->toughRibbon;
         break;
-    case MON_GBA_DATA_CHAMPION_RIBBON:
+    case GBA_MON_DATA_CHAMPION_RIBBON:
         retVal = substruct3->championRibbon;
         break;
-    case MON_GBA_DATA_WINNING_RIBBON:
+    case GBA_MON_DATA_WINNING_RIBBON:
         retVal = substruct3->winningRibbon;
         break;
-    case MON_GBA_DATA_VICTORY_RIBBON:
+    case GBA_MON_DATA_VICTORY_RIBBON:
         retVal = substruct3->victoryRibbon;
         break;
-    case MON_GBA_DATA_ARTIST_RIBBON:
+    case GBA_MON_DATA_ARTIST_RIBBON:
         retVal = substruct3->artistRibbon;
         break;
-    case MON_GBA_DATA_EFFORT_RIBBON:
+    case GBA_MON_DATA_EFFORT_RIBBON:
         retVal = substruct3->effortRibbon;
         break;
-    case MON_GBA_DATA_MARINE_RIBBON:
+    case GBA_MON_DATA_MARINE_RIBBON:
         retVal = substruct3->marineRibbon;
         break;
-    case MON_GBA_DATA_LAND_RIBBON:
+    case GBA_MON_DATA_LAND_RIBBON:
         retVal = substruct3->landRibbon;
         break;
-    case MON_GBA_DATA_SKY_RIBBON:
+    case GBA_MON_DATA_SKY_RIBBON:
         retVal = substruct3->skyRibbon;
         break;
-    case MON_GBA_DATA_COUNTRY_RIBBON:
+    case GBA_MON_DATA_COUNTRY_RIBBON:
         retVal = substruct3->countryRibbon;
         break;
-    case MON_GBA_DATA_NATIONAL_RIBBON:
+    case GBA_MON_DATA_NATIONAL_RIBBON:
         retVal = substruct3->nationalRibbon;
         break;
-    case MON_GBA_DATA_EARTH_RIBBON:
+    case GBA_MON_DATA_EARTH_RIBBON:
         retVal = substruct3->earthRibbon;
         break;
-    case MON_GBA_DATA_WORLD_RIBBON:
+    case GBA_MON_DATA_WORLD_RIBBON:
         retVal = substruct3->worldRibbon;
         break;
-    case MON_GBA_DATA_UNUSED_RIBBONS:
+    case GBA_MON_DATA_UNUSED_RIBBONS:
         retVal = substruct3->unusedRibbons;
         break;
-    case MON_GBA_DATA_MODERN_FATEFUL_ENCOUNTER:
+    case GBA_MON_DATA_MODERN_FATEFUL_ENCOUNTER:
         retVal = substruct3->modernFatefulEncounter;
         break;
-    case MON_GBA_DATA_SPECIES2:
+    case GBA_MON_DATA_SPECIES2:
         retVal = substruct0->species;
 
         if (retVal == SPECIES_NONE)
@@ -687,7 +687,7 @@ u32 PalPark_GetGBABoxMonData(BoxPokemonGBA *boxMonGBA, int field, u8 * param2)
             retVal = GBA_SPECIES_EGG;
 
         break;
-    case MON_GBA_DATA_IVS:
+    case GBA_MON_DATA_IVS:
         retVal = substruct3->hpIV
               | (substruct3->attackIV << 5)
               | (substruct3->defenseIV << 10)
@@ -697,7 +697,7 @@ u32 PalPark_GetGBABoxMonData(BoxPokemonGBA *boxMonGBA, int field, u8 * param2)
         break;
     }
 
-    if (field > MON_GBA_DATA_ENCRYPT_SEPARATOR)
+    if (field > GBA_MON_DATA_ENCRYPT_SEPARATOR)
         EncryptBoxMonGBA(boxMonGBA);
 
     return retVal;
@@ -713,7 +713,7 @@ void PalPark_SetGBABoxPokemonData(BoxPokemonGBA *boxMonGBA, int field, const u8 
     PokemonGBASubstruct3 * substruct3 = 0;
     u16 v6;
 
-    if (field > MON_GBA_DATA_ENCRYPT_SEPARATOR)
+    if (field > GBA_MON_DATA_ENCRYPT_SEPARATOR)
     {
         substruct0 = &(GetGBASubstruct(boxMonGBA, boxMonGBA->personality, 0)->type0);
         substruct1 = &(GetGBASubstruct(boxMonGBA, boxMonGBA->personality, 1)->type1);
@@ -733,28 +733,28 @@ void PalPark_SetGBABoxPokemonData(BoxPokemonGBA *boxMonGBA, int field, const u8 
     }
 
     switch (field) {
-    case MON_GBA_DATA_NICKNAME:
+    case GBA_MON_DATA_NICKNAME:
         for (v0 = 0; v0 < POKEMON_NAME_LENGTH; v0++) {
             boxMonGBA->nickname[v0] = data[v0];
         }
         break;
-    case MON_GBA_DATA_LANGUAGE:
+    case GBA_MON_DATA_LANGUAGE:
         boxMonGBA->language = data[0];
         break;
-    case MON_GBA_DATA_SANITY_IS_BAD_EGG:
+    case GBA_MON_DATA_SANITY_IS_BAD_EGG:
         boxMonGBA->isBadEgg = data[0];
         break;
-    case MON_GBA_DATA_SANITY_HAS_SPECIES:
+    case GBA_MON_DATA_SANITY_HAS_SPECIES:
         boxMonGBA->hasSpecies = data[0];
         break;
-    case MON_GBA_DATA_SANITY_IS_EGG:
+    case GBA_MON_DATA_SANITY_IS_EGG:
         boxMonGBA->isEgg = data[0];
         break;
-    case MON_GBA_DATA_OT_NAME:
+    case GBA_MON_DATA_OT_NAME:
         for (v0 = 0; v0 < PLAYER_NAME_LENGTH; v0++)
             boxMonGBA->otName[v0] = data[v0];
         break;
-    case MON_GBA_DATA_SPECIES:
+    case GBA_MON_DATA_SPECIES:
         substruct0->species = data[0] + (data[1] << 8);
 
         if (substruct0->species)
@@ -764,7 +764,7 @@ void PalPark_SetGBABoxPokemonData(BoxPokemonGBA *boxMonGBA, int field, const u8 
         break;
     }
 
-    if (field > MON_GBA_DATA_ENCRYPT_SEPARATOR)
+    if (field > GBA_MON_DATA_ENCRYPT_SEPARATOR)
     {
         boxMonGBA->checksum = CalculateBoxMonGBAChecksum(boxMonGBA);
         EncryptBoxMonGBA(boxMonGBA);
@@ -792,8 +792,8 @@ u32 ov97_02236E00 (BoxPokemonGBA *boxMonGBA)
     int species;
     u32 exp;
 
-    species = PalPark_GBAToDSSpecies(PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_SPECIES, 0));
-    exp = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_EXP, 0);
+    species = PalPark_GBAToDSSpecies(PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SPECIES, 0));
+    exp = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_EXP, 0);
 
     return sub_02075B78(species, exp);
 }
@@ -806,7 +806,7 @@ static int ov97_02236E28 (BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
     int abilityNum;
 
     species = sub_02074570(boxMon, MON_DATA_SPECIES, NULL);
-    abilityNum = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_ABILITY_NUM, NULL);
+    abilityNum = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_ABILITY_NUM, NULL);
     v1 = sub_020759F0(species, 25);
 
     if (v1) {
@@ -839,26 +839,26 @@ void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
     ZeroBoxMonData(boxMon);
 
     v0 = sub_02073D20(boxMon);
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_PERSONALITY, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_PERSONALITY, NULL);
 
     SetBoxMonData(boxMon, MON_DATA_PERSONALITY, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_SPECIES, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SPECIES, NULL);
     value = PalPark_GBAToDSSpecies(value);
 
     SetBoxMonData(boxMon, MON_DATA_SPECIES, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_HELD_ITEM, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_HELD_ITEM, NULL);
 
     if (value != ITEM_NONE)
         value = Item_GBAIdToItemId(value);
 
     SetBoxMonData(boxMon, MON_DATA_HELD_ITEM, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_OT_ID, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_OT_ID, NULL);
     SetBoxMonData(boxMon, MON_DATA_OT_ID, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_EXP, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_EXP, NULL);
     SetBoxMonData(boxMon, MON_DATA_EXP, (u8 *)&value);
 
     value = 70;
@@ -867,51 +867,51 @@ void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
     value = ov97_02236E28(boxMonGBA, boxMon);
     SetBoxMonData(boxMon, MON_DATA_10, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_MARKINGS, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_MARKINGS, NULL);
     SetBoxMonData(boxMon, MON_DATA_11, (u8 *)&value);
 
-    v4 = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_LANGUAGE, NULL);
+    v4 = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_LANGUAGE, NULL);
     SetBoxMonData(boxMon, MON_DATA_LANGUAGE, (u8 *)&v4);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_HP_EV, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_HP_EV, NULL);
     SetBoxMonData(boxMon, MON_DATA_HP_EV, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_ATK_EV, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_ATK_EV, NULL);
     SetBoxMonData(boxMon, MON_DATA_ATK_EV, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_DEF_EV, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_DEF_EV, NULL);
     SetBoxMonData(boxMon, MON_DATA_DEF_EV, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_SPEED_EV, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SPEED_EV, NULL);
     SetBoxMonData(boxMon, MON_DATA_SPEED_EV, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_SPATK_EV, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SPATK_EV, NULL);
     SetBoxMonData(boxMon, MON_DATA_SPATK_EV, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_SPDEF_EV, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SPDEF_EV, NULL);
     SetBoxMonData(boxMon, MON_DATA_SPDEF_EV, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_COOL, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_COOL, NULL);
     SetBoxMonData(boxMon, MON_DATA_COOL, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_BEAUTY, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_BEAUTY, NULL);
     SetBoxMonData(boxMon, MON_DATA_BEAUTY, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_CUTE, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_CUTE, NULL);
     SetBoxMonData(boxMon, MON_DATA_CUTE, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_SMART, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SMART, NULL);
     SetBoxMonData(boxMon, MON_DATA_SMART, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_TOUGH, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_TOUGH, NULL);
     SetBoxMonData(boxMon, MON_DATA_TOUGH, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_SHEEN, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SHEEN, NULL);
     SetBoxMonData(boxMon, MON_DATA_SHEEN, (u8 *)&value);
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_MOVE1 + i, NULL);
+        value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_MOVE1 + i, NULL);
 
         if (value > GBA_NUM_MOVES) {
             (void)0;
@@ -919,37 +919,37 @@ void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
 
         SetBoxMonData(boxMon, MON_DATA_MOVE1 + i, (u8 *)&value);
 
-        value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_PP_BONUSES, NULL);
+        value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_PP_BONUSES, NULL);
         value = (value & (0x3 << (i * 2))) >> (i * 2);
 
         SetBoxMonData(boxMon, MON_DATA_62 + i, (u8 *)&value);
 
-        value = sub_02074570(boxMon, MON_GBA_DATA_IVS + i, NULL);
+        value = sub_02074570(boxMon, GBA_MON_DATA_IVS + i, NULL);
         SetBoxMonData(boxMon, MON_DATA_58 + i, (u8 *)&value);
     }
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_HP_IV, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_HP_IV, NULL);
     SetBoxMonData(boxMon, MON_DATA_HP_IV, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_ATK_IV, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_ATK_IV, NULL);
     SetBoxMonData(boxMon, MON_DATA_ATK_IV, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_DEF_IV, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_DEF_IV, NULL);
     SetBoxMonData(boxMon, MON_DATA_DEF_IV, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_SPEED_IV, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SPEED_IV, NULL);
     SetBoxMonData(boxMon, MON_DATA_SPEED_IV, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_SPATK_IV, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SPATK_IV, NULL);
     SetBoxMonData(boxMon, MON_DATA_SPATK_IV, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_SPDEF_IV, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SPDEF_IV, NULL);
     SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_IS_EGG, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_IS_EGG, NULL);
     SetBoxMonData(boxMon, MON_DATA_IS_EGG, (u8 *)&value);
 
-    contestRibbons = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_COOL_RIBBON, NULL);
+    contestRibbons = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_COOL_RIBBON, NULL);
 
     if (contestRibbons <= 4) {
         for (i = 0; i < contestRibbons; i++) {
@@ -958,7 +958,7 @@ void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
         }
     }
 
-    contestRibbons = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_BEAUTY_RIBBON, NULL);
+    contestRibbons = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_BEAUTY_RIBBON, NULL);
 
     if (contestRibbons <= 4) {
         for (i = 0; i < contestRibbons; i++) {
@@ -967,7 +967,7 @@ void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
         }
     }
 
-    contestRibbons = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_CUTE_RIBBON, NULL);
+    contestRibbons = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_CUTE_RIBBON, NULL);
 
     if (contestRibbons <= 4) {
         for (i = 0; i < contestRibbons; i++) {
@@ -976,7 +976,7 @@ void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
         }
     }
 
-    contestRibbons = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_SMART_RIBBON, NULL);
+    contestRibbons = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SMART_RIBBON, NULL);
 
     if (contestRibbons <= 4) {
         for (i = 0; i < contestRibbons; i++) {
@@ -985,7 +985,7 @@ void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
         }
     }
 
-    contestRibbons = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_TOUGH_RIBBON, NULL);
+    contestRibbons = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_TOUGH_RIBBON, NULL);
 
     if (contestRibbons <= 4) {
         for (i = 0; i < contestRibbons; i++) {
@@ -994,50 +994,50 @@ void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
         }
     }
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_CHAMPION_RIBBON, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_CHAMPION_RIBBON, NULL);
     SetBoxMonData(boxMon, MON_DATA_CHAMPION_RIBBON, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_WINNING_RIBBON, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_WINNING_RIBBON, NULL);
     SetBoxMonData(boxMon, MON_DATA_WINNING_RIBBON, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_VICTORY_RIBBON, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_VICTORY_RIBBON, NULL);
     SetBoxMonData(boxMon, MON_DATA_VICTORY_RIBBON, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_ARTIST_RIBBON, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_ARTIST_RIBBON, NULL);
     SetBoxMonData(boxMon, MON_DATA_ARTIST_RIBBON, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_EFFORT_RIBBON, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_EFFORT_RIBBON, NULL);
     SetBoxMonData(boxMon, MON_DATA_EFFORT_RIBBON, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_MARINE_RIBBON, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_MARINE_RIBBON, NULL);
     SetBoxMonData(boxMon, MON_DATA_MARINE_RIBBON, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_LAND_RIBBON, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_LAND_RIBBON, NULL);
     SetBoxMonData(boxMon, MON_DATA_LAND_RIBBON, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_SKY_RIBBON, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_SKY_RIBBON, NULL);
     SetBoxMonData(boxMon, MON_DATA_SKY_RIBBON, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_COUNTRY_RIBBON, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_COUNTRY_RIBBON, NULL);
     SetBoxMonData(boxMon, MON_DATA_COUNTRY_RIBBON, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_NATIONAL_RIBBON, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_NATIONAL_RIBBON, NULL);
     SetBoxMonData(boxMon, MON_DATA_NATIONAL_RIBBON, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_EARTH_RIBBON, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_EARTH_RIBBON, NULL);
     SetBoxMonData(boxMon, MON_DATA_EARTH_RIBBON, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_WORLD_RIBBON, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_WORLD_RIBBON, NULL);
     SetBoxMonData(boxMon, MON_DATA_WORLD_RIBBON, (u8 *)&value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_MODERN_FATEFUL_ENCOUNTER, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_MODERN_FATEFUL_ENCOUNTER, NULL);
     SetBoxMonData(boxMon, MON_DATA_FATEFUL_ENCOUNTER, (u8 *)&value);
 
     value = sub_02075D74(boxMon);
     SetBoxMonData(boxMon, MON_DATA_111, (u8 *)&value);
 
     if (sub_02074570(boxMon, MON_DATA_SPECIES, NULL) == SPECIES_UNOWN) {
-        value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_PERSONALITY, NULL);
+        value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_PERSONALITY, NULL);
         value = GET_UNOWN_LETTER(value);
 
         SetBoxMonData(boxMon, MON_DATA_FORM, (u8 *)&value);
@@ -1064,37 +1064,37 @@ void BoxMonGBAToBoxMon(BoxPokemonGBA *boxMonGBA, BoxPokemon * boxMon)
         SetBoxMonData(boxMon, MON_DATA_FORM, (u8 *)&value);
     }
 
-    PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_NICKNAME, &v5[0]);
+    PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_NICKNAME, &v5[0]);
     ov97_0223936C(&v5[0], &v6[0], 12, v4);
 
     SetBoxMonData(boxMon, MON_DATA_118, &v6[0]);
 
-    if (PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_LANGUAGE, NULL) != Unk_020E4C44) {
+    if (PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_LANGUAGE, NULL) != Unk_020E4C44) {
         value = 1;
         SetBoxMonData(boxMon, MON_DATA_77, &value);
     }
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_MET_GAME, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_MET_GAME, NULL);
     SetBoxMonData(boxMon, MON_DATA_MET_GAME, &value);
 
-    PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_OT_NAME, &v5[0]);
+    PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_OT_NAME, &v5[0]);
     ov97_0223936C(&v5[0], &v6[0], 8, v4);
 
     SetBoxMonData(boxMon, MON_DATA_144, &v6[0]);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_MET_LOCATION, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_MET_LOCATION, NULL);
     SetBoxMonData(boxMon, MON_DATA_153, &value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_POKERUS, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_POKERUS, NULL);
     SetBoxMonData(boxMon, MON_DATA_POKERUS, &value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_POKEBALL, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_POKEBALL, NULL);
     SetBoxMonData(boxMon, MON_DATA_POKEBALL, &value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_MET_LEVEL, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_MET_LEVEL, NULL);
     SetBoxMonData(boxMon, MON_DATA_MET_LEVEL, &value);
 
-    value = PalPark_GetGBABoxMonData(boxMonGBA, MON_GBA_DATA_OT_GENDER, NULL);
+    value = PalPark_GetGBABoxMonData(boxMonGBA, GBA_MON_DATA_OT_GENDER, NULL);
     SetBoxMonData(boxMon, MON_DATA_OT_GENDER, &value);
     sub_02073D48(boxMon, v0);
 }
