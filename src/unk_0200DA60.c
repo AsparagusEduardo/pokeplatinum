@@ -549,7 +549,7 @@ void sub_0200EBC8 (void * param0)
     v0->unk_488_0 = 2;
 }
 
-u8 *sub_0200EBF0(UnkStruct_02018340 * param0, u8 param1, u8 param2, u8 param3, u8 param4, u16 param5, u16 param6, u8 param7, int param8)
+u8 * sub_0200EBF0 (UnkStruct_02018340 * param0, u8 param1, u8 param2, u8 param3, u8 param4, u16 param5, u16 param6, u8 param7, int param8)
 {
     UnkStruct_0200ED50 * v0 = sub_0200ED14(param0, param1, param2, param3, param8);
 
@@ -563,7 +563,7 @@ u8 *sub_0200EBF0(UnkStruct_02018340 * param0, u8 param1, u8 param2, u8 param3, u
     return &v0->unk_1D3;
 }
 
-u8 *sub_0200EC48(UnkStruct_02018340 * param0, u8 param1, u8 param2, u8 param3, u8 param4, u16 param5, Pokemon * mon, int param7)
+u8 * sub_0200EC48 (UnkStruct_02018340 * param0, u8 param1, u8 param2, u8 param3, u8 param4, u16 param5, Pokemon * mon, int param7)
 {
     UnkStruct_0200ED50 * v0 = sub_0200ED14(param0, param1, param2, param3, param7);
 
