@@ -889,7 +889,7 @@ static void ov17_022449B8 (UnkStruct_0201CD38 * param0, void * param1)
         v1 = ov17_0223FAF8(v0->unk_00->unk_7E4);
 
         if (v1 != 0xffffffff) {
-            v0->unk_10.unk_00 = GetMonData(v0->unk_00->unk_0C.unk_00->unk_00[v0->unk_0D], 54 + v1, NULL);
+            v0->unk_10.unk_00 = GetMonData(v0->unk_00->unk_0C.unk_00->unk_00[v0->unk_0D], MON_DATA_MOVE1 + v1, NULL);
             sub_02005748(1501);
             v0->unk_0C++;
         }
