@@ -168,7 +168,6 @@ u32 sub_02075E64(u32 param0);
 void sub_02075EF4(UnkStruct_02008A90 * param0, Pokemon * param1, u8 param2);
 void sub_02075F0C(UnkStruct_02008A90 * param0, BoxPokemon * param1, u8 param2, int param3);
 void sub_02075FB4(UnkStruct_02008A90 * param0, u16 param1, u8 param2, u8 param3, u8 param4, u8 param5, u32 param6);
-u8 SanitizeFormId(u16 param0, u8 param1);
 u8 sub_020765AC(Pokemon * param0, u8 param1);
 u8 sub_020765C4(BoxPokemon * param0, u8 param1, int param2);
 u8 sub_02076648(u16 param0, u8 param1, u8 param2, u8 param3, u32 param4);
@@ -2656,78 +2655,77 @@ void sub_02075FB4 (UnkStruct_02008A90 * param0, u16 param1, u8 param2, u8 param3
     }
 }
 
-u8 SanitizeFormId (u16 param0, u8 param1)
+u8 SanitizeFormId (u16 species, u8 formId)
 {
-    switch (param0) {
-    case 412:
-        if (param1 > 2) {
-            param1 = 0;
+    switch (species) {
+    case SPECIES_BURMY:
+        if (formId > 2) {
+            formId = 0;
         }
         break;
-    case 413:
-
-        if (param1 > 2) {
-            param1 = 0;
+    case SPECIES_WORMADAM:
+        if (formId > 2) {
+            formId = 0;
         }
         break;
-    case 422:
-        if (param1 > 1) {
-            param1 = 0;
+    case SPECIES_SHELLOS:
+        if (formId > 1) {
+            formId = 0;
         }
         break;
-    case 423:
-        if (param1 > 1) {
-            param1 = 0;
+    case SPECIES_GASTRODON:
+        if (formId > 1) {
+            formId = 0;
         }
         break;
-    case 421:
-        if (param1 > 1) {
-            param1 = 0;
+    case SPECIES_CHERRIM:
+        if (formId > 1) {
+            formId = 0;
         }
         break;
-    case 493:
-        if (param1 > 17) {
-            param1 = 0;
+    case SPECIES_ARCEUS:
+        if (formId > 17) {
+            formId = 0;
         }
         break;
-    case 351:
-        if (param1 > 3) {
-            param1 = 0;
+    case SPECIES_CASTFORM:
+        if (formId > 3) {
+            formId = 0;
         }
         break;
-    case 386:
-        if (param1 > 3) {
-            param1 = 0;
+    case SPECIES_DEOXYS:
+        if (formId > 3) {
+            formId = 0;
         }
         break;
-    case 201:
-        if (param1 >= 28) {
-            param1 = 0;
+    case SPECIES_UNOWN:
+        if (formId >= 28) {
+            formId = 0;
         }
         break;
-    case 494:
-        if (param1 > 1) {
-            param1 = 0;
+    case SPECIES_EGG:
+        if (formId > 1) {
+            formId = 0;
         }
         break;
-    case 492:
-        if (param1 > 1) {
-            param1 = 0;
+    case SPECIES_SHAYMIN:
+        if (formId > 1) {
+            formId = 0;
         }
         break;
-    case 479:
-        if (param1 > 5) {
-            param1 = 0;
+    case SPECIES_ROTOM:
+        if (formId > 5) {
+            formId = 0;
         }
         break;
-    case 487:
-        if (param1 > 1) {
-            param1 = 0;
+    case SPECIES_GIRATINA:
+        if (formId > 1) {
+            formId = 0;
         }
         break;
     }
 
-    return param1;
+    return formId;
 }
 
 static void sub_02076300 (UnkStruct_02008A90 * param0, u16 param1, u8 param2, u8 param3, u8 param4, u8 param5, u32 param6)
