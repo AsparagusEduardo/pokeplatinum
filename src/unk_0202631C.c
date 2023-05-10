@@ -12,6 +12,8 @@
 #include "unk_02073C2C.h"
 #include "unk_020986CC.h"
 
+#include "constants/species.h"
+
 typedef struct UnkStruct_02026324_t {
     u32 unk_00;
     u32 unk_04[16];
@@ -565,45 +567,45 @@ static void sub_02026A00 (UnkStruct_02026324 * param0, u32 param1, int param2)
     }
 }
 
-static void sub_02026A60 (UnkStruct_02026324 * param0, u16 param1, Pokemon * param2)
+static void sub_02026A60 (UnkStruct_02026324 * param0, u16 species, Pokemon * param2)
 {
-    int v0;
+    int form;
 
-    switch (param1) {
-    case 201:
-        v0 = sub_02076AF8(param2);
-        sub_0202643C(param0, v0);
+    switch (species) {
+    case SPECIES_UNOWN:
+        form = sub_02076AF8(param2);
+        sub_0202643C(param0, form);
         break;
-    case 412:
-        v0 = GetMonData(param2, MON_DATA_FORM, NULL);
-        sub_020267B8(param0, param1, v0);
+    case SPECIES_BURMY:
+        form = GetMonData(param2, MON_DATA_FORM, NULL);
+        sub_020267B8(param0, species, form);
         break;
-    case 413:
-        v0 = GetMonData(param2, MON_DATA_FORM, NULL);
-        sub_020267B8(param0, param1, v0);
+    case SPECIES_WORMADAM:
+        form = GetMonData(param2, MON_DATA_FORM, NULL);
+        sub_020267B8(param0, species, form);
         break;
-    case 422:
-        v0 = GetMonData(param2, MON_DATA_FORM, NULL);
-        sub_020265E8(param0, param1, v0);
+    case SPECIES_SHELLOS:
+        form = GetMonData(param2, MON_DATA_FORM, NULL);
+        sub_020265E8(param0, species, form);
         break;
-    case 423:
-        v0 = GetMonData(param2, MON_DATA_FORM, NULL);
-        sub_020265E8(param0, param1, v0);
+    case SPECIES_GASTRODON:
+        form = GetMonData(param2, MON_DATA_FORM, NULL);
+        sub_020265E8(param0, species, form);
         break;
-    case 386:
-        sub_020268FC(param0, param1, param2);
+    case SPECIES_DEOXYS:
+        sub_020268FC(param0, species, param2);
         break;
-    case 492:
-        v0 = GetMonData(param2, MON_DATA_FORM, NULL);
-        sub_020265E8(param0, param1, v0);
+    case SPECIES_SHAYMIN:
+        form = GetMonData(param2, MON_DATA_FORM, NULL);
+        sub_020265E8(param0, species, form);
         break;
-    case 487:
-        v0 = GetMonData(param2, MON_DATA_FORM, NULL);
-        sub_020265E8(param0, param1, v0);
+    case SPECIES_GIRATINA:
+        form = GetMonData(param2, MON_DATA_FORM, NULL);
+        sub_020265E8(param0, species, form);
         break;
-    case 479:
-        v0 = GetMonData(param2, MON_DATA_FORM, NULL);
-        sub_02026A00(param0, param1, v0);
+    case SPECIES_ROTOM:
+        form = GetMonData(param2, MON_DATA_FORM, NULL);
+        sub_02026A00(param0, species, form);
         break;
     default:
         break;
@@ -1195,54 +1197,54 @@ UnkStruct_02026324 * sub_02027560 (UnkStruct_021C0794 * param0)
     return v0;
 }
 
-u32 sub_0202756C (const UnkStruct_02026324 * param0, int param1, int param2)
+u32 sub_0202756C (const UnkStruct_02026324 * param0, int species, int param2)
 {
     inline_02026DD0(param0);
 
-    switch (param1) {
-    case 201:
+    switch (species) {
+    case SPECIES_UNOWN:
         if (param2 < sub_020270DC(param0)) {
             return sub_020270AC(param0, param2);
         }
         break;
-    case 422:
+    case SPECIES_SHELLOS:
         if (param2 < sub_02027130(param0)) {
             return sub_020270F8(param0, param2);
         }
         break;
-    case 423:
+    case SPECIES_GASTRODON:
         if (param2 < sub_0202718C(param0)) {
             return sub_02027154(param0, param2);
         }
         break;
-    case 412:
+    case SPECIES_BURMY:
         if (param2 < sub_020271E8(param0)) {
             return sub_020271B0(param0, param2);
         }
         break;
-    case 413:
+    case SPECIES_WORMADAM:
         if (param2 < sub_02027240(param0)) {
             return sub_02027208(param0, param2);
         }
         break;
-    case 386:
+    case SPECIES_DEOXYS:
         if (param2 < sub_02027288(param0)) {
             return sub_02027264(param0, param2);
         }
         break;
-    case 492:
-        if (param2 < sub_02026464(param0, 492)) {
-            return sub_02026C24(param0, 492, param2);
+    case SPECIES_SHAYMIN:
+        if (param2 < sub_02026464(param0, SPECIES_SHAYMIN)) {
+            return sub_02026C24(param0, SPECIES_SHAYMIN, param2);
         }
         break;
-    case 487:
-        if (param2 < sub_02026464(param0, 487)) {
-            return sub_02026C24(param0, 487, param2);
+    case SPECIES_GIRATINA:
+        if (param2 < sub_02026464(param0, SPECIES_GIRATINA)) {
+            return sub_02026C24(param0, SPECIES_GIRATINA, param2);
         }
         break;
-    case 479:
-        if (param2 < sub_02026958(param0, 479)) {
-            return sub_02026CCC(param0, 479, param2);
+    case SPECIES_ROTOM:
+        if (param2 < sub_02026958(param0, SPECIES_ROTOM)) {
+            return sub_02026CCC(param0, SPECIES_ROTOM, param2);
         }
         break;
     default:
@@ -1252,29 +1254,29 @@ u32 sub_0202756C (const UnkStruct_02026324 * param0, int param1, int param2)
     return 0;
 }
 
-u32 sub_020276C8 (const UnkStruct_02026324 * param0, int param1)
+u32 sub_020276C8 (const UnkStruct_02026324 * param0, int species)
 {
     inline_02026DD0(param0);
 
-    switch (param1) {
-    case 201:
+    switch (species) {
+    case SPECIES_UNOWN:
         return sub_020270DC(param0);
-    case 422:
+    case SPECIES_SHELLOS:
         return sub_02027130(param0);
-    case 423:
+    case SPECIES_GASTRODON:
         return sub_0202718C(param0);
-    case 412:
+    case SPECIES_BURMY:
         return sub_020271E8(param0);
-    case 413:
+    case SPECIES_WORMADAM:
         return sub_02027240(param0);
-    case 386:
+    case SPECIES_DEOXYS:
         return sub_02027288(param0);
-    case 492:
-        return sub_02026464(param0, 492);
-    case 487:
-        return sub_02026464(param0, 487);
-    case 479:
-        return sub_02026958(param0, 479);
+    case SPECIES_SHAYMIN:
+        return sub_02026464(param0, SPECIES_SHAYMIN);
+    case SPECIES_GIRATINA:
+        return sub_02026464(param0, SPECIES_GIRATINA);
+    case SPECIES_ROTOM:
+        return sub_02026958(param0, SPECIES_ROTOM);
     default:
         break;
     }

@@ -166,11 +166,8 @@ u8 sub_02075E14(BoxPokemon * param0);
 u8 sub_02075E38(u32 param0, u32 param1);
 u32 sub_02075E64(u32 param0);
 void sub_02075EF4(UnkStruct_02008A90 * param0, Pokemon * param1, u8 param2);
-void sub_02075F0C(UnkStruct_02008A90 * param0, BoxPokemon * param1, u8 param2, int param3);
-void sub_02075FB4(UnkStruct_02008A90 * param0, u16 param1, u8 param2, u8 param3, u8 param4, u8 param5, u32 param6);
 u8 sub_020765AC(Pokemon * param0, u8 param1);
 u8 sub_020765C4(BoxPokemon * param0, u8 param1, int param2);
-u8 sub_02076648(u16 param0, u8 param1, u8 param2, u8 param3, u32 param4);
 void sub_0207697C(UnkStruct_02008A90 * param0, u16 param1);
 UnkStruct_0200D0F4 * sub_02076994(UnkStruct_0200C6E4 * param0, UnkStruct_0200C704 * param1, UnkStruct_02002F38 * param2, int param3, int param4, int param5, int param6, int param7, int param8);
 void sub_02076AAC(int param0, int param1, UnkStruct_ov5_021DE5D0 * param2);
@@ -239,14 +236,14 @@ static void sub_0207822C(void * param0, u32 param1, u32 param2);
 static void sub_02078234(void * param0, u32 param1, u32 param2);
 static u16 sub_0207823C(void * param0, u32 param1);
 static void * sub_0207825C(BoxPokemon * param0, u32 param1, u8 param2);
-static int sub_02078740(int param0, int param1);
+static int sub_02078740(int species, int param1);
 u32 sub_020787CC(int param0);
 int sub_020787EC(u32 param0);
 BOOL sub_02078804(u16 param0);
 BOOL sub_02078838(Pokemon * param0);
 int sub_020788D0(int param0);
-static void sub_02076300(UnkStruct_02008A90 * param0, u16 param1, u8 param2, u8 param3, u8 param4, u8 param5, u32 param6);
-static u8 sub_020767BC(u16 param0, u8 param1, u8 param2, u8 param3, u32 param4);
+static void sub_02076300(UnkStruct_02008A90 * param0, u16 species, u8 param2, u8 param3, u8 param4, u8 formId, u32 param6);
+static u8 sub_020767BC(u16 species, u8 param1, u8 param2, u8 form, u32 param4);
 
 void ZeroMonData (Pokemon * mon)
 {
@@ -2530,122 +2527,122 @@ void sub_02075F00 (UnkStruct_02008A90 * param0, Pokemon * param1, u8 param2)
     sub_02075F0C(param0, &param1->box, param2, 1);
 }
 
-void sub_02075F0C (UnkStruct_02008A90 * param0, BoxPokemon * param1, u8 param2, int param3)
+void sub_02075F0C (UnkStruct_02008A90 * param0, BoxPokemon * boxMon, u8 param2, int param3)
 {
     BOOL v0;
-    u16 v1;
-    u8 v2, v3, v4;
-    u32 v5;
+    u16 species;
+    u8 v2, v3, form;
+    u32 pid;
 
-    v0 = sub_02073D20(param1);
-    v1 = sub_02074570(param1, MON_DATA_SPECIES_EGG, NULL);
-    v2 = sub_02075D74(param1);
-    v3 = sub_02075E14(param1);
-    v5 = sub_02074570(param1, MON_DATA_PERSONALITY, NULL);
+    v0 = sub_02073D20(boxMon);
+    species = sub_02074570(boxMon, MON_DATA_SPECIES_EGG, NULL);
+    v2 = sub_02075D74(boxMon);
+    v3 = sub_02075E14(boxMon);
+    pid = sub_02074570(boxMon, MON_DATA_PERSONALITY, NULL);
 
-    if (v1 == 494) {
-        if (sub_02074570(param1, MON_DATA_SPECIES, NULL) == 490) {
-            v4 = 1;
+    if (species == SPECIES_EGG) {
+        if (sub_02074570(boxMon, MON_DATA_SPECIES, NULL) == SPECIES_MANAPHY) {
+            form = 1;
         } else {
-            v4 = 0;
+            form = 0;
         }
     } else {
-        v4 = sub_02074570(param1, MON_DATA_FORM, NULL);
+        form = sub_02074570(boxMon, MON_DATA_FORM, NULL);
     }
 
     if (param3 == 1) {
-        sub_02076300(param0, v1, v2, param2, v3, v4, v5);
+        sub_02076300(param0, species, v2, param2, v3, form, pid);
     } else {
-        sub_02075FB4(param0, v1, v2, param2, v3, v4, v5);
+        sub_02075FB4(param0, species, v2, param2, v3, form, pid);
     }
 
-    sub_02073D48(param1, v0);
+    sub_02073D48(boxMon, v0);
 }
 
-void sub_02075FB4 (UnkStruct_02008A90 * param0, u16 param1, u8 param2, u8 param3, u8 param4, u8 param5, u32 param6)
+void sub_02075FB4 (UnkStruct_02008A90 * param0, u16 species, u8 param2, u8 param3, u8 param4, u8 form, u32 param6)
 {
     param0->unk_06 = 0;
     param0->unk_08 = 0;
     param0->unk_0C = 0;
-    param5 = SanitizeFormId(param1, param5);
+    form = SanitizeFormId(species, form);
 
-    switch (param1) {
-    case 412:
+    switch (species) {
+    case SPECIES_BURMY:
         param0->unk_00 = 117;
-        param0->unk_02 = 72 + (param3 / 2) + param5 * 2;
-        param0->unk_04 = 166 + param4 + param5 * 2;
+        param0->unk_02 = 72 + (param3 / 2) + form * 2;
+        param0->unk_04 = 166 + param4 + form * 2;
         break;
-    case 413:
+    case SPECIES_WORMADAM:
         param0->unk_00 = 117;
-        param0->unk_02 = 78 + (param3 / 2) + param5 * 2;
-        param0->unk_04 = 172 + param4 + param5 * 2;
+        param0->unk_02 = 78 + (param3 / 2) + form * 2;
+        param0->unk_04 = 172 + param4 + form * 2;
         break;
-    case 422:
+    case SPECIES_SHELLOS:
         param0->unk_00 = 117;
-        param0->unk_02 = 84 + param3 + param5;
-        param0->unk_04 = 178 + param4 + param5 * 2;
+        param0->unk_02 = 84 + param3 + form;
+        param0->unk_04 = 178 + param4 + form * 2;
         break;
-    case 423:
+    case SPECIES_GASTRODON:
         param0->unk_00 = 117;
-        param0->unk_02 = 88 + param3 + param5;
-        param0->unk_04 = 182 + param4 + param5 * 2;
+        param0->unk_02 = 88 + param3 + form;
+        param0->unk_04 = 182 + param4 + form * 2;
         break;
-    case 421:
+    case SPECIES_CHERRIM:
         param0->unk_00 = 117;
-        param0->unk_02 = 92 + param3 + param5;
-        param0->unk_04 = 186 + (param4 * 2) + param5;
+        param0->unk_02 = 92 + param3 + form;
+        param0->unk_04 = 186 + (param4 * 2) + form;
         break;
-    case 493:
+    case SPECIES_ARCEUS:
         param0->unk_00 = 117;
-        param0->unk_02 = 96 + (param3 / 2) + param5 * 2;
-        param0->unk_04 = 190 + param4 + param5 * 2;
+        param0->unk_02 = 96 + (param3 / 2) + form * 2;
+        param0->unk_04 = 190 + param4 + form * 2;
         break;
-    case 351:
+    case SPECIES_CASTFORM:
         param0->unk_00 = 117;
-        param0->unk_02 = 64 + (param3 * 2) + param5;
-        param0->unk_04 = 158 + (param4 * 4) + param5;
+        param0->unk_02 = 64 + (param3 * 2) + form;
+        param0->unk_04 = 158 + (param4 * 4) + form;
         break;
-    case 386:
+    case SPECIES_DEOXYS:
         param0->unk_00 = 117;
-        param0->unk_02 = 0 + (param3 / 2) + param5 * 2;
+        param0->unk_02 = 0 + (param3 / 2) + form * 2;
         param0->unk_04 = 154 + param4;
         break;
-    case 201:
+    case SPECIES_UNOWN:
         param0->unk_00 = 117;
-        param0->unk_02 = 8 + (param3 / 2) + param5 * 2;
+        param0->unk_02 = 8 + (param3 / 2) + form * 2;
         param0->unk_04 = 156 + param4;
         break;
-    case 494:
+    case SPECIES_EGG:
         param0->unk_00 = 117;
-        param0->unk_02 = 132 + param5;
-        param0->unk_04 = 226 + param5;
+        param0->unk_02 = 132 + form;
+        param0->unk_04 = 226 + form;
         break;
-    case 495:
+    case SPECIES_BAD_EGG:
         param0->unk_00 = 117;
         param0->unk_02 = 132;
         param0->unk_04 = 226;
         break;
-    case 492:
+    case SPECIES_SHAYMIN:
         param0->unk_00 = 117;
-        param0->unk_02 = 134 + (param3 / 2) + param5 * 2;
-        param0->unk_04 = 228 + param4 + param5 * 2;
+        param0->unk_02 = 134 + (param3 / 2) + form * 2;
+        param0->unk_04 = 228 + param4 + form * 2;
         break;
-    case 479:
+    case SPECIES_ROTOM:
         param0->unk_00 = 117;
-        param0->unk_02 = 138 + (param3 / 2) + param5 * 2;
-        param0->unk_04 = 232 + param4 + param5 * 2;
+        param0->unk_02 = 138 + (param3 / 2) + form * 2;
+        param0->unk_04 = 232 + param4 + form * 2;
         break;
-    case 487:
+    case SPECIES_GIRATINA:
         param0->unk_00 = 117;
-        param0->unk_02 = 150 + (param3 / 2) + param5 * 2;
-        param0->unk_04 = 244 + param4 + param5 * 2;
+        param0->unk_02 = 150 + (param3 / 2) + form * 2;
+        param0->unk_04 = 244 + param4 + form * 2;
         break;
     default:
         param0->unk_00 = 4;
-        param0->unk_02 = param1 * 6 + param3 + ((param2 != 1) ? 1 : 0);
-        param0->unk_04 = param1 * 6 + 4 + param4;
+        param0->unk_02 = species * 6 + param3 + ((param2 != 1) ? 1 : 0);
+        param0->unk_04 = species * 6 + 4 + param4;
 
-        if ((param1 == 327) && (param3 == 2)) {
+        if ((species == 327) && (param3 == 2)) {
             param0->unk_06 = 327;
             param0->unk_08 = 0;
             param0->unk_0C = param6;
@@ -2728,109 +2725,109 @@ u8 SanitizeFormId (u16 species, u8 formId)
     return formId;
 }
 
-static void sub_02076300 (UnkStruct_02008A90 * param0, u16 param1, u8 param2, u8 param3, u8 param4, u8 param5, u32 param6)
+static void sub_02076300 (UnkStruct_02008A90 * param0, u16 species, u8 param2, u8 param3, u8 param4, u8 formId, u32 param6)
 {
     param0->unk_06 = 0;
     param0->unk_08 = 0;
     param0->unk_0C = 0;
 
-    param5 = SanitizeFormId(param1, param5);
+    formId = SanitizeFormId(species, formId);
 
-    switch (param1) {
-    case 412:
+    switch (species) {
+    case SPECIES_BURMY:
         param0->unk_00 = 166;
-        param0->unk_02 = 72 + (param3 / 2) + param5 * 2;
-        param0->unk_04 = 146 + param4 + param5 * 2;
+        param0->unk_02 = 72 + (param3 / 2) + formId * 2;
+        param0->unk_04 = 146 + param4 + formId * 2;
         break;
-    case 413:
+    case SPECIES_WORMADAM:
         param0->unk_00 = 166;
-        param0->unk_02 = 78 + (param3 / 2) + param5 * 2;
-        param0->unk_04 = 152 + param4 + param5 * 2;
+        param0->unk_02 = 78 + (param3 / 2) + formId * 2;
+        param0->unk_04 = 152 + param4 + formId * 2;
         break;
-    case 422:
+    case SPECIES_SHELLOS:
         param0->unk_00 = 166;
-        param0->unk_02 = 84 + param3 + param5;
-        param0->unk_04 = 158 + param4 + param5 * 2;
+        param0->unk_02 = 84 + param3 + formId;
+        param0->unk_04 = 158 + param4 + formId * 2;
         break;
-    case 423:
+    case SPECIES_GASTRODON:
         param0->unk_00 = 166;
-        param0->unk_02 = 88 + param3 + param5;
-        param0->unk_04 = 162 + param4 + param5 * 2;
+        param0->unk_02 = 88 + param3 + formId;
+        param0->unk_04 = 162 + param4 + formId * 2;
         break;
-    case 421:
+    case SPECIES_CHERRIM:
         param0->unk_00 = 166;
-        param0->unk_02 = 92 + param3 + param5;
-        param0->unk_04 = 166 + (param4 * 2) + param5;
+        param0->unk_02 = 92 + param3 + formId;
+        param0->unk_04 = 166 + (param4 * 2) + formId;
         break;
-    case 493:
+    case SPECIES_ARCEUS:
         param0->unk_00 = 166;
-        param0->unk_02 = 96 + (param3 / 2) + param5 * 2;
-        param0->unk_04 = 170 + param4 + param5 * 2;
+        param0->unk_02 = 96 + (param3 / 2) + formId * 2;
+        param0->unk_04 = 170 + param4 + formId * 2;
         break;
-    case 351:
+    case SPECIES_CASTFORM:
         param0->unk_00 = 166;
-        param0->unk_02 = 64 + (param3 * 2) + param5;
-        param0->unk_04 = 138 + (param4 * 4) + param5;
+        param0->unk_02 = 64 + (param3 * 2) + formId;
+        param0->unk_04 = 138 + (param4 * 4) + formId;
         break;
-    case 386:
+    case SPECIES_DEOXYS:
         param0->unk_00 = 166;
-        param0->unk_02 = 0 + (param3 / 2) + param5 * 2;
+        param0->unk_02 = 0 + (param3 / 2) + formId * 2;
         param0->unk_04 = 134 + param4;
         break;
-    case 201:
+    case SPECIES_UNOWN:
         param0->unk_00 = 166;
-        param0->unk_02 = 8 + (param3 / 2) + param5 * 2;
+        param0->unk_02 = 8 + (param3 / 2) + formId * 2;
         param0->unk_04 = 136 + param4;
         break;
-    case 494:
+    case SPECIES_EGG:
         param0->unk_00 = 166;
-        param0->unk_02 = 132 + param5;
-        param0->unk_04 = 206 + param5;
+        param0->unk_02 = 132 + formId;
+        param0->unk_04 = 206 + formId;
         break;
-    case 495:
+    case SPECIES_BAD_EGG:
         param0->unk_00 = 166;
         param0->unk_02 = 132;
         param0->unk_04 = 206;
         break;
-    case 492:
-        if (param5 > 0) {
+    case SPECIES_SHAYMIN:
+        if (formId > 0) {
             param0->unk_00 = 117;
-            param0->unk_02 = 134 + (param3 / 2) + param5 * 2;
+            param0->unk_02 = 134 + (param3 / 2) + formId * 2;
             param0->unk_04 = 230 + param4;
         } else {
             param0->unk_00 = 165;
-            param0->unk_02 = param1 * 6 + param3 + ((param2 != 1) ? 1 : 0);
-            param0->unk_04 = param1 * 6 + 4 + param4;
+            param0->unk_02 = species * 6 + param3 + ((param2 != 1) ? 1 : 0);
+            param0->unk_04 = species * 6 + 4 + param4;
         }
         break;
-    case 479:
-        if (param5 > 0) {
+    case SPECIES_ROTOM:
+        if (formId > 0) {
             param0->unk_00 = 117;
-            param0->unk_02 = 138 + (param3 / 2) + param5 * 2;
-            param0->unk_04 = 232 + param4 + param5 * 2;
+            param0->unk_02 = 138 + (param3 / 2) + formId * 2;
+            param0->unk_04 = 232 + param4 + formId * 2;
         } else {
             param0->unk_00 = 165;
-            param0->unk_02 = param1 * 6 + param3 + ((param2 != 1) ? 1 : 0);
-            param0->unk_04 = param1 * 6 + 4 + param4;
+            param0->unk_02 = species * 6 + param3 + ((param2 != 1) ? 1 : 0);
+            param0->unk_04 = species * 6 + 4 + param4;
         }
         break;
-    case 487:
-        if (param5 > 0) {
+    case SPECIES_GIRATINA:
+        if (formId > 0) {
             param0->unk_00 = 117;
-            param0->unk_02 = 150 + (param3 / 2) + param5 * 2;
-            param0->unk_04 = 244 + param4 + param5 * 2;
+            param0->unk_02 = 150 + (param3 / 2) + formId * 2;
+            param0->unk_04 = 244 + param4 + formId * 2;
         } else {
             param0->unk_00 = 165;
-            param0->unk_02 = param1 * 6 + param3 + ((param2 != 1) ? 1 : 0);
-            param0->unk_04 = param1 * 6 + 4 + param4;
+            param0->unk_02 = species * 6 + param3 + ((param2 != 1) ? 1 : 0);
+            param0->unk_04 = species * 6 + 4 + param4;
         }
         break;
     default:
         param0->unk_00 = 165;
-        param0->unk_02 = param1 * 6 + param3 + ((param2 != 1) ? 1 : 0);
-        param0->unk_04 = param1 * 6 + 4 + param4;
+        param0->unk_02 = species * 6 + param3 + ((param2 != 1) ? 1 : 0);
+        param0->unk_04 = species * 6 + 4 + param4;
 
-        if ((param1 == 327) && (param3 == 2)) {
+        if ((species == SPECIES_SPINDA) && (param3 == 2)) {
             param0->unk_06 = 327;
             param0->unk_08 = 0;
             param0->unk_0C = param6;
@@ -2878,74 +2875,74 @@ u8 sub_020765C4 (BoxPokemon * param0, u8 param1, int param2)
     return sub_02076648(v0, v1, param1, v2, v3);
 }
 
-u8 sub_02076648 (u16 param0, u8 param1, u8 param2, u8 param3, u32 param4)
+u8 sub_02076648 (u16 species, u8 param1, u8 param2, u8 form, u32 param4)
 {
     int v0;
     int v1;
     u8 v2;
 
-    param3 = SanitizeFormId(param0, param3);
+    form = SanitizeFormId(species, form);
 
-    switch (param0) {
-    case 412:
+    switch (species) {
+    case SPECIES_BURMY:
         v0 = 121;
-        v1 = 72 + (param2 / 2) + param3 * 2;
+        v1 = 72 + (param2 / 2) + form * 2;
         break;
-    case 413:
+    case SPECIES_WORMADAM:
         v0 = 121;
-        v1 = 78 + (param2 / 2) + param3 * 2;
+        v1 = 78 + (param2 / 2) + form * 2;
         break;
-    case 422:
+    case SPECIES_SHELLOS:
         v0 = 121;
-        v1 = 84 + param2 + param3;
+        v1 = 84 + param2 + form;
         break;
-    case 423:
+    case SPECIES_GASTRODON:
         v0 = 121;
-        v1 = 88 + param2 + param3;
+        v1 = 88 + param2 + form;
         break;
-    case 421:
+    case SPECIES_CHERRIM:
         v0 = 121;
-        v1 = 92 + param2 + param3;
+        v1 = 92 + param2 + form;
         break;
-    case 493:
+    case SPECIES_ARCEUS:
         v0 = 121;
-        v1 = 96 + (param2 / 2) + param3 * 2;
+        v1 = 96 + (param2 / 2) + form * 2;
         break;
-    case 351:
+    case SPECIES_CASTFORM:
         v0 = 121;
-        v1 = 64 + param2 * 2 + param3;
+        v1 = 64 + param2 * 2 + form;
         break;
-    case 386:
+    case SPECIES_DEOXYS:
         v0 = 121;
-        v1 = 0 + (param2 / 2) + param3 * 2;
+        v1 = 0 + (param2 / 2) + form * 2;
         break;
-    case 201:
+    case SPECIES_UNOWN:
         v0 = 121;
-        v1 = 8 + (param2 / 2) + param3 * 2;
+        v1 = 8 + (param2 / 2) + form * 2;
         break;
-    case 494:
+    case SPECIES_EGG:
         v0 = 121;
-        v1 = 132 + param3;
+        v1 = 132 + form;
         break;
-    case 495:
+    case SPECIES_BAD_EGG:
         v0 = 121;
         v1 = 132;
         break;
-    case 492:
+    case SPECIES_SHAYMIN:
         v0 = 121;
-        v1 = 136 + (param2 / 2) + param3 * 2;
+        v1 = 136 + (param2 / 2) + form * 2;
         break;
-    case 479:
+    case SPECIES_ROTOM:
         v0 = 121;
-        v1 = 140 + (param2 / 2) + param3 * 2;
+        v1 = 140 + (param2 / 2) + form * 2;
         break;
-    case 487:
+    case SPECIES_GIRATINA:
         v0 = 121;
-        v1 = 152 + (param2 / 2) + param3 * 2;
+        v1 = 152 + (param2 / 2) + form * 2;
         break;
     default:
         v0 = 5;
-        v1 = param0 * 4 + param2 + ((param1 != 1) ? 1 : 0);
+        v1 = species * 4 + param2 + ((param1 != 1) ? 1 : 0);
         break;
     }
 
@@ -2954,89 +2951,89 @@ u8 sub_02076648 (u16 param0, u8 param1, u8 param2, u8 param3, u32 param4)
     return v2;
 }
 
-static u8 sub_020767BC (u16 param0, u8 param1, u8 param2, u8 param3, u32 param4)
+static u8 sub_020767BC (u16 species, u8 param1, u8 param2, u8 form, u32 param4)
 {
     int v0;
     int v1;
     u8 v2;
 
-    param3 = SanitizeFormId(param0, param3);
+    form = SanitizeFormId(species, form);
 
-    switch (param0) {
-    case 412:
+    switch (species) {
+    case SPECIES_BURMY:
         v0 = 168;
-        v1 = 72 + (param2 / 2) + param3 * 2;
+        v1 = 72 + (param2 / 2) + form * 2;
         break;
-    case 413:
+    case SPECIES_WORMADAM:
         v0 = 168;
-        v1 = 78 + (param2 / 2) + param3 * 2;
+        v1 = 78 + (param2 / 2) + form * 2;
         break;
-    case 422:
+    case SPECIES_SHELLOS:
         v0 = 168;
-        v1 = 84 + param2 + param3;
+        v1 = 84 + param2 + form;
         break;
-    case 423:
+    case SPECIES_GASTRODON:
         v0 = 168;
-        v1 = 88 + param2 + param3;
+        v1 = 88 + param2 + form;
         break;
-    case 421:
+    case SPECIES_CHERRIM:
         v0 = 168;
-        v1 = 92 + param2 + param3;
+        v1 = 92 + param2 + form;
         break;
-    case 493:
+    case SPECIES_ARCEUS:
         v0 = 168;
-        v1 = 96 + (param2 / 2) + param3 * 2;
+        v1 = 96 + (param2 / 2) + form * 2;
         break;
-    case 351:
+    case SPECIES_CASTFORM:
         v0 = 168;
-        v1 = 64 + param2 * 2 + param3;
+        v1 = 64 + param2 * 2 + form;
         break;
-    case 386:
+    case SPECIES_DEOXYS:
         v0 = 168;
-        v1 = 0 + (param2 / 2) + param3 * 2;
+        v1 = 0 + (param2 / 2) + form * 2;
         break;
-    case 201:
+    case SPECIES_UNOWN:
         v0 = 168;
-        v1 = 8 + (param2 / 2) + param3 * 2;
+        v1 = 8 + (param2 / 2) + form * 2;
         break;
-    case 494:
+    case SPECIES_EGG:
         v0 = 168;
-        v1 = 132 + param3;
+        v1 = 132 + form;
         break;
-    case 495:
+    case SPECIES_BAD_EGG:
         v0 = 168;
         v1 = 132;
         break;
-    case 492:
-        if (param3 > 0) {
+    case SPECIES_SHAYMIN:
+        if (form > 0) {
             v0 = 121;
-            v1 = 136 + (param2 / 2) + param3 * 2;
+            v1 = 136 + (param2 / 2) + form * 2;
         } else {
             v0 = 167;
-            v1 = param0 * 4 + param2 + ((param1 != 1) ? 1 : 0);
+            v1 = species * 4 + param2 + ((param1 != 1) ? 1 : 0);
         }
         break;
     case 479:
-        if (param3 > 0) {
+        if (form > 0) {
             v0 = 121;
-            v1 = 140 + (param2 / 2) + param3 * 2;
+            v1 = 140 + (param2 / 2) + form * 2;
         } else {
             v0 = 167;
-            v1 = param0 * 4 + param2 + ((param1 != 1) ? 1 : 0);
+            v1 = species * 4 + param2 + ((param1 != 1) ? 1 : 0);
         }
         break;
     case 487:
-        if (param3 > 0) {
+        if (form > 0) {
             v0 = 121;
-            v1 = 152 + (param2 / 2) + param3 * 2;
+            v1 = 152 + (param2 / 2) + form * 2;
         } else {
             v0 = 167;
-            v1 = param0 * 4 + param2 + ((param1 != 1) ? 1 : 0);
+            v1 = species * 4 + param2 + ((param1 != 1) ? 1 : 0);
         }
         break;
     default:
         v0 = 167;
-        v1 = param0 * 4 + param2 + ((param1 != 1) ? 1 : 0);
+        v1 = species * 4 + param2 + ((param1 != 1) ? 1 : 0);
         break;
     }
 
@@ -5101,39 +5098,39 @@ static void * sub_0207825C (BoxPokemon * param0, u32 param1, u8 param2)
     return v0;
 }
 
-static int sub_02078740 (int param0, int param1)
+static int sub_02078740 (int species, int param1)
 {
-    switch (param0) {
-    case 386:
+    switch (species) {
+    case SPECIES_DEOXYS:
         if ((param1) && (param1 <= 3)) {
-            param0 = (496 - 1) + param1;
+            species = (496 - 1) + param1;
         }
         break;
-    case 413:
+    case SPECIES_WORMADAM:
         if ((param1) && (param1 <= 2)) {
-            param0 = (499 - 1) + param1;
+            species = (499 - 1) + param1;
         }
         break;
-    case 487:
+    case SPECIES_GIRATINA:
         if ((param1) && (param1 <= 1)) {
-            param0 = (501 - 1) + param1;
+            species = (501 - 1) + param1;
         }
         break;
-    case 492:
+    case SPECIES_SHAYMIN:
         if ((param1) && (param1 <= 1)) {
-            param0 = (502 - 1) + param1;
+            species = (502 - 1) + param1;
         }
         break;
-    case 479:
+    case SPECIES_ROTOM:
         if ((param1) && (param1 <= 5)) {
-            param0 = (503 - 1) + param1;
+            species = (503 - 1) + param1;
         }
         break;
     default:
         break;
     }
 
-    return param0;
+    return species;
 }
 
 u32 sub_020787CC (int param0)

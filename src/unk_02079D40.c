@@ -7,6 +7,8 @@
 #include "unk_02073C2C.h"
 #include "unk_02079D40.h"
 
+#include "constants/species.h"
+
 const u8 Unk_020F0780[] = {
 	0x0,
 	0x1,
@@ -631,24 +633,22 @@ u32 sub_02079D8C (u32 param0, u32 param1, u32 param2)
     return 7 + param0;
 }
 
-u16 sub_02079E44 (const BoxPokemon * param0)
+u16 sub_02079E44 (const BoxPokemon * boxMon)
 {
-    u32 v0;
+    u32 species = sub_02074570((BoxPokemon *)boxMon, MON_DATA_SPECIES_EGG, NULL);
 
-    v0 = sub_02074570((BoxPokemon *)param0, MON_DATA_SPECIES_EGG, NULL);
-
-    switch (v0) {
-    case 201:
-        return sub_02076B00((BoxPokemon *)param0);
-    case 386:
-    case 412:
-    case 413:
-    case 422:
-    case 423:
-    case 487:
-    case 492:
-    case 479:
-        return sub_02074570((BoxPokemon *)param0, MON_DATA_FORM, NULL);
+    switch (species) {
+    case SPECIES_UNOWN:
+        return sub_02076B00((BoxPokemon *)boxMon);
+    case SPECIES_DEOXYS:
+    case SPECIES_BURMY:
+    case SPECIES_WORMADAM:
+    case SPECIES_SHELLOS:
+    case SPECIES_GASTRODON:
+    case SPECIES_GIRATINA:
+    case SPECIES_SHAYMIN:
+    case SPECIES_ROTOM:
+        return sub_02074570((BoxPokemon *)boxMon, MON_DATA_FORM, NULL);
     default:
         return 0;
     }

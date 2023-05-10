@@ -41,6 +41,8 @@
 #include "overlay005/ov5_021DC018.h"
 #include "overlay005/ov5_021F77A8.h"
 
+#include "constants/species.h"
+
 typedef struct {
     u8 unk_00[5];
 } UnkStruct_ov5_02200EAC;
@@ -599,7 +601,7 @@ BOOL ov5_021F7C04(UnkStruct_0203E724 * param0);
 static BOOL ov5_021F7DE8(UnkStruct_0203E724 * param0);
 static u16 ov5_021F7A3C(u16 param0);
 static u16 ov5_021F7A4C(u16 param0);
-static u8 ov5_021F7A74(Pokemon * param0, u8 param1);
+static u8 ov5_021F7A74(Pokemon * mon, u8 param1);
 static u16 ov5_021F7B60(Pokemon * param0, u16 param1);
 static void ov5_021F7E10(UnkStruct_ov5_021F7ED8 * param0, UnkStruct_0200B144 * param1);
 static void ov5_021F7E18(UnkStruct_0203CDB0 * param0, UnkStruct_ov5_021F7ED8 * param1, u8 param2, u8 param3, u8 param4, u8 param5, u16 * param6, UnkStruct_0200B358 * param7, UnkStruct_0205AA50 * param8, UnkStruct_0200B144 * param9);
@@ -811,52 +813,52 @@ static u16 ov5_021F7A4C (u16 param0)
     return 0;
 }
 
-static u8 ov5_021F7A74 (Pokemon * param0, u8 param1)
+static u8 ov5_021F7A74 (Pokemon * mon, u8 param1)
 {
     u16 v0;
-    u32 v1, v2;
+    u32 form, species;
 
-    v2 = GetMonData(param0, MON_DATA_SPECIES, NULL);
-    v1 = GetMonData(param0, MON_DATA_FORM, NULL);
-    v0 = v2;
+    species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    form = GetMonData(mon, MON_DATA_FORM, NULL);
+    v0 = species;
 
-    switch (v2) {
-    case 386:
-        if (v1 == 1) {
+    switch (species) {
+    case SPECIES_DEOXYS:
+        if (form == 1) {
             v0 = 494;
-        } else if (v1 == 2) {
+        } else if (form == 2) {
             v0 = 495;
-        } else if (v1 == 3) {
+        } else if (form == 3) {
             v0 = 496;
         }
         break;
-    case 413:
-        if (v1 == 1) {
+    case SPECIES_WORMADAM:
+        if (form == 1) {
             v0 = 497;
-        } else if (v1 == 2) {
+        } else if (form == 2) {
             v0 = 498;
         }
         break;
-    case 487:
-        if (v1 == 1) {
+    case SPECIES_GIRATINA:
+        if (form == 1) {
             v0 = 499;
         }
         break;
-    case 492:
-        if (v1 == 1) {
+    case SPECIES_SHAYMIN:
+        if (form == 1) {
             v0 = 500;
         }
         break;
-    case 479:
-        if (v1 == 1) {
+    case SPECIES_ROTOM:
+        if (form == 1) {
             v0 = 501;
-        } else if (v1 == 2) {
+        } else if (form == 2) {
             v0 = 502;
-        } else if (v1 == 3) {
+        } else if (form == 3) {
             v0 = 503;
-        } else if (v1 == 4) {
+        } else if (form == 4) {
             v0 = 504;
-        } else if (v1 == 5) {
+        } else if (form == 5) {
             v0 = 505;
         }
         break;

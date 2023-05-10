@@ -82,6 +82,8 @@
 #include "overlay021/ov21_021E737C.h"
 #include "overlay021/ov21_021E8484.h"
 
+#include "constants/species.h"
+
 typedef struct UnkStruct_ov21_021D0F60_t {
     BOOL unk_00;
     int unk_04;
@@ -790,55 +792,55 @@ void ov21_021D1858 (UnkStruct_ov21_021D22F8 * param0, int param1, int param2)
     }
 }
 
-void ov21_021D1890 (UnkStruct_ov21_021D13FC * param0, UnkStruct_ov21_021D3320 * param1, int param2, int param3, int param4, int param5)
+void ov21_021D1890 (UnkStruct_ov21_021D13FC * param0, UnkStruct_ov21_021D3320 * param1, int species, int param3, int param4, int param5)
 {
-    switch (param2) {
-    case 201:
+    switch (species) {
+    case SPECIES_UNOWN:
         ov21_021D1A34(param0, param1, param3, param4, param5, 0, 0);
         break;
-    case 412:
+    case SPECIES_BURMY:
         ov21_021D1B08(param0, param1, param3, param4, param5, 0, 0);
         break;
-    case 413:
+    case SPECIES_WORMADAM:
         ov21_021D1B4C(param0, param1, param3, param4, param5, 0, 0);
         break;
-    case 422:
+    case SPECIES_SHELLOS:
         ov21_021D1A78(param0, param1, param3, param4, param5, 0, 0);
         break;
-    case 423:
+    case SPECIES_GASTRODON:
         ov21_021D1AC0(param0, param1, param3, param4, param5, 0, 0);
         break;
-    case 386:
+    case SPECIES_DEOXYS:
         ov21_021D1B94(param0, param1, param3, param4, param5, 0, 0);
         break;
-    case 492:
+    case SPECIES_SHAYMIN:
         ov21_021D1BD8(param0, param1, param3, param4, param5, 0, 0);
         break;
-    case 487:
+    case SPECIES_GIRATINA:
         ov21_021D1C30(param0, param1, param3, param4, param5, 0, 0);
         break;
-    case 479:
+    case SPECIES_ROTOM:
         ov21_021D1C88(param0, param1, param3, param4, param5, 0, 0);
         break;
     default:
-        ov21_021D19D8(param0, param1, param2, param3, param4, param5, 0, 0);
+        ov21_021D19D8(param0, param1, species, param3, param4, param5, 0, 0);
         break;
     }
 }
 
-u32 ov21_021D19D8 (UnkStruct_ov21_021D13FC * param0, const UnkStruct_ov21_021D3320 * param1, int param2, int param3, int param4, int param5, int param6, int param7)
+u32 ov21_021D19D8 (UnkStruct_ov21_021D13FC * param0, const UnkStruct_ov21_021D3320 * param1, int species, int param3, int param4, int param5, int param6, int param7)
 {
     int v0;
     u32 v1 = 0;
 
-    if (param2 == 327) {
+    if (species == SPECIES_SPINDA) {
         v1 = ov21_021D33F8(param1);
     }
 
-    v0 = ov21_021D334C(param1, param2, param6);
+    v0 = ov21_021D334C(param1, species, param6);
 
     if (v0 != -1) {
-        ov21_021D2188(param0, param2, v0, param3, 0, 0, v1, param4, param5, param7);
+        ov21_021D2188(param0, species, v0, param3, 0, 0, v1, param4, param5, param7);
     }
 
     return v0;
