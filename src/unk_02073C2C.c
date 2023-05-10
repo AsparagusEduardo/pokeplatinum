@@ -224,7 +224,6 @@ void sub_02077EE4(Pokemon * param0, UnkStruct_02025E6C * param1, int param2, int
 void sub_02077EF8(BoxPokemon * param0, UnkStruct_02025E6C * param1, int param2, int param3, int param4, int param5);
 void sub_02077F0C(Pokemon * param0, u32 param1, int param2);
 BOOL sub_02077FB4(Pokemon * param0, u8 param1);
-BOOL sub_02077FBC(BoxPokemon * param0, u8 param1);
 BOOL sub_02077FE4(u16 param0, int param1, u8 param2);
 void sub_0207803C(Pokemon * param0);
 void sub_02078044(BoxPokemon * param0);
@@ -4445,15 +4444,12 @@ BOOL sub_02077FB4 (Pokemon * param0, u8 param1)
     return sub_02077FBC(&param0->box, param1);
 }
 
-BOOL sub_02077FBC (BoxPokemon * param0, u8 param1)
+BOOL sub_02077FBC (BoxPokemon * boxMon, u8 param1)
 {
-    u16 v0;
-    int v1;
+    u16 species = sub_02074570(boxMon, MON_DATA_SPECIES_EGG, NULL);
+    int form = sub_02074570(boxMon, MON_DATA_FORM, NULL);
 
-    v0 = sub_02074570(param0, MON_DATA_SPECIES_EGG, NULL);
-    v1 = sub_02074570(param0, MON_DATA_FORM, NULL);
-
-    return sub_02077FE4(v0, v1, param1);
+    return sub_02077FE4(species, form, param1);
 }
 
 BOOL sub_02077FE4 (u16 param0, int param1, u8 param2)
