@@ -2424,8 +2424,8 @@ static void ov5_021E6948 (Pokemon * param0, BoxPokemon * boxMon1, BoxPokemon * b
     v4 = sub_02077660(v3, v6, v7->unk_30);
 
     for (v0 = 0; v0 < 4; v0++) {
-        v7->unk_00[v0] = sub_02074570(boxMon1, 54 + v0, NULL);
-        v7->unk_20[v0] = sub_02074570(boxMon2, 54 + v0, NULL);
+        v7->unk_00[v0] = sub_02074570(boxMon1, MON_DATA_MOVE1 + v0, NULL);
+        v7->unk_20[v0] = sub_02074570(boxMon2, MON_DATA_MOVE1 + v0, NULL);
     }
 
     v5 = ov5_021E68D8(param0, v7->unk_94);
