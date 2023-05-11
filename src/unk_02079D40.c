@@ -576,61 +576,61 @@ u32 sub_02079D80 (Pokemon * param0)
     return sub_02079D40((const BoxPokemon *)sub_02076B10(param0));
 }
 
-u32 sub_02079D8C (u32 param0, u32 param1, u32 param2)
+u32 sub_02079D8C (u32 species, u32 param1, u32 form)
 {
     if (param1 == 1) {
-        if (param0 == 490) {
+        if (species == SPECIES_MANAPHY) {
             return 502;
         } else {
             return 501;
         }
     }
 
-    param2 = SanitizeFormId(param0, param2);
+    form = SanitizeFormId(species, form);
 
-    if (param2 != 0) {
-        if (param0 == 386) {
-            return 503 + param2 - 1;
+    if (form != 0) {
+        if (species == SPECIES_DEOXYS) {
+            return 503 + form - 1;
         }
 
-        if (param0 == 201) {
-            return 507 + param2 - 1;
+        if (species == SPECIES_UNOWN) {
+            return 507 + form - 1;
         }
 
-        if (param0 == 412) {
-            return 534 + param2 - 1;
+        if (species == SPECIES_BURMY) {
+            return 534 + form - 1;
         }
 
-        if (param0 == 413) {
-            return 536 + param2 - 1;
+        if (species == SPECIES_WORMADAM) {
+            return 536 + form - 1;
         }
 
-        if (param0 == 422) {
-            return 538 + param2 - 1;
+        if (species == SPECIES_SHELLOS) {
+            return 538 + form - 1;
         }
 
-        if (param0 == 423) {
-            return 539 + param2 - 1;
+        if (species == SPECIES_GASTRODON) {
+            return 539 + form - 1;
         }
 
-        if (param0 == 487) {
-            return 540 + param2 - 1;
+        if (species == SPECIES_GIRATINA) {
+            return 540 + form - 1;
         }
 
-        if (param0 == 492) {
-            return 541 + param2 - 1;
+        if (species == SPECIES_SHAYMIN) {
+            return 541 + form - 1;
         }
 
-        if (param0 == 479) {
-            return 542 + param2 - 1;
+        if (species == SPECIES_ROTOM) {
+            return 542 + form - 1;
         }
     }
 
-    if (param0 > 493) {
-        param0 = 0;
+    if (species > NATIONAL_DEX_COUNT) {
+        species = SPECIES_NONE;
     }
 
-    return 7 + param0;
+    return 7 + species;
 }
 
 u16 sub_02079E44 (const BoxPokemon * boxMon)
@@ -656,39 +656,39 @@ u16 sub_02079E44 (const BoxPokemon * boxMon)
     return 0;
 }
 
-const u8 sub_02079EDC (u32 param0, u32 param1, u32 param2)
+const u8 sub_02079EDC (u32 species, u32 param1, u32 param2)
 {
     if (param2 == 1) {
-        if (param0 == 490) {
-            param0 = 495;
+        if (species == SPECIES_MANAPHY) {
+            species = 495;
         } else {
-            param0 = 494;
+            species = 494;
         }
-    } else if (param0 > 493) {
-        param0 = 0;
+    } else if (species > NATIONAL_DEX_COUNT) {
+        species = 0;
     } else if (param1 != 0) {
-        if (param0 == 386) {
-            param0 = 496 + param1 - 1;
-        } else if (param0 == 201) {
-            param0 = 499 + param1 - 1;
-        } else if (param0 == 412) {
-            param0 = 527 + param1 - 1;
-        } else if (param0 == 413) {
-            param0 = 529 + param1 - 1;
-        } else if (param0 == 422) {
-            param0 = 531 + param1 - 1;
-        } else if (param0 == 423) {
-            param0 = 532 + param1 - 1;
-        } else if (param0 == 487) {
-            param0 = 533 + param1 - 1;
-        } else if (param0 == 492) {
-            param0 = 534 + param1 - 1;
-        } else if (param0 == 479) {
-            param0 = 535 + param1 - 1;
+        if (species == SPECIES_DEOXYS) {
+            species = 496 + param1 - 1;
+        } else if (species == SPECIES_UNOWN) {
+            species = 499 + param1 - 1;
+        } else if (species == SPECIES_BURMY) {
+            species = 527 + param1 - 1;
+        } else if (species == SPECIES_WORMADAM) {
+            species = 529 + param1 - 1;
+        } else if (species == SPECIES_SHELLOS) {
+            species = 531 + param1 - 1;
+        } else if (species == SPECIES_GASTRODON) {
+            species = 532 + param1 - 1;
+        } else if (species == SPECIES_GIRATINA) {
+            species = 533 + param1 - 1;
+        } else if (species == SPECIES_SHAYMIN) {
+            species = 534 + param1 - 1;
+        } else if (species == SPECIES_ROTOM) {
+            species = 535 + param1 - 1;
         }
     }
 
-    return Unk_020F0780[param0];
+    return Unk_020F0780[species];
 }
 
 const u8 sub_02079F84 (const BoxPokemon * param0)

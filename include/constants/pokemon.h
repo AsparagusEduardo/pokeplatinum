@@ -184,4 +184,11 @@ enum {
     MON_DATA_179,
 };
 
+#define GBA_GET_UNOWN_LETTER(personality) ((   \
+      (((personality) & 0x03000000) >> 18) \
+    | (((personality) & 0x00030000) >> 12) \
+    | (((personality) & 0x00000300) >> 6)  \
+    | (((personality) & 0x00000003) >> 0)  \
+) % 28)
+
 #endif // POKEPLATINUM_CONSTANTS_POKEMON_H

@@ -124,7 +124,6 @@ BOOL sub_02073D48(BoxPokemon * param0, BOOL param1);
 void sub_02073D80(Pokemon * param0, int param1, int param2, int param3, int param4, u32 param5, int param6, u32 param7);
 void sub_02073E18(BoxPokemon * param0, int param1, int param2, int param3, int param4, u32 param5, int param6, u32 param7);
 void sub_02074044(Pokemon *, u16 param0, u8 param1, u8 param2, u8 param3);
-void sub_02074088(Pokemon *, u16 param0, u8 param1, u8 param2, u8 param3, u8 param4, u8 param5);
 u32 sub_02074128(u16 param0, u8 param1, u8 param2);
 void sub_02074158(Pokemon *, u16 param0, u8 param1, u32 param2, u32 param3);
 void sub_0207418C(Pokemon * param0);
@@ -469,22 +468,22 @@ void sub_02074044 (Pokemon * param0, u16 param1, u8 param2, u8 param3, u8 param4
     sub_02073D80(param0, param1, param2, param3, 1, v0, 0, 0);
 }
 
-void sub_02074088 (Pokemon * param0, u16 param1, u8 param2, u8 param3, u8 param4, u8 param5, u8 param6)
+void sub_02074088 (Pokemon * mon, u16 param1, u8 param2, u8 param3, u8 param4, u8 nature, u8 param6)
 {
-    u32 v0;
+    u32 personality;
     u32 v1;
     u16 v2;
 
     if ((param6) && (param6 < 29)) {
         do {
-            v0 = (sub_0201D2E8() | (sub_0201D2E8() << 16));
-            v2 = (((v0 & 0x3000000) >> 18) | ((v0 & 0x30000) >> 12) | ((v0 & 0x300) >> 6) | (v0 & 0x3)) % 28;
-        } while ((param5 != GetNatureFromPersonality(v0)) || (param4 != sub_02075DAC(param1, v0)) || (v2 != (param6 - 1)));
+            personality = (sub_0201D2E8() | (sub_0201D2E8() << 16));
+            v2 = GBA_GET_UNOWN_LETTER(personality);
+        } while ((nature != GetNatureFromPersonality(personality)) || (param4 != sub_02075DAC(param1, personality)) || (v2 != (param6 - 1)));
     } else {
-        v0 = sub_02074128(param1, param4, param5);
+        personality = sub_02074128(param1, param4, nature);
     }
 
-    sub_02073D80(param0, param1, param2, param3, 1, v0, 0, 0);
+    sub_02073D80(mon, param1, param2, param3, 1, personality, 0, 0);
 }
 
 u32 sub_02074128 (u16 param0, u8 param1, u8 param2)

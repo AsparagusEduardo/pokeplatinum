@@ -464,15 +464,15 @@ static BOOL sub_020268D8 (const UnkStruct_02026324 * param0, u32 param1)
     return 0;
 }
 
-static void sub_020268FC (UnkStruct_02026324 * param0, u16 param1, Pokemon * param2)
+static void sub_020268FC (UnkStruct_02026324 * param0, u16 species, Pokemon * param2)
 {
-    u8 v0 = GetMonData(param2, MON_DATA_FORM, NULL);
+    u8 form = GetMonData(param2, MON_DATA_FORM, NULL);
     u32 v1;
 
-    if (param1 == 386) {
-        if (sub_020268D8(param0, v0) == 0) {
+    if (species == SPECIES_DEOXYS) {
+        if (sub_020268D8(param0, form) == 0) {
             v1 = sub_020268B8(param0);
-            sub_02026850(param0, v0, v1);
+            sub_02026850(param0, form, v1);
         }
     }
 }

@@ -35,7 +35,7 @@
 #include "overlay084/struct_ov84_0223BA5C.h"
 #include "overlay097/struct_ov97_0222DB78.h"
 #include "overlay097/struct_ov97_02236340.h"
-#include "overlay097/box_pokemon_gba.h"
+#include "overlay097/gba_box_pokemon.h"
 #include "overlay115/struct_ov115_02261520.h"
 
 #include "unk_02000C88.h"
@@ -182,7 +182,6 @@ static void ov97_02235310(UnkStruct_ov97_02234A2C * param0);
 static void ov97_02233D10(UnkStruct_ov97_02234A2C * param0);
 void sub_02023D8C(UnkStruct_02023790 * param0, const u16 * param1, u32 param2);
 void sub_02023D28(UnkStruct_02023790 * param0, const u16 * param1);
-void BoxMonGBAToBoxMon(BoxPokemonGBA * param0, BoxPokemon * param1);
 
 UnkStruct_ov97_0223F434 * Unk_ov97_0223F434;
 
@@ -393,7 +392,7 @@ static void ov97_02233D10 (UnkStruct_ov97_02234A2C * param0)
     int v0, v1, v2;
     u16 v3;
     BoxPokemon * v4;
-    BoxPokemonGBA * v5;
+    GBABoxPokemon * v5;
     Pokemon v6;
     UnkStruct_02024440 * v7;
 
@@ -405,7 +404,7 @@ static void ov97_02233D10 (UnkStruct_ov97_02234A2C * param0)
         v1 = param0->unk_42C[v0].unk_08;
         v5 = &param0->unk_E8E0->boxes[v1][v2];
 
-        BoxMonGBAToBoxMon(v5, v4);
+        GBABoxMonToDSBoxMon(v5, v4);
         sub_0202EFA4(v7, v4, v0);
     }
 
@@ -618,38 +617,35 @@ static void ov97_022341EC (u32 param0, NNSG2dCharacterData ** param1, void * par
     NNS_G2dGetUnpackedBGCharacterData(param2, param1);
 }
 
-static u8 GBASpeciesToDSFormId (int param0, u32 param1, int param2)
+static u8 SpeciesFormIdByGBAGame (int species, u32 personality, int gameVersion)
 {
-    u8 v0;
+    u8 form = 0;
 
-    v0 = 0;
-
-    switch (param0) {
-    case 201:
-        v0 = (((param1 & 0x3000000) >> 18) | ((param1 & 0x30000) >> 12) | ((param1 & 0x300) >> 6) | (param1 & 0x3)) % 28;
+    switch (species) {
+    case SPECIES_UNOWN:
+        form = GBA_GET_UNOWN_LETTER(personality);
         break;
-    case 386:
-        switch (param2) {
+    case SPECIES_DEOXYS:
+        switch (gameVersion) {
         default:
-        case 2:
-        case 1:
-            v0 = 0;
+        case VERSION_RUBY:
+        case VERSION_SAPPHIRE:
+            form = 0;
             break;
-        case 4:
-            v0 = 1;
+        case VERSION_FIRE_RED:
+            form = 1;
             break;
-        case 5:
-            v0 = 2;
+        case VERSION_LEAF_GREEN:
+            form = 2;
             break;
-        case 3:
-            v0 = 3;
+        case VERSION_EMERALD:
+            form = 3;
             break;
         }
-
         break;
     }
 
-    return v0;
+    return form;
 }
 
 static void ov97_02234278 (int param0, int param1, u32 param2, int param3, int param4, UnkStruct_02022550 * param5)
@@ -660,7 +656,7 @@ static void ov97_02234278 (int param0, int param1, u32 param2, int param3, int p
 
     param0 = ov97_02236DD0(param0);
 
-    v1 = GBASpeciesToDSFormId(param0, param2, param3);
+    v1 = SpeciesFormIdByGBAGame(param0, param2, param3);
     v0 = ov97_022341B4(19, sub_02079D8C(param0, param1, v1), &v2, 78);
 
     DC_FlushRange(v2->pRawData, ((4 * 4) * 0x20));
@@ -726,7 +722,7 @@ static void ov97_022343A8 (UnkStruct_ov97_02234A2C * param0)
             v2 = ov97_02234148(param0, param0->unk_E8E4, v0);
             v5 = ov97_0223416C(param0, param0->unk_E8E4, v0);
             v3 = Unk_021BF67C.unk_66;
-            v4 = GBASpeciesToDSFormId(ov97_02236DD0(v1), v5, v3);
+            v4 = SpeciesFormIdByGBAGame(ov97_02236DD0(v1), v5, v3);
 
             ov97_022342E4(v1, v2, v4, v0, param0->unk_20C[v0].unk_00, v6, v7);
             sub_02021CAC(param0->unk_20C[v0].unk_00, 1);
@@ -847,7 +843,7 @@ static void ov97_0223468C (UnkStruct_ov97_02234A2C * param0)
 static BOOL ov97_0223474C (UnkStruct_ov97_02234A2C * param0, int param1)
 {
     int v0;
-    BoxPokemonGBA * v1 = &param0->unk_E8E0->boxes[param0->unk_E8E4][param1];
+    GBABoxPokemon * v1 = &param0->unk_E8E0->boxes[param0->unk_E8E4][param1];
 
     if (GetGBABoxMonData(v1, 65, NULL) == 412) {
         return 1;
@@ -859,7 +855,7 @@ static BOOL ov97_0223474C (UnkStruct_ov97_02234A2C * param0, int param1)
 static BOOL ov97_02234784 (UnkStruct_ov97_02234A2C * param0, int param1)
 {
     int v0, v1, v2;
-    BoxPokemonGBA * v3 = &param0->unk_E8E0->boxes[param0->unk_E8E4][param1];
+    GBABoxPokemon * v3 = &param0->unk_E8E0->boxes[param0->unk_E8E4][param1];
 
     for (v0 = 0; v0 < 4; v0++) {
         v2 = GetGBABoxMonData(v3, 13 + v0, NULL);
@@ -1026,7 +1022,7 @@ u16 Unk_ov97_0223EAD8[] = {
 
 static BOOL ov97_022347D8 (UnkStruct_ov97_02234A2C * param0, int param1)
 {
-    BoxPokemonGBA * v0 = &param0->unk_E8E0->boxes[param0->unk_E8E4][param1];
+    GBABoxPokemon * v0 = &param0->unk_E8E0->boxes[param0->unk_E8E4][param1];
     int v1 = GetGBABoxMonData(v0, 12, NULL);
     int v2;
 
@@ -1041,7 +1037,7 @@ static BOOL ov97_022347D8 (UnkStruct_ov97_02234A2C * param0, int param1)
 
 static BOOL ov97_02234828 (UnkStruct_ov97_02234A2C * param0, int param1)
 {
-    BoxPokemonGBA * v0 = &param0->unk_E8E0->boxes[param0->unk_E8E4][param1];
+    GBABoxPokemon * v0 = &param0->unk_E8E0->boxes[param0->unk_E8E4][param1];
     int v1 = GetGBABoxMonData(v0, 11, NULL);
 
     return IsGBASpeciesInvalid(v1);
@@ -1155,7 +1151,7 @@ static void ov97_02234A2C (UnkStruct_ov97_02234A2C * param0, int param1)
     ov97_02233DD0(param0, &v0, 0x1);
 }
 
-static void ov97_02234AB4 (UnkStruct_ov97_02234A2C * param0, BoxPokemonGBA * param1)
+static void ov97_02234AB4 (UnkStruct_ov97_02234A2C * param0, GBABoxPokemon * param1)
 {
     u16 * v0 = sub_02019FE4(param0->unk_20, 2);
     u8 v1;
@@ -1180,7 +1176,7 @@ static void ov97_02234AB4 (UnkStruct_ov97_02234A2C * param0, BoxPokemonGBA * par
     sub_02019448(param0->unk_20, 2);
 }
 
-static void ov97_02234B0C (UnkStruct_ov97_02234A2C * param0, BoxPokemonGBA * param1)
+static void ov97_02234B0C (UnkStruct_ov97_02234A2C * param0, GBABoxPokemon * param1)
 {
     int v0, v1;
     int v2, v3;
@@ -1694,7 +1690,7 @@ static int ov97_02235408 (UnkStruct_ov97_02234A2C * param0)
     }
 
     {
-        BoxPokemonGBA * v3;
+        GBABoxPokemon * v3;
         int v4, v5, v6 = 0;
 
         for (v5 = 0; v5 < GBA_TOTAL_BOXES_COUNT; v5++) {

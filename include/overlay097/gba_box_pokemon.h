@@ -8,12 +8,12 @@ typedef struct {
     u8 ppBonuses;
     u8 friendship;
     u16 padding;
-} PokemonGBASubstruct0;
+} GBAPokemonSubstruct0;
 
 typedef struct {
     u16 moves[4];
     u8 pp[4];
-} PokemonGBASubstruct1;
+} GBAPokemonSubstruct1;
 
 typedef struct {
     u8 hpEV;
@@ -28,7 +28,7 @@ typedef struct {
     u8 smart;
     u8 tough;
     u8 sheen;
-} PokemonGBASubstruct2;
+} GBAPokemonSubstruct2;
 
 typedef struct {
     u32 pokerus:8;
@@ -71,9 +71,9 @@ typedef struct {
     // Set for in-game event island legendaries, events distributed after a certain date, & Pokémon from XD: Gale of Darkness.
     // Not to be confused with METLOC_FATEFUL_ENCOUNTER.
     u32 modernFatefulEncounter:1;
-} PokemonGBASubstruct3;
+} GBAPokemonSubstruct3;
 
-typedef struct BoxPokemonGBA {
+typedef struct GBABoxPokemon {
     u32 personality;
     u32 otId;
     u8 nickname[10];
@@ -86,10 +86,10 @@ typedef struct BoxPokemonGBA {
     u8 markings;
     u16 checksum;
     u16 unknown;
-    u8 secure[sizeof(PokemonGBASubstruct0)
-            + sizeof(PokemonGBASubstruct1)
-            + sizeof(PokemonGBASubstruct2)
-            + sizeof(PokemonGBASubstruct3)];
-} BoxPokemonGBA;
+    u8 secure[sizeof(GBAPokemonSubstruct0)
+            + sizeof(GBAPokemonSubstruct1)
+            + sizeof(GBAPokemonSubstruct2)
+            + sizeof(GBAPokemonSubstruct3)];
+} GBABoxPokemon;
 
 #endif // POKEPLATINUM_BOX_POKEMON_GBA_H

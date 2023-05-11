@@ -239,6 +239,8 @@
 
 #include <nitro/code16.h>
 
+#include "constants/species.h"
+
 typedef struct {
     UnkStruct_0201CD38 * unk_00;
     UnkStruct_0201CD38 * unk_04;
@@ -7016,16 +7018,16 @@ static BOOL sub_02045384 (UnkStruct_0203E724 * param0)
     u16 v0 = inline_02049538(param0);
     Party * v1 = Party_GetFromSavedata(param0->unk_34->unk_0C);
     int v2;
-    int v3;
+    int species;
     int v4 = Party_GetCurrentCount(v1);
     Pokemon * v5;
     UnkStruct_02026324 * v6 = sub_02027560(param0->unk_34->unk_0C);
 
     for (v2 = 0; v2 < v4; v2++) {
         v5 = Party_GetPokemonBySlotIndex(v1, v2);
-        v3 = GetMonData(v5, MON_DATA_SPECIES, NULL);
+        species = GetMonData(v5, MON_DATA_SPECIES, NULL);
 
-        if (v3 == 386) {
+        if (species == SPECIES_DEOXYS) {
             sub_02074B30(v5, 112, &v0);
             sub_0207418C(v5);
             sub_0202736C(v6, v5);
