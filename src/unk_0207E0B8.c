@@ -2702,14 +2702,14 @@ static int UpdatePokemonWithItem(GameWindowLayout *param0, Pokemon *param1, int 
     return 11;
 }
 
-static void SwapPokemonItem(GameWindowLayout *param0, Pokemon *param1, u32 item, u32 param3)
+static void SwapPokemonItem(GameWindowLayout *layout, Pokemon *mon, u32 oldItem, u32 newItem)
 {
-    Bag_TryAddItem(param0->unk_5A4->unk_04, (u16)item, 1, HEAP_ID_12);
-    Pokemon_SetValue(param1, MON_DATA_HELD_ITEM, &param3);
-    Pokemon_SetArceusForm(param1);
-    Pokemon_SetGiratinaForm(param1);
-    param0->unk_704[param0->unk_B11].unk_0C = (u16)param3;
-    sub_02083040(param0, param0->unk_B11, param0->unk_704[param0->unk_B11].unk_0C);
+    Bag_TryAddItem(layout->unk_5A4->unk_04, (u16)oldItem, 1, HEAP_ID_12);
+    Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &newItem);
+    Pokemon_SetArceusForm(mon);
+    Pokemon_SetGiratinaForm(mon);
+    layout->unk_704[layout->unk_B11].unk_0C = (u16)newItem;
+    sub_02083040(layout, layout->unk_B11, layout->unk_704[layout->unk_B11].unk_0C);
 }
 
 static int HandleMessageCompletion(GameWindowLayout *param0)
@@ -2757,53 +2757,53 @@ static int FinalizeMessageProcessing(GameWindowLayout *param0)
     return 9;
 }
 
-static int ProcessPokemonItemSwap(GameWindowLayout *param0)
+static int ProcessPokemonItemSwap(GameWindowLayout *layout)
 {
     int v0, v1;
 
-    switch (Menu_ProcessInputAndHandleExit(param0->unk_700, 12)) {
+    switch (Menu_ProcessInputAndHandleExit(layout->unk_700, HEAP_ID_12)) {
     case 0: {
-        Pokemon *v2;
+        Pokemon *mon;
         Window *v3;
-        u32 v4;
-        u32 v5;
+        u32 oldItem;
+        u32 newItem;
 
-        v2 = Party_GetPokemonBySlotIndex(param0->unk_5A4->unk_00, param0->unk_B11);
-        v3 = &param0->unk_04[34];
-        v4 = param0->unk_5A4->unk_24;
-        v5 = param0->unk_704[param0->unk_B11].unk_0C;
-        v0 = UpdatePokemonWithItem(param0, v2, &v1);
+        mon = Party_GetPokemonBySlotIndex(layout->unk_5A4->unk_00, layout->unk_B11);
+        v3 = &layout->unk_04[34];
+        oldItem = layout->unk_5A4->unk_24;
+        newItem = layout->unk_704[layout->unk_B11].unk_0C;
+        v0 = UpdatePokemonWithItem(layout, mon, &v1);
 
-        if (Bag_TryAddItem(param0->unk_5A4->unk_04, (u16)v5, 1, HEAP_ID_12) == 0) {
-            SwapPokemonItem(param0, v2, v4, v5);
-            MessageLoader_GetStrbuf(param0->unk_69C, 83, param0->unk_6A4);
+        if (Bag_TryAddItem(layout->unk_5A4->unk_04, (u16)newItem, 1, HEAP_ID_12) == 0) {
+            SwapPokemonItem(layout, mon, oldItem, newItem);
+            MessageLoader_GetStrbuf(layout->unk_69C, 83, layout->unk_6A4);
             v0 = 11;
         } else {
-            if (Item_IsMail(param0->unk_5A4->unk_24) == 1) {
-                Bag_TryRemoveItem(param0->unk_5A4->unk_04, (u16)v5, 1, HEAP_ID_12);
-                SwapPokemonItem(param0, v2, v4, v5);
-                param0->unk_5A4->unk_23 = 6;
+            if (Item_IsMail(layout->unk_5A4->unk_24) == 1) {
+                Bag_TryRemoveItem(layout->unk_5A4->unk_04, (u16)newItem, 1, HEAP_ID_12);
+                SwapPokemonItem(layout, mon, oldItem, newItem);
+                layout->unk_5A4->unk_23 = 6;
                 return 32;
             }
 
-            MessageLoader_GetStrbuf(param0->unk_69C, 84, param0->unk_6A8);
-            StringTemplate_SetItemName(param0->unk_6A0, 1, v5);
-            StringTemplate_SetItemName(param0->unk_6A0, 2, v4);
-            StringTemplate_Format(param0->unk_6A0, param0->unk_6A4, param0->unk_6A8);
+            MessageLoader_GetStrbuf(layout->unk_69C, 84, layout->unk_6A8);
+            StringTemplate_SetItemName(layout->unk_6A0, 1, newItem);
+            StringTemplate_SetItemName(layout->unk_6A0, 2, oldItem);
+            StringTemplate_Format(layout->unk_6A0, layout->unk_6A4, layout->unk_6A8);
 
-            if ((v4 != 112) && (v5 == 112) && (v1 != -1)) {
+            if ((oldItem != ITEM_GRISEOUS_ORB) && (newItem == ITEM_GRISEOUS_ORB) && (v1 != -1)) {
                 v0 = 12;
-            } else if ((v4 == 112) && (v5 == 112)) {
+            } else if ((oldItem == ITEM_GRISEOUS_ORB) && (newItem == ITEM_GRISEOUS_ORB)) {
                 v0 = 11;
             }
         }
 
         Window_FillTilemap(v3, 15);
-        sub_0208274C(param0);
+        sub_0208274C(layout);
     }
         return v0;
     case 0xfffffffe:
-        return ResetWindowOnInput(param0);
+        return ResetWindowOnInput(layout);
     }
 
     return 10;
@@ -2823,43 +2823,43 @@ static int ResetWindowOnInput(GameWindowLayout *param0)
     return 32;
 }
 
-static int UpdatePokemonFormWithItem(GameWindowLayout *param0)
+static int UpdatePokemonFormWithItem(GameWindowLayout *layout)
 {
-    Pokemon *v0;
+    Pokemon *mon;
     Window *v1;
     u32 v2;
     u32 v3;
     int v4, v5;
 
-    v0 = Party_GetPokemonBySlotIndex(param0->unk_5A4->unk_00, param0->unk_B11);
-    v1 = &param0->unk_04[34];
-    v2 = param0->unk_5A4->unk_24;
-    v3 = param0->unk_704[param0->unk_B11].unk_0C;
-    v4 = UpdatePokemonWithItem(param0, v0, &v5);
+    mon = Party_GetPokemonBySlotIndex(layout->unk_5A4->unk_00, layout->unk_B11);
+    v1 = &layout->unk_04[34];
+    v2 = layout->unk_5A4->unk_24;
+    v3 = layout->unk_704[layout->unk_B11].unk_0C;
+    v4 = UpdatePokemonWithItem(layout, mon, &v5);
 
-    if ((v3 == 112) && (v4 == 11) && (v5 == 0)) {
+    if ((v3 == ITEM_GRISEOUS_ORB) && (v4 == 11) && (v5 == 0)) {
         v4 = 12;
     }
 
-    if (v3 == 0) {
-        MessageLoader_GetStrbuf(param0->unk_69C, 118, param0->unk_6A8);
-        StringTemplate_SetNickname(param0->unk_6A0, 0, Pokemon_GetBoxPokemon(v0));
-        StringTemplate_SetItemName(param0->unk_6A0, 1, param0->unk_5A4->unk_24);
-        StringTemplate_Format(param0->unk_6A0, param0->unk_6A4, param0->unk_6A8);
+    if (v3 == ITEM_NONE) {
+        MessageLoader_GetStrbuf(layout->unk_69C, 118, layout->unk_6A8);
+        StringTemplate_SetNickname(layout->unk_6A0, 0, Pokemon_GetBoxPokemon(mon));
+        StringTemplate_SetItemName(layout->unk_6A0, 1, layout->unk_5A4->unk_24);
+        StringTemplate_Format(layout->unk_6A0, layout->unk_6A4, layout->unk_6A8);
     } else {
-        Bag_TryAddItem(param0->unk_5A4->unk_04, (u16)v3, 1, HEAP_ID_12);
-        MessageLoader_GetStrbuf(param0->unk_69C, 84, param0->unk_6A8);
-        StringTemplate_SetItemName(param0->unk_6A0, 1, v3);
-        StringTemplate_SetItemName(param0->unk_6A0, 2, v2);
-        StringTemplate_Format(param0->unk_6A0, param0->unk_6A4, param0->unk_6A8);
+        Bag_TryAddItem(layout->unk_5A4->unk_04, (u16)v3, 1, HEAP_ID_12);
+        MessageLoader_GetStrbuf(layout->unk_69C, 84, layout->unk_6A8);
+        StringTemplate_SetItemName(layout->unk_6A0, 1, v3);
+        StringTemplate_SetItemName(layout->unk_6A0, 2, v2);
+        StringTemplate_Format(layout->unk_6A0, layout->unk_6A4, layout->unk_6A8);
     }
 
     Window_DrawMessageBoxWithScrollCursor(v1, 1, (1 + 9), 15);
     Window_FillTilemap(v1, 15);
-    sub_0208274C(param0);
+    sub_0208274C(layout);
 
-    if (param0->unk_5A4->unk_20 == 12) {
-        param0->unk_5A4->unk_20 = 10;
+    if (layout->unk_5A4->unk_20 == 12) {
+        layout->unk_5A4->unk_20 = 10;
     }
 
     return v4;

@@ -177,7 +177,7 @@ static int ov82_0223B470(UnkStruct_ov83_0223C344 *param0)
     for (v0 = 0; v0 < 64; v0++) {
         v4 = Item_ForBerryNumber(v0);
 
-        if (Bag_CanRemoveItem(v5, v4, 1, param0->heapID) == 1) {
+        if (Bag_CanRemoveItem(v5, v4, 1, param0->heapID) == TRUE) {
             sub_02097320(param0->unk_18, v4, 0);
             v3++;
         }
