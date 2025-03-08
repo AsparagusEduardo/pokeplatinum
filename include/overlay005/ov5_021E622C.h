@@ -14,7 +14,7 @@
 
 u8 ov5_021E6238(UnkStruct_02026310 *param0);
 int ov5_021E6270(UnkStruct_02026310 *param0);
-void ov5_021E6358(Party *param0, int param1, UnkStruct_02026310 *param2, SaveData *param3);
+void ov5_021E6358(Party *party, int slot, UnkStruct_02026310 *param2, SaveData *saveData);
 u16 ov5_021E64F8(Party *param0, StringTemplate *param1, UnkStruct_02026310 *param2, u8 param3);
 int BoxPokemon_GiveExperience(BoxPokemon *boxMon, u32 param1);
 int ov5_021E6568(UnkStruct_02026218 *param0);

@@ -53,7 +53,6 @@ u8 ov5_021E6640(UnkStruct_02026310 *param0, int param1, StringTemplate *param2);
 u16 ov5_021E73A0(Party *param0, int param1, StringTemplate *param2);
 u8 ov5_021E73C8(UnkStruct_02026310 *param0);
 void ov5_021E72BC(UnkStruct_02026310 *param0, StringTemplate *param1);
-static void ov5_021E62C4(Party *param0, int param1, UnkStruct_02026218 *param2, SaveData *param3);
 static int ov5_021E7110(FieldSystem *fieldSystem);
 
 static BoxPokemon *ov5_021E622C(UnkStruct_02026310 *param0, int param1)
@@ -105,42 +104,41 @@ static int BoxPokemon_HoldsMail(BoxPokemon *boxMon)
     return Item_IsMail(item);
 }
 
-static void ov5_021E62C4(Party *param0, int param1, UnkStruct_02026218 *param2, SaveData *param3)
+static void ov5_021E62C4(Party *party, int slot, UnkStruct_02026218 *param2, SaveData *saveData)
 {
-    int v0;
-    Pokemon *v1 = Party_GetPokemonBySlotIndex(param0, param1);
-    const u16 *v2;
-    u16 v3[10 + 1];
+    Pokemon *mon = Party_GetPokemonBySlotIndex(party, slot);
+    const u16 *trainerName;
+    u16 nickname[MON_NAME_LEN + 1];
     UnkStruct_02026224 *v4 = sub_02026224(param2);
-    BoxPokemon *v5 = sub_02026220(param2);
-    TrainerInfo *v6 = SaveData_GetTrainerInfo(param3);
+    BoxPokemon *boxMon = sub_02026220(param2);
+    TrainerInfo *trainerInfo = SaveData_GetTrainerInfo(saveData);
 
-    v2 = TrainerInfo_Name(v6);
-    Pokemon_GetValue(v1, MON_DATA_NICKNAME, v3);
+    trainerName = TrainerInfo_Name(trainerInfo);
+    Pokemon_GetValue(mon, MON_DATA_NICKNAME, nickname);
 
-    if (BoxPokemon_HoldsMail(Pokemon_GetBoxPokemon(v1))) {
-        Pokemon_GetValue(v1, MON_DATA_170, sub_02026230(v4));
+    if (BoxPokemon_HoldsMail(Pokemon_GetBoxPokemon(mon))) {
+        Pokemon_GetValue(mon, MON_DATA_170, sub_02026230(v4));
     }
 
-    BoxPokemon_FromPokemon(v1, v5);
-    BoxPokemon_SetShayminForm(v5, 0);
+    BoxPokemon_FromPokemon(mon, boxMon);
+    BoxPokemon_SetShayminForm(boxMon, 0);
     sub_02026258(param2, 0);
-    Party_RemovePokemonBySlotIndex(param0, param1);
+    Party_RemovePokemonBySlotIndex(party, slot);
 
-    if (Party_HasSpecies(param0, 441) == 0) {
-        ChatotCry *v7 = GetChatotCryDataFromSave(param3);
-        ResetChatotCryDataStatus(v7);
+    if (Party_HasSpecies(party, SPECIES_CHATOT) == FALSE) {
+        ChatotCry *cry = GetChatotCryDataFromSave(saveData);
+        ResetChatotCryDataStatus(cry);
     }
 }
 
-void ov5_021E6358(Party *param0, int param1, UnkStruct_02026310 *param2, SaveData *param3)
+void ov5_021E6358(Party *party, int slot, UnkStruct_02026310 *param2, SaveData *saveData)
 {
     int v0;
-    GameRecords *v1 = SaveData_GetGameRecordsPtr(param3);
+    GameRecords *gameRecords = SaveData_GetGameRecordsPtr(saveData);
 
-    GameRecords_IncrementRecordValue(v1, RECORD_UNK_040);
+    GameRecords_IncrementRecordValue(gameRecords, RECORD_UNK_040);
     v0 = ov5_021E6270(param2);
-    ov5_021E62C4(param0, param1, sub_02026218(param2, v0), param3);
+    ov5_021E62C4(party, slot, sub_02026218(param2, v0), saveData);
 }
 
 static void ov5_021E638C(UnkStruct_02026310 *param0)
@@ -755,7 +753,7 @@ void ov5_021E6DE8(Pokemon *param0, u16 param1, UnkStruct_02026310 *param2, u32 p
     Pokemon_SetValue(param0, MON_DATA_MET_LEVEL, &v0);
     Pokemon_SetValue(param0, MON_DATA_FORM, &param4);
 
-    v3 = MessageUtil_SpeciesName(SPECIES_EGG, 4);
+    v3 = MessageUtil_SpeciesName(SPECIES_EGG, HEAP_ID_FIELD);
 
     Pokemon_SetValue(param0, MON_DATA_NICKNAME_STRBUF, v3);
     Strbuf_Free(v3);

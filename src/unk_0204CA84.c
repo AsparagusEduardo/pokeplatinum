@@ -127,20 +127,20 @@ BOOL ScrCmd_1AF(ScriptContext *param0)
     return 0;
 }
 
-BOOL ScrCmd_1B0(ScriptContext *param0)
+BOOL ScrCmd_1B0(ScriptContext *ctx)
 {
-    FieldSystem *fieldSystem = param0->fieldSystem;
-    SaveData *v1 = fieldSystem->saveData;
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    SaveData *saveData = fieldSystem->saveData;
     UnkStruct_02026310 *v2;
-    Party *v3;
-    u8 v4 = ScriptContext_GetVar(param0);
+    Party *party;
+    u8 slot = ScriptContext_GetVar(ctx);
 
-    v3 = Party_GetFromSavedata(fieldSystem->saveData);
-    v2 = (UnkStruct_02026310 *)(SaveData_SaveTable(v1, 8));
+    party = Party_GetFromSavedata(fieldSystem->saveData);
+    v2 = (UnkStruct_02026310 *)(SaveData_SaveTable(saveData, 8));
 
-    ov5_021E6358(v3, v4, v2, v1);
+    ov5_021E6358(party, slot, v2, saveData);
 
-    return 0;
+    return FALSE;
 }
 
 BOOL ScrCmd_1BC(ScriptContext *param0)
