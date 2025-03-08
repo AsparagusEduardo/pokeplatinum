@@ -486,65 +486,63 @@ BOOL ScrCmd_JudgeStats(ScriptContext *ctx)
     return 0;
 }
 
-BOOL ScrCmd_31D(ScriptContext *param0)
+// Set data to be ready for trading with DP?
+BOOL ScrCmd_31D(ScriptContext *ctx)
 {
-    Pokemon *v0;
-    Party *v1;
-    int v2, v3, v4;
-    int v5, v6;
-    u32 v7;
-    int v8[6];
-    int v9 = 0;
-    FieldSystem *fieldSystem = param0->fieldSystem;
-    u16 *v11 = ScriptContext_GetVarPointer(param0);
-
-    v1 = Party_GetFromSavedata(fieldSystem->saveData);
-    v2 = Party_GetCurrentCount(v1);
+    Pokemon *mon;
+    int i, v4;
+    u32 item;
+    int items[MAX_PARTY_SIZE];
+    int griseousOrbCount = 0;
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    u16 *v11 = ScriptContext_GetVarPointer(ctx);
+    Party *party = Party_GetFromSavedata(fieldSystem->saveData);
+    int partyCount = Party_GetCurrentCount(party);
     *v11 = 0;
 
-    for (v3 = 0; v3 < v2; v3++) {
-        v0 = Party_GetPokemonBySlotIndex(v1, v3);
-        v8[v3] = Pokemon_GetValue(v0, MON_DATA_HELD_ITEM, NULL);
+    for (i = 0; i < partyCount; i++) {
+        mon = Party_GetPokemonBySlotIndex(party, i);
+        items[i] = Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL);
 
-        if (v8[v3] == ITEM_GRISEOUS_ORB) {
-            v9++;
+        if (items[i] == ITEM_GRISEOUS_ORB) {
+            griseousOrbCount++;
         }
     }
 
-    if (v9 > 0) {
-        v4 = Bag_TryAddItem(SaveData_GetBag(fieldSystem->saveData), ITEM_GRISEOUS_ORB, v9, 4);
+    if (griseousOrbCount > 0) {
+        v4 = Bag_TryAddItem(SaveData_GetBag(fieldSystem->saveData), ITEM_GRISEOUS_ORB, griseousOrbCount, HEAP_ID_FIELD);
 
         if (v4 == 0) {
             *v11 = 0xff;
             return 0;
         }
 
-        v7 = 0;
+        item = 0;
 
-        for (v3 = 0; v3 < v2; v3++) {
-            if (v8[v3] == ITEM_GRISEOUS_ORB) {
-                v0 = Party_GetPokemonBySlotIndex(v1, v3);
-                Pokemon_SetValue(v0, MON_DATA_HELD_ITEM, &v7);
+        for (i = 0; i < partyCount; i++) {
+            if (items[i] == ITEM_GRISEOUS_ORB) {
+                mon = Party_GetPokemonBySlotIndex(party, i);
+                Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &item);
             }
         }
     }
 
-    for (v3 = 0; v3 < v2; v3++) {
-        v0 = Party_GetPokemonBySlotIndex(v1, v3);
-        v6 = Pokemon_GetValue(v0, MON_DATA_FORM, NULL);
+    for (i = 0; i < partyCount; i++) {
+        mon = Party_GetPokemonBySlotIndex(party, i);
+        int form = Pokemon_GetValue(mon, MON_DATA_FORM, NULL);
 
-        if (v6 > 0) {
-            v5 = Pokemon_GetValue(v0, MON_DATA_SPECIES, NULL);
+        if (form > 0) {
+            int species = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
 
-            switch (v5) {
+            switch (species) {
             case SPECIES_GIRATINA:
-                Pokemon_SetGiratinaForm(v0);
+                Pokemon_SetGiratinaForm(mon);
                 break;
             case SPECIES_ROTOM:
-                Pokemon_SetRotomForm(v0, 0, 0);
+                Pokemon_SetRotomForm(mon, 0, 0);
                 break;
             case SPECIES_SHAYMIN:
-                Pokemon_SetShayminForm(v0, 0);
+                Pokemon_SetShayminForm(mon, 0);
                 break;
             }
         }
@@ -577,7 +575,7 @@ BOOL ScrCmd_31E(ScriptContext *param0)
     v5 = Pokemon_GetValue(v0, MON_DATA_HELD_ITEM, NULL);
 
     if (v5 == ITEM_GRISEOUS_ORB) {
-        v6 = Bag_TryAddItem(SaveData_GetBag(fieldSystem->saveData), ITEM_GRISEOUS_ORB, 1, 4);
+        v6 = Bag_TryAddItem(SaveData_GetBag(fieldSystem->saveData), ITEM_GRISEOUS_ORB, 1, HEAP_ID_FIELD);
 
         if (v6 == 0) {
             *v9 = 0xff;

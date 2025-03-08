@@ -354,17 +354,16 @@ static BOOL sub_0204BE84(FieldSystem *fieldSystem, void *param1)
     Bag *v0 = SaveData_GetBag(fieldSystem->saveData);
     UnkUnion_0204C4D0 *v1 = sub_0204B844(fieldSystem);
 
-    return Bag_CanFitItem(v0, v1->val3.unk_00, 1, 32);
+    return Bag_CanFitItem(v0, v1->val3.unk_00, 1, HEAP_ID_FIELD_TASK);
 }
 
 static void sub_0204BEAC(FieldSystem *fieldSystem, void *param1)
 {
-    Bag *v0 = SaveData_GetBag(fieldSystem->saveData);
+    Bag *bag = SaveData_GetBag(fieldSystem->saveData);
     UnkUnion_0204C4D0 *v1 = sub_0204B844(fieldSystem);
-    u16 v2;
-    u16 v3 = v1->val3.unk_00;
+    u16 item = v1->val3.unk_00;
 
-    Bag_TryAddItem(v0, v3, 1, 32);
+    Bag_TryAddItem(bag, item, 1, HEAP_ID_FIELD_TASK);
 }
 
 static void sub_0204BED4(UnkStruct_0204B830 *param0, u16 *param1, u16 *param2)
@@ -532,10 +531,10 @@ static void sub_0204C128(UnkStruct_0204B830 *param0, u16 *param1, u16 *param2)
 
 static BOOL sub_0204C138(FieldSystem *fieldSystem, void *param1)
 {
-    Bag *v0 = SaveData_GetBag(fieldSystem->saveData);
+    Bag *bag = SaveData_GetBag(fieldSystem->saveData);
     UnkUnion_0204C4D0 *v1 = sub_0204B844(fieldSystem);
 
-    return Bag_CanFitItem(v0, 454, 1, 32);
+    return Bag_CanFitItem(bag, ITEM_MEMBER_CARD, 1, HEAP_ID_FIELD_TASK);
 }
 
 static void InitDarkraiEvent(FieldSystem *fieldSystem, void *dummy)
@@ -551,33 +550,33 @@ static void InitDarkraiEvent(FieldSystem *fieldSystem, void *dummy)
 static void sub_0204C190(UnkStruct_0204B830 *param0, u16 *param1, u16 *param2)
 {
     UnkUnion_0204C4D0 *v0 = sub_0204B844(param0->fieldSystem);
-    u16 v1 = 454;
+    u16 item = ITEM_MEMBER_CARD;
 
     *param1 = 379;
     *param2 = 14;
 
     StringTemplate_SetPlayerName(param0->unk_04, 0, SaveData_GetTrainerInfo(param0->fieldSystem->saveData));
-    StringTemplate_SetItemName(param0->unk_04, 1, v1);
+    StringTemplate_SetItemName(param0->unk_04, 1, item);
 }
 
 static void sub_0204C1CC(UnkStruct_0204B830 *param0, u16 *param1, u16 *param2)
 {
     Bag *v0 = SaveData_GetBag(param0->fieldSystem->saveData);
     UnkUnion_0204C4D0 *v1 = sub_0204B844(param0->fieldSystem);
-    u16 v2 = 454;
+    u16 item = ITEM_MEMBER_CARD;
 
     *param1 = 379;
     *param2 = 5;
 
-    StringTemplate_SetItemName(param0->unk_04, 0, v2);
+    StringTemplate_SetItemName(param0->unk_04, 0, item);
 }
 
 static BOOL sub_0204C1FC(FieldSystem *fieldSystem, void *param1)
 {
-    Bag *v0 = SaveData_GetBag(fieldSystem->saveData);
+    Bag *bag = SaveData_GetBag(fieldSystem->saveData);
     UnkUnion_0204C4D0 *v1 = sub_0204B844(fieldSystem);
 
-    return Bag_CanFitItem(v0, 452, 1, 32);
+    return Bag_CanFitItem(bag, ITEM_OAKS_LETTER, 1, HEAP_ID_FIELD_TASK);
 }
 
 static void InitShayminEvent(FieldSystem *fieldSystem, void *dummy)
@@ -597,33 +596,33 @@ static void InitShayminEvent(FieldSystem *fieldSystem, void *dummy)
 static void sub_0204C264(UnkStruct_0204B830 *param0, u16 *param1, u16 *param2)
 {
     UnkUnion_0204C4D0 *v0 = sub_0204B844(param0->fieldSystem);
-    u16 v1 = 452;
+    u16 item = ITEM_OAKS_LETTER;
 
     *param1 = 379;
     *param2 = 15;
 
     StringTemplate_SetPlayerName(param0->unk_04, 0, SaveData_GetTrainerInfo(param0->fieldSystem->saveData));
-    StringTemplate_SetItemName(param0->unk_04, 1, v1);
+    StringTemplate_SetItemName(param0->unk_04, 1, item);
 }
 
 static void sub_0204C2A0(UnkStruct_0204B830 *param0, u16 *param1, u16 *param2)
 {
-    Bag *v0 = SaveData_GetBag(param0->fieldSystem->saveData);
+    Bag *bag = SaveData_GetBag(param0->fieldSystem->saveData);
     UnkUnion_0204C4D0 *v1 = sub_0204B844(param0->fieldSystem);
-    u16 v2 = 452;
+    u16 item = ITEM_OAKS_LETTER;
 
     *param1 = 379;
     *param2 = 5;
 
-    StringTemplate_SetItemName(param0->unk_04, 0, v2);
+    StringTemplate_SetItemName(param0->unk_04, 0, item);
 }
 
 static BOOL sub_0204C2D0(FieldSystem *fieldSystem, void *param1)
 {
-    Bag *v0 = SaveData_GetBag(fieldSystem->saveData);
+    Bag *bag = SaveData_GetBag(fieldSystem->saveData);
     UnkUnion_0204C4D0 *v1 = sub_0204B844(fieldSystem);
 
-    return Bag_CanFitItem(v0, 467, 1, 32);
+    return Bag_CanFitItem(bag, ITEM_SECRET_KEY, 1, HEAP_ID_FIELD_TASK);
 }
 
 static void InitRotomEvent(FieldSystem *fieldSystem, void *dummy)
@@ -639,33 +638,33 @@ static void InitRotomEvent(FieldSystem *fieldSystem, void *dummy)
 static void sub_0204C328(UnkStruct_0204B830 *param0, u16 *param1, u16 *param2)
 {
     UnkUnion_0204C4D0 *v0 = sub_0204B844(param0->fieldSystem);
-    u16 v1 = 467;
+    u16 init = ITEM_SECRET_KEY;
 
     *param1 = 379;
     *param2 = 17;
 
     StringTemplate_SetPlayerName(param0->unk_04, 0, SaveData_GetTrainerInfo(param0->fieldSystem->saveData));
-    StringTemplate_SetItemName(param0->unk_04, 1, v1);
+    StringTemplate_SetItemName(param0->unk_04, 1, init);
 }
 
 static void sub_0204C364(UnkStruct_0204B830 *param0, u16 *param1, u16 *param2)
 {
-    Bag *v0 = SaveData_GetBag(param0->fieldSystem->saveData);
+    Bag *bag = SaveData_GetBag(param0->fieldSystem->saveData);
     UnkUnion_0204C4D0 *v1 = sub_0204B844(param0->fieldSystem);
-    u16 v2 = 467;
+    u16 item = ITEM_SECRET_KEY;
 
     *param1 = 379;
     *param2 = 5;
 
-    StringTemplate_SetItemName(param0->unk_04, 0, v2);
+    StringTemplate_SetItemName(param0->unk_04, 0, item);
 }
 
 static BOOL sub_0204C394(FieldSystem *fieldSystem, void *param1)
 {
-    Bag *v0 = SaveData_GetBag(fieldSystem->saveData);
+    Bag *bag = SaveData_GetBag(fieldSystem->saveData);
     UnkUnion_0204C4D0 *v1 = sub_0204B844(fieldSystem);
 
-    return Bag_CanFitItem(v0, 455, 1, 32);
+    return Bag_CanFitItem(bag, ITEM_AZURE_FLUTE, 1, HEAP_ID_FIELD_TASK);
 }
 
 static void InitArceusEvent(FieldSystem *fieldSystem, void *dummy)
@@ -681,25 +680,25 @@ static void InitArceusEvent(FieldSystem *fieldSystem, void *dummy)
 static void sub_0204C3EC(UnkStruct_0204B830 *param0, u16 *param1, u16 *param2)
 {
     UnkUnion_0204C4D0 *v0 = sub_0204B844(param0->fieldSystem);
-    u16 v1 = 455;
+    u16 item = ITEM_AZURE_FLUTE;
 
     *param1 = 379;
     *param2 = 16;
 
     StringTemplate_SetPlayerName(param0->unk_04, 0, SaveData_GetTrainerInfo(param0->fieldSystem->saveData));
-    StringTemplate_SetItemName(param0->unk_04, 1, v1);
+    StringTemplate_SetItemName(param0->unk_04, 1, item);
 }
 
 static void sub_0204C428(UnkStruct_0204B830 *param0, u16 *param1, u16 *param2)
 {
-    Bag *v0 = SaveData_GetBag(param0->fieldSystem->saveData);
+    Bag *bag = SaveData_GetBag(param0->fieldSystem->saveData);
     UnkUnion_0204C4D0 *v1 = sub_0204B844(param0->fieldSystem);
-    u16 v2 = 455;
+    u16 item = ITEM_AZURE_FLUTE;
 
     *param1 = 379;
     *param2 = 5;
 
-    StringTemplate_SetItemName(param0->unk_04, 0, v2);
+    StringTemplate_SetItemName(param0->unk_04, 0, item);
 }
 
 static BOOL sub_0204C458(FieldSystem *fieldSystem, void *param1)

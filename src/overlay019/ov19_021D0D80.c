@@ -2462,7 +2462,7 @@ static void ov19_021D3D44(UnkStruct_ov19_021D5DF8 *param0, u32 *param1)
             if ((v1 == ITEM_GRISEOUS_ORB) && (BoxPokemon_GetValue(param0->unk_00.pcMonPreview.mon, MON_DATA_SPECIES, NULL) != SPECIES_GIRATINA)) {
                 (void)0;
             } else if (v1 != 0) {
-                Bag_TryRemoveItem(SaveData_GetBag(param0->unk_11C), v1, 1, 9);
+                Bag_TryRemoveItem(SaveData_GetBag(param0->unk_11C), v1, 1, HEAP_ID_9);
                 ov19_021D5BE8(&param0->unk_00, v1, param0);
                 ov19_021D0F14(param0);
             }
@@ -2555,7 +2555,7 @@ static void ov19_021D3FB0(UnkStruct_ov19_021D5DF8 *param0, u32 *param1)
         }
         break;
     case 2:
-        if (Bag_TryAddItem(SaveData_GetBag(param0->unk_11C), v0, 1, 9)) {
+        if (Bag_TryAddItem(SaveData_GetBag(param0->unk_11C), v0, 1, HEAP_ID_9)) {
             ov19_021D5BE8(&param0->unk_00, 0, param0);
             ov19_021D6594(param0->unk_114, 22);
             ov19_021D6594(param0->unk_114, 6);
@@ -2632,7 +2632,7 @@ static void ov19_021D4184(UnkStruct_ov19_021D5DF8 *param0, u32 *param1)
         }
         break;
     case 2:
-        if (Bag_TryAddItem(SaveData_GetBag(param0->unk_11C), v0, 1, 9)) {
+        if (Bag_TryAddItem(SaveData_GetBag(param0->unk_11C), v0, 1, HEAP_ID_9)) {
             if (ov19_021D5F7C(&param0->unk_00) != 0) {
                 ov19_021D5D54(&param0->unk_00);
                 *param1 = 4;

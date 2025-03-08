@@ -95,7 +95,7 @@ static u8 ov13_022219DC(UnkStruct_ov13_022213F0 *param0);
 static void ov13_02221A04(UnkStruct_ov13_022213F0 *param0);
 static void ov13_02221A3C(UnkStruct_ov13_022213F0 *param0);
 static u8 ov13_0222194C(UnkStruct_ov13_022213F0 *param0);
-static void ov13_02221A54(BattleSystem *battleSys, u16 param1, u16 param2, u32 param3);
+static void ov13_02221A54(BattleSystem *battleSys, u16 param1, u16 param2, u32 heapID);
 
 static const TouchScreenRect Unk_ov13_02228DEC[] = {
     { 0x0, 0x2F, 0x0, 0x7F },
@@ -1729,10 +1729,10 @@ static void ov13_02221A3C(UnkStruct_ov13_022213F0 *param0)
     Bg_ScheduleTilemapTransfer(param0->unk_1E0, 7);
 }
 
-static void ov13_02221A54(BattleSystem *battleSys, u16 param1, u16 param2, u32 param3)
+static void ov13_02221A54(BattleSystem *battleSys, u16 param1, u16 param2, u32 heapID)
 {
     if ((param1 != 65) && (param1 != 67) && (param1 != 66)) {
-        Bag_TryRemoveItem(BattleSystem_Bag(battleSys), param1, 1, param3);
+        Bag_TryRemoveItem(BattleSystem_Bag(battleSys), param1, 1, heapID);
     }
 
     Bag_SetLastBattleItemUsed(BattleSystem_BagCursor(battleSys), param1, param2);

@@ -36,11 +36,11 @@ BOOL ScrCmd_RemoveItem(ScriptContext *ctx)
 BOOL ScrCmd_07D(ScriptContext *param0)
 {
     FieldSystem *fieldSystem = param0->fieldSystem;
-    u16 v1 = ScriptContext_GetVar(param0);
-    u16 v2 = ScriptContext_GetVar(param0);
+    u16 item = ScriptContext_GetVar(param0);
+    u16 count = ScriptContext_GetVar(param0);
     u16 *v3 = ScriptContext_GetVarPointer(param0);
 
-    *v3 = Bag_CanFitItem(SaveData_GetBag(fieldSystem->saveData), v1, v2, 4);
+    *v3 = Bag_CanFitItem(SaveData_GetBag(fieldSystem->saveData), item, count, HEAP_ID_FIELD);
     return 0;
 }
 
