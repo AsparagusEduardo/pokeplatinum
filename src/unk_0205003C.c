@@ -46,7 +46,7 @@ typedef struct {
 
 BOOL ScrCmd_2D9(ScriptContext *param0);
 BOOL ScrCmd_2DC(ScriptContext *param0);
-static void sub_02050174(SaveData *param0, UnkStruct_020305B8 *param1, u8 param2);
+static void sub_02050174(SaveData *saveData, UnkStruct_020305B8 *param1, u8 param2);
 void sub_020502E0(FieldTask *param0, void **param1, u8 param2);
 static BOOL sub_02050314(FieldTask *param0);
 static int sub_0205037C(UnkStruct_0205037C *param0, FieldSystem *fieldSystem, int param2);
@@ -124,7 +124,7 @@ BOOL ScrCmd_2DC(ScriptContext *param0)
     return 0;
 }
 
-static void sub_02050174(SaveData *param0, UnkStruct_020305B8 *param1, u8 param2)
+static void sub_02050174(SaveData *saveData, UnkStruct_020305B8 *param1, u8 param2)
 {
     int v0;
     u16 v1[4];
@@ -134,10 +134,10 @@ static void sub_02050174(SaveData *param0, UnkStruct_020305B8 *param1, u8 param2
     sub_020305CC(param1, 8, param2, 0, v2);
 
     if (param2 == 3) {
-        sub_020306E4(sub_0203068C(param0), 110, sub_0205E6A8(110), 0);
+        sub_020306E4(sub_0203068C(saveData), 110, sub_0205E6A8(110), 0);
     }
 
-    sub_020306E4(sub_0203068C(param0), sub_0205E700(param2), sub_0205E6A8(sub_0205E700(param2)), 0);
+    sub_020306E4(sub_0203068C(saveData), sub_0205E700(param2), sub_0205E6A8(sub_0205E700(param2)), 0);
     return;
 }
 

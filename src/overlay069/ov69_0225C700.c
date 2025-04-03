@@ -322,7 +322,7 @@ static void ov69_0225DC54(UnkStruct_ov69_0225DC48 *param0);
 static int ov69_0225DD10(const UnkStruct_ov69_0225DC48 *param0, u32 param1);
 static void ov69_0225DD2C(UnkStruct_ov69_0225DC48 *param0);
 static void ov69_0225DD44(UnkStruct_ov69_0225DC48 *param0);
-static void ov69_0225DD60(UnkStruct_ov69_0225DDC8 *param0, UnkStruct_ov69_0225D35C *param1, UnkStruct_ov69_0225EF54 *param2, SaveData *param3, u32 heapID);
+static void ov69_0225DD60(UnkStruct_ov69_0225DDC8 *param0, UnkStruct_ov69_0225D35C *param1, UnkStruct_ov69_0225EF54 *param2, SaveData *saveData, u32 heapID);
 static void ov69_0225DDC8(UnkStruct_ov69_0225DDC8 *param0);
 static void ov69_0225DDFC(UnkStruct_ov69_0225DDC8 *param0);
 static u32 ov69_0225DE40(UnkStruct_ov69_0225DDC8 *param0);
@@ -1925,14 +1925,12 @@ static void ov69_0225DD44(UnkStruct_ov69_0225DC48 *param0)
     Window_DrawStandardFrame(&param0->unk_1C, 0, (1 + (18 + 12)), 0);
 }
 
-static void ov69_0225DD60(UnkStruct_ov69_0225DDC8 *param0, UnkStruct_ov69_0225D35C *param1, UnkStruct_ov69_0225EF54 *param2, SaveData *param3, u32 heapID)
+static void ov69_0225DD60(UnkStruct_ov69_0225DDC8 *param0, UnkStruct_ov69_0225D35C *param1, UnkStruct_ov69_0225EF54 *param2, SaveData *saveData, u32 heapID)
 {
     memset(param0, 0, sizeof(UnkStruct_ov69_0225DC48));
 
     {
-        Options *v0;
-
-        v0 = SaveData_Options(param3);
+        Options *v0 = SaveData_Options(saveData);
         param0->unk_08 = Options_TextFrameDelay(v0);
     }
 

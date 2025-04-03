@@ -19,12 +19,6 @@
 #include "unk_0202C9F4.h"
 #include "unk_0202D05C.h"
 
-static u32 sub_0207CBB4(SaveData *param0);
-static u32 sub_0207CBC0(SaveData *param0);
-static u32 sub_0207CBE0(SaveData *param0);
-static u32 sub_0207CBF0(SaveData *param0);
-static u32 sub_0207CC00(SaveData *param0);
-
 UnkStruct_0207CB08 *sub_0207CB08(u8 heapID)
 {
     UnkStruct_0207CB08 *v0 = (UnkStruct_0207CB08 *)Heap_AllocFromHeap(heapID, sizeof(UnkStruct_0207CB08));
@@ -42,10 +36,10 @@ void sub_0207CB24(UnkStruct_0207CB08 *param0, u8 param1)
     param0->unk_65 = param1;
 }
 
-void sub_0207CB2C(UnkStruct_0207CB08 *param0, SaveData *param1, u8 param2, void *param3)
+void sub_0207CB2C(UnkStruct_0207CB08 *param0, SaveData *saveData, u8 param2, void *param3)
 {
     sub_0207CB24(param0, param2);
-    param0->unk_00 = param1;
+    param0->saveData = saveData;
     param0->unk_6C = param3;
     param0->unk_66 = 0;
 }
@@ -96,17 +90,17 @@ u8 sub_0207CBAC(UnkStruct_0207CB08 *param0)
     return param0->unk_75;
 }
 
-static u32 sub_0207CBB4(SaveData *param0)
+static u32 SaveData_GetCoinsValue(SaveData *saveData)
 {
-    return Coins_GetValue(SaveData_GetCoins(param0));
+    return Coins_GetValue(SaveData_GetCoins(saveData));
 }
 
-static u32 sub_0207CBC0(SaveData *param0)
+static u32 sub_0207CBC0(SaveData *saveData)
 {
     UnkStruct_0202CA1C *v0;
     u32 v1, v2;
 
-    v0 = sub_0202CA1C(param0);
+    v0 = sub_0202CA1C(saveData);
     v2 = 0;
 
     for (v1 = 1; v1 <= 80; v1++) {
@@ -116,24 +110,22 @@ static u32 sub_0207CBC0(SaveData *param0)
     return v2;
 }
 
-static u32 sub_0207CBE0(SaveData *param0)
+static u32 sub_0207CBE0(SaveData *saveData)
 {
-    UnkStruct_02029D04 *v0 = sub_02029D04(sub_0202A750(param0));
-    return sub_02029DF0(v0);
+    return sub_02029DF0(sub_02029D04(sub_0202A750(saveData)));
 }
 
-static u32 sub_0207CBF0(SaveData *param0)
+static u32 sub_0207CBF0(SaveData *saveData)
 {
-    UnkStruct_02029D04 *v0 = sub_02029D04(sub_0202A750(param0));
-    return sub_02029E0C(v0);
+    return sub_02029E0C(sub_02029D04(sub_0202A750(saveData)));
 }
 
-static u32 sub_0207CC00(SaveData *param0)
+static u32 sub_0207CC00(SaveData *saveData)
 {
-    return (u32)sub_0202D230(sub_0202D750(param0), 0, 0);
+    return (u32)sub_0202D230(sub_0202D750(saveData), 0, 0);
 }
 
-BOOL sub_0207CC10(SaveData *param0, Strbuf *param1, u16 param2, u32 param3)
+BOOL sub_0207CC10(SaveData *saveData, Strbuf *param1, u16 param2, u32 param3)
 {
     MessageLoader *v0;
     StringTemplate *v1;
@@ -146,17 +138,17 @@ BOOL sub_0207CC10(SaveData *param0, Strbuf *param1, u16 param2, u32 param3)
         v2 = MessageLoader_GetNewStrbuf(v0, 99);
     } else if (param2 == 432) {
         v2 = MessageLoader_GetNewStrbuf(v0, 97);
-        StringTemplate_SetNumber(v1, 0, sub_0207CC00(param0), 4, 0, 1);
+        StringTemplate_SetNumber(v1, 0, sub_0207CC00(saveData), 4, 0, 1);
     } else if (param2 == 434) {
         v2 = MessageLoader_GetNewStrbuf(v0, 92);
-        StringTemplate_SetNumber(v1, 0, sub_0207CBC0(param0), 4, 0, 1);
+        StringTemplate_SetNumber(v1, 0, sub_0207CBC0(saveData), 4, 0, 1);
     } else if (param2 == 435) {
         v2 = MessageLoader_GetNewStrbuf(v0, 93);
-        StringTemplate_SetNumber(v1, 0, sub_0207CBE0(param0), 3, 0, 1);
-        StringTemplate_SetNumber(v1, 1, sub_0207CBF0(param0), 2, 0, 1);
+        StringTemplate_SetNumber(v1, 0, sub_0207CBE0(saveData), 3, 0, 1);
+        StringTemplate_SetNumber(v1, 1, sub_0207CBF0(saveData), 2, 0, 1);
     } else if (param2 == 444) {
         v2 = MessageLoader_GetNewStrbuf(v0, 57);
-        StringTemplate_SetNumber(v1, 0, sub_0207CBB4(param0), 5, 0, 1);
+        StringTemplate_SetNumber(v1, 0, SaveData_GetCoinsValue(saveData), 5, 0, 1);
     } else {
         StringTemplate_Free(v1);
         MessageLoader_Free(v0);

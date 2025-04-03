@@ -14,11 +14,11 @@
 #include "unk_0202ACE0.h"
 #include "unk_020366A0.h"
 
-int sub_0203909C(SaveData *param0, DWCFriendData *param1, int *param2)
+int sub_0203909C(SaveData *saveData, DWCFriendData *param1, int *param2)
 {
     int v0;
-    DWCUserData *v1 = sub_0202AD28(sub_0202B370(param0));
-    DWCFriendData *v2 = sub_0202AED8(sub_0202B370(param0), 0);
+    DWCUserData *v1 = sub_0202AD28(sub_0202B370(saveData));
+    DWCFriendData *v2 = sub_0202AED8(sub_0202B370(saveData), 0);
 
     *param2 = -1;
 
@@ -41,11 +41,11 @@ int sub_0203909C(SaveData *param0, DWCFriendData *param1, int *param2)
     return 2;
 }
 
-int sub_02039140(SaveData *param0, u64 param1, int *param2)
+int sub_02039140(SaveData *saveData, u64 param1, int *param2)
 {
     int v0;
-    DWCUserData *v1 = sub_0202AD28(sub_0202B370(param0));
-    DWCFriendData *v2 = sub_0202AED8(sub_0202B370(param0), 0);
+    DWCUserData *v1 = sub_0202AD28(sub_0202B370(saveData));
+    DWCFriendData *v2 = sub_0202AED8(sub_0202B370(saveData), 0);
     DWCFriendData v3;
 
     if (!DWC_CheckFriendKey(v1, param1)) {
@@ -72,10 +72,10 @@ int sub_02039140(SaveData *param0, u64 param1, int *param2)
     return 2;
 }
 
-BOOL sub_020391DC(SaveData *param0, int *param1, int param2)
+BOOL sub_020391DC(SaveData *saveData, int *param1, int param2)
 {
     int v0, v1 = 0, v2;
-    DWCFriendData *v3 = sub_0202AED8(sub_0202B370(param0), 0);
+    DWCFriendData *v3 = sub_0202AED8(sub_0202B370(saveData), 0);
     DWCFriendData *v4;
 
     for (v0 = 0; v0 < CommSys_ConnectedCount(); v0++) {
@@ -89,19 +89,19 @@ BOOL sub_020391DC(SaveData *param0, int *param1, int param2)
             continue;
         }
 
-        param1[v0] = sub_0203909C(param0, v4, &v2);
+        param1[v0] = sub_0203909C(saveData, v4, &v2);
 
         GF_ASSERT(param1[v0] != 3);
 
         if (param1[v0] == 0) {
-            sub_02039298(param0, v0, v2, param2, 2);
-            CommInfo_SavePlayerRecord(param0);
+            sub_02039298(saveData, v0, v2, param2, 2);
+            CommInfo_SavePlayerRecord(saveData);
         } else if (param1[v0] == 1) {
             if (!sub_020389B8()) {
-                sub_02039298(param0, v0, v2, param2, 1);
+                sub_02039298(saveData, v0, v2, param2, 1);
                 MI_CpuCopy8(v4, &v3[v2], sizeof(DWCFriendData));
 
-                CommInfo_SavePlayerRecord(param0);
+                CommInfo_SavePlayerRecord(saveData);
             }
         } else if (param1[v0] == 2) {
             v1 = 1;
@@ -111,9 +111,9 @@ BOOL sub_020391DC(SaveData *param0, int *param1, int param2)
     return v1;
 }
 
-void sub_02039298(SaveData *param0, int param1, int param2, int param3, int param4)
+void sub_02039298(SaveData *saveData, int param1, int param2, int param3, int param4)
 {
-    UnkStruct_0202B370 *v0 = sub_0202B370(param0);
+    UnkStruct_0202B370 *v0 = sub_0202B370(saveData);
     DWCFriendData *v1 = sub_0202AED8(v0, param2);
     TrainerInfo *v2 = CommInfo_TrainerInfo(param1);
     DWCFriendData *v3;
@@ -143,14 +143,14 @@ void sub_02039298(SaveData *param0, int param1, int param2, int param3, int para
     sub_0202AF50(v0, param2, v4);
     Strbuf_Free(v4);
     sub_0202AE2C(v0, param2, 7, TrainerInfo_Appearance(v2));
-    CommInfo_SavePlayerRecord(param0);
+    CommInfo_SavePlayerRecord(saveData);
 }
 
-int sub_02039390(SaveData *param0, int param1)
+int sub_02039390(SaveData *saveData, int param1)
 {
     int v0, v1;
     DWCFriendData *v2 = CommInfo_DWCFriendData(param1);
-    UnkStruct_0202B370 *v3 = sub_0202B370(param0);
+    UnkStruct_0202B370 *v3 = sub_0202B370(saveData);
 
     for (v0 = 0; v0 < 32; v0++) {
         if (DWC_IsEqualFriendData(v2, sub_0202AED8(v3, v0))) {

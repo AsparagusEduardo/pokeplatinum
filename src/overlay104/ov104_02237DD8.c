@@ -44,7 +44,6 @@ typedef struct {
 
 typedef void (*UnkFuncPtr_ov104_02238B88)(UnkStruct_ov104_0223BFFC *, Party *, u8);
 
-UnkStruct_ov104_0223BFFC *ov104_02237DD8(SaveData *param0, u16 param1, u8 param2, u16 param3, u16 param4, u16 param5, u16 *param6);
 void ov104_0223806C(UnkStruct_ov104_0223BFFC *param0, u16 param1);
 static void ov104_02238080(UnkStruct_ov104_0223BFFC *param0);
 static void ov104_02238114(UnkStruct_ov104_0223BFFC *param0);
@@ -140,7 +139,7 @@ static const u8 Unk_ov104_0223FAF8[][2] = {
     { 0x0, 0x3 }
 };
 
-UnkStruct_ov104_0223BFFC *ov104_02237DD8(SaveData *param0, u16 param1, u8 param2, u16 param3, u16 param4, u16 param5, u16 *param6)
+UnkStruct_ov104_0223BFFC *ov104_02237DD8(SaveData *saveData, u16 param1, u8 param2, u16 param3, u16 param4, u16 param5, u16 *param6)
 {
     u32 v0, v1;
     Party *v2;
@@ -154,8 +153,8 @@ UnkStruct_ov104_0223BFFC *ov104_02237DD8(SaveData *param0, u16 param1, u8 param2
     v9 = Heap_AllocFromHeap(HEAP_ID_FIELDMAP, sizeof(UnkStruct_ov104_0223BFFC));
     MI_CpuClear8(v9, sizeof(UnkStruct_ov104_0223BFFC));
 
-    v9->unk_08 = sub_020304A0(param0);
-    v9->unk_04 = param0;
+    v9->unk_08 = sub_020304A0(saveData);
+    v9->unk_04 = saveData;
     v9->unk_00 = 11;
     v9->unk_70 = Party_New(HEAP_ID_FIELDMAP);
     v9->unk_74 = Party_New(HEAP_ID_FIELDMAP);
@@ -163,7 +162,7 @@ UnkStruct_ov104_0223BFFC *ov104_02237DD8(SaveData *param0, u16 param1, u8 param2
     v9->unk_13 = 32;
 
     v4 = v9->unk_08;
-    v10 = sub_020305B8(param0);
+    v10 = sub_020305B8(saveData);
 
     if (param1 == 0) {
         v9->unk_10 = param2;

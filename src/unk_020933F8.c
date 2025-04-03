@@ -1562,7 +1562,7 @@ void sub_02094BB4(UnkStruct_02095C48 *param0, int *param1, int *param2, int *par
     }
 }
 
-void sub_02094C44(UnkStruct_02095C48 *param0, SaveData *param1, u32 param2, JournalEntry *journalEntry)
+void sub_02094C44(UnkStruct_02095C48 *param0, SaveData *saveData, u32 param2, JournalEntry *journalEntry)
 {
     int v0 = 0;
 

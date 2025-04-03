@@ -412,16 +412,16 @@ static BOOL sub_02097F38(FieldTask *param0)
     return 0;
 }
 
-void sub_020980DC(FieldTask *param0, SaveData *param1)
+void sub_020980DC(FieldTask *param0, SaveData *saveData)
 {
     UnkStruct_02097F38 *v0 = Heap_AllocFromHeapAtEnd(11, sizeof(UnkStruct_02097F38));
 
     memset(v0, 0, sizeof(UnkStruct_02097F38));
-    v0->unk_10 = param1;
+    v0->unk_10 = saveData;
     v0->unk_08 = Heap_AllocFromHeap(HEAP_ID_FIELDMAP, sizeof(UnkStruct_02097F18));
     memset(v0->unk_08, 0, sizeof(UnkStruct_02097F18));
-    v0->unk_08->unk_24 = SaveData_Options(param1);
-    v0->unk_08->unk_28 = param1;
+    v0->unk_08->unk_24 = SaveData_Options(saveData);
+    v0->unk_08->unk_28 = saveData;
     v0->unk_0C = Heap_AllocFromHeap(HEAP_ID_FIELDMAP, sizeof(PartyManagementData));
     memset(v0->unk_0C, 0, sizeof(PartyManagementData));
 

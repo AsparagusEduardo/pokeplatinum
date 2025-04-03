@@ -905,7 +905,7 @@ asm static void ov110_021D1808 (UnkStruct_ov110_021D0F78 * param0)
     ldr r0, [r5, r0]
     mov r1, #0xb
     add r2, sp, #0x1c
-    bl sub_020308A0
+    bl SaveData_BattleFrontierStage
     add r4, r0, #0
     ldr r0, [sp, #0x1c]
     cmp r0, #1

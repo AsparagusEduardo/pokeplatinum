@@ -83,7 +83,7 @@ void sub_020281A0(Mail *param0, Mail *param1)
     MI_CpuCopy8(param0, param1, sizeof(Mail));
 }
 
-void sub_020281AC(Mail *param0, u8 param1, u8 param2, SaveData *param3)
+void sub_020281AC(Mail *param0, u8 param1, u8 param2, SaveData *saveData)
 {
     u8 v0, v1, v2, v3;
     u16 v4;
@@ -95,8 +95,8 @@ void sub_020281AC(Mail *param0, u8 param1, u8 param2, SaveData *param3)
     sub_02028124(param0);
 
     param0->unk_07 = param1;
-    v9 = Party_GetFromSavedata(param3);
-    v8 = SaveData_GetTrainerInfo(param3);
+    v9 = Party_GetFromSavedata(saveData);
+    v8 = SaveData_GetTrainerInfo(saveData);
 
     CharCode_Copy(param0->unk_08, TrainerInfo_Name(v8));
 
@@ -230,9 +230,9 @@ void sub_0202841C(Mail *param0, Sentence *param1, u8 param2)
     sub_02014CC0(&param0->unk_20[param2], param1);
 }
 
-UnkStruct_02028430 *sub_02028430(SaveData *param0)
+UnkStruct_02028430 *sub_02028430(SaveData *saveData)
 {
-    return SaveData_SaveTable(param0, 15);
+    return SaveData_SaveTable(saveData, SAVE_TABLE_ENTRY_MAIL);
 }
 
 int Mail_SaveSize(void)

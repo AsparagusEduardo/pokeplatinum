@@ -31,7 +31,6 @@
 #include "unk_0205DFC4.h"
 #include "vars_flags.h"
 
-UnkStruct_ov104_0223ADA0 *ov104_022339B4(SaveData *param0, u16 param1, u8 param2, u8 param3);
 void ov104_02233B98(UnkStruct_ov104_0223ADA0 *param0, u16 param1);
 static void ov104_02233BAC(UnkStruct_ov104_0223ADA0 *param0);
 static void ov104_02233F1C(UnkStruct_ov104_0223ADA0 *param0);
@@ -53,7 +52,7 @@ void ov104_02234474(UnkStruct_ov104_0223ADA0 *param0);
 void ov104_02234480(UnkStruct_ov104_0223ADA0 *param0);
 u16 ov104_022347F8(UnkStruct_ov104_0223ADA0 *param0);
 
-UnkStruct_ov104_0223ADA0 *ov104_022339B4(SaveData *param0, u16 param1, u8 param2, u8 param3)
+UnkStruct_ov104_0223ADA0 *ov104_022339B4(SaveData *saveData, u16 param1, u8 param2, u8 param3)
 {
     UnkStruct_0202FF58 *v0;
     UnkStruct_020300F4 *v1;
@@ -66,14 +65,14 @@ UnkStruct_ov104_0223ADA0 *ov104_022339B4(SaveData *param0, u16 param1, u8 param2
     v7 = Heap_AllocFromHeap(HEAP_ID_FIELDMAP, sizeof(UnkStruct_ov104_0223ADA0));
     MI_CpuClear8(v7, sizeof(UnkStruct_ov104_0223ADA0));
 
-    v7->unk_4F4 = sub_0202FF58(param0);
-    v7->unk_4F8 = param0;
+    v7->unk_4F4 = sub_0202FF58(saveData);
+    v7->unk_4F8 = saveData;
     v7->unk_00 = 11;
     v7->unk_4D4 = Party_New(HEAP_ID_FIELDMAP);
     v7->unk_4D8 = Party_New(HEAP_ID_FIELDMAP);
 
     v0 = v7->unk_4F4;
-    v1 = sub_020300F4(param0);
+    v1 = sub_020300F4(saveData);
 
     if (param1 == 0) {
         v7->unk_04 = param2;

@@ -324,7 +324,7 @@ void sub_0206BD88(FieldTask *param0, u16 param1, u16 param2)
     FieldTask_InitCall(fieldSystem->task, sub_0206BD1C, v1);
 }
 
-u16 sub_0206BDBC(SaveData *param0)
+u16 sub_0206BDBC(SaveData *saveData)
 {
     UnkStruct_0203068C *v0;
     UnkStruct_0202D750 *v1;
@@ -332,14 +332,14 @@ u16 sub_0206BDBC(SaveData *param0)
     u16 v3;
     u8 v4, v5, v6, v7, v8, v9;
 
-    v0 = sub_0203068C(param0);
+    v0 = sub_0203068C(saveData);
     v3 = sub_02030698(v0, 0, 0xff);
 
     if (v3 < 20) {
         return 0;
     }
 
-    v1 = sub_0202D750(param0);
+    v1 = sub_0202D750(saveData);
     v4 = sub_0202D414(v1, 13, 0);
     v5 = sub_0202D414(v1, 0, 0);
     v6 = sub_0202D414(v1, 1, 0);
@@ -351,7 +351,7 @@ u16 sub_0206BDBC(SaveData *param0)
         return 0;
     }
 
-    v2 = sub_020298B0(param0);
+    v2 = sub_020298B0(saveData);
 
     if (!v4) {
         if (sub_02028984(v2, 85)) {
@@ -399,21 +399,21 @@ u16 sub_0206BDBC(SaveData *param0)
     }
 }
 
-u16 sub_0206BF04(SaveData *param0)
+u16 sub_0206BF04(SaveData *saveData)
 {
     UnkStruct_0203068C *v0;
     UnkStruct_0202D750 *v1;
     u16 v2;
     u8 v3, v4, v5, v6, v7, v8;
 
-    v0 = sub_0203068C(param0);
+    v0 = sub_0203068C(saveData);
     v2 = sub_02030698(v0, 0, 0xff);
 
     if (v2 < 20) {
         return 0;
     }
 
-    v1 = sub_0202D750(param0);
+    v1 = sub_0202D750(saveData);
     v3 = sub_0202D414(v1, 13, 0);
     v4 = sub_0202D414(v1, 0, 0);
     v5 = sub_0202D414(v1, 1, 0);
@@ -470,57 +470,57 @@ u32 sub_0206BFFC(u32 param0)
     return param0 * 1566083941 + 1;
 }
 
-u32 sub_0206C008(SaveData *param0)
+u32 sub_0206C008(SaveData *saveData)
 {
-    u32 v0 = RecordMixedRNG_GetRand(SaveData_GetRecordMixedRNG(param0));
+    u32 v0 = RecordMixedRNG_GetRand(SaveData_GetRecordMixedRNG(saveData));
     v0 = sub_0206BFFC(v0);
 
-    sub_0202D470(sub_0202D750(param0), v0);
+    sub_0202D470(sub_0202D750(saveData), v0);
 
     return v0;
 }
 
-u32 sub_0206C02C(SaveData *param0)
+u32 sub_0206C02C(SaveData *saveData)
 {
     u32 v0, v1;
-    UnkStruct_0202D750 *v2 = sub_0202D750(param0);
+    UnkStruct_0202D750 *v2 = sub_0202D750(saveData);
 
     v1 = sub_0202D474(v2);
     v1 = sub_0206BFFC(v1);
 
     sub_0202D470(v2, v1);
     v0 = sub_0206BFF0(v1);
-    sub_0202D140(sub_0202D740(param0), 10, &v0);
+    sub_0202D140(sub_0202D740(saveData), 10, &v0);
 
     return v0;
 }
 
-u32 sub_0206C068(SaveData *param0)
+u32 sub_0206C068(SaveData *saveData)
 {
-    int v0, v1;
+    int i, v1;
     u32 v2, v3;
-    UnkStruct_0202D750 *v4 = sub_0202D750(param0);
-    UnkStruct_0202D060 *v5 = sub_0202D740(param0);
+    UnkStruct_0202D750 *v4 = sub_0202D750(saveData);
+    UnkStruct_0202D060 *v5 = sub_0202D740(saveData);
 
     v3 = sub_0202D474(v4);
     v2 = sub_0206BFF0(v3);
     v1 = sub_0202D3B4(v4, sub_0202D0BC(v5, 0, NULL), 0);
     v1 *= 24;
 
-    for (v0 = 0; v0 < v1; v0++) {
+    for (i = 0; i < v1; i++) {
         v2 = sub_0206BFF0(v2);
     }
 
-    sub_0202D140(sub_0202D740(param0), 10, &v2);
+    sub_0202D140(sub_0202D740(saveData), 10, &v2);
 
     return v2;
 }
 
 BOOL sub_0206C0D0(FieldSystem *fieldSystem)
 {
-    if (fieldSystem->location->mapId == SPECIES_ARCEUS) {
-        return 1;
+    if (fieldSystem->location->mapId == 493) {
+        return TRUE;
     }
 
-    return 0;
+    return FALSE;
 }

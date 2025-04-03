@@ -122,7 +122,7 @@ typedef struct {
 } UnkStruct_ov68_0225C700;
 
 static void ov68_0225C914(void *param0);
-static void ov68_0225C91C(UnkStruct_ov68_0225C91C *param0, SaveData *param1, u32 param2);
+static void ov68_0225C91C(UnkStruct_ov68_0225C91C *param0, SaveData *saveData, u32 param2);
 static void ov68_0225C960(UnkStruct_ov68_0225C91C *param0);
 static void ov68_0225C980(UnkStruct_ov68_0225C91C *param0);
 static void ov68_0225C98C(UnkStruct_ov68_0225C91C *param0);
@@ -163,7 +163,7 @@ static void ov68_0225D8F0(UnkStruct_ov68_0225D388 *param0, const UnkStruct_ov68_
 static void ov68_0225DA30(UnkStruct_ov68_0225D388 *param0, const UnkStruct_ov68_0225DC74 *param1, UnkStruct_ov68_0225C91C *param2, u32 param3);
 static BOOL ov68_0225DA74(UnkStruct_ov68_0225D388 *param0, UnkStruct_ov68_0225C91C *param1);
 static void ov68_0225DB3C(UnkStruct_ov68_0225D388 *param0, UnkStruct_ov68_0225CB70 *param1, UnkStruct_ov68_0225C91C *param2, u32 param3);
-static void ov68_0225D128(UnkStruct_ov68_0225D128 *param0, UnkStruct_ov68_0225C91C *param1, SaveData *param2, u32 param3);
+static void ov68_0225D128(UnkStruct_ov68_0225D128 *param0, UnkStruct_ov68_0225C91C *param1, SaveData *saveData, u32 param3);
 static void ov68_0225D178(UnkStruct_ov68_0225D128 *param0, u32 param1);
 static void ov68_0225D1B4(UnkStruct_ov68_0225D128 *param0, const Strbuf *param1);
 static void ov68_0225D218(UnkStruct_ov68_0225D128 *param0, const Strbuf *param1);
@@ -429,9 +429,9 @@ static void ov68_0225C914(void *param0)
     ov68_0225C98C(&v0->unk_00);
 }
 
-static void ov68_0225C91C(UnkStruct_ov68_0225C91C *param0, SaveData *param1, u32 param2)
+static void ov68_0225C91C(UnkStruct_ov68_0225C91C *param0, SaveData *saveData, u32 param2)
 {
-    Options *v0 = SaveData_Options(param1);
+    Options *v0 = SaveData_Options(saveData);
     param0->unk_1A4 = NARC_ctor(NARC_INDEX_GRAPHIC__WIFI_LOBBY_OTHER, param2);
 
     VramTransfer_New(32, param2);
@@ -893,7 +893,7 @@ static void ov68_0225D11C(UnkStruct_ov68_0225D0F8 *param0)
     Sprite_SetAnimateFlag(param0->unk_14, 1);
 }
 
-static void ov68_0225D128(UnkStruct_ov68_0225D128 *param0, UnkStruct_ov68_0225C91C *param1, SaveData *param2, u32 param3)
+static void ov68_0225D128(UnkStruct_ov68_0225D128 *param0, UnkStruct_ov68_0225C91C *param1, SaveData *saveData, u32 param3)
 {
     Window_Add(param1->unk_00, &param0->unk_08, 1, 2, 19, 27, 4, 4, ((1 + (18 + 12)) + 9));
     Window_FillTilemap(&param0->unk_08, 15);
@@ -903,7 +903,7 @@ static void ov68_0225D128(UnkStruct_ov68_0225D128 *param0, UnkStruct_ov68_0225C9
     {
         Options *v0;
 
-        v0 = SaveData_Options(param2);
+        v0 = SaveData_Options(saveData);
         param0->unk_04 = Options_TextFrameDelay(v0);
     }
 }

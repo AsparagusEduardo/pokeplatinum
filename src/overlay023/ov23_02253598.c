@@ -60,12 +60,12 @@ typedef struct UnkStruct_ov23_02253598_t {
 static UnkStruct_ov23_02253598 *Unk_ov23_022577BC = NULL;
 static void ov23_022537D4(SysTask *param0, void *param1);
 
-void ov23_02253598(UnkStruct_ov23_02253598 *param0, SecretBaseRecord *param1, SaveData *param2)
+void ov23_02253598(UnkStruct_ov23_02253598 *param0, SecretBaseRecord *param1, SaveData *saveData)
 {
     MI_CpuFill8(param0, 0, sizeof(UnkStruct_ov23_02253598));
 
     Unk_ov23_022577BC = param0;
-    Unk_ov23_022577BC->unk_08 = param2;
+    Unk_ov23_022577BC->unk_08 = saveData;
     Unk_ov23_022577BC->unk_0C = param1;
     Unk_ov23_022577BC->unk_10 = sub_0202855C(HEAP_ID_COMMUNICATION);
 

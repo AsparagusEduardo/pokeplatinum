@@ -142,7 +142,7 @@ int SaveData_SaveBattleRecording(SaveData *save, BattleRecording *rec, int recNu
     return SaveDataExtra_SaveMirror(save, EXTRA_SAVE_TABLE_ENTRY_MY_RECORDINGS + recNum, rec);
 }
 
-BattleFrontierStage *SaveData_BattleFrontierStage(SaveData *save, int heapID, int *resultCode)
+BattleFrontierStage *SaveData_BattleFrontierStageInternal(SaveData *save, int heapID, int *resultCode)
 {
     BOOL tmp;
     return SaveDataExtra_Mirror(save, heapID, EXTRA_SAVE_TABLE_ENTRY_FRONTIER, resultCode, &tmp);

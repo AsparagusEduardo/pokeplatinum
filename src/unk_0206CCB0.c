@@ -63,7 +63,7 @@
 #include "vars_flags.h"
 
 static void sub_0206CD70(FieldSystem *fieldSystem, int param1, int param2, const void *param3);
-static void sub_0206CD7C(SaveData *param0, int param1, int param2, const void *param3);
+static void sub_0206CD7C(SaveData *saveData, int param1, int param2, const void *param3);
 static u8 sub_0206DE4C(Pokemon *param0);
 static Strbuf *sub_0206F0D8(u16 param0, u32 param1);
 
@@ -426,9 +426,9 @@ BOOL sub_0206CD2C(int param0, FieldSystem *fieldSystem, UnkStruct_ov6_022465F4 *
     return v0(fieldSystem, param2);
 }
 
-static void sub_0206CD58(SaveData *param0, int param1, int param2, const void *param3)
+static void sub_0206CD58(SaveData *saveData, int param1, int param2, const void *param3)
 {
-    TVBroadcast *v0 = SaveData_TVBroadcast(param0);
+    TVBroadcast *v0 = SaveData_TVBroadcast(saveData);
 
     GF_ASSERT(sizeof(UnkUnion_0206D1B8) == 40);
     sub_0202E43C(v0, param1, param2, (const u8 *)param3);
@@ -439,9 +439,9 @@ static void sub_0206CD70(FieldSystem *fieldSystem, int param1, int param2, const
     sub_0206CD7C(fieldSystem->saveData, param1, param2, param3);
 }
 
-static void sub_0206CD7C(SaveData *param0, int param1, int param2, const void *param3)
+static void sub_0206CD7C(SaveData *saveData, int param1, int param2, const void *param3)
 {
-    TVBroadcast *v0 = SaveData_TVBroadcast(param0);
+    TVBroadcast *v0 = SaveData_TVBroadcast(saveData);
 
     GF_ASSERT(sizeof(UnkUnion_0206D1B8) == 40);
     sub_0202E43C(v0, param1, param2, (const u8 *)param3);
@@ -517,7 +517,7 @@ void sub_0206CF14(TVBroadcast *param0, Pokemon *param1, int param2, int param3, 
     v0->unk_07 = param3;
     v0->unk_09 = param4;
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206CF48(TVBroadcast *param0, Pokemon *param1, int param2)
@@ -532,7 +532,7 @@ void sub_0206CF48(TVBroadcast *param0, Pokemon *param1, int param2)
     v0->unk_07 = Pokemon_GetValue(param1, MON_DATA_HAS_NICKNAME, NULL);
 
     sub_0206CED0(param2, param1, &v0->unk_07, v0->unk_08);
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206CF9C(TVBroadcast *param0, int param1)
@@ -542,7 +542,7 @@ void sub_0206CF9C(TVBroadcast *param0, int param1)
     v0->unk_1F = 2;
     v0->unk_20 = param1;
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206CFB4(TVBroadcast *param0, int param1)
@@ -552,7 +552,7 @@ void sub_0206CFB4(TVBroadcast *param0, int param1)
     v0->unk_1F = 1;
     v0->unk_22 = param1;
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206CFCC(TVBroadcast *param0, int param1)
@@ -562,7 +562,7 @@ void sub_0206CFCC(TVBroadcast *param0, int param1)
     v0->unk_00 = 1;
     v0->unk_01 = param1;
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206CFE4(TVBroadcast *param0, BOOL param1, u16 param2)
@@ -573,7 +573,7 @@ void sub_0206CFE4(TVBroadcast *param0, BOOL param1, u16 param2)
     v0->unk_01 = param1;
     v0->unk_02 = param2;
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206D000(TVBroadcast *param0)
@@ -583,7 +583,7 @@ void sub_0206D000(TVBroadcast *param0)
     v0->unk_00 = 1;
     v0->unk_07 = 0;
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206D018(TVBroadcast *param0, Pokemon *param1)
@@ -595,7 +595,7 @@ void sub_0206D018(TVBroadcast *param0, Pokemon *param1)
     }
 
     v0->unk_07++;
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206D048(TVBroadcast *param0, Pokemon *param1)
@@ -607,7 +607,7 @@ void sub_0206D048(TVBroadcast *param0, Pokemon *param1)
     v0->unk_07 = Pokemon_GetValue(param1, MON_DATA_HAS_NICKNAME, NULL);
 
     sub_0206CED0(11, param1, &v0->unk_07, v0->unk_08);
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206D088(TVBroadcast *param0, u8 param1, const TrainerInfo *param2)
@@ -623,7 +623,7 @@ void sub_0206D088(TVBroadcast *param0, u8 param1, const TrainerInfo *param2)
     v0->unk_04 = TrainerInfo_GameCode(param2);
     v0->unk_02 = TrainerInfo_Gender(param2);
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206D0C8(TVBroadcast *param0, u16 param1)
@@ -637,7 +637,7 @@ void sub_0206D0C8(TVBroadcast *param0, u16 param1)
         v0->unk_04 = 9999;
     }
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206D0F0(TVBroadcast *param0)
@@ -645,7 +645,7 @@ void sub_0206D0F0(TVBroadcast *param0)
     UnkStruct_0202E828 *v0 = sub_0202E828(param0);
 
     v0->unk_04 = 0;
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206D104(TVBroadcast *param0)
@@ -659,7 +659,7 @@ void sub_0206D104(TVBroadcast *param0)
         v0->unk_02 = 9999;
     }
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 void sub_0206D12C(TVBroadcast *param0)
@@ -667,7 +667,7 @@ void sub_0206D12C(TVBroadcast *param0)
     UnkStruct_0202E834 *v0 = sub_0202E834(param0);
 
     v0->unk_02 = 0;
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
 }
 
 UnkStruct_0206D140 *sub_0206D140(int heapID)
@@ -876,7 +876,7 @@ static int sub_0206D4D4(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
     return 10;
 }
 
-void sub_0206D504(SaveData *param0, u16 param1, u8 param2)
+void sub_0206D504(SaveData *saveData, u16 param1, u8 param2)
 {
     UnkUnion_0206D1B8 v0;
     UnkStruct_0206D530 *v1 = &v0.val6;
@@ -889,7 +889,7 @@ void sub_0206D504(SaveData *param0, u16 param1, u8 param2)
             v1->unk_02 = 999;
         }
 
-        sub_0206CD7C(param0, 2, 7, v1);
+        sub_0206CD7C(saveData, 2, 7, v1);
     }
 }
 
@@ -1266,7 +1266,7 @@ static BOOL sub_0206DB9C(FieldSystem *fieldSystem, UnkStruct_ov6_022465F4 *param
     return SystemFlag_HandleFirstArrivalToZone(SaveData_GetVarsFlags(fieldSystem->saveData), HANDLE_FLAG_CHECK, FIRST_ARRIVAL_RESORT_AREA);
 }
 
-void sub_0206DBB0(SaveData *param0, u32 param1, Pokemon *param2, BOOL param3)
+void sub_0206DBB0(SaveData *saveData, u32 param1, Pokemon *param2, BOOL param3)
 {
     UnkUnion_0206D1B8 v0;
     UnkStruct_0206DBE8 *v1 = &v0.val18;
@@ -1276,7 +1276,7 @@ void sub_0206DBB0(SaveData *param0, u32 param1, Pokemon *param2, BOOL param3)
     v1->unk_00 = param1;
     v1->unk_07 = param3;
 
-    sub_0206CD58(param0, 3, 1, v1);
+    sub_0206CD58(saveData, 3, 1, v1);
 }
 
 static int sub_0206DBE8(FieldSystem *fieldSystem, StringTemplate *param1, UnkStruct_ov6_022465F4 *param2)
@@ -1542,18 +1542,18 @@ static BOOL sub_0206DFC8(FieldSystem *fieldSystem, UnkStruct_ov6_022465F4 *param
     return Bag_CanRemoveItem(SaveData_GetBag(fieldSystem->saveData), ITEM_EXPLORER_KIT, 1, HEAP_ID_FIELD_TASK);
 }
 
-void sub_0206DFE0(SaveData *param0)
+void sub_0206DFE0(SaveData *saveData)
 {
     UnkUnion_0206D1B8 v0;
     UnkStruct_0206E018 *v1 = &v0.val24;
-    UnkStruct_0202E828 *v2 = sub_0202E828(SaveData_TVBroadcast(param0));
+    UnkStruct_0202E828 *v2 = sub_0202E828(SaveData_TVBroadcast(saveData));
 
     if (v2->unk_04 >= 30) {
         v1->unk_00 = *v2;
         v2->unk_00 = 0;
 
-        SaveData_SetChecksum(27);
-        sub_0206CD7C(param0, 3, 10, v1);
+        SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
+        sub_0206CD7C(saveData, 3, 10, v1);
     }
 }
 
@@ -1572,18 +1572,18 @@ static BOOL sub_0206E04C(FieldSystem *fieldSystem, UnkStruct_ov6_022465F4 *param
     return SystemFlag_HandleFirstArrivalToZone(SaveData_GetVarsFlags(fieldSystem->saveData), HANDLE_FLAG_CHECK, FIRST_ARRIVAL_FIGHT_AREA);
 }
 
-void sub_0206E060(SaveData *param0)
+void sub_0206E060(SaveData *saveData)
 {
     UnkUnion_0206D1B8 v0;
     UnkStruct_0206E098 *v1 = &v0.val25;
-    UnkStruct_0202E834 *v2 = sub_0202E834(SaveData_TVBroadcast(param0));
+    UnkStruct_0202E834 *v2 = sub_0202E834(SaveData_TVBroadcast(saveData));
 
     if (v2->unk_02 >= 10) {
         v1->unk_00 = *v2;
         v2->unk_00 = 0;
 
-        SaveData_SetChecksum(27);
-        sub_0206CD7C(param0, 3, 11, v1);
+        SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
+        sub_0206CD7C(saveData, 3, 11, v1);
     }
 }
 
@@ -1612,7 +1612,7 @@ void sub_0206E0E0(FieldSystem *fieldSystem, u16 param1)
     v2->unk_00 = 0;
     v1->unk_04 = param1;
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
     sub_0206CD70(fieldSystem, 1, 2, v1);
 }
 
@@ -1707,7 +1707,7 @@ void sub_0206E2BC(FieldSystem *fieldSystem, u16 param1)
     v2->unk_00 = 0;
     v1->unk_0A = param1;
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
     sub_0206CD70(fieldSystem, 1, 7, v1);
 }
 
@@ -1796,7 +1796,7 @@ void sub_0206E448(FieldSystem *fieldSystem, u16 param1)
     v1->unk_02 = param1;
     v2->unk_00 = 0;
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
     sub_0206CD70(fieldSystem, 1, 11, v1);
 }
 
@@ -1833,7 +1833,7 @@ void sub_0206E4DC(FieldSystem *fieldSystem, u16 param1)
     v1->unk_24 = param1;
     v2->unk_00 = 0;
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
     sub_0206CD70(fieldSystem, 1, 13, v1);
 }
 
@@ -1870,7 +1870,7 @@ void sub_0206E5A0(FieldSystem *fieldSystem, u16 param1)
     v1->unk_1E = param1;
     v2->unk_00 = 0;
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
     sub_0206CD70(fieldSystem, 1, 14, v1);
 }
 
@@ -1982,7 +1982,7 @@ void sub_0206E768(FieldSystem *fieldSystem, u16 param1)
     v1->unk_16 = param1;
     v2->unk_00 = 0;
 
-    SaveData_SetChecksum(27);
+    SaveData_SetChecksum(SAVE_TABLE_ENTRY_TV_BROADCAST);
     sub_0206CD70(fieldSystem, 1, 19, v1);
 }
 
@@ -3006,12 +3006,12 @@ static const UnkStruct_020EFFA4 Unk_020EFD9C[8] = {
     { sub_0206F29C, NULL }
 };
 
-void sub_0206F2F0(SaveData *param0)
+void sub_0206F2F0(SaveData *saveData)
 {
-    TVBroadcast *v0 = SaveData_TVBroadcast(param0);
+    TVBroadcast *v0 = SaveData_TVBroadcast(saveData);
 
-    sub_0206DFE0(param0);
-    sub_0206E060(param0);
+    sub_0206DFE0(saveData);
+    sub_0206E060(saveData);
 
     sub_0206D0F0(v0);
     sub_0206D12C(v0);

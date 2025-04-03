@@ -147,7 +147,7 @@ BOOL ScrCmd_2DE(ScriptContext *ctx)
 
     v6 = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_SPECIES_NAME, HEAP_ID_FIELD_TASK);
     v9 = ov5_021F6704(fieldSystem, 20, 1, 0, 1, FieldSystem_GetVarPointer(fieldSystem, v13), *v10, FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_WINDOW), v6, FieldSystem_GetVarPointer(fieldSystem, v14), FieldSystem_GetVarPointer(fieldSystem, v15));
-    v1 = sub_020308A0(fieldSystem->saveData, 11, &v0);
+    v1 = SaveData_BattleFrontierStage(fieldSystem->saveData, HEAP_ID_FIELDMAP, &v0);
 
     if (v0 == 1) {
         v3 = ov5_021F65FC(32, Unk_ov5_0220210C[v12], &v5);

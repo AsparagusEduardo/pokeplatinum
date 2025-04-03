@@ -843,7 +843,7 @@ void sub_0203D9D8(FieldSystem *fieldSystem, UnkStruct_ov90_021D0D80 *param1)
     FieldSystem_StartChildProcess(fieldSystem, &v0, param1);
 }
 
-static UnkStruct_0203DA00 *sub_0203DA00(int heapID, SaveData *param1, int param2, BOOL *param3, BOOL param4)
+static UnkStruct_0203DA00 *sub_0203DA00(int heapID, SaveData *saveData, int param2, BOOL *param3, BOOL param4)
 {
     UnkStruct_0203DA00 *v0;
     Pokemon *v1;
@@ -854,19 +854,19 @@ static UnkStruct_0203DA00 *sub_0203DA00(int heapID, SaveData *param1, int param2
 
     v0 = Heap_AllocFromHeap(heapID, sizeof(UnkStruct_0203DA00));
     memset(v0, 0, sizeof(UnkStruct_0203DA00));
-    v1 = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(param1), param2);
+    v1 = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(saveData), param2);
 
     v0->unk_00 = v1;
 
-    v3 = sub_0202A750(param1);
+    v3 = sub_0202A750(saveData);
     v4 = sub_02029CA8(v3, 0);
     v5 = sub_02029D04(v3);
 
     v0->unk_04 = v4;
     v0->unk_08 = v5;
-    v0->unk_0C = SaveData_Options(param1);
-    v0->records = SaveData_GetGameRecordsPtr(param1);
-    v0->unk_14 = SaveData_GetTrainerInfo(param1);
+    v0->unk_0C = SaveData_Options(saveData);
+    v0->records = SaveData_GetGameRecordsPtr(saveData);
+    v0->unk_14 = SaveData_GetTrainerInfo(saveData);
     v0->unk_18 = param3;
     v0->unk_1C = param4;
 
@@ -902,12 +902,12 @@ static BOOL sub_0203DA64(FieldTask *param0)
     return 0;
 }
 
-void sub_0203DAC0(FieldTask *param0, u16 *param1, SaveData *param2, u16 param3, u16 param4)
+void sub_0203DAC0(FieldTask *param0, u16 *param1, SaveData *saveData, u16 param3, u16 param4)
 {
     UnkStruct_0203DA64 *v0 = Heap_AllocFromHeap(HEAP_ID_FIELD_TASK, sizeof(UnkStruct_0203DA64));
     memset(v0, 0, sizeof(UnkStruct_0203DA64));
 
-    v0->unk_0C = sub_0203DA00(HEAP_ID_FIELD_TASK, param2, param3, &v0->unk_08, param4);
+    v0->unk_0C = sub_0203DA00(HEAP_ID_FIELD_TASK, saveData, param3, &v0->unk_08, param4);
     v0->unk_04 = param1;
 
     FieldTask_InitCall(param0, sub_0203DA64, v0);
@@ -963,7 +963,7 @@ static void sub_0203DB38(UnkStruct_ov88_0223C370 *param0, FieldSystem *fieldSyst
 {
     param0->unk_04 = SaveData_GetTrainerInfo(fieldSystem->saveData);
     param0->unk_08 = Party_GetFromSavedata(fieldSystem->saveData);
-    param0->unk_0C = SaveData_SaveTable(fieldSystem->saveData, 9);
+    param0->unk_0C = SaveData_SaveTable(fieldSystem->saveData, SAVE_TABLE_ENTRY_PAL_PAD);
     param0->unk_14 = sub_0202C878(fieldSystem->saveData);
     param0->unk_18 = SaveData_Options(fieldSystem->saveData);
     param0->unk_24 = SaveData_GetPokedex(fieldSystem->saveData);
@@ -1149,12 +1149,12 @@ const OverlayManagerTemplate Unk_020EA238 = {
     FS_OVERLAY_ID(overlay64)
 };
 
-void sub_0203DE78(FieldSystem *fieldSystem, SaveData *param1)
+void sub_0203DE78(FieldSystem *fieldSystem, SaveData *saveData)
 {
-    FieldSystem_StartChildProcess(fieldSystem, &Unk_020EA238, param1);
+    FieldSystem_StartChildProcess(fieldSystem, &Unk_020EA238, saveData);
 }
 
-void sub_0203DE88(FieldSystem *fieldSystem, SaveData *param1)
+void sub_0203DE88(FieldSystem *fieldSystem, SaveData *saveData)
 {
     FieldSystem_StartChildProcess(fieldSystem, &Unk_020F2FCC, fieldSystem);
 }
@@ -1351,7 +1351,7 @@ void sub_0203E0FC(FieldSystem *fieldSystem, int param1)
 
     v0->unk_00 = sub_0202DA40(fieldSystem->saveData);
     v0->unk_04 = SaveData_GetSystemData(fieldSystem->saveData);
-    v0->unk_08 = SaveData_SaveTable(fieldSystem->saveData, 2);
+    v0->unk_08 = SaveData_SaveTable(fieldSystem->saveData, SAVE_TABLE_ENTRY_PARTY);
     v0->unk_0C = SaveData_PCBoxes(fieldSystem->saveData);
     v0->unk_10 = SaveData_GetPokedex(fieldSystem->saveData);
     v0->unk_14 = sub_0202B370(fieldSystem->saveData);
@@ -1588,7 +1588,7 @@ void sub_0203E414(FieldTask *param0, int param1)
     FieldTask_InitCall(param0, sub_0203E35C, v2);
 }
 
-static u8 sub_0203E484(SaveData *param0, u8 param1)
+static u8 sub_0203E484(SaveData *saveData, u8 param1)
 {
     static const u8 v0[12] = {
         0,
@@ -1604,7 +1604,7 @@ static u8 sub_0203E484(SaveData *param0, u8 param1)
         3,
         3,
     };
-    RecordMixedRNG *v1 = SaveData_GetRecordMixedRNG(param0);
+    RecordMixedRNG *v1 = SaveData_GetRecordMixedRNG(saveData);
     u32 v2;
     u8 v3[12];
     u8 v4, v5, v6, v7;

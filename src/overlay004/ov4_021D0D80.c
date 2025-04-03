@@ -101,7 +101,7 @@ static void ov4_021D24AC(int param0, void *param1);
 
 static UnkStruct_ov4_0221A400 *Unk_ov4_0221A400 = NULL;
 
-int ov4_021D0D80(SaveData *param0, int heapID, int param2, int param3)
+int ov4_021D0D80(SaveData *saveData, int heapID, int param2, int param3)
 {
     void *v0;
 
@@ -112,7 +112,7 @@ int ov4_021D0D80(SaveData *param0, int heapID, int param2, int param3)
 
     Unk_ov4_0221A400 = (UnkStruct_ov4_0221A400 *)(((u32)v0 + 31) / 32 * 32);
     Unk_ov4_0221A400->unk_F70 = v0;
-    Unk_ov4_0221A400->unk_F6C = param0;
+    Unk_ov4_0221A400->unk_F6C = saveData;
     Unk_ov4_0221A400->unk_F98 = NULL;
     Unk_ov4_0221A400->unk_F9C = NULL;
     Unk_ov4_0221A400->unk_FB4 = NULL;
@@ -140,7 +140,7 @@ int ov4_021D0D80(SaveData *param0, int heapID, int param2, int param3)
     Unk_ov4_0221A400->unk_10C4 = 1;
     Unk_ov4_0221A400->unk_10CA = 1;
 
-    if (param0 != NULL) {
+    if (saveData != NULL) {
         Unk_ov4_0221A400->unk_F08 = sub_0202AD28(sub_0202B370(Unk_ov4_0221A400->unk_F6C));
         Unk_ov4_0221A400->unk_100 = (DWCFriendData *)sub_0202AED8(sub_0202B370(Unk_ov4_0221A400->unk_F6C), 0);
     }

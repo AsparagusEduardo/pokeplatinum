@@ -95,7 +95,6 @@ static void ov62_02239F98(u32 param0, u32 param1, void *param2);
 static void ov62_0223A0AC(UnkStruct_0208C06C *param0);
 static void ov62_0223A110(UnkStruct_0208C06C *param0);
 static void ov62_0223A138(UnkStruct_ov62_02239DBC *param0);
-static void ov62_0223A154(SaveData *param0, const PCBoxes *param1, int param2, UnkStruct_ov62_02239DA4 *param3);
 static BOOL ov62_0223A17C(UnkStruct_0208C06C *param0);
 static BOOL ov62_0223A2A8(UnkStruct_0208C06C *param0);
 static BOOL ov62_0223A394(UnkStruct_0208C06C *param0);
@@ -439,10 +438,10 @@ static void ov62_0223A138(UnkStruct_ov62_02239DBC *param0)
     }
 }
 
-static void ov62_0223A154(SaveData *param0, const PCBoxes *param1, int param2, UnkStruct_ov62_02239DA4 *param3)
+static void ov62_0223A154(SaveData *saveData, const PCBoxes *param1, int param2, UnkStruct_ov62_02239DA4 *param3)
 {
     memset(param3, 0, sizeof(UnkStruct_ov62_02239DA4));
-    ov61_0222AE88(param0, param1, param2, param3, 102);
+    ov61_0222AE88(saveData, param1, param2, param3, 102);
 }
 
 static BOOL ov62_0223A17C(UnkStruct_0208C06C *param0)

@@ -130,16 +130,16 @@ void ov97_02232074(BgConfig *param0)
     }
 }
 
-int ov97_02232148(SaveData *param0, UnkStruct_ov97_0223829C *param1)
+int ov97_02232148(SaveData *saveData, UnkStruct_ov97_0223829C *param1)
 {
     u32 v0;
-    MysteryGift *v1 = SaveData_MysteryGift(param0);
+    MysteryGift *v1 = SaveData_MysteryGift(saveData);
 
     v0 = param1->unk_00.unk_48;
 
     if ((v0 == 0xFFFFFFFF) && (param1->unk_00.unk_4C == 0xFFFF)) {
         MysteryGift_Init(v1);
-        SaveData_SaveBlock(param0, 0);
+        SaveData_SaveBlock(saveData, 0);
 
         OS_ResetSystem(0);
     }

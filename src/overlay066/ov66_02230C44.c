@@ -113,13 +113,13 @@ static void ov66_022313E8(UnkStruct_ov66_02230E4C *param0);
 static void ov66_022313F4(UnkStruct_ov66_02230C90 *param0, UnkStruct_ov66_02230E4C *param1);
 static int ov66_02231404(UnkStruct_ov66_02230C90 *param0, UnkStruct_ov66_02230E4C *param1);
 
-UnkStruct_ov66_02230C90 *ov66_02230C44(BOOL param0, SaveData *param1, UnkStruct_ov66_0222DCE0_sub1 *param2, UnkStruct_ov66_0222DFF8 *param3, u32 heapID)
+UnkStruct_ov66_02230C90 *ov66_02230C44(BOOL param0, SaveData *saveData, UnkStruct_ov66_0222DCE0_sub1 *param2, UnkStruct_ov66_0222DFF8 *param3, u32 heapID)
 {
     UnkStruct_ov66_02230C90 *v0 = Heap_AllocFromHeap(heapID, sizeof(UnkStruct_ov66_02230C90));
     memset(v0, 0, sizeof(UnkStruct_ov66_02230C90));
 
     v0->unk_3C = param3;
-    v0->unk_40 = param1;
+    v0->unk_40 = saveData;
     v0->unk_44 = param2;
     v0->unk_39 = param0;
     v0->heapID = heapID;

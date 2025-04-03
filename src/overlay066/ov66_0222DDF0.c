@@ -266,10 +266,10 @@ static void ov66_0222F4C8(PPW_LOBBY_TIME_EVENT param0, void *param1);
 static void ov66_0222F684(const void *param0, u32 param1, void *param2);
 static void ov66_0222F6C4(UnkStruct_ov66_0222F6C4 *param0, UnkStruct_ov66_02231560 *param1);
 static void ov66_0222F768(UnkStruct_ov66_0222DFF8 *param0);
-static void ov66_0222F7C8(UnkStruct_ov66_0222F6C4 *param0, SaveData *param1, u32 param2);
+static void ov66_0222F7C8(UnkStruct_ov66_0222F6C4 *param0, SaveData *saveData, u32 param2);
 static void ov66_0222F964(UnkStruct_ov66_0222DFF8 *param0);
-static void ov66_0222F9EC(UnkStruct_ov66_0222F6C4 *param0, const SaveData *param1);
-static BOOL ov66_0222FA04(const UnkStruct_ov66_0222F6C4 *param0, const SaveData *param1);
+static void ov66_0222F9EC(UnkStruct_ov66_0222F6C4 *param0, const SaveData *saveData);
+static BOOL ov66_0222FA04(const UnkStruct_ov66_0222F6C4 *param0, const SaveData *saveData);
 static void ov66_0222FA28(UnkStruct_ov66_0222F6C4 *param0, const UnkStruct_ov66_0222E71C *param1, u32 param2);
 static void ov66_0222FA80(UnkStruct_ov66_0222FA80 *param0);
 static void ov66_0222FA88(UnkStruct_ov66_0222FB64 *param0, UnkStruct_ov66_0222FA80 *param1, UnkStruct_ov66_022302B0 *param2, UnkStruct_ov66_022309A4 *param3);
@@ -349,7 +349,7 @@ static void ov66_022309B4(UnkStruct_ov66_022309A4 *param0);
 static void ov66_022309C8(UnkStruct_ov66_022309A4 *param0);
 static u32 ov66_02230A64(const UnkStruct_ov66_022309A4 *param0);
 static int ov66_02230A68(const UnkStruct_ov66_022309A4 *param0);
-static void ov66_02230A6C(UnkStruct_ov66_02230A6C *param0, const SaveData *param1);
+static void ov66_02230A6C(UnkStruct_ov66_02230A6C *param0, const SaveData *saveData);
 static void ov66_02230A9C(UnkStruct_ov66_02230A6C *param0, int param1, s32 param2);
 static BOOL ov66_02230AF8(UnkStruct_ov66_02230A6C *param0, s32 param1, s32 param2);
 static int ov66_02230B28(UnkStruct_ov66_02230A6C *param0);
@@ -411,12 +411,12 @@ static const UnkStruct_ov66_022589B4 Unk_ov66_022589B4[8] = {
     { ov66_022307B4, sizeof(u32) }
 };
 
-UnkStruct_ov66_0222DFF8 *ov66_0222DDF0(SaveData *param0, u32 heapID)
+UnkStruct_ov66_0222DFF8 *ov66_0222DDF0(SaveData *saveData, u32 heapID)
 {
     UnkStruct_ov66_0222DFF8 *v0 = Heap_AllocFromHeap(heapID, sizeof(UnkStruct_ov66_0222DFF8));
     memset(v0, 0, sizeof(UnkStruct_ov66_0222DFF8));
 
-    v0->unk_00 = param0;
+    v0->unk_00 = saveData;
     v0->heapID = heapID;
 
     {
@@ -2273,7 +2273,7 @@ static void ov66_0222F768(UnkStruct_ov66_0222DFF8 *param0)
     }
 }
 
-static void ov66_0222F7C8(UnkStruct_ov66_0222F6C4 *param0, SaveData *param1, u32 param2)
+static void ov66_0222F7C8(UnkStruct_ov66_0222F6C4 *param0, SaveData *saveData, u32 param2)
 {
     TrainerInfo *v0;
     Party *v1;
@@ -2282,11 +2282,11 @@ static void ov66_0222F7C8(UnkStruct_ov66_0222F6C4 *param0, SaveData *param1, u32
     GameTime *v4;
 
     {
-        v0 = SaveData_GetTrainerInfo(param1);
-        v1 = Party_GetFromSavedata(param1);
-        v3 = SaveData_GetPokedex(param1);
-        v2 = sub_0202C878(param1);
-        v4 = SaveData_GetGameTime(param1);
+        v0 = SaveData_GetTrainerInfo(saveData);
+        v1 = Party_GetFromSavedata(saveData);
+        v3 = SaveData_GetPokedex(saveData);
+        v2 = sub_0202C878(saveData);
+        v4 = SaveData_GetGameTime(saveData);
     }
 
     {
@@ -2353,7 +2353,7 @@ static void ov66_0222F7C8(UnkStruct_ov66_0222F6C4 *param0, SaveData *param1, u32
     param0->unk_20.unk_8C.unk_00 = 0xffffffff;
     param0->unk_20.unk_8C.unk_04 = 3;
 
-    ov66_0222F9EC(param0, param1);
+    ov66_0222F9EC(param0, saveData);
 }
 
 static void ov66_0222F964(UnkStruct_ov66_0222DFF8 *param0)
@@ -2378,14 +2378,14 @@ static void ov66_0222F964(UnkStruct_ov66_0222DFF8 *param0)
     ov66_0222F9EC(&param0->unk_108, param0->unk_00);
 }
 
-static void ov66_0222F9EC(UnkStruct_ov66_0222F6C4 *param0, const SaveData *param1)
+static void ov66_0222F9EC(UnkStruct_ov66_0222F6C4 *param0, const SaveData *saveData)
 {
-    param0->unk_B4 = SaveData_CalculateChecksum(param1, &param0->unk_20, sizeof(UnkStruct_ov66_0222E71C));
+    param0->unk_B4 = SaveData_CalculateChecksum(saveData, &param0->unk_20, sizeof(UnkStruct_ov66_0222E71C));
 }
 
-static BOOL ov66_0222FA04(const UnkStruct_ov66_0222F6C4 *param0, const SaveData *param1)
+static BOOL ov66_0222FA04(const UnkStruct_ov66_0222F6C4 *param0, const SaveData *saveData)
 {
-    u32 v0 = SaveData_CalculateChecksum(param1, &param0->unk_20, sizeof(UnkStruct_ov66_0222E71C));
+    u32 v0 = SaveData_CalculateChecksum(saveData, &param0->unk_20, sizeof(UnkStruct_ov66_0222E71C));
 
     if (v0 != param0->unk_B4) {
         GF_ASSERT(0);
@@ -3557,7 +3557,7 @@ static int ov66_02230A68(const UnkStruct_ov66_022309A4 *param0)
     return param0->unk_14;
 }
 
-static void ov66_02230A6C(UnkStruct_ov66_02230A6C *param0, const SaveData *param1)
+static void ov66_02230A6C(UnkStruct_ov66_02230A6C *param0, const SaveData *saveData)
 {
     int v0;
 
@@ -3568,7 +3568,7 @@ static void ov66_02230A6C(UnkStruct_ov66_02230A6C *param0, const SaveData *param
 
     param0->unk_41 = 0;
     param0->unk_42 = 0;
-    param0->unk_44 = param1;
+    param0->unk_44 = saveData;
 
     ov66_02230BCC(param0);
 }

@@ -62,7 +62,7 @@ enum {
 };
 
 BOOL ScrCmd_2CC(ScriptContext *param0);
-static BOOL sub_0204F268(u16 param0, SaveData *param1);
+static BOOL sub_0204F268(u16 param0, SaveData *saveData);
 BOOL ScrCmd_2D1(ScriptContext *param0);
 
 BOOL ScrCmd_2CF(ScriptContext *param0);
@@ -148,52 +148,52 @@ BOOL ScrCmd_2CC(ScriptContext *param0)
     return 0;
 }
 
-static BOOL sub_0204F268(u16 param0, SaveData *param1)
+static BOOL sub_0204F268(u16 param0, SaveData *saveData)
 {
-    u8 v0, v1, v2, v3;
-    u16 v4, v5;
-    Party *v6;
-    Pokemon *v7;
+    u8 i, j, v2, partyCount;
+    u16 species, level;
+    Party *party;
+    Pokemon *mon;
     u16 v8[6];
 
-    v6 = Party_GetFromSavedata(param1);
-    v3 = Party_GetCurrentCount(v6);
+    party = Party_GetFromSavedata(saveData);
+    partyCount = Party_GetCurrentCount(party);
 
-    if (v3 < param0) {
+    if (partyCount < param0) {
         return 0;
     }
 
-    for (v0 = 0; v0 < 6; v0++) {
-        v8[v0] = 0;
+    for (i = 0; i < 6; i++) {
+        v8[i] = 0;
     }
 
-    for (v0 = 0, v2 = 0; v0 < v3; v0++) {
-        v7 = Party_GetPokemonBySlotIndex(v6, v0);
-        v4 = Pokemon_GetValue(v7, MON_DATA_SPECIES, NULL);
-        v5 = Pokemon_GetValue(v7, MON_DATA_LEVEL, NULL);
+    for (i = 0, v2 = 0; i < partyCount; i++) {
+        mon = Party_GetPokemonBySlotIndex(party, i);
+        species = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
+        level = Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL);
 
-        if (Pokemon_GetValue(v7, MON_DATA_IS_EGG, NULL) != 0) {
+        if (Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL) != 0) {
             continue;
         }
 
-        if (v5 < 30) {
+        if (level < 30) {
             continue;
         }
 
-        if (sub_02078804(v4) == 1) {
+        if (sub_02078804(species) == 1) {
             continue;
         }
 
         v2++;
-        v8[v0] = v4;
+        v8[i] = species;
     }
 
     if (param0 == 2) {
-        for (v1 = 0; v1 < v3; v1++) {
-            for (v0 = 0; v0 < v3; v0++) {
-                if (v1 != v0) {
-                    if (v8[v1] != 0) {
-                        if (v8[v1] == v8[v0]) {
+        for (j = 0; j < partyCount; j++) {
+            for (i = 0; i < partyCount; i++) {
+                if (j != i) {
+                    if (v8[j] != 0) {
+                        if (v8[j] == v8[i]) {
                             return 1;
                         }
                     }
@@ -539,7 +539,7 @@ BOOL ScrCmd_324(ScriptContext *param0)
         return 0;
     }
 
-    v2 = sub_020308A0(fieldSystem->saveData, 32, &v0);
+    v2 = SaveData_BattleFrontierStage(fieldSystem->saveData, HEAP_ID_FIELD_TASK, &v0);
     if (v0 != 1) {
         v4 = 0;
     } else {
@@ -618,7 +618,7 @@ BOOL ScrCmd_325(ScriptContext *param0)
         return 0;
     }
 
-    v1 = sub_020308A0(fieldSystem->saveData, 32, &v0);
+    v1 = SaveData_BattleFrontierStage(fieldSystem->saveData, HEAP_ID_FIELD_TASK, &v0);
     if (v0 != 1) {
         v4 = 0;
     } else {
@@ -667,7 +667,7 @@ BOOL ScrCmd_326(ScriptContext *param0)
         return 0;
     }
 
-    v2 = sub_020308A0(fieldSystem->saveData, 32, &v0);
+    v2 = SaveData_BattleFrontierStage(fieldSystem->saveData, HEAP_ID_FIELD_TASK, &v0);
     if (v0 != 1) {
         v4 = 0;
     } else {

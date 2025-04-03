@@ -820,7 +820,7 @@ void Pokemon_CalcAbility(Pokemon *mon);
 
 void sub_020780C4(Pokemon *mon, u32 monPersonality);
 
-BOOL sub_02078804(u16 param0);
+BOOL sub_02078804(u16 species);
 u16 sub_02078824(u8 index);
 BOOL sub_02078838(Pokemon *mon);
 BOOL sub_0207884C(BoxPokemon *boxMon, TrainerInfo *param1, int heapID);

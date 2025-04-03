@@ -125,7 +125,7 @@ static int ov109_021D4D20(UnkStruct_ov109_021D5140 *param0, int param1);
 static int ov109_021D4D80(UnkStruct_ov109_021D5140 *param0, int param1);
 static int ov109_021D4F28(UnkStruct_ov109_021D5140 *param0, int param1);
 static int ov109_021D510C(UnkStruct_ov109_021D5140 *param0, int param1);
-static void ov109_021D59A8(SaveData *param0, const UnkStruct_ov109_021D5140_sub2 *param1);
+static void ov109_021D59A8(SaveData *saveData, const UnkStruct_ov109_021D5140_sub2 *param1);
 
 static int (*const Unk_ov109_021D5E9C[])(UnkStruct_ov109_021D5140 *, int) = {
     ov109_021D474C,
@@ -1772,7 +1772,7 @@ static int ov109_021D58AC(UnkStruct_ov109_021D5140 *param0, int param1)
     return 1;
 }
 
-void ov109_021D59A8(SaveData *param0, const UnkStruct_ov109_021D5140_sub2 *param1)
+void ov109_021D59A8(SaveData *saveData, const UnkStruct_ov109_021D5140_sub2 *param1)
 {
     return;
 }

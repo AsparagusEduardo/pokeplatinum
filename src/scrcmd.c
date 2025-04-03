@@ -646,7 +646,7 @@ static BOOL ScrCmd_267(ScriptContext *ctx);
 static BOOL ScrCmd_268(ScriptContext *ctx);
 static BOOL ScrCmd_269(ScriptContext *ctx);
 static BOOL ScrCmd_26A(ScriptContext *ctx);
-static BOOL ScrCmd_26B(ScriptContext *ctx);
+static BOOL ScrCmd_HasAllLegendaryTitansInParty(ScriptContext *ctx);
 static BOOL ScrCmd_26C(ScriptContext *ctx);
 static BOOL ScrCmd_GetGBACartridgeVersion(ScriptContext *ctx);
 static BOOL ScrCmd_SetHiddenLocation(ScriptContext *ctx);
@@ -1384,7 +1384,7 @@ const ScrCmdFunc Unk_020EAC58[] = {
     ScrCmd_268,
     ScrCmd_269,
     ScrCmd_26A,
-    ScrCmd_26B,
+    ScrCmd_HasAllLegendaryTitansInParty,
     ScrCmd_26C,
     ScrCmd_26D,
     ScrCmd_GetGBACartridgeVersion,
@@ -6928,12 +6928,12 @@ static BOOL ScrCmd_26A(ScriptContext *ctx)
     return 1;
 }
 
-static BOOL ScrCmd_26B(ScriptContext *ctx)
+static BOOL ScrCmd_HasAllLegendaryTitansInParty(ScriptContext *ctx)
 {
-    u16 *v0 = FieldSystem_GetVarPointer(ctx->fieldSystem, ScriptContext_ReadHalfWord(ctx));
+    u16 *destVar = FieldSystem_GetVarPointer(ctx->fieldSystem, ScriptContext_ReadHalfWord(ctx));
 
-    *v0 = HasAllLegendaryTitansInParty(ctx->fieldSystem->saveData);
-    return 0;
+    *destVar = HasAllLegendaryTitansInParty(ctx->fieldSystem->saveData);
+    return FALSE;
 }
 
 static BOOL ScrCmd_26C(ScriptContext *ctx)

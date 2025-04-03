@@ -43,7 +43,7 @@
 #include "unk_0205DFC4.h"
 #include "vars_flags.h"
 
-UnkStruct_ov104_0223BA10 *ov104_022361B4(SaveData *param0, u16 param1, u8 param2, u16 param3, u16 param4, u16 param5, u16 *param6);
+UnkStruct_ov104_0223BA10 *ov104_022361B4(SaveData *saveData, u16 param1, u8 param2, u16 param3, u16 param4, u16 param5, u16 *param6);
 void ov104_02236514(UnkStruct_ov104_0223BA10 *param0, u16 param1);
 static void ov104_02236528(UnkStruct_ov104_0223BA10 *param0);
 static void ov104_022365F8(UnkStruct_ov104_0223BA10 *param0);
@@ -63,7 +63,7 @@ static void ov104_022370C0(BgConfig *param0, Window *param1);
 static void ov104_02237284(UnkStruct_ov104_022320B4 *param0, Window *param1, TrainerInfo *param2, u16 param3);
 u16 ov104_02237338(UnkStruct_ov104_0223BA10 *param0);
 
-UnkStruct_ov104_0223BA10 *ov104_022361B4(SaveData *param0, u16 param1, u8 param2, u16 param3, u16 param4, u16 param5, u16 *param6)
+UnkStruct_ov104_0223BA10 *ov104_022361B4(SaveData *saveData, u16 param1, u8 param2, u16 param3, u16 param4, u16 param5, u16 *param6)
 {
     u32 v0, v1;
     Party *v2;
@@ -77,15 +77,15 @@ UnkStruct_ov104_0223BA10 *ov104_022361B4(SaveData *param0, u16 param1, u8 param2
     v9 = Heap_AllocFromHeap(HEAP_ID_FIELDMAP, sizeof(UnkStruct_ov104_0223BA10));
     MI_CpuClear8(v9, sizeof(UnkStruct_ov104_0223BA10));
 
-    v9->unk_08 = sub_020302DC(param0);
-    v9->unk_04 = param0;
+    v9->unk_08 = sub_020302DC(saveData);
+    v9->unk_04 = saveData;
     v9->unk_00 = 11;
     v9->unk_28 = Party_New(HEAP_ID_FIELDMAP);
     v9->unk_2C = Party_New(HEAP_ID_FIELDMAP);
     v9->unk_A20 = param6;
 
     v4 = v9->unk_08;
-    v10 = sub_0203041C(param0);
+    v10 = sub_0203041C(saveData);
 
     if (param1 == 0) {
         v9->unk_10 = param2;
@@ -651,17 +651,17 @@ int ov104_02236D10(UnkStruct_ov104_0223BA10 *param0)
     return v11;
 }
 
-void ov104_02236ED8(SaveData *param0, u8 param1, int param2)
+void ov104_02236ED8(SaveData *saveData, u8 param1, int param2)
 {
-    u16 v0 = sub_02030698(sub_0203068C(param0), sub_0205E630(param1), sub_0205E6A8(sub_0205E630(param1)));
+    u16 v0 = sub_02030698(sub_0203068C(saveData), sub_0205E630(param1), sub_0205E6A8(sub_0205E630(param1)));
 
     if (v0 + param2 > 9999) {
-        sub_020306E4(sub_0203068C(param0), sub_0205E630(param1), sub_0205E6A8(sub_0205E630(param1)), 9999);
+        sub_020306E4(sub_0203068C(saveData), sub_0205E630(param1), sub_0205E6A8(sub_0205E630(param1)), 9999);
     } else {
-        sub_02030804(sub_0203068C(param0), sub_0205E630(param1), sub_0205E6A8(sub_0205E630(param1)), param2);
+        sub_02030804(sub_0203068C(saveData), sub_0205E630(param1), sub_0205E6A8(sub_0205E630(param1)), param2);
     }
 
-    GameRecords_AddToRecordValue(SaveData_GetGameRecordsPtr(param0), RECORD_UNK_065, param2);
+    GameRecords_AddToRecordValue(SaveData_GetGameRecordsPtr(saveData), RECORD_UNK_065, param2);
     return;
 }
 

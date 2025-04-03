@@ -160,13 +160,13 @@ void ov97_0222D19C(SysTask *param0, void *param1)
     }
 }
 
-void ov97_0222D1C4(UnkStruct_ov97_0222D04C *param0, SaveData *param1, int param2)
+void ov97_0222D1C4(UnkStruct_ov97_0222D04C *param0, SaveData *saveData, int param2)
 {
     if (CommSys_IsInitialized()) {
         return;
     }
 
-    sub_02036BE8(param1, param2);
+    sub_02036BE8(saveData, param2);
 
     ov97_0222D04C(param0);
     ov97_0222D0A4(ov97_0222D0B4, 0);

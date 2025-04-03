@@ -131,7 +131,7 @@ static BOOL ov97_0222B8E4(void *param0, int param1, UnkStruct_ov97_02237808 *par
 static BOOL ov97_0222B934(void *param0, int param1, UnkStruct_ov97_02237808 *param2, int param3);
 static BOOL ov97_0222B978(void *param0, int param1, UnkStruct_ov97_02237808 *param2, int param3);
 static BOOL ov97_0222B5C0(void *param0, int param1, UnkStruct_ov97_02237808 *param2, int param3);
-MysteryGift *SaveData_MysteryGift(SaveData *param0);
+MysteryGift *SaveData_MysteryGift(SaveData *saveData);
 int ov23_0224AC0C(void);
 int TrainerInfo_Size(void);
 

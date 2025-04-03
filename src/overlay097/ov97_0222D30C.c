@@ -108,7 +108,7 @@ typedef struct {
 
 void Strbuf_ToChars(const Strbuf *param0, u16 *param1, u32 param2);
 void Strbuf_CopyNumChars(Strbuf *param0, const u16 *param1, u32 param2);
-MysteryGift *SaveData_MysteryGift(SaveData *param0);
+MysteryGift *SaveData_MysteryGift(SaveData *saveData);
 void ov97_02231FFC(BgConfig *param0, void *, int heapID);
 static int ov97_0222D474(OverlayManager *param0);
 static int ov97_0222D4D8(OverlayManager *param0);

@@ -22,7 +22,7 @@ _0025:
     PlayFanfare SEQ_SE_CONFIRM
     WaitFanfare SEQ_SE_CONFIRM
     GoToIfSet FLAG_UNK_0x011A, _0081
-    ScrCmd_26B 0x800C
+    HasAllLegendaryTitansInParty 0x800C
     GoToIfEq 0x800C, 0, _0073
     SetFlag FLAG_UNK_0x011A
     BufferPlayerName 0

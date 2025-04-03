@@ -27,9 +27,9 @@ ChatotCry *ChatotCry_New(int heapID)
     return cry;
 }
 
-ChatotCry *GetChatotCryDataFromSave(SaveData *param0)
+ChatotCry *GetChatotCryDataFromSave(SaveData *saveData)
 {
-    return (ChatotCry *)SaveData_SaveTable(param0, 22);
+    return (ChatotCry *)SaveData_SaveTable(saveData, SAVE_TABLE_ENTRY_CHATOT);
 }
 
 BOOL IsChatotCryDataValid(const ChatotCry *cry)

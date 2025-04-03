@@ -41,10 +41,6 @@ typedef struct {
 static int sub_02097944(OverlayManager *param0, int *param1);
 static int sub_020979A8(OverlayManager *param0, int *param1);
 static int sub_02097AF8(OverlayManager *param0, int *param1);
-UnkStruct_02097728 *sub_02097624(SaveData *param0, int param1, u8 param2, u8 param3, int param4);
-UnkStruct_02097728 *sub_0209767C(SaveData *param0, int param1, u16 param2, int param3);
-UnkStruct_02097728 *sub_020976BC(SaveData *param0, Pokemon *param1, int param2);
-UnkStruct_02097728 *sub_020976F4(SaveData *param0, u8 param1, int param2);
 BOOL sub_02097728(UnkStruct_02097728 *param0);
 int sub_0209772C(UnkStruct_02097728 *param0, int param1, u8 param2);
 int sub_02097750(UnkStruct_02097728 *param0, Pokemon *param1);
@@ -61,13 +57,13 @@ const OverlayManagerTemplate Unk_020F64B0 = {
     0xFFFFFFFF
 };
 
-UnkStruct_02097728 *sub_02097624(SaveData *param0, int param1, u8 param2, u8 param3, int param4)
+UnkStruct_02097728 *sub_02097624(SaveData *saveData, int param1, u8 param2, u8 param3, int param4)
 {
     UnkStruct_02097728 *v0;
     UnkStruct_02028430 *v1;
     int v2;
 
-    v1 = sub_02028430(param0);
+    v1 = sub_02028430(saveData);
     v0 = Heap_AllocFromHeapAtEnd(param4, sizeof(UnkStruct_02097728));
 
     MI_CpuClear8(v0, sizeof(UnkStruct_02097728));
@@ -78,16 +74,16 @@ UnkStruct_02097728 *sub_02097624(SaveData *param0, int param1, u8 param2, u8 par
     v0->unk_00 = 1;
     v0->unk_08 = param1;
     v0->unk_0C = 0;
-    v0->unk_10 = param0;
+    v0->unk_10 = saveData;
     v0->unk_14 = sub_0202818C(param4);
 
     sub_02028124(v0->unk_14);
-    sub_020281AC(v0->unk_14, 0xFFFF, param2, param0);
+    sub_020281AC(v0->unk_14, 0xFFFF, param2, saveData);
 
     return v0;
 }
 
-UnkStruct_02097728 *sub_0209767C(SaveData *param0, int param1, u16 param2, int param3)
+UnkStruct_02097728 *sub_0209767C(SaveData *saveData, int param1, u16 param2, int param3)
 {
     UnkStruct_02097728 *v0;
     UnkStruct_02028430 *v1;
@@ -98,9 +94,9 @@ UnkStruct_02097728 *sub_0209767C(SaveData *param0, int param1, u16 param2, int p
     v0->unk_00 = 0;
     v0->unk_08 = param1;
     v0->unk_0C = param2;
-    v0->unk_10 = param0;
+    v0->unk_10 = saveData;
 
-    v1 = sub_02028430(param0);
+    v1 = sub_02028430(saveData);
 
     v0->unk_18 = v1;
     v0->unk_14 = sub_020284A8(v1, param1, param2, param3);
@@ -108,26 +104,26 @@ UnkStruct_02097728 *sub_0209767C(SaveData *param0, int param1, u16 param2, int p
     return v0;
 }
 
-UnkStruct_02097728 *sub_020976BC(SaveData *param0, Pokemon *param1, int param2)
+UnkStruct_02097728 *sub_020976BC(SaveData *saveData, Pokemon *param1, int param2)
 {
     UnkStruct_02097728 *v0 = Heap_AllocFromHeapAtEnd(param2, sizeof(UnkStruct_02097728));
     MI_CpuClear8(v0, sizeof(UnkStruct_02097728));
 
     v0->unk_00 = 0;
-    v0->unk_10 = param0;
+    v0->unk_10 = saveData;
     v0->unk_14 = sub_0202818C(param2);
 
     Pokemon_GetValue(param1, MON_DATA_MAIL, v0->unk_14);
     return v0;
 }
 
-UnkStruct_02097728 *sub_020976F4(SaveData *param0, u8 param1, int param2)
+UnkStruct_02097728 *sub_020976F4(SaveData *saveData, u8 param1, int param2)
 {
     UnkStruct_02097728 *v0 = Heap_AllocFromHeapAtEnd(param2, sizeof(UnkStruct_02097728));
     MI_CpuClear8(v0, sizeof(UnkStruct_02097728));
 
     v0->unk_00 = 0;
-    v0->unk_10 = param0;
+    v0->unk_10 = saveData;
     v0->unk_14 = sub_0202818C(param2);
 
     sub_02028318(v0->unk_14, param1);

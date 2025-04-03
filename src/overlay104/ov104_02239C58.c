@@ -24,7 +24,6 @@
 #include "constdata/const_020F1E88.h"
 #include "constdata/const_020F410C.h"
 
-UnkStruct_0209BBA4 *ov104_02239C58(SaveData *param0);
 void ov104_02239C7C(UnkStruct_0209BBA4 *param0);
 BOOL ov104_02239C88(UnkStruct_0209BBA4 *param0, u16 param1, u16 param2, u16 param3);
 void ov104_02239CD0(UnkStruct_0209B75C *param0, UnkStruct_0209BBA4 *param1, u16 param2);
@@ -33,14 +32,14 @@ static void ov104_02239F38(UnkStruct_0209B75C *param0, UnkStruct_0209BBA4 *param
 static void ov104_02239FB0(UnkStruct_0209B75C *param0, UnkStruct_0209BBA4 *param1, FieldSystem *fieldSystem, int param3);
 static void ov104_0223A090(UnkStruct_0209B75C *param0, UnkStruct_0209BBA4 *param1, FieldSystem *fieldSystem, int param3);
 
-UnkStruct_0209BBA4 *ov104_02239C58(SaveData *param0)
+UnkStruct_0209BBA4 *ov104_02239C58(SaveData *saveData)
 {
     static UnkStruct_0209BBA4 *v0;
 
     v0 = Heap_AllocFromHeap(HEAP_ID_FIELDMAP, sizeof(UnkStruct_0209BBA4));
     MI_CpuClear8(v0, sizeof(UnkStruct_0209BBA4));
 
-    v0->unk_00 = param0;
+    v0->unk_00 = saveData;
     return v0;
 }
 

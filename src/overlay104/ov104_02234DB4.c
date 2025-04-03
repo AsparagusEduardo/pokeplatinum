@@ -27,7 +27,6 @@
 #include "unk_0205DFC4.h"
 #include "vars_flags.h"
 
-UnkStruct_ov104_0223B5C0 *ov104_02234DB4(SaveData *param0, u16 param1, u8 param2, u8 param3, u8 param4);
 void ov104_022350B0(UnkStruct_ov104_0223B5C0 *param0, u16 param1);
 static void ov104_022350B8(UnkStruct_ov104_0223B5C0 *param0);
 void ov104_02235190(UnkStruct_ov104_0223B5C0 *param0);
@@ -35,8 +34,8 @@ void ov104_022351CC(UnkStruct_ov104_0223B5C0 *param0, void *param1);
 u16 ov104_02235208(void *param0, u8 param1);
 void ov104_0223520C(UnkStruct_ov104_0223B5C0 *param0, u16 *param1);
 BOOL ov104_02235534(UnkStruct_ov104_0223B5C0 *param0, u16 param1, u16 param2);
-static u16 ov104_022355C0(SaveData *param0, u8 param1, u8 param2, u16 *param3, u16 *param4);
-static void ov104_02235620(SaveData *param0, u8 param1, u8 param2, u8 param3);
+static u16 ov104_022355C0(SaveData *saveData, u8 param1, u8 param2, u16 *param3, u16 *param4);
+static void ov104_02235620(SaveData *saveData, u8 param1, u8 param2, u8 param3);
 void ov104_022356A0(UnkStruct_ov104_0223B5C0 *param0);
 static u16 ov104_02235704(UnkStruct_ov104_0223B5C0 *param0);
 void ov104_0223526C(UnkStruct_ov104_0223B5C0 *param0, u8 param1);
@@ -47,7 +46,7 @@ void ov104_022354F4(UnkStruct_ov104_0223B5C0 *param0);
 void ov104_02235518(UnkStruct_ov104_0223B5C0 *param0);
 u16 ov104_02235578(UnkStruct_ov104_0223B5C0 *param0);
 
-UnkStruct_ov104_0223B5C0 *ov104_02234DB4(SaveData *param0, u16 param1, u8 param2, u8 param3, u8 param4)
+UnkStruct_ov104_0223B5C0 *ov104_02234DB4(SaveData *saveData, u16 param1, u8 param2, u8 param3, u8 param4)
 {
     UnkStruct_02030114 *v0;
     UnkStruct_0203026C *v1;
@@ -59,14 +58,14 @@ UnkStruct_ov104_0223B5C0 *ov104_02234DB4(SaveData *param0, u16 param1, u8 param2
     v10 = Heap_AllocFromHeap(HEAP_ID_FIELDMAP, sizeof(UnkStruct_ov104_0223B5C0));
     MI_CpuClear8(v10, sizeof(UnkStruct_ov104_0223B5C0));
 
-    v10->unk_6F8 = sub_02030114(param0);
-    v10->unk_6FC = param0;
+    v10->unk_6F8 = sub_02030114(saveData);
+    v10->unk_6FC = saveData;
     v10->unk_00 = 11;
     v10->unk_264 = Party_New(HEAP_ID_FIELDMAP);
     v10->unk_D8C = Pokemon_New(HEAP_ID_FIELDMAP);
 
     v0 = v10->unk_6F8;
-    v1 = sub_0203026C(param0);
+    v1 = sub_0203026C(saveData);
 
     if (param1 == 0) {
         v10->unk_04 = param2;
@@ -126,7 +125,7 @@ UnkStruct_ov104_0223B5C0 *ov104_02234DB4(SaveData *param0, u16 param1, u8 param2
         }
     } else {
         for (v5 = 0; v5 < 18; v5++) {
-            v8 = ov104_022355C0(param0, v10->unk_04, v5, &v6, &v7);
+            v8 = ov104_022355C0(saveData, v10->unk_04, v5, &v6, &v7);
 
             sub_02030204(v5, &v10->unk_704[v10->unk_04][0], v8);
         }
@@ -240,7 +239,7 @@ void ov104_0223520C(UnkStruct_ov104_0223B5C0 *param0, u16 *param1)
     int v1;
 
     if (param0->unk_04 != 3) {
-        *param1 = sub_020309A0(param0->unk_6FC, sub_0205E534(param0->unk_04), sub_0205E55C(param0->unk_04), sub_0205E6A8(sub_0205E534(param0->unk_04)), sub_0205E584(param0->unk_04), 11, &v0, &v1);
+        *param1 = sub_020309A0(param0->unk_6FC, sub_0205E534(param0->unk_04), sub_0205E55C(param0->unk_04), sub_0205E6A8(sub_0205E534(param0->unk_04)), sub_0205E584(param0->unk_04), HEAP_ID_FIELDMAP, &v0, &v1);
     } else {
         *param1 = 0;
     }
@@ -422,9 +421,9 @@ u16 ov104_02235578(UnkStruct_ov104_0223B5C0 *param0)
     return v0;
 }
 
-static u16 ov104_022355C0(SaveData *param0, u8 param1, u8 param2, u16 *param3, u16 *param4)
+static u16 ov104_022355C0(SaveData *saveData, u8 param1, u8 param2, u16 *param3, u16 *param4)
 {
-    u16 v0 = sub_02030698(sub_0203068C(param0), sub_0205E4E0(param1, param2), sub_0205E6A8(sub_0205E4E0(param1, param2)));
+    u16 v0 = sub_02030698(sub_0203068C(saveData), sub_0205E4E0(param1, param2), sub_0205E6A8(sub_0205E4E0(param1, param2)));
     v0 &= 0xff;
 
     *param3 = (v0 & 0xf);
@@ -437,14 +436,14 @@ static u16 ov104_022355C0(SaveData *param0, u8 param1, u8 param2, u16 *param3, u
     }
 }
 
-static void ov104_02235620(SaveData *param0, u8 param1, u8 param2, u8 param3)
+static void ov104_02235620(SaveData *saveData, u8 param1, u8 param2, u8 param3)
 {
     u8 v0;
     u8 v1;
     u8 v2, v3;
     u16 v4, v5;
 
-    ov104_022355C0(param0, param1, param2, &v4, &v5);
+    ov104_022355C0(saveData, param1, param2, &v4, &v5);
 
     v3 = ((v5 << 4) | v4);
     v0 = (param2 / 2);
@@ -459,7 +458,7 @@ static void ov104_02235620(SaveData *param0, u8 param1, u8 param2, u8 param3)
     v2 = (param3 << (4 * v1));
     v3 |= v2;
 
-    sub_020306E4(sub_0203068C(param0), sub_0205E4E0(param1, param2), sub_0205E6A8(sub_0205E4E0(param1, param2)), v3);
+    sub_020306E4(sub_0203068C(saveData), sub_0205E4E0(param1, param2), sub_0205E6A8(sub_0205E4E0(param1, param2)), v3);
     return;
 }
 

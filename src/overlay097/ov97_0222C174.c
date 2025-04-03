@@ -433,7 +433,7 @@ enum {
 
 static void ov97_0222C388(UnkStruct_ov97_0222C388 *param0);
 int ov97_0222CB10(UnkStruct_ov97_0222C388 *param0);
-MysteryGift *SaveData_MysteryGift(SaveData *param0);
+MysteryGift *SaveData_MysteryGift(SaveData *saveData);
 void ov97_02231FFC(BgConfig *param0, void *, int heapID);
 
 static u16 ov97_0222C174(u16 param0)

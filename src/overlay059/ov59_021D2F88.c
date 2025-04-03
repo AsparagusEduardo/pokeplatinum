@@ -44,15 +44,15 @@ typedef struct {
     UnkFuncPtr_ov59_021D33FC_2 unk_08;
 } UnkStruct_ov59_021D33FC;
 
-static u32 ov59_021D2F88(SaveData *param0)
+static u32 ov59_021D2F88(SaveData *saveData)
 {
-    RecordMixedRNG *v0 = SaveData_GetRecordMixedRNG(param0);
+    RecordMixedRNG *v0 = SaveData_GetRecordMixedRNG(saveData);
     return ov59_021D2A2C(v0);
 }
 
-static void *ov59_021D2F94(SaveData *param0, int param1, u32 param2)
+static void *ov59_021D2F94(SaveData *saveData, int param1, u32 param2)
 {
-    RecordMixedRNG *v0 = SaveData_GetRecordMixedRNG(param0);
+    RecordMixedRNG *v0 = SaveData_GetRecordMixedRNG(saveData);
     void *v1 = Heap_AllocFromHeapAtEnd(param1, param2);
 
     MI_CpuCopyFast(ov59_021D2A30(v0), v1, param2);
@@ -66,16 +66,16 @@ static void ov59_021D2FBC(const UnkStruct_ov59_021D2FBC *param0)
     ov59_021D2AC4(param0->unk_08, param0->unk_0C, v0, param0->unk_10);
 }
 
-static u32 ov59_021D2FD4(SaveData *param0)
+static u32 ov59_021D2FD4(SaveData *saveData)
 {
-    UnkStruct_0202A750 *v0 = sub_0202A750(param0);
+    UnkStruct_0202A750 *v0 = sub_0202A750(saveData);
     return sub_02029C60();
 }
 
-static void *ov59_021D2FE0(SaveData *param0, int param1, u32 param2)
+static void *ov59_021D2FE0(SaveData *saveData, int param1, u32 param2)
 {
     UnkStruct_02029C68 *v0;
-    UnkStruct_0202A750 *v1 = sub_0202A750(param0);
+    UnkStruct_0202A750 *v1 = sub_0202A750(saveData);
     void *v2 = Heap_AllocFromHeapAtEnd(param1, param2);
 
     v0 = sub_02029CA8(v1, 0);
@@ -108,9 +108,9 @@ static void ov59_021D3068(const UnkStruct_ov59_021D2FBC *param0)
     ov59_021D2F60(v0, param0->unk_08, param0->unk_0C, param0->unk_10, param0->unk_14);
 }
 
-static void *ov59_021D3088(SaveData *param0, int param1, u32 param2)
+static void *ov59_021D3088(SaveData *saveData, int heapID, u32 param2)
 {
-    return sub_0202E9FC(param0, param1);
+    return sub_0202E9FC(saveData, heapID);
 }
 
 static void ov59_021D3090(const UnkStruct_ov59_021D2FBC *param0)
@@ -120,11 +120,11 @@ static void ov59_021D3090(const UnkStruct_ov59_021D2FBC *param0)
     sub_0202ED0C(param0->unk_04, param0->unk_0C, param0->unk_08, param0->unk_10, param0->unk_00);
 }
 
-static void *ov59_021D30B4(SaveData *param0, int param1, u32 param2)
+static void *ov59_021D30B4(SaveData *saveData, int param1, u32 param2)
 {
     UnkStruct_ov96_0223B450_sub1 *v0 = Heap_AllocFromHeapAtEnd(param1, param2);
     MI_CpuClear8(v0, param2);
-    sub_02073700(param0, 0, v0);
+    sub_02073700(saveData, 0, v0);
 
     return v0;
 }
@@ -147,20 +147,20 @@ static const UnkStruct_ov59_021D33FC Unk_ov59_021D33FC[] = {
     { (UnkFuncPtr_ov59_021D33FC)ov59_021D2B44, (UnkFuncPtr_ov59_021D33FC_1)ov59_021D2CF8, ov59_021D3068 }
 };
 
-void ov59_021D30E0(SaveData *param0, UnkStruct_ov59_021D30E0 *param1)
+void ov59_021D30E0(SaveData *saveData, UnkStruct_ov59_021D30E0 *param1)
 {
     u32 v0;
     void *v1;
-    int v2, v3;
+    int i, v3;
     u32 v4 = 3000;
     u8 *v5 = param1->unk_00;
     const UnkStruct_ov59_021D33FC *v6 = Unk_ov59_021D33FC;
 
     v3 = NELEMS(Unk_ov59_021D33FC);
 
-    for (v2 = 0; v2 < v3; v2++) {
-        v0 = v6[v2].unk_00(param0);
-        v1 = v6[v2].unk_04(param0, 51, v0);
+    for (i = 0; i < v3; i++) {
+        v0 = v6[i].unk_00(saveData);
+        v1 = v6[i].unk_04(saveData, 51, v0);
 
         GF_ASSERT(v4 > v0);
 
@@ -172,7 +172,7 @@ void ov59_021D30E0(SaveData *param0, UnkStruct_ov59_021D30E0 *param1)
     }
 }
 
-void ov59_021D313C(SaveData *param0, const UnkStruct_ov59_021D30E0 *param1)
+void ov59_021D313C(SaveData *saveData, const UnkStruct_ov59_021D30E0 *param1)
 {
     UnkStruct_ov59_021D2FBC v0;
     u32 v1;
@@ -184,7 +184,7 @@ void ov59_021D313C(SaveData *param0, const UnkStruct_ov59_021D30E0 *param1)
     u32 v9[4 - 2 + 1];
 
     v0.unk_00 = 51;
-    v0.unk_04 = param0;
+    v0.unk_04 = saveData;
     v0.unk_0C = CommSys_CurNetId();
     v0.unk_08 = 5;
     v0.unk_10 = v7;
@@ -195,19 +195,19 @@ void ov59_021D313C(SaveData *param0, const UnkStruct_ov59_021D30E0 *param1)
     v9[4 - 2] = 0;
 
     for (v4 = 0; v4 < 2; v4++) {
-        v9[2 - 2] += Unk_ov59_021D33FC[v4].unk_00(param0);
+        v9[2 - 2] += Unk_ov59_021D33FC[v4].unk_00(saveData);
     }
 
     for (v4 = 0; v4 < 3; v4++) {
-        v9[3 - 2] += Unk_ov59_021D33FC[v4].unk_00(param0);
+        v9[3 - 2] += Unk_ov59_021D33FC[v4].unk_00(saveData);
     }
 
     for (v4 = 0; v4 < 4; v4++) {
-        v9[4 - 2] += Unk_ov59_021D33FC[v4].unk_00(param0);
+        v9[4 - 2] += Unk_ov59_021D33FC[v4].unk_00(saveData);
     }
 
     for (v4 = 0; v4 < NELEMS(Unk_ov59_021D33FC); v4++) {
-        v1 = Unk_ov59_021D33FC[v4].unk_00(param0);
+        v1 = Unk_ov59_021D33FC[v4].unk_00(saveData);
         GF_ASSERT(v3 > v1);
 
         for (v5 = 0; v5 < 5; v5++) {
@@ -241,7 +241,7 @@ void ov59_021D313C(SaveData *param0, const UnkStruct_ov59_021D30E0 *param1)
     }
 
     {
-        TVBroadcast *v10 = SaveData_TVBroadcast(param0);
+        TVBroadcast *v10 = SaveData_TVBroadcast(saveData);
         sub_0202E2EC(v10);
         sub_0202E35C(v10);
     }

@@ -826,11 +826,11 @@ void ov97_02238440(void)
     OS_EnableIrq();
 }
 
-void ov97_0223846C(SaveData *param0)
+void ov97_0223846C(SaveData *saveData)
 {
     UnkStruct_ov97_0223F550 *v0 = &Unk_ov97_0223F550;
 
-    v0->unk_18 = param0;
+    v0->unk_18 = saveData;
     v0->unk_14 = 0;
 }
 

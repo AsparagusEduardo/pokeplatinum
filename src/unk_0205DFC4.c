@@ -58,7 +58,6 @@ int sub_0205E658(u8 param0);
 int sub_0205E680(u8 param0);
 int sub_0205E6A8(u32 param0);
 u8 sub_0205E6B8(void);
-u8 sub_0205E6D8(SaveData *param0);
 int sub_0205E700(u8 param0);
 int sub_0205E728(u8 param0);
 int sub_0205E750(u8 param0);
@@ -253,34 +252,34 @@ u16 SaveData_GetFirstNonEggInParty(SaveData *saveData)
     return 0;
 }
 
-BOOL HasAllLegendaryTitansInParty(SaveData *param0)
+BOOL HasAllLegendaryTitansInParty(SaveData *saveData)
 {
-    int v0, v1, v2, v3 = 0;
-    Party *v4;
-    static const u16 v5[] = { 377, 378, 379 };
-    u16 v6[6];
+    int i, j, partyCount, titanCount = 0;
+    Party *party;
+    static const u16 titans[] = { SPECIES_REGIROCK, SPECIES_REGICE, SPECIES_REGISTEEL };
+    u16 partySpecies[MAX_PARTY_SIZE];
 
-    v4 = Party_GetFromSavedata(param0);
-    v2 = Party_GetCurrentCount(v4);
+    party = Party_GetFromSavedata(saveData);
+    partyCount = Party_GetCurrentCount(party);
 
-    for (v0 = 0; v0 < v2; v0++) {
-        v6[v0] = Pokemon_GetValue(Party_GetPokemonBySlotIndex(v4, v0), MON_DATA_SPECIES, NULL);
+    for (i = 0; i < partyCount; i++) {
+        partySpecies[i] = Pokemon_GetValue(Party_GetPokemonBySlotIndex(party, i), MON_DATA_SPECIES, NULL);
     }
 
-    for (v0 = 0; v0 < 3; v0++) {
-        for (v1 = 0; v1 < v2; v1++) {
-            if (v6[v1] == v5[v0]) {
-                ++v3;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < partyCount; j++) {
+            if (partySpecies[j] == titans[i]) {
+                ++titanCount;
                 break;
             }
         }
     }
 
-    if (v3 == 3) {
-        return 1;
+    if (titanCount == 3) {
+        return TRUE;
     }
 
-    return 0;
+    return FALSE;
 }
 
 static BOOL sub_0205E268(FieldTask *param0)
@@ -715,9 +714,9 @@ u8 sub_0205E6B8(void)
     return TrainerInfo_GameCode(v0);
 }
 
-u8 sub_0205E6D8(SaveData *param0)
+u8 sub_0205E6D8(SaveData *saveData)
 {
-    if (TrainerInfo_GameCode(SaveData_GetTrainerInfo(param0)) == 0) {
+    if (TrainerInfo_GameCode(SaveData_GetTrainerInfo(saveData)) == 0) {
         return 1;
     }
 

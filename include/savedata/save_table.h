@@ -116,7 +116,7 @@ int SaveData_SaveBattleRecording(SaveData *save, BattleRecording *rec, int recNu
  * @param resultCode    Load-result opcode output.
  * @return Address of the allocated BattleFrontierStage data.
  */
-BattleFrontierStage *SaveData_BattleFrontierStage(SaveData *save, int heapID, int *resultCode);
+BattleFrontierStage *SaveData_BattleFrontierStageInternal(SaveData *save, int heapID, int *resultCode);
 
 /**
  * @brief Saves a mirror of the given BattleRecording data into the extended save.

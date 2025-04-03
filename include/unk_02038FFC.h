@@ -8,6 +8,6 @@
 int sub_02038FFC(int heapID);
 void sub_02039034(UnkStruct_0202B370 *param0);
 int sub_02039058(UnkStruct_0202B370 *param0);
-BOOL sub_02039074(SaveData *param0);
+BOOL sub_02039074(SaveData *saveData);
 
 #endif // POKEPLATINUM_UNK_02038FFC_H

@@ -11,7 +11,7 @@
 int BallSeal_SaveSize(void);
 void BallSeal_Init(UnkStruct_0202CA1C *param0);
 void sub_0202CA10(const UnkStruct_0202CA28 *param0, UnkStruct_0202CA28 *param1);
-UnkStruct_0202CA1C *sub_0202CA1C(SaveData *param0);
+UnkStruct_0202CA1C *sub_0202CA1C(SaveData *saveData);
 UnkStruct_0202CA28 *sub_0202CA28(UnkStruct_0202CA1C *param0, int param1);
 void sub_0202CA40(UnkStruct_0202CA1C *param0, UnkStruct_0202CA28 *param1, int param2);
 UnkStruct_0202CA64 *sub_0202CA64(UnkStruct_0202CA28 *param0, int param1);

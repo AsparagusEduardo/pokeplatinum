@@ -147,7 +147,7 @@ static void ov113_0225DB08(UnkStruct_ov113_0225DBCC *param0);
 static void ov113_0225E364(UnkStruct_ov113_0225DBCC *param0);
 static void ov113_0225DD14(UnkStruct_ov113_0225DBCC *param0);
 static void ov113_0225DD24(UnkStruct_ov113_0225DBCC *param0, UnkStruct_ov113_0225CA04 *param1);
-static void ov113_0225DD4C(int param0, SaveData *param1, UnkStruct_ov113_02260818 *param2);
+static void ov113_0225DD4C(int param0, SaveData *saveData, UnkStruct_ov113_02260818 *param2);
 static void ov113_0225D304(UnkStruct_ov113_0225DBCC *param0, NARC *param1);
 static void ov113_0225D630(UnkStruct_ov113_0225DBCC *param0, NARC *param1);
 static void ov113_0225D484(UnkStruct_ov113_0225DBCC *param0);
@@ -1311,7 +1311,7 @@ UnkStruct_ov113_022607EC *ov113_0225DD44(UnkStruct_ov113_0225DBCC *param0)
     return &param0->unk_168;
 }
 
-static void ov113_0225DD4C(int param0, SaveData *param1, UnkStruct_ov113_02260818 *param2)
+static void ov113_0225DD4C(int param0, SaveData *saveData, UnkStruct_ov113_02260818 *param2)
 {
     Party *v0;
     int v1;
@@ -1320,7 +1320,7 @@ static void ov113_0225DD4C(int param0, SaveData *param1, UnkStruct_ov113_0226081
 
     MI_CpuClear8(param2, sizeof(UnkStruct_ov113_02260818) * 6);
 
-    v0 = Party_GetFromSavedata(param1);
+    v0 = Party_GetFromSavedata(saveData);
     v1 = Party_GetCurrentCount(v0);
 
     for (v3 = 0; v3 < v1; v3++) {

@@ -123,7 +123,7 @@ static void ov88_0223CB34(Window *param0, int param1, UnkStruct_02095E80 *param2
 static void ov88_0223BD18(Pokemon *param0, UnkStruct_ov88_0223C8AC *param1);
 static void ov88_0223E87C(Sprite *param0, int param1, int param2);
 static int ov88_0223C8AC(UnkStruct_ov88_0223C8AC *param0, Party *param1, int param2, int param3);
-static void ov88_0223D0C0(SaveData *param0);
+static void ov88_0223D0C0(SaveData *saveData);
 static int ov88_0223B914(UnkStruct_02095E80 *param0);
 static int ov88_0223BED8(UnkStruct_02095E80 *param0);
 static void ov88_0223B7A0(Party *param0, int param1, UnkStruct_02095E80 *param2);
@@ -1638,9 +1638,9 @@ void ov88_0223D098(int param0, Party *param1, int param2)
     }
 }
 
-static void ov88_0223D0C0(SaveData *param0)
+static void ov88_0223D0C0(SaveData *saveData)
 {
-    u8 *v0 = sub_0202D79C(param0);
+    u8 *v0 = sub_0202D79C(saveData);
     int v1;
 
     CommSys_SendData(32, v0, 14);

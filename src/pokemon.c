@@ -4740,10 +4740,10 @@ static const u16 Unk_020F05BE[18] = {
     SPECIES_ARCEUS
 };
 
-BOOL sub_02078804(u16 param0)
+BOOL sub_02078804(u16 species)
 {
     for (u32 i = 0; i < NELEMS(Unk_020F05BE); i++) {
-        if (param0 == Unk_020F05BE[i]) {
+        if (species == Unk_020F05BE[i]) {
             return 1;
         }
     }
@@ -4762,8 +4762,7 @@ u16 sub_02078824(u8 index)
 
 BOOL sub_02078838(Pokemon *mon)
 {
-    u16 monSpecies = (u16)Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
-    return sub_02078804(monSpecies);
+    return sub_02078804((u16)Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL));
 }
 
 BOOL sub_0207884C(BoxPokemon *boxMon, TrainerInfo *param1, int heapID)
