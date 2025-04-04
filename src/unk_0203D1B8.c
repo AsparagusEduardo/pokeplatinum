@@ -480,7 +480,7 @@ static BOOL sub_0203D444(FieldTask *param0)
         }
         break;
     case 2:
-        v1->unk_08 = sub_0203D670(fieldSystem, v1->heapID, 0);
+        v1->unk_08 = sub_0203D670(fieldSystem, v1->heapID, SUMMARY_MODE_NORMAL);
         v1->unk_08->monIndex = v1->unk_04->selectedMonSlot;
         FieldSystem_OpenSummaryScreen(fieldSystem, v1->unk_08);
         *v2 = 3;
@@ -571,34 +571,34 @@ void *sub_0203D644(FieldSystem *fieldSystem, int param1)
     return v0;
 }
 
-PokemonSummary *sub_0203D670(FieldSystem *fieldSystem, int heapID, int param2)
+PokemonSummary *sub_0203D670(FieldSystem *fieldSystem, int heapID, int mode)
 {
-    PokemonSummary *v0;
-    SaveData *v1;
+    PokemonSummary *summary;
+    SaveData *saveData;
     static const u8 v2[] = {
         0, 1, 2, 4, 3, 5, 6, 7, 8
     };
 
-    v1 = fieldSystem->saveData;
-    v0 = Heap_AllocFromHeapAtEnd(heapID, sizeof(PokemonSummary));
+    saveData = fieldSystem->saveData;
+    summary = Heap_AllocFromHeapAtEnd(heapID, sizeof(PokemonSummary));
 
-    MI_CpuClear8(v0, sizeof(PokemonSummary));
+    MI_CpuClear8(summary, sizeof(PokemonSummary));
 
-    v0->options = SaveData_Options(v1);
-    v0->monData = Party_GetFromSavedata(v1);
-    v0->dataType = SUMMARY_DATA_PARTY_MON;
-    v0->monIndex = 0;
-    v0->monMax = Party_GetCurrentCount(v0->monData);
-    v0->move = 0;
-    v0->mode = param2;
-    v0->dexMode = SaveData_GetDexMode(v1);
-    v0->showContest = PokemonSummaryScreen_ShowContestData(v1);
-    v0->specialRibbons = sub_0202D79C(v1);
+    summary->options = SaveData_Options(saveData);
+    summary->monData = Party_GetFromSavedata(saveData);
+    summary->dataType = SUMMARY_DATA_PARTY_MON;
+    summary->monIndex = 0;
+    summary->monMax = Party_GetCurrentCount(summary->monData);
+    summary->move = 0;
+    summary->mode = mode;
+    summary->dexMode = SaveData_GetDexMode(saveData);
+    summary->showContest = PokemonSummaryScreen_ShowContestData(saveData);
+    summary->specialRibbons = sub_0202D79C(saveData);
 
-    PokemonSummaryScreen_FlagVisiblePages(v0, v2);
-    PokemonSummaryScreen_SetPlayerProfile(v0, SaveData_GetTrainerInfo(v1));
+    PokemonSummaryScreen_FlagVisiblePages(summary, v2);
+    PokemonSummaryScreen_SetPlayerProfile(summary, SaveData_GetTrainerInfo(saveData));
 
-    return v0;
+    return summary;
 }
 
 static const u8 Unk_020EA160[] = {
@@ -787,20 +787,20 @@ static void sub_0203D910(FieldSystem *fieldSystem, UnkStruct_02097728 *param1)
 
 UnkStruct_02097728 *sub_0203D920(FieldSystem *fieldSystem, int param1, u8 param2, u8 param3, int param4)
 {
-    UnkStruct_02097728 *v0 = sub_02097624(FieldSystem_GetSaveData(fieldSystem), param1, param2, param3, 11);
+    UnkStruct_02097728 *v0 = sub_02097624(FieldSystem_GetSaveData(fieldSystem), param1, param2, param3, HEAP_ID_FIELDMAP);
     sub_0203D910(fieldSystem, v0);
 
     return v0;
 }
 
-UnkStruct_02097728 *sub_0203D94C(FieldSystem *fieldSystem, int param1, u8 param2, int param3)
+UnkStruct_02097728 *sub_0203D94C(FieldSystem *fieldSystem, int param1, u8 param2, int heapID)
 {
     UnkStruct_02097728 *v0;
 
     if (param1 == 3) {
-        v0 = sub_020976F4(FieldSystem_GetSaveData(fieldSystem), param2, param3);
+        v0 = sub_020976F4(FieldSystem_GetSaveData(fieldSystem), param2, heapID);
     } else {
-        v0 = sub_0209767C(FieldSystem_GetSaveData(fieldSystem), param1, param2, param3);
+        v0 = sub_0209767C(FieldSystem_GetSaveData(fieldSystem), param1, param2, heapID);
     }
 
     sub_0203D910(fieldSystem, v0);
@@ -808,9 +808,9 @@ UnkStruct_02097728 *sub_0203D94C(FieldSystem *fieldSystem, int param1, u8 param2
     return v0;
 }
 
-UnkStruct_02097728 *sub_0203D984(FieldSystem *fieldSystem, Pokemon *param1, int param2)
+UnkStruct_02097728 *sub_0203D984(FieldSystem *fieldSystem, Pokemon *param1, int heapID)
 {
-    UnkStruct_02097728 *v0 = sub_020976BC(FieldSystem_GetSaveData(fieldSystem), param1, param2);
+    UnkStruct_02097728 *v0 = sub_020976BC(FieldSystem_GetSaveData(fieldSystem), param1, heapID);
     sub_0203D910(fieldSystem, v0);
 
     return v0;

@@ -26,7 +26,7 @@
 #include "unk_02073700.h"
 
 typedef struct {
-    int unk_00;
+    int heapID;
     SaveData *unk_04;
     int unk_08;
     int unk_0C;
@@ -35,7 +35,7 @@ typedef struct {
 } UnkStruct_ov59_021D2FBC;
 
 typedef u32 (*UnkFuncPtr_ov59_021D33FC)(SaveData *);
-typedef void *(*UnkFuncPtr_ov59_021D33FC_1)(SaveData *, int, u32);
+typedef void *(*UnkFuncPtr_ov59_021D33FC_1)(SaveData *, int heapID, u32);
 typedef void (*UnkFuncPtr_ov59_021D33FC_2)(const UnkStruct_ov59_021D2FBC *);
 
 typedef struct {
@@ -117,7 +117,7 @@ static void ov59_021D3090(const UnkStruct_ov59_021D2FBC *param0)
 {
     UnkStruct_0202E8C0 *v0 = sub_0202E8C0(param0->unk_04);
 
-    sub_0202ED0C(param0->unk_04, param0->unk_0C, param0->unk_08, param0->unk_10, param0->unk_00);
+    sub_0202ED0C(param0->unk_04, param0->unk_0C, param0->unk_08, param0->unk_10, param0->heapID);
 }
 
 static void *ov59_021D30B4(SaveData *saveData, int heapID, u32 param2)
@@ -160,7 +160,7 @@ void ov59_021D30E0(SaveData *saveData, UnkStruct_ov59_021D30E0 *param1)
 
     for (i = 0; i < v3; i++) {
         v0 = v6[i].unk_00(saveData);
-        v1 = v6[i].unk_04(saveData, 51, v0);
+        v1 = v6[i].unk_04(saveData, HEAP_ID_51, v0);
 
         GF_ASSERT(v4 > v0);
 
@@ -183,7 +183,7 @@ void ov59_021D313C(SaveData *saveData, const UnkStruct_ov59_021D30E0 *param1)
     const void *v8[5];
     u32 v9[4 - 2 + 1];
 
-    v0.unk_00 = 51;
+    v0.heapID = HEAP_ID_51;
     v0.unk_04 = saveData;
     v0.unk_0C = CommSys_CurNetId();
     v0.unk_08 = 5;
