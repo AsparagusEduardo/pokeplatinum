@@ -777,10 +777,10 @@
     .short \destVarID
     .endm
 
-    .macro ScrCmd_07F arg0, arg1
+    .macro IsItemTMHM item, destVar
     .short 127
-    .short \arg0
-    .short \arg1
+    .short \item
+    .short \destVar
     .endm
 
     .macro GetItemPocket item, destVarID

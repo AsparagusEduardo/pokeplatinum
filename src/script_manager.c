@@ -267,7 +267,7 @@ static u16 ScriptContext_LoadAndOffsetID(FieldSystem *fieldSystem, ScriptContext
         ScriptContext_Load(fieldSystem, ctx, scripts_unk_0408, TEXT_BANK_UNK_0380);
         retScriptID -= SCRIPT_ID_OFFSET_HIDDEN_ITEMS;
     } else if (retScriptID >= 7000) {
-        ScriptContext_Load(fieldSystem, ctx, scripts_unk_0404, TEXT_BANK_UNK_0369);
+        ScriptContext_Load(fieldSystem, ctx, item_balls, TEXT_BANK_ITEM_BALLS);
         retScriptID -= 7000;
     } else if (retScriptID >= SCRIPT_ID_OFFSET_DOUBLE_BATTLES) {
         ScriptContext_Load(fieldSystem, ctx, scripts_unk_1114, TEXT_BANK_COMMON_STRINGS);

@@ -307,9 +307,9 @@ _04B0:
     CallCommonScript 0x7D1
     ScrCmd_236 0x8004
     AddItem 0x8004, 0x8005, 0x800C
-    ScrCmd_07F 0x8004, 0x800C
-    GoToIfEq 0x800C, 1, _0624
-    GoToIfEq 0x800C, 0, _063C
+    IsItemTMHM 0x8004, 0x800C
+    GoToIfEq 0x800C, TRUE, _0624
+    GoToIfEq 0x800C, FALSE, _063C
     End
 
 _04E2:

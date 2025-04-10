@@ -1,5 +1,5 @@
 #include "macros/scrcmd.inc"
-#include "res/text/bank/unk_0369.h"
+#include "res/text/bank/item_balls.h"
 
     .data
 
@@ -2317,10 +2317,10 @@ _1EF0:
     RemoveObject 0x800D
     AddItem 0x8004, 0x8005, 0x800C
     SetAdamantLustrousOrbFlag 0x8004
-    CallIfEq 0x8004, ITEM_STORAGE_KEY, _20C0
-    ScrCmd_07F 0x8004, 0x800C
-    GoToIfEq 0x800C, 1, _207D
-    GoToIfEq 0x800C, 0, _2095
+    CallIfEq 0x8004, ITEM_STORAGE_KEY, ItemBall_SetGalacticHQ1FAltMusic
+    IsItemTMHM 0x8004, 0x800C
+    GoToIfEq 0x800C, TRUE, _207D
+    GoToIfEq 0x800C, FALSE, _2095
     End
 
 _1F33:
@@ -2420,7 +2420,7 @@ _20A8:
     GoTo _1EEA
     End
 
-_20C0:
+ItemBall_SetGalacticHQ1FAltMusic:
     SetFlag FLAG_ALT_MUSIC_GALACTIC_HQ_1F
     Return
 

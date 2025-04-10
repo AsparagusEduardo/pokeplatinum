@@ -409,7 +409,7 @@ scr_seq_files = files(
     'scripts_empty.s',
     'scripts_unk_0402.s',
     'scripts_unk_0403.s',
-    'scripts_unk_0404.s',
+    'item_balls.s',
     'scripts_unk_0405.s',
     'scripts_unk_0406.s',
     'scripts_unk_0407.s',
