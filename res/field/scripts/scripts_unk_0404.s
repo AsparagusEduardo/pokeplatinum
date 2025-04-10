@@ -2316,8 +2316,8 @@ _1EF0:
     CallCommonScript 0x7D1
     RemoveObject 0x800D
     AddItem 0x8004, 0x8005, 0x800C
-    ScrCmd_2A2 0x8004
-    CallIfEq 0x8004, 0x1CF, _20C0
+    SetAdamantLustrousOrbFlag 0x8004
+    CallIfEq 0x8004, ITEM_STORAGE_KEY, _20C0
     ScrCmd_07F 0x8004, 0x800C
     GoToIfEq 0x800C, 1, _207D
     GoToIfEq 0x800C, 0, _2095

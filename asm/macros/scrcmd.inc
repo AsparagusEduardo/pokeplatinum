@@ -3765,9 +3765,9 @@
     .short \arg2
     .endm
 
-    .macro ScrCmd_2A2 arg0
+    .macro SetAdamantLustrousOrbFlag item
     .short 674
-    .short \arg0
+    .short \item
     .endm
 
     .macro ScrCmd_2A3 arg0

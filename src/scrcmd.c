@@ -681,7 +681,7 @@ static BOOL ScrCmd_29E(ScriptContext *ctx);
 static BOOL ScrCmd_GetUndergroundTalkCounter(ScriptContext *ctx);
 static BOOL ScrCmd_29F(ScriptContext *ctx);
 static BOOL ScrCmd_2A1(ScriptContext *ctx);
-static BOOL ScrCmd_2A2(ScriptContext *ctx);
+static BOOL ScrCmd_SetAdamantLustrousOrbFlag(ScriptContext *ctx);
 static BOOL ScrCmd_2A3(ScriptContext *ctx);
 static BOOL ScrCmd_2A4(ScriptContext *ctx);
 static BOOL ScrCmd_2A7(ScriptContext *ctx);
@@ -1439,7 +1439,7 @@ const ScrCmdFunc Unk_020EAC58[] = {
     ScrCmd_29F,
     ScrCmd_StartTagBattle,
     ScrCmd_2A1,
-    ScrCmd_2A2,
+    ScrCmd_SetAdamantLustrousOrbFlag,
     ScrCmd_2A3,
     ScrCmd_2A4,
     ScrCmd_2A5,
@@ -7487,16 +7487,16 @@ static BOOL ScrCmd_2A4(ScriptContext *ctx)
     return 0;
 }
 
-static BOOL ScrCmd_2A2(ScriptContext *ctx)
+static BOOL ScrCmd_SetAdamantLustrousOrbFlag(ScriptContext *ctx)
 {
-    u16 v0 = ScriptContext_GetVar(ctx);
-    UndergroundData *v1 = sub_020298B0(ctx->fieldSystem->saveData);
+    u16 item = ScriptContext_GetVar(ctx);
+    UndergroundData *underground = sub_020298B0(ctx->fieldSystem->saveData);
 
-    if ((v0 == 135) || (v0 == 136)) {
-        sub_02028828(v1);
+    if (item == ITEM_ADAMANT_ORB || item == ITEM_LUSTROUS_ORB) {
+        Underground_SetAdamantLustrousOrbFlag(underground);
     }
 
-    return 0;
+    return FALSE;
 }
 
 static BOOL ScrCmd_2A7(ScriptContext *ctx)

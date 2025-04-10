@@ -259,9 +259,9 @@ BOOL sub_02028810(SaveData *param0)
     return 1;
 }
 
-void sub_02028828(UndergroundData *param0)
+void Underground_SetAdamantLustrousOrbFlag(UndergroundData *underground)
 {
-    param0->unk_99 = 1;
+    underground->obtainedAdamantOrLustrousOrb = TRUE;
 }
 
 void sub_02028830(UndergroundData *param0, const TrainerInfo *param1)
