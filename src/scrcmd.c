@@ -1562,7 +1562,7 @@ const ScrCmdFunc Unk_020EAC58[] = {
     ScrCmd_WriteSpeciesSeen,
     ScrCmd_31B,
     ScrCmd_CheckPartyHasFatefulEncounter,
-    ScrCmd_31D,
+    ScrCmd_PartyTryResetNonDPFormsAndItems,
     ScrCmd_31E,
     ScrCmd_31F,
     ScrCmd_320,

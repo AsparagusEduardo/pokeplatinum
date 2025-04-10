@@ -457,7 +457,7 @@ _05CF:
     Message 124
     ShowYesNoMenu 0x800C
     GoToIfEq 0x800C, MENU_NO, _01D3
-    ScrCmd_31D 0x800C
+    PartyTryResetNonDPFormsAndItems 0x800C
     GoToIfEq 0x800C, 0xFF, _068E
     SetVar 0x40D5, 2
     SetFlag FLAG_COMMUNICATION_CLUB_ACCESSIBLE

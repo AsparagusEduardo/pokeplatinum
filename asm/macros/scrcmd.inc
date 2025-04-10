@@ -4444,9 +4444,9 @@
     .short \species
     .endm
 
-    .macro ScrCmd_31D arg0
+    .macro PartyTryResetNonDPFormsAndItems destVar
     .short 797
-    .short \arg0
+    .short \destVar
     .endm
 
     .macro ScrCmd_31E arg0, arg1

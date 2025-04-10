@@ -5,7 +5,7 @@
 
 BOOL ScrCmd_2DE(ScriptContext *param0);
 BOOL ScrCmd_JudgeStats(ScriptContext *ctx);
-BOOL ScrCmd_31D(ScriptContext *param0);
+BOOL ScrCmd_PartyTryResetNonDPFormsAndItems(ScriptContext *ctx);
 BOOL ScrCmd_31E(ScriptContext *param0);
 BOOL ScrCmd_2F1(ScriptContext *param0);
 BOOL ScrCmd_GetPartyRotomCountAndFirst(ScriptContext *ctx);

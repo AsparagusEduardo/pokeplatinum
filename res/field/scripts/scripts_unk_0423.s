@@ -173,7 +173,7 @@ _026C:
     End
 
 _0277:
-    ScrCmd_31D 0x800C
+    PartyTryResetNonDPFormsAndItems 0x800C
     GoToIfEq 0x800C, 0xFF, _02A9
     HealParty
     CallCommonScript 0x7D6
