@@ -7,7 +7,7 @@
 typedef struct {
     Party *unk_00;
     void *unk_04;
-    void *unk_08;
+    MailBox *mailBox;
     Options *unk_0C;
     void *unk_10;
     void *unk_14;

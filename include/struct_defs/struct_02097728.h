@@ -12,7 +12,7 @@ typedef struct {
     int unk_08;
     u16 unk_0C;
     u8 unk_0E;
-    u8 unk_0F;
+    u8 mailType;
     SaveData *unk_10;
     Mail *unk_14;
     MailBox *unk_18;

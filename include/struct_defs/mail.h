@@ -7,11 +7,11 @@
 #include "struct_defs/union_02028328.h"
 
 typedef struct {
-    u32 unk_00;
-    u8 unk_04;
-    u8 unk_05;
-    u8 unk_06;
-    u8 unk_07;
+    u32 trainerInfoID;
+    u8 trainerGender;
+    u8 language;
+    u8 gameVersion;
+    u8 type;
     u16 unk_08[8];
     UnkUnion_02028328 unk_18[3];
     u16 unk_1E;
@@ -19,7 +19,7 @@ typedef struct {
 } Mail;
 
 typedef struct {
-    Mail unk_00[MAILBOX_MAIL_COUNT];
+    Mail mail[MAILBOX_MAIL_COUNT];
 } MailBox;
 
 #endif // POKEPLATINUM_STRUCT_MAIL_H

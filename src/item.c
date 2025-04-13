@@ -5,6 +5,7 @@
 
 #include "constants/items.h"
 #include "constants/moves.h"
+#include "generated/mail_types.h"
 
 #include "bag.h"
 #include "heap.h"
@@ -595,19 +596,19 @@ static const u16 sTMHMMoves[] = {
     MOVE_ROCK_CLIMB, // HM08
 };
 
-const u16 sMailItemIDs[] = {
-    ITEM_GRASS_MAIL,
-    ITEM_FLAME_MAIL,
-    ITEM_BUBBLE_MAIL,
-    ITEM_BLOOM_MAIL,
-    ITEM_TUNNEL_MAIL,
-    ITEM_STEEL_MAIL,
-    ITEM_HEART_MAIL,
-    ITEM_SNOW_MAIL,
-    ITEM_SPACE_MAIL,
-    ITEM_AIR_MAIL,
-    ITEM_MOSAIC_MAIL,
-    ITEM_BRICK_MAIL
+const u16 sMailItemIDs[MAIL_TYPE_COUNT] = {
+    [MAIL_TYPE_GRASS] = ITEM_GRASS_MAIL,
+    [MAIL_TYPE_FLAME] = ITEM_FLAME_MAIL,
+    [MAIL_TYPE_BUBBLE] = ITEM_BUBBLE_MAIL,
+    [MAIL_TYPE_BLOOM] = ITEM_BLOOM_MAIL,
+    [MAIL_TYPE_TUNNEL] = ITEM_TUNNEL_MAIL,
+    [MAIL_TYPE_STEEL] = ITEM_STEEL_MAIL,
+    [MAIL_TYPE_HEART] = ITEM_HEART_MAIL,
+    [MAIL_TYPE_SNOW] = ITEM_SNOW_MAIL,
+    [MAIL_TYPE_SPACE] = ITEM_SPACE_MAIL,
+    [MAIL_TYPE_AIR] = ITEM_AIR_MAIL,
+    [MAIL_TYPE_MOSAIC] = ITEM_MOSAIC_MAIL,
+    [MAIL_TYPE_BRICK] = ITEM_BRICK_MAIL,
 };
 
 const u16 sBerryItemIDs[] = {
@@ -982,7 +983,7 @@ u8 Item_TMHMNumber(u16 item)
 
 u8 Item_IsMail(u16 item)
 {
-    for (u32 i = 0; i < NUM_MAILS; i++) {
+    for (u32 i = 0; i < MAIL_TYPE_COUNT; i++) {
         if (sMailItemIDs[i] == item) {
             return TRUE;
         }
@@ -993,7 +994,7 @@ u8 Item_IsMail(u16 item)
 
 u8 Item_MailNumber(u16 item)
 {
-    for (u32 i = 0; i < NUM_MAILS; i++) {
+    for (u32 i = 0; i < MAIL_TYPE_COUNT; i++) {
         if (sMailItemIDs[i] == item) {
             return i;
         }
@@ -1004,7 +1005,7 @@ u8 Item_MailNumber(u16 item)
 
 u16 Item_ForMailNumber(u8 mail)
 {
-    if (mail >= NUM_MAILS) {
+    if (mail >= MAIL_TYPE_COUNT) {
         return ITEM_NONE;
     }
 

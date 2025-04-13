@@ -3,6 +3,9 @@
 #include <nitro.h>
 #include <string.h>
 
+#include "generated/genders.h"
+#include "generated/mail_types.h"
+
 #include "struct_defs/mail.h"
 #include "struct_defs/union_02028328.h"
 
@@ -16,9 +19,9 @@
 #include "trainer_info.h"
 #include "unk_02014A84.h"
 
-static int sub_020284E8(Mail *param0, int param1);
-static int sub_02028510(Mail *param0, int param1);
-static Mail *sub_02028538(MailBox *param0, int param1, int param2);
+static int Mail_GetFirstEmptySlotInArray(Mail *mailArray, int arraySize);
+static int Mail_GetNonEmptyCountInArray(Mail *mailArray, int arraySize);
+static Mail *MailBox_GetMailInSlot(MailBox *mailBox, int param1, int slot);
 
 static const struct {
     u16 unk_00;
@@ -36,88 +39,86 @@ static const struct {
     { 0x1E6, 0x222, 0x1DF, 0x5 }
 };
 
-void sub_02028124(Mail *mail)
+void Mail_Init(Mail *mail)
 {
-    int v0;
+    int i;
 
-    mail->unk_00 = 0;
-    mail->unk_04 = 0;
-    mail->unk_05 = gGameLanguage;
-    mail->unk_06 = gGameVersion;
-    mail->unk_07 = 0xFFFF;
+    mail->trainerInfoID = 0;
+    mail->trainerGender = GENDER_MALE;
+    mail->language = gGameLanguage;
+    mail->gameVersion = gGameVersion;
+    mail->type = MAIL_TYPE_NONE; // Overflows because type it's u8
 
     CharCode_FillWithEOS(mail->unk_08, 8);
 
-    for (v0 = 0; v0 < 3; v0++) {
-        mail->unk_18[v0].val2 = 0xFFFF;
+    for (i = 0; i < 3; i++) {
+        mail->unk_18[i].val2 = 0xFFFF;
     }
 
     mail->unk_1E = 0;
 
-    for (v0 = 0; v0 < 3; v0++) {
-        sub_02014A84(&mail->unk_20[v0]);
+    for (i = 0; i < 3; i++) {
+        sub_02014A84(&mail->unk_20[i]);
     }
 }
 
-BOOL sub_0202817C(Mail *param0)
+BOOL Mail_IsNotEmpty(Mail *mail)
 {
-    if ((param0->unk_07 >= 0) && (param0->unk_07 <= 11)) {
-        return 1;
+    if (mail->type >= 0 && mail->type <= MAIL_TYPE_COUNT - 1) {
+        return TRUE;
     }
 
-    return 0;
+    return FALSE;
 }
 
-Mail *sub_0202818C(int heapID)
+Mail *Mail_New(int heapID)
 {
     Mail *mail = Heap_AllocFromHeapAtEnd(heapID, sizeof(Mail));
-    sub_02028124(mail);
+    Mail_Init(mail);
 
     return mail;
 }
 
-void sub_020281A0(Mail *param0, Mail *param1)
+void Mail_Copy(Mail *src, Mail *dst)
 {
-    MI_CpuCopy8(param0, param1, sizeof(Mail));
+    MI_CpuCopy8(src, dst, sizeof(Mail));
 }
 
-void sub_020281AC(Mail *param0, u8 param1, u8 param2, SaveData *param3)
+void sub_020281AC(Mail *mail, u8 type, u8 param2, SaveData *saveData)
 {
-    u8 v0, v1, v2, v3;
-    u16 v4;
-    u32 v5, v6, v7;
-    TrainerInfo *v8;
-    Party *v9;
-    Pokemon *v10;
+    u8 i, v1, iconPaletteIndex, j;
+    u16 species;
+    u32 iconSpriteIndex, isEgg, form;
+    Pokemon *mon;
 
-    sub_02028124(param0);
+    Mail_Init(mail);
 
-    param0->unk_07 = param1;
-    v9 = SaveData_GetParty(param3);
-    v8 = SaveData_GetTrainerInfo(param3);
+    mail->type = type;
+    Party *party = SaveData_GetParty(saveData);
+    TrainerInfo *trainerInfo = SaveData_GetTrainerInfo(saveData);
 
-    CharCode_Copy(param0->unk_08, TrainerInfo_Name(v8));
+    CharCode_Copy(mail->unk_08, TrainerInfo_Name(trainerInfo));
 
-    param0->unk_04 = (u8)TrainerInfo_Gender(v8);
-    param0->unk_00 = TrainerInfo_ID(v8);
-    param0->unk_1E = 0;
+    mail->trainerGender = (u8)TrainerInfo_Gender(trainerInfo);
+    mail->trainerInfoID = TrainerInfo_ID(trainerInfo);
+    mail->unk_1E = 0;
 
-    for (v0 = param2, v1 = 0; v0 < Party_GetCurrentCount(v9); v0++) {
-        v10 = Party_GetPokemonBySlotIndex(v9, v0);
-        v4 = Pokemon_GetValue(v10, MON_DATA_SPECIES, NULL);
-        v6 = Pokemon_GetValue(v10, MON_DATA_IS_EGG, NULL);
-        v7 = Pokemon_GetValue(v10, MON_DATA_FORM, NULL);
-        v5 = Pokemon_IconSpriteIndex(v10);
-        v2 = PokeIconPaletteIndex(v4, v7, v6);
+    for (i = param2, v1 = 0; i < Party_GetCurrentCount(party); i++) {
+        mon = Party_GetPokemonBySlotIndex(party, i);
+        species = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
+        isEgg = Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL);
+        form = Pokemon_GetValue(mon, MON_DATA_FORM, NULL);
+        iconSpriteIndex = Pokemon_IconSpriteIndex(mon);
+        iconPaletteIndex = PokeIconPaletteIndex(species, form, isEgg);
 
-        param0->unk_18[v1].val1_0 = (u16)v5;
-        param0->unk_18[v1].val1_12 = v2;
+        mail->unk_18[v1].val1_0 = (u16)iconSpriteIndex;
+        mail->unk_18[v1].val1_12 = iconPaletteIndex;
 
-        for (v3 = 0; v3 < NELEMS(Unk_020E5B0C); v3++) {
-            if ((Unk_020E5B0C[v3].unk_02 == param0->unk_18[v1].val1_0) && (Unk_020E5B0C[v3].unk_06 == v7)) {
-                param0->unk_18[v1].val1_0 = Unk_020E5B0C[v3].unk_00;
-                param0->unk_18[v1].val1_12 = PokeIconPaletteIndex(v4, 0, v6);
-                param0->unk_1E |= Unk_020E5B0C[v3].unk_06 << (v1 * 5);
+        for (j = 0; j < NELEMS(Unk_020E5B0C); j++) {
+            if ((Unk_020E5B0C[j].unk_02 == mail->unk_18[v1].val1_0) && (Unk_020E5B0C[j].unk_06 == form)) {
+                mail->unk_18[v1].val1_0 = Unk_020E5B0C[j].unk_00;
+                mail->unk_18[v1].val1_12 = PokeIconPaletteIndex(species, 0, isEgg);
+                mail->unk_1E |= Unk_020E5B0C[j].unk_06 << (v1 * 5);
                 break;
             }
         }
@@ -130,9 +131,9 @@ void sub_020281AC(Mail *param0, u8 param1, u8 param2, SaveData *param3)
     }
 }
 
-u32 sub_02028308(const Mail *param0)
+u32 Mail_GetTrainerInfoID(const Mail *mail)
 {
-    return param0->unk_00;
+    return mail->trainerInfoID;
 }
 
 u16 *sub_0202830C(Mail *param0)
@@ -140,33 +141,33 @@ u16 *sub_0202830C(Mail *param0)
     return &(param0->unk_08[0]);
 }
 
-u8 sub_02028310(const Mail *param0)
+u8 Mail_GetTrainerGender(const Mail *mail)
 {
-    return param0->unk_04;
+    return mail->trainerGender;
 }
 
-u8 sub_02028314(const Mail *param0)
+u8 Mail_GetType(const Mail *mail)
 {
-    return param0->unk_07;
+    return mail->type;
 }
 
-void sub_02028318(Mail *param0, const u8 param1)
+void Mail_SetType(Mail *mail, const u8 type)
 {
-    if (param1 >= 12) {
+    if (type >= MAIL_TYPE_COUNT) {
         return;
     }
 
-    param0->unk_07 = param1;
+    mail->type = type;
 }
 
-u8 sub_02028320(const Mail *param0)
+u8 Mail_GetLanguage(const Mail *mail)
 {
-    return param0->unk_05;
+    return mail->language;
 }
 
-u8 sub_02028324(const Mail *param0)
+u8 Mail_GetGameVersion(const Mail *mail)
 {
-    return param0->unk_06;
+    return mail->gameVersion;
 }
 
 u16 sub_02028328(const Mail *param0, u8 param1, u8 param2, u16 param3)
@@ -235,49 +236,43 @@ MailBox *SaveData_GetMailBox(SaveData *saveData)
 
 int MailBox_SaveSize(void)
 {
-    return sizeof(Mail) * 20;
+    return sizeof(Mail) * MAILBOX_MAIL_COUNT;
 }
 
-void MailBox_Init(MailBox *param0)
+void MailBox_Init(MailBox *mailBox)
 {
-    int v0 = 0;
-
-    for (v0 = 0; v0 < 20; v0++) {
-        sub_02028124(&param0->unk_00[v0]);
+    for (int i = 0; i < MAILBOX_MAIL_COUNT; i++) {
+        Mail_Init(&mailBox->mail[i]);
     }
 }
 
-int sub_0202845C(MailBox *param0, int param1)
+int sub_0202845C(MailBox *mailBox, int param1)
 {
     switch (param1) {
     case 0:
-        return sub_020284E8(param0->unk_00, 20);
+        return Mail_GetFirstEmptySlotInArray(mailBox->mail, MAILBOX_MAIL_COUNT);
     default:
-        return 0xFFFFFFFF;
+        return -1;
     }
 
-    return 0xFFFFFFFF;
+    return -1;
 }
 
-void sub_02028470(MailBox *param0, int param1, int param2)
+void sub_02028470(MailBox *mailBox, int param1, int slot)
 {
-    Mail *v0 = NULL;
+    Mail *mail = MailBox_GetMailInSlot(mailBox, param1, slot);
 
-    v0 = sub_02028538(param0, param1, param2);
-
-    if (v0 != NULL) {
-        sub_02028124(v0);
+    if (mail != NULL) {
+        Mail_Init(mail);
     }
 }
 
-void sub_02028480(MailBox *param0, int param1, int param2, Mail *param3)
+void MailBox_TryCopyMailToSlot(MailBox *mailBox, int param1, int slot, Mail *src)
 {
-    Mail *v0 = NULL;
+    Mail *dst = MailBox_GetMailInSlot(mailBox, param1, slot);
 
-    v0 = sub_02028538(param0, param1, param2);
-
-    if (v0 != NULL) {
-        sub_020281A0(param3, v0);
+    if (dst != NULL) {
+        Mail_Copy(src, dst);
     }
 }
 
@@ -285,7 +280,7 @@ int sub_02028494(MailBox *param0, int param1)
 {
     switch (param1) {
     case 0:
-        return sub_02028510(param0->unk_00, 20);
+        return Mail_GetNonEmptyCountInArray(param0->mail, MAILBOX_MAIL_COUNT);
     default:
         return 0;
     }
@@ -293,69 +288,66 @@ int sub_02028494(MailBox *param0, int param1)
     return 0;
 }
 
-Mail *sub_020284A8(MailBox *param0, int param1, int param2, int heapID)
+Mail *MailBox_CopyToMail(MailBox *mailBox, int param1, int slot, int heapID)
 {
-    Mail *v0 = NULL;
-    Mail *v1;
+    Mail *src = MailBox_GetMailInSlot(mailBox, param1, slot);
+    Mail *dst = Mail_New(heapID);
 
-    v0 = sub_02028538(param0, param1, param2);
-    v1 = sub_0202818C(heapID);
-
-    if (v0 != NULL) {
-        sub_020281A0(v0, v1);
+    if (src != NULL) {
+        Mail_Copy(src, dst);
     }
 
-    return v1;
+    return dst;
 }
 
 void sub_020284CC(MailBox *param0, int param1, int param2, Mail *param3)
 {
     Mail *v0 = NULL;
 
-    v0 = sub_02028538(param0, param1, param2);
+    v0 = MailBox_GetMailInSlot(param0, param1, param2);
 
     if (v0 == NULL) {
-        sub_02028124(param3);
+        Mail_Init(param3);
     } else {
-        sub_020281A0(v0, param3);
+        Mail_Copy(v0, param3);
     }
 }
 
-static int sub_020284E8(Mail *param0, int param1)
+static int Mail_GetFirstEmptySlotInArray(Mail *mailArray, int arraySize)
 {
-    int v0 = 0;
+    int i = 0;
 
-    for (v0 = 0; v0 < param1; v0++) {
-        if (!sub_0202817C(&param0[v0])) {
-            return v0;
+    for (i = 0; i < arraySize; i++) {
+        if (!Mail_IsNotEmpty(&mailArray[i])) {
+            return i;
         }
     }
 
-    return 0xFFFFFFFF;
+    return -1;
 }
 
-static int sub_02028510(Mail *param0, int param1)
+static int Mail_GetNonEmptyCountInArray(Mail *mailArray, int arraySize)
 {
-    int v0 = 0;
-    int v1 = 0;
+    int i = 0;
+    int count = 0;
 
-    for (v0 = 0; v0 < param1; v0++) {
-        if (sub_0202817C(&param0[v0])) {
-            v1++;
+    for (i = 0; i < arraySize; i++) {
+        if (Mail_IsNotEmpty(&mailArray[i])) {
+            count++;
         }
     }
 
-    return v1;
+    return count;
 }
 
-static Mail *sub_02028538(MailBox *param0, int param1, int param2)
+static Mail *MailBox_GetMailInSlot(MailBox *mailBox, int param1, int slot)
 {
-    Mail *v0 = NULL;
+    Mail *mail = NULL;
 
     switch (param1) {
     case 0:
-        if (param2 < 20) {
-            v0 = &(param0->unk_00[param2]);
+        if (slot < MAILBOX_MAIL_COUNT) {
+            mail = &(mailBox->mail[slot]);
         }
 
         break;
@@ -363,5 +355,5 @@ static Mail *sub_02028538(MailBox *param0, int param1, int param2)
         break;
     }
 
-    return v0;
+    return mail;
 }

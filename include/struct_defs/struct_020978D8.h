@@ -14,9 +14,9 @@ typedef struct {
     Options *unk_04;
     u32 unk_08;
     u8 unk_0C;
-    u8 unk_0D;
-    u8 unk_0E;
-    u8 unk_0F;
+    u8 language;
+    u8 gameVersion;
+    u8 mailType;
     Strbuf *unk_10;
     UnkUnion_02028328 unk_14[3];
     Sentence unk_1A[3];

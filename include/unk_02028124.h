@@ -5,30 +5,30 @@
 
 #include "savedata.h"
 
-void sub_02028124(Mail *param0);
-BOOL sub_0202817C(Mail *param0);
-Mail *sub_0202818C(int heapID);
-void sub_020281A0(Mail *param0, Mail *param1);
-void sub_020281AC(Mail *param0, u8 param1, u8 param2, SaveData *param3);
-u32 sub_02028308(const Mail *param0);
+void Mail_Init(Mail *mail);
+BOOL Mail_IsNotEmpty(Mail *mail);
+Mail *Mail_New(int heapID);
+void Mail_Copy(Mail *src, Mail *dst);
+void sub_020281AC(Mail *mail, u8 type, u8 param2, SaveData *saveData);
+u32 Mail_GetTrainerInfoID(const Mail *mail);
 u16 *sub_0202830C(Mail *param0);
-u8 sub_02028310(const Mail *param0);
-u8 sub_02028314(const Mail *param0);
-void sub_02028318(Mail *param0, const u8 param1);
-u8 sub_02028320(const Mail *param0);
-u8 sub_02028324(const Mail *param0);
+u8 Mail_GetTrainerGender(const Mail *mail);
+u8 Mail_GetType(const Mail *mail);
+void Mail_SetType(Mail *mail, const u8 type);
+u8 Mail_GetLanguage(const Mail *mail);
+u8 Mail_GetGameVersion(const Mail *mail);
 u16 sub_02028328(const Mail *param0, u8 param1, u8 param2, u16 param3);
 u16 sub_02028408(const Mail *param0);
 Sentence *sub_0202840C(Mail *param0, u8 param1);
 void sub_0202841C(Mail *param0, Sentence *param1, u8 param2);
 MailBox *SaveData_GetMailBox(SaveData *saveData);
 int MailBox_SaveSize(void);
-void MailBox_Init(MailBox *param0);
+void MailBox_Init(MailBox *mailBox);
 int sub_0202845C(MailBox *param0, int param1);
-void sub_02028470(MailBox *param0, int param1, int param2);
-void sub_02028480(MailBox *param0, int param1, int param2, Mail *param3);
+void sub_02028470(MailBox *mailBox, int param1, int slot);
+void MailBox_TryCopyMailToSlot(MailBox *mailBox, int param1, int slot, Mail *src);
 int sub_02028494(MailBox *param0, int param1);
-Mail *sub_020284A8(MailBox *param0, int param1, int param2, int heapID);
+Mail *MailBox_CopyToMail(MailBox *mailBox, int param1, int slot, int heapID);
 void sub_020284CC(MailBox *param0, int param1, int param2, Mail *param3);
 
 #endif // POKEPLATINUM_UNK_02028124_H

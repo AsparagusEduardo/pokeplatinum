@@ -2,6 +2,8 @@
 #include <string.h>
 
 #include "generated/game_records.h"
+#include "generated/items.h"
+#include "generated/mail_types.h"
 #include "generated/trainer_score_events.h"
 
 #include "struct_defs/struct_02097728.h"
@@ -38,10 +40,8 @@ typedef struct {
 static int sub_02097944(OverlayManager *param0, int *param1);
 static int sub_020979A8(OverlayManager *param0, int *param1);
 static int sub_02097AF8(OverlayManager *param0, int *param1);
-UnkStruct_02097728 *sub_02097624(SaveData *param0, int param1, u8 param2, u8 param3, int param4);
 UnkStruct_02097728 *sub_0209767C(SaveData *param0, int param1, u16 param2, int param3);
 UnkStruct_02097728 *sub_020976BC(SaveData *param0, Pokemon *param1, int param2);
-UnkStruct_02097728 *sub_020976F4(SaveData *param0, u8 param1, int param2);
 BOOL sub_02097728(UnkStruct_02097728 *param0);
 int sub_0209772C(UnkStruct_02097728 *param0, int param1, u8 param2);
 int sub_02097750(UnkStruct_02097728 *param0, Pokemon *param1);
@@ -56,7 +56,7 @@ const OverlayManagerTemplate Unk_020F64B0 = {
     0xFFFFFFFF
 };
 
-UnkStruct_02097728 *sub_02097624(SaveData *param0, int param1, u8 param2, u8 param3, int heapID)
+UnkStruct_02097728 *sub_02097624(SaveData *param0, int param1, u8 param2, u8 mailType, int heapID)
 {
     UnkStruct_02097728 *v0;
     MailBox *v1;
@@ -67,16 +67,16 @@ UnkStruct_02097728 *sub_02097624(SaveData *param0, int param1, u8 param2, u8 par
 
     MI_CpuClear8(v0, sizeof(UnkStruct_02097728));
 
-    v0->unk_0F = param3;
+    v0->mailType = mailType;
     v0->unk_0E = param2;
     v0->unk_18 = v1;
     v0->unk_00 = 1;
     v0->unk_08 = param1;
     v0->unk_0C = 0;
     v0->unk_10 = param0;
-    v0->unk_14 = sub_0202818C(heapID);
+    v0->unk_14 = Mail_New(heapID);
 
-    sub_02028124(v0->unk_14);
+    Mail_Init(v0->unk_14);
     sub_020281AC(v0->unk_14, 0xFFFF, param2, param0);
 
     return v0;
@@ -98,7 +98,7 @@ UnkStruct_02097728 *sub_0209767C(SaveData *param0, int param1, u16 param2, int h
     v1 = SaveData_GetMailBox(param0);
 
     v0->unk_18 = v1;
-    v0->unk_14 = sub_020284A8(v1, param1, param2, heapID);
+    v0->unk_14 = MailBox_CopyToMail(v1, param1, param2, heapID);
 
     return v0;
 }
@@ -110,7 +110,7 @@ UnkStruct_02097728 *sub_020976BC(SaveData *param0, Pokemon *param1, int heapID)
 
     v0->unk_00 = 0;
     v0->unk_10 = param0;
-    v0->unk_14 = sub_0202818C(heapID);
+    v0->unk_14 = Mail_New(heapID);
 
     Pokemon_GetValue(param1, MON_DATA_MAIL, v0->unk_14);
     return v0;
@@ -123,9 +123,9 @@ UnkStruct_02097728 *sub_020976F4(SaveData *param0, u8 param1, int heapID)
 
     v0->unk_00 = 0;
     v0->unk_10 = param0;
-    v0->unk_14 = sub_0202818C(heapID);
+    v0->unk_14 = Mail_New(heapID);
 
-    sub_02028318(v0->unk_14, param1);
+    Mail_SetType(v0->unk_14, param1);
     return v0;
 }
 
@@ -140,7 +140,7 @@ int sub_0209772C(UnkStruct_02097728 *param0, int param1, u8 param2)
         return 0;
     }
 
-    sub_02028480(param0->unk_18, param1, param2, param0->unk_14);
+    MailBox_TryCopyMailToSlot(param0->unk_18, param1, param2, param0->unk_14);
     return 1;
 }
 
@@ -163,73 +163,68 @@ void sub_02097770(UnkStruct_02097728 *param0)
     Heap_FreeToHeap(param0);
 }
 
-int sub_02097788(MailBox *param0, Pokemon *param1, int heapID)
+int MailBox_StoreMailFromMon(MailBox *mailBox, Pokemon *mon, int heapID)
 {
-    int v0;
-    int v1 = 0;
-    Mail *v2 = NULL;
+    int item = ITEM_NONE;
+    int mailBoxSlot = sub_0202845C(mailBox, 0);
 
-    v0 = sub_0202845C(param0, 0);
-
-    if (v0 == 0xFFFFFFFF) {
-        return 0xFFFFFFFF;
+    if (mailBoxSlot == -1) {
+        return -1;
     }
 
-    v2 = sub_0202818C(heapID);
+    Mail *mail = Mail_New(heapID);
 
-    Pokemon_GetValue(param1, MON_DATA_MAIL, v2);
-    sub_02028480(param0, 0, v0, v2);
-    sub_02028124(v2);
-    Pokemon_SetValue(param1, MON_DATA_MAIL, v2);
-    Pokemon_SetValue(param1, MON_DATA_HELD_ITEM, &v1);
-    Heap_FreeToHeap(v2);
+    Pokemon_GetValue(mon, MON_DATA_MAIL, mail);
+    MailBox_TryCopyMailToSlot(mailBox, 0, mailBoxSlot, mail);
+    Mail_Init(mail);
+    Pokemon_SetValue(mon, MON_DATA_MAIL, mail);
+    Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &item);
+    Heap_FreeToHeap(mail);
 
-    return v0;
+    return mailBoxSlot;
 }
 
-int sub_020977E4(MailBox *param0, u16 param1, Pokemon *param2, int heapID)
+int MailBox_GiveMailToMon(MailBox *mailBox, u16 mailBoxSlot, Pokemon *mon, int heapID)
 {
-    int v0 = 0;
-    Mail *v1 = NULL;
+    int item = 0;
+    Mail *mail = MailBox_CopyToMail(mailBox, 0, mailBoxSlot, heapID);
 
-    v1 = sub_020284A8(param0, 0, param1, heapID);
-
-    if (v1 == NULL) {
-        return 0xFFFFFFFF;
+    if (mail == NULL) {
+        return -1;
     }
 
-    v0 = Item_ForMailNumber(sub_02028314(v1));
+    item = Item_ForMailNumber(Mail_GetType(mail));
 
-    Pokemon_SetValue(param2, MON_DATA_MAIL, v1);
-    Pokemon_SetValue(param2, MON_DATA_HELD_ITEM, &v0);
-    sub_02028470(param0, 0, param1);
-    Heap_FreeToHeap(v1);
+    Pokemon_SetValue(mon, MON_DATA_MAIL, mail);
+    Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &item);
+    sub_02028470(mailBox, 0, mailBoxSlot);
+    Heap_FreeToHeap(mail);
 
-    return param1;
+    return mailBoxSlot;
 }
 
-UnkStruct_020978D8 *sub_02097834(const Mail *param0, int heapID)
+UnkStruct_020978D8 *sub_02097834(const Mail *mail, int heapID)
 {
     u16 v0;
     UnkStruct_020978D8 *v1 = Heap_AllocFromHeap(heapID, sizeof(UnkStruct_020978D8));
     MI_CpuClear8(v1, sizeof(UnkStruct_020978D8));
 
     v1->unk_00 = 0;
-    v1->unk_08 = sub_02028308(param0);
+    v1->unk_08 = Mail_GetTrainerInfoID(mail);
     v1->unk_10 = Strbuf_Init(8, heapID);
 
-    Strbuf_CopyChars(v1->unk_10, sub_0202830C((Mail *)param0));
+    Strbuf_CopyChars(v1->unk_10, sub_0202830C(mail));
 
-    v1->unk_0F = sub_02028314(param0);
-    v1->unk_0D = sub_02028320(param0);
-    v1->unk_0E = sub_02028324(param0);
+    v1->mailType = Mail_GetType(mail);
+    v1->language = Mail_GetLanguage(mail);
+    v1->gameVersion = Mail_GetGameVersion(mail);
 
     for (v0 = 0; v0 < 3; v0++) {
-        v1->unk_14[v0].val2 = sub_02028328(param0, v0, 2, sub_02028408(param0));
+        v1->unk_14[v0].val2 = sub_02028328(mail, v0, 2, sub_02028408(mail));
     }
 
     for (v0 = 0; v0 < 3; v0++) {
-        sub_02014CC0(&v1->unk_1A[v0], sub_0202840C((Mail *)param0, v0));
+        sub_02014CC0(&v1->unk_1A[v0], sub_0202840C(mail, v0));
     }
 
     return v1;
@@ -252,7 +247,7 @@ void sub_020978F0(Mail *param0, UnkStruct_020978D8 *param1)
         sub_0202841C(param0, &param1->unk_1A[v0], v0);
     }
 
-    sub_02028318(param0, param1->unk_0F);
+    Mail_SetType(param0, param1->mailType);
 }
 
 static BOOL sub_02097920(OverlayManager **param0)
@@ -282,11 +277,11 @@ static int sub_02097944(OverlayManager *param0, int *param1)
     v0->unk_10->unk_04 = SaveData_GetOptions(v1->unk_10);
 
     if (v1->unk_00 == 1) {
-        v0->unk_10->unk_0F = v1->unk_0F;
+        v0->unk_10->mailType = v1->mailType;
     }
 
-    if (v0->unk_10->unk_0F >= 12) {
-        v0->unk_10->unk_0F = 0;
+    if (v0->unk_10->mailType >= MAIL_TYPE_COUNT) {
+        v0->unk_10->mailType = MAIL_TYPE_GRASS;
     }
 
     v0->unk_10->unk_00 = v1->unk_00;

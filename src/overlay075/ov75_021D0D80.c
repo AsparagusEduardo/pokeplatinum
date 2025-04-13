@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include "constants/narc.h"
+#include "generated/mail_types.h"
 
 #include "struct_defs/struct_020978D8.h"
 #include "struct_defs/struct_02099F80.h"
@@ -691,9 +692,9 @@ static void ov75_021D1598(UnkStruct_ov75_021D1184 *param0)
     NNSG2dCharacterData *v3;
     NNSG2dPaletteData *v4;
     NARC *v5;
-    int v6 = 12 + param0->unk_1C->unk_0F;
-    int v7 = 24 + param0->unk_1C->unk_0F;
-    int v8 = 0 + param0->unk_1C->unk_0F;
+    int v6 = (MAIL_TYPE_COUNT * 1) + param0->unk_1C->mailType;
+    int v7 = (MAIL_TYPE_COUNT * 2) + param0->unk_1C->mailType;
+    int v8 = (MAIL_TYPE_COUNT * 0) + param0->unk_1C->mailType;
     v5 = NARC_ctor(NARC_INDEX_GRAPHIC__MAIL_GRA, param0->heapID);
 
     LoadStandardWindowGraphics(param0->unk_18, 0, 1, UnkEnum_ov75_021D1598_05, 0, param0->heapID);
