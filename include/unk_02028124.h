@@ -1,9 +1,7 @@
 #ifndef POKEPLATINUM_UNK_02028124_H
 #define POKEPLATINUM_UNK_02028124_H
 
-#include "struct_decls/struct_02028430_decl.h"
 #include "struct_defs/mail.h"
-#include "struct_defs/sentence.h"
 
 #include "savedata.h"
 

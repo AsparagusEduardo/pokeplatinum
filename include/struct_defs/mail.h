@@ -1,6 +1,8 @@
 #ifndef POKEPLATINUM_STRUCT_MAIL_H
 #define POKEPLATINUM_STRUCT_MAIL_H
 
+#include "constants/mail.h"
+
 #include "struct_defs/sentence.h"
 #include "struct_defs/union_02028328.h"
 
@@ -15,5 +17,9 @@ typedef struct {
     u16 unk_1E;
     Sentence unk_20[3];
 } Mail;
+
+typedef struct {
+    Mail unk_00[MAILBOX_MAIL_COUNT];
+} MailBox;
 
 #endif // POKEPLATINUM_STRUCT_MAIL_H

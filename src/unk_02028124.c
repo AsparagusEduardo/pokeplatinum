@@ -4,8 +4,6 @@
 #include <string.h>
 
 #include "struct_defs/mail.h"
-#include "struct_defs/sentence.h"
-#include "struct_defs/struct_02028430.h"
 #include "struct_defs/union_02028328.h"
 
 #include "charcode_util.h"

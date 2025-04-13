@@ -1,8 +1,6 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/struct_02028430_decl.h"
-#include "struct_defs/mail.h"
 #include "struct_defs/struct_0206A844.h"
 #include "struct_defs/struct_02097728.h"
 #include "struct_defs/struct_02098C44.h"
