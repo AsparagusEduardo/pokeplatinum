@@ -35,7 +35,7 @@ static int sub_020890F4(ApplicationManager *param0, int *param1);
 static int sub_0208924C(ApplicationManager *param0, int *param1);
 static int sub_0208927C(ApplicationManager *param0, int *param1);
 
-const OverlayManagerTemplate Unk_020F2DBC = {
+const ApplicationManagerTemplate Unk_020F2DBC = {
     sub_020890F4,
     sub_0208924C,
     sub_0208927C,

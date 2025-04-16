@@ -1147,11 +1147,11 @@ static int ov97_0222BE24(ApplicationManager *param0, int *param1)
     return 0;
 }
 
-extern const OverlayManagerTemplate Unk_ov97_0223D71C;
-extern const OverlayManagerTemplate gGBAMigratorOverlayTemplate;
-extern const OverlayManagerTemplate Unk_ov97_0223D6BC;
-extern const OverlayManagerTemplate Unk_020F6DF0;
-extern const OverlayManagerTemplate Unk_ov98_02249BAC;
+extern const ApplicationManagerTemplate Unk_ov97_0223D71C;
+extern const ApplicationManagerTemplate gGBAMigratorOverlayTemplate;
+extern const ApplicationManagerTemplate Unk_ov97_0223D6BC;
+extern const ApplicationManagerTemplate Unk_020F6DF0;
+extern const ApplicationManagerTemplate Unk_ov98_02249BAC;
 
 static void ov97_0222C094(UnkStruct_0222AE60 *param0)
 {
@@ -1202,7 +1202,7 @@ static int ov97_0222C150(ApplicationManager *param0, int *param1)
     return 1;
 }
 
-const OverlayManagerTemplate Unk_ov97_0223D674 = {
+const ApplicationManagerTemplate Unk_ov97_0223D674 = {
     ov97_0222BD70,
     ov97_0222BE24,
     ov97_0222C150,

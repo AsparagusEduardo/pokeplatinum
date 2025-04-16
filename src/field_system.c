@@ -92,14 +92,14 @@ static BOOL ReturnToTitleScreen(ApplicationManager *appMan, int *state)
     return TRUE;
 }
 
-const OverlayManagerTemplate gFieldSystemNewGameTemplate = {
+const ApplicationManagerTemplate gFieldSystemNewGameTemplate = {
     .init = InitFieldSystemNewGame,
     .main = ExecuteFieldProcesses,
     .exit = ReturnToTitleScreen,
     .overlayID = FS_OVERLAY_ID_NONE,
 };
 
-const OverlayManagerTemplate gFieldSystemContinueTemplate = {
+const ApplicationManagerTemplate gFieldSystemContinueTemplate = {
     .init = InitFieldSystemContinue,
     .main = ExecuteFieldProcesses,
     .exit = ReturnToTitleScreen,
@@ -137,7 +137,7 @@ BOOL FieldSystem_HasChildProcess(FieldSystem *fieldSystem)
     return fieldSystem->processManager->child != NULL;
 }
 
-void FieldSystem_StartChildProcess(FieldSystem *fieldSystem, const OverlayManagerTemplate *overlayTemplate, void *overlayArgs)
+void FieldSystem_StartChildProcess(FieldSystem *fieldSystem, const ApplicationManagerTemplate *overlayTemplate, void *overlayArgs)
 {
     GF_ASSERT(fieldSystem->processManager->child == NULL);
     FieldSystem_FlagNotRunningFieldMap(fieldSystem);

@@ -69,7 +69,7 @@ static int sub_020995D4(ApplicationManager *param0, int *param1)
     return 1;
 }
 
-const OverlayManagerTemplate Unk_020F6DF0 = {
+const ApplicationManagerTemplate Unk_020F6DF0 = {
     sub_020995D4,
     NULL,
     NULL,

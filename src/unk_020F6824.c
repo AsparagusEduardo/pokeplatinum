@@ -9,7 +9,7 @@ int ov73_021D0D80(ApplicationManager *param0, int *param1);
 int ov73_021D0E20(ApplicationManager *param0, int *param1);
 int ov73_021D0F7C(ApplicationManager *param0, int *param1);
 
-const OverlayManagerTemplate Unk_020F6824 = {
+const ApplicationManagerTemplate Unk_020F6824 = {
     ov73_021D0D80,
     ov73_021D0E20,
     ov73_021D0F7C,

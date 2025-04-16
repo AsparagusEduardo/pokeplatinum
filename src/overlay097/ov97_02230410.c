@@ -1422,7 +1422,7 @@ static void ov97_02231F1C(UnkStruct_ov97_02230868 *param0, int *param1, int para
     *param1 = 22;
 }
 
-extern const OverlayManagerTemplate Unk_ov97_0223D71C;
+extern const ApplicationManagerTemplate Unk_ov97_0223D71C;
 
 static int ov97_02231F38(ApplicationManager *param0, int *param1)
 {
@@ -1459,7 +1459,7 @@ static int ov97_02231F38(ApplicationManager *param0, int *param1)
     return 1;
 }
 
-const OverlayManagerTemplate Unk_ov97_0223D7AC = {
+const ApplicationManagerTemplate Unk_ov97_0223D7AC = {
     ov97_02231224,
     ov97_0223161C,
     ov97_02231F38,

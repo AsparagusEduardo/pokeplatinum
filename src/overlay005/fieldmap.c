@@ -357,7 +357,7 @@ static BOOL FieldMap_Exit(ApplicationManager *appMan, int *param1)
     return FALSE;
 }
 
-const OverlayManagerTemplate gFieldMapTemplate = {
+const ApplicationManagerTemplate gFieldMapTemplate = {
     FieldMap_Init,
     FieldMap_Main,
     FieldMap_Exit,

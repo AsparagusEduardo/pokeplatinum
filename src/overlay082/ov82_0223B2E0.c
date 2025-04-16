@@ -58,7 +58,7 @@ int ov82_0223B330(UnkStruct_ov83_0223C344 *param0, int *param1)
 {
     FS_EXTERN_OVERLAY(overlay83);
 
-    const OverlayManagerTemplate v0 = {
+    const ApplicationManagerTemplate v0 = {
         ov83_0223B5B0,
         ov83_0223B65C,
         ov83_0223B710,
@@ -94,7 +94,7 @@ static int ov82_0223B380(UnkStruct_ov83_0223C344 *param0)
 
     FS_EXTERN_OVERLAY(overlay84);
 
-    const OverlayManagerTemplate Unk_ov84_02241130 = {
+    const ApplicationManagerTemplate Unk_ov84_02241130 = {
         ov84_0223B5A0, ov84_0223B76C, ov84_0223B900, FS_OVERLAY_ID(overlay84)
     };
     static const u8 v3[] = {
@@ -165,7 +165,7 @@ static int ov82_0223B470(UnkStruct_ov83_0223C344 *param0)
 
     FS_EXTERN_OVERLAY(overlay85);
 
-    const OverlayManagerTemplate v6 = {
+    const ApplicationManagerTemplate v6 = {
         ov85_02241440, ov85_0224154C, ov85_022415A0, FS_OVERLAY_ID(overlay85)
     };
 

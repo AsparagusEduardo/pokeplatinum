@@ -46,7 +46,7 @@ typedef struct Application {
     FSOverlayID currOverlayID;
     ApplicationManager *currOverlay;
     FSOverlayID nextOverlayID;
-    const OverlayManagerTemplate *nextOverlay;
+    const ApplicationManagerTemplate *nextOverlay;
     ApplicationArgs args;
 } Application;
 
@@ -63,7 +63,7 @@ static Application sApplication;
 // repeatedly try to restore the backlight to its saved state.
 static PMBackLightSwitch sSavedBacklightState;
 BOOL gIgnoreCartridgeForWake;
-extern const OverlayManagerTemplate gOpeningCutsceneOverlayTemplate;
+extern const ApplicationManagerTemplate gOpeningCutsceneOverlayTemplate;
 
 void NitroMain(void)
 {
@@ -200,7 +200,7 @@ static void RunApplication(void)
     }
 }
 
-void EnqueueApplication(FSOverlayID overlayID, const OverlayManagerTemplate *template)
+void EnqueueApplication(FSOverlayID overlayID, const ApplicationManagerTemplate *template)
 {
     GF_ASSERT(sApplication.nextOverlay == NULL);
 

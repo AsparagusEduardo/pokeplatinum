@@ -29,14 +29,14 @@ static int sub_0208BEBC(ApplicationManager *param0, int *param1, int param2);
 static int sub_0208BF50(ApplicationManager *param0, int *param1);
 static int sub_0208BF6C(ApplicationManager *param0, int *param1);
 
-const OverlayManagerTemplate Unk_020F3050 = {
+const ApplicationManagerTemplate Unk_020F3050 = {
     sub_0208BF38,
     sub_0208BF50,
     sub_0208BF6C,
     FS_OVERLAY_ID(overlay62)
 };
 
-const OverlayManagerTemplate Unk_020F3060 = {
+const ApplicationManagerTemplate Unk_020F3060 = {
     sub_0208BF44,
     sub_0208BF50,
     sub_0208BF6C,

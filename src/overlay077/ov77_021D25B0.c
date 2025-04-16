@@ -137,7 +137,7 @@ typedef struct {
     u8 unk_2A8;
 } UnkStruct_ov77_021D2E9C;
 
-void EnqueueApplication(FSOverlayID param0, const OverlayManagerTemplate *param1);
+void EnqueueApplication(FSOverlayID param0, const ApplicationManagerTemplate *param1);
 static int ov77_021D2D08(ApplicationManager *param0, int *param1);
 static int ov77_021D2D94(ApplicationManager *param0, int *param1);
 static int ov77_021D2E60(ApplicationManager *param0, int *param1);
@@ -179,9 +179,9 @@ static void ov77_021D5308(UnkStruct_ov77_021D5308 *param0);
 static BOOL ov77_021D5390(UnkStruct_ov77_021D5308 *param0, const int param1);
 static void ov77_021D5478(UnkStruct_ov77_021D2E9C *param0);
 
-extern const OverlayManagerTemplate gTitleScreenOverlayTemplate;
+extern const ApplicationManagerTemplate gTitleScreenOverlayTemplate;
 
-const OverlayManagerTemplate gOpeningCutsceneOverlayTemplate = {
+const ApplicationManagerTemplate gOpeningCutsceneOverlayTemplate = {
     ov77_021D2D08,
     ov77_021D2D94,
     ov77_021D2E60,

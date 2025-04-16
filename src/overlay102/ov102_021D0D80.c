@@ -36,7 +36,7 @@ typedef struct {
     int unk_40;
 } UnkStruct_ov102_021D0F8C;
 
-void EnqueueApplication(FSOverlayID param0, const OverlayManagerTemplate *param1);
+void EnqueueApplication(FSOverlayID param0, const ApplicationManagerTemplate *param1);
 int ov102_021D0D80(ApplicationManager *param0, int *param1);
 int ov102_021D0E2C(ApplicationManager *param0, int *param1);
 int ov102_021D0F50(ApplicationManager *param0, int *param1);

@@ -89,7 +89,7 @@ typedef struct {
     u16 *unk_BC;
 } UnkStruct_ov73_021D1058;
 
-void EnqueueApplication(FSOverlayID param0, const OverlayManagerTemplate *param1);
+void EnqueueApplication(FSOverlayID param0, const ApplicationManagerTemplate *param1);
 int ov73_021D0D80(ApplicationManager *param0, int *param1);
 int ov73_021D0E20(ApplicationManager *param0, int *param1);
 int ov73_021D0F7C(ApplicationManager *param0, int *param1);
@@ -110,14 +110,14 @@ int ov73_021D3250(ApplicationManager *param0, int *param1);
 int ov73_021D3280(ApplicationManager *param0, int *param1);
 int ov73_021D3404(ApplicationManager *param0, int *param1);
 
-const OverlayManagerTemplate dummy_OverlayManagerTemplate = {
+const ApplicationManagerTemplate dummy_OverlayManagerTemplate = {
     ov73_021D0D80,
     ov73_021D0E20,
     ov73_021D0F7C,
     0xffffffff
 };
 
-static const OverlayManagerTemplate Unk_ov72_021D3820 = {
+static const ApplicationManagerTemplate Unk_ov72_021D3820 = {
     ov73_021D3250,
     ov73_021D3280,
     ov73_021D3404,

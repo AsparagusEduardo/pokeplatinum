@@ -50,7 +50,7 @@ static int sub_02098218(ApplicationManager *param0, int *param1);
 static int sub_02098304(ApplicationManager *param0, int *param1);
 static int sub_02098388(ApplicationManager *param0, int *param1);
 
-const OverlayManagerTemplate Unk_020F67FC = {
+const ApplicationManagerTemplate Unk_020F67FC = {
     sub_02098218,
     sub_02098304,
     sub_02098388,

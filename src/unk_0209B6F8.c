@@ -56,7 +56,7 @@ static void sub_0209B924(void);
 static void sub_0209B94C(void);
 static void sub_0209B8E8(UnkStruct_0209B75C *param0);
 
-const OverlayManagerTemplate Unk_020F8BE0 = {
+const ApplicationManagerTemplate Unk_020F8BE0 = {
     sub_0209B6F8,
     sub_0209B75C,
     sub_0209B8A4,
@@ -254,7 +254,7 @@ void sub_0209B980(UnkStruct_0209B75C *param0, void *param1)
     param0->unk_00->unk_00 = param1;
 }
 
-void sub_0209B988(UnkStruct_0209B75C *param0, const OverlayManagerTemplate *param1, void *param2, int param3, UnkFuncPtr_0209B988 param4)
+void sub_0209B988(UnkStruct_0209B75C *param0, const ApplicationManagerTemplate *param1, void *param2, int param3, UnkFuncPtr_0209B988 param4)
 {
     GF_ASSERT(param0->unk_04 == NULL);
     param0->unk_04 = OverlayManager_New(param1, param2, 11);

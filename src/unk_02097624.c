@@ -54,7 +54,7 @@ int sub_020977E4(MailBox *param0, u16 param1, Pokemon *param2, int param3);
 void sub_020978D8(UnkStruct_020978D8 *param0);
 void sub_020978F0(Mail *param0, UnkStruct_020978D8 *param1);
 
-const OverlayManagerTemplate Unk_020F64B0 = {
+const ApplicationManagerTemplate Unk_020F64B0 = {
     sub_02097944,
     sub_020979A8,
     sub_02097AF8,
@@ -307,13 +307,13 @@ static int sub_020979A8(ApplicationManager *param0, int *param1)
     FS_EXTERN_OVERLAY(overlay75);
     FS_EXTERN_OVERLAY(overlay20);
 
-    static const OverlayManagerTemplate v2 = {
+    static const ApplicationManagerTemplate v2 = {
         ov75_021D0D80,
         ov75_021D0DF8,
         ov75_021D0E10,
         FS_OVERLAY_ID(overlay75),
     };
-    static const OverlayManagerTemplate v3 = {
+    static const ApplicationManagerTemplate v3 = {
         ov20_021D0D80,
         ov20_021D0DF8,
         ov20_021D0EA8,

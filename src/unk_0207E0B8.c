@@ -153,7 +153,7 @@ u8 sub_02080488(GameWindowLayout *param0, u8 param1);
 static u8 CheckPokemonCondition(GameWindowLayout *param0);
 static BOOL UpdatePokemonStatus(GameWindowLayout *param0, u8 param1, s8 param2);
 
-const OverlayManagerTemplate Unk_020F1E88 = {
+const ApplicationManagerTemplate Unk_020F1E88 = {
     sub_0207E0B8,
     sub_0207E2A8,
     sub_0207E7E0,

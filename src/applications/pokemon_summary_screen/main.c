@@ -193,7 +193,7 @@ static u8 HideRibbonInfo(PokemonSummaryScreen *summaryScreen);
 static void ChangeSelectedRibbon(PokemonSummaryScreen *summaryScreen, s8 delta);
 static int TryFeedPoffin(PokemonSummaryScreen *summaryScreen);
 
-const OverlayManagerTemplate gPokemonSummaryScreenApp = {
+const ApplicationManagerTemplate gPokemonSummaryScreenApp = {
     PokemonSummaryScreen_Init,
     PokemonSummaryScreen_Main,
     PokemonSummaryScreen_Exit,

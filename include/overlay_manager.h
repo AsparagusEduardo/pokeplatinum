@@ -11,15 +11,15 @@ typedef struct ApplicationManager ApplicationManager;
 
 typedef BOOL (*OverlayFunc)(ApplicationManager *appMan, int *state);
 
-typedef struct OverlayManagerTemplate {
+typedef struct ApplicationManagerTemplate {
     OverlayFunc init;
     OverlayFunc main;
     OverlayFunc exit;
     const FSOverlayID overlayID;
-} OverlayManagerTemplate;
+} ApplicationManagerTemplate;
 
 struct ApplicationManager {
-    OverlayManagerTemplate template;
+    ApplicationManagerTemplate template;
     int execState;
     int procState;
     void *args;
@@ -28,7 +28,7 @@ struct ApplicationManager {
     ApplicationManager *child;
 };
 
-ApplicationManager *OverlayManager_New(const OverlayManagerTemplate *template, void *args, const enum HeapId heapID);
+ApplicationManager *OverlayManager_New(const ApplicationManagerTemplate *template, void *args, const enum HeapId heapID);
 void OverlayManager_Free(ApplicationManager *appMan);
 void *OverlayManager_NewData(ApplicationManager *appMan, u32 size, enum HeapId heapID);
 void *OverlayManager_Data(ApplicationManager *appMan);

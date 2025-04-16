@@ -42,21 +42,21 @@ static void InitializeNewSave(enum HeapId heapID, SaveData *saveData, BOOL setTr
 static void TryLoadingSave(int unused, SaveData *saveData);
 static void StartNewSave(int unused, SaveData *saveData);
 
-const OverlayManagerTemplate gGameStartRowanIntroOverlayTemplate = {
+const ApplicationManagerTemplate gGameStartRowanIntroOverlayTemplate = {
     .init = GameStartRowanIntro_Init,
     .main = GameStartRowanIntro_Main,
     .exit = GameStartRowanIntro_Exit,
     .overlayID = FS_OVERLAY_ID_NONE,
 };
 
-const OverlayManagerTemplate gGameStartNewSaveOverlayTemplate = {
+const ApplicationManagerTemplate gGameStartNewSaveOverlayTemplate = {
     .init = GameStartNewSave_Init,
     .main = GameStartNewSave_Main,
     .exit = GameStartNewSave_Exit,
     .overlayID = FS_OVERLAY_ID_NONE,
 };
 
-const OverlayManagerTemplate gGameStartLoadSaveOverlayTemplate = {
+const ApplicationManagerTemplate gGameStartLoadSaveOverlayTemplate = {
     .init = GameStartLoadSave_Init,
     .main = GameStartLoadSave_Main,
     .exit = GameStartLoadSave_Exit,

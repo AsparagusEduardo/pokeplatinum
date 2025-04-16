@@ -2199,7 +2199,7 @@ static int GBAMigrator_Exit(ApplicationManager *appMan, int *state)
     return 1;
 }
 
-const OverlayManagerTemplate gGBAMigratorOverlayTemplate = {
+const ApplicationManagerTemplate gGBAMigratorOverlayTemplate = {
     GBAMigrator_Init,
     GBAMigrator_Main,
     GBAMigrator_Exit,

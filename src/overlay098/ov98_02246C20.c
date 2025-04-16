@@ -59,21 +59,21 @@ static void ov98_02247134(UnkStruct_ov98_02246E88 *param0);
 
 static NNSFndHeapHandle Unk_ov98_02249E20;
 
-const OverlayManagerTemplate Unk_ov98_02249BAC = {
+const ApplicationManagerTemplate Unk_ov98_02249BAC = {
     ov98_02246C20,
     ov98_02246C98,
     ov98_02246DC0,
     0xFFFFFFFF
 };
 
-static const OverlayManagerTemplate Unk_ov98_02249B3C = {
+static const ApplicationManagerTemplate Unk_ov98_02249B3C = {
     ov98_022471C8,
     ov98_022473D8,
     ov98_02247440,
     0xFFFFFFFF
 };
 
-static const OverlayManagerTemplate Unk_ov98_02249B2C = {
+static const ApplicationManagerTemplate Unk_ov98_02249B2C = {
     ov65_0222E2A8,
     ov65_0222E3FC,
     ov65_0222E548,
@@ -83,7 +83,7 @@ static const OverlayManagerTemplate Unk_ov98_02249B2C = {
 static const struct {
     UnkFuncPtr_ov98_02249B4C unk_00;
     UnkFuncPtr_ov98_02249B4C_1 unk_04;
-    const OverlayManagerTemplate *unk_08;
+    const ApplicationManagerTemplate *unk_08;
     int unk_0C;
 } Unk_ov98_02249B4C[] = {
     { ov98_02246FBC, ov98_02246FC0, &Unk_ov98_02249B3C, 0x0 },

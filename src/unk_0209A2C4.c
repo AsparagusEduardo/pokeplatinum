@@ -46,7 +46,7 @@ static void sub_0209A530(UnkStruct_0209A3D0 *param0);
 static BOOL sub_0209A544(UnkStruct_0209A3D0 *param0);
 static BOOL sub_0209A688(UnkStruct_0209A3D0 *param0, u32 param1, int param2, int param3);
 
-extern const OverlayManagerTemplate Unk_ov97_0223D674;
+extern const ApplicationManagerTemplate Unk_ov97_0223D674;
 
 static const WindowTemplate Unk_020F8A58 = {
     0x0,
@@ -58,7 +58,7 @@ static const WindowTemplate Unk_020F8A58 = {
     0x16D
 };
 
-const OverlayManagerTemplate Unk_020F8AB4 = {
+const ApplicationManagerTemplate Unk_020F8AB4 = {
     sub_0209A2C4,
     sub_0209A300,
     sub_0209A3A4,
