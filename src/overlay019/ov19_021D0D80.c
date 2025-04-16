@@ -149,7 +149,7 @@ typedef struct UnkStruct_ov19_021D5DF8_t {
     BOOL unk_204;
     BOOL unk_208;
     int unk_20C;
-    ApplicationManager *overlayManager;
+    ApplicationManager *appMan;
     void *unk_214;
     u32 unk_218;
 } UnkStruct_ov19_021D5DF8;
@@ -2345,15 +2345,15 @@ static void ov19_021D3B34(UnkStruct_ov19_021D5DF8 *param0, u32 *param1)
             ov19_021D64A0(param0->unk_114);
             Heap_Destroy(HEAP_ID_10);
             PCBoxes_BufferBoxName(param0->pcBoxes, PCBoxes_GetCurrentBoxID(param0->pcBoxes), param0->unk_128->unk_18);
-            param0->overlayManager = OverlayManager_New(&Unk_020F2DAC, param0->unk_128, HEAP_ID_9);
+            param0->appMan = OverlayManager_New(&Unk_020F2DAC, param0->unk_128, HEAP_ID_9);
             (*param1)++;
         }
         break;
     case 2:
-        if (OverlayManager_Exec(param0->overlayManager)) {
+        if (OverlayManager_Exec(param0->appMan)) {
             u32 boxID = PCBoxes_GetCurrentBoxID(param0->pcBoxes);
 
-            OverlayManager_Free(param0->overlayManager);
+            OverlayManager_Free(param0->appMan);
             Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_10, 245760);
             PCBoxes_RenameBox(param0->pcBoxes, boxID, param0->unk_128->unk_18);
 
@@ -2377,15 +2377,15 @@ static void ov19_021D3C28(UnkStruct_ov19_021D5DF8 *param0, u32 *param1)
             ov19_021D64A0(param0->unk_114);
             Heap_Destroy(HEAP_ID_10);
             ov19_021D1C84(param0);
-            param0->overlayManager = OverlayManager_New(&gPokemonSummaryScreenApp, &(param0->monSummary), HEAP_ID_9);
+            param0->appMan = OverlayManager_New(&gPokemonSummaryScreenApp, &(param0->monSummary), HEAP_ID_9);
             (*param1)++;
         }
         break;
     case 2:
-        if (OverlayManager_Exec(param0->overlayManager)) {
+        if (OverlayManager_Exec(param0->appMan)) {
             u32 v0 = PCBoxes_GetCurrentBoxID(param0->pcBoxes);
 
-            OverlayManager_Free(param0->overlayManager);
+            OverlayManager_Free(param0->appMan);
             Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_10, 245760);
 
             if (ov19_GetPreviewMonSource(&param0->unk_00) == PREVIEW_MON_UNDER_CURSOR) {
@@ -2449,15 +2449,15 @@ static void ov19_021D3D44(UnkStruct_ov19_021D5DF8 *param0, u32 *param1)
             param0->unk_214 = sub_0207D824(bag, bagPockets, HEAP_ID_9);
             sub_0207CB2C(param0->unk_214, param0->saveData, 1, NULL);
             Overlay_LoadByID(FS_OVERLAY_ID(overlay84), 2);
-            param0->overlayManager = OverlayManager_New(&Unk_ov84_02241130, param0->unk_214, HEAP_ID_9);
+            param0->appMan = OverlayManager_New(&Unk_ov84_02241130, param0->unk_214, HEAP_ID_9);
             (*param1)++;
         }
         break;
     case 2:
-        if (OverlayManager_Exec(param0->overlayManager)) {
+        if (OverlayManager_Exec(param0->appMan)) {
             item = sub_0207CB94((UnkStruct_0207CB08 *)(param0->unk_214));
 
-            OverlayManager_Free(param0->overlayManager);
+            OverlayManager_Free(param0->appMan);
             Heap_FreeToHeap(param0->unk_214);
             Overlay_UnloadByID(FS_OVERLAY_ID(overlay84));
 
