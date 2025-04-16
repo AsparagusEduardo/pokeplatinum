@@ -31,9 +31,9 @@
 
 static void sub_0208945C(BgConfig *param0);
 static void sub_020895CC(void *param0);
-static int sub_020890F4(OverlayManager *param0, int *param1);
-static int sub_0208924C(OverlayManager *param0, int *param1);
-static int sub_0208927C(OverlayManager *param0, int *param1);
+static int sub_020890F4(ApplicationManager *param0, int *param1);
+static int sub_0208924C(ApplicationManager *param0, int *param1);
+static int sub_0208927C(ApplicationManager *param0, int *param1);
 
 const OverlayManagerTemplate Unk_020F2DBC = {
     sub_020890F4,
@@ -42,7 +42,7 @@ const OverlayManagerTemplate Unk_020F2DBC = {
     0xffffffff,
 };
 
-static int sub_020890F4(OverlayManager *param0, int *param1)
+static int sub_020890F4(ApplicationManager *param0, int *param1)
 {
     UnkStruct_02089688 *v0;
 
@@ -92,7 +92,7 @@ static int sub_020890F4(OverlayManager *param0, int *param1)
     return 1;
 }
 
-static int sub_0208924C(OverlayManager *param0, int *param1)
+static int sub_0208924C(ApplicationManager *param0, int *param1)
 {
     BOOL v0;
     UnkStruct_02089688 *v1 = OverlayManager_Data(param0);
@@ -105,7 +105,7 @@ static int sub_0208924C(OverlayManager *param0, int *param1)
     return v0 ? 1 : 0;
 }
 
-static int sub_0208927C(OverlayManager *param0, int *param1)
+static int sub_0208927C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_02089688 *v0 = OverlayManager_Data(param0);
 

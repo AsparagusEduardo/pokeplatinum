@@ -1815,7 +1815,7 @@ static BOOL ov97_02235590(GBAMigrator *migrator, int param1)
     return FALSE;
 }
 
-static int GBAMigrator_Init(OverlayManager *param0, int *state)
+static int GBAMigrator_Init(ApplicationManager *param0, int *state)
 {
     GBAMigrator *migrator;
 
@@ -1851,7 +1851,7 @@ static int GBAMigrator_Init(OverlayManager *param0, int *state)
 
 extern int gIgnoreCartridgeForWake;
 
-static int GBAMigrator_Main(OverlayManager *ovyManager, int *state)
+static int GBAMigrator_Main(ApplicationManager *ovyManager, int *state)
 {
     int boxPos, gbaMonValidity, v2;
     GBAMigrator *migrator = OverlayManager_Data(ovyManager);
@@ -2181,7 +2181,7 @@ static int GBAMigrator_Main(OverlayManager *ovyManager, int *state)
     return 0;
 }
 
-static int GBAMigrator_Exit(OverlayManager *ovyManager, int *state)
+static int GBAMigrator_Exit(ApplicationManager *ovyManager, int *state)
 {
     FS_EXTERN_OVERLAY(overlay77);
 

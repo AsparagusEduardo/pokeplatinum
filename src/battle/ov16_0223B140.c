@@ -104,18 +104,18 @@ void ov16_0223B430(BattleSystem *battleSys);
 void ov16_0223B53C(BattleSystem *battleSys);
 void ov16_0223B578(BattleSystem *battleSys);
 void BattleSystem_LoadFightOverlay(BattleSystem *battleSys, int flags);
-static void ov16_0223B790(OverlayManager *param0);
-static int ov16_0223BBD0(OverlayManager *param0);
-static void ov16_0223BCB4(OverlayManager *param0);
-static BOOL ov16_0223D800(OverlayManager *param0);
-static BOOL ov16_0223D944(OverlayManager *param0);
-static BOOL ov16_0223D98C(OverlayManager *param0);
-static BOOL ov16_0223DAD4(OverlayManager *param0);
-static BOOL ov16_0223DB1C(OverlayManager *param0);
-static BOOL ov16_0223DD10(OverlayManager *param0);
-static void ov16_0223D10C(OverlayManager *param0, FieldBattleDTO *param1);
-static BOOL ov16_0223D354(OverlayManager *param0);
-static void ov16_0223D7B4(OverlayManager *param0);
+static void ov16_0223B790(ApplicationManager *param0);
+static int ov16_0223BBD0(ApplicationManager *param0);
+static void ov16_0223BCB4(ApplicationManager *param0);
+static BOOL ov16_0223D800(ApplicationManager *param0);
+static BOOL ov16_0223D944(ApplicationManager *param0);
+static BOOL ov16_0223D98C(ApplicationManager *param0);
+static BOOL ov16_0223DAD4(ApplicationManager *param0);
+static BOOL ov16_0223DB1C(ApplicationManager *param0);
+static BOOL ov16_0223DD10(ApplicationManager *param0);
+static void ov16_0223D10C(ApplicationManager *param0, FieldBattleDTO *param1);
+static BOOL ov16_0223D354(ApplicationManager *param0);
+static void ov16_0223D7B4(ApplicationManager *param0);
 static void ov16_0223C004(BattleSystem *battleSys, BgConfig *param1);
 static void ov16_0223C210(BattleSystem *battleSys);
 static void ov16_0223C288(BgConfig *param0);
@@ -163,7 +163,7 @@ const SpriteResourceCapacities Unk_ov16_0226E2B0 = {
     0x8
 };
 
-BOOL Battle_Main(OverlayManager *param0, int *param1)
+BOOL Battle_Main(ApplicationManager *param0, int *param1)
 {
     FieldBattleDTO *v0 = OverlayManager_Args(param0);
 
@@ -514,7 +514,7 @@ static const int Unk_ov16_0226E44C[][3] = {
     { 0x7fff, 0x7fff, 0x7fff },
 };
 
-static void ov16_0223B790(OverlayManager *param0)
+static void ov16_0223B790(ApplicationManager *param0)
 {
     BattleSystem *battleSys = OverlayManager_Data(param0);
     FieldBattleDTO *v1 = OverlayManager_Args(param0);
@@ -654,7 +654,7 @@ static void ov16_0223B790(OverlayManager *param0)
     }
 }
 
-static int ov16_0223BBD0(OverlayManager *param0)
+static int ov16_0223BBD0(ApplicationManager *param0)
 {
     BattleSystem *battleSys = OverlayManager_Data(param0);
     int v1;
@@ -694,7 +694,7 @@ static int ov16_0223BBD0(OverlayManager *param0)
     return battleSys->unk_23FA;
 }
 
-static void ov16_0223BCB4(OverlayManager *param0)
+static void ov16_0223BCB4(ApplicationManager *param0)
 {
     BattleSystem *battleSystem = OverlayManager_Data(param0);
     FieldBattleDTO *v1 = OverlayManager_Args(param0);
@@ -1636,7 +1636,7 @@ static void NitroStaticInit(void)
     }
 }
 
-static void ov16_0223D10C(OverlayManager *param0, FieldBattleDTO *param1)
+static void ov16_0223D10C(ApplicationManager *param0, FieldBattleDTO *param1)
 {
     UnkStruct_0207A778 *v0 = OverlayManager_NewData(param0, sizeof(UnkStruct_0207A778), HEAP_ID_BATTLE);
 
@@ -1750,7 +1750,7 @@ static void ov16_0223D10C(OverlayManager *param0, FieldBattleDTO *param1)
     ov16_0223DECC();
 }
 
-static BOOL ov16_0223D354(OverlayManager *param0)
+static BOOL ov16_0223D354(ApplicationManager *param0)
 {
     UnkStruct_0207A778 *v0 = OverlayManager_Data(param0);
     BOOL v1;
@@ -1977,7 +1977,7 @@ static BOOL ov16_0223D354(OverlayManager *param0)
     return v1;
 }
 
-static void ov16_0223D7B4(OverlayManager *param0)
+static void ov16_0223D7B4(ApplicationManager *param0)
 {
     UnkStruct_0207A778 *v0 = OverlayManager_Data(param0);
 
@@ -1992,7 +1992,7 @@ static void ov16_0223D7B4(OverlayManager *param0)
     Heap_FreeToHeap(v0);
 }
 
-static BOOL ov16_0223D800(OverlayManager *param0)
+static BOOL ov16_0223D800(ApplicationManager *param0)
 {
     BattleSystem *battleSys = OverlayManager_NewData(param0, sizeof(BattleSystem), HEAP_ID_BATTLE);
     FieldBattleDTO *v1 = OverlayManager_Args(param0);
@@ -2048,7 +2048,7 @@ static BOOL ov16_0223D800(OverlayManager *param0)
     return 1;
 }
 
-static BOOL ov16_0223D944(OverlayManager *param0)
+static BOOL ov16_0223D944(ApplicationManager *param0)
 {
     int v0;
     BattleSystem *v1 = OverlayManager_Data(param0);
@@ -2067,7 +2067,7 @@ static BOOL ov16_0223D944(OverlayManager *param0)
     return 0;
 }
 
-static BOOL ov16_0223D98C(OverlayManager *param0)
+static BOOL ov16_0223D98C(ApplicationManager *param0)
 {
     BattleSystem *battleSys = OverlayManager_Data(param0);
     FieldBattleDTO *v1 = OverlayManager_Args(param0);
@@ -2108,7 +2108,7 @@ static BOOL ov16_0223D98C(OverlayManager *param0)
     return 1;
 }
 
-static BOOL ov16_0223DAD4(OverlayManager *param0)
+static BOOL ov16_0223DAD4(ApplicationManager *param0)
 {
     int v0;
     BattleSystem *v1 = OverlayManager_Data(param0);
@@ -2127,7 +2127,7 @@ static BOOL ov16_0223DAD4(OverlayManager *param0)
     return 0;
 }
 
-static BOOL ov16_0223DB1C(OverlayManager *param0)
+static BOOL ov16_0223DB1C(ApplicationManager *param0)
 {
     FieldBattleDTO *v0 = OverlayManager_Args(param0);
     UnkStruct_ov10_0221F800 *v1;
@@ -2211,7 +2211,7 @@ static BOOL ov16_0223DB1C(OverlayManager *param0)
     return 1;
 }
 
-static BOOL ov16_0223DD10(OverlayManager *param0)
+static BOOL ov16_0223DD10(ApplicationManager *param0)
 {
     int v0;
     FieldBattleDTO *v1 = OverlayManager_Args(param0);

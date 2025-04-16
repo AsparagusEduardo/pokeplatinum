@@ -54,7 +54,7 @@
 
 static void ov94_0223BFE4(void *param0);
 static void ov94_0223C01C(void);
-static void ov94_0223C03C(UnkStruct_ov94_0223FD4C *param0, OverlayManager *param1);
+static void ov94_0223C03C(UnkStruct_ov94_0223FD4C *param0, ApplicationManager *param1);
 static void ov94_0223C0A0(UnkStruct_ov94_0223FD4C *param0);
 static void ov94_0223C0A4(void);
 static void ov94_0223C0D4(UnkStruct_ov94_0223FD4C *param0);
@@ -83,7 +83,7 @@ static int (*Unk_ov94_0224674C[][3])(UnkStruct_ov94_0223FD4C *, int) = {
 
 UnkStruct_ov94_0223FD4C *Unk_ov94_02246C08;
 
-int ov94_0223BCB0(OverlayManager *param0, int *param1)
+int ov94_0223BCB0(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov94_0223FD4C *v0;
 
@@ -145,7 +145,7 @@ int ov94_0223BCB0(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov94_0223BE2C(OverlayManager *param0, int *param1)
+int ov94_0223BE2C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov94_0223FD4C *v0 = OverlayManager_Data(param0);
 
@@ -202,7 +202,7 @@ int ov94_0223BE2C(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov94_0223BF54(OverlayManager *param0, int *param1)
+int ov94_0223BF54(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov94_0223FD4C *v0 = OverlayManager_Data(param0);
     int v1;
@@ -267,7 +267,7 @@ static void ov94_0223C01C(void)
     GXLayers_SetBanks(&v0);
 }
 
-static void ov94_0223C03C(UnkStruct_ov94_0223FD4C *param0, OverlayManager *param1)
+static void ov94_0223C03C(UnkStruct_ov94_0223FD4C *param0, ApplicationManager *param1)
 {
     param0->unk_00 = (UnkStruct_0203E0FC *)OverlayManager_Args(param1);
     param0->unk_14 = 0;

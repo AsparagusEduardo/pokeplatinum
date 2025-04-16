@@ -80,7 +80,7 @@ static UnkStruct_ov93_021D15C8 Unk_ov93_021D15C8[4] = {
     },
 };
 
-int ov93_021D111C(OverlayManager *param0, int *param1)
+int ov93_021D111C(ApplicationManager *param0, int *param1)
 {
     u8 v0;
     UnkStruct_ov93_021D13C0 *v1;
@@ -120,7 +120,7 @@ int ov93_021D111C(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov93_021D120C(OverlayManager *param0, int *param1)
+int ov93_021D120C(ApplicationManager *param0, int *param1)
 {
     u8 v0;
     BOOL v1;
@@ -179,7 +179,7 @@ int ov93_021D120C(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov93_021D12F0(OverlayManager *param0, int *param1)
+int ov93_021D12F0(ApplicationManager *param0, int *param1)
 {
     u8 v0;
     UnkStruct_ov93_021D13C0 *v1 = OverlayManager_Data(param0);

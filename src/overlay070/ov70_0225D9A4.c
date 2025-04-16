@@ -584,7 +584,7 @@ static const ListMenuTemplate Unk_ov70_0226D644 = {
     NULL,
 };
 
-int ov70_0225D9A4(OverlayManager *param0, int *param1)
+int ov70_0225D9A4(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov70_0225DEE8 *v0;
     UnkStruct_ov66_02230E68 *v1 = OverlayManager_Args(param0);
@@ -652,7 +652,7 @@ int ov70_0225D9A4(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov70_0225DB90(OverlayManager *param0, int *param1)
+int ov70_0225DB90(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov70_0225DEE8 *v0;
     UnkStruct_ov66_02230E68 *v1;
@@ -772,7 +772,7 @@ int ov70_0225DB90(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov70_0225DDF8(OverlayManager *param0, int *param1)
+int ov70_0225DDF8(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov70_0225DEE8 *v0;
     UnkStruct_ov66_02230E68 *v1;

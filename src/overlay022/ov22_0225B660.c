@@ -55,7 +55,7 @@ static void ov22_0225BAD0(UnkStruct_ov22_0225B85C *param0);
 static void ov22_0225BB00(UnkStruct_ov22_0225B85C *param0);
 static void ov22_0225BC18(UnkStruct_ov22_0225B85C *param0);
 
-int ov22_0225B660(OverlayManager *param0, int *param1)
+int ov22_0225B660(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov22_0225B85C *v0;
     UnkStruct_02041DC8 *v1;
@@ -109,7 +109,7 @@ int ov22_0225B660(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov22_0225B738(OverlayManager *param0, int *param1)
+int ov22_0225B738(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov22_0225B85C *v0 = OverlayManager_Data(param0);
 
@@ -154,7 +154,7 @@ int ov22_0225B738(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov22_0225B7FC(OverlayManager *param0, int *param1)
+int ov22_0225B7FC(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov22_0225B85C *v0 = OverlayManager_Data(param0);
 

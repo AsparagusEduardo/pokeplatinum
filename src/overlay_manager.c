@@ -6,9 +6,9 @@
 #include "game_overlay.h"
 #include "heap.h"
 
-OverlayManager *OverlayManager_New(const OverlayManagerTemplate *template, void *args, const enum HeapId heapID)
+ApplicationManager *OverlayManager_New(const OverlayManagerTemplate *template, void *args, const enum HeapId heapID)
 {
-    OverlayManager *ovyManager = Heap_AllocFromHeap(heapID, sizeof(OverlayManager));
+    ApplicationManager *ovyManager = Heap_AllocFromHeap(heapID, sizeof(ApplicationManager));
 
     ovyManager->template = *template;
     ovyManager->execState = 0;
@@ -21,29 +21,29 @@ OverlayManager *OverlayManager_New(const OverlayManagerTemplate *template, void 
     return ovyManager;
 }
 
-void OverlayManager_Free(OverlayManager *ovyManager)
+void OverlayManager_Free(ApplicationManager *ovyManager)
 {
     Heap_FreeToHeap(ovyManager);
 }
 
-void *OverlayManager_NewData(OverlayManager *ovyManager, u32 size, enum HeapId heapID)
+void *OverlayManager_NewData(ApplicationManager *ovyManager, u32 size, enum HeapId heapID)
 {
     ovyManager->data = Heap_AllocFromHeap(heapID, size);
     return ovyManager->data;
 }
 
-void *OverlayManager_Data(OverlayManager *ovyManager)
+void *OverlayManager_Data(ApplicationManager *ovyManager)
 {
     return ovyManager->data;
 }
 
-void OverlayManager_FreeData(OverlayManager *ovyManager)
+void OverlayManager_FreeData(ApplicationManager *ovyManager)
 {
     Heap_FreeToHeap(ovyManager->data);
     ovyManager->data = NULL;
 }
 
-void *OverlayManager_Args(OverlayManager *ovyManager)
+void *OverlayManager_Args(ApplicationManager *ovyManager)
 {
     return ovyManager->args;
 }
@@ -55,7 +55,7 @@ enum OverlayExecState {
     OVERLAY_EXEC_EXIT,
 };
 
-BOOL OverlayManager_Exec(OverlayManager *ovyManager)
+BOOL OverlayManager_Exec(ApplicationManager *ovyManager)
 {
     switch (ovyManager->execState) {
     case OVERLAY_EXEC_LOAD:

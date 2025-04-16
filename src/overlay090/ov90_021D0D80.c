@@ -115,7 +115,7 @@ static void ov90_021D1C28(UnkStruct_ov90_021D0ECC *param0);
 static void ov90_021D1C44(UnkStruct_ov90_021D0ECC *param0, BOOL param1);
 static void ov90_021D1C90(UnkStruct_ov90_021D0ECC *param0, u8 param1, u8 param2, u8 param3);
 
-int ov90_021D0D80(OverlayManager *param0, int *param1)
+int ov90_021D0D80(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov90_021D0ECC *v0 = NULL;
     UnkStruct_ov90_021D0D80 *v1 = (UnkStruct_ov90_021D0D80 *)OverlayManager_Args(param0);
@@ -137,7 +137,7 @@ int ov90_021D0D80(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov90_021D0DE8(OverlayManager *param0, int *param1)
+int ov90_021D0DE8(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov90_021D0ECC *v0 = OverlayManager_Data(param0);
 
@@ -147,7 +147,7 @@ int ov90_021D0DE8(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov90_021D0E04(OverlayManager *param0, int *param1)
+int ov90_021D0E04(ApplicationManager *param0, int *param1)
 {
     int v0 = 0;
     UnkStruct_ov90_021D0ECC *v1 = OverlayManager_Data(param0);

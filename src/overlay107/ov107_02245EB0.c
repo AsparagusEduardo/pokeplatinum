@@ -65,7 +65,7 @@
 FS_EXTERN_OVERLAY(overlay104);
 
 struct UnkStruct_ov107_02246170_t {
-    OverlayManager * unk_00;
+    ApplicationManager * unk_00;
     BattleFrontier * unk_04;
     u8 unk_08;
     u8 unk_09;
@@ -134,9 +134,9 @@ struct UnkStruct_ov107_02246170_t {
     u32 unk_43C;
 };
 
-int ov107_02245EB0(OverlayManager * param0, int * param1);
-int ov107_02245FD0(OverlayManager * param0, int * param1);
-int ov107_02246130(OverlayManager * param0, int * param1);
+int ov107_02245EB0(ApplicationManager * param0, int * param1);
+int ov107_02245FD0(ApplicationManager * param0, int * param1);
+int ov107_02246130(ApplicationManager * param0, int * param1);
 static BOOL ov107_02246170(UnkStruct_ov107_02246170 * param0);
 static void ov107_02246274(UnkStruct_ov107_02246170 * param0);
 static BOOL ov107_022462CC(UnkStruct_ov107_02246170 * param0);
@@ -235,7 +235,7 @@ static void ov107_022495A8(UnkStruct_ov107_02246170 * param0, u8 param1);
 static void ov107_022495E4(UnkStruct_ov107_02246170 * param0, u32 * param1, u32 * param2);
 extern void ov107_2247650(void);
 
-int ov107_02245EB0 (OverlayManager * param0, int * param1)
+int ov107_02245EB0 (ApplicationManager * param0, int * param1)
 {
     int v0;
     UnkStruct_ov107_02246170 * v1;
@@ -293,7 +293,7 @@ int ov107_02245EB0 (OverlayManager * param0, int * param1)
     return 1;
 }
 
-int ov107_02245FD0 (OverlayManager * param0, int * param1)
+int ov107_02245FD0 (ApplicationManager * param0, int * param1)
 {
     UnkStruct_ov107_02246170 * v0 = OverlayManager_Data(param0);
 
@@ -369,7 +369,7 @@ int ov107_02245FD0 (OverlayManager * param0, int * param1)
     return 0;
 }
 
-int ov107_02246130 (OverlayManager * param0, int * param1)
+int ov107_02246130 (ApplicationManager * param0, int * param1)
 {
     int v0;
     UnkStruct_ov107_02246170 * v1 = OverlayManager_Data(param0);

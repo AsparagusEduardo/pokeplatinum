@@ -59,8 +59,8 @@
 FS_EXTERN_OVERLAY(overlay104);
 
 struct UnkStruct_ov106_02243118_t {
-    OverlayManager *unk_00;
-    OverlayManager *unk_04;
+    ApplicationManager *unk_00;
+    ApplicationManager *unk_04;
     u8 unk_08;
     u8 unk_09;
     u8 unk_0A;
@@ -113,9 +113,9 @@ struct UnkStruct_ov106_02243118_t {
     u32 unk_2FC;
 };
 
-int ov106_02241AE0(OverlayManager *param0, int *param1);
-int ov106_02241B9C(OverlayManager *param0, int *param1);
-int ov106_02241CF0(OverlayManager *param0, int *param1);
+int ov106_02241AE0(ApplicationManager *param0, int *param1);
+int ov106_02241B9C(ApplicationManager *param0, int *param1);
+int ov106_02241CF0(ApplicationManager *param0, int *param1);
 static BOOL ov106_02241D28(UnkStruct_ov106_02243118 *param0);
 static BOOL ov106_02241E14(UnkStruct_ov106_02243118 *param0);
 static void ov106_02241DD4(UnkStruct_ov106_02243118 *param0);
@@ -181,7 +181,7 @@ static const u8 Unk_ov106_02243798[] = {
     0x8
 };
 
-int ov106_02241AE0(OverlayManager *param0, int *param1)
+int ov106_02241AE0(ApplicationManager *param0, int *param1)
 {
     int v0;
     UnkStruct_ov106_02243118 *v1;
@@ -223,7 +223,7 @@ int ov106_02241AE0(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov106_02241B9C(OverlayManager *param0, int *param1)
+int ov106_02241B9C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov106_02243118 *v0 = OverlayManager_Data(param0);
 
@@ -303,7 +303,7 @@ int ov106_02241B9C(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov106_02241CF0(OverlayManager *param0, int *param1)
+int ov106_02241CF0(ApplicationManager *param0, int *param1)
 {
     int v0;
     UnkStruct_ov106_02243118 *v1 = OverlayManager_Data(param0);

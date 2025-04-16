@@ -124,9 +124,9 @@ typedef struct {
 
 BOOL ov92_021D27E8(int param0, int param1, Strbuf *param2, Strbuf *param3, int param4);
 BOOL ov92_021D2854(int param0);
-int ov92_021D0D80(OverlayManager *param0, int *param1);
-int ov92_021D0EB8(OverlayManager *param0, int *param1);
-int ov92_021D1478(OverlayManager *param0, int *param1);
+int ov92_021D0D80(ApplicationManager *param0, int *param1);
+int ov92_021D0EB8(ApplicationManager *param0, int *param1);
+int ov92_021D1478(ApplicationManager *param0, int *param1);
 static void ov92_021D14F0(void);
 static void ov92_021D1510(void);
 static void ov92_021D1888(UnkStruct_ov92_021D1B24 *param0, NARC *param1);
@@ -299,7 +299,7 @@ static const ListMenuTemplate Unk_ov92_021D29C8 = {
     0x0
 };
 
-int ov92_021D0D80(OverlayManager *param0, int *param1)
+int ov92_021D0D80(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov92_021D1B24 *v0;
     int heapID = HEAP_ID_50;
@@ -360,7 +360,7 @@ int ov92_021D0D80(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov92_021D0EB8(OverlayManager *param0, int *param1)
+int ov92_021D0EB8(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov92_021D1B24 *v0 = OverlayManager_Data(param0);
     int v1 = 0;
@@ -667,7 +667,7 @@ int ov92_021D0EB8(OverlayManager *param0, int *param1)
     return v1;
 }
 
-int ov92_021D1478(OverlayManager *param0, int *param1)
+int ov92_021D1478(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov92_021D1B24 *v0 = OverlayManager_Data(param0);
     int heapID = v0->heapID;

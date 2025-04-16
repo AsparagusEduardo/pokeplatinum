@@ -26,9 +26,9 @@ static int ov82_0223B380(UnkStruct_ov83_0223C344 *param0);
 static int ov82_0223B3DC(UnkStruct_ov83_0223C344 *param0);
 static int ov82_0223B470(UnkStruct_ov83_0223C344 *param0);
 static int ov82_0223B510(UnkStruct_ov83_0223C344 *param0);
-int ov83_0223B5B0(OverlayManager *param0, int *param1);
-int ov83_0223B65C(OverlayManager *param0, int *param1);
-int ov83_0223B710(OverlayManager *param0, int *param1);
+int ov83_0223B5B0(ApplicationManager *param0, int *param1);
+int ov83_0223B65C(ApplicationManager *param0, int *param1);
+int ov83_0223B710(ApplicationManager *param0, int *param1);
 
 int ov82_0223B2E0(UnkStruct_ov83_0223C344 *param0, int *param1)
 {

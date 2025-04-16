@@ -141,22 +141,22 @@ typedef struct {
     u8 : 3;
 } UnkStruct_020F2A14;
 
-static int sub_0208694C(OverlayManager *param0, int *param1);
-static int sub_02086B64(OverlayManager *param0, int *param1);
-static int sub_02086F3C(OverlayManager *param0, int *param1);
+static int sub_0208694C(ApplicationManager *param0, int *param1);
+static int sub_02086B64(ApplicationManager *param0, int *param1);
+static int sub_02086F3C(ApplicationManager *param0, int *param1);
 static void sub_02087190(void *param0);
 static void sub_020871CC(void);
 static void sub_020871EC(BgConfig *param0);
 static void sub_0208765C(BgConfig *param0, Window *param1);
 static void sub_0208769C(UnkStruct_02087A10 *param0, NARC *param1);
 static void sub_02087D64(BgConfig *param0, Window *param1, int *param2, int param3, int *param4, VecFx32 param5[], Sprite **param6, void *param7);
-static void sub_0208737C(UnkStruct_02087A10 *param0, OverlayManager *param1);
+static void sub_0208737C(UnkStruct_02087A10 *param0, ApplicationManager *param1);
 static void sub_02088240(BgConfig *param0, int param1, VecFx32 param2[]);
 static void sub_02088260(VecFx32 param0[], int param1);
 static void sub_020877F4(UnkStruct_02087A10 *param0, NARC *param1);
 static void sub_02087A10(UnkStruct_02087A10 *param0);
 static void sub_020877C4(void);
-static void sub_02087FC0(UnkStruct_02087A10 *param0, OverlayManager *param1, NARC *param2);
+static void sub_02087FC0(UnkStruct_02087A10 *param0, ApplicationManager *param1, NARC *param2);
 static void sub_02088350(UnkStruct_02087A10 *param0);
 static void sub_02088514(u16 *param0);
 static void sub_02088554(Window *param0, const u16 *param1, int param2, int param3, int param4, int param5, TextColor param6, u8 *param7);
@@ -175,7 +175,7 @@ static void sub_020879DC(SysTask *param0, void *param1);
 static void sub_02087CDC(SysTask *param0, void *param1);
 static void sub_02086B30(NNSG2dCharacterData *param0, NNSG2dPaletteData *param1, int param2, int param3);
 static void sub_0208732C(int param0);
-static void sub_02087544(UnkStruct_02087A10 *param0, OverlayManager *param1);
+static void sub_02087544(UnkStruct_02087A10 *param0, ApplicationManager *param1);
 static void sub_02087BE4(UnkStruct_02087A10 *param0, AffineSpriteListTemplate *param1);
 static void sub_02086E6C(UnkStruct_02087A10 *param0, UnkStruct_0208737C *param1);
 static void sub_02087F48(Window *param0, int param1, Strbuf *param2);
@@ -868,7 +868,7 @@ const OverlayManagerTemplate Unk_020F2DAC = {
 
 static UnkStruct_02087A10 *Unk_021C0A30;
 
-static int sub_0208694C(OverlayManager *param0, int *param1)
+static int sub_0208694C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_02087A10 *v0;
     NARC *v1;
@@ -948,7 +948,7 @@ static void sub_02086B30(NNSG2dCharacterData *param0, NNSG2dPaletteData *param1,
     GX_LoadOBJPltt((void *)(v0 + PokeIconPaletteIndex(param2, param3, 0) * 0x20), 6 * 0x20, 0x20);
 }
 
-static int sub_02086B64(OverlayManager *param0, int *param1)
+static int sub_02086B64(ApplicationManager *param0, int *param1)
 {
     UnkStruct_02087A10 *v0 = OverlayManager_Data(param0);
 
@@ -1108,7 +1108,7 @@ static int sub_02086F14(u16 *param0)
     return v0;
 }
 
-static int sub_02086F3C(OverlayManager *param0, int *param1)
+static int sub_02086F3C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_02087A10 *v0 = OverlayManager_Data(param0);
     UnkStruct_0208737C *v1 = (UnkStruct_0208737C *)OverlayManager_Args(param0);
@@ -1373,7 +1373,7 @@ static void sub_0208732C(int param0)
     GXLayers_EngineBToggleLayers(GX_BLEND_PLANEMASK_OBJ, 0);
 }
 
-static void sub_0208737C(UnkStruct_02087A10 *param0, OverlayManager *param1)
+static void sub_0208737C(UnkStruct_02087A10 *param0, ApplicationManager *param1)
 {
     UnkStruct_0208737C *v0 = (UnkStruct_0208737C *)OverlayManager_Args(param1);
 
@@ -1439,7 +1439,7 @@ static void sub_0208737C(UnkStruct_02087A10 *param0, OverlayManager *param1)
     }
 }
 
-static void sub_02087544(UnkStruct_02087A10 *param0, OverlayManager *param1)
+static void sub_02087544(UnkStruct_02087A10 *param0, ApplicationManager *param1)
 {
     Strbuf *v0 = NULL;
     UnkStruct_0208737C *v1 = (UnkStruct_0208737C *)OverlayManager_Args(param1);
@@ -1819,7 +1819,7 @@ static void sub_02087F78(Window *param0, int param1, Strbuf *param2)
     Window_CopyToVRAM(param0);
 }
 
-static void sub_02087FC0(UnkStruct_02087A10 *param0, OverlayManager *param1, NARC *param2)
+static void sub_02087FC0(UnkStruct_02087A10 *param0, ApplicationManager *param1, NARC *param2)
 {
     Window_Add(param0->unk_160, &param0->unk_41C[0], 0, 2, 1, 26, 12, 1, (32 * 8));
     Window_Add(param0->unk_160, &param0->unk_41C[1], 1, 2, 1, 26, 12, 1, ((32 * 8) + (26 * 12)));

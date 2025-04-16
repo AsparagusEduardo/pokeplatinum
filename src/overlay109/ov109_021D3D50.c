@@ -162,7 +162,7 @@ static int (*const Unk_ov109_021D5E9C[])(UnkStruct_ov109_021D5140 *, int) = {
     ov109_021D510C,
 };
 
-int ov109_021D3D50(OverlayManager *param0, int *param1)
+int ov109_021D3D50(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov109_021D5140 *v0;
     NARC *v1;
@@ -226,7 +226,7 @@ int ov109_021D3D50(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov109_021D3EB0(OverlayManager *param0, int *param1)
+int ov109_021D3EB0(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov109_021D5140 *v0 = OverlayManager_Data(param0);
 
@@ -287,7 +287,7 @@ int ov109_021D3EB0(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov109_021D3F9C(OverlayManager *param0, int *param1)
+int ov109_021D3F9C(ApplicationManager *param0, int *param1)
 {
     int v0;
     UnkStruct_ov109_021D5140 *v1 = OverlayManager_Data(param0);

@@ -216,7 +216,7 @@ static const SpriteResourceCapacities Unk_ov17_02252FF0 = {
     0x8
 };
 
-int ov17_0223DAD0(OverlayManager *param0, int *param1)
+int ov17_0223DAD0(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov17_0224DF54 *v0;
 
@@ -330,7 +330,7 @@ int ov17_0223DAD0(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov17_0223DDD4(OverlayManager *param0, int *param1)
+int ov17_0223DDD4(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov17_0224DF54 *v0 = OverlayManager_Data(param0);
     int v1;
@@ -384,7 +384,7 @@ int ov17_0223DDD4(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov17_0223DF0C(OverlayManager *param0, int *param1)
+int ov17_0223DF0C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov17_0224DF54 *v0 = OverlayManager_Data(param0);
     int v1;

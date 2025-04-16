@@ -86,7 +86,7 @@ static void InitG3(void);
 static void ResetFrm(void);
 static void ov21_021D1EEC(PokedexApp *pokedexApp);
 
-int PokedexMain_Init(OverlayManager *overlayMan, int *state)
+int PokedexMain_Init(ApplicationManager *overlayMan, int *state)
 {
     PokedexOverlayArgs pokedexOverlayArgs;
 
@@ -128,7 +128,7 @@ int PokedexMain_Init(OverlayManager *overlayMan, int *state)
     return 1;
 }
 
-int PokedexMain_Main(OverlayManager *overlayMan, int *state)
+int PokedexMain_Main(ApplicationManager *overlayMan, int *state)
 {
     PokedexApp **appPtr = OverlayManager_Data(overlayMan);
 
@@ -162,7 +162,7 @@ int PokedexMain_Main(OverlayManager *overlayMan, int *state)
     return 0;
 }
 
-int PokedexMain_Exit(OverlayManager *overlayMan, int *state)
+int PokedexMain_Exit(ApplicationManager *overlayMan, int *state)
 {
     OverlayManager_Data(overlayMan);
 

@@ -30,7 +30,7 @@ FS_EXTERN_OVERLAY(overlay105);
 
 typedef struct UnkStruct_0209B75C_t {
     UnkStruct_ov104_02230BE4 *unk_00;
-    OverlayManager *unk_04;
+    ApplicationManager *unk_04;
     void *unk_08;
     UnkFuncPtr_0209B988 unk_0C;
     u8 unk_10;
@@ -47,9 +47,9 @@ typedef struct UnkStruct_0209B75C_t {
     UnkStruct_ov104_0223D3B0 unk_98C;
 } UnkStruct_0209B75C;
 
-int sub_0209B6F8(OverlayManager *param0, int *param1);
-int sub_0209B75C(OverlayManager *param0, int *param1);
-int sub_0209B8A4(OverlayManager *param0, int *param1);
+int sub_0209B6F8(ApplicationManager *param0, int *param1);
+int sub_0209B75C(ApplicationManager *param0, int *param1);
+int sub_0209B8A4(ApplicationManager *param0, int *param1);
 static void sub_0209B8C8(UnkStruct_0209B75C *param0);
 static void sub_0209B8D8(UnkStruct_0209B75C *param0);
 static void sub_0209B924(void);
@@ -63,7 +63,7 @@ const OverlayManagerTemplate Unk_020F8BE0 = {
     0xffffffff
 };
 
-int sub_0209B6F8(OverlayManager *param0, int *param1)
+int sub_0209B6F8(ApplicationManager *param0, int *param1)
 {
     UnkStruct_0209B75C *v0;
     int v1;
@@ -87,7 +87,7 @@ int sub_0209B6F8(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int sub_0209B75C(OverlayManager *param0, int *param1)
+int sub_0209B75C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_0209B75C *v0 = OverlayManager_Data(param0);
     int v1;
@@ -180,7 +180,7 @@ int sub_0209B75C(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int sub_0209B8A4(OverlayManager *param0, int *param1)
+int sub_0209B8A4(ApplicationManager *param0, int *param1)
 {
     UnkStruct_0209B75C *v0 = OverlayManager_Data(param0);
 

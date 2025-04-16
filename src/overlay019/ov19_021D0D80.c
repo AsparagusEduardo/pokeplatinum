@@ -149,7 +149,7 @@ typedef struct UnkStruct_ov19_021D5DF8_t {
     BOOL unk_204;
     BOOL unk_208;
     int unk_20C;
-    OverlayManager *overlayManager;
+    ApplicationManager *overlayManager;
     void *unk_214;
     u32 unk_218;
 } UnkStruct_ov19_021D5DF8;
@@ -272,7 +272,7 @@ static void ov19_ToggleCursorFastMode(UnkStruct_ov19_021D4DF0 *param0);
 static u32 ov19_GetPreviewedMonValue(UnkStruct_ov19_021D4DF0 *param0, enum PokemonDataParam value, void *dest);
 static u32 ov19_GetPreviewedOrSelectedMonValue(UnkStruct_ov19_021D4DF0 *param0, enum PokemonDataParam value, void *dest);
 
-int ov19_021D0D80(OverlayManager *param0, int *param1)
+int ov19_021D0D80(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov19_021D5DF8 *v0;
 
@@ -294,7 +294,7 @@ int ov19_021D0D80(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov19_021D0DEC(OverlayManager *param0, int *param1)
+int ov19_021D0DEC(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov19_021D5DF8 *v0 = OverlayManager_Data(param0);
 
@@ -319,7 +319,7 @@ int ov19_021D0DEC(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov19_021D0E58(OverlayManager *param0, int *param1)
+int ov19_021D0E58(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov19_021D5DF8 *v0 = OverlayManager_Data(param0);
 

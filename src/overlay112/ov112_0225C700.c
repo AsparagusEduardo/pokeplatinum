@@ -321,7 +321,7 @@ static u32 Unk_ov112_0225D968[4] = {
     0x5E3
 };
 
-int ov112_0225C700(OverlayManager *param0, int *param1)
+int ov112_0225C700(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov112_0225C970 *v0;
     UnkStruct_ov66_02230FA0 *v1 = OverlayManager_Args(param0);
@@ -346,7 +346,7 @@ int ov112_0225C700(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov112_0225C7C4(OverlayManager *param0, int *param1)
+int ov112_0225C7C4(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov112_0225C970 *v0;
     UnkStruct_ov66_02230FA0 *v1;
@@ -412,7 +412,7 @@ int ov112_0225C7C4(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov112_0225C8FC(OverlayManager *param0, int *param1)
+int ov112_0225C8FC(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov112_0225C970 *v0;
     UnkStruct_ov66_02230FA0 *v1;

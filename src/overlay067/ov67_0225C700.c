@@ -163,7 +163,7 @@ static const WindowTemplate Unk_ov67_0225D3EC = {
     0x204
 };
 
-int ov67_0225C700(OverlayManager *param0, int *param1)
+int ov67_0225C700(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov67_0225D154 *v0;
     UnkStruct_ov66_02231024 *v1;
@@ -191,7 +191,7 @@ int ov67_0225C700(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov67_0225C820(OverlayManager *param0, int *param1)
+int ov67_0225C820(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov67_0225D154 *v0;
     UnkStruct_ov66_02231024 *v1;
@@ -378,7 +378,7 @@ int ov67_0225C820(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov67_0225CB1C(OverlayManager *param0, int *param1)
+int ov67_0225CB1C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov67_0225D154 *v0 = OverlayManager_Data(param0);
 
@@ -401,7 +401,7 @@ int ov67_0225CB1C(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov67_0225CB8C(OverlayManager *param0, int *param1)
+int ov67_0225CB8C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov67_0225D154 *v0;
     UnkStruct_ov66_02231300 *v1;
@@ -427,7 +427,7 @@ int ov67_0225CB8C(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov67_0225CC6C(OverlayManager *param0, int *param1)
+int ov67_0225CC6C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov67_0225D154 *v0;
     UnkStruct_ov66_02231300 *v1;
@@ -513,7 +513,7 @@ int ov67_0225CC6C(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov67_0225CDC0(OverlayManager *param0, int *param1)
+int ov67_0225CDC0(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov67_0225D154 *v0 = OverlayManager_Data(param0);
 

@@ -16,7 +16,7 @@
 #include "unk_020363E8.h"
 #include "unk_020366A0.h"
 
-BOOL ov82_0223B140(OverlayManager **param0)
+BOOL ov82_0223B140(ApplicationManager **param0)
 {
     if (*param0) {
         if (OverlayManager_Exec(*param0)) {
@@ -29,7 +29,7 @@ BOOL ov82_0223B140(OverlayManager **param0)
     return 0;
 }
 
-int ov82_0223B164(OverlayManager *param0, int *param1)
+int ov82_0223B164(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov83_0223C344 *v0 = NULL;
     UnkStruct_ov82_0223B164 *v1 = (UnkStruct_ov82_0223B164 *)OverlayManager_Args(param0);
@@ -56,7 +56,7 @@ int ov82_0223B164(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov82_0223B1D4(OverlayManager *param0, int *param1)
+int ov82_0223B1D4(ApplicationManager *param0, int *param1)
 {
     int v0;
     UnkStruct_ov83_0223C344 *v1 = OverlayManager_Data(param0);
@@ -88,7 +88,7 @@ int ov82_0223B1D4(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov82_0223B24C(OverlayManager *param0, int *param1)
+int ov82_0223B24C(ApplicationManager *param0, int *param1)
 {
     int heapID = 0;
     UnkStruct_ov83_0223C344 *v1 = OverlayManager_Data(param0);

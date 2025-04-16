@@ -85,7 +85,7 @@ static void ov99_021D1270(UnkStruct_ov99_021D2CB0 *param0);
 static void ov99_021D1314(UnkStruct_ov99_021D2CB0 *param0);
 static void ov99_021D1580(BgConfig *param0);
 
-int ov99_021D0D80(OverlayManager *param0, int *param1)
+int ov99_021D0D80(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov99_021D2CB0 *v0;
 
@@ -179,7 +179,7 @@ int ov99_021D0D80(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov99_021D1028(OverlayManager *param0, int *param1)
+int ov99_021D1028(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov99_021D2CB0 *v0 = OverlayManager_Data(param0);
 
@@ -254,7 +254,7 @@ int ov99_021D1028(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov99_021D11A8(OverlayManager *param0, int *param1)
+int ov99_021D11A8(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov99_021D2CB0 *v0 = OverlayManager_Data(param0);
 

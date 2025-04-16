@@ -123,7 +123,7 @@ static const struct {
     { ov95_0224B3D8, ov95_0224B49C, ov95_0224B438, 1 | 4 },
 };
 
-int ov95_02246C20(OverlayManager *param0, int *param1)
+int ov95_02246C20(ApplicationManager *param0, int *param1)
 {
     if (IsScreenTransitionDone()) {
         UnkStruct_ov95_02247628 *v0;
@@ -197,7 +197,7 @@ static BOOL DoesMonSpeciesFlipsSprite(BoxPokemon *boxMon)
     return SpeciesData_GetFormValue(species, form, SPECIES_DATA_FLIP_SPRITE) == FALSE;
 }
 
-int ov95_02246E1C(OverlayManager *param0, int *param1)
+int ov95_02246E1C(ApplicationManager *param0, int *param1)
 {
     OSIntrMode v0;
     UnkStruct_ov95_02247628 *v1;
@@ -222,7 +222,7 @@ int ov95_02246E1C(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov95_02246E7C(OverlayManager *param0, int *param1)
+int ov95_02246E7C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov95_02247628 *v0 = OverlayManager_Data(param0);
 

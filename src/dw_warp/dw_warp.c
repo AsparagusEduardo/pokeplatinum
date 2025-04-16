@@ -60,7 +60,7 @@ static void DWWarp_Setup3D(void);
 static void DWWarp_Exit3D(GenericPointerData *param0);
 static void DWWarp_CameraMove(DistortionWorldWarp *warp);
 
-BOOL DWWarp_Init(OverlayManager *ovy, int *state)
+BOOL DWWarp_Init(ApplicationManager *ovy, int *state)
 {
     SetVBlankCallback(NULL, NULL);
     DisableHBlank();
@@ -110,7 +110,7 @@ enum {
     DWARP_SEQ_WAIT
 };
 
-BOOL DWWarp_Main(OverlayManager *ovy, int *state)
+BOOL DWWarp_Main(ApplicationManager *ovy, int *state)
 {
     DistortionWorldWarp *warp = OverlayManager_Data(ovy);
 
@@ -148,7 +148,7 @@ BOOL DWWarp_Main(OverlayManager *ovy, int *state)
     return FALSE;
 }
 
-BOOL DWWarp_Exit(OverlayManager *ovy, int *state)
+BOOL DWWarp_Exit(ApplicationManager *ovy, int *state)
 {
     DistortionWorldWarp *warp = OverlayManager_Data(ovy);
 

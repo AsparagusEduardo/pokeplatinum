@@ -38,7 +38,7 @@ static void LibraryTV_SetMsgLdr(LibraryTV *ltv);
 static void LibraryTV_ReleaseMsgLdr(LibraryTV *ltv);
 static void LibraryTV_UpdateScanLines(LibraryTV *ltv);
 
-BOOL LibraryTV_Init(OverlayManager *ovy, int *state)
+BOOL LibraryTV_Init(ApplicationManager *ovy, int *state)
 {
     int heapID = HEAP_ID_LIBRARY_TV;
 
@@ -62,7 +62,7 @@ enum {
     STATE_EXIT
 };
 
-BOOL LibraryTV_Main(OverlayManager *ovy, int *state)
+BOOL LibraryTV_Main(ApplicationManager *ovy, int *state)
 {
     LibraryTV *ltv = OverlayManager_Data(ovy);
     BOOL result = FALSE;
@@ -145,7 +145,7 @@ BOOL LibraryTV_Main(OverlayManager *ovy, int *state)
     return result;
 }
 
-BOOL LibraryTV_Exit(OverlayManager *ovy, int *state)
+BOOL LibraryTV_Exit(ApplicationManager *ovy, int *state)
 {
     LibraryTV *ltv = OverlayManager_Data(ovy);
     int heapID = ltv->heapID;

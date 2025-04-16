@@ -210,7 +210,7 @@ const u16 Unk_ov107_02249E12[] = {
 
 
 struct UnkStruct_ov107_02241D6C_t {
-    OverlayManager * unk_00;
+    ApplicationManager * unk_00;
     BattleFrontier * unk_04;
     u8 unk_08;
     u8 unk_09;
@@ -279,9 +279,9 @@ struct UnkStruct_ov107_02241D6C_t {
     u32 unk_49C;
 };
 
-int ov107_02241AE0(OverlayManager * param0, int * param1);
-int ov107_02241BD4(OverlayManager * param0, int * param1);
-int ov107_02241D2C(OverlayManager * param0, int * param1);
+int ov107_02241AE0(ApplicationManager * param0, int * param1);
+int ov107_02241BD4(ApplicationManager * param0, int * param1);
+int ov107_02241D2C(ApplicationManager * param0, int * param1);
 static BOOL ov107_02241D6C(UnkStruct_ov107_02241D6C * param0);
 static void ov107_02241E70(UnkStruct_ov107_02241D6C * param0);
 static BOOL ov107_02241EC8(UnkStruct_ov107_02241D6C * param0);
@@ -448,7 +448,7 @@ static const ListMenuTemplate Unk_ov107_02249EE4 = {
     NULL
 };
 
-int ov107_02241AE0 (OverlayManager * param0, int * param1)
+int ov107_02241AE0 (ApplicationManager * param0, int * param1)
 {
     int v0;
     UnkStruct_ov107_02241D6C * v1;
@@ -499,7 +499,7 @@ int ov107_02241AE0 (OverlayManager * param0, int * param1)
     return 1;
 }
 
-int ov107_02241BD4 (OverlayManager * param0, int * param1)
+int ov107_02241BD4 (ApplicationManager * param0, int * param1)
 {
     UnkStruct_ov107_02241D6C * v0 = OverlayManager_Data(param0);
 
@@ -575,7 +575,7 @@ int ov107_02241BD4 (OverlayManager * param0, int * param1)
     return 0;
 }
 
-int ov107_02241D2C (OverlayManager * param0, int * param1)
+int ov107_02241D2C (ApplicationManager * param0, int * param1)
 {
     int v0;
     UnkStruct_ov107_02241D6C * v1 = OverlayManager_Data(param0);

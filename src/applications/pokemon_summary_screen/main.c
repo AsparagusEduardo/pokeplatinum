@@ -127,9 +127,9 @@ enum SummaryPageState {
 
 #define RIBBON_INFO_SCROLL_INCREMENT 16
 
-static int PokemonSummaryScreen_Init(OverlayManager *ovyManager, int *state);
-static int PokemonSummaryScreen_Main(OverlayManager *ovyManager, int *state);
-static int PokemonSummaryScreen_Exit(OverlayManager *ovyManager, int *state);
+static int PokemonSummaryScreen_Init(ApplicationManager *ovyManager, int *state);
+static int PokemonSummaryScreen_Main(ApplicationManager *ovyManager, int *state);
+static int PokemonSummaryScreen_Exit(ApplicationManager *ovyManager, int *state);
 static int WaitSummaryScreenTransition(PokemonSummaryScreen *summaryScreen);
 static int HandleInput_Main(PokemonSummaryScreen *summaryScreen);
 static int WaitSetupBattleMoveInfo(PokemonSummaryScreen *summaryScreen);
@@ -205,7 +205,7 @@ BOOL PokemonSummaryScreen_ShowContestData(SaveData *saveData)
     return SystemFlag_CheckContestHallVisited(SaveData_GetVarsFlags(saveData));
 }
 
-static int PokemonSummaryScreen_Init(OverlayManager *ovyManager, int *state)
+static int PokemonSummaryScreen_Init(ApplicationManager *ovyManager, int *state)
 {
     SetVBlankCallback(NULL, NULL);
     DisableHBlank();
@@ -261,7 +261,7 @@ static int PokemonSummaryScreen_Init(OverlayManager *ovyManager, int *state)
     return TRUE;
 }
 
-static int PokemonSummaryScreen_Main(OverlayManager *ovyManager, int *state)
+static int PokemonSummaryScreen_Main(ApplicationManager *ovyManager, int *state)
 {
     PokemonSummaryScreen *summaryScreen = OverlayManager_Data(ovyManager);
 
@@ -340,7 +340,7 @@ static int PokemonSummaryScreen_Main(OverlayManager *ovyManager, int *state)
     return FALSE;
 }
 
-static int PokemonSummaryScreen_Exit(OverlayManager *ovyManager, int *state)
+static int PokemonSummaryScreen_Exit(ApplicationManager *ovyManager, int *state)
 {
     PokemonSummaryScreen *summaryScreen = OverlayManager_Data(ovyManager);
 

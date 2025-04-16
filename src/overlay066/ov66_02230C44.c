@@ -50,7 +50,7 @@ typedef struct {
 } UnkStruct_ov66_02230E4C;
 
 typedef struct UnkStruct_ov66_02230C90_t {
-    OverlayManager *unk_00;
+    ApplicationManager *unk_00;
     UnkStruct_ov66_02230E4C unk_04[13];
     u8 unk_38;
     u8 unk_39;

@@ -50,9 +50,9 @@ typedef struct {
     int unk_04;
 } UnkStruct_ov83_0224024C;
 
-int ov83_0223B5B0(OverlayManager *param0, int *param1);
-int ov83_0223B65C(OverlayManager *param0, int *param1);
-int ov83_0223B710(OverlayManager *param0, int *param1);
+int ov83_0223B5B0(ApplicationManager *param0, int *param1);
+int ov83_0223B65C(ApplicationManager *param0, int *param1);
+int ov83_0223B710(ApplicationManager *param0, int *param1);
 static int ov83_0223C344(UnkStruct_ov83_0223C344 *param0, UnkStruct_ov83_0223B784 *param1, int *param2);
 static int ov83_0223B78C(UnkStruct_ov83_0223C344 *param0, UnkStruct_ov83_0223B784 *param1, int *param2);
 static int ov83_0223B920(UnkStruct_ov83_0223C344 *param0, UnkStruct_ov83_0223B784 *param1, int *param2);
@@ -102,7 +102,7 @@ static void ov83_0223B5A0(void *param0)
     VramTransfer_Process();
 }
 
-int ov83_0223B5B0(OverlayManager *param0, int *param1)
+int ov83_0223B5B0(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov83_0223C344 *v0 = OverlayManager_Args(param0);
     UnkStruct_ov83_0223B784 *v1;
@@ -139,7 +139,7 @@ int ov83_0223B5B0(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov83_0223B65C(OverlayManager *param0, int *param1)
+int ov83_0223B65C(ApplicationManager *param0, int *param1)
 {
     int v0, v1;
     UnkStruct_ov83_0223C344 *v2 = OverlayManager_Args(param0);
@@ -204,7 +204,7 @@ int ov83_0223B65C(OverlayManager *param0, int *param1)
     }
 }
 
-int ov83_0223B710(OverlayManager *param0, int *param1)
+int ov83_0223B710(ApplicationManager *param0, int *param1)
 {
     int heapID;
     UnkStruct_ov83_0223C344 *v1 = OverlayManager_Args(param0);

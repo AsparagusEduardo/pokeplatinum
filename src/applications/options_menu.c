@@ -148,7 +148,7 @@ static void TeardownBgs(OptionsMenuData *menuData);
 static void TeardownTilemaps(OptionsMenuData *menuData);
 static void TeardownWindows(OptionsMenuData *menuData);
 
-BOOL OptionsMenu_Init(OverlayManager *ovyManager, int *state)
+BOOL OptionsMenu_Init(ApplicationManager *ovyManager, int *state)
 {
     OptionsMenuData *menuData = NULL;
     Options *options = OverlayManager_Args(ovyManager);
@@ -172,7 +172,7 @@ BOOL OptionsMenu_Init(OverlayManager *ovyManager, int *state)
     return TRUE;
 }
 
-BOOL OptionsMenu_Exit(OverlayManager *ovyManager, int *state)
+BOOL OptionsMenu_Exit(ApplicationManager *ovyManager, int *state)
 {
     OptionsMenuData *menuData = OverlayManager_Data(ovyManager);
 
@@ -214,7 +214,7 @@ enum {
     STATE_TEARDOWN,
 };
 
-BOOL OptionsMenu_Main(OverlayManager *ovyManager, int *state)
+BOOL OptionsMenu_Main(ApplicationManager *ovyManager, int *state)
 {
     OptionsMenuData *menuData = OverlayManager_Data(ovyManager);
     u32 choiceYesNo;

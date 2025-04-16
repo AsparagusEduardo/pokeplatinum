@@ -128,10 +128,10 @@ typedef struct {
 
 void Strbuf_CopyNumChars(Strbuf *param0, const u16 *param1, u32 param2);
 MysteryGift *SaveData_GetMysteryGift(SaveData *param0);
-static int ov97_02230728(OverlayManager *param0);
-static int ov97_022306F4(OverlayManager *param0);
-static int ov97_02230834(OverlayManager *param0);
-static int ov97_02230778(OverlayManager *param0);
+static int ov97_02230728(ApplicationManager *param0);
+static int ov97_022306F4(ApplicationManager *param0);
+static int ov97_02230834(ApplicationManager *param0);
+static int ov97_02230778(ApplicationManager *param0);
 static void ov97_02230868(UnkStruct_ov97_02230868 *param0);
 static BOOL ov97_022308B0(UnkStruct_ov97_02230868 *param0, Window *param1, TextColor param2);
 static BOOL ov97_022308B4(UnkStruct_ov97_02230868 *param0, Window *param1, TextColor param2);
@@ -338,7 +338,7 @@ static void ov97_02230664(BgConfig *param0)
     Bg_CopyTilemapBufferToVRAM(param0, 1);
 }
 
-static int ov97_022306F4(OverlayManager *param0)
+static int ov97_022306F4(ApplicationManager *param0)
 {
     UnkStruct_ov97_02230868 *v0 = OverlayManager_Data(param0);
 
@@ -349,7 +349,7 @@ static int ov97_022306F4(OverlayManager *param0)
     return 13;
 }
 
-static int ov97_02230728(OverlayManager *param0)
+static int ov97_02230728(ApplicationManager *param0)
 {
     UnkStruct_ov97_02230868 *v0 = OverlayManager_Data(param0);
 
@@ -365,7 +365,7 @@ static int ov97_02230728(OverlayManager *param0)
     return 12;
 }
 
-static int ov97_02230778(OverlayManager *param0)
+static int ov97_02230778(ApplicationManager *param0)
 {
     UnkStruct_ov97_02230868 *v0 = OverlayManager_Data(param0);
 
@@ -396,7 +396,7 @@ static int ov97_02230778(OverlayManager *param0)
     return 5;
 }
 
-static int ov97_02230834(OverlayManager *param0)
+static int ov97_02230834(ApplicationManager *param0)
 {
     UnkStruct_ov97_02230868 *v0 = OverlayManager_Data(param0);
 
@@ -722,12 +722,12 @@ static void ov97_02230F98(UnkStruct_ov97_02230868 *param0, int param1)
     Bg_CopyTilemapBufferToVRAM(param0->unk_2A5C, 3);
 }
 
-static void ov97_02231088(OverlayManager *param0, int *param1, int (*param2)(OverlayManager *))
+static void ov97_02231088(ApplicationManager *param0, int *param1, int (*param2)(ApplicationManager *))
 {
     u32 v0;
     int v1;
     UnkStruct_ov97_02230868 *v2 = OverlayManager_Data(param0);
-    static int (*v3)(OverlayManager *);
+    static int (*v3)(ApplicationManager *);
 
     v0 = ListMenu_ProcessInput(v2->unk_2C28);
 
@@ -752,7 +752,7 @@ static void ov97_02231088(OverlayManager *param0, int *param1, int (*param2)(Ove
             if (v0 < 30) {
                 *param1 = v0;
             } else {
-                v3 = (static int (*)(OverlayManager *))v0;
+                v3 = (static int (*)(ApplicationManager *))v0;
                 v1 = v3(param0);
 
                 if (v1 != -1) {
@@ -807,7 +807,7 @@ static void ov97_022310FC(UnkStruct_ov97_02230868 *param0)
     }
 }
 
-static int ov97_02231224(OverlayManager *param0, int *param1)
+static int ov97_02231224(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov97_02230868 *v0;
 
@@ -1015,7 +1015,7 @@ static void ov97_022314FC(UnkStruct_ov97_02230868 *param0, int param1, int *para
     }
 }
 
-static int ov97_0223161C(OverlayManager *param0, int *param1)
+static int ov97_0223161C(ApplicationManager *param0, int *param1)
 {
     int v0, v1, v2, v3;
     UnkStruct_ov97_02230868 *v4 = OverlayManager_Data(param0);
@@ -1424,7 +1424,7 @@ static void ov97_02231F1C(UnkStruct_ov97_02230868 *param0, int *param1, int para
 
 extern const OverlayManagerTemplate Unk_ov97_0223D71C;
 
-static int ov97_02231F38(OverlayManager *param0, int *param1)
+static int ov97_02231F38(ApplicationManager *param0, int *param1)
 {
     int v0;
     UnkStruct_ov97_02230868 *v1 = OverlayManager_Data(param0);

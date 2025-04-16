@@ -23,11 +23,11 @@
 
 FS_EXTERN_OVERLAY(overlay62);
 
-static int sub_0208BF38(OverlayManager *param0, int *param1);
-static int sub_0208BF44(OverlayManager *param0, int *param1);
-static int sub_0208BEBC(OverlayManager *param0, int *param1, int param2);
-static int sub_0208BF50(OverlayManager *param0, int *param1);
-static int sub_0208BF6C(OverlayManager *param0, int *param1);
+static int sub_0208BF38(ApplicationManager *param0, int *param1);
+static int sub_0208BF44(ApplicationManager *param0, int *param1);
+static int sub_0208BEBC(ApplicationManager *param0, int *param1, int param2);
+static int sub_0208BF50(ApplicationManager *param0, int *param1);
+static int sub_0208BF6C(ApplicationManager *param0, int *param1);
 
 const OverlayManagerTemplate Unk_020F3050 = {
     sub_0208BF38,
@@ -43,7 +43,7 @@ const OverlayManagerTemplate Unk_020F3060 = {
     FS_OVERLAY_ID(overlay62)
 };
 
-static int sub_0208BEBC(OverlayManager *param0, int *param1, int param2)
+static int sub_0208BEBC(ApplicationManager *param0, int *param1, int param2)
 {
     UnkStruct_0208C06C *v0;
 
@@ -77,17 +77,17 @@ static int sub_0208BEBC(OverlayManager *param0, int *param1, int param2)
     return 1;
 }
 
-static int sub_0208BF38(OverlayManager *param0, int *param1)
+static int sub_0208BF38(ApplicationManager *param0, int *param1)
 {
     return sub_0208BEBC(param0, param1, 0);
 }
 
-static int sub_0208BF44(OverlayManager *param0, int *param1)
+static int sub_0208BF44(ApplicationManager *param0, int *param1)
 {
     return sub_0208BEBC(param0, param1, 1);
 }
 
-static int sub_0208BF50(OverlayManager *param0, int *param1)
+static int sub_0208BF50(ApplicationManager *param0, int *param1)
 {
     BOOL v0 = 0;
     UnkStruct_0208C06C *v1 = sub_0208BA78(param0);
@@ -98,7 +98,7 @@ static int sub_0208BF50(OverlayManager *param0, int *param1)
     return (v0) ? 1 : 0;
 }
 
-static int sub_0208BF6C(OverlayManager *param0, int *param1)
+static int sub_0208BF6C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_0208C06C *v0 = sub_0208BA78(param0);
 

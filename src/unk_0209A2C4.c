@@ -36,9 +36,9 @@ typedef struct {
     u32 unk_3C;
 } UnkStruct_0209A3D0;
 
-int sub_0209A2C4(OverlayManager *param0, int *param1);
-int sub_0209A300(OverlayManager *param0, int *param1);
-int sub_0209A3A4(OverlayManager *param0, int *param1);
+int sub_0209A2C4(ApplicationManager *param0, int *param1);
+int sub_0209A300(ApplicationManager *param0, int *param1);
+int sub_0209A3A4(ApplicationManager *param0, int *param1);
 static void sub_0209A3D0(UnkStruct_0209A3D0 *param0);
 static void sub_0209A490(UnkStruct_0209A3D0 *param0);
 static void sub_0209A4E4(UnkStruct_0209A3D0 *param0);
@@ -65,7 +65,7 @@ const OverlayManagerTemplate Unk_020F8AB4 = {
     0xFFFFFFFF
 };
 
-int sub_0209A2C4(OverlayManager *param0, int *param1)
+int sub_0209A2C4(ApplicationManager *param0, int *param1)
 {
     UnkStruct_0209A3D0 *v0;
     int heapID = HEAP_ID_88;
@@ -82,7 +82,7 @@ int sub_0209A2C4(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int sub_0209A300(OverlayManager *param0, int *param1)
+int sub_0209A300(ApplicationManager *param0, int *param1)
 {
     UnkStruct_0209A3D0 *v0 = OverlayManager_Data(param0);
     int v1 = 0;
@@ -119,7 +119,7 @@ int sub_0209A300(OverlayManager *param0, int *param1)
     return v1;
 }
 
-int sub_0209A3A4(OverlayManager *param0, int *param1)
+int sub_0209A3A4(ApplicationManager *param0, int *param1)
 {
     UnkStruct_0209A3D0 *v0 = OverlayManager_Data(param0);
     int heapID = v0->heapID;

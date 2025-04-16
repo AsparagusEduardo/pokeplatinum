@@ -311,7 +311,7 @@ static void StartCursorMovement(ChooseStarterCursor *param0);
 static void ov78_021D23E8(SysTask *param0, void *param1);
 static void ov78_021D241C(ChooseStarterCursor *param0);
 
-BOOL ChooseStarter_Init(OverlayManager *param0, int *param1)
+BOOL ChooseStarter_Init(ApplicationManager *param0, int *param1)
 {
     Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_CHOOSE_STARTER_APP, HEAP_SIZE_CHOOSE_STARTER_APP);
 
@@ -379,7 +379,7 @@ enum {
     CHOOSE_STARTER_MAIN_WAIT_FADE_OUT,
 };
 
-BOOL ChooseStarter_Main(OverlayManager *ovyManager, int *state)
+BOOL ChooseStarter_Main(ApplicationManager *ovyManager, int *state)
 {
     ChooseStarterApp *app = OverlayManager_Data(ovyManager);
     BOOL selectionMade;
@@ -428,7 +428,7 @@ BOOL ChooseStarter_Main(OverlayManager *ovyManager, int *state)
     return FALSE;
 }
 
-BOOL ChooseStarter_Exit(OverlayManager *param0, int *param1)
+BOOL ChooseStarter_Exit(ApplicationManager *param0, int *param1)
 {
     ChooseStarterApp *v0 = OverlayManager_Data(param0);
     ChooseStarterData *v1 = OverlayManager_Args(param0);

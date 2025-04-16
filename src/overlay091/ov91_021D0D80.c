@@ -53,7 +53,7 @@ typedef struct {
     SpriteManager *unk_114;
     ManagedSprite *unk_118[13];
     PokemonSummary unk_14C;
-    OverlayManager *unk_17C;
+    ApplicationManager *unk_17C;
     int unk_180;
     u8 unk_184;
     u8 unk_185;
@@ -339,7 +339,7 @@ static const SpriteTemplate Unk_ov91_021D28FC[] = {
     },
 };
 
-int ov91_021D0D80(OverlayManager *param0, int *param1)
+int ov91_021D0D80(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov91_021D0ED8 *v0;
 
@@ -363,7 +363,7 @@ int ov91_021D0D80(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov91_021D0E08(OverlayManager *param0, int *param1)
+int ov91_021D0E08(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov91_021D0ED8 *v0 = OverlayManager_Data(param0);
 
@@ -414,7 +414,7 @@ int ov91_021D0E08(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov91_021D0EBC(OverlayManager *param0, int *param1)
+int ov91_021D0EBC(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov91_021D0ED8 *v0 = OverlayManager_Data(param0);
 

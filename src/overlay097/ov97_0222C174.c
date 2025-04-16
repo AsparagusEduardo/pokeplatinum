@@ -366,7 +366,7 @@ typedef struct {
     int unk_164;
     int unk_168;
     u8 unk_16C[12288];
-    OverlayManager *unk_316C;
+    ApplicationManager *unk_316C;
     Sprite *unk_3170;
     MysteryGift *unk_3174;
     int unk_3178;
@@ -641,7 +641,7 @@ static void ov97_0222C578(UnkStruct_ov97_0222C388 *param0)
     StringTemplate_Free(v6);
 }
 
-static void ov97_0222C688(OverlayManager *param0)
+static void ov97_0222C688(ApplicationManager *param0)
 {
     int v0;
     UnkStruct_ov97_0222C388 *v1 = OverlayManager_Data(param0);
@@ -664,7 +664,7 @@ static void ov97_0222C688(OverlayManager *param0)
     Heap_FreeToHeap(v1->unk_04);
 }
 
-static int ov97_0222C6F8(OverlayManager *param0, int *param1)
+static int ov97_0222C6F8(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov97_0222C388 *v0 = ov97_022376C4(param0, HEAP_ID_85, sizeof(UnkStruct_ov97_0222C388), 0x20000);
 
@@ -690,7 +690,7 @@ static int ov97_0222C6F8(OverlayManager *param0, int *param1)
     return 1;
 }
 
-static int ov97_0222C78C(OverlayManager *param0, int *param1)
+static int ov97_0222C78C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov97_0222C388 *v0 = OverlayManager_Data(param0);
 
@@ -771,7 +771,7 @@ static int ov97_0222C78C(OverlayManager *param0, int *param1)
     return 0;
 }
 
-static int ov97_0222C948(OverlayManager *param0, int *param1)
+static int ov97_0222C948(ApplicationManager *param0, int *param1)
 {
     Heap_Destroy(HEAP_ID_91);
     EnqueueApplication(FS_OVERLAY_ID(overlay77), &gTitleScreenOverlayTemplate);

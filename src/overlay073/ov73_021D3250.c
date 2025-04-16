@@ -30,9 +30,9 @@ typedef struct {
 } UnkStruct_ov73_021D342C;
 
 void EnqueueApplication(FSOverlayID param0, const OverlayManagerTemplate *param1);
-int ov73_021D3250(OverlayManager * param0, int * param1);
-int ov73_021D3280(OverlayManager * param0, int * param1);
-int ov73_021D3404(OverlayManager * param0, int * param1);
+int ov73_021D3250(ApplicationManager * param0, int * param1);
+int ov73_021D3280(ApplicationManager * param0, int * param1);
+int ov73_021D3404(ApplicationManager * param0, int * param1);
 static void ov73_021D3420(void * param0);
 static void ov73_021D342C(UnkStruct_ov73_021D342C * param0);
 static void ov73_021D35F4(UnkStruct_ov73_021D342C * param0);
@@ -41,7 +41,7 @@ static void ov73_021D368C(UnkStruct_ov73_021D342C * param0);
 static BOOL ov73_021D3698(UnkStruct_ov73_021D342C * param0, int param1, int param2, int param3);
 static void ov73_021D37AC(UnkStruct_ov73_021D342C * param0);
 
-int ov73_021D3250 (OverlayManager * param0, int * param1)
+int ov73_021D3250 (ApplicationManager * param0, int * param1)
 {
     UnkStruct_ov73_021D342C * v0;
     int heapID = HEAP_ID_83;
@@ -57,7 +57,7 @@ int ov73_021D3250 (OverlayManager * param0, int * param1)
     return 1;
 }
 
-int ov73_021D3280 (OverlayManager * param0, int * param1)
+int ov73_021D3280 (ApplicationManager * param0, int * param1)
 {
     UnkStruct_ov73_021D342C * v0 = OverlayManager_Data(param0);
     int v1 = 0;
@@ -143,7 +143,7 @@ int ov73_021D3280 (OverlayManager * param0, int * param1)
     return v1;
 }
 
-int ov73_021D3404 (OverlayManager * param0, int * param1)
+int ov73_021D3404 (ApplicationManager * param0, int * param1)
 {
     UnkStruct_ov73_021D342C * v0 = OverlayManager_Data(param0);
     int heapID = v0->heapID;

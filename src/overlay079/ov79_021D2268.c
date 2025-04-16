@@ -106,9 +106,9 @@ typedef struct {
     UnkStruct_ov79_021D29B4 unk_80;
 } UnkStruct_ov79_021D2928;
 
-int ov79_021D22AC(OverlayManager *param0, int *param1);
-int ov79_021D22E4(OverlayManager *param0, int *param1);
-int ov79_021D2460(OverlayManager *param0, int *param1);
+int ov79_021D22AC(ApplicationManager *param0, int *param1);
+int ov79_021D22E4(ApplicationManager *param0, int *param1);
+int ov79_021D2460(ApplicationManager *param0, int *param1);
 static int ov79_021D2928(UnkStruct_ov79_021D2928 *param0);
 static void ov79_021D252C(void *param0);
 static int ov79_021D247C(UnkStruct_ov79_021D2928 *param0);
@@ -162,7 +162,7 @@ static VecFx32 ov79_021D2268(VecFx32 *param0, VecFx32 *param1, fx32 param2)
     return v0;
 }
 
-int ov79_021D22AC(OverlayManager *param0, int *param1)
+int ov79_021D22AC(ApplicationManager *param0, int *param1)
 {
     UnkStruct_02098DE8 *v0 = OverlayManager_Args(param0);
     UnkStruct_ov79_021D2928 *v1;
@@ -178,7 +178,7 @@ int ov79_021D22AC(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov79_021D22E4(OverlayManager *param0, int *param1)
+int ov79_021D22E4(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov79_021D2928 *v0 = (UnkStruct_ov79_021D2928 *)OverlayManager_Data(param0);
 
@@ -261,7 +261,7 @@ int ov79_021D22E4(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov79_021D2460(OverlayManager *param0, int *param1)
+int ov79_021D2460(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov79_021D2928 *v0 = (UnkStruct_ov79_021D2928 *)OverlayManager_Data(param0);
 

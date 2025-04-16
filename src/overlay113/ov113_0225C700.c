@@ -329,7 +329,7 @@ static const SpriteTemplate Unk_ov113_022609D0 = {
     0x0
 };
 
-int ov113_0225C700(OverlayManager *param0, int *param1)
+int ov113_0225C700(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov113_0225DBCC *v0;
 
@@ -444,7 +444,7 @@ int ov113_0225C700(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov113_0225CA04(OverlayManager *param0, int *param1)
+int ov113_0225CA04(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov113_0225DBCC *v0 = OverlayManager_Data(param0);
 
@@ -616,7 +616,7 @@ int ov113_0225CA04(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov113_0225CDFC(OverlayManager *param0, int *param1)
+int ov113_0225CDFC(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov113_0225DBCC *v0 = OverlayManager_Data(param0);
 

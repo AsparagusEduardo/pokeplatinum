@@ -44,7 +44,7 @@ FS_EXTERN_OVERLAY(overlay77);
 
 typedef struct Application {
     FSOverlayID currOverlayID;
-    OverlayManager *currOverlay;
+    ApplicationManager *currOverlay;
     FSOverlayID nextOverlayID;
     const OverlayManagerTemplate *nextOverlay;
     ApplicationArgs args;

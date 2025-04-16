@@ -177,7 +177,7 @@ static const struct {
     { 0x1F, 0x2B, 0x2C, 0x2D, 0x2E }
 };
 
-int ov117_02260668(OverlayManager *param0, int *param1)
+int ov117_02260668(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov117_02261280 *v0;
 
@@ -290,7 +290,7 @@ int ov117_02260668(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov117_0226098C(OverlayManager *param0, int *param1)
+int ov117_0226098C(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov117_02261280 *v0 = OverlayManager_Data(param0);
     int v1;
@@ -423,7 +423,7 @@ int ov117_0226098C(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov117_02260C10(OverlayManager *param0, int *param1)
+int ov117_02260C10(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov117_02261280 *v0 = OverlayManager_Data(param0);
     int v1;

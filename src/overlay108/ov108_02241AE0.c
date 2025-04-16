@@ -149,7 +149,7 @@ static const u8 Unk_ov108_0224367C[] = {
 };
 
 struct UnkStruct_ov108_02241DB0_t {
-    OverlayManager *unk_00;
+    ApplicationManager *unk_00;
     BattleFrontier *unk_04;
     u8 unk_08;
     u8 unk_09;
@@ -219,9 +219,9 @@ struct UnkStruct_ov108_02241DB0_t {
     u32 unk_42C;
 };
 
-int ov108_02241AE0(OverlayManager *param0, int *param1);
-int ov108_02241C38(OverlayManager *param0, int *param1);
-int ov108_02241D70(OverlayManager *param0, int *param1);
+int ov108_02241AE0(ApplicationManager *param0, int *param1);
+int ov108_02241C38(ApplicationManager *param0, int *param1);
+int ov108_02241D70(ApplicationManager *param0, int *param1);
 static BOOL ov108_02241DB0(UnkStruct_ov108_02241DB0 *param0);
 static BOOL ov108_02241F28(UnkStruct_ov108_02241DB0 *param0);
 static BOOL ov108_02242104(UnkStruct_ov108_02241DB0 *param0);
@@ -271,7 +271,7 @@ static const TouchScreenHitTable Unk_ov108_02243687[] = {
     { 0xff, 0x0, 0x0, 0x0 }
 };
 
-int ov108_02241AE0(OverlayManager *param0, int *param1)
+int ov108_02241AE0(ApplicationManager *param0, int *param1)
 {
     int v0;
     UnkStruct_ov108_02241DB0 *v1;
@@ -337,7 +337,7 @@ int ov108_02241AE0(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov108_02241C38(OverlayManager *param0, int *param1)
+int ov108_02241C38(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov108_02241DB0 *v0 = OverlayManager_Data(param0);
 
@@ -399,7 +399,7 @@ int ov108_02241C38(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov108_02241D70(OverlayManager *param0, int *param1)
+int ov108_02241D70(ApplicationManager *param0, int *param1)
 {
     int v0;
     UnkStruct_ov108_02241DB0 *v1 = OverlayManager_Data(param0);

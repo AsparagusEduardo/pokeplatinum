@@ -32,7 +32,7 @@ static const OverlayManagerTemplate Unk_020E5664 = {
     0xffffffff,
 };
 
-int sub_02017498(OverlayManager *param0, int *param1)
+int sub_02017498(ApplicationManager *param0, int *param1)
 {
     UnkStruct_02017498 *v0;
 
@@ -59,7 +59,7 @@ int sub_02017498(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int sub_02017524(OverlayManager *param0, int *param1)
+int sub_02017524(ApplicationManager *param0, int *param1)
 {
     UnkStruct_02017498 *v0 = OverlayManager_Data(param0);
 
@@ -130,7 +130,7 @@ int sub_02017524(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int sub_02017658(OverlayManager *param0, int *param1)
+int sub_02017658(ApplicationManager *param0, int *param1)
 {
     UnkStruct_02017498 *v0 = OverlayManager_Data(param0);
 

@@ -35,7 +35,7 @@ static const OverlayManagerTemplate Unk_ov117_02266908 = {
 static void ov117_022605D8(UnkStruct_ov117_022605C0 *param0, UnkStruct_ov117_02260440 *param1);
 static BOOL ov117_02260630(UnkStruct_ov117_022605C0 *param0);
 
-int ov117_02260440(OverlayManager *param0, int *param1)
+int ov117_02260440(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov117_02260440 *v0 = OverlayManager_Args(param0);
     UnkStruct_ov117_022605C0 *v1;
@@ -49,7 +49,7 @@ int ov117_02260440(OverlayManager *param0, int *param1)
     return 1;
 }
 
-int ov117_02260474(OverlayManager *param0, int *param1)
+int ov117_02260474(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov117_022605C0 *v0 = OverlayManager_Data(param0);
     UnkStruct_ov117_02260440 *v1 = OverlayManager_Args(param0);
@@ -123,7 +123,7 @@ int ov117_02260474(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov117_022605C0(OverlayManager *param0, int *param1)
+int ov117_022605C0(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov117_022605C0 *v0 = OverlayManager_Data(param0);
 

@@ -77,7 +77,7 @@ void ov97_02237694(int heapID)
     v0->heapID = heapID;
 }
 
-void *ov97_022376C4(OverlayManager *param0, int heapID, int param2, int param3)
+void *ov97_022376C4(ApplicationManager *param0, int heapID, int param2, int param3)
 {
     void *v0;
 

@@ -110,9 +110,9 @@ static void ov5_021D1790(FieldSystem *fieldSystem);
 static void ov5_021D17EC(FieldSystem *fieldSystem);
 static void ov5_021D1878(FieldSystem *fieldSystem);
 static void ov5_021D1968(FieldSystem *fieldSystem);
-static BOOL FieldMap_Init(OverlayManager *overlayMan, int *param1);
-static BOOL FieldMap_Main(OverlayManager *overlayMan, int *param1);
-static BOOL FieldMap_Exit(OverlayManager *overlayMan, int *param1);
+static BOOL FieldMap_Init(ApplicationManager *overlayMan, int *param1);
+static BOOL FieldMap_Main(ApplicationManager *overlayMan, int *param1);
+static BOOL FieldMap_Exit(ApplicationManager *overlayMan, int *param1);
 static BOOL FieldMap_ChangeZone(FieldSystem *fieldSystem);
 static void ov5_021D134C(FieldSystem *fieldSystem, u8 param1);
 static BOOL ov5_021D119C(FieldSystem *fieldSystem);
@@ -144,7 +144,7 @@ static void fieldmap(void *param0)
     inline_fieldmap(fieldSystem);
 }
 
-static BOOL FieldMap_Init(OverlayManager *overlayMan, int *param1)
+static BOOL FieldMap_Init(ApplicationManager *overlayMan, int *param1)
 {
     FieldSystem *fieldSystem;
     BOOL ret = FALSE;
@@ -240,7 +240,7 @@ static BOOL FieldMap_Init(OverlayManager *overlayMan, int *param1)
     return ret;
 }
 
-static BOOL FieldMap_Main(OverlayManager *overlayMan, int *param1)
+static BOOL FieldMap_Main(ApplicationManager *overlayMan, int *param1)
 {
     FieldSystem *fieldSystem = OverlayManager_Args(overlayMan);
 
@@ -261,7 +261,7 @@ static BOOL FieldMap_Main(OverlayManager *overlayMan, int *param1)
     }
 }
 
-static BOOL FieldMap_Exit(OverlayManager *overlayMan, int *param1)
+static BOOL FieldMap_Exit(ApplicationManager *overlayMan, int *param1)
 {
     FieldSystem *fieldSystem = OverlayManager_Args(overlayMan);
     LandDataManager_Tick(fieldSystem, fieldSystem->landDataMan);

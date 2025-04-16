@@ -62,7 +62,7 @@ static const u8 Unk_ov81_021D33E8[9][32] = {
     { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF }
 };
 
-int JournalController_Init(OverlayManager *ovyManager, int *state)
+int JournalController_Init(ApplicationManager *ovyManager, int *state)
 {
     JournalManager *journalManager;
     SaveData *saveData;
@@ -109,7 +109,7 @@ int JournalController_Init(OverlayManager *ovyManager, int *state)
     return TRUE;
 }
 
-int JournalController_Main(OverlayManager *ovyManager, int *state)
+int JournalController_Main(ApplicationManager *ovyManager, int *state)
 {
     JournalManager *journalManager = OverlayManager_Data(ovyManager);
 
@@ -135,7 +135,7 @@ int JournalController_Main(OverlayManager *ovyManager, int *state)
     return FALSE;
 }
 
-int JournalController_Exit(OverlayManager *ovyManager, int *state)
+int JournalController_Exit(ApplicationManager *ovyManager, int *state)
 {
     JournalManager *journalManager = OverlayManager_Data(ovyManager);
 

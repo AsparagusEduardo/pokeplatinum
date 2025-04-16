@@ -65,7 +65,7 @@ static void ov72_0223DCA8(UnkStruct_ov72_0223DB98 *param0, NARC *param1);
 static void ov72_0223DDA8(void);
 static void ov72_0223DDD8(UnkStruct_ov72_0223DB98 *param0, NARC *param1);
 static void ov72_0223DF58(UnkStruct_ov72_0223DB98 *param0);
-static void ov72_0223E0A0(UnkStruct_ov72_0223DB98 *param0, OverlayManager *param1);
+static void ov72_0223E0A0(UnkStruct_ov72_0223DB98 *param0, ApplicationManager *param1);
 static void ov72_0223E260(UnkStruct_ov72_0223DB98 *param0);
 static void ov72_0223E2A4(UnkStruct_ov72_0223DB98 *param0);
 static void ov72_0223E2A8(UnkStruct_ov72_0223DB98 *param0);
@@ -104,7 +104,7 @@ static int (*Unk_ov72_0223ED40[])(UnkStruct_ov72_0223DB98 *, int) = {
     ov72_0223E528,
 };
 
-int ov72_0223D7A0(OverlayManager *param0, int *param1)
+int ov72_0223D7A0(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov72_0223DB98 *v0;
     NARC *v1;
@@ -171,7 +171,7 @@ int ov72_0223D7A0(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov72_0223D920(OverlayManager *param0, int *param1)
+int ov72_0223D920(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov72_0223DB98 *v0 = OverlayManager_Data(param0);
 
@@ -201,7 +201,7 @@ int ov72_0223D920(OverlayManager *param0, int *param1)
     return 0;
 }
 
-int ov72_0223D984(OverlayManager *param0, int *param1)
+int ov72_0223D984(ApplicationManager *param0, int *param1)
 {
     UnkStruct_ov72_0223DB98 *v0 = OverlayManager_Data(param0);
     int v1;
@@ -557,7 +557,7 @@ static void *ov72_0223E060(Window *param0, Strbuf *param1, int param2, u8 param3
     return param0->pixels;
 }
 
-static void ov72_0223E0A0(UnkStruct_ov72_0223DB98 *param0, OverlayManager *param1)
+static void ov72_0223E0A0(UnkStruct_ov72_0223DB98 *param0, ApplicationManager *param1)
 {
     Window_Add(param0->unk_00, &param0->unk_338, 0, 2, 1, 27, 4, 13, 1 + (18 + 12) + 9);
     Window_FillTilemap(&param0->unk_338, 0xf0f);

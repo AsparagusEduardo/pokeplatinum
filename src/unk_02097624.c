@@ -33,14 +33,14 @@ typedef struct {
     u16 unk_04;
     u16 unk_06;
     void *unk_08;
-    OverlayManager *unk_0C;
+    ApplicationManager *unk_0C;
     UnkStruct_020978D8 *unk_10;
     Sentence unk_14;
 } UnkStruct_02097944;
 
-static int sub_02097944(OverlayManager *param0, int *param1);
-static int sub_020979A8(OverlayManager *param0, int *param1);
-static int sub_02097AF8(OverlayManager *param0, int *param1);
+static int sub_02097944(ApplicationManager *param0, int *param1);
+static int sub_020979A8(ApplicationManager *param0, int *param1);
+static int sub_02097AF8(ApplicationManager *param0, int *param1);
 UnkStruct_02097728 *sub_02097624(SaveData *param0, int param1, u8 param2, u8 param3, int param4);
 UnkStruct_02097728 *sub_0209767C(SaveData *param0, int param1, u16 param2, int param3);
 UnkStruct_02097728 *sub_020976BC(SaveData *param0, Pokemon *param1, int param2);
@@ -260,7 +260,7 @@ void sub_020978F0(Mail *param0, UnkStruct_020978D8 *param1)
     sub_02028318(param0, param1->unk_0F);
 }
 
-static BOOL sub_02097920(OverlayManager **param0)
+static BOOL sub_02097920(ApplicationManager **param0)
 {
     if (*param0) {
         if (OverlayManager_Exec(*param0)) {
@@ -273,7 +273,7 @@ static BOOL sub_02097920(OverlayManager **param0)
     return 0;
 }
 
-static int sub_02097944(OverlayManager *param0, int *param1)
+static int sub_02097944(ApplicationManager *param0, int *param1)
 {
     UnkStruct_02097944 *v0 = NULL;
     UnkStruct_02097728 *v1 = (UnkStruct_02097728 *)OverlayManager_Args(param0);
@@ -299,7 +299,7 @@ static int sub_02097944(OverlayManager *param0, int *param1)
     return 1;
 }
 
-static int sub_020979A8(OverlayManager *param0, int *param1)
+static int sub_020979A8(ApplicationManager *param0, int *param1)
 {
     UnkStruct_02097944 *v0 = OverlayManager_Data(param0);
     UnkStruct_02097728 *v1 = (UnkStruct_02097728 *)OverlayManager_Args(param0);
@@ -387,7 +387,7 @@ static int sub_020979A8(OverlayManager *param0, int *param1)
     return 0;
 }
 
-static int sub_02097AF8(OverlayManager *param0, int *param1)
+static int sub_02097AF8(ApplicationManager *param0, int *param1)
 {
     UnkStruct_02097944 *v0 = OverlayManager_Data(param0);
 
