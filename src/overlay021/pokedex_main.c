@@ -86,21 +86,21 @@ static void InitG3(void);
 static void ResetFrm(void);
 static void ov21_021D1EEC(PokedexApp *pokedexApp);
 
-int PokedexMain_Init(ApplicationManager *overlayMan, int *state)
+int PokedexMain_Init(ApplicationManager *appMan, int *state)
 {
     PokedexOverlayArgs pokedexOverlayArgs;
 
     Sound_SetSceneAndPlayBGM(SOUND_SCENE_SUB_54, SEQ_NONE, 0);
     Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_POKEDEX, 0x40000);
 
-    PokedexApp **appPtr = OverlayManager_NewData(overlayMan, sizeof(PokedexApp **), HEAP_ID_POKEDEX);
+    PokedexApp **appPtr = OverlayManager_NewData(appMan, sizeof(PokedexApp **), HEAP_ID_POKEDEX);
 
     GF_ASSERT(appPtr);
     memset(appPtr, 0, sizeof(PokedexApp **));
 
     VramTransfer_New(8, HEAP_ID_POKEDEX);
 
-    PokedexOverlayArgs *overlayArgsInput = OverlayManager_Args(overlayMan);
+    PokedexOverlayArgs *overlayArgsInput = OverlayManager_Args(appMan);
 
     Pokedex_SetupGiratina(Pokedex_GetDisplayForm(overlayArgsInput->pokedex, SPECIES_GIRATINA, 0));
 
@@ -128,9 +128,9 @@ int PokedexMain_Init(ApplicationManager *overlayMan, int *state)
     return 1;
 }
 
-int PokedexMain_Main(ApplicationManager *overlayMan, int *state)
+int PokedexMain_Main(ApplicationManager *appMan, int *state)
 {
-    PokedexApp **appPtr = OverlayManager_Data(overlayMan);
+    PokedexApp **appPtr = OverlayManager_Data(appMan);
 
     switch (*state) {
     case POKEDEX_STATE_TRANSITION_IN:
@@ -162,9 +162,9 @@ int PokedexMain_Main(ApplicationManager *overlayMan, int *state)
     return 0;
 }
 
-int PokedexMain_Exit(ApplicationManager *overlayMan, int *state)
+int PokedexMain_Exit(ApplicationManager *appMan, int *state)
 {
-    OverlayManager_Data(overlayMan);
+    OverlayManager_Data(appMan);
 
     SetVBlankCallback(NULL, NULL);
 
@@ -172,7 +172,7 @@ int PokedexMain_Exit(ApplicationManager *overlayMan, int *state)
 
     PokedexMain_FreeGraphics();
     VramTransfer_Free();
-    OverlayManager_FreeData(overlayMan);
+    OverlayManager_FreeData(appMan);
     Heap_Destroy(HEAP_ID_POKEDEX);
     Sound_SetPlayerVolume(1, 127);
 

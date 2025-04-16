@@ -47,9 +47,9 @@ typedef struct {
     PokedexMemory *pokedexMemory;
 } PokedexOverlayArgs;
 
-int PokedexMain_Init(ApplicationManager *overlayMan, int *state);
-int PokedexMain_Main(ApplicationManager *overlayMan, int *state);
-int PokedexMain_Exit(ApplicationManager *overlayMan, int *state);
+int PokedexMain_Init(ApplicationManager *appMan, int *state);
+int PokedexMain_Main(ApplicationManager *appMan, int *state);
+int PokedexMain_Exit(ApplicationManager *appMan, int *state);
 PokedexApp *PokedexMain_NewPokedexApp(enum HeapId heapID, const PokedexOverlayArgs *pokedexOverlayArgs);
 BOOL ov21_021D10B8(PokedexApp *pokedexApp);
 void PokedexMain_InitGX(enum HeapId heapID);

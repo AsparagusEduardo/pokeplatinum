@@ -110,9 +110,9 @@ static void ov5_021D1790(FieldSystem *fieldSystem);
 static void ov5_021D17EC(FieldSystem *fieldSystem);
 static void ov5_021D1878(FieldSystem *fieldSystem);
 static void ov5_021D1968(FieldSystem *fieldSystem);
-static BOOL FieldMap_Init(ApplicationManager *overlayMan, int *param1);
-static BOOL FieldMap_Main(ApplicationManager *overlayMan, int *param1);
-static BOOL FieldMap_Exit(ApplicationManager *overlayMan, int *param1);
+static BOOL FieldMap_Init(ApplicationManager *appMan, int *param1);
+static BOOL FieldMap_Main(ApplicationManager *appMan, int *param1);
+static BOOL FieldMap_Exit(ApplicationManager *appMan, int *param1);
 static BOOL FieldMap_ChangeZone(FieldSystem *fieldSystem);
 static void ov5_021D134C(FieldSystem *fieldSystem, u8 param1);
 static BOOL ov5_021D119C(FieldSystem *fieldSystem);
@@ -144,12 +144,12 @@ static void fieldmap(void *param0)
     inline_fieldmap(fieldSystem);
 }
 
-static BOOL FieldMap_Init(ApplicationManager *overlayMan, int *param1)
+static BOOL FieldMap_Init(ApplicationManager *appMan, int *param1)
 {
     FieldSystem *fieldSystem;
     BOOL ret = FALSE;
 
-    fieldSystem = OverlayManager_Args(overlayMan);
+    fieldSystem = OverlayManager_Args(appMan);
 
     switch (*param1) {
     case 0:
@@ -240,9 +240,9 @@ static BOOL FieldMap_Init(ApplicationManager *overlayMan, int *param1)
     return ret;
 }
 
-static BOOL FieldMap_Main(ApplicationManager *overlayMan, int *param1)
+static BOOL FieldMap_Main(ApplicationManager *appMan, int *param1)
 {
-    FieldSystem *fieldSystem = OverlayManager_Args(overlayMan);
+    FieldSystem *fieldSystem = OverlayManager_Args(appMan);
 
     if (ov5_021D119C(fieldSystem)) {
         sub_02055D94(fieldSystem);
@@ -261,9 +261,9 @@ static BOOL FieldMap_Main(ApplicationManager *overlayMan, int *param1)
     }
 }
 
-static BOOL FieldMap_Exit(ApplicationManager *overlayMan, int *param1)
+static BOOL FieldMap_Exit(ApplicationManager *appMan, int *param1)
 {
-    FieldSystem *fieldSystem = OverlayManager_Args(overlayMan);
+    FieldSystem *fieldSystem = OverlayManager_Args(appMan);
     LandDataManager_Tick(fieldSystem, fieldSystem->landDataMan);
 
     switch (*param1) {
