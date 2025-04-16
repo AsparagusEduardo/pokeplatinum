@@ -42,22 +42,22 @@
 FS_EXTERN_OVERLAY(overlay5);
 FS_EXTERN_OVERLAY(overlay77);
 
-static BOOL InitFieldSystemContinue(ApplicationManager *ovyManager, int *state);
-static BOOL InitFieldSystemNewGame(ApplicationManager *ovyManager, int *state);
-static BOOL ExecuteFieldProcesses(ApplicationManager *ovyManager, int *state);
-static BOOL ReturnToTitleScreen(ApplicationManager *ovyManager, int *state);
-static FieldSystem *InitFieldSystem(ApplicationManager *ovyManager);
-static void TeardownFieldSystem(ApplicationManager *ovyManager);
+static BOOL InitFieldSystemContinue(ApplicationManager *appMan, int *state);
+static BOOL InitFieldSystemNewGame(ApplicationManager *appMan, int *state);
+static BOOL ExecuteFieldProcesses(ApplicationManager *appMan, int *state);
+static BOOL ReturnToTitleScreen(ApplicationManager *appMan, int *state);
+static FieldSystem *InitFieldSystem(ApplicationManager *appMan);
+static void TeardownFieldSystem(ApplicationManager *appMan);
 static void ExecuteAndCleanupIfDone(ApplicationManager **ovyManagerPtr);
 static BOOL HandleInputsEventsAndProcesses(FieldSystem *fieldSystem);
 static void HandleFieldInput(FieldSystem *fieldSystem);
 
 static FieldSystem *sFieldSystem;
 
-static BOOL InitFieldSystemContinue(ApplicationManager *ovyManager, int *state)
+static BOOL InitFieldSystemContinue(ApplicationManager *appMan, int *state)
 {
-    ApplicationArgs *argv = OverlayManager_Args(ovyManager);
-    sFieldSystem = InitFieldSystem(ovyManager);
+    ApplicationArgs *argv = OverlayManager_Args(appMan);
+    sFieldSystem = InitFieldSystem(appMan);
 
     if (argv->error) {
         FieldSystem_StartLoadMapFromErrorTask(sFieldSystem);
@@ -69,25 +69,25 @@ static BOOL InitFieldSystemContinue(ApplicationManager *ovyManager, int *state)
     return TRUE;
 }
 
-static BOOL InitFieldSystemNewGame(ApplicationManager *ovyManager, int *state)
+static BOOL InitFieldSystemNewGame(ApplicationManager *appMan, int *state)
 {
-    sFieldSystem = InitFieldSystem(ovyManager);
+    sFieldSystem = InitFieldSystem(appMan);
     FieldSystem_SetLoadNewGameSpawnTask(sFieldSystem);
     return TRUE;
 }
 
-static BOOL ExecuteFieldProcesses(ApplicationManager *ovyManager, int *state)
+static BOOL ExecuteFieldProcesses(ApplicationManager *appMan, int *state)
 {
-    if (HandleInputsEventsAndProcesses(OverlayManager_Data(ovyManager))) {
+    if (HandleInputsEventsAndProcesses(OverlayManager_Data(appMan))) {
         return TRUE;
     } else {
         return FALSE;
     }
 }
 
-static BOOL ReturnToTitleScreen(ApplicationManager *ovyManager, int *state)
+static BOOL ReturnToTitleScreen(ApplicationManager *appMan, int *state)
 {
-    TeardownFieldSystem(ovyManager);
+    TeardownFieldSystem(appMan);
     EnqueueApplication(FS_OVERLAY_ID(overlay77), &gTitleScreenOverlayTemplate);
     return TRUE;
 }
@@ -144,13 +144,13 @@ void FieldSystem_StartChildProcess(FieldSystem *fieldSystem, const OverlayManage
     fieldSystem->processManager->child = OverlayManager_New(overlayTemplate, overlayArgs, HEAP_ID_FIELDMAP);
 }
 
-static FieldSystem *InitFieldSystem(ApplicationManager *ovyManager)
+static FieldSystem *InitFieldSystem(ApplicationManager *appMan)
 {
     Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_FIELDMAP, HEAP_SIZE_FIELDMAP);
     Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_FIELD_TASK, HEAP_SIZE_FIELD_TASK);
     Heap_Create(HEAP_ID_SYSTEM, HEAP_ID_91, 0x300);
 
-    FieldSystem *fieldSystem = OverlayManager_NewData(ovyManager, sizeof(FieldSystem), HEAP_ID_FIELDMAP);
+    FieldSystem *fieldSystem = OverlayManager_NewData(appMan, sizeof(FieldSystem), HEAP_ID_FIELDMAP);
     MI_CpuClear8(fieldSystem, sizeof(FieldSystem));
 
     fieldSystem->processManager = Heap_AllocFromHeap(HEAP_ID_FIELDMAP, sizeof(FieldProcessManager));
@@ -158,7 +158,7 @@ static FieldSystem *InitFieldSystem(ApplicationManager *ovyManager)
     fieldSystem->processManager->child = NULL;
     fieldSystem->processManager->pause = FALSE;
     fieldSystem->processManager->kill = FALSE;
-    fieldSystem->saveData = ((ApplicationArgs *)OverlayManager_Args(ovyManager))->saveData;
+    fieldSystem->saveData = ((ApplicationArgs *)OverlayManager_Args(appMan))->saveData;
     fieldSystem->task = NULL;
     fieldSystem->location = FieldOverworldState_GetPlayerLocation(SaveData_GetFieldOverworldState(fieldSystem->saveData));
     fieldSystem->mapMatrix = MapMatrix_New();
@@ -176,9 +176,9 @@ static FieldSystem *InitFieldSystem(ApplicationManager *ovyManager)
     return fieldSystem;
 }
 
-static void TeardownFieldSystem(ApplicationManager *ovyManager)
+static void TeardownFieldSystem(ApplicationManager *appMan)
 {
-    FieldSystem *fieldSystem = OverlayManager_Data(ovyManager);
+    FieldSystem *fieldSystem = OverlayManager_Data(appMan);
 
     MapMatrix_Free(fieldSystem->mapMatrix);
     MapHeaderData_Free(fieldSystem);
@@ -188,7 +188,7 @@ static void TeardownFieldSystem(ApplicationManager *ovyManager)
     sub_0209C388(fieldSystem->battleSubscreenCursorOn);
 
     Heap_FreeToHeap(fieldSystem->processManager);
-    OverlayManager_FreeData(ovyManager);
+    OverlayManager_FreeData(appMan);
     Heap_Destroy(HEAP_ID_91);
     Heap_Destroy(HEAP_ID_FIELDMAP);
     Heap_Destroy(HEAP_ID_FIELD_TASK);

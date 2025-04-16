@@ -1851,10 +1851,10 @@ static int GBAMigrator_Init(ApplicationManager *param0, int *state)
 
 extern int gIgnoreCartridgeForWake;
 
-static int GBAMigrator_Main(ApplicationManager *ovyManager, int *state)
+static int GBAMigrator_Main(ApplicationManager *appMan, int *state)
 {
     int boxPos, gbaMonValidity, v2;
-    GBAMigrator *migrator = OverlayManager_Data(ovyManager);
+    GBAMigrator *migrator = OverlayManager_Data(appMan);
 
     CTRDG_IsExisting();
 
@@ -2181,17 +2181,17 @@ static int GBAMigrator_Main(ApplicationManager *ovyManager, int *state)
     return 0;
 }
 
-static int GBAMigrator_Exit(ApplicationManager *ovyManager, int *state)
+static int GBAMigrator_Exit(ApplicationManager *appMan, int *state)
 {
     FS_EXTERN_OVERLAY(overlay77);
 
-    GBAMigrator *migrator = OverlayManager_Data(ovyManager);
+    GBAMigrator *migrator = OverlayManager_Data(appMan);
 
     Strbuf_Free(migrator->unk_12668);
     Strbuf_Free(migrator->unk_1266C);
     Heap_FreeToHeap(migrator->bgConfig);
     EnqueueApplication(FS_OVERLAY_ID(overlay77), &gTitleScreenOverlayTemplate);
-    OverlayManager_FreeData(ovyManager);
+    OverlayManager_FreeData(appMan);
     Heap_Destroy(HEAP_ID_MIGRATE_FROM_GBA);
 
     ov97_02238400(FALSE);

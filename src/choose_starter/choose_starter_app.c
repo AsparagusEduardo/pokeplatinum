@@ -379,9 +379,9 @@ enum {
     CHOOSE_STARTER_MAIN_WAIT_FADE_OUT,
 };
 
-BOOL ChooseStarter_Main(ApplicationManager *ovyManager, int *state)
+BOOL ChooseStarter_Main(ApplicationManager *appMan, int *state)
 {
-    ChooseStarterApp *app = OverlayManager_Data(ovyManager);
+    ChooseStarterApp *app = OverlayManager_Data(appMan);
     BOOL selectionMade;
     u16 palette = 0x08C3;
 
