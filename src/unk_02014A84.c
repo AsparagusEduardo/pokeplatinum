@@ -3,6 +3,8 @@
 #include <nitro.h>
 #include <string.h>
 
+#include "constants/heap.h"
+
 #include "struct_defs/sentence.h"
 
 #include "charcode.h"
@@ -15,11 +17,11 @@
 static u32 sub_02014C00(u32 param0, u32 param1);
 
 static const u16 Unk_020E5498[] = {
-    0x1C0,
-    0x1C2,
-    0x1BE,
-    0x1BF,
-    0x1C1
+    TEXT_BANK_UNK_0448,
+    TEXT_BANK_UNK_0450,
+    TEXT_BANK_UNK_0446,
+    TEXT_BANK_UNK_0447,
+    TEXT_BANK_UNK_0449
 };
 
 void sub_02014A84(Sentence *param0)
@@ -113,7 +115,7 @@ Strbuf *sub_02014B34(const Sentence *sentence, u32 heapID)
 
 Strbuf *sub_02014BA0(const Sentence *param0, u32 param1)
 {
-    return MessageBank_GetNewStrbufFromNARC(26, Unk_020E5498[param0->type], param0->id, param1);
+    return MessageBank_GetNewStrbufFromNARC(NARC_INDEX_MSGDATA__PL_MSG, Unk_020E5498[param0->type], param0->id, param1);
 }
 
 BOOL sub_02014BBC(const Sentence *param0)
@@ -145,7 +147,7 @@ static u32 sub_02014C00(u32 param0, u32 param1)
     GF_ASSERT(param0 < 5);
     GF_ASSERT(param1 < sub_02014CD4(param0));
 
-    v0 = MessageBank_GetNewStrbufFromNARC(26, Unk_020E5498[param0], param1, 0);
+    v0 = MessageBank_GetNewStrbufFromNARC(NARC_INDEX_MSGDATA__PL_MSG, Unk_020E5498[param0], param1, HEAP_ID_SYSTEM);
     v1 = Strbuf_GetData(v0);
     v2 = 0;
 

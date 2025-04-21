@@ -559,7 +559,7 @@ static UnkStruct_ov70_02261418 *ov70_022613F4(int param0, int param1, u32 param2
     void *v0;
     u32 v1 = (param1 * 5) + param0;
     GF_ASSERT(v1 < (5 * 5));
-    v0 = LoadMemberFromNARC(174, 1 + v1, 0, param2, 1);
+    v0 = LoadMemberFromNARC(NARC_INDEX_APPLICATION__WIFI_LOBBY__MAP_CONV__WFLBY_MAP, 1 + v1, 0, param2, 1);
 
     return v0;
 }

@@ -691,7 +691,7 @@ static int ov97_02230F20(UnkStruct_ov97_02230868 *param0, int param1, int param2
 static void ov97_02230F58(UnkStruct_ov97_02230868 *param0, u32 param1, u32 param2, u32 param3)
 {
     NNSG2dScreenData *v0;
-    void *v1 = LoadMemberFromNARC(116, param1, 1, param0->heapID, 1);
+    void *v1 = LoadMemberFromNARC(NARC_INDEX_GRAPHIC__MYSTERY, param1, 1, param0->heapID, 1);
 
     NNS_G2dGetUnpackedScreenData(v1, &v0);
 

@@ -3,6 +3,8 @@
 #include <nitro.h>
 #include <string.h>
 
+#include "res/text/bank/unk_0437.h"
+
 #include "constants/heap.h"
 
 #include "struct_decls/struct_020998EC_decl.h"
@@ -143,9 +145,9 @@ static void ov20_021D48C4(UnkStruct_ov20_021D4AD4 *param0, NARC *param1)
     NNSG2dCharacterData *v3;
 
     Font_InitManager(FONT_SUBSCREEN, HEAP_ID_SYSTEM);
-    v0 = MessageBank_GetNewStrbufFromNARC(0x1A, 0x1B5, 0xB, 0x23);
-    v1 = MessageBank_GetNewStrbufFromNARC(0x1A, 0x1B5, 0xC, 0x23);
-    v2 = Graphics_GetCharDataFromOpenNARC(param1, 20, 1, &v3, 0x23);
+    v0 = MessageBank_GetNewStrbufFromNARC(NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0437, pl_msg_00000437_00011, HEAP_ID_35);
+    v1 = MessageBank_GetNewStrbufFromNARC(NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0437, pl_msg_00000437_00012, HEAP_ID_35);
+    v2 = Graphics_GetCharDataFromOpenNARC(param1, 20, 1, &v3, HEAP_ID_35);
     if (v2) {
         Window v4;
 

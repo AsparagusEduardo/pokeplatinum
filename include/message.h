@@ -3,6 +3,8 @@
 
 #include "generated/text_banks.h"
 
+#include "constants/narc.h"
+
 #include "narc.h"
 #include "strbuf.h"
 

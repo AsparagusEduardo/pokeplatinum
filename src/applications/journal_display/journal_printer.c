@@ -341,7 +341,7 @@ static void JournalPrinter_PrintTrainerEvent(JournalManager *journalManager, Win
         return;
     }
 
-    Strbuf *name = MessageBank_GetNewStrbufFromNARC(NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_LOCATION_NAMES, MapHeader_GetMapLabelTextID(journalEntryTrainer.mapID), LocationNames_Text_Route227);
+    Strbuf *name = MessageBank_GetNewStrbufFromNARC(NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_LOCATION_NAMES, MapHeader_GetMapLabelTextID(journalEntryTrainer.mapID), HEAP_ID_JOURNAL);
     strLength = Strbuf_Length(name);
     Strbuf_Free(name);
 
@@ -352,7 +352,7 @@ static void JournalPrinter_PrintTrainerEvent(JournalManager *journalManager, Win
         strLength += Strbuf_Length(journalManager->strbuf);
         Strbuf_Free(name);
     } else {
-        name = MessageBank_GetNewStrbufFromNARC(NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_NPC_TRAINER_NAMES, journalEntryTrainer.trainerID, pl_msg_00000618_00042);
+        name = MessageBank_GetNewStrbufFromNARC(NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_NPC_TRAINER_NAMES, journalEntryTrainer.trainerID, HEAP_ID_JOURNAL);
         strLength += Strbuf_Length(name);
         Strbuf_Free(name);
         StringTemplate_SetTrainerName(journalManager->template, 1, journalEntryTrainer.trainerID);

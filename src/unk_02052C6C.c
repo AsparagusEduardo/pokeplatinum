@@ -268,7 +268,7 @@ static void sub_02052FA8(FieldSystem *fieldSystem, UnkStruct_0205300C *param1)
 {
     Options *v0 = SaveData_GetOptions(fieldSystem->saveData);
 
-    param1->unk_2C = MessageBank_GetNewStrbufFromNARC(26, 213, 15, 32);
+    param1->unk_2C = MessageBank_GetNewStrbufFromNARC(NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_COMMON_STRINGS, 15, HEAP_ID_FIELD_TASK);
 
     FieldMessage_AddWindow(fieldSystem->bgConfig, &param1->unk_1C, 3);
     FieldMessage_DrawWindow(&param1->unk_1C, v0);

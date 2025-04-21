@@ -125,7 +125,7 @@ static void ov54_022564BC(SysTask *param0, void *param1)
     Window_PutToTilemap(&v4);
 
     {
-        Strbuf *v5 = MessageBank_GetNewStrbufFromNARC(26, 458, 0, 8);
+        Strbuf *v5 = MessageBank_GetNewStrbufFromNARC(NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0458, 0, HEAP_ID_POKETCH_APP);
 
         if (v5) {
             Text_AddPrinterWithParamsAndColor(&v4, FONT_SYSTEM, v5, (192 - Font_CalcStrbufWidth(FONT_SYSTEM, v5, 0)) / 2, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);

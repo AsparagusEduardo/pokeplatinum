@@ -21,7 +21,7 @@ UnkStruct_ov70_0225C894 *ov70_0225C858(u32 heapID)
     v0 = Heap_AllocFromHeap(heapID, sizeof(UnkStruct_ov70_0225C894));
     v0->unk_00 = ov63_0222BCE8(35, 42, heapID);
 
-    v1 = LoadMemberFromNARC(174, 0, 0, heapID, 1);
+    v1 = LoadMemberFromNARC(NARC_INDEX_APPLICATION__WIFI_LOBBY__MAP_CONV__WFLBY_MAP, 0, 0, heapID, 1);
 
     ov63_0222BD50(v0->unk_00, v1);
     Heap_FreeToHeap(v1);
