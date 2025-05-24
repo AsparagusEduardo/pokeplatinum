@@ -55,7 +55,7 @@ int ov94_022444C8(UnkStruct_ov94_0223FD4C *param0, int param1)
         break;
     case 10:
         param0->unk_E8.unk_04 = Pokemon_GetBoxPokemon((Pokemon *)param0->unk_12C.unk_00.unk_00);
-        sub_0202DA70(param0->unk_00->unk_00, param0->unk_1104);
+        sub_0202DA70(param0->unk_00->globalTrade, param0->unk_1104);
         param0->unk_E8.unk_00 = Pokemon_GetBoxPokemon(param0->unk_1104);
         param0->unk_120 = ov94_02244870(&param0->unk_12C);
         param0->unk_E8.unk_08 = param0->unk_120;
@@ -63,7 +63,7 @@ int ov94_022444C8(UnkStruct_ov94_0223FD4C *param0, int param1)
         param0->unk_E8.unk_10 = 1;
         break;
     case 9:
-        sub_0202DA70(param0->unk_00->unk_00, param0->unk_1104);
+        sub_0202DA70(param0->unk_00->globalTrade, param0->unk_1104);
         param0->unk_E8.unk_00 = Pokemon_GetBoxPokemon(param0->unk_1104);
         param0->unk_E8.unk_04 = (BoxPokemon *)Pokemon_GetBoxPokemon((Pokemon *)param0->unk_250[param0->unk_11C].unk_00.unk_00);
         param0->unk_120 = ov94_02244870(&param0->unk_250[param0->unk_11C]);
@@ -73,7 +73,7 @@ int ov94_022444C8(UnkStruct_ov94_0223FD4C *param0, int param1)
         break;
     }
 
-    param0->unk_E8.unk_14 = param0->unk_00->unk_24;
+    param0->unk_E8.unk_14 = param0->unk_00->options;
     param0->unk_B4 = OverlayManager_New(&Unk_ov94_0224636C, &param0->unk_E8, 62);
     param0->unk_104 = 1;
 
@@ -98,7 +98,7 @@ int ov94_02244678(UnkStruct_ov94_0223FD4C *param0, int param1)
                 v3 = Pokemon_GetEvolutionTargetSpecies(NULL, v1, EVO_CLASS_BY_TRADE, v2, &v4);
 
                 if (v3 != 0) {
-                    param0->unk_100 = sub_0207AE68(NULL, v1, v3, param0->unk_00->unk_24, param0->unk_00->unk_3C, param0->unk_00->unk_10, param0->unk_00->unk_30, param0->unk_00->records, SaveData_GetPoketch(param0->unk_00->unk_20), v4, 0x4, HEAP_ID_62);
+                    param0->unk_100 = sub_0207AE68(NULL, v1, v3, param0->unk_00->options, param0->unk_00->unk_3C, param0->unk_00->pokedex, param0->unk_00->bag, param0->unk_00->records, SaveData_GetPoketch(param0->unk_00->saveData), v4, 0x4, HEAP_ID_62);
                     param0->unk_2C = 1;
                 } else {
                     ov94_0223C4C0(param0, 1, 0);
@@ -108,7 +108,7 @@ int ov94_02244678(UnkStruct_ov94_0223FD4C *param0, int param1)
                 Pokemon *v1 = ov94_022448AC(param0, param0->unk_24);
                 Pokemon *v5 = Pokemon_New(HEAP_ID_62);
 
-                sub_0202DA70(param0->unk_00->unk_00, v5);
+                sub_0202DA70(param0->unk_00->globalTrade, v5);
 
                 if ((Pokemon_GetValue(v1, MON_DATA_SPECIES, NULL) != Pokemon_GetValue(v5, MON_DATA_SPECIES, NULL)) || (Pokemon_GetValue(v1, MON_DATA_PERSONALITY, NULL) != Pokemon_GetValue(v5, MON_DATA_PERSONALITY, NULL))) {
                     int v6 = Pokemon_GetValue(v1, MON_DATA_HELD_ITEM, NULL);
@@ -118,7 +118,7 @@ int ov94_02244678(UnkStruct_ov94_0223FD4C *param0, int param1)
                     v7 = Pokemon_GetEvolutionTargetSpecies(NULL, v1, EVO_CLASS_BY_TRADE, v6, &v8);
 
                     if (v7 != 0) {
-                        param0->unk_100 = sub_0207AE68(NULL, v1, v7, param0->unk_00->unk_24, param0->unk_00->unk_3C, param0->unk_00->unk_10, param0->unk_00->unk_30, param0->unk_00->records, SaveData_GetPoketch(param0->unk_00->unk_20), v8, 0x4, HEAP_ID_62);
+                        param0->unk_100 = sub_0207AE68(NULL, v1, v7, param0->unk_00->options, param0->unk_00->unk_3C, param0->unk_00->pokedex, param0->unk_00->bag, param0->unk_00->records, SaveData_GetPoketch(param0->unk_00->saveData), v8, 0x4, HEAP_ID_62);
                         param0->unk_2C = 1;
                     } else {
                         ov94_0223C4C0(param0, 1, 0);
@@ -190,12 +190,12 @@ static void ov94_022448E8(UnkStruct_ov94_0223FD4C *param0)
     Pokemon *v0 = ov94_022448AC(param0, param0->unk_24);
 
     if (param0->unk_124.unk_00 == 18) {
-        Pokemon_Copy(v0, Party_GetPokemonBySlotIndex(param0->unk_00->unk_08, param0->unk_124.unk_04));
+        Pokemon_Copy(v0, Party_GetPokemonBySlotIndex(param0->unk_00->party, param0->unk_124.unk_04));
     } else {
         int v1 = 0, v2 = 0;
 
-        PCBoxes_InitBoxMonAt(param0->unk_00->unk_0C, param0->unk_124.unk_00, param0->unk_124.unk_04);
-        PCBoxes_TryGetNextAvailableSpace(param0->unk_00->unk_0C, &v1, &v2);
-        PCBoxes_TryStoreBoxMonInBox(param0->unk_00->unk_0C, v1, Pokemon_GetBoxPokemon(v0));
+        PCBoxes_InitBoxMonAt(param0->unk_00->pcBoxes, param0->unk_124.unk_00, param0->unk_124.unk_04);
+        PCBoxes_TryGetNextAvailableSpace(param0->unk_00->pcBoxes, &v1, &v2);
+        PCBoxes_TryStoreBoxMonInBox(param0->unk_00->pcBoxes, v1, Pokemon_GetBoxPokemon(v0));
     }
 }

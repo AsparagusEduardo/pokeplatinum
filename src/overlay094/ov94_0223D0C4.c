@@ -235,7 +235,7 @@ static void ov94_0223D2E8(UnkStruct_ov94_0223FD4C *param0)
     Graphics_LoadPaletteFromOpenNARC(v1, 7, 0, 0, 16 * 3 * 2, HEAP_ID_62);
     Graphics_LoadPaletteFromOpenNARC(v1, 5, 4, 0, 16 * 8 * 2, HEAP_ID_62);
     Font_LoadScreenIndicatorsPalette(0, 13 * 0x20, HEAP_ID_62);
-    LoadMessageBoxGraphics(v0, 0, 1, 10, Options_Frame(param0->unk_00->unk_24), HEAP_ID_62);
+    LoadMessageBoxGraphics(v0, 0, 1, 10, Options_Frame(param0->unk_00->options), HEAP_ID_62);
     LoadStandardWindowGraphics(v0, 0, (1 + (18 + 12)), 11, 0, HEAP_ID_62);
     Graphics_LoadTilesToBgLayerFromOpenNARC(v1, 17, v0, 1, 0, 16 * 5 * 0x20, 1, HEAP_ID_62);
     Graphics_LoadTilemapToBgLayerFromOpenNARC(v1, 25, v0, 1, 0, 32 * 24 * 2, 1, HEAP_ID_62);
@@ -434,7 +434,7 @@ static int ov94_0223D754(UnkStruct_ov94_0223FD4C *param0)
             Pokemon *v0 = (Pokemon *)param0->unk_12C.unk_00.unk_00;
 
             if (ov94_02241498(v0)) {
-                if (Party_GetCurrentCount(param0->unk_00->unk_08) == 6) {
+                if (Party_GetCurrentCount(param0->unk_00->party) == 6) {
                     ov94_0223D88C(param0, 36, TEXT_SPEED_FAST, 0, 0xf0f, v0);
                     ov94_0223C3F4(param0, 3, 1);
                     return 3;

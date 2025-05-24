@@ -39,7 +39,7 @@ void sub_02030A98(UnkStruct_02030A80 *param0)
 void sub_02030AA0(UnkStruct_02030A80 *param0, SaveData *param1)
 {
     TrainerInfo *v0 = SaveData_GetTrainerInfo(param1);
-    UnkStruct_0202C878 *v1 = sub_0202C878(param1);
+    WiFiHistory *v1 = SaveData_GetWiFiHistory(param1);
     SystemData *v2 = SaveData_GetSystemData(param1);
     const MiscSaveBlock *v3 = SaveData_MiscSaveBlockConst(param1);
     int v4, v5, v6;

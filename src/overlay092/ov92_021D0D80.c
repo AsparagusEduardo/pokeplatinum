@@ -67,7 +67,7 @@ typedef struct {
 
 typedef struct {
     int heapID;
-    UnkStruct_0202C878 *unk_04;
+    WiFiHistory *unk_04;
     Options *unk_08;
     UnkStruct_ov92_021D1B24_sub1 unk_0C;
     BgConfig *unk_B810;
@@ -327,7 +327,7 @@ int ov92_021D0D80(OverlayManager *param0, int *param1)
     {
         SaveData *v2 = OverlayManager_Args(param0);
 
-        v0->unk_04 = sub_0202C878(v2);
+        v0->unk_04 = SaveData_GetWiFiHistory(v2);
         v0->unk_BB14 = sub_0202C8C0(v0->unk_04);
         v0->unk_BB18 = sub_0202C8C4(v0->unk_04);
         v0->unk_BB24 = sub_0202C990(v0->unk_04);

@@ -43,7 +43,7 @@ typedef struct FieldBattleDTO {
     PCBoxes *pcBoxes;
     ChatotCry *chatotCries[MAX_BATTLERS];
     Poketch *poketch;
-    UnkStruct_0202C878 *unk_104;
+    WiFiHistory *unk_104;
     Options *options;
     UnkStruct_0206D140 *unk_10C;
     BattleRecords battleRecords;

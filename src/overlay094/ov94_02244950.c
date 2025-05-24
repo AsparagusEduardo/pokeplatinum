@@ -107,7 +107,7 @@ int ov94_02244950(UnkStruct_ov94_0223FD4C *param0, int param1)
     GXLayers_EngineAToggleLayers(GX_PLANEMASK_BG1, 1);
     GXLayers_EngineBToggleLayers(GX_PLANEMASK_BG0, 1);
     GXLayers_EngineBToggleLayers(GX_PLANEMASK_BG1, 1);
-    sub_02038438(param0->unk_00->unk_20);
+    sub_02038438(param0->unk_00->saveData);
 
     ov94_02245934(param0);
 
@@ -274,7 +274,7 @@ static void ov94_02244B8C(UnkStruct_ov94_0223FD4C *param0)
     Graphics_LoadPaletteFromOpenNARC(v1, 3, 4, 0, 0, HEAP_ID_62);
     Font_LoadScreenIndicatorsPalette(0, 13 * 0x20, HEAP_ID_62);
     Font_LoadScreenIndicatorsPalette(4, 13 * 0x20, HEAP_ID_62);
-    LoadMessageBoxGraphics(v0, 0, 1, 10, Options_Frame(param0->unk_00->unk_24), HEAP_ID_62);
+    LoadMessageBoxGraphics(v0, 0, 1, 10, Options_Frame(param0->unk_00->options), HEAP_ID_62);
     LoadStandardWindowGraphics(v0, 0, (1 + (18 + 12)), 11, 0, HEAP_ID_62);
     Graphics_LoadTilesToBgLayerFromOpenNARC(v1, 2, v0, 1, 0, 0, 0, HEAP_ID_62);
     Graphics_LoadTilemapToBgLayerFromOpenNARC(v1, 5, v0, 1, 0, 32 * 24 * 2, 0, HEAP_ID_62);
@@ -555,14 +555,14 @@ static int ov94_0224529C(UnkStruct_ov94_0223FD4C *param0)
     DWCUserData *v0;
     s32 v1;
 
-    v0 = sub_0202AD28(param0->unk_00->unk_14);
-    v1 = sub_02025D74(param0->unk_00->unk_04);
+    v0 = sub_0202AD28(param0->unk_00->wiFiList);
+    v1 = sub_02025D74(param0->unk_00->systemData);
 
     if (v1 == 0) {
-        sub_02025D78(param0->unk_00->unk_04, param0->unk_00->unk_38);
+        sub_02025D78(param0->unk_00->systemData, param0->unk_00->unk_38);
     }
 
-    v1 = sub_02025D74(param0->unk_00->unk_04);
+    v1 = sub_02025D74(param0->unk_00->systemData);
     ov94_0223B140(v1, DWC_CreateFriendKey(v0));
     param0->unk_2C = 7;
 
@@ -632,7 +632,7 @@ static int ov94_02245300(UnkStruct_ov94_0223FD4C *param0)
 
 static int ov94_022453B8(UnkStruct_ov94_0223FD4C *param0)
 {
-    sub_02030E78(param0->unk_00->unk_20, &param0->unk_1144);
+    sub_02030E78(param0->unk_00->saveData, &param0->unk_1144);
     ov94_0223BB84(&param0->unk_1144, &param0->unk_11A8);
 
     param0->unk_2C = 10;

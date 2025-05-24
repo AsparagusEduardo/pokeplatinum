@@ -17,19 +17,19 @@
 #include "trainer_info.h"
 
 typedef struct {
-    GlobalTrade *unk_00;
-    SystemData *unk_04;
-    Party *unk_08;
-    PCBoxes *unk_0C;
-    Pokedex *unk_10;
-    WiFiList *unk_14;
-    UnkStruct_0202C878 *unk_18;
-    TrainerInfo *unk_1C;
-    SaveData *unk_20;
-    Options *unk_24;
+    GlobalTrade *globalTrade;
+    SystemData *systemData;
+    Party *party;
+    PCBoxes *pcBoxes;
+    Pokedex *pokedex;
+    WiFiList *wiFiList;
+    WiFiHistory *wiFiHistory;
+    TrainerInfo *trainerInfo;
+    SaveData *saveData;
+    Options *options;
     GameRecords *records;
-    JournalEntry *unk_2C;
-    Bag *unk_30;
+    JournalEntry *journalEntry;
+    Bag *bag;
     int unk_34;
     int unk_38;
     int unk_3C;

@@ -454,7 +454,7 @@ static void ov94_0224170C(UnkStruct_ov94_0223FD4C *param0)
 
     Graphics_LoadPalette(104, 1, 0, 0, 16 * 3 * 2, HEAP_ID_62);
     Font_LoadScreenIndicatorsPalette(0, 13 * 0x20, HEAP_ID_62);
-    LoadMessageBoxGraphics(v0, 0, 1, 10, Options_Frame(param0->unk_00->unk_24), HEAP_ID_62);
+    LoadMessageBoxGraphics(v0, 0, 1, 10, Options_Frame(param0->unk_00->options), HEAP_ID_62);
     LoadStandardWindowGraphics(v0, 0, (1 + (18 + 12)), 11, 0, HEAP_ID_62);
     Graphics_LoadTilesToBgLayer(104, 11, v0, 1, 0, 16 * 5 * 0x20, 1, HEAP_ID_62);
     Graphics_LoadTilemapToBgLayer(104, 23, v0, 1, 0, 32 * 24 * 2, 1, HEAP_ID_62);
@@ -586,7 +586,7 @@ static int ov94_02241A58(UnkStruct_ov94_0223FD4C *param0)
 
 static int ov94_02241B2C(UnkStruct_ov94_0223FD4C *param0)
 {
-    param0->unk_10D8 = ov94_022427C0(param0, &param0->unk_10CC, &param0->unk_F9C[1], param0->unk_B90, param0->unk_B94, param0->unk_10E4, param0->unk_00->unk_10);
+    param0->unk_10D8 = ov94_022427C0(param0, &param0->unk_10CC, &param0->unk_F9C[1], param0->unk_B90, param0->unk_B94, param0->unk_10E4, param0->unk_00->pokedex);
     param0->unk_108 = 0xffff;
     param0->unk_2C = 6;
 
@@ -1045,13 +1045,13 @@ void ov94_022425A8(UnkStruct_ov94_0223BA88 *param0, UnkStruct_ov94_0223FD4C *par
         Pokemon_FromBoxPokemon(param1->unk_114, (Pokemon *)param0->unk_00.unk_00);
     }
 
-    CharCode_CopyNumChars(param0->unk_10C, TrainerInfo_Name(param1->unk_00->unk_1C), 8);
+    CharCode_CopyNumChars(param0->unk_10C, TrainerInfo_Name(param1->unk_00->trainerInfo), 8);
 
-    param0->unk_11C = TrainerInfo_ID_LowHalf(param1->unk_00->unk_1C);
-    param0->unk_11E = sub_0202C8C0(param1->unk_00->unk_18);
-    param0->unk_11F = sub_0202C8C4(param1->unk_00->unk_18);
-    param0->unk_120 = TrainerInfo_Appearance(param1->unk_00->unk_1C);
-    param0->unk_F6 = TrainerInfo_Gender(param1->unk_00->unk_1C);
+    param0->unk_11C = TrainerInfo_ID_LowHalf(param1->unk_00->trainerInfo);
+    param0->unk_11E = sub_0202C8C0(param1->unk_00->wiFiHistory);
+    param0->unk_11F = sub_0202C8C4(param1->unk_00->wiFiHistory);
+    param0->unk_120 = TrainerInfo_Appearance(param1->unk_00->trainerInfo);
+    param0->unk_F6 = TrainerInfo_Gender(param1->unk_00->trainerInfo);
     param0->unk_122 = GAME_VERSION;
     param0->unk_123 = GAME_LANGUAGE;
 }

@@ -21,7 +21,7 @@ typedef struct {
     Party *unk_08;
     PalPad *unk_0C;
     SaveData *unk_10;
-    UnkStruct_0202C878 *unk_14;
+    WiFiHistory *unk_14;
     Options *unk_18;
     JournalEntry *unk_1C;
     GameRecords *records;

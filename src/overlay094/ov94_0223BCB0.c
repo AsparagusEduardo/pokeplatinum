@@ -179,7 +179,7 @@ int ov94_0223BE2C(OverlayManager *param0, int *param1)
         if (IsScreenTransitionDone()) {
             if (v0->unk_104) {
                 ov94_0223C4E0(v0);
-                ov94_02243EF8(v0, TrainerInfo_Gender(v0->unk_00->unk_1C));
+                ov94_02243EF8(v0, TrainerInfo_Gender(v0->unk_00->trainerInfo));
                 ov94_02244234(v0, v0->unk_118, 0);
                 ov94_0223D068(v0);
                 v0->unk_104 = 0;
@@ -485,7 +485,7 @@ void ov94_0223C4C8(UnkStruct_ov94_0223FD4C *param0)
 
 int ov94_0223C4D4(UnkStruct_ov94_0223FD4C *param0)
 {
-    return Options_TextFrameDelay(param0->unk_00->unk_24);
+    return Options_TextFrameDelay(param0->unk_00->options);
 }
 
 static void ov94_0223C4E0(UnkStruct_ov94_0223FD4C *param0)
@@ -537,7 +537,7 @@ void ov94_0223C584(UnkStruct_ov94_0223FD4C *param0)
 static void ov94_0223C598(UnkStruct_ov94_0223FD4C *param0)
 {
     if (param0->unk_110E) {
-        param0->unk_110C += PCBoxes_CountMonsInBox(param0->unk_00->unk_0C, param0->unk_110E - 1);
+        param0->unk_110C += PCBoxes_CountMonsInBox(param0->unk_00->pcBoxes, param0->unk_110E - 1);
         param0->unk_110E++;
 
         if (param0->unk_110E == 19) {

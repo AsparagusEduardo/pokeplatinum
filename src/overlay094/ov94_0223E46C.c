@@ -276,7 +276,7 @@ static void ov94_0223E6B8(UnkStruct_ov94_0223FD4C *param0)
     Graphics_LoadPaletteFromOpenNARC(v1, 3, 0, 0, 16 * 3 * 2, HEAP_ID_62);
     Graphics_LoadPaletteFromOpenNARC(v1, 5, 4, 0, 16 * 8 * 2, HEAP_ID_62);
     Font_LoadScreenIndicatorsPalette(0, 13 * 0x20, HEAP_ID_62);
-    LoadMessageBoxGraphics(v0, 0, 1, 10, Options_Frame(param0->unk_00->unk_24), HEAP_ID_62);
+    LoadMessageBoxGraphics(v0, 0, 1, 10, Options_Frame(param0->unk_00->options), HEAP_ID_62);
     LoadStandardWindowGraphics(v0, 0, (1 + (18 + 12)), 11, 0, HEAP_ID_62);
     Graphics_LoadTilesToBgLayerFromOpenNARC(v1, 13, v0, 1, 0, 16 * 5 * 0x20, 1, HEAP_ID_62);
     Graphics_LoadTilemapToBgLayerFromOpenNARC(v1, 26, v0, 1, 0, 32 * 24 * 2, 1, HEAP_ID_62);
@@ -498,9 +498,9 @@ static int ov94_0223EC74(UnkStruct_ov94_0223FD4C *param0, int param1)
     int v4;
 
     if (param1 == 1) {
-        v0 = sub_0202DA9C(param0->unk_00->unk_00);
+        v0 = sub_0202DA9C(param0->unk_00->globalTrade);
     } else {
-        v0 = sub_0202DA8C(param0->unk_00->unk_00);
+        v0 = sub_0202DA8C(param0->unk_00->globalTrade);
     }
 
     inline_0202D558(v0, &v1);
@@ -795,7 +795,7 @@ static int ov94_0223F190(UnkStruct_ov94_0223FD4C *param0)
 
 static int ov94_0223F25C(UnkStruct_ov94_0223FD4C *param0)
 {
-    param0->unk_10D8 = ov94_022427C0(param0, &param0->unk_10CC, &param0->unk_F9C[1], param0->unk_B90, param0->unk_B94, param0->unk_10E4, param0->unk_00->unk_10);
+    param0->unk_10D8 = ov94_022427C0(param0, &param0->unk_10CC, &param0->unk_F9C[1], param0->unk_B90, param0->unk_B94, param0->unk_10E4, param0->unk_00->pokedex);
     param0->unk_108 = 0xffff;
     param0->unk_2C = 7;
 

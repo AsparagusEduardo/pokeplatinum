@@ -4,6 +4,7 @@
 #include <nitro.h>
 #include <string.h>
 
+#include "constants/heap.h"
 #include "generated/items.h"
 #include "generated/species.h"
 
@@ -299,7 +300,7 @@ static void ov94_0223FD4C(UnkStruct_ov94_0223FD4C *param0)
     Graphics_LoadPaletteFromOpenNARC(v1, 2, 0, 0, 16 * 3 * 2, HEAP_ID_62);
     Graphics_LoadPaletteFromOpenNARC(v1, 5, 4, 0, 16 * 8 * 2, HEAP_ID_62);
     Font_LoadScreenIndicatorsPalette(0, 13 * 0x20, HEAP_ID_62);
-    LoadMessageBoxGraphics(v0, 0, 1, 10, Options_Frame(param0->unk_00->unk_24), HEAP_ID_62);
+    LoadMessageBoxGraphics(v0, 0, 1, 10, Options_Frame(param0->unk_00->options), HEAP_ID_62);
     LoadStandardWindowGraphics(v0, 0, (1 + (18 + 12)), 11, 0, HEAP_ID_62);
     Graphics_LoadTilesToBgLayerFromOpenNARC(v1, 12, v0, 1, 0, 16 * 5 * 0x20, 1, HEAP_ID_62);
     Graphics_LoadTilemapToBgLayerFromOpenNARC(v1, 24, v0, 1, 0, 32 * 24 * 2, 1, HEAP_ID_62);
@@ -556,10 +557,10 @@ static int ov94_022402BC(UnkStruct_ov94_0223FD4C *param0)
                 if (param0->unk_112 != 31) {
                     Sound_PlayEffect(SEQ_SE_CONFIRM);
 
-                    switch (ov94_022412F4(param0->unk_00->unk_08, param0->unk_00->unk_0C, param0->unk_110, param0->unk_112)) {
+                    switch (ov94_022412F4(param0->unk_00->party, param0->unk_00->pcBoxes, param0->unk_110, param0->unk_112)) {
                     case 1:
-                        if (ov94_0224121C(param0->unk_00->unk_08, param0->unk_00->unk_0C, param0->unk_110, param0->unk_112)) {
-                            StringTemplate_SetNickname(param0->unk_B8C, 0, ov94_022411DC(param0->unk_00->unk_08, param0->unk_00->unk_0C, param0->unk_110, param0->unk_112));
+                        if (ov94_0224121C(param0->unk_00->party, param0->unk_00->pcBoxes, param0->unk_110, param0->unk_112)) {
+                            StringTemplate_SetNickname(param0->unk_B8C, 0, ov94_022411DC(param0->unk_00->party, param0->unk_00->pcBoxes, param0->unk_110, param0->unk_112));
                             ov94_02240D58(param0, 22, TEXT_SPEED_FAST, 0, 0xf0f, 0);
                             ov94_0223C3F4(param0, 3, 7);
                         } else {
@@ -587,12 +588,12 @@ static int ov94_022402BC(UnkStruct_ov94_0223FD4C *param0)
                 Sound_PlayEffect(SEQ_SE_CONFIRM);
             } else {
                 if (param0->unk_112 != 31) {
-                    switch (ov94_022412F4(param0->unk_00->unk_08, param0->unk_00->unk_0C, param0->unk_110, param0->unk_112)) {
+                    switch (ov94_022412F4(param0->unk_00->party, param0->unk_00->pcBoxes, param0->unk_110, param0->unk_112)) {
                     case 1: {
-                        BoxPokemon *v0 = ov94_022411DC(param0->unk_00->unk_08, param0->unk_00->unk_0C, param0->unk_110, param0->unk_112);
+                        BoxPokemon *v0 = ov94_022411DC(param0->unk_00->party, param0->unk_00->pcBoxes, param0->unk_110, param0->unk_112);
 
                         if (ov94_02241384(v0, &param0->unk_250[param0->unk_11C].unk_F0)) {
-                            if (ov94_0224121C(param0->unk_00->unk_08, param0->unk_00->unk_0C, param0->unk_110, param0->unk_112)) {
+                            if (ov94_0224121C(param0->unk_00->party, param0->unk_00->pcBoxes, param0->unk_110, param0->unk_112)) {
                                 StringTemplate_SetNickname(param0->unk_B8C, 0, v0);
                                 ov94_02240D58(param0, 18, TEXT_SPEED_FAST, 0, 0xf0f, 0);
                                 ov94_0223C3F4(param0, 3, 9);
@@ -719,7 +720,7 @@ static int ov94_02240688(UnkStruct_ov94_0223FD4C *param0)
         StringList_Free(param0->unk_10CC);
         Window_EraseStandardFrame(&param0->unk_F9C[0], 0);
 
-        v0 = ov94_022411DC(param0->unk_00->unk_08, param0->unk_00->unk_0C, param0->unk_110, param0->unk_112);
+        v0 = ov94_022411DC(param0->unk_00->party, param0->unk_00->pcBoxes, param0->unk_110, param0->unk_112);
 
         if (BoxPokemon_HasUnusedRibbons(v0)) {
             ov94_02240D58(param0, 37, TEXT_SPEED_FAST, 0, 0xf0f, 1);
@@ -736,7 +737,7 @@ static int ov94_02240688(UnkStruct_ov94_0223FD4C *param0)
             if (ov94_022411D0(param0->unk_110)) {
                 Pokemon *v2;
 
-                v2 = Party_GetPokemonBySlotIndex(param0->unk_00->unk_08, param0->unk_112);
+                v2 = Party_GetPokemonBySlotIndex(param0->unk_00->party, param0->unk_112);
 
                 if (Pokemon_GetValue(v2, MON_DATA_BALL_CAPSULE_ID, NULL)) {
                     v1 = 1;
@@ -745,7 +746,7 @@ static int ov94_02240688(UnkStruct_ov94_0223FD4C *param0)
             }
 
             if (v1 == 0) {
-                param0->unk_114 = ov94_022411DC(param0->unk_00->unk_08, param0->unk_00->unk_0C, param0->unk_110, param0->unk_112);
+                param0->unk_114 = ov94_022411DC(param0->unk_00->party, param0->unk_00->pcBoxes, param0->unk_110, param0->unk_112);
                 param0->unk_2C = 2;
 
                 ov94_0223C4C0(param0, 6, 0);
@@ -811,7 +812,7 @@ static int ov94_022408E8(UnkStruct_ov94_0223FD4C *param0)
         StringList_Free(param0->unk_10CC);
         Window_EraseStandardFrame(&param0->unk_F9C[0], 0);
 
-        boxMon = ov94_022411DC(param0->unk_00->unk_08, param0->unk_00->unk_0C, param0->unk_110, param0->unk_112);
+        boxMon = ov94_022411DC(param0->unk_00->party, param0->unk_00->pcBoxes, param0->unk_110, param0->unk_112);
 
         if (BoxPokemon_HasUnusedRibbons(boxMon)) {
             ov94_02240D58(param0, 37, TEXT_SPEED_FAST, 0, 0xf0f, 1);
@@ -828,7 +829,7 @@ static int ov94_022408E8(UnkStruct_ov94_0223FD4C *param0)
             if (ov94_022411D0(param0->unk_110)) {
                 Pokemon *v2;
 
-                v2 = Party_GetPokemonBySlotIndex(param0->unk_00->unk_08, param0->unk_112);
+                v2 = Party_GetPokemonBySlotIndex(param0->unk_00->party, param0->unk_112);
 
                 if (Pokemon_GetValue(v2, MON_DATA_BALL_CAPSULE_ID, NULL)) {
                     v1 = 1;
@@ -929,14 +930,14 @@ static int ov94_02240BB0(UnkStruct_ov94_0223FD4C *param0)
     Pokemon *v0 = (Pokemon *)param0->unk_250[param0->unk_11C].unk_00.unk_00;
 
     if (ov94_02241498(v0) && (param0->unk_110 != 18)) {
-        if (Party_GetCurrentCount(param0->unk_00->unk_08) == 6) {
+        if (Party_GetCurrentCount(param0->unk_00->party) == 6) {
             ov94_02240D58(param0, 28, TEXT_SPEED_FAST, 0, 0xf0f, 1);
             ov94_0223C3F4(param0, 4, 1);
             return 0;
         }
     }
 
-    param0->unk_114 = ov94_022411DC(param0->unk_00->unk_08, param0->unk_00->unk_0C, param0->unk_110, param0->unk_112);
+    param0->unk_114 = ov94_022411DC(param0->unk_00->party, param0->unk_00->pcBoxes, param0->unk_110, param0->unk_112);
     param0->unk_2C = 2;
     param0->unk_1110 = 1;
 
@@ -973,7 +974,7 @@ static int ov94_02240CA8(UnkStruct_ov94_0223FD4C *param0)
             Window_EraseMessageBox(&param0->unk_109C, 0);
             param0->unk_2C = 1;
         } else {
-            param0->unk_114 = ov94_022411DC(param0->unk_00->unk_08, param0->unk_00->unk_0C, param0->unk_110, param0->unk_112);
+            param0->unk_114 = ov94_022411DC(param0->unk_00->party, param0->unk_00->pcBoxes, param0->unk_110, param0->unk_112);
             param0->unk_2C = 2;
             ov94_0223C4C0(param0, 6, 0);
         }
@@ -1021,9 +1022,9 @@ static void ov94_02240D58(UnkStruct_ov94_0223FD4C *param0, int param1, int param
     Strbuf_Free(v1);
 }
 
-void *ov94_02240DD0(NARC *param0, u32 param1, NNSG2dCharacterData **param2, u32 param3)
+void *ov94_02240DD0(NARC *narc, u32 param1, NNSG2dCharacterData **param2, u32 heapID)
 {
-    void *v0 = NARC_AllocAndReadWholeMember(param0, param1, param3);
+    void *v0 = NARC_AllocAndReadWholeMember(narc, param1, heapID);
 
     if (v0 != NULL) {
         if (NNS_G2dGetUnpackedBGCharacterData(v0, param2) == 0) {
@@ -1035,19 +1036,19 @@ void *ov94_02240DD0(NARC *param0, u32 param1, NNSG2dCharacterData **param2, u32 
     return v0;
 }
 
-static void ov94_02240DF8(int param0, int param1, int param2, int param3, Sprite *param4, NARC *param5, UnkStruct_ov94_02240FA0 *param6)
+static void ov94_02240DF8(int species, int form, BOOL isEgg, int param3, Sprite *param4, NARC *param5, UnkStruct_ov94_02240FA0 *param6)
 {
     u8 *v0;
     u8 *v1;
     NNSG2dCharacterData *v2;
 
-    v1 = ov94_02240DD0(param5, PokeIconSpriteIndex(param0, param2, param1), &v2, 62);
+    v1 = ov94_02240DD0(param5, PokeIconSpriteIndex(species, isEgg, form), &v2, HEAP_ID_62);
 
     MI_CpuCopyFast(v2->pRawData, param6->unk_0C, ((4 * 4) * 0x20));
 
     param6->unk_00 = (12 + param3 * (4 * 4)) * 0x20;
     param6->unk_08 = param4;
-    param6->unk_04 = PokeIconPaletteIndex(param0, param1, param2) + 3;
+    param6->unk_04 = PokeIconPaletteIndex(species, form, isEgg) + 3;
 
     Heap_FreeToHeap(v1);
 }
@@ -1120,65 +1121,65 @@ static void ov94_02240EAC(BoxPokemon *boxMon, Sprite *param1, Sprite *param2, u1
     }
 }
 
-static void ov94_02240FA0(UnkStruct_ov94_0223FD4C *param0, int param1)
+static void ov94_02240FA0(UnkStruct_ov94_0223FD4C *param0, int boxID)
 {
-    u16 v0[30], v1, v2;
-    Pokemon *v3;
-    BoxPokemon *v4;
-    PCBoxes *v5 = param0->unk_00->unk_0C;
-    NARC *v6;
+    u16 v0[30], i, v2;
+    Pokemon *mon;
+    BoxPokemon *boxMon;
+    PCBoxes *pcBoxes = param0->unk_00->pcBoxes;
+    NARC *narc;
     UnkStruct_ov94_02240FA0 *v7;
 
-    param0->unk_1114 = v7 = Heap_AllocFromHeapAtEnd(3, sizeof(UnkStruct_ov94_02240FA0) * 30);
-    v6 = NARC_ctor(NARC_INDEX_POKETOOL__ICONGRA__PL_POKE_ICON, HEAP_ID_62);
+    param0->unk_1114 = v7 = Heap_AllocFromHeapAtEnd(HEAP_ID_APPLICATION, sizeof(UnkStruct_ov94_02240FA0) * 30);
+    narc = NARC_ctor(NARC_INDEX_POKETOOL__ICONGRA__PL_POKE_ICON, HEAP_ID_62);
 
-    if ((param1 >= 0) && (param1 < 18)) {
-        for (v1 = 0; v1 < 30; v1++) {
-            ov94_02240E50(PCBoxes_GetBoxMonAt(v5, param1, v1), &param0->unk_1108->unk_00[v1]);
+    if (boxID >= 0 && boxID < MAX_PC_BOXES) {
+        for (i = 0; i < MAX_MONS_PER_BOX; i++) {
+            ov94_02240E50(PCBoxes_GetBoxMonAt(pcBoxes, boxID, i), &param0->unk_1108->unk_00[i]);
         }
 
-        for (v1 = 0; v1 < 30; v1++) {
-            param0->unk_1108->unk_00[v1].species = SPECIES_NONE;
-            ov94_02240EAC(PCBoxes_GetBoxMonAt(v5, param1, v1), param0->unk_E28[v1], param0->unk_EA0[v1], &v0[v1], v1, v6, &param0->unk_1108->unk_00[v1], &v7[v1]);
+        for (i = 0; i < MAX_MONS_PER_BOX; i++) {
+            param0->unk_1108->unk_00[i].species = SPECIES_NONE;
+            ov94_02240EAC(PCBoxes_GetBoxMonAt(pcBoxes, boxID, i), param0->unk_E28[i], param0->unk_EA0[i], &v0[i], i, narc, &param0->unk_1108->unk_00[i], &v7[i]);
 
-            if (v1 < 6) {
-                Sprite_SetDrawFlag(param0->unk_F18[v1], 0);
+            if (i < 6) {
+                Sprite_SetDrawFlag(param0->unk_F18[i], FALSE);
             }
         }
 
-        PCBoxes_BufferBoxName(v5, param1, param0->unk_BA4);
+        PCBoxes_BufferBoxName(pcBoxes, boxID, param0->unk_BA4);
     } else {
-        int v8 = Party_GetCurrentCount(param0->unk_00->unk_08);
+        int partyCount = Party_GetCurrentCount(param0->unk_00->party);
 
-        for (v1 = 0; v1 < v8; v1++) {
-            v3 = Party_GetPokemonBySlotIndex(param0->unk_00->unk_08, v1);
-            v4 = Pokemon_GetBoxPokemon(v3);
+        for (i = 0; i < partyCount; i++) {
+            mon = Party_GetPokemonBySlotIndex(param0->unk_00->party, i);
+            boxMon = Pokemon_GetBoxPokemon(mon);
 
-            ov94_02240E50(v4, &param0->unk_1108->unk_00[v1]);
-            ov94_02240EAC(v4, param0->unk_E28[v1], param0->unk_EA0[v1], &v0[v1], v1, v6, &param0->unk_1108->unk_00[v1], &v7[v1]);
+            ov94_02240E50(boxMon, &param0->unk_1108->unk_00[i]);
+            ov94_02240EAC(boxMon, param0->unk_E28[i], param0->unk_EA0[i], &v0[i], i, narc, &param0->unk_1108->unk_00[i], &v7[i]);
 
-            if (Pokemon_GetValue(v3, MON_DATA_BALL_CAPSULE_ID, NULL)) {
-                Sprite_SetDrawFlag(param0->unk_F18[v1], 1);
+            if (Pokemon_GetValue(mon, MON_DATA_BALL_CAPSULE_ID, NULL)) {
+                Sprite_SetDrawFlag(param0->unk_F18[i], TRUE);
             } else {
-                Sprite_SetDrawFlag(param0->unk_F18[v1], 0);
+                Sprite_SetDrawFlag(param0->unk_F18[i], FALSE);
             }
         }
 
-        for (; v1 < 30; v1++) {
-            param0->unk_1108->unk_00[v1].species = SPECIES_NONE;
-            Sprite_SetDrawFlag(param0->unk_E28[v1], 0);
-            Sprite_SetDrawFlag(param0->unk_EA0[v1], 0);
-            v7[v1].unk_08 = NULL;
+        for (; i < MAX_MONS_PER_BOX; i++) {
+            param0->unk_1108->unk_00[i].species = SPECIES_NONE;
+            Sprite_SetDrawFlag(param0->unk_E28[i], FALSE);
+            Sprite_SetDrawFlag(param0->unk_EA0[i], FALSE);
+            v7[i].unk_08 = NULL;
 
-            if (v1 < 6) {
-                Sprite_SetDrawFlag(param0->unk_F18[v1], 0);
+            if (i < 6) {
+                Sprite_SetDrawFlag(param0->unk_F18[i], FALSE);
             }
         }
 
         MessageLoader_GetStrbuf(param0->unk_B90, 89, param0->unk_BA4);
     }
 
-    NARC_dtor(v6);
+    NARC_dtor(narc);
     Window_FillTilemap(&param0->unk_F8C, 0x0);
 
     ov94_02245900(&param0->unk_F8C, param0->unk_BA4, 0, 5, 1, TEXT_COLOR(1, 2, 0));
@@ -1190,32 +1191,32 @@ static void ov94_02240FA0(UnkStruct_ov94_0223FD4C *param0, int param1)
     param0->unk_1118 = ov94_02240E5C;
 }
 
-int ov94_022411D0(int param0)
+int ov94_022411D0(int boxID)
 {
-    if (param0 == 18) {
+    if (boxID == MAX_PC_BOXES) {
         return 1;
     } else {
         return 0;
     }
 }
 
-BoxPokemon *ov94_022411DC(Party *param0, PCBoxes *param1, int param2, int param3)
+BoxPokemon *ov94_022411DC(Party *party, PCBoxes *pcBoxes, int boxID, int monPosInBox)
 {
-    if (ov94_022411D0(param2)) {
-        if (param3 > (Party_GetCurrentCount(param0) - 1)) {
+    if (ov94_022411D0(boxID)) {
+        if (monPosInBox > (Party_GetCurrentCount(party) - 1)) {
             return NULL;
         }
 
-        return Pokemon_GetBoxPokemon(Party_GetPokemonBySlotIndex(param0, param3));
+        return Pokemon_GetBoxPokemon(Party_GetPokemonBySlotIndex(party, monPosInBox));
     }
 
-    return PCBoxes_GetBoxMonAt(param1, param2, param3);
+    return PCBoxes_GetBoxMonAt(pcBoxes, boxID, monPosInBox);
 }
 
-static int ov94_0224121C(Party *param0, PCBoxes *param1, int param2, int param3)
+static int ov94_0224121C(Party *party, PCBoxes *pcBoxes, int boxID, int param3)
 {
-    if (ov94_022411D0(param2)) {
-        if (Party_GetCurrentCount(param0) < 2) {
+    if (ov94_022411D0(boxID)) {
+        if (Party_GetCurrentCount(party) < 2) {
             return 0;
         }
     }

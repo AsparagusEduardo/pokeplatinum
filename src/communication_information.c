@@ -119,7 +119,7 @@ void CommInfo_SendBattleRegulation(void)
     const u16 *v2;
     RecordMixedRNG *v3 = SaveData_GetRecordMixedRNG(sCommInfo->saveData);
     WiFiList *v4 = SaveData_GetWiFiList(sCommInfo->saveData);
-    UnkStruct_0202C878 *v5 = sub_0202C878(sCommInfo->saveData);
+    WiFiHistory *v5 = SaveData_GetWiFiHistory(sCommInfo->saveData);
 
     if (sCommInfo->personalTrainerInfo) {
         trainerInfo = sCommInfo->personalTrainerInfo;

@@ -104,7 +104,7 @@ u32 sub_02030D98(SaveData *saveData, int param1)
 
 static void sub_02030DD0(SaveData *param0, UnkStruct_ov96_0223B574 *param1)
 {
-    UnkStruct_0202C878 *v0 = sub_0202C878(param0);
+    WiFiHistory *v0 = SaveData_GetWiFiHistory(param0);
     TrainerInfo *v1 = SaveData_GetTrainerInfo(param0);
     char *v2 = sub_02030D50(param0);
 

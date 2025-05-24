@@ -20,7 +20,7 @@ void sub_02073700(SaveData *param0, int param1, UnkStruct_ov96_0223B450_sub1 *pa
 {
     int v0;
     TrainerInfo *v1 = SaveData_GetTrainerInfo(param0);
-    UnkStruct_0202C878 *v2 = sub_0202C878(param0);
+    WiFiHistory *v2 = SaveData_GetWiFiHistory(param0);
     UnkStruct_0202D750 *v3 = sub_0202D750(param0);
 
     MI_CpuClear8(param2, sizeof(UnkStruct_ov96_0223B450_sub1));

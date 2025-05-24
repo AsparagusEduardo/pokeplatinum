@@ -58,7 +58,7 @@ typedef struct {
 typedef struct {
     SaveData *unk_00;
     WiFiList *unk_04;
-    UnkStruct_0202C878 *unk_08;
+    WiFiHistory *unk_08;
     UnkStruct_ov66_022324F0 unk_0C;
     void *unk_20;
     u8 *unk_24;
@@ -162,7 +162,7 @@ void ov66_022324F0(u32 heapID, SaveData *param1, u32 param2, const UnkStruct_ov6
 
     Unk_ov66_0225B6C0->unk_00 = param1;
     Unk_ov66_0225B6C0->unk_04 = SaveData_GetWiFiList(param1);
-    Unk_ov66_0225B6C0->unk_08 = sub_0202C878(param1);
+    Unk_ov66_0225B6C0->unk_08 = SaveData_GetWiFiHistory(param1);
     Unk_ov66_0225B6C0->unk_0C = *param3;
     Unk_ov66_0225B6C0->unk_20 = param4;
 

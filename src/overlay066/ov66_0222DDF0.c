@@ -2277,7 +2277,7 @@ static void ov66_0222F7C8(UnkStruct_ov66_0222F6C4 *param0, SaveData *param1, u32
 {
     TrainerInfo *v0;
     Party *v1;
-    UnkStruct_0202C878 *v2;
+    WiFiHistory *v2;
     Pokedex *v3;
     GameTime *v4;
 
@@ -2285,7 +2285,7 @@ static void ov66_0222F7C8(UnkStruct_ov66_0222F6C4 *param0, SaveData *param1, u32
         v0 = SaveData_GetTrainerInfo(param1);
         v1 = SaveData_GetParty(param1);
         v3 = SaveData_GetPokedex(param1);
-        v2 = sub_0202C878(param1);
+        v2 = SaveData_GetWiFiHistory(param1);
         v4 = SaveData_GetGameTime(param1);
     }
 

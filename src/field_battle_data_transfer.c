@@ -272,7 +272,7 @@ void FieldBattleDTO_InitFromGameState(FieldBattleDTO *dto, const FieldSystem *fi
     dto->bagCursor = bagCursor;
     dto->subscreenCursorOn = subscreenCursorOn;
     dto->poketch = SaveData_GetPoketch(save);
-    dto->unk_104 = sub_0202C878(save);
+    dto->unk_104 = SaveData_GetWiFiHistory(save);
     dto->records = SaveData_GetGameRecords(save);
     dto->journalEntry = journalEntry;
     dto->unk_124 = SaveData_GetPalPad(save);
@@ -327,7 +327,7 @@ void FieldBattleDTO_InitWithNormalizedMonLevels(FieldBattleDTO *dto, const Field
     dto->bagCursor = fieldSystem->bagCursor;
     dto->subscreenCursorOn = fieldSystem->battleSubscreenCursorOn;
     dto->poketch = SaveData_GetPoketch(fieldSystem->saveData);
-    dto->unk_104 = sub_0202C878(fieldSystem->saveData);
+    dto->unk_104 = SaveData_GetWiFiHistory(fieldSystem->saveData);
     dto->records = SaveData_GetGameRecords(fieldSystem->saveData);
     dto->journalEntry = fieldSystem->journalEntry;
     dto->unk_124 = SaveData_GetPalPad(fieldSystem->saveData);
@@ -392,7 +392,7 @@ void FieldBattleDTO_InitWithPartyOrder(FieldBattleDTO *dto, const FieldSystem *f
     dto->timeOfDay = FieldSystem_GetTimeOfDay(fieldSystem);
     dto->bagCursor = fieldSystem->bagCursor;
     dto->subscreenCursorOn = fieldSystem->battleSubscreenCursorOn;
-    dto->unk_104 = sub_0202C878(fieldSystem->saveData);
+    dto->unk_104 = SaveData_GetWiFiHistory(fieldSystem->saveData);
     dto->records = SaveData_GetGameRecords(fieldSystem->saveData);
     dto->journalEntry = fieldSystem->journalEntry;
     dto->mapHeaderID = fieldSystem->location->mapId;

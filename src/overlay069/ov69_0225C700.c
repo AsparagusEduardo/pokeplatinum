@@ -247,7 +247,7 @@ typedef struct {
     u16 unk_00;
     u16 unk_02;
     UnkStruct_ov69_0225DA74 unk_04;
-    UnkStruct_0202C878 *unk_0C;
+    WiFiHistory *unk_0C;
     Options *unk_10;
     int unk_14;
     int unk_18;
@@ -684,7 +684,7 @@ int ov69_0225C700(OverlayManager *param0, int *param1)
     v0 = OverlayManager_NewData(param0, sizeof(UnkStruct_ov69_0225CE64), HEAP_ID_105);
     memset(v0, 0, sizeof(UnkStruct_ov69_0225CE64));
 
-    v0->unk_0C = sub_0202C878(v1->unk_04);
+    v0->unk_0C = SaveData_GetWiFiHistory(v1->unk_04);
     v0->unk_10 = SaveData_GetOptions(v1->unk_04);
     v0->unk_14 = sub_0202C8C0(v0->unk_0C);
     v0->unk_18 = sub_0202C8C4(v0->unk_0C);

@@ -638,7 +638,7 @@ int ov104_0222E5F0(const TrainerInfo *param0)
 
 void ov104_0222E630(SaveData *param0)
 {
-    UnkStruct_0202C878 *v0 = sub_0202C878(param0);
+    WiFiHistory *v0 = SaveData_GetWiFiHistory(param0);
 
     sub_02038F8C(v0);
     return;

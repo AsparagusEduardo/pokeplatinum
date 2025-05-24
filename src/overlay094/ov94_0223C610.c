@@ -92,7 +92,7 @@ int ov94_0223C610(UnkStruct_ov94_0223FD4C *param0, int param1)
         param0->unk_2C = 0;
         param0->unk_34 = 1;
 
-        ov94_02243FA8(param0, TrainerInfo_Gender(param0->unk_00->unk_1C));
+        ov94_02243FA8(param0, TrainerInfo_Gender(param0->unk_00->trainerInfo));
     } else {
         if (param0->unk_1110 == 1) {
             StartScreenTransition(0, 1, 1, 0x0, 6, 1, HEAP_ID_62);
@@ -276,7 +276,7 @@ static void ov94_0223C888(UnkStruct_ov94_0223FD4C *param0)
 
     Graphics_LoadPaletteFromOpenNARC(v1, 4, 0, 0, 16 * 3 * 2, HEAP_ID_62);
     Font_LoadScreenIndicatorsPalette(0, 13 * 0x20, HEAP_ID_62);
-    LoadMessageBoxGraphics(v0, 0, 1, 10, Options_Frame(param0->unk_00->unk_24), HEAP_ID_62);
+    LoadMessageBoxGraphics(v0, 0, 1, 10, Options_Frame(param0->unk_00->options), HEAP_ID_62);
     LoadStandardWindowGraphics(v0, 0, (1 + (18 + 12)), 11, 0, HEAP_ID_62);
     Graphics_LoadTilesToBgLayerFromOpenNARC(v1, 14, v0, 1, 0, 16 * 6 * 0x20, 1, HEAP_ID_62);
     Graphics_LoadTilemapToBgLayerFromOpenNARC(v1, 30, v0, 1, 0, 32 * 24 * 2, 1, HEAP_ID_62);
@@ -478,7 +478,7 @@ static int ov94_0223CC28(UnkStruct_ov94_0223FD4C *param0)
 
 static int ov94_0223CDD8(UnkStruct_ov94_0223FD4C *param0)
 {
-    ov94_022440B8(param0, TrainerInfo_Gender(param0->unk_00->unk_1C));
+    ov94_022440B8(param0, TrainerInfo_Gender(param0->unk_00->trainerInfo));
 
     param0->unk_2C = 8;
     param0->unk_10F0 = 0;

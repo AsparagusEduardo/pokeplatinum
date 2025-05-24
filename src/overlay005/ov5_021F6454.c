@@ -1121,7 +1121,7 @@ BOOL ScrCmd_339(ScriptContext *ctx)
 
 BOOL ScrCmd_330(ScriptContext *ctx)
 {
-    UnkStruct_0202C878 *v0 = sub_0202C878(ctx->fieldSystem->saveData);
+    WiFiHistory *v0 = SaveData_GetWiFiHistory(ctx->fieldSystem->saveData);
 
     sub_02038F8C(v0);
     return 1;
