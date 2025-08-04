@@ -16,18 +16,17 @@ static inline void String_Check(const String *string)
     GF_ASSERT(string->integrity == STRING_MAGIC_NUMBER);
 }
 
-String *String_Init(u32 size, u32 heapID)
+String *String_New(u32 maxSize, u32 heapID)
 {
-    String *string = Heap_AllocFromHeap(heapID, SIZEOF_STRING_HEADER + (size * sizeof(charcode_t)));
+    String *str = Heap_AllocFromHeap(heapID, SIZEOF_STRING_HEADER + (maxSize * sizeof(charcode_t)));
 
-    if (string) {
-        string->integrity = STRING_MAGIC_NUMBER;
-        string->maxSize = size;
-        string->size = 0;
-        string->data[0] = CHAR_EOS;
+    if (str) {
+        str->integrity = STRING_MAGIC_NUMBER;
+        str->maxSize = maxSize;
+        str->size = 0;
+        str->data[0] = CHAR_EOS;
     }
-
-    return string;
+    return str;
 }
 
 void String_Free(String *string)
@@ -64,7 +63,7 @@ String *String_Clone(const String *src, u32 heapID)
 {
     String_Check(src);
 
-    String *string = String_Init(src->size + 1, heapID);
+    String *string = String_New(src->size + 1, heapID);
 
     if (string) {
         String_Copy(string, src);

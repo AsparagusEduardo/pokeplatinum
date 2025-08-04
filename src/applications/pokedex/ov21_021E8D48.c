@@ -729,7 +729,7 @@ static void ov21_021E9968(Window *param0, int param1, int param2)
 
 static void ov21_021E998C(Window *param0, enum HeapId heapID)
 {
-    String *v0 = String_Init(64, heapID);
+    String *v0 = String_New(64, heapID);
     MessageLoader *pokedexMessageBank = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_POKEDEX, heapID);
 
     MessageLoader_GetString(pokedexMessageBank, pl_msg_pokedex_registered, v0);

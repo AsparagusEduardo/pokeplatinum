@@ -153,7 +153,7 @@ FieldBattleDTO *FieldBattleDTO_NewCatchingTutorial(enum HeapId heapID, const Fie
     Options *options = SaveData_GetOptions(fieldSystem->saveData);
     FieldBattleDTO *dto = FieldBattleDTO_New(heapID, BATTLE_TYPE_CATCH_TUTORIAL);
     MessageLoader *msgLoader = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_COUNTERPART_NAMES, heapID);
-    String *string = String_Init(TRAINER_NAME_LEN + 1, heapID);
+    String *string = String_New(TRAINER_NAME_LEN + 1, heapID);
     Pokemon *mon;
 
     MessageLoader_GetString(msgLoader, TrainerInfo_Gender(trainerInfo) ^ 1, string);

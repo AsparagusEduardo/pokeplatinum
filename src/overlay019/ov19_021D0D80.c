@@ -3474,7 +3474,7 @@ static void ov19_MonSelectionFree(BoxMonSelection *selection)
 static void PCBoxes_InitCustomization(PCBoxes *pcBoxes, BoxCustomization *customization)
 {
     customization->boxID = PCBoxes_GetCurrentBoxID(pcBoxes);
-    customization->name = String_Init(PC_BOX_NAME_BUFFER_LEN, HEAP_ID_BOX_DATA);
+    customization->name = String_New(PC_BOX_NAME_BUFFER_LEN, HEAP_ID_BOX_DATA);
     PCBoxes_LoadCustomization(pcBoxes, customization);
 }
 
@@ -3485,11 +3485,11 @@ static void Customization_Free(BoxCustomization *customization)
 
 static void PCMonPreviewInit(PCMonPreview *param0)
 {
-    param0->nickname = String_Init(12, HEAP_ID_BOX_DATA);
-    param0->speciesName = String_Init(12, HEAP_ID_BOX_DATA);
-    param0->heldItemName = String_Init(18, HEAP_ID_BOX_DATA);
-    param0->nature = String_Init(12, HEAP_ID_BOX_DATA);
-    param0->ability = String_Init(16, HEAP_ID_BOX_DATA);
+    param0->nickname = String_New(12, HEAP_ID_BOX_DATA);
+    param0->speciesName = String_New(12, HEAP_ID_BOX_DATA);
+    param0->heldItemName = String_New(18, HEAP_ID_BOX_DATA);
+    param0->nature = String_New(12, HEAP_ID_BOX_DATA);
+    param0->ability = String_New(16, HEAP_ID_BOX_DATA);
 }
 
 static void PCMonPreviewFree(PCMonPreview *param0)
@@ -3509,8 +3509,8 @@ static void ov19_PCCompareMonsInit(UnkStruct_ov19_021D4EE4 *param0)
 
     for (int i = 0; i < 2; i++) {
         param0->unk_02[i] = 0;
-        param0->compareMons[i].monName = String_Init(12, HEAP_ID_BOX_DATA);
-        param0->compareMons[i].nature = String_Init(12, HEAP_ID_BOX_DATA);
+        param0->compareMons[i].monName = String_New(12, HEAP_ID_BOX_DATA);
+        param0->compareMons[i].nature = String_New(12, HEAP_ID_BOX_DATA);
     }
 }
 

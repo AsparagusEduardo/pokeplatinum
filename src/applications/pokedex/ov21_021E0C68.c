@@ -408,7 +408,7 @@ static void ov21_021E0FBC(PokedexGraphicData **param0, int heapID)
 
 static void ov21_021E10D0(PokedexGraphicData **param0, const UnkStruct_ov21_021E0D68 *param1, enum HeapId heapID)
 {
-    String *v0 = String_Init(64, heapID);
+    String *v0 = String_New(64, heapID);
     MessageLoader *pokedexMessageBank = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_POKEDEX, heapID);
     int species = PokedexSort_CurrentSpecies(param1->unk_04);
     int entryID;

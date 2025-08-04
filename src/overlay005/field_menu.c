@@ -122,7 +122,7 @@ static void FieldMenuManager_Init(FieldSystem *fieldSystem, FieldMenuManager *me
     }
 
     for (i = 0; i < FIELD_MENU_ENTRIES_MAX; i++) {
-        menuManager->choicesStringsBuffers[i] = String_Init(80, HEAP_ID_FIELD);
+        menuManager->choicesStringsBuffers[i] = String_New(80, HEAP_ID_FIELD);
     }
 
     *menuManager->selectedOptionPtr = LIST_MENU_NO_SELECTION_YET;
@@ -173,7 +173,7 @@ void FieldMenuManager_ShowSingleColumnMenu(FieldMenuManager *menuManager)
 
 static void _FieldMenuManager_AddMenuEntry(FieldMenuManager *menuManager, u32 entryID, u32 index)
 {
-    String *entryBuf = String_Init(80, HEAP_ID_FIELD);
+    String *entryBuf = String_New(80, HEAP_ID_FIELD);
 
     MessageLoader_GetString(menuManager->messageLoader, entryID, entryBuf);
     StringTemplate_Format(menuManager->stringTemplate, menuManager->choicesStringsBuffers[menuManager->optionsCount], entryBuf);
@@ -354,7 +354,7 @@ void FieldMenuManager_ShowListMenuWithCursorPosition(FieldMenuManager *menuManag
 
 static void _FieldMenuManager_AddListMenuEntry(FieldMenuManager *menuManager, u32 entryID, u32 altTextStringID, u32 entryIndex)
 {
-    String *fmtString = String_Init(80, HEAP_ID_FIELD);
+    String *fmtString = String_New(80, HEAP_ID_FIELD);
 
     MessageLoader_GetString(menuManager->messageLoader, entryID, fmtString);
     StringTemplate_Format(menuManager->stringTemplate, menuManager->choicesStringsBuffers[menuManager->optionsCount], fmtString);
@@ -502,8 +502,8 @@ static void FieldMenuManager_DeleteWithListMenu(FieldMenuManager *menuManager)
 
 static void FieldMenuManager_PrintListMenyAltText(FieldMenuManager *menuManager, u16 entryID, u32 printerDelay)
 {
-    String *v0 = String_Init(80, HEAP_ID_FIELD);
-    String *v1 = String_Init(80, HEAP_ID_FIELD);
+    String *v0 = String_New(80, HEAP_ID_FIELD);
+    String *v1 = String_New(80, HEAP_ID_FIELD);
 
     Window_FillTilemap(menuManager->parentWindow, 15);
     MessageLoader_GetString(menuManager->messageLoader, entryID, v0);
@@ -550,8 +550,8 @@ void FieldMenu_ShowCurrentFloorWindow(FieldSystem *fieldSystem, u8 tilemapLeft, 
 
 static void FieldMenuManager_PrintString(FieldMenuManager *menuManager, u16 entryID, u8 xOffset, u8 yOffset)
 {
-    String *fmtString = String_Init(80, HEAP_ID_FIELD);
-    String *formatted = String_Init(80, HEAP_ID_FIELD);
+    String *fmtString = String_New(80, HEAP_ID_FIELD);
+    String *formatted = String_New(80, HEAP_ID_FIELD);
 
     MessageLoader_GetString(menuManager->messageLoader, entryID, fmtString);
     StringTemplate_Format(menuManager->stringTemplate, formatted, fmtString);
@@ -713,7 +713,7 @@ void FieldMenu_PrintMoneyToWindow(FieldSystem *fieldSystem, Window *window)
 
     MessageLoader *messageLoader = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0543, HEAP_ID_FIELD);
     StringTemplate *stringTemplate = StringTemplate_Default(HEAP_ID_FIELD);
-    String *string = String_Init(16, HEAP_ID_FIELD);
+    String *string = String_New(16, HEAP_ID_FIELD);
     String *fmtString = MessageLoader_GetNewString(messageLoader, pl_msg_00000543_00019);
     u32 money = TrainerInfo_Money(SaveData_GetTrainerInfo(fieldSystem->saveData));
 
@@ -755,7 +755,7 @@ void FieldMenu_PrintCoinsToWindow(FieldSystem *fieldSystem, Window *window)
 
     MessageLoader *messageLoader = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_MENU_ENTRIES, HEAP_ID_FIELD);
     StringTemplate *stringTemplate = StringTemplate_Default(HEAP_ID_FIELD);
-    String *string = String_Init(16, HEAP_ID_FIELD);
+    String *string = String_New(16, HEAP_ID_FIELD);
     String *fmtString = MessageLoader_GetNewString(messageLoader, pl_msg_00000361_00197);
     u32 coins = Coins_GetValue(SaveData_GetCoins(fieldSystem->saveData));
 
@@ -791,7 +791,7 @@ void FieldMenu_PrintBPToWindow(FieldSystem *fieldSystem, Window *window)
 
     MessageLoader *messageLaoder = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_MENU_ENTRIES, HEAP_ID_FIELD);
     StringTemplate *stringTemplate = StringTemplate_Default(HEAP_ID_FIELD);
-    String *string = String_Init(16, HEAP_ID_FIELD);
+    String *string = String_New(16, HEAP_ID_FIELD);
     String *fmtString = MessageLoader_GetNewString(messageLaoder, pl_msg_00000361_00230);
     u16 battlePoints = sub_0202D230(sub_0202D750(fieldSystem->saveData), 0, 0);
 

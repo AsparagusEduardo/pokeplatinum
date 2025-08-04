@@ -254,7 +254,7 @@ static BOOL sub_020491F4(FieldSystem *fieldSystem, int param1)
 
 static void sub_0204922C(StringTemplate *param0, int param1, const u16 *param2, int param3, int param4, int param5)
 {
-    String *v0 = String_Init(64, HEAP_ID_FIELD);
+    String *v0 = String_New(64, HEAP_ID_FIELD);
 
     String_CopyChars(v0, param2);
     StringTemplate_SetString(param0, param1, v0, param3, param5, param4);
@@ -301,7 +301,7 @@ static void sub_02049308(FieldSystem *fieldSystem, StringTemplate *param1)
     TVBroadcast *broadcast = SaveData_GetTVBroadcast(fieldSystem->saveData);
     UnkStruct_0202E81C *v2 = sub_0202E81C(broadcast);
 
-    v0 = String_Init(64, HEAP_ID_FIELD);
+    v0 = String_New(64, HEAP_ID_FIELD);
 
     String_CopyChars(v0, v2->unk_06);
     StringTemplate_SetString(param1, 0, v0, v2->unk_02, 1, GAME_LANGUAGE);

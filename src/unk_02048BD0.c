@@ -78,7 +78,7 @@ BOOL ScrCmd_21D(ScriptContext *param0)
     }
         return 0;
     case 6: {
-        String *v14 = String_Init(64, HEAP_ID_FIELD_TASK);
+        String *v14 = String_New(64, HEAP_ID_FIELD_TASK);
         TrainerInfo *v15 = SaveData_GetTrainerInfo(param0->fieldSystem->saveData);
 
         TrainerInfo_NameString(v15, v14);

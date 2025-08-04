@@ -94,8 +94,8 @@ static BOOL FieldTask_RunScript(FieldTask *taskManager)
         scriptManager->ctx[SCRIPT_CONTEXT_MAIN] = ScriptContext_CreateAndStart(fieldSystem, scriptManager->scriptID);
         scriptManager->numActiveContexts = 1;
         scriptManager->strTemplate = StringTemplate_New(8, 64, HEAP_ID_FIELDMAP);
-        scriptManager->msgBuf = String_Init(1024, HEAP_ID_FIELDMAP);
-        scriptManager->tmpBuf = String_Init(1024, HEAP_ID_FIELDMAP);
+        scriptManager->msgBuf = String_New(1024, HEAP_ID_FIELDMAP);
+        scriptManager->tmpBuf = String_New(1024, HEAP_ID_FIELDMAP);
         scriptManager->state++;
     case 1:
         for (i = 0; i < NUM_SCRIPT_CONTEXTS; i++) {

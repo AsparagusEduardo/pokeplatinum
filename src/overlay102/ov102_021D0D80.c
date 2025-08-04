@@ -392,10 +392,10 @@ static void ov102_021D1274(UnkStruct_ov102_021D0F8C *param0)
 
 static void ov102_021D1420(UnkStruct_ov102_021D0F8C *param0)
 {
-    String *v0 = String_Init(0x200, param0->heapID);
+    String *v0 = String_New(0x200, param0->heapID);
 
     {
-        String *v1 = String_Init(0x200, param0->heapID);
+        String *v1 = String_New(0x200, param0->heapID);
 
         MessageLoader_GetString(param0->unk_34, 0, v1);
         StringTemplate_SetPlayerName(param0->unk_38, 0, param0->unk_0C);

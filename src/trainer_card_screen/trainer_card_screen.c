@@ -443,8 +443,8 @@ BOOL TrainerCardScreen_Exit(ApplicationManager *appMan, int *state)
 
 static void TrainerCard_InitStrings(TrainerCardScreen *trainerCardScreen)
 {
-    trainerCardScreen->unusedString = String_Init(4, HEAP_ID_TRAINER_CARD_SCREEN);
-    trainerCardScreen->colonString = String_Init(5, HEAP_ID_TRAINER_CARD_SCREEN);
+    trainerCardScreen->unusedString = String_New(4, HEAP_ID_TRAINER_CARD_SCREEN);
+    trainerCardScreen->colonString = String_New(5, HEAP_ID_TRAINER_CARD_SCREEN);
 
     MessageLoader *messageLoader = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_TRAINER_CARD, HEAP_ID_TRAINER_CARD_SCREEN);
 

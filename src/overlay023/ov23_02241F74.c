@@ -222,7 +222,7 @@ BOOL ov23_0224223C(TrainerInfo *param0, TrainerInfo *param1, int param2, String 
 
     if (param0 && param1) {
         v0 = StringTemplate_Default(HEAP_ID_FIELD);
-        v1 = String_Init((50 * 2), HEAP_ID_FIELD);
+        v1 = String_New((50 * 2), HEAP_ID_FIELD);
 
         StringTemplate_SetPlayerName(v0, 0, param0);
         StringTemplate_SetPlayerName(v0, 1, param1);
@@ -244,7 +244,7 @@ BOOL ov23_022422A8(TrainerInfo *param0, int param1, int param2, String *param3)
 
     if (param0) {
         v0 = StringTemplate_Default(HEAP_ID_FIELD);
-        v1 = String_Init((50 * 2), HEAP_ID_FIELD);
+        v1 = String_New((50 * 2), HEAP_ID_FIELD);
 
         StringTemplate_SetPlayerName(v0, param1, param0);
         MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetCommonTextPrinter()), param2, v1);
@@ -1049,10 +1049,10 @@ void UndergroundMan_SetReturnLog(int param0)
 
     if (sCommManUnderground) {
         if (sCommManUnderground->unk_DC[param0] == NULL) {
-            sCommManUnderground->unk_DC[param0] = String_Init((50 * 2), HEAP_ID_COMMUNICATION);
+            sCommManUnderground->unk_DC[param0] = String_New((50 * 2), HEAP_ID_COMMUNICATION);
 
             v0 = StringTemplate_Default(HEAP_ID_FIELDMAP);
-            v1 = String_Init((50 * 2), HEAP_ID_FIELDMAP);
+            v1 = String_New((50 * 2), HEAP_ID_FIELDMAP);
 
             StringTemplate_SetPlayerName(v0, 0, CommInfo_TrainerInfo(param0));
             MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetCommonTextPrinter()), 115, v1);

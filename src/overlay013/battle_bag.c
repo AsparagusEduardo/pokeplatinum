@@ -742,7 +742,7 @@ static void InitializeMessageLoader(BattleBag *battleBagTask)
     battleBagTask->messageLoader = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_BATTLE_BAG, battleBagTask->context->heapID);
     battleBagTask->unk_0C = sub_0200C440(15, 14, 0, battleBagTask->context->heapID);
     battleBagTask->stringTemplate = StringTemplate_Default(battleBagTask->context->heapID);
-    battleBagTask->string = String_Init(512, battleBagTask->context->heapID);
+    battleBagTask->string = String_New(512, battleBagTask->context->heapID);
 }
 
 static void CleanupMessageLoader(BattleBag *battleBag)

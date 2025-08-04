@@ -624,7 +624,7 @@ static void ov91_021D11B8(UnkStruct_ov91_021D0ED8 *param0)
 {
     param0->unk_F8 = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0645, HEAP_ID_67);
     param0->unk_FC = StringTemplate_Default(HEAP_ID_67);
-    param0->unk_100 = String_Init(256, HEAP_ID_67);
+    param0->unk_100 = String_New(256, HEAP_ID_67);
 }
 
 static void ov91_021D11F0(UnkStruct_ov91_021D0ED8 *param0)

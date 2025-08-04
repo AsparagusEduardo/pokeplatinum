@@ -843,8 +843,8 @@ static void ov23_02251F94(FieldSystem *fieldSystem)
     UndergroundTextPrinter_ChangeMessageLoaderBank(CommManUnderground_GetMiscTextPrinter(), TEXT_BANK_UNDERGROUND_BASE_PC, MESSAGE_LOADER_NARC_HANDLE);
 
     v1->unk_2AA = 0;
-    v1->unk_68 = String_Init((50 * 2), HEAP_ID_FIELD);
-    v1->unk_6C = String_Init((50 * 2), HEAP_ID_FIELD);
+    v1->unk_68 = String_New((50 * 2), HEAP_ID_FIELD);
+    v1->unk_6C = String_New((50 * 2), HEAP_ID_FIELD);
     v1->unk_70 = StringTemplate_Default(HEAP_ID_FIELD);
     v1->unk_08 = sub_0206A780(HEAP_ID_FIELD);
 

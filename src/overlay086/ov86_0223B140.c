@@ -293,8 +293,8 @@ int ov86_0223B140(ApplicationManager *appMan, int *param1)
 
     v0->unk_0C = ApplicationManager_Args(appMan);
     v0->unk_1C50 = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0351, HEAP_ID_63);
-    v0->unk_1C48 = String_Init(500, HEAP_ID_63);
-    v0->unk_1C4C = String_Init(500, HEAP_ID_63);
+    v0->unk_1C48 = String_New(500, HEAP_ID_63);
+    v0->unk_1C4C = String_New(500, HEAP_ID_63);
     v0->unk_1C44 = StringTemplate_Default(HEAP_ID_63);
     v0->unk_1C54 = NARC_ctor(NARC_INDEX_POKETOOL__POKE_EDIT__PL_POKE_DATA, HEAP_ID_63);
 

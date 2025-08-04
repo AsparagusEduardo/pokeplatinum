@@ -98,8 +98,8 @@ UnkStruct_ov87_021D106C *ov87_021D106C(UnkStruct_ov87_021D0D80 *param0, const Un
         v0->unk_1E8 = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_SPECIES_NAME, HEAP_ID_61);
         v0->unk_1EC = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_MOVE_NAMES, HEAP_ID_61);
         v0->unk_1F0 = StringTemplate_Default(HEAP_ID_61);
-        v0->unk_1F4 = String_Init(256, HEAP_ID_61);
-        v0->unk_1F8 = String_Init(256, HEAP_ID_61);
+        v0->unk_1F4 = String_New(256, HEAP_ID_61);
+        v0->unk_1F8 = String_New(256, HEAP_ID_61);
         v0->unk_1FC = Pokemon_New(HEAP_ID_61);
 
         SetVBlankCallback(ov87_021D11AC, v0);

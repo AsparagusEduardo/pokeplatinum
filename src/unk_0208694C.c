@@ -1198,7 +1198,7 @@ UnkStruct_0208737C *sub_0208712C(int heapID, int param1, int param2, int param3,
     v0->unk_0C = param3;
     v0->unk_14 = 0;
     v0->unk_1C[0] = 0xffff;
-    v0->textInputStr = String_Init(32, heapID);
+    v0->textInputStr = String_New(32, heapID);
     v0->unk_44 = 0;
     v0->pcBoxes = NULL;
     v0->unk_10 = 0;
@@ -1443,7 +1443,7 @@ static void sub_02087544(UnkStruct_02087A10 *param0, ApplicationManager *appMan)
     if (v1->unk_44 != 0) {
         int v2, v3;
 
-        v0 = String_Init(200, HEAP_ID_18);
+        v0 = String_New(200, HEAP_ID_18);
         param0->unk_180 = NULL;
         v2 = PCBoxes_GetCurrentBoxID(v1->pcBoxes);
         v3 = PCBoxes_FirstEmptyBox(v1->pcBoxes);
@@ -2059,7 +2059,7 @@ static void sub_02088554(Window *param0, const u16 *param1, int param2, int para
 {
     int v0 = 0, v1, v2;
     u16 v3[2];
-    String *v4 = String_Init(2, HEAP_ID_18);
+    String *v4 = String_New(2, HEAP_ID_18);
 
     while (param1[v0] != 0xffff) {
         if ((param1[v0] == 0xd001) || (param1[v0] == (0xd001 + 1)) || (param1[v0] == (0xd001 + 2))) {
@@ -2116,7 +2116,7 @@ static void sub_02088678(Window *param0, const u16 *param1, u8 *param2, String *
         GXS_LoadOBJ(param2, Unk_020F24D8[v1] * 0x20, 0x20 * 4 * 2);
     }
 
-    v4 = String_Init(20 + 1, HEAP_ID_18);
+    v4 = String_New(20 + 1, HEAP_ID_18);
 
     for (v1 = 0; v1 < 3; v1++) {
         v0[0] = param1[v1];

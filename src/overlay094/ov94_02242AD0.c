@@ -351,7 +351,7 @@ static void ov94_02242D74(UnkStruct_ov94_0223FD4C *param0)
 
 static void ov94_02242D84(UnkStruct_ov94_0223FD4C *param0)
 {
-    param0->unk_BAC = String_Init(90 * 2, HEAP_ID_62);
+    param0->unk_BAC = String_New(90 * 2, HEAP_ID_62);
 }
 
 static void ov94_02242D98(UnkStruct_ov94_0223FD4C *param0)

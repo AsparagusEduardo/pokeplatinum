@@ -414,7 +414,7 @@ static void DummyForMatching3(HeightCheckVisuals *heightCheckVisuals)
 
 static void DisplayHeightLabels(PokedexGraphicData **param0, enum HeapId heapID)
 {
-    String *string = String_Init(32, heapID);
+    String *string = String_New(32, heapID);
     MessageLoader *pokedexMessageBank = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_POKEDEX, heapID);
 
     MessageLoader_GetString(pokedexMessageBank, pl_msg_pokedex_heightcheck_topscreen, string);
@@ -434,7 +434,7 @@ static void DisplayHeightLabels(PokedexGraphicData **param0, enum HeapId heapID)
 
 static void DisplayHeightValues(PokedexGraphicData **param0, const UnkStruct_ov21_021E6104 *param1, enum HeapId heapID)
 {
-    String *string = String_Init(32, heapID);
+    String *string = String_New(32, heapID);
     int species = PokedexSort_CurrentSpecies(param1->unk_04);
     String *speciesName = MessageUtil_SpeciesName(species, heapID);
 

@@ -950,14 +950,14 @@ static GameWindowLayout *sub_0207ECC0(ApplicationManager *appMan)
     v0->template = StringTemplate_Default(HEAP_ID_12);
 
     for (v1 = 0; v1 < 6; v1++) {
-        v0->unk_704[v1].unk_00 = String_Init(10 + 1, HEAP_ID_12);
+        v0->unk_704[v1].unk_00 = String_New(10 + 1, HEAP_ID_12);
     }
 
-    v0->unk_6A4 = String_Init(256, HEAP_ID_12);
-    v0->unk_6A8 = String_Init(256, HEAP_ID_12);
+    v0->unk_6A4 = String_New(256, HEAP_ID_12);
+    v0->unk_6A8 = String_New(256, HEAP_ID_12);
 
     for (v1 = 0; v1 < 20; v1++) {
-        v0->unk_6AC[v1] = String_Init(32, HEAP_ID_12);
+        v0->unk_6AC[v1] = String_New(32, HEAP_ID_12);
     }
 
     v0->partySlot = v0->partyManagementData->selectedMonSlot;

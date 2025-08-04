@@ -1285,7 +1285,7 @@ static void InitializeMessageLoader(BattleParty *battleParty)
     battleParty->messageLoader = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_BATTLE_PARTY, battleParty->context->heapID);
     battleParty->unk_1FA0 = sub_0200C440(15, 14, 0, battleParty->context->heapID);
     battleParty->stringTemplate = StringTemplate_Default(battleParty->context->heapID);
-    battleParty->string = String_Init(512, battleParty->context->heapID);
+    battleParty->string = String_New(512, battleParty->context->heapID);
 }
 
 static void CleanupMessageLoader(BattleParty *battleParty)

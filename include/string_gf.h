@@ -41,11 +41,11 @@ enum CharsetMode {
  * @brief Init routine. Allocates memory for a new String, initializes it
  * with an integrity-check value, and exposes its address.
  *
- * @param size The size of the new String to allocate from the heap.
+ * @param maxSize The max size of the new String to allocate from the heap.
  * @param heapID ID of the heap to own the new String.
  * @return Address to the new String.
  */
-String *String_Init(u32 size, u32 heapID);
+String *String_New(u32 maxSize, u32 heapID);
 
 /**
  * @brief Free routine. Destroys an existing String and returns its memory
@@ -81,7 +81,7 @@ void String_Copy(String *dst, const String *src);
  * This is effectively a nice wrapper around the following code:
  *
  * ```c
- * String *dst = String_Init(src->size + 1, heapID);
+ * String *dst = String_New(src->size + 1, heapID);
  * String_Copy(dst, src);
  * ```
  *

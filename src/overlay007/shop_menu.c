@@ -240,7 +240,7 @@ void Shop_Start(FieldTask *task, FieldSystem *fieldSystem, u16 *shopItems, u8 ma
 
     shopMenu->bgConfig = fieldSystem->bgConfig;
 
-    shopMenu->string = String_Init(96, HEAP_ID_FIELDMAP);
+    shopMenu->string = String_New(96, HEAP_ID_FIELDMAP);
     shopMenu->trainerInfo = SaveData_GetTrainerInfo(fieldSystem->saveData);
     shopMenu->options = SaveData_GetOptions(fieldSystem->saveData);
     shopMenu->records = SaveData_GetGameRecords(fieldSystem->saveData);
@@ -706,10 +706,10 @@ static void Shop_MenuCursorCallback(ListMenu *menu, u32 index, u8 onInit)
         String *string;
 
         if (shopMenu->martType == MART_TYPE_NORMAL) {
-            string = String_Init(130, HEAP_ID_FIELDMAP);
+            string = String_New(130, HEAP_ID_FIELDMAP);
             Item_LoadDescription(string, index, HEAP_ID_FIELDMAP);
         } else if (shopMenu->martType == MART_TYPE_FRONTIER) {
-            string = String_Init(130, HEAP_ID_FIELDMAP);
+            string = String_New(130, HEAP_ID_FIELDMAP);
             Item_LoadDescription(string, index, HEAP_ID_FIELDMAP);
         } else if (shopMenu->martType == MART_TYPE_DECOR) {
             MessageLoader *loader;
@@ -772,7 +772,7 @@ static void Shop_MenuPrintCallback(ListMenu *menu, u32 index, u8 yOffset)
         }
 
         price = Shop_GetItemPrice(shopMenu, index);
-        string = String_Init(12, HEAP_ID_FIELDMAP);
+        string = String_New(12, HEAP_ID_FIELDMAP);
 
         if (shopMenu->martType == MART_TYPE_FRONTIER) {
             fmtString = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00032);
@@ -813,7 +813,7 @@ static void Shop_PrintCurrentMoney(ShopMenu *shopMenu, u8 clearCurrMoney)
             Window_FillRectWithColor(&shopMenu->windows[SHOP_WINDOW_CURRENT_MONEY], 15, 0, 0, (9 * 8), 16);
         }
 
-        string = String_Init(16, HEAP_ID_FIELDMAP);
+        string = String_New(16, HEAP_ID_FIELDMAP);
         fmtString = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00038);
         currMoney = Shop_GetCurrentMoney(shopMenu);
 
@@ -836,7 +836,7 @@ static void Shop_PrintCurrentMoney(ShopMenu *shopMenu, u8 clearCurrMoney)
             Window_FillRectWithColor(&shopMenu->windows[SHOP_WINDOW_CURRENT_MONEY], 15, 0, 16, (9 * 8), 16);
         }
 
-        string = String_Init(16, HEAP_ID_FIELDMAP);
+        string = String_New(16, HEAP_ID_FIELDMAP);
         fmtString = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00019);
         currMoney = Shop_GetCurrentMoney(shopMenu);
 
@@ -980,7 +980,7 @@ static void Shop_ShowQtyWithinInventory(ShopMenu *shopMenu)
     Window_FillTilemap(&shopMenu->windows[SHOP_WINDOW_ITEMS_IN_BAG], 15);
     Window_DrawStandardFrame(&shopMenu->windows[SHOP_WINDOW_ITEMS_IN_BAG], TRUE, (1 + (18 + 12)), FIELD_WINDOW_PALETTE_INDEX);
 
-    string = String_Init(24, HEAP_ID_FIELDMAP);
+    string = String_New(24, HEAP_ID_FIELDMAP);
     fmtString = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00020);
 
     StringTemplate_SetNumber(shopMenu->strTemplate, 0, inventoryQty, 3, PADDING_MODE_SPACES, CHARSET_MODE_EN);
@@ -1111,7 +1111,7 @@ static void Shop_ShowQtyTotalItemPurchase(ShopMenu *shopMenu, u8 dontDrawFrame)
         Window_DrawStandardFrame(&shopMenu->windows[SHOP_WINDOW_QUANTITY_TOTAL_PRICE], TRUE, (1 + (18 + 12)), FIELD_WINDOW_PALETTE_INDEX);
     }
 
-    string = String_Init(24, HEAP_ID_FIELDMAP);
+    string = String_New(24, HEAP_ID_FIELDMAP);
     fmtString = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00021);
 
     StringTemplate_SetNumber(shopMenu->strTemplate, 0, shopMenu->itemAmount, 2, PADDING_MODE_ZEROES, CHARSET_MODE_EN);

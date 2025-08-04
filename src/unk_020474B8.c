@@ -353,7 +353,7 @@ BOOL ScrCmd_BufferUndergroundItemName(ScriptContext *ctx)
 
 BOOL ScrCmd_0E2(ScriptContext *param0)
 {
-    String *v0 = String_Init(22, HEAP_ID_FIELD);
+    String *v0 = String_New(22, HEAP_ID_FIELD);
     StringTemplate **v1 = FieldSystem_GetScriptMemberPtr(param0->fieldSystem, SCRIPT_MANAGER_STR_TEMPLATE);
     u8 v2 = ScriptContext_ReadByte(param0);
     u16 v3 = ScriptContext_GetVar(param0);
@@ -407,7 +407,7 @@ BOOL ScrCmd_272(ScriptContext *param0)
     StringTemplate **v2 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_STR_TEMPLATE);
     u8 v3 = ScriptContext_ReadByte(param0);
 
-    v0 = String_Init(10 + 1, HEAP_ID_FIELDMAP);
+    v0 = String_New(10 + 1, HEAP_ID_FIELDMAP);
 
     String_CopyChars(v0, MiscSaveBlock_TabletName(SaveData_MiscSaveBlock(param0->fieldSystem->saveData)));
     StringTemplate_SetString(*v2, v3, v0, 0, 0, gGameLanguage);

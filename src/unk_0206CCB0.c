@@ -450,7 +450,7 @@ static void sub_0206CD7C(SaveData *saveData, int param1, int param2, const void 
 
 static void sub_0206CD94(StringTemplate *param0, int param1, const u16 *param2, int param3, int param4, int param5)
 {
-    String *v0 = String_Init(64, HEAP_ID_FIELD);
+    String *v0 = String_New(64, HEAP_ID_FIELD);
 
     String_CopyChars(v0, param2);
     StringTemplate_SetString(param0, param1, v0, param3, param5, param4);
@@ -464,7 +464,7 @@ static void sub_0206CDD0(StringTemplate *param0, int param1, const UnkStruct_ov6
 
 static void sub_0206CE08(int heapID, u16 *param1, Pokemon *mon)
 {
-    String *string = String_Init(64, heapID);
+    String *string = String_New(64, heapID);
 
     Pokemon_GetValue(mon, MON_DATA_NICKNAME_STRING, string);
     String_ToChars(string, param1, 10 + 1);
@@ -500,7 +500,7 @@ static void sub_0206CED0(int heapID, Pokemon *mon, u8 *param2, u16 *param3)
     *param2 = Pokemon_GetValue(mon, MON_DATA_HAS_NICKNAME, NULL);
 
     if (*param2) {
-        String *string = String_Init(64, heapID);
+        String *string = String_New(64, heapID);
 
         Pokemon_GetValue(mon, MON_DATA_NICKNAME_STRING, string);
         String_ToChars(string, param3, 10 + 1);
@@ -1991,7 +1991,7 @@ static int sub_0206E7AC(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
 {
     int v0;
     UnkStruct_0206E768 *v1 = ov6_02246498(param2);
-    String *v2 = String_Init(64, HEAP_ID_FIELD);
+    String *v2 = String_New(64, HEAP_ID_FIELD);
 
     sub_0206CDD0(param1, 0, param2);
     String_CopyChars(v2, v1->unk_00.unk_06);
@@ -2607,7 +2607,7 @@ static int sub_0206EDAC(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
     SpecialEncounter *v1;
     u16 v2, v3;
     u32 v4, v5;
-    String *v6 = String_Init(22, HEAP_ID_FIELD);
+    String *v6 = String_New(22, HEAP_ID_FIELD);
     TrainerInfo *v7 = SaveData_GetTrainerInfo(FieldSystem_GetSaveData(fieldSystem));
 
     v1 = SaveData_GetSpecialEncounters(fieldSystem->saveData);
@@ -2689,7 +2689,7 @@ static int sub_0206EEBC(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
 
     {
         u16 v6;
-        String *v7 = String_Init(7 + 1, HEAP_ID_FIELD);
+        String *v7 = String_New(7 + 1, HEAP_ID_FIELD);
         int v8 = sub_0202A1C0(v0);
 
         sub_0202A1A0(v0, v7);

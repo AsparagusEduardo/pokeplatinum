@@ -345,7 +345,7 @@ static void ov94_0223CAC8(UnkStruct_ov94_0223FD4C *param0)
 
 static void ov94_0223CB0C(UnkStruct_ov94_0223FD4C *param0)
 {
-    param0->unk_BAC = String_Init(90 * 2, HEAP_ID_62);
+    param0->unk_BAC = String_New(90 * 2, HEAP_ID_62);
     param0->unk_BB0 = MessageLoader_GetNewString(param0->unk_B90, 39);
 }
 

@@ -141,7 +141,7 @@ static String *LoadMessage(int bankID, int entryID, enum HeapId heapID)
     MessageLoader *messageLoader = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, bankID, heapID);
 
     if (messageLoader) {
-        String *string = String_Init(256, heapID);
+        String *string = String_New(256, heapID);
 
         if (string) {
             MessageLoader_GetString(messageLoader, entryID, string);

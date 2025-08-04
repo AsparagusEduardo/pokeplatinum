@@ -310,7 +310,7 @@ static void ov13_02221C54(BattleParty *param0, u32 param1, u32 param2, u16 param
 
     v0 = &param0->unk_206C[param1];
     v1 = &param0->partyPokemon[param3];
-    v2 = String_Init(12, param0->context->heapID);
+    v2 = String_New(12, param0->context->heapID);
     v3 = MessageLoader_GetNewString(param0->messageLoader, Unk_ov13_02228EC4[param3]);
 
     StringTemplate_SetNickname(param0->stringTemplate, 0, Pokemon_GetBoxPokemon(v1->pokemon));
@@ -407,7 +407,7 @@ static void ov13_02221ED0(BattleParty *param0, u32 param1, u16 param2, u8 param3
 static void ov13_02221FA8(BattleParty *param0, u32 param1, u32 param2)
 {
     BattlePartyPokemon *v0 = &param0->partyPokemon[param2];
-    String *v1 = String_Init(16, param0->context->heapID);
+    String *v1 = String_New(16, param0->context->heapID);
     String *v2 = MessageLoader_GetNewString(param0->messageLoader, 8);
 
     StringTemplate_SetAbilityName(param0->stringTemplate, 0, v0->ability);
@@ -429,7 +429,7 @@ static void ov13_02222030(BattleParty *param0, u32 param1, u32 param2)
     if (v0->heldItem == 0) {
         v1 = MessageLoader_GetNewString(param0->messageLoader, 20);
     } else {
-        v1 = String_Init(18, param0->context->heapID);
+        v1 = String_New(18, param0->context->heapID);
         v2 = MessageLoader_GetNewString(param0->messageLoader, 9);
 
         StringTemplate_SetItemName(param0->stringTemplate, 0, v0->heldItem);
@@ -450,7 +450,7 @@ static void ov13_022220CC(BattleParty *param0, u32 param1, u32 param2, u32 param
     u32 v3;
 
     v0 = &param0->unk_206C[param2];
-    v1 = String_Init(16, param0->context->heapID);
+    v1 = String_New(16, param0->context->heapID);
     v2 = MessageLoader_GetNewString(param0->messageLoader, param3);
 
     StringTemplate_SetMoveName(param0->stringTemplate, 0, param1);
@@ -522,7 +522,7 @@ static void ov13_02222290(BattleParty *param0, u32 param1)
     String_Free(v1);
 
     v1 = MessageLoader_GetNewString(param0->messageLoader, 24);
-    v2 = String_Init((3 + 1) * 2, param0->context->heapID);
+    v2 = String_New((3 + 1) * 2, param0->context->heapID);
 
     StringTemplate_SetNumber(param0->stringTemplate, 0, v0->level, 3, 0, 1);
     StringTemplate_Format(param0->stringTemplate, v2, v1);
@@ -536,7 +536,7 @@ static void ov13_02222290(BattleParty *param0, u32 param1)
     String_Free(v1);
 
     v1 = MessageLoader_GetNewString(param0->messageLoader, 26);
-    v2 = String_Init((6 + 1) * 2, param0->context->heapID);
+    v2 = String_New((6 + 1) * 2, param0->context->heapID);
 
     if (v0->level < 100) {
         StringTemplate_SetNumber(
@@ -576,7 +576,7 @@ static void ov13_02222464(BattleParty *param0, u32 param1)
     String_Free(v1);
 
     v1 = MessageLoader_GetNewString(param0->messageLoader, 33);
-    v2 = String_Init((3 + 1) * 2, param0->context->heapID);
+    v2 = String_New((3 + 1) * 2, param0->context->heapID);
 
     StringTemplate_SetNumber(param0->stringTemplate, 0, v0->attack, 3, 0, 1);
     StringTemplate_Format(param0->stringTemplate, v2, v1);
@@ -608,7 +608,7 @@ static void ov13_02222560(BattleParty *param0, u32 param1)
     String_Free(v1);
 
     v1 = MessageLoader_GetNewString(param0->messageLoader, 35);
-    v2 = String_Init((3 + 1) * 2, param0->context->heapID);
+    v2 = String_New((3 + 1) * 2, param0->context->heapID);
 
     StringTemplate_SetNumber(param0->stringTemplate, 0, v0->defence, 3, 0, 1);
     StringTemplate_Format(param0->stringTemplate, v2, v1);
@@ -640,7 +640,7 @@ static void ov13_0222265C(BattleParty *param0, u32 param1)
     String_Free(v1);
 
     v1 = MessageLoader_GetNewString(param0->messageLoader, 41);
-    v2 = String_Init((3 + 1) * 2, param0->context->heapID);
+    v2 = String_New((3 + 1) * 2, param0->context->heapID);
 
     StringTemplate_SetNumber(param0->stringTemplate, 0, v0->speed, 3, 0, 1);
     StringTemplate_Format(param0->stringTemplate, v2, v1);
@@ -673,7 +673,7 @@ static void ov13_0222275C(BattleParty *param0, u32 param1)
     String_Free(v1);
 
     v1 = MessageLoader_GetNewString(param0->messageLoader, 37);
-    v2 = String_Init((3 + 1) * 2, param0->context->heapID);
+    v2 = String_New((3 + 1) * 2, param0->context->heapID);
 
     StringTemplate_SetNumber(param0->stringTemplate, 0, v0->spAtk, 3, 0, 1);
     StringTemplate_Format(param0->stringTemplate, v2, v1);
@@ -705,7 +705,7 @@ static void ov13_0222285C(BattleParty *param0, u32 param1)
     String_Free(v1);
 
     v1 = MessageLoader_GetNewString(param0->messageLoader, 39);
-    v2 = String_Init((3 + 1) * 2, param0->context->heapID);
+    v2 = String_New((3 + 1) * 2, param0->context->heapID);
 
     StringTemplate_SetNumber(param0->stringTemplate, 0, v0->spDef, 3, 0, 1);
     StringTemplate_Format(param0->stringTemplate, v2, v1);
@@ -744,7 +744,7 @@ static void ov13_0222295C(BattleParty *param0, u32 param1)
     String_Free(v1);
 
     v1 = MessageLoader_GetNewString(param0->messageLoader, 29);
-    v2 = String_Init((3 + 1) * 2, param0->context->heapID);
+    v2 = String_New((3 + 1) * 2, param0->context->heapID);
 
     StringTemplate_SetNumber(param0->stringTemplate, 0, v0->curHP, 3, 0, 1);
     StringTemplate_Format(param0->stringTemplate, v2, v1);
@@ -756,7 +756,7 @@ static void ov13_0222295C(BattleParty *param0, u32 param1)
     String_Free(v2);
 
     v1 = MessageLoader_GetNewString(param0->messageLoader, 30);
-    v2 = String_Init((3 + 1) * 2, param0->context->heapID);
+    v2 = String_New((3 + 1) * 2, param0->context->heapID);
 
     StringTemplate_SetNumber(param0->stringTemplate, 0, v0->maxHP, 3, 0, 1);
     StringTemplate_Format(param0->stringTemplate, v2, v1);
@@ -814,7 +814,7 @@ static void ov13_02222BB4(BattleParty *param0, u32 param1, u32 param2)
         String_Free(v1);
     } else {
         v1 = MessageLoader_GetNewString(param0->messageLoader, 52);
-        v2 = String_Init((3 + 1) * 2, param0->context->heapID);
+        v2 = String_New((3 + 1) * 2, param0->context->heapID);
 
         StringTemplate_SetNumber(param0->stringTemplate, 0, param2, 3, 0, 1);
         StringTemplate_Format(param0->stringTemplate, v2, v1);
@@ -859,7 +859,7 @@ static void ov13_02222CE4(BattleParty *param0, u32 param1, u32 param2)
         String_Free(v1);
     } else {
         v1 = MessageLoader_GetNewString(param0->messageLoader, 49);
-        v2 = String_Init((3 + 1) * 2, param0->context->heapID);
+        v2 = String_New((3 + 1) * 2, param0->context->heapID);
 
         StringTemplate_SetNumber(param0->stringTemplate, 0, param2, 3, 0, 1);
         StringTemplate_Format(param0->stringTemplate, v2, v1);
@@ -973,7 +973,7 @@ static void ov13_02222F74(BattleParty *param0, u32 param1, u32 param2, u32 param
     String_Free(v1);
 
     v1 = MessageLoader_GetNewString(param0->messageLoader, 44);
-    v2 = String_Init((2 + 1) * 2, param0->context->heapID);
+    v2 = String_New((2 + 1) * 2, param0->context->heapID);
 
     StringTemplate_SetNumber(param0->stringTemplate, 0, param2, 3, 0, 1);
     StringTemplate_Format(param0->stringTemplate, v2, v1);
@@ -985,7 +985,7 @@ static void ov13_02222F74(BattleParty *param0, u32 param1, u32 param2, u32 param
     String_Free(v2);
 
     v1 = MessageLoader_GetNewString(param0->messageLoader, 45);
-    v2 = String_Init((2 + 1) * 2, param0->context->heapID);
+    v2 = String_New((2 + 1) * 2, param0->context->heapID);
 
     StringTemplate_SetNumber(param0->stringTemplate, 0, param3, 3, 0, 1);
     StringTemplate_Format(param0->stringTemplate, v2, v1);
@@ -1044,7 +1044,7 @@ static void ov13_0222317C(BattleParty *param0, BattlePartyPokemonMove *param1, u
     u32 v3;
 
     v0 = &param0->unk_206C[param2];
-    v2 = String_Init((2 + 1) * 2, param0->context->heapID);
+    v2 = String_New((2 + 1) * 2, param0->context->heapID);
     v1 = MessageLoader_GetNewString(param0->messageLoader, 43);
 
     Text_AddPrinterWithParamsAndColor(v0, FONT_SYSTEM, v1, 40, 24, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(15, 14, 0), NULL);
@@ -1084,7 +1084,7 @@ static void ov13_022232C8(BattleParty *param0, BattlePartyPokemonMove *param1, u
     u32 v3;
 
     v0 = &param0->unk_206C[param2];
-    v2 = String_Init((2 + 1) * 2, param0->context->heapID);
+    v2 = String_New((2 + 1) * 2, param0->context->heapID);
     v1 = MessageLoader_GetNewString(param0->messageLoader, 43);
     v3 = Font_CalcStringWidth(FONT_SYSTEM, v1, 0);
 
@@ -1184,7 +1184,7 @@ static void ov13_02223550(BattleParty *param0, u32 param1)
 
     v0 = &param0->unk_206C[0];
     v1 = &param0->partyPokemon[param1];
-    v2 = String_Init(12, param0->context->heapID);
+    v2 = String_New(12, param0->context->heapID);
     v3 = MessageLoader_GetNewString(param0->messageLoader, Unk_ov13_02228EC4[param1]);
 
     StringTemplate_SetNickname(param0->stringTemplate, 0, Pokemon_GetBoxPokemon(v1->pokemon));

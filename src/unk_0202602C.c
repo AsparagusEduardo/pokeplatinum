@@ -37,7 +37,7 @@ void sub_0202604C(const BattleRegulation *param0, String *param1)
 
 String *sub_0202605C(const BattleRegulation *param0, int heapID)
 {
-    String *v0 = String_Init((11 + 1) * 2, heapID);
+    String *v0 = String_New((11 + 1) * 2, heapID);
 
     String_CopyChars(v0, param0->unk_00);
     return v0;

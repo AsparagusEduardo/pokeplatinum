@@ -1241,7 +1241,7 @@ void sub_0203DFE8(FieldTask *param0, int param1, int param2, int param3, int par
     v2->unk_04 = param4;
     v2->unk_08 = param6;
     v2->unk_0C = sub_0208712C(HEAP_ID_FIELDMAP, param1, param2, param3, SaveData_GetOptions(fieldSystem->saveData));
-    v2->unk_10 = String_Init(12, HEAP_ID_FIELDMAP);
+    v2->unk_10 = String_New(12, HEAP_ID_FIELDMAP);
 
     switch (param1) {
     case 1:

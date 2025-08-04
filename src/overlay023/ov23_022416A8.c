@@ -501,7 +501,7 @@ BOOL ov23_02241D58(String *param0)
     for (v0 = 0; v0 < (7 + 1); v0++) {
         if (Unk_ov23_02257744->unk_468[v0] != 0) {
             v1 = StringTemplate_Default(HEAP_ID_FIELD);
-            v2 = String_Init((50 * 2), HEAP_ID_FIELD);
+            v2 = String_New((50 * 2), HEAP_ID_FIELD);
 
             StringTemplate_SetUndergroundItemNameWithArticle(v1, 2, Unk_ov23_02257744->unk_468[v0]);
             StringTemplate_CapitalizeArgAtIndex(v1, 2);

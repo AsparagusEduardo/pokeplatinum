@@ -829,7 +829,7 @@ static void ov84_0223BDB4(UnkStruct_ov84_0223B5A0 *param0)
     param0->unk_118 = StringTemplate_Default(HEAP_ID_6);
     param0->unk_11C = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_ITEM_NAMES, HEAP_ID_6);
     param0->unk_120 = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_MOVE_NAMES, HEAP_ID_6);
-    param0->unk_3F8 = String_Init(256, HEAP_ID_6);
+    param0->unk_3F8 = String_New(256, HEAP_ID_6);
 }
 
 static void ov84_0223BE24(UnkStruct_ov84_0223B5A0 *param0)
@@ -994,7 +994,7 @@ static void ov84_0223C158(UnkStruct_ov84_0223B5A0 *param0)
     u32 v0;
 
     for (v0 = 0; v0 < 165; v0++) {
-        param0->unk_164[v0] = String_Init(18, HEAP_ID_6);
+        param0->unk_164[v0] = String_New(18, HEAP_ID_6);
     }
 }
 
