@@ -35,7 +35,7 @@
 #include "sprite_resource.h"
 #include "sprite_transfer.h"
 #include "sprite_util.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "sys_task_manager.h"
 #include "system.h"
@@ -79,10 +79,10 @@ struct UnkStruct_02087A10_t {
     MessageLoader *unk_16C;
     MessageLoader *unk_170;
     MessageLoader *unk_174;
-    Strbuf *unk_178;
-    Strbuf *unk_17C;
-    Strbuf *unk_180;
-    Strbuf *unk_184;
+    String *unk_178;
+    String *unk_17C;
+    String *unk_180;
+    String *unk_184;
     SpriteList *unk_188;
     G2dRenderer unk_18C;
     SpriteResourceCollection *unk_318[4];
@@ -160,9 +160,9 @@ static void sub_02087FC0(UnkStruct_02087A10 *param0, ApplicationManager *appMan,
 static void sub_02088350(UnkStruct_02087A10 *param0);
 static void sub_02088514(u16 *param0);
 static void sub_02088554(Window *param0, const u16 *param1, int param2, int param3, int param4, int param5, TextColor param6, u8 *param7);
-static void sub_02088678(Window *param0, const u16 *param1, u8 *param2, Strbuf *param3);
+static void sub_02088678(Window *param0, const u16 *param1, u8 *param2, String *param3);
 static void sub_02088844(u16 param0[][13], const int param1);
-static void sub_02088754(Window *param0, u16 *param1, int param2, u16 *param3, u8 *param4, Strbuf *param5);
+static void sub_02088754(Window *param0, u16 *param1, int param2, u16 *param3, u8 *param4, String *param5);
 static int sub_02088898(UnkStruct_02087A10 *param0, u16 param1, int param2);
 static int sub_02088D08(int param0, int param1, int param2, int param3, u16 *param4, int param5);
 static int sub_02088C9C(int param0, int param1, u16 *param2, int param3);
@@ -178,11 +178,11 @@ static void sub_0208732C(int param0);
 static void sub_02087544(UnkStruct_02087A10 *param0, ApplicationManager *appMan);
 static void sub_02087BE4(UnkStruct_02087A10 *param0, AffineSpriteListTemplate *param1);
 static void sub_02086E6C(UnkStruct_02087A10 *param0, UnkStruct_0208737C *param1);
-static void sub_02087F48(Window *param0, int param1, Strbuf *param2);
+static void sub_02087F48(Window *param0, int param1, String *param2);
 static void sub_02088FD0(UnkStruct_02087A10 *param0);
 static int sub_02086D38(UnkStruct_02087A10 *param0, int param1);
 static int sub_02086F14(u16 *param0);
-static void *sub_02088654(Window *param0, Strbuf *param1, u8 param2, TextColor param3);
+static void *sub_02088654(Window *param0, String *param1, u8 param2, TextColor param3);
 static BOOL sub_0208903C(UnkStruct_02087A10 *param0);
 
 static const int Unk_020F2984[][4] = {
@@ -1066,25 +1066,25 @@ static int sub_02086D38(UnkStruct_02087A10 *param0, int param1)
 static void sub_02086E6C(UnkStruct_02087A10 *param0, UnkStruct_0208737C *param1)
 {
     if (param0->unk_00 == 0) {
-        Strbuf *v0;
+        String *v0;
 
         if (param0->unk_04 == 0) {
-            v0 = MessageLoader_GetNewStrbuf(param0->unk_170, 0 + LCRNG_Next() % 18);
+            v0 = MessageLoader_GetNewString(param0->unk_170, 0 + LCRNG_Next() % 18);
         } else if (param0->unk_04 == 1) {
-            v0 = MessageLoader_GetNewStrbuf(param0->unk_170, 18 + LCRNG_Next() % 18);
+            v0 = MessageLoader_GetNewString(param0->unk_170, 18 + LCRNG_Next() % 18);
         }
 
-        Strbuf_Copy(param1->textInputStr, v0);
-        Strbuf_Free(v0);
-        Strbuf_ToChars(param1->textInputStr, param1->unk_1C, 10);
+        String_Copy(param1->textInputStr, v0);
+        String_Free(v0);
+        String_ToChars(param1->textInputStr, param1->unk_1C, 10);
     } else if (param0->unk_00 == 3) {
-        Strbuf *v1;
+        String *v1;
 
-        v1 = MessageLoader_GetNewStrbuf(param0->unk_170, 88 + (LCRNG_Next() % 2));
+        v1 = MessageLoader_GetNewString(param0->unk_170, 88 + (LCRNG_Next() % 2));
 
-        Strbuf_Copy(param1->textInputStr, v1);
-        Strbuf_Free(v1);
-        Strbuf_ToChars(param1->textInputStr, param1->unk_1C, 10);
+        String_Copy(param1->textInputStr, v1);
+        String_Free(v1);
+        String_ToChars(param1->textInputStr, param1->unk_1C, 10);
     } else {
         param1->unk_14 = 1;
     }
@@ -1130,10 +1130,10 @@ static int sub_02086F3C(ApplicationManager *appMan, int *param1)
     } else {
         CharCode_Copy(v0->unk_118, v0->unk_D8);
         CharCode_Copy(v1->unk_1C, v0->unk_D8);
-        Strbuf_CopyChars(v1->textInputStr, v0->unk_D8);
+        String_CopyChars(v1->textInputStr, v0->unk_D8);
     }
 
-    Strbuf_Free(v0->unk_184);
+    String_Free(v0->unk_184);
 
     for (v2 = 0; v2 < 7; v2++) {
         SysTask_FinishAndFreeParam(v0->unk_400[v2]);
@@ -1168,11 +1168,11 @@ static int sub_02086F3C(ApplicationManager *appMan, int *param1)
     Font_Free(FONT_SUBSCREEN);
 
     if (v0->unk_180) {
-        Strbuf_Free(v0->unk_180);
+        String_Free(v0->unk_180);
     }
 
-    Strbuf_Free(v0->unk_178);
-    Strbuf_Free(v0->unk_17C);
+    String_Free(v0->unk_178);
+    String_Free(v0->unk_17C);
     MessageLoader_Free(v0->unk_174);
     MessageLoader_Free(v0->unk_170);
     MessageLoader_Free(v0->unk_16C);
@@ -1198,7 +1198,7 @@ UnkStruct_0208737C *sub_0208712C(int heapID, int param1, int param2, int param3,
     v0->unk_0C = param3;
     v0->unk_14 = 0;
     v0->unk_1C[0] = 0xffff;
-    v0->textInputStr = Strbuf_Init(32, heapID);
+    v0->textInputStr = String_Init(32, heapID);
     v0->unk_44 = 0;
     v0->pcBoxes = NULL;
     v0->unk_10 = 0;
@@ -1213,7 +1213,7 @@ void sub_0208716C(UnkStruct_0208737C *param0)
     GF_ASSERT((param0->textInputStr) != NULL);
     GF_ASSERT((param0) != NULL);
 
-    Strbuf_Free(param0->textInputStr);
+    String_Free(param0->textInputStr);
     Heap_Free(param0);
 }
 
@@ -1384,7 +1384,7 @@ static void sub_0208737C(UnkStruct_02087A10 *param0, ApplicationManager *appMan)
     param0->unk_118[0] = 0xffff;
 
     if (v0->textInputStr) {
-        Strbuf_ToChars(v0->textInputStr, param0->unk_118, 32);
+        String_ToChars(v0->textInputStr, param0->unk_118, 32);
     }
 
     MI_CpuFill16(param0->unk_D8, 0x1, 32 * 2);
@@ -1402,9 +1402,9 @@ static void sub_0208737C(UnkStruct_02087A10 *param0, ApplicationManager *appMan)
         param0->unk_14 = 1;
     }
 
-    param0->unk_178 = MessageUtil_ExpandedStrbuf(param0->unk_168, param0->unk_16C, Unk_020F2850[param0->unk_00], HEAP_ID_18);
-    param0->unk_17C = MessageUtil_ExpandedStrbuf(param0->unk_168, param0->unk_16C, 8, HEAP_ID_18);
-    param0->unk_184 = MessageLoader_GetNewStrbuf(param0->unk_16C, 7);
+    param0->unk_178 = MessageUtil_ExpandedString(param0->unk_168, param0->unk_16C, Unk_020F2850[param0->unk_00], HEAP_ID_18);
+    param0->unk_17C = MessageUtil_ExpandedString(param0->unk_168, param0->unk_16C, 8, HEAP_ID_18);
+    param0->unk_184 = MessageLoader_GetNewString(param0->unk_16C, 7);
     param0->unk_158 = CharCode_Length(param0->unk_118);
     param0->unk_1C.unk_00 = 0;
     param0->unk_1C.unk_04 = 1;
@@ -1437,13 +1437,13 @@ static void sub_0208737C(UnkStruct_02087A10 *param0, ApplicationManager *appMan)
 
 static void sub_02087544(UnkStruct_02087A10 *param0, ApplicationManager *appMan)
 {
-    Strbuf *v0 = NULL;
+    String *v0 = NULL;
     UnkStruct_0208737C *v1 = (UnkStruct_0208737C *)ApplicationManager_Args(appMan);
 
     if (v1->unk_44 != 0) {
         int v2, v3;
 
-        v0 = Strbuf_Init(200, HEAP_ID_18);
+        v0 = String_Init(200, HEAP_ID_18);
         param0->unk_180 = NULL;
         v2 = PCBoxes_GetCurrentBoxID(v1->pcBoxes);
         v3 = PCBoxes_FirstEmptyBox(v1->pcBoxes);
@@ -1465,14 +1465,14 @@ static void sub_02087544(UnkStruct_02087A10 *param0, ApplicationManager *appMan)
             Heap_Free(v4);
         } else {
             param0->unk_D8[param0->unk_158] = 0xffff;
-            Strbuf_CopyChars(v0, param0->unk_D8);
-            StringTemplate_SetStrbuf(param0->unk_168, 0, v0, 0, 0, 0);
+            String_CopyChars(v0, param0->unk_D8);
+            StringTemplate_SetString(param0->unk_168, 0, v0, 0, 0, 0);
         }
 
-        param0->unk_180 = MessageUtil_ExpandedStrbuf(param0->unk_168, param0->unk_174, v1->unk_44, HEAP_ID_18);
+        param0->unk_180 = MessageUtil_ExpandedString(param0->unk_168, param0->unk_174, v1->unk_44, HEAP_ID_18);
         param0->unk_14 = 1;
 
-        Strbuf_Free(v0);
+        String_Free(v0);
     }
 }
 
@@ -1794,17 +1794,17 @@ static void sub_02087D64(BgConfig *param0, Window *param1, int *param2, int para
     }
 }
 
-static void sub_02087F48(Window *param0, int param1, Strbuf *param2)
+static void sub_02087F48(Window *param0, int param1, String *param2)
 {
     Window_DrawMessageBoxWithScrollCursor(param0, 0, 32 * 8, 10);
     Text_AddPrinterWithParams(param0, FONT_MESSAGE, param2, 0, 0, TEXT_SPEED_INSTANT, NULL);
     Window_CopyToVRAM(param0);
 }
 
-static void sub_02087F78(Window *param0, int param1, Strbuf *param2)
+static void sub_02087F78(Window *param0, int param1, String *param2)
 {
     int v0 = 16;
-    int v1 = Font_CalcStrbufWidth(FONT_SYSTEM, param2, 0);
+    int v1 = Font_CalcStringWidth(FONT_SYSTEM, param2, 0);
 
     if (v1 > 130) {
         v0 = 0;
@@ -2059,7 +2059,7 @@ static void sub_02088554(Window *param0, const u16 *param1, int param2, int para
 {
     int v0 = 0, v1, v2;
     u16 v3[2];
-    Strbuf *v4 = Strbuf_Init(2, HEAP_ID_18);
+    String *v4 = String_Init(2, HEAP_ID_18);
 
     while (param1[v0] != 0xffff) {
         if ((param1[v0] == 0xd001) || (param1[v0] == (0xd001 + 1)) || (param1[v0] == (0xd001 + 2))) {
@@ -2074,17 +2074,17 @@ static void sub_02088554(Window *param0, const u16 *param1, int param2, int para
             v3[0] = param1[v0];
             v3[1] = 0xffff;
 
-            v1 = Font_CalcStringWidth(FONT_SYSTEM, v3, 0);
+            v1 = Font_CalcCharCodeWidth(FONT_SYSTEM, v3, 0);
             v2 = param2 + v0 * param4 + ((param4 - v1) / 2);
 
-            Strbuf_CopyChars(v4, v3);
+            String_CopyChars(v4, v3);
             Text_AddPrinterWithParamsAndColor(param0, FONT_SYSTEM, v4, v2, param3, param5, param6, NULL);
         }
 
         v0++;
     }
 
-    Strbuf_Free(v4);
+    String_Free(v4);
 }
 
 static const u8 Unk_020F24D8[] = {
@@ -2094,17 +2094,17 @@ static const u8 Unk_020F24D8[] = {
     0x58
 };
 
-static void *sub_02088654(Window *param0, Strbuf *param1, u8 param2, const TextColor param3)
+static void *sub_02088654(Window *param0, String *param1, u8 param2, const TextColor param3)
 {
     Text_AddPrinterWithParamsAndColor(param0, param2, param1, 0, 0, TEXT_SPEED_NO_TRANSFER, param3, NULL);
     return param0->pixels;
 }
 
-static void sub_02088678(Window *param0, const u16 *param1, u8 *param2, Strbuf *param3)
+static void sub_02088678(Window *param0, const u16 *param1, u8 *param2, String *param3)
 {
     u16 v0[20 + 1], v1, v2;
     void *v3;
-    Strbuf *v4;
+    String *v4;
 
     Window_FillTilemap(&param0[3], 0);
     v3 = sub_02088654(&param0[3], param3, FONT_SUBSCREEN, TEXT_COLOR(13, 14, 15));
@@ -2116,14 +2116,14 @@ static void sub_02088678(Window *param0, const u16 *param1, u8 *param2, Strbuf *
         GXS_LoadOBJ(param2, Unk_020F24D8[v1] * 0x20, 0x20 * 4 * 2);
     }
 
-    v4 = Strbuf_Init(20 + 1, HEAP_ID_18);
+    v4 = String_Init(20 + 1, HEAP_ID_18);
 
     for (v1 = 0; v1 < 3; v1++) {
         v0[0] = param1[v1];
         v0[1] = 0xffff;
 
         Window_FillTilemap(&param0[v1], 0);
-        Strbuf_CopyChars(v4, v0);
+        String_CopyChars(v4, v0);
 
         v3 = sub_02088654(&param0[v1], v4, FONT_SUBSCREEN, TEXT_COLOR(13, 14, 15));
 
@@ -2131,10 +2131,10 @@ static void sub_02088678(Window *param0, const u16 *param1, u8 *param2, Strbuf *
         GXS_LoadOBJ(v3, Unk_020F24F0[v1] * 0x20, 0x20 * 4);
     }
 
-    Strbuf_Free(v4);
+    String_Free(v4);
 }
 
-static void sub_02088754(Window *param0, u16 *param1, int param2, u16 *param3, u8 *param4, Strbuf *param5)
+static void sub_02088754(Window *param0, u16 *param1, int param2, u16 *param3, u8 *param4, String *param5)
 {
     int v0, v1;
     const u16 *v2 = NULL;

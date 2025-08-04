@@ -1,10 +1,10 @@
 #ifndef POKEPLATINUM_STRUCT_OV94_0223FD4C_SUB3_H
 #define POKEPLATINUM_STRUCT_OV94_0223FD4C_SUB3_H
 
-#include "strbuf.h"
+#include "string_gf.h"
 
 typedef struct {
-    Strbuf **unk_00;
+    String **unk_00;
     u16 unk_04;
     u16 unk_06;
     u16 unk_08;

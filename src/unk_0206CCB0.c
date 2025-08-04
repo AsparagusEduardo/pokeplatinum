@@ -52,7 +52,7 @@
 #include "savedata.h"
 #include "savedata_misc.h"
 #include "special_encounter.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "system_flags.h"
 #include "trainer_info.h"
@@ -66,7 +66,7 @@
 static void sub_0206CD70(FieldSystem *fieldSystem, int param1, int param2, const void *param3);
 static void sub_0206CD7C(SaveData *saveData, int param1, int param2, const void *param3);
 static u8 sub_0206DE4C(Pokemon *param0);
-static Strbuf *sub_0206F0D8(u16 param0, u32 heapID);
+static String *sub_0206F0D8(u16 param0, u32 heapID);
 
 typedef struct {
     u8 unk_00[40];
@@ -450,11 +450,11 @@ static void sub_0206CD7C(SaveData *saveData, int param1, int param2, const void 
 
 static void sub_0206CD94(StringTemplate *param0, int param1, const u16 *param2, int param3, int param4, int param5)
 {
-    Strbuf *v0 = Strbuf_Init(64, HEAP_ID_FIELD);
+    String *v0 = String_Init(64, HEAP_ID_FIELD);
 
-    Strbuf_CopyChars(v0, param2);
-    StringTemplate_SetStrbuf(param0, param1, v0, param3, param5, param4);
-    Strbuf_Free(v0);
+    String_CopyChars(v0, param2);
+    StringTemplate_SetString(param0, param1, v0, param3, param5, param4);
+    String_Free(v0);
 }
 
 static void sub_0206CDD0(StringTemplate *param0, int param1, const UnkStruct_ov6_022465F4 *param2)
@@ -464,11 +464,11 @@ static void sub_0206CDD0(StringTemplate *param0, int param1, const UnkStruct_ov6
 
 static void sub_0206CE08(int heapID, u16 *param1, Pokemon *mon)
 {
-    Strbuf *strBuf = Strbuf_Init(64, heapID);
+    String *string = String_Init(64, heapID);
 
-    Pokemon_GetValue(mon, MON_DATA_NICKNAME_STRBUF, strBuf);
-    Strbuf_ToChars(strBuf, param1, 10 + 1);
-    Strbuf_Free(strBuf);
+    Pokemon_GetValue(mon, MON_DATA_NICKNAME_STRING, string);
+    String_ToChars(string, param1, 10 + 1);
+    String_Free(string);
 }
 
 static void sub_0206CE38(Pokemon *param0, u16 *param1, u8 *param2, u8 *param3, u8 *param4)
@@ -500,11 +500,11 @@ static void sub_0206CED0(int heapID, Pokemon *mon, u8 *param2, u16 *param3)
     *param2 = Pokemon_GetValue(mon, MON_DATA_HAS_NICKNAME, NULL);
 
     if (*param2) {
-        Strbuf *strBuf = Strbuf_Init(64, heapID);
+        String *string = String_Init(64, heapID);
 
-        Pokemon_GetValue(mon, MON_DATA_NICKNAME_STRBUF, strBuf);
-        Strbuf_ToChars(strBuf, param3, 10 + 1);
-        Strbuf_Free(strBuf);
+        Pokemon_GetValue(mon, MON_DATA_NICKNAME_STRING, string);
+        String_ToChars(string, param3, 10 + 1);
+        String_Free(string);
     }
 }
 
@@ -1991,12 +1991,12 @@ static int sub_0206E7AC(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
 {
     int v0;
     UnkStruct_0206E768 *v1 = ov6_02246498(param2);
-    Strbuf *v2 = Strbuf_Init(64, HEAP_ID_FIELD);
+    String *v2 = String_Init(64, HEAP_ID_FIELD);
 
     sub_0206CDD0(param1, 0, param2);
-    Strbuf_CopyChars(v2, v1->unk_00.unk_06);
-    StringTemplate_SetStrbuf(param1, 1, v2, v1->unk_00.unk_02, 0, v1->unk_00.unk_03);
-    Strbuf_Free(v2);
+    String_CopyChars(v2, v1->unk_00.unk_06);
+    StringTemplate_SetString(param1, 1, v2, v1->unk_00.unk_02, 0, v1->unk_00.unk_03);
+    String_Free(v2);
     StringTemplate_SetCustomMessageWord(param1, 2, v1->unk_16);
 
     switch (v1->unk_00.unk_01) {
@@ -2607,15 +2607,15 @@ static int sub_0206EDAC(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
     SpecialEncounter *v1;
     u16 v2, v3;
     u32 v4, v5;
-    Strbuf *v6 = Strbuf_Init(22, HEAP_ID_FIELD);
+    String *v6 = String_Init(22, HEAP_ID_FIELD);
     TrainerInfo *v7 = SaveData_GetTrainerInfo(FieldSystem_GetSaveData(fieldSystem));
 
     v1 = SaveData_GetSpecialEncounters(fieldSystem->saveData);
     v2 = (LCRNG_Next() % 29);
 
     MapHeader_LoadName(RoamingPokemon_GetRouteFromId(v2), HEAP_ID_FIELD, v6);
-    StringTemplate_SetStrbuf(param1, 0, v6, 0, 1, GAME_LANGUAGE);
-    Strbuf_Free(v6);
+    StringTemplate_SetString(param1, 0, v6, 0, 1, GAME_LANGUAGE);
+    String_Free(v6);
 
     for (v3 = 0; v3 < 6; v3++) {
         if (SpecialEncounter_IsRoamerActive(v1, v3)) {
@@ -2689,12 +2689,12 @@ static int sub_0206EEBC(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
 
     {
         u16 v6;
-        Strbuf *v7 = Strbuf_Init(7 + 1, HEAP_ID_FIELD);
+        String *v7 = String_Init(7 + 1, HEAP_ID_FIELD);
         int v8 = sub_0202A1C0(v0);
 
         sub_0202A1A0(v0, v7);
-        StringTemplate_SetStrbuf(param1, 0, v7, v8, 1, sub_0202A200(v0));
-        Strbuf_Free(v7);
+        StringTemplate_SetString(param1, 0, v7, v8, 1, sub_0202A200(v0));
+        String_Free(v7);
 
         v6 = sub_0202A1F4(v0);
         StringTemplate_SetCustomMessageWord(param1, 1, v6);
@@ -2733,7 +2733,7 @@ static int sub_0206EF7C(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
 
 static int sub_0206F01C(FieldSystem *fieldSystem, StringTemplate *param1, UnkStruct_ov6_022465F4 *param2)
 {
-    Strbuf *v0;
+    String *v0;
     u16 v1, v2, v3;
     const Pokedex *pokedex = SaveData_GetPokedex(fieldSystem->saveData);
 
@@ -2754,8 +2754,8 @@ static int sub_0206F01C(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
 
     v0 = sub_0206F0D8(v3, HEAP_ID_FIELD);
 
-    StringTemplate_SetStrbuf(param1, 0, v0, 0, 1, GAME_LANGUAGE);
-    Strbuf_Free(v0);
+    StringTemplate_SetString(param1, 0, v0, 0, 1, GAME_LANGUAGE);
+    String_Free(v0);
 
     v1 = (LCRNG_Next() % 3);
 
@@ -2770,10 +2770,10 @@ static int sub_0206F01C(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
     }
 }
 
-static Strbuf *sub_0206F0D8(u16 param0, u32 heapID)
+static String *sub_0206F0D8(u16 param0, u32 heapID)
 {
     MessageLoader *v0 = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_SPECIES_NAME, heapID);
-    Strbuf *v1 = MessageLoader_GetNewStrbuf(v0, param0);
+    String *v1 = MessageLoader_GetNewString(v0, param0);
 
     MessageLoader_Free(v0);
     return v1;
@@ -2818,7 +2818,7 @@ static int sub_0206F13C(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
 
 static int sub_0206F160(FieldSystem *fieldSystem, StringTemplate *param1, UnkStruct_ov6_022465F4 *param2)
 {
-    Strbuf *v0;
+    String *v0;
     u16 v1, v2;
     Pokemon *pokemon;
     Party *party;
@@ -2836,8 +2836,8 @@ static int sub_0206F160(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
     for (v2 = 1; v2 <= NATIONAL_DEX_COUNT; v2++) {
         if (Pokedex_HasSeenSpecies(pokedex, v1) == TRUE) {
             v0 = sub_0206F0D8(v1, HEAP_ID_FIELD);
-            StringTemplate_SetStrbuf(param1, 2, v0, 0, 1, GAME_LANGUAGE);
-            Strbuf_Free(v0);
+            StringTemplate_SetString(param1, 2, v0, 0, 1, GAME_LANGUAGE);
+            String_Free(v0);
             break;
         }
 

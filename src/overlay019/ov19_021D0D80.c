@@ -45,7 +45,7 @@
 #include "save_player.h"
 #include "savedata.h"
 #include "sound_playback.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
@@ -3474,31 +3474,31 @@ static void ov19_MonSelectionFree(BoxMonSelection *selection)
 static void PCBoxes_InitCustomization(PCBoxes *pcBoxes, BoxCustomization *customization)
 {
     customization->boxID = PCBoxes_GetCurrentBoxID(pcBoxes);
-    customization->name = Strbuf_Init(PC_BOX_NAME_BUFFER_LEN, HEAP_ID_BOX_DATA);
+    customization->name = String_Init(PC_BOX_NAME_BUFFER_LEN, HEAP_ID_BOX_DATA);
     PCBoxes_LoadCustomization(pcBoxes, customization);
 }
 
 static void Customization_Free(BoxCustomization *customization)
 {
-    Strbuf_Free(customization->name);
+    String_Free(customization->name);
 }
 
 static void PCMonPreviewInit(PCMonPreview *param0)
 {
-    param0->nickname = Strbuf_Init(12, HEAP_ID_BOX_DATA);
-    param0->speciesName = Strbuf_Init(12, HEAP_ID_BOX_DATA);
-    param0->heldItemName = Strbuf_Init(18, HEAP_ID_BOX_DATA);
-    param0->nature = Strbuf_Init(12, HEAP_ID_BOX_DATA);
-    param0->ability = Strbuf_Init(16, HEAP_ID_BOX_DATA);
+    param0->nickname = String_Init(12, HEAP_ID_BOX_DATA);
+    param0->speciesName = String_Init(12, HEAP_ID_BOX_DATA);
+    param0->heldItemName = String_Init(18, HEAP_ID_BOX_DATA);
+    param0->nature = String_Init(12, HEAP_ID_BOX_DATA);
+    param0->ability = String_Init(16, HEAP_ID_BOX_DATA);
 }
 
 static void PCMonPreviewFree(PCMonPreview *param0)
 {
-    Strbuf_Free(param0->nickname);
-    Strbuf_Free(param0->speciesName);
-    Strbuf_Free(param0->heldItemName);
-    Strbuf_Free(param0->nature);
-    Strbuf_Free(param0->ability);
+    String_Free(param0->nickname);
+    String_Free(param0->speciesName);
+    String_Free(param0->heldItemName);
+    String_Free(param0->nature);
+    String_Free(param0->ability);
 }
 
 static void ov19_PCCompareMonsInit(UnkStruct_ov19_021D4EE4 *param0)
@@ -3509,16 +3509,16 @@ static void ov19_PCCompareMonsInit(UnkStruct_ov19_021D4EE4 *param0)
 
     for (int i = 0; i < 2; i++) {
         param0->unk_02[i] = 0;
-        param0->compareMons[i].monName = Strbuf_Init(12, HEAP_ID_BOX_DATA);
-        param0->compareMons[i].nature = Strbuf_Init(12, HEAP_ID_BOX_DATA);
+        param0->compareMons[i].monName = String_Init(12, HEAP_ID_BOX_DATA);
+        param0->compareMons[i].nature = String_Init(12, HEAP_ID_BOX_DATA);
     }
 }
 
 static void ov19_PCCompareMonsFree(UnkStruct_ov19_021D4EE4 *param0)
 {
     for (int i = 0; i < 2; i++) {
-        Strbuf_Free(param0->compareMons[i].monName);
-        Strbuf_Free(param0->compareMons[i].nature);
+        String_Free(param0->compareMons[i].monName);
+        String_Free(param0->compareMons[i].nature);
     }
 }
 
@@ -4189,27 +4189,27 @@ static void ov19_LoadBoxMonIntoPreview(UnkStruct_ov19_021D4DF0 *param0, BoxPokem
         preview->gender = GENDER_INVALID;
     }
 
-    BoxPokemon_GetValue(boxMon, MON_DATA_NICKNAME_STRBUF, preview->nickname);
+    BoxPokemon_GetValue(boxMon, MON_DATA_NICKNAME_STRING, preview->nickname);
 
     if (preview->isEgg == FALSE) {
-        MessageLoader_GetStrbuf(param2->speciesNameLoader, preview->species, preview->speciesName);
+        MessageLoader_GetString(param2->speciesNameLoader, preview->species, preview->speciesName);
     } else {
-        Strbuf_Copy(preview->speciesName, preview->nickname);
-        Strbuf_Clear(preview->nickname);
+        String_Copy(preview->speciesName, preview->nickname);
+        String_Clear(preview->nickname);
     }
 
     if (preview->heldItem != ITEM_NONE) {
         Item_LoadName(preview->heldItemName, preview->heldItem, HEAP_ID_BOX_DATA);
     } else {
-        MessageLoader_GetStrbuf(param2->boxMessagesLoader, BoxText_NoItem, preview->heldItemName);
+        MessageLoader_GetString(param2->boxMessagesLoader, BoxText_NoItem, preview->heldItemName);
     }
 
     {
         u32 value = BoxPokemon_GetNature(boxMon);
-        MessageLoader_GetStrbuf(param2->natureNameLoader, value, preview->nature);
+        MessageLoader_GetString(param2->natureNameLoader, value, preview->nature);
 
         value = BoxPokemon_GetValue(boxMon, MON_DATA_ABILITY, NULL);
-        MessageLoader_GetStrbuf(param2->abilityNameLoader, value, preview->ability);
+        MessageLoader_GetString(param2->abilityNameLoader, value, preview->ability);
     }
 
     SpeciesData_Free(speciesData);
@@ -4227,12 +4227,12 @@ static void ov19_LoadBoxMonIntoComparison(UnkStruct_ov19_021D4DF0 *param0, BoxPo
     compareMon->level = preview->level;
 
     if (compareMon->isEgg) {
-        Strbuf_Copy(compareMon->monName, preview->speciesName);
+        String_Copy(compareMon->monName, preview->speciesName);
     } else {
-        Strbuf_Copy(compareMon->monName, preview->nickname);
+        String_Copy(compareMon->monName, preview->nickname);
     }
 
-    Strbuf_Copy(compareMon->nature, preview->nature);
+    String_Copy(compareMon->nature, preview->nature);
     Pokemon_FromBoxPokemon(boxMon, param2->mon);
 
     BOOL reencrypt = Pokemon_EnterDecryptionContext(param2->mon);
@@ -4301,7 +4301,7 @@ static void ov19_GiveItemToSelectedMon(UnkStruct_ov19_021D4DF0 *param0, u16 item
     if (preview->heldItem != 0) {
         Item_LoadName(preview->heldItemName, preview->heldItem, HEAP_ID_BOX_DATA);
     } else {
-        MessageLoader_GetStrbuf(param2->boxMessagesLoader, BoxText_NoItem, preview->heldItemName);
+        MessageLoader_GetString(param2->boxMessagesLoader, BoxText_NoItem, preview->heldItemName);
     }
 
     if (ov19_GetCursorLocation(param0) == CURSOR_IN_BOX && ov19_GetPreviewMonSource(param0) == PREVIEW_MON_UNDER_CURSOR) {
@@ -4320,7 +4320,7 @@ static void ov19_GiveItemToSelectedMon(UnkStruct_ov19_021D4DF0 *param0, u16 item
     } else if (species == SPECIES_GIRATINA) {
         BoxPokemon_SetGiratinaForm(preview->mon);
         int ability = BoxPokemon_GetValue(preview->mon, MON_DATA_ABILITY, NULL);
-        MessageLoader_GetStrbuf(param2->abilityNameLoader, ability, preview->ability);
+        MessageLoader_GetString(param2->abilityNameLoader, ability, preview->ability);
     }
 }
 
@@ -4368,7 +4368,7 @@ static void ov19_PickUpHeldItem(UnkStruct_ov19_021D4DF0 *param0, UnkStruct_ov19_
 
     param0->cursorItem = preview->heldItem;
 
-    MessageLoader_GetStrbuf(param1->boxMessagesLoader, BoxText_NoItem, preview->heldItemName);
+    MessageLoader_GetString(param1->boxMessagesLoader, BoxText_NoItem, preview->heldItemName);
     ov19_GiveItemToSelectedMon(param0, itemNone, param1);
 }
 

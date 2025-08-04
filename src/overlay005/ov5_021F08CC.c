@@ -30,7 +30,7 @@
 #include "render_window.h"
 #include "save_player.h"
 #include "sound_playback.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
@@ -60,8 +60,8 @@ typedef struct {
     FieldSystem *fieldSystem;
     UnkStruct_ov101_021D5D90 *unk_24;
     u8 unk_28;
-    Strbuf *unk_2C;
-    Strbuf *unk_30;
+    String *unk_2C;
+    String *unk_30;
     StringTemplate *unk_34;
     Window window;
     MessageLoader *unk_48;
@@ -502,16 +502,16 @@ static int ov5_021F0D54(void)
 static void ov5_021F0D6C(UnkStruct_ov5_021F0D6C *param0)
 {
     param0->unk_48 = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_COMMON_STRINGS, HEAP_ID_FIELD);
-    param0->unk_2C = Strbuf_Init(0x400, HEAP_ID_FIELD);
-    param0->unk_30 = Strbuf_Init(0x400, HEAP_ID_FIELD);
+    param0->unk_2C = String_Init(0x400, HEAP_ID_FIELD);
+    param0->unk_30 = String_Init(0x400, HEAP_ID_FIELD);
     param0->unk_34 = StringTemplate_New(8, 64, HEAP_ID_FIELD);
 }
 
 static void ov5_021F0DA4(UnkStruct_ov5_021F0D6C *param0)
 {
     StringTemplate_Free(param0->unk_34);
-    Strbuf_Free(param0->unk_2C);
-    Strbuf_Free(param0->unk_30);
+    String_Free(param0->unk_2C);
+    String_Free(param0->unk_30);
     MessageLoader_Free(param0->unk_48);
 }
 
@@ -530,7 +530,7 @@ static void ov5_021F0DE8(UnkStruct_ov5_021F0D6C *param0, u32 param1)
     {
         FieldSystem *fieldSystem = param0->fieldSystem;
 
-        MessageLoader_GetStrbuf(param0->unk_48, param1, param0->unk_30);
+        MessageLoader_GetString(param0->unk_48, param1, param0->unk_30);
         StringTemplate_Format(param0->unk_34, param0->unk_2C, param0->unk_30);
 
         param0->unk_28 = FieldMessage_Print(&param0->window, param0->unk_2C, SaveData_GetOptions(fieldSystem->saveData), 1);

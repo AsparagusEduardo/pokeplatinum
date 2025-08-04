@@ -15,7 +15,7 @@
 #include "graphics.h"
 #include "heap.h"
 #include "message.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
 #include "text.h"
@@ -146,7 +146,7 @@ static void ov48_022565A8(SysTask *param0, void *param1)
 static void ov48_02256650(UnkStruct_ov48_0225650C *param0, u32 param1)
 {
     Window v0;
-    Strbuf *v1 = MessageBank_GetNewStrbufFromNARC(26, 459, 0, 8);
+    String *v1 = MessageBank_GetNewStringFromNARC(26, 459, 0, 8);
 
     if (v1) {
         Window_Add(param0->unk_04, &v0, 6, 18, 20, 8, 2, 0, param1);
@@ -155,7 +155,7 @@ static void ov48_02256650(UnkStruct_ov48_0225650C *param0, u32 param1)
         Window_PutToTilemap(&v0);
         Window_LoadTiles(&v0);
         Window_Remove(&v0);
-        Strbuf_Free(v1);
+        String_Free(v1);
     }
 }
 

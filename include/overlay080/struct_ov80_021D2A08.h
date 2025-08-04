@@ -14,7 +14,7 @@
 #include "map_matrix.h"
 #include "message.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 
 typedef struct UnkStruct_ov80_021D2A08_t {
     u8 unk_00;
@@ -39,7 +39,7 @@ typedef struct UnkStruct_ov80_021D2A08_t {
     UnkStruct_ov80_021D259C unk_44[5];
     MessageLoader *unk_80;
     MessageLoader *unk_84;
-    Strbuf *unk_88;
+    String *unk_88;
     int unk_8C;
     int unk_90;
     UnkStruct_ov80_021D2AF4 *unk_94;

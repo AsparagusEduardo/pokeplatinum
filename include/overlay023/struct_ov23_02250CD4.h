@@ -16,7 +16,7 @@
 #include "list_menu.h"
 #include "menu.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "sys_task_manager.h"
@@ -39,8 +39,8 @@ typedef struct {
     Menu *unk_5C;
     UnkFuncPtr_ov23_022515D8 unk_60;
     UnkFuncPtr_ov23_022515D8 unk_64;
-    Strbuf *unk_68;
-    Strbuf *unk_6C;
+    String *unk_68;
+    String *unk_6C;
     StringTemplate *unk_70;
     UnkStruct_ov5_021D30A8 unk_74;
     ManagedSprite *unk_23C[8];

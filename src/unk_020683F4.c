@@ -50,7 +50,7 @@
 #include "screen_fade.h"
 #include "script_manager.h"
 #include "start_menu.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "system.h"
 #include "system_flags.h"
 #include "system_vars.h"
@@ -97,7 +97,7 @@ typedef struct {
 
 typedef struct {
     Window unk_00;
-    Strbuf *unk_10;
+    String *unk_10;
     u16 unk_14;
     u16 unk_16;
 } UnkStruct_02068EFC;
@@ -882,7 +882,7 @@ static BOOL sub_02068EFC(UnkStruct_02068870 *param0)
     UnkStruct_02068EFC *v0 = Heap_AllocFromHeap(HEAP_ID_FIELDMAP, sizeof(UnkStruct_02068EFC));
 
     v0->unk_16 = 0;
-    v0->unk_10 = Strbuf_Init(128, HEAP_ID_FIELDMAP);
+    v0->unk_10 = String_Init(128, HEAP_ID_FIELDMAP);
 
     sub_0207CC10(param0->fieldSystem->saveData, v0->unk_10, Bag_GetRegisteredItem(SaveData_GetBag(param0->fieldSystem->saveData)), 11);
     FieldSystem_CreateTask(param0->fieldSystem, sub_02068F48, v0);
@@ -917,7 +917,7 @@ static BOOL sub_02068F48(FieldTask *task)
     case 2:
         MapObjectMan_UnpauseAllMovement(fieldSystem->mapObjMan);
         Window_Remove(&v1->unk_00);
-        Strbuf_Free(v1->unk_10);
+        String_Free(v1->unk_10);
         Heap_Free(v1);
 
         return 1;
@@ -1129,7 +1129,7 @@ static void sub_020692E4(UnkStruct_02068870 *param0, u32 param1)
     UnkStruct_02068EFC *v0 = Heap_AllocFromHeap(HEAP_ID_FIELDMAP, sizeof(UnkStruct_02068EFC));
 
     v0->unk_16 = 0;
-    v0->unk_10 = Strbuf_Init(128, HEAP_ID_FIELDMAP);
+    v0->unk_10 = String_Init(128, HEAP_ID_FIELDMAP);
 
     sub_0207CD34(SaveData_GetTrainerInfo(param0->fieldSystem->saveData), v0->unk_10, param0->unk_28, param1, HEAP_ID_FIELDMAP);
     FieldSystem_CreateTask(param0->fieldSystem, sub_02068F48, v0);

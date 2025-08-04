@@ -63,7 +63,7 @@
 #include "sound_playback.h"
 #include "sprite.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "text.h"
 #include "trainer_data.h"
@@ -281,7 +281,7 @@ StringTemplate *BattleSystem_StringTemplate(BattleSystem *battleSystem)
     return battleSystem->strFormatter;
 }
 
-Strbuf *ov16_0223E0D4(BattleSystem *battleSystem)
+String *ov16_0223E0D4(BattleSystem *battleSystem)
 {
     return battleSystem->msgBuffer;
 }
@@ -1601,7 +1601,7 @@ u8 ov16_0223F9FC(BattleSystem *battleSys, int trainerID, int param2, enum Traine
     if (battleSys->battleType & BATTLE_TYPE_FRONTIER) {
         if (trainerID == 10000) {
             {
-                Strbuf *v2;
+                String *v2;
 
                 if (msgType == TRMSG_WIN) {
                     v2 = sub_02014B34(&battleSys->trainers[param2].winMsg, HEAP_ID_BATTLE);
@@ -1611,12 +1611,12 @@ u8 ov16_0223F9FC(BattleSystem *battleSys, int trainerID, int param2, enum Traine
 
                 Window_FillTilemap(v0, 0xff);
                 v1 = Text_AddPrinterWithParams(v0, FONT_MESSAGE, v2, 0, 0, param4, BattleMessage_Callback);
-                Strbuf_Free(v2);
+                String_Free(v2);
             }
         } else {
             {
                 MessageLoader *v3;
-                Strbuf *v4;
+                String *v4;
                 int v5;
                 u32 v6;
                 int v7;
@@ -1640,12 +1640,12 @@ u8 ov16_0223F9FC(BattleSystem *battleSys, int trainerID, int param2, enum Traine
                 }
 
                 v3 = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, v6, HEAP_ID_BATTLE);
-                v4 = MessageLoader_GetNewStrbuf(v3, v5);
+                v4 = MessageLoader_GetNewString(v3, v5);
 
                 Window_FillTilemap(v0, 0xff);
 
                 v1 = Text_AddPrinterWithParams(v0, FONT_MESSAGE, v4, 0, 0, param4, BattleMessage_Callback);
-                Strbuf_Free(v4);
+                String_Free(v4);
                 MessageLoader_Free(v3);
             }
         }
@@ -1684,7 +1684,7 @@ u8 BattleMessage_PrintToWindow(BattleSystem *battleSystem, Window *param1, Messa
     }
 
     if (param6 & 0x2) {
-        v0 = param7 - Font_CalcStrbufWidth(FONT_SYSTEM, battleSystem->msgBuffer, 0);
+        v0 = param7 - Font_CalcStringWidth(FONT_SYSTEM, battleSystem->msgBuffer, 0);
     } else {
         v0 = 0;
     }
@@ -2291,9 +2291,9 @@ static void BattleMessage_PCBoxName(BattleSystem *battleSystem, u32 param1, int 
  */
 static void BattleMessage_Format(BattleSystem *battleSys, MessageLoader *msgLoader, BattleMessage *battleMsg)
 {
-    Strbuf *strbuf = MessageLoader_GetNewStrbuf(msgLoader, battleMsg->id);
-    StringTemplate_Format(battleSys->strFormatter, battleSys->msgBuffer, strbuf);
-    Strbuf_Free(strbuf);
+    String *string = MessageLoader_GetNewString(msgLoader, battleMsg->id);
+    StringTemplate_Format(battleSys->strFormatter, battleSys->msgBuffer, string);
+    String_Free(string);
 }
 
 static BOOL BattleMessage_Callback(TextPrinterTemplate *param0, u16 param1)

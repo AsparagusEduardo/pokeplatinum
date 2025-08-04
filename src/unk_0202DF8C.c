@@ -12,7 +12,7 @@
 #include "inlines.h"
 #include "party.h"
 #include "pokemon.h"
-#include "strbuf.h"
+#include "string_gf.h"
 
 static int inline inline_0202E1A8(const HallOfFame *param0, int param1);
 
@@ -30,7 +30,7 @@ void sub_0202DFA8(HallOfFame *param0, const Party *param1, const RTCDate *param2
 {
     UnkStruct_0202DFA8 *v0;
     Pokemon *v1;
-    Strbuf *v2;
+    String *v2;
     int v3, v4, v5;
     BOOL v6;
 
@@ -43,7 +43,7 @@ void sub_0202DFA8(HallOfFame *param0, const Party *param1, const RTCDate *param2
 
     v0 = &param0->unk_00[param0->unk_2AA8];
     v3 = Party_GetCurrentCount(param1);
-    v2 = Strbuf_Init(MON_NAME_LEN + 1, HEAP_ID_SYSTEM);
+    v2 = String_Init(MON_NAME_LEN + 1, HEAP_ID_SYSTEM);
 
     MI_CpuClear16(v0->unk_00, sizeof(UnkStruct_0202E1F4) * 6);
 
@@ -63,11 +63,11 @@ void sub_0202DFA8(HallOfFame *param0, const Party *param1, const RTCDate *param2
             v0->unk_00[v5].unk_32[3] = Pokemon_GetValue(v1, MON_DATA_MOVE4, NULL);
 
             if (v2) {
-                Pokemon_GetValue(v1, MON_DATA_NICKNAME_STRBUF, v2);
-                Strbuf_ToChars(v2, v0->unk_00[v5].unk_0C, MON_NAME_LEN + 1);
+                Pokemon_GetValue(v1, MON_DATA_NICKNAME_STRING, v2);
+                String_ToChars(v2, v0->unk_00[v5].unk_0C, MON_NAME_LEN + 1);
 
-                Pokemon_GetValue(v1, MON_DATA_OTNAME_STRBUF, v2);
-                Strbuf_ToChars(v2, v0->unk_00[v5].unk_22, TRAINER_NAME_LEN + 1);
+                Pokemon_GetValue(v1, MON_DATA_OTNAME_STRING, v2);
+                String_ToChars(v2, v0->unk_00[v5].unk_22, TRAINER_NAME_LEN + 1);
             } else {
                 v0->unk_00[v5].unk_0C[0] = 0xffff;
                 v0->unk_00[v5].unk_22[0] = 0xffff;
@@ -90,7 +90,7 @@ void sub_0202DFA8(HallOfFame *param0, const Party *param1, const RTCDate *param2
     param0->unk_2AAC++;
 
     if (v2) {
-        Strbuf_Free(v2);
+        String_Free(v2);
     }
 }
 
@@ -152,8 +152,8 @@ void sub_0202E1F4(const HallOfFame *param0, int param1, int param2, UnkStruct_ov
     param3->unk_0C = v0->unk_08;
     param3->unk_13 = v0->unk_03;
 
-    Strbuf_CopyChars(param3->unk_00, v0->unk_0C);
-    Strbuf_CopyChars(param3->unk_04, v0->unk_22);
+    String_CopyChars(param3->unk_00, v0->unk_0C);
+    String_CopyChars(param3->unk_04, v0->unk_22);
 
     for (v1 = 0; v1 < 4; v1++) {
         param3->unk_14[v1] = v0->unk_32[v1];

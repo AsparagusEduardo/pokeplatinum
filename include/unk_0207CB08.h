@@ -5,7 +5,7 @@
 
 #include "bag.h"
 #include "savedata.h"
-#include "strbuf.h"
+#include "string_gf.h"
 
 UnkStruct_0207CB08 *sub_0207CB08(u8 heapID);
 u32 sub_0207CB20(void);
@@ -20,7 +20,7 @@ u16 sub_0207CB94(UnkStruct_0207CB08 *param0);
 u16 sub_0207CB9C(UnkStruct_0207CB08 *param0);
 u8 sub_0207CBA4(UnkStruct_0207CB08 *param0);
 u8 sub_0207CBAC(UnkStruct_0207CB08 *param0);
-BOOL sub_0207CC10(SaveData *saveData, Strbuf *param1, u16 param2, u32 param3);
-void sub_0207CD34(void *param0, Strbuf *param1, u16 param2, u32 param3, u32 heapID);
+BOOL sub_0207CC10(SaveData *saveData, String *param1, u16 param2, u32 param3);
+void sub_0207CD34(void *param0, String *param1, u16 param2, u32 param3, u32 heapID);
 
 #endif // POKEPLATINUM_UNK_0207CB08_H

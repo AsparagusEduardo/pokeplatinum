@@ -45,7 +45,7 @@
 #include "sprite_resource.h"
 #include "sprite_transfer.h"
 #include "sprite_util.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
 #include "system.h"
@@ -1655,7 +1655,7 @@ void ov23_0224467C(int param0, int param1, void *param2, void *param3)
     }
 }
 
-BOOL ov23_022446B0(Strbuf *param0)
+BOOL ov23_022446B0(String *param0)
 {
     int v0, v1;
     TrainerInfo *v2;
@@ -1700,7 +1700,7 @@ BOOL ov23_022446B0(Strbuf *param0)
     return 0;
 }
 
-BOOL ov23_02244784(Strbuf *param0)
+BOOL ov23_02244784(String *param0)
 {
     int v0, v1;
     TrainerInfo *v2;

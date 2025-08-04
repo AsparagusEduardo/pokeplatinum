@@ -26,7 +26,7 @@
 #include "pokemon.h"
 #include "save_player.h"
 #include "savedata.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "trainer_info.h"
 #include "unk_0202D05C.h"
@@ -106,13 +106,13 @@ StringTemplate *sub_0204AEE8(SaveData *saveData, u16 param1, u16 param2, u8 para
 {
     u8 v0;
     u16 v1;
-    Strbuf *v2, *v3;
+    String *v2, *v3;
     Pokedex *pokedex;
     StringTemplate *v5;
     MessageLoader *v6;
 
-    v2 = Strbuf_Init(12 + 2, HEAP_ID_FIELD);
-    v3 = Strbuf_Init(2, HEAP_ID_FIELD);
+    v2 = String_Init(12 + 2, HEAP_ID_FIELD);
+    v3 = String_Init(2, HEAP_ID_FIELD);
     pokedex = SaveData_GetPokedex(saveData);
     v6 = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_SPECIES_NAME, HEAP_ID_FIELD);
     v5 = StringTemplate_New(18 + 1, 12 + 2, HEAP_ID_FIELD);
@@ -123,15 +123,15 @@ StringTemplate *sub_0204AEE8(SaveData *saveData, u16 param1, u16 param2, u8 para
         v1 = sub_02078824(v0);
 
         if (Pokedex_HasSeenSpecies(pokedex, v1)) {
-            MessageLoader_GetStrbuf(v6, v1, v2);
-            StringTemplate_SetStrbuf(v5, (*param4) + 1, v2, param2, param3, GAME_LANGUAGE);
+            MessageLoader_GetString(v6, v1, v2);
+            StringTemplate_SetString(v5, (*param4) + 1, v2, param2, param3, GAME_LANGUAGE);
             (*param4)++;
         }
     }
 
     MessageLoader_Free(v6);
-    Strbuf_Free(v3);
-    Strbuf_Free(v2);
+    String_Free(v3);
+    String_Free(v2);
 
     return v5;
 }
@@ -287,10 +287,10 @@ static BattleFrontierTrainerData *sub_0204B184(UnkStruct_ov104_0223A348 *param0,
     param0->unk_00.unk_18[1] = param1 * 3;
     param0->unk_00.trainerType = v0->trainerType;
 
-    Strbuf *v2 = MessageLoader_GetNewStrbuf(v1, param1);
+    String *v2 = MessageLoader_GetNewString(v1, param1);
 
-    Strbuf_ToChars(v2, &param0->unk_00.trainerName[0], 8); // Possibly TRAINER_NAME_LEN + 1
-    Strbuf_Free(v2);
+    String_ToChars(v2, &param0->unk_00.trainerName[0], 8); // Possibly TRAINER_NAME_LEN + 1
+    String_Free(v2);
     MessageLoader_Free(v1);
 
     return v0;

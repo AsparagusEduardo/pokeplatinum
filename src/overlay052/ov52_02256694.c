@@ -15,7 +15,7 @@
 #include "graphics.h"
 #include "heap.h"
 #include "message.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "sys_task_manager.h"
 #include "text.h"
 
@@ -28,7 +28,7 @@ struct UnkStruct_ov52_02256694_t {
     PoketchAnimation_AnimatedSpriteData *unk_34[4];
     PoketchAnimation_SpriteData unk_44;
     MessageLoader *unk_58;
-    Strbuf *unk_5C;
+    String *unk_5C;
 };
 
 static void ov52_0225670C(UnkStruct_ov52_02256694 *param0, const UnkStruct_ov52_02256694_1 *param1);
@@ -58,7 +58,7 @@ BOOL ov52_02256694(UnkStruct_ov52_02256694 **param0, const UnkStruct_ov52_022566
         v0->unk_04 = PoketchGraphics_GetBgConfig();
         v0->unk_30 = PoketchGraphics_GetAnimationManager();
         v0->unk_58 = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0461, HEAP_ID_POKETCH_APP);
-        v0->unk_5C = Strbuf_Init(96, HEAP_ID_POKETCH_APP);
+        v0->unk_5C = String_Init(96, HEAP_ID_POKETCH_APP);
         ov52_0225670C(v0, param1);
         *param0 = v0;
 
@@ -71,7 +71,7 @@ BOOL ov52_02256694(UnkStruct_ov52_02256694 **param0, const UnkStruct_ov52_022566
 void ov52_022566EC(UnkStruct_ov52_02256694 *param0)
 {
     if (param0 != NULL) {
-        Strbuf_Free(param0->unk_5C);
+        String_Free(param0->unk_5C);
         MessageLoader_Free(param0->unk_58);
         ov52_0225677C(param0);
         Heap_Free(param0);
@@ -315,19 +315,19 @@ static void ov52_02256A7C(UnkStruct_ov52_02256694 *param0)
     u32 v0;
 
     Window_FillTilemap(&param0->unk_20, 4);
-    MessageLoader_GetStrbuf(param0->unk_58, 0, param0->unk_5C);
+    MessageLoader_GetString(param0->unk_58, 0, param0->unk_5C);
 
-    v0 = ((24 * 8) - Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_5C, 0)) / 2;
+    v0 = ((24 * 8) - Font_CalcStringWidth(FONT_SYSTEM, param0->unk_5C, 0)) / 2;
 
     Text_AddPrinterWithParamsAndColor(&param0->unk_20, FONT_SYSTEM, param0->unk_5C, v0, 8, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
-    MessageLoader_GetStrbuf(param0->unk_58, 10, param0->unk_5C);
+    MessageLoader_GetString(param0->unk_58, 10, param0->unk_5C);
 
     v0 = ((24 * 8) - Font_CalcMaxLineWidth(FONT_SYSTEM, param0->unk_5C, 0)) / 2;
 
     {
         u32 v1 = 8 + 56;
 
-        v1 -= Strbuf_NumLines(param0->unk_5C) * 8;
+        v1 -= String_NumLines(param0->unk_5C) * 8;
         Text_AddPrinterWithParamsAndColor(&param0->unk_20, FONT_SYSTEM, param0->unk_5C, v0, v1, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
     }
 
@@ -337,7 +337,7 @@ static void ov52_02256A7C(UnkStruct_ov52_02256694 *param0)
 static void ov52_02256B10(UnkStruct_ov52_02256694 *param0)
 {
     Window_FillTilemap(&param0->unk_20, 4);
-    MessageLoader_GetStrbuf(param0->unk_58, 1, param0->unk_5C);
+    MessageLoader_GetString(param0->unk_58, 1, param0->unk_5C);
 
     {
         u32 v0 = (24 * 8 - Font_CalcMaxLineWidth(FONT_SYSTEM, param0->unk_5C, 0)) / 2;
@@ -352,12 +352,12 @@ static void ov52_02256B64(UnkStruct_ov52_02256694 *param0)
     u32 v0;
 
     Window_FillTilemap(&param0->unk_20, 4);
-    MessageLoader_GetStrbuf(param0->unk_58, 2, param0->unk_5C);
+    MessageLoader_GetString(param0->unk_58, 2, param0->unk_5C);
 
-    v0 = ((24 * 8) - Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_5C, 0)) / 2;
+    v0 = ((24 * 8) - Font_CalcStringWidth(FONT_SYSTEM, param0->unk_5C, 0)) / 2;
 
     Text_AddPrinterWithParamsAndColor(&param0->unk_20, FONT_SYSTEM, param0->unk_5C, v0, 8, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
-    MessageLoader_GetStrbuf(param0->unk_58, 3, param0->unk_5C);
+    MessageLoader_GetString(param0->unk_58, 3, param0->unk_5C);
     Text_AddPrinterWithParamsAndColor(&param0->unk_20, FONT_SYSTEM, param0->unk_5C, 16, 24, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
     Window_LoadTiles(&param0->unk_20);
 }
@@ -368,11 +368,11 @@ static void ov52_02256BDC(UnkStruct_ov52_02256694 *param0)
     u32 v1;
 
     Window_FillTilemap(&param0->unk_20, 4);
-    MessageLoader_GetStrbuf(param0->unk_58, 2, param0->unk_5C);
+    MessageLoader_GetString(param0->unk_58, 2, param0->unk_5C);
 
-    v0 = ((24 * 8) - Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_5C, 0)) / 2;
+    v0 = ((24 * 8) - Font_CalcStringWidth(FONT_SYSTEM, param0->unk_5C, 0)) / 2;
     Text_AddPrinterWithParamsAndColor(&param0->unk_20, FONT_SYSTEM, param0->unk_5C, v0, 8, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
-    MessageLoader_GetStrbuf(param0->unk_58, 4, param0->unk_5C);
+    MessageLoader_GetString(param0->unk_58, 4, param0->unk_5C);
 
     v1 = ((24 * 8) - Font_CalcMaxLineWidth(FONT_SYSTEM, param0->unk_5C, 0)) / 2;
     Text_AddPrinterWithParamsAndColor(&param0->unk_20, FONT_SYSTEM, param0->unk_5C, v1, 24, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
@@ -392,15 +392,15 @@ static void ov52_02256C64(UnkStruct_ov52_02256694 *param0, const UnkStruct_ov52_
     int v2;
 
     Window_FillTilemap(&param0->unk_20, 4);
-    MessageLoader_GetStrbuf(param0->unk_58, 5, param0->unk_5C);
+    MessageLoader_GetString(param0->unk_58, 5, param0->unk_5C);
 
-    v1 = ((24 * 8) - Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_5C, 0)) / 2;
+    v1 = ((24 * 8) - Font_CalcStringWidth(FONT_SYSTEM, param0->unk_5C, 0)) / 2;
     Text_AddPrinterWithParamsAndColor(&param0->unk_20, FONT_SYSTEM, param0->unk_5C, v1, 8, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
 
     for (v2 = 0; v2 < 4; v2++) {
-        MessageLoader_GetStrbuf(param0->unk_58, v0[v2], param0->unk_5C);
+        MessageLoader_GetString(param0->unk_58, v0[v2], param0->unk_5C);
         Text_AddPrinterWithParamsAndColor(&param0->unk_20, FONT_SYSTEM, param0->unk_5C, 8, 32 + 16 * v2, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
-        Strbuf_FormatInt(param0->unk_5C, param1->unk_00[v2], 2, 2, 1);
+        String_FormatInt(param0->unk_5C, param1->unk_00[v2], 2, 2, 1);
         Text_AddPrinterWithParamsAndColor(&param0->unk_20, FONT_SYSTEM, param0->unk_5C, 160, 32 + 16 * v2, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
     }
 

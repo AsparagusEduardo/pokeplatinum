@@ -48,7 +48,7 @@
 #include "sound_playback.h"
 #include "sprite.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "sys_task.h"
@@ -430,8 +430,8 @@ void ov23_0224F758(UnkFuncPtr_ov23_0224F758 param0, FieldSystem *fieldSystem)
     v0->fieldSystem = fieldSystem;
     v0->unk_260 = param0;
     v0->unk_2AA = 0;
-    v0->unk_68 = Strbuf_Init((50 * 2), HEAP_ID_FIELD);
-    v0->unk_6C = Strbuf_Init((50 * 2), HEAP_ID_FIELD);
+    v0->unk_68 = String_Init((50 * 2), HEAP_ID_FIELD);
+    v0->unk_6C = String_Init((50 * 2), HEAP_ID_FIELD);
     v0->unk_70 = StringTemplate_Default(HEAP_ID_FIELD);
     v0->unk_04 = SysTask_Start(ov23_0224F914, v0, 10000);
 
@@ -486,10 +486,10 @@ static void ov23_0224F7F4(UnkStruct_ov23_02250CD4 *param0)
         for (v4 = 0; v4 < NELEMS(Unk_ov23_02256924); v4++) {
             if (v4 == v1) {
                 const TrainerInfo *v5 = SaveData_GetTrainerInfo(FieldSystem_GetSaveData(param0->fieldSystem));
-                Strbuf *v6 = TrainerInfo_NameNewStrbuf(v5, 4);
+                String *v6 = TrainerInfo_NameNewString(v5, 4);
 
-                StringList_AddFromStrbuf(param0->unk_40, v6, Unk_ov23_02256924[v4].unk_04);
-                Strbuf_Free(v6);
+                StringList_AddFromString(param0->unk_40, v6, Unk_ov23_02256924[v4].unk_04);
+                String_Free(v6);
             } else {
                 StringList_AddFromMessageBank(param0->unk_40, v3, Unk_ov23_02256924[v4].unk_00, Unk_ov23_02256924[v4].unk_04);
             }
@@ -1044,9 +1044,9 @@ static void ov23_0225021C(UnkStruct_ov23_02250CD4 *param0, UnkFuncPtr_ov23_02248
         for (v7 = 0; v7 < v4; v7++) {
             StringTemplate_SetUndergroundItemName(param0->unk_70, 2, v1(v7, param0));
             StringTemplate_SetNumber(param0->unk_70, 6, v2(v7, param0), 2, 2, 1);
-            MessageLoader_GetStrbuf(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetCommonTextPrinter()), 128, param0->unk_6C);
+            MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetCommonTextPrinter()), 128, param0->unk_6C);
             StringTemplate_Format(param0->unk_70, param0->unk_68, param0->unk_6C);
-            StringList_AddFromStrbuf(param0->unk_40, param0->unk_68, v7);
+            StringList_AddFromString(param0->unk_40, param0->unk_68, v7);
         }
 
         StringList_AddFromMessageBank(param0->unk_40, v6, 60, 0xfffffffe);
@@ -1419,8 +1419,8 @@ void ov23_02250A50(UnkFuncPtr_ov23_0224F758 param0, FieldSystem *fieldSystem)
     v0->fieldSystem = fieldSystem;
     v0->unk_260 = param0;
     v0->unk_2AA = 0;
-    v0->unk_68 = Strbuf_Init((50 * 2), HEAP_ID_FIELD);
-    v0->unk_6C = Strbuf_Init((50 * 2), HEAP_ID_FIELD);
+    v0->unk_68 = String_Init((50 * 2), HEAP_ID_FIELD);
+    v0->unk_6C = String_Init((50 * 2), HEAP_ID_FIELD);
     v0->unk_70 = StringTemplate_Default(HEAP_ID_FIELD);
 
     sub_020594FC();
@@ -1459,8 +1459,8 @@ static void ov23_02250B34(SysTask *param0, UnkStruct_ov23_02250CD4 *param1, BOOL
         Menu_DestroyForExit(param1->unk_5C, 4);
     }
 
-    Strbuf_Free(param1->unk_68);
-    Strbuf_Free(param1->unk_6C);
+    String_Free(param1->unk_68);
+    String_Free(param1->unk_6C);
     StringTemplate_Free(param1->unk_70);
 
     UndergroundTextPrinter_EraseMessageBoxWindow(CommManUnderground_GetCaptureFlagTextPrinter());
@@ -1764,11 +1764,11 @@ void ov23_02251044(void *param0, u32 param1)
     }
 
     if (v0->unk_68) {
-        Strbuf_Free(v0->unk_68);
+        String_Free(v0->unk_68);
     }
 
     if (v0->unk_6C) {
-        Strbuf_Free(v0->unk_6C);
+        String_Free(v0->unk_6C);
     }
 
     if (v0->unk_70) {
@@ -1844,8 +1844,8 @@ void *ov23_022511B0(UnkFuncPtr_ov23_0224F758 param0, FieldSystem *fieldSystem)
     v0->unk_25C = 0;
     v0->unk_48 = NULL;
     v0->unk_60 = NULL;
-    v0->unk_68 = Strbuf_Init((50 * 2), HEAP_ID_FIELD);
-    v0->unk_6C = Strbuf_Init((50 * 2), HEAP_ID_FIELD);
+    v0->unk_68 = String_Init((50 * 2), HEAP_ID_FIELD);
+    v0->unk_6C = String_Init((50 * 2), HEAP_ID_FIELD);
     v0->unk_70 = StringTemplate_Default(HEAP_ID_FIELD);
 
     ov23_02250CD4(v0);

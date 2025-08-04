@@ -2,10 +2,10 @@
 #define POKEPLATINUM_STRUCT_020831B4_H
 
 #include "sprite.h"
-#include "strbuf.h"
+#include "string_gf.h"
 
 typedef struct {
-    Strbuf *unk_00;
+    String *unk_00;
     u16 unk_04;
     u16 curHP;
     u16 maxHP;
@@ -29,6 +29,6 @@ typedef struct {
     Sprite *unk_24;
     u8 unk_28;
     u8 unk_29;
-} StrBufWrapper;
+} StringWrapper;
 
 #endif // POKEPLATINUM_STRUCT_020831B4_H

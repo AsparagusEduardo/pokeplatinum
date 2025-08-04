@@ -32,7 +32,7 @@
 #include "sound_playback.h"
 #include "sprite.h"
 #include "sprite_util.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
@@ -46,7 +46,7 @@ struct UnkStruct_ov95_02247628_t {
     BgConfig *unk_08;
     StringTemplate *unk_0C;
     MessageLoader *unk_10;
-    Strbuf *unk_14;
+    String *unk_14;
     SpriteList *unk_18;
     G2dRenderer unk_1C;
     SysTask *unk_1A8;
@@ -139,7 +139,7 @@ int ov95_02246C20(ApplicationManager *appMan, int *param1)
             v0->unk_00 = ApplicationManager_Args(appMan);
             v0->unk_04 = 0;
             v0->unk_08 = BgConfig_New(HEAP_ID_57);
-            v0->unk_14 = Strbuf_Init(400, HEAP_ID_57);
+            v0->unk_14 = String_Init(400, HEAP_ID_57);
             v0->unk_10 = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0350, HEAP_ID_57);
             v0->unk_0C = StringTemplate_Default(HEAP_ID_57);
 
@@ -209,7 +209,7 @@ int ov95_02246E1C(ApplicationManager *appMan, int *param1)
     sub_02039794();
     StringTemplate_Free(v1->unk_0C);
     MessageLoader_Free(v1->unk_10);
-    Strbuf_Free(v1->unk_14);
+    String_Free(v1->unk_14);
     Heap_Free(v1->unk_08);
     SpriteList_Delete(v1->unk_18);
     RenderOam_Free();

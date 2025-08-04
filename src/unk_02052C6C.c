@@ -33,7 +33,7 @@
 #include "savedata.h"
 #include "screen_fade.h"
 #include "sound_playback.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "system_flags.h"
 #include "trainer_info.h"
@@ -48,7 +48,7 @@ typedef struct {
     UnkStruct_0203E234 unk_04;
     UnkStruct_0203E274 unk_10;
     Window unk_1C;
-    Strbuf *unk_2C;
+    String *unk_2C;
     void *unk_30;
     int unk_34;
     int unk_38;
@@ -267,7 +267,7 @@ static void sub_02052FA8(FieldSystem *fieldSystem, UnkStruct_0205300C *param1)
 {
     Options *options = SaveData_GetOptions(fieldSystem->saveData);
 
-    param1->unk_2C = MessageBank_GetNewStrbufFromNARC(26, 213, 15, 32);
+    param1->unk_2C = MessageBank_GetNewStringFromNARC(26, 213, 15, 32);
 
     FieldMessage_AddWindow(fieldSystem->bgConfig, &param1->unk_1C, 3);
     FieldMessage_DrawWindow(&param1->unk_1C, options);
@@ -283,7 +283,7 @@ static BOOL sub_02052FFC(UnkStruct_0205300C *param0)
 
 static void sub_0205300C(UnkStruct_0205300C *param0)
 {
-    Strbuf_Free(param0->unk_2C);
+    String_Free(param0->unk_2C);
     DestroyWaitDial(param0->unk_30);
     FieldMessage_ClearWindow(&param0->unk_1C);
 }
@@ -297,10 +297,10 @@ static void sub_02053028(FieldSystem *fieldSystem, UnkStruct_0205300C *param1, i
 
         v1 = StringTemplate_Default(HEAP_ID_FIELD);
         StringTemplate_SetPlayerName(v1, 0, SaveData_GetTrainerInfo(fieldSystem->saveData));
-        param1->unk_2C = MessageUtil_ExpandedStrbuf(v1, v0, 16, HEAP_ID_FIELD);
+        param1->unk_2C = MessageUtil_ExpandedString(v1, v0, 16, HEAP_ID_FIELD);
         StringTemplate_Free(v1);
     } else {
-        param1->unk_2C = MessageLoader_GetNewStrbuf(v0, 18);
+        param1->unk_2C = MessageLoader_GetNewString(v0, 18);
     }
 
     MessageLoader_Free(v0);
@@ -310,7 +310,7 @@ static void sub_02053028(FieldSystem *fieldSystem, UnkStruct_0205300C *param1, i
 static void sub_02053098(FieldSystem *fieldSystem, UnkStruct_0205300C *param1)
 {
     if (param1->unk_2C) {
-        Strbuf_Free(param1->unk_2C);
+        String_Free(param1->unk_2C);
     }
 
     if (Window_IsInUse(&param1->unk_1C)) {

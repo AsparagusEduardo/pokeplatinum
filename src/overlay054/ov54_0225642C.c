@@ -14,7 +14,7 @@
 #include "heap.h"
 #include "message.h"
 #include "pokemon_icon.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "sys_task_manager.h"
 #include "text.h"
 
@@ -120,12 +120,12 @@ static void ov54_022564BC(SysTask *param0, void *param1)
     Window_PutToTilemap(&v4);
 
     {
-        Strbuf *v5 = MessageBank_GetNewStrbufFromNARC(26, 458, 0, 8);
+        String *v5 = MessageBank_GetNewStringFromNARC(26, 458, 0, 8);
 
         if (v5) {
-            Text_AddPrinterWithParamsAndColor(&v4, FONT_SYSTEM, v5, (192 - Font_CalcStrbufWidth(FONT_SYSTEM, v5, 0)) / 2, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
+            Text_AddPrinterWithParamsAndColor(&v4, FONT_SYSTEM, v5, (192 - Font_CalcStringWidth(FONT_SYSTEM, v5, 0)) / 2, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
             Window_LoadTiles(&v4);
-            Strbuf_Free(v5);
+            String_Free(v5);
         }
     }
 

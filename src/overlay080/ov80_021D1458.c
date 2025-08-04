@@ -20,7 +20,7 @@
 #include "sound_playback.h"
 #include "sprite.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
 #include "system.h"
@@ -346,7 +346,7 @@ int ov80_021D1758(UnkStruct_ov80_021D2A08 *param0)
     }
 
     ov80_021D1B5C(param0, &(v0->unk_28[3]), v2);
-    Strbuf_Clear(param0->unk_88);
+    String_Clear(param0->unk_88);
     ov80_021D1A58(param0, v3, v0->unk_18, v0->unk_1C);
     LoadSignpostContentGraphics(param0->unk_28, 4, (((((1023 - (21 * 4)) - (28 * 4)) - (28 * 14)) - (10 * 2)) - 100), (15 - 1), v2->unk_04, v2->unk_06, param0->heapID);
 
@@ -549,7 +549,7 @@ static void ov80_021D1AB0(UnkStruct_ov80_021D2A08 *param0, Window *param1, int p
     TextColor v1;
     UnkStruct_ov80_021D1478 *v2 = param0->unk_34;
 
-    Strbuf_Clear(param0->unk_88);
+    String_Clear(param0->unk_88);
     Window_FillTilemap(param1, 0);
 
     v1 = TEXT_COLOR(1, 2, 0);
@@ -560,7 +560,7 @@ static void ov80_021D1AB0(UnkStruct_ov80_021D2A08 *param0, Window *param1, int p
         if (param0->unk_00 == 1) {
             v0 = (15 * 8 + 2);
         } else {
-            v0 = (29 - 3) * 8 - Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_88, 0);
+            v0 = (29 - 3) * 8 - Font_CalcStringWidth(FONT_SYSTEM, param0->unk_88, 0);
             v0 /= 2;
         }
 
@@ -568,10 +568,10 @@ static void ov80_021D1AB0(UnkStruct_ov80_021D2A08 *param0, Window *param1, int p
     }
 
     if (param0->unk_00 == 1) {
-        Strbuf *v3 = MessageLoader_GetNewStrbuf(param0->unk_84, 0);
+        String *v3 = MessageLoader_GetNewString(param0->unk_84, 0);
 
         Text_AddPrinterWithParamsAndColor(param1, FONT_SYSTEM, v3, 0, 6, TEXT_SPEED_NO_TRANSFER, v1, NULL);
-        Strbuf_Free(v3);
+        String_Free(v3);
     }
 
     Window_CopyToVRAM(param1);
@@ -581,8 +581,8 @@ static void ov80_021D1B5C(UnkStruct_ov80_021D2A08 *param0, Window *param1, UnkSt
 {
     u32 v0;
     TextColor v1;
-    Strbuf *v2;
-    Strbuf *v3;
+    String *v2;
+    String *v3;
 
     if (param2 == NULL) {
         Window_FillTilemap(param1, 0);
@@ -595,15 +595,15 @@ static void ov80_021D1B5C(UnkStruct_ov80_021D2A08 *param0, Window *param1, UnkSt
     Window_FillTilemap(param1, 0);
 
     if ((param2->unk_08 != 0xFFFF) && ((param0->unk_2C->unk_5C[param2->unk_16].val1_0 == 0) || param0->unk_2C->unk_5C[param2->unk_16].val1_2)) {
-        v2 = MessageLoader_GetNewStrbuf(param0->unk_84, param2->unk_08);
+        v2 = MessageLoader_GetNewString(param0->unk_84, param2->unk_08);
         Text_AddPrinterWithParamsAndColor(param1, FONT_SYSTEM, v2, param2->unk_0C, param2->unk_0E, TEXT_SPEED_NO_TRANSFER, v1, NULL);
-        Strbuf_Free(v2);
+        String_Free(v2);
     }
 
     if ((param2->unk_0A != 0xFFFF) && ((param0->unk_2C->unk_5C[param2->unk_16].val1_4 == 0) || param0->unk_2C->unk_5C[param2->unk_16].val1_6)) {
-        v3 = MessageLoader_GetNewStrbuf(param0->unk_84, param2->unk_0A);
+        v3 = MessageLoader_GetNewString(param0->unk_84, param2->unk_0A);
         Text_AddPrinterWithParamsAndColor(param1, FONT_SYSTEM, v3, param2->unk_10, param2->unk_12, TEXT_SPEED_NO_TRANSFER, v1, NULL);
-        Strbuf_Free(v3);
+        String_Free(v3);
     }
 }
 
@@ -660,7 +660,7 @@ static void ov80_021D1D24(UnkStruct_ov80_021D2A08 *param0, UnkStruct_ov80_021D2A
     UnkStruct_ov80_021D1478 *v0 = param0->unk_34;
     u32 v1;
     u32 v2;
-    Strbuf *v3;
+    String *v3;
 
     param0->unk_90 = param2;
     param0->unk_94 = param1;
@@ -689,19 +689,19 @@ static void ov80_021D1D6C(UnkStruct_ov80_021D2A08 *param0, Window *param1)
 {
     u32 v0;
     TextColor v1;
-    Strbuf *v2;
+    String *v2;
 
     Bg_CopyRectToTilemapRect(param0->unk_28, 5, 10, 0, 12, 2, param0->unk_CC->rawData, 0, 7, param0->unk_CC->screenWidth / 8, param0->unk_CC->screenHeight / 8);
 
-    v2 = MessageLoader_GetNewStrbuf(param0->unk_84, 1);
-    v0 = (10 * 8) - Font_CalcStrbufWidth(FONT_SYSTEM, v2, 0);
+    v2 = MessageLoader_GetNewString(param0->unk_84, 1);
+    v0 = (10 * 8) - Font_CalcStringWidth(FONT_SYSTEM, v2, 0);
     v0 /= 2;
     v1 = TEXT_COLOR(1, 2, 0);
 
     Window_FillTilemap(param1, 0);
     Text_AddPrinterWithParamsAndColor(param1, FONT_SYSTEM, v2, v0, 0, TEXT_SPEED_NO_TRANSFER, v1, NULL);
     Window_CopyToVRAM(param1);
-    Strbuf_Free(v2);
+    String_Free(v2);
 }
 
 static void ov80_021D1DF8(UnkStruct_ov80_021D2A08 *param0)

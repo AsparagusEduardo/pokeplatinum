@@ -38,7 +38,7 @@
 #include "render_window.h"
 #include "savedata.h"
 #include "screen_fade.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "system_vars.h"
 #include "text.h"
@@ -351,12 +351,12 @@ static void ov94_02242D74(UnkStruct_ov94_0223FD4C *param0)
 
 static void ov94_02242D84(UnkStruct_ov94_0223FD4C *param0)
 {
-    param0->unk_BAC = Strbuf_Init(90 * 2, HEAP_ID_62);
+    param0->unk_BAC = String_Init(90 * 2, HEAP_ID_62);
 }
 
 static void ov94_02242D98(UnkStruct_ov94_0223FD4C *param0)
 {
-    Strbuf_Free(param0->unk_BAC);
+    String_Free(param0->unk_BAC);
 }
 
 static int ov94_02242DA8(UnkStruct_ov94_0223FD4C *param0)

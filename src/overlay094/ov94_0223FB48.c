@@ -36,7 +36,7 @@
 #include "screen_fade.h"
 #include "sound_playback.h"
 #include "sprite.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "system.h"
@@ -462,16 +462,16 @@ static void ov94_02240190(UnkStruct_ov94_0223FD4C *param0)
 
 static void ov94_022401E0(UnkStruct_ov94_0223FD4C *param0)
 {
-    param0->unk_BA4 = Strbuf_Init(9 * 2, HEAP_ID_62);
-    param0->unk_BAC = Strbuf_Init(90 * 2, HEAP_ID_62);
+    param0->unk_BA4 = String_Init(9 * 2, HEAP_ID_62);
+    param0->unk_BAC = String_Init(90 * 2, HEAP_ID_62);
 
     if (param0->unk_24 == 5) {
-        param0->unk_BB0 = MessageLoader_GetNewStrbuf(param0->unk_B90, 21);
+        param0->unk_BB0 = MessageLoader_GetNewString(param0->unk_B90, 21);
     } else if (param0->unk_24 == 6) {
-        param0->unk_BB0 = MessageLoader_GetNewStrbuf(param0->unk_B90, 17);
+        param0->unk_BB0 = MessageLoader_GetNewString(param0->unk_B90, 17);
     }
 
-    param0->unk_BA8 = MessageLoader_GetNewStrbuf(param0->unk_B90, 103);
+    param0->unk_BA8 = MessageLoader_GetNewString(param0->unk_B90, 103);
 
     if (param0->unk_112 == 30) {
         param0->unk_112 = 0;
@@ -483,10 +483,10 @@ static void ov94_022401E0(UnkStruct_ov94_0223FD4C *param0)
 static void ov94_02240268(UnkStruct_ov94_0223FD4C *param0)
 {
     Heap_Free(param0->unk_1108);
-    Strbuf_Free(param0->unk_BA4);
-    Strbuf_Free(param0->unk_BAC);
-    Strbuf_Free(param0->unk_BA8);
-    Strbuf_Free(param0->unk_BB0);
+    String_Free(param0->unk_BA4);
+    String_Free(param0->unk_BAC);
+    String_Free(param0->unk_BA8);
+    String_Free(param0->unk_BB0);
 }
 
 static int ov94_022402A8(UnkStruct_ov94_0223FD4C *param0)
@@ -999,7 +999,7 @@ static int ov94_02240D28(UnkStruct_ov94_0223FD4C *param0)
 static void ov94_02240D58(UnkStruct_ov94_0223FD4C *param0, int param1, int param2, int param3, u16 param4, int param5)
 {
     Window *v0;
-    Strbuf *v1 = MessageLoader_GetNewStrbuf(param0->unk_B90, param1);
+    String *v1 = MessageLoader_GetNewString(param0->unk_B90, param1);
     StringTemplate_Format(param0->unk_B8C, param0->unk_BAC, v1);
 
     if (param5 == 0) {
@@ -1013,7 +1013,7 @@ static void ov94_02240D58(UnkStruct_ov94_0223FD4C *param0, int param1, int param
 
     param0->unk_BE0 = Text_AddPrinterWithParams(v0, FONT_MESSAGE, param0->unk_BAC, 0, 0, param2, NULL);
 
-    Strbuf_Free(v1);
+    String_Free(v1);
 }
 
 void *ov94_02240DD0(NARC *param0, u32 param1, NNSG2dCharacterData **param2, u32 param3)
@@ -1170,7 +1170,7 @@ static void ov94_02240FA0(UnkStruct_ov94_0223FD4C *param0, int boxID)
             }
         }
 
-        MessageLoader_GetStrbuf(param0->unk_B90, 89, param0->unk_BA4);
+        MessageLoader_GetString(param0->unk_B90, 89, param0->unk_BA4);
     }
 
     NARC_dtor(v6);

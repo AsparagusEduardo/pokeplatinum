@@ -26,7 +26,7 @@
 #include "sprite_resource.h"
 #include "sprite_transfer.h"
 #include "sprite_util.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
 #include "text.h"
@@ -729,13 +729,13 @@ static void ov21_021E9968(Window *param0, int param1, int param2)
 
 static void ov21_021E998C(Window *param0, enum HeapId heapID)
 {
-    Strbuf *v0 = Strbuf_Init(64, heapID);
+    String *v0 = String_Init(64, heapID);
     MessageLoader *pokedexMessageBank = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_POKEDEX, heapID);
 
-    MessageLoader_GetStrbuf(pokedexMessageBank, pl_msg_pokedex_registered, v0);
+    MessageLoader_GetString(pokedexMessageBank, pl_msg_pokedex_registered, v0);
     Text_AddPrinterWithParamsAndColor(param0, FONT_SYSTEM, v0, 32, 0, TEXT_SPEED_INSTANT, TEXT_COLOR(3, 4, 0), NULL);
 
-    Strbuf_Free(v0);
+    String_Free(v0);
     MessageLoader_Free(pokedexMessageBank);
 }
 

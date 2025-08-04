@@ -15,7 +15,7 @@
 #include "message.h"
 #include "narc.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "trainer_info.h"
@@ -37,16 +37,16 @@ typedef struct {
     StringTemplate *unk_118;
     MessageLoader *unk_11C;
     MessageLoader *unk_120;
-    Strbuf *unk_124[12];
+    String *unk_124[12];
     StringList *unk_154;
     Menu *unk_158;
     ListMenu *unk_15C;
     StringList *unk_160;
-    Strbuf *unk_164[165];
-    Strbuf *unk_3F8;
-    Strbuf *unk_3FC;
-    Strbuf *unk_400;
-    Strbuf *unk_404[8];
+    String *unk_164[165];
+    String *unk_3F8;
+    String *unk_3FC;
+    String *unk_400;
+    String *unk_404[8];
     u8 unk_424;
     u8 unk_425;
     u8 unk_426;

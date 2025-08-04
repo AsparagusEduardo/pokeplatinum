@@ -30,7 +30,7 @@
 #include "render_window.h"
 #include "savedata.h"
 #include "sound_playback.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "sys_task.h"
@@ -267,13 +267,13 @@ static void ov23_0225265C(ListMenu *param0, u32 param1, u8 param2)
     u32 v1 = param1;
 
     Window_FillTilemap(&v0->unk_20, 15);
-    MessageLoader_GetStrbuf(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetMiscTextPrinter()), 23 + v0->unk_2AB, v0->unk_68);
+    MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetMiscTextPrinter()), 23 + v0->unk_2AB, v0->unk_68);
     Text_AddPrinterWithParams(&v0->unk_20, FONT_SYSTEM, v0->unk_68, 1, 1, TEXT_SPEED_NO_TRANSFER, NULL);
 
     if (param1 != 0xfffffffe) {
         StringTemplate_SetUndergroundItemName(v0->unk_70, 2, v0->unk_279[v1]);
         StringTemplate_SetNumber(v0->unk_70, 6, v0->unk_27E[v1], 2, 1, 1);
-        MessageLoader_GetStrbuf(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetMiscTextPrinter()), 25, v0->unk_68);
+        MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetMiscTextPrinter()), 25, v0->unk_68);
         StringTemplate_Format(v0->unk_70, v0->unk_6C, v0->unk_68);
         Text_AddPrinterWithParams(&v0->unk_20, FONT_SYSTEM, v0->unk_6C, 1, 17, TEXT_SPEED_NO_TRANSFER, NULL);
     } else {
@@ -347,7 +347,7 @@ static void ov23_02252754(ListMenu *param0, u32 param1, u8 param2)
         }
     }
 
-    MessageLoader_GetStrbuf(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetMiscTextPrinter()), 23 + v1->unk_2AB, v1->unk_68);
+    MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetMiscTextPrinter()), 23 + v1->unk_2AB, v1->unk_68);
     Text_AddPrinterWithParams(&v1->unk_20, FONT_SYSTEM, v1->unk_68, 1, 1, TEXT_SPEED_NO_TRANSFER, NULL);
 
     if (param1 == 0xfffffffe) {
@@ -355,7 +355,7 @@ static void ov23_02252754(ListMenu *param0, u32 param1, u8 param2)
     } else if (v7 != 0) {
         StringTemplate_SetUndergroundItemName(v1->unk_70, 2, v7);
         StringTemplate_SetNumber(v1->unk_70, 6, v8, 2, 1, 1);
-        MessageLoader_GetStrbuf(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetMiscTextPrinter()), 25, v1->unk_68);
+        MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetMiscTextPrinter()), 25, v1->unk_68);
         StringTemplate_Format(v1->unk_70, v1->unk_6C, v1->unk_68);
         Text_AddPrinterWithParams(&v1->unk_20, FONT_SYSTEM, v1->unk_6C, 1, 17, TEXT_SPEED_NO_TRANSFER, NULL);
 
@@ -364,7 +364,7 @@ static void ov23_02252754(ListMenu *param0, u32 param1, u8 param2)
     } else {
         v1->unk_279[0] = v7;
 
-        MessageLoader_GetStrbuf(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetMiscTextPrinter()), 26, v1->unk_68);
+        MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetMiscTextPrinter()), 26, v1->unk_68);
         Text_AddPrinterWithParams(&v1->unk_20, FONT_SYSTEM, v1->unk_68, 1, 17, TEXT_SPEED_NO_TRANSFER, NULL);
     }
 
@@ -503,8 +503,8 @@ int ov23_02252C70(void *param0)
 
 static void ov23_02252C78(UnkStruct_ov23_02250CD4 *param0)
 {
-    Strbuf_Free(param0->unk_68);
-    Strbuf_Free(param0->unk_6C);
+    String_Free(param0->unk_68);
+    String_Free(param0->unk_6C);
     StringTemplate_Free(param0->unk_70);
     Heap_Free(param0);
 }
@@ -562,7 +562,7 @@ void ov23_02252D74(UnkStruct_ov23_02250CD4 *param0, int param1)
     Window_FillTilemap(&param0->unk_30, 15);
     Window_CopyToVRAM(&param0->unk_30);
 
-    MessageLoader_GetStrbuf(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetMiscTextPrinter()), param1, param0->unk_68);
+    MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetMiscTextPrinter()), param1, param0->unk_68);
     Text_AddPrinterWithParams(&param0->unk_30, FONT_SYSTEM, param0->unk_68, 1, 1, TEXT_SPEED_NO_TRANSFER, NULL);
     Window_ScheduleCopyToVRAM(&param0->unk_30);
 }
@@ -927,8 +927,8 @@ void ov23_022534A0(FieldSystem *fieldSystem)
     v4->fieldSystem = fieldSystem;
     v4->unk_2AC = v7;
     v4->unk_288 = v6;
-    v4->unk_68 = Strbuf_Init((50 * 2), HEAP_ID_FIELD);
-    v4->unk_6C = Strbuf_Init((50 * 2), HEAP_ID_FIELD);
+    v4->unk_68 = String_Init((50 * 2), HEAP_ID_FIELD);
+    v4->unk_6C = String_Init((50 * 2), HEAP_ID_FIELD);
     v4->unk_70 = StringTemplate_Default(HEAP_ID_FIELD);
     v4->unk_2AA = 0;
 

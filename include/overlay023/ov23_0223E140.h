@@ -6,7 +6,7 @@
 #include "field/field_system_decl.h"
 #include "overlay023/struct_ov23_0224271C_decl.h"
 
-#include "strbuf.h"
+#include "string_gf.h"
 
 #define MAX_BURIED_OBJECTS 8
 #define MAX_BURIED_ITEMS   4
@@ -42,7 +42,7 @@ void ov23_02241364(void);
 void ov23_022413A0(int param0, int param1, void *param2, void *param3);
 void ov23_0224142C(int param0, int param1, void *param2, void *param3);
 int ov23_022414D0(void);
-BOOL ov23_022415B8(Strbuf *param0);
+BOOL ov23_022415B8(String *param0);
 void ov23_0224160C(void);
 BOOL ov23_0224162C(int param0);
 void ov23_02241648(int param0);

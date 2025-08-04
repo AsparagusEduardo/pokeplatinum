@@ -38,7 +38,7 @@
 #include "render_window.h"
 #include "save_player.h"
 #include "savedata.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
@@ -74,7 +74,7 @@ typedef struct {
     u8 unk_C2[8];
     u8 unk_CA[8];
     u8 unk_D2[8];
-    Strbuf *unk_DC[8];
+    String *unk_DC[8];
     u8 unk_FC[8];
     u8 unk_104[8];
     u8 unk_10C[8];
@@ -163,7 +163,7 @@ static void ov23_02242108(void)
 
     for (i = 0; i < (7 + 1); i++) {
         if (sCommManUnderground->unk_DC[i]) {
-            Strbuf_Free(sCommManUnderground->unk_DC[i]);
+            String_Free(sCommManUnderground->unk_DC[i]);
         }
     }
 
@@ -215,20 +215,20 @@ void ov23_022421EC(void)
     UndergroundTextPrinter_RemovePrinter(sCommManUnderground->itemNameTextPrinter);
 }
 
-BOOL ov23_0224223C(TrainerInfo *param0, TrainerInfo *param1, int param2, Strbuf *param3)
+BOOL ov23_0224223C(TrainerInfo *param0, TrainerInfo *param1, int param2, String *param3)
 {
     StringTemplate *v0;
-    Strbuf *v1;
+    String *v1;
 
     if (param0 && param1) {
         v0 = StringTemplate_Default(HEAP_ID_FIELD);
-        v1 = Strbuf_Init((50 * 2), HEAP_ID_FIELD);
+        v1 = String_Init((50 * 2), HEAP_ID_FIELD);
 
         StringTemplate_SetPlayerName(v0, 0, param0);
         StringTemplate_SetPlayerName(v0, 1, param1);
-        MessageLoader_GetStrbuf(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetCommonTextPrinter()), param2, v1);
+        MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetCommonTextPrinter()), param2, v1);
         StringTemplate_Format(v0, param3, v1);
-        Strbuf_Free(v1);
+        String_Free(v1);
         StringTemplate_Free(v0);
 
         return 1;
@@ -237,19 +237,19 @@ BOOL ov23_0224223C(TrainerInfo *param0, TrainerInfo *param1, int param2, Strbuf 
     return 0;
 }
 
-BOOL ov23_022422A8(TrainerInfo *param0, int param1, int param2, Strbuf *param3)
+BOOL ov23_022422A8(TrainerInfo *param0, int param1, int param2, String *param3)
 {
     StringTemplate *v0;
-    Strbuf *v1;
+    String *v1;
 
     if (param0) {
         v0 = StringTemplate_Default(HEAP_ID_FIELD);
-        v1 = Strbuf_Init((50 * 2), HEAP_ID_FIELD);
+        v1 = String_Init((50 * 2), HEAP_ID_FIELD);
 
         StringTemplate_SetPlayerName(v0, param1, param0);
-        MessageLoader_GetStrbuf(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetCommonTextPrinter()), param2, v1);
+        MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetCommonTextPrinter()), param2, v1);
         StringTemplate_Format(v0, param3, v1);
-        Strbuf_Free(v1);
+        String_Free(v1);
         StringTemplate_Free(v0);
 
         return 1;
@@ -258,11 +258,11 @@ BOOL ov23_022422A8(TrainerInfo *param0, int param1, int param2, Strbuf *param3)
     return 0;
 }
 
-static BOOL ov23_02242308(Strbuf *param0)
+static BOOL ov23_02242308(String *param0)
 {
     int i;
     StringTemplate *v1;
-    Strbuf *v2;
+    String *v2;
     TrainerInfo *v3;
     TrainerInfo *v4;
 
@@ -302,8 +302,8 @@ static BOOL ov23_02242308(Strbuf *param0)
 
         if (sCommManUnderground->unk_13D[i] == 1) {
             if (sCommManUnderground->unk_DC[i]) {
-                Strbuf_Copy(param0, sCommManUnderground->unk_DC[i]);
-                Strbuf_Free(sCommManUnderground->unk_DC[i]);
+                String_Copy(param0, sCommManUnderground->unk_DC[i]);
+                String_Free(sCommManUnderground->unk_DC[i]);
                 sCommManUnderground->unk_DC[i] = NULL;
             }
 
@@ -846,7 +846,7 @@ void ov23_02242D44(FieldSystem *fieldSystem)
     }
 }
 
-BOOL ov23_02242D60(Strbuf *param0)
+BOOL ov23_02242D60(String *param0)
 {
     if (sCommManUnderground->unk_14C) {
         sCommManUnderground->unk_14C = 0;
@@ -1045,19 +1045,19 @@ void ov23_02243020(int param0)
 void UndergroundMan_SetReturnLog(int param0)
 {
     StringTemplate *v0;
-    Strbuf *v1;
+    String *v1;
 
     if (sCommManUnderground) {
         if (sCommManUnderground->unk_DC[param0] == NULL) {
-            sCommManUnderground->unk_DC[param0] = Strbuf_Init((50 * 2), HEAP_ID_COMMUNICATION);
+            sCommManUnderground->unk_DC[param0] = String_Init((50 * 2), HEAP_ID_COMMUNICATION);
 
             v0 = StringTemplate_Default(HEAP_ID_FIELDMAP);
-            v1 = Strbuf_Init((50 * 2), HEAP_ID_FIELDMAP);
+            v1 = String_Init((50 * 2), HEAP_ID_FIELDMAP);
 
             StringTemplate_SetPlayerName(v0, 0, CommInfo_TrainerInfo(param0));
-            MessageLoader_GetStrbuf(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetCommonTextPrinter()), 115, v1);
+            MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetCommonTextPrinter()), 115, v1);
             StringTemplate_Format(v0, sCommManUnderground->unk_DC[param0], v1);
-            Strbuf_Free(v1);
+            String_Free(v1);
             StringTemplate_Free(v0);
         }
     }

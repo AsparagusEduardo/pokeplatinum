@@ -25,7 +25,7 @@
 #include "render_text.h"
 #include "render_window.h"
 #include "sound_playback.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "text.h"
@@ -77,7 +77,7 @@ void ov84_0223F1F8(UnkStruct_ov84_0223B5A0 *param0)
     v0 = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_BAG_POCKET_NAMES, HEAP_ID_6);
 
     for (v1 = 0; v1 < 8; v1++) {
-        param0->unk_404[v1] = MessageLoader_GetNewStrbuf(v0, v1);
+        param0->unk_404[v1] = MessageLoader_GetNewString(v0, v1);
     }
 
     MessageLoader_Free(v0);
@@ -88,7 +88,7 @@ void ov84_0223F238(UnkStruct_ov84_0223B5A0 *param0)
     u16 v0;
 
     for (v0 = 0; v0 < 8; v0++) {
-        Strbuf_Free(param0->unk_404[v0]);
+        String_Free(param0->unk_404[v0]);
     }
 }
 
@@ -103,17 +103,17 @@ void ov84_0223F25C(UnkStruct_ov84_0223B5A0 *param0)
     }
 }
 
-static void ov84_0223F2C0(UnkStruct_ov84_0223B5A0 *param0, Strbuf *param1, u16 param2)
+static void ov84_0223F2C0(UnkStruct_ov84_0223B5A0 *param0, String *param1, u16 param2)
 {
-    u32 v0 = Font_CalcStrbufWidth(FONT_SYSTEM, param1, 0);
+    u32 v0 = Font_CalcStringWidth(FONT_SYSTEM, param1, 0);
     Text_AddPrinterWithParamsAndColor(&param0->unk_04[2], FONT_SYSTEM, param1, param2 - v0 / 2, 2, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 2, 0), NULL);
 }
 
 void ov84_0223F2FC(UnkStruct_ov84_0223B5A0 *param0)
 {
     UnkStruct_ov84_0223C920 *v0;
-    Strbuf *v1;
-    Strbuf *v2;
+    String *v1;
+    String *v2;
     u16 v3;
 
     Window_FillTilemap(&param0->unk_04[2], 0);
@@ -195,97 +195,97 @@ static void ov84_0223F508(UnkStruct_ov84_0223B5A0 *param0, u32 param1, u32 param
 
 void ov84_0223F528(UnkStruct_ov84_0223B5A0 *param0, u16 param1)
 {
-    Strbuf *v0;
+    String *v0;
 
     if (param1 != 0xffff) {
-        v0 = Strbuf_Init(130, HEAP_ID_6);
+        v0 = String_Init(130, HEAP_ID_6);
         Item_LoadDescription(v0, param1, 6);
     } else {
-        v0 = MessageLoader_GetNewStrbuf(param0->unk_114, 94);
+        v0 = MessageLoader_GetNewString(param0->unk_114, 94);
     }
 
     Text_AddPrinterWithParamsAndColor(&param0->unk_04[1], FONT_SYSTEM, v0, 40, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(15, 14, 0), NULL);
-    Strbuf_Free(v0);
+    String_Free(v0);
 }
 
 void ov84_0223F584(UnkStruct_ov84_0223B5A0 *param0, u16 param1)
 {
     Window *v0;
-    Strbuf *v1;
+    String *v1;
     u16 v2;
     u16 v3;
 
     v0 = &param0->unk_04[1];
     v2 = Item_MoveForTMHM(param1);
 
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 98);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 98);
     Text_AddPrinterWithParamsAndColor(v0, FONT_SYSTEM, v1, 0, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(15, 14, 0), NULL);
-    Strbuf_Free(v1);
+    String_Free(v1);
 
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 86);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 86);
     Text_AddPrinterWithParamsAndColor(v0, FONT_SYSTEM, v1, 0, 16, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(15, 14, 0), NULL);
-    Strbuf_Free(v1);
+    String_Free(v1);
 
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 89);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 89);
     Text_AddPrinterWithParamsAndColor(v0, FONT_SYSTEM, v1, 96, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(15, 14, 0), NULL);
-    Strbuf_Free(v1);
+    String_Free(v1);
 
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 87);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 87);
     Text_AddPrinterWithParamsAndColor(v0, FONT_SYSTEM, v1, 96, 16, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(15, 14, 0), NULL);
-    Strbuf_Free(v1);
+    String_Free(v1);
 
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 88);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 88);
     Text_AddPrinterWithParamsAndColor(v0, FONT_SYSTEM, v1, 96, 32, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(15, 14, 0), NULL);
-    Strbuf_Free(v1);
+    String_Free(v1);
 
     v3 = MoveTable_CalcMaxPP(v2, 0);
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 90);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 90);
     StringTemplate_SetNumber(param0->unk_118, 0, v3, 2, 1, 1);
     StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-    Strbuf_Free(v1);
+    String_Free(v1);
     Text_AddPrinterWithParamsAndColor(v0, FONT_SYSTEM, param0->unk_3F8, 48, 16, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(15, 14, 0), NULL);
 
     v3 = MoveTable_LoadParam(v2, MOVEATTRIBUTE_POWER);
 
     if (v3 <= 1) {
-        v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 24);
+        v1 = MessageLoader_GetNewString(param0->unk_114, 24);
     } else {
-        v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 91);
+        v1 = MessageLoader_GetNewString(param0->unk_114, 91);
     }
 
     StringTemplate_SetNumber(param0->unk_118, 0, v3, 3, 0, 1);
     StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-    Strbuf_Free(v1);
+    String_Free(v1);
     Text_AddPrinterWithParamsAndColor(v0, FONT_SYSTEM, param0->unk_3F8, 96 + 64, 16, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(15, 14, 0), NULL);
     v3 = MoveTable_LoadParam(v2, MOVEATTRIBUTE_ACCURACY);
 
     if (v3 == 0) {
-        v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 24);
+        v1 = MessageLoader_GetNewString(param0->unk_114, 24);
     } else {
-        v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 91);
+        v1 = MessageLoader_GetNewString(param0->unk_114, 91);
     }
 
     StringTemplate_SetNumber(param0->unk_118, 0, v3, 3, 0, 1);
     StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-    Strbuf_Free(v1);
+    String_Free(v1);
     Text_AddPrinterWithParamsAndColor(v0, FONT_SYSTEM, param0->unk_3F8, 96 + 64, 32, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(15, 14, 0), NULL);
 }
 
 void ov84_0223F7D4(UnkStruct_ov84_0223B5A0 *param0)
 {
-    param0->unk_3FC = MessageLoader_GetNewStrbuf(param0->unk_114, 38);
-    param0->unk_400 = MessageLoader_GetNewStrbuf(param0->unk_114, 37);
+    param0->unk_3FC = MessageLoader_GetNewString(param0->unk_114, 38);
+    param0->unk_400 = MessageLoader_GetNewString(param0->unk_114, 37);
 }
 
 void ov84_0223F800(UnkStruct_ov84_0223B5A0 *param0)
 {
-    Strbuf_Free(param0->unk_3FC);
-    Strbuf_Free(param0->unk_400);
+    String_Free(param0->unk_3FC);
+    String_Free(param0->unk_400);
 }
 
 void ov84_0223F81C(UnkStruct_ov84_0223B5A0 *param0, u16 param1, u16 param2, u32 param3)
 {
-    Strbuf *v0;
+    String *v0;
     u32 v1;
 
     if (param0->unk_C4->unk_04[param0->unk_C4->unk_64].unk_08 == 3) {
@@ -294,15 +294,15 @@ void ov84_0223F81C(UnkStruct_ov84_0223B5A0 *param0, u16 param1, u16 param2, u32 
         Text_AddPrinterWithParamsAndColor(&param0->unk_04[0], FONT_SYSTEM, param0->unk_3FC, ((17 * 8 - 2) - 6 - 1 - 6 * 3), param2, TEXT_SPEED_NO_TRANSFER, param3, NULL);
     }
 
-    v0 = Strbuf_Init(10, HEAP_ID_6);
+    v0 = String_Init(10, HEAP_ID_6);
 
     StringTemplate_SetNumber(param0->unk_118, 0, param1, 3, 0, 1);
     StringTemplate_Format(param0->unk_118, v0, param0->unk_400);
 
-    v1 = Font_CalcStrbufWidth(FONT_SYSTEM, v0, 0);
+    v1 = Font_CalcStringWidth(FONT_SYSTEM, v0, 0);
 
     Text_AddPrinterWithParamsAndColor(&param0->unk_04[0], FONT_SYSTEM, v0, (17 * 8 - 2) - v1, param2, TEXT_SPEED_NO_TRANSFER, param3, NULL);
-    Strbuf_Free(v0);
+    String_Free(v0);
 }
 
 void ov84_0223F8D0(UnkStruct_ov84_0223B5A0 *param0, BagItem *param1, u32 param2)
@@ -346,11 +346,11 @@ static void ov84_0223F9B0(UnkStruct_ov84_0223B5A0 *param0, u32 param1)
 
 void ov84_0223F9F0(UnkStruct_ov84_0223B5A0 *param0, u32 param1)
 {
-    Strbuf *v0 = MessageLoader_GetNewStrbuf(param0->unk_114, 41);
+    String *v0 = MessageLoader_GetNewString(param0->unk_114, 41);
 
     Window_FillRectWithColor(&param0->unk_04[0], 0, 0, param1, 17 * 8, 16);
     Text_AddPrinterWithParamsAndColor(&param0->unk_04[0], FONT_SYSTEM, v0, 0, param1, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 2, 0), NULL);
-    Strbuf_Free(v0);
+    String_Free(v0);
 }
 
 void ov84_0223FA44(UnkStruct_ov84_0223B5A0 *param0, u32 param1)
@@ -366,18 +366,18 @@ void ov84_0223FA44(UnkStruct_ov84_0223B5A0 *param0, u32 param1)
 
 void ov84_0223FA88(UnkStruct_ov84_0223B5A0 *param0)
 {
-    param0->unk_124[0] = MessageLoader_GetNewStrbuf(param0->unk_114, 0);
-    param0->unk_124[1] = MessageLoader_GetNewStrbuf(param0->unk_114, 6);
-    param0->unk_124[2] = MessageLoader_GetNewStrbuf(param0->unk_114, 16);
-    param0->unk_124[3] = MessageLoader_GetNewStrbuf(param0->unk_114, 95);
-    param0->unk_124[4] = MessageLoader_GetNewStrbuf(param0->unk_114, 96);
-    param0->unk_124[5] = MessageLoader_GetNewStrbuf(param0->unk_114, 1);
-    param0->unk_124[6] = MessageLoader_GetNewStrbuf(param0->unk_114, 2);
-    param0->unk_124[7] = MessageLoader_GetNewStrbuf(param0->unk_114, 18);
-    param0->unk_124[8] = MessageLoader_GetNewStrbuf(param0->unk_114, 3);
-    param0->unk_124[9] = MessageLoader_GetNewStrbuf(param0->unk_114, 4);
-    param0->unk_124[10] = MessageLoader_GetNewStrbuf(param0->unk_114, 5);
-    param0->unk_124[11] = MessageLoader_GetNewStrbuf(param0->unk_114, 8);
+    param0->unk_124[0] = MessageLoader_GetNewString(param0->unk_114, 0);
+    param0->unk_124[1] = MessageLoader_GetNewString(param0->unk_114, 6);
+    param0->unk_124[2] = MessageLoader_GetNewString(param0->unk_114, 16);
+    param0->unk_124[3] = MessageLoader_GetNewString(param0->unk_114, 95);
+    param0->unk_124[4] = MessageLoader_GetNewString(param0->unk_114, 96);
+    param0->unk_124[5] = MessageLoader_GetNewString(param0->unk_114, 1);
+    param0->unk_124[6] = MessageLoader_GetNewString(param0->unk_114, 2);
+    param0->unk_124[7] = MessageLoader_GetNewString(param0->unk_114, 18);
+    param0->unk_124[8] = MessageLoader_GetNewString(param0->unk_114, 3);
+    param0->unk_124[9] = MessageLoader_GetNewString(param0->unk_114, 4);
+    param0->unk_124[10] = MessageLoader_GetNewString(param0->unk_114, 5);
+    param0->unk_124[11] = MessageLoader_GetNewString(param0->unk_114, 8);
 }
 
 void ov84_0223FB50(UnkStruct_ov84_0223B5A0 *param0)
@@ -385,7 +385,7 @@ void ov84_0223FB50(UnkStruct_ov84_0223B5A0 *param0)
     u16 v0;
 
     for (v0 = 0; v0 < 12; v0++) {
-        Strbuf_Free(param0->unk_124[v0]);
+        String_Free(param0->unk_124[v0]);
     }
 }
 
@@ -393,8 +393,8 @@ void ov84_0223FB70(UnkStruct_ov84_0223B5A0 *param0, u8 *param1, u8 param2)
 {
     MenuTemplate v0;
     UnkStruct_ov84_0223BE5C *v1;
-    Strbuf *v2;
-    Strbuf *v3;
+    String *v2;
+    String *v3;
     u16 v4;
     u16 v5;
 
@@ -409,7 +409,7 @@ void ov84_0223FB70(UnkStruct_ov84_0223B5A0 *param0, u8 *param1, u8 param2)
     param0->unk_154 = StringList_New(param2, HEAP_ID_6);
 
     for (v4 = 0; v4 < param2; v4++) {
-        StringList_AddFromStrbuf(param0->unk_154, param0->unk_124[param1[v4]], ov84_0223D84C(param1[v4]));
+        StringList_AddFromString(param0->unk_154, param0->unk_124[param1[v4]], ov84_0223D84C(param1[v4]));
     }
 
     v0.choices = param0->unk_154;
@@ -437,15 +437,15 @@ void ov84_0223FB70(UnkStruct_ov84_0223B5A0 *param0, u8 *param1, u8 param2)
         Window_DrawMessageBoxWithScrollCursor(&param0->unk_04[v5], 1, 1024 - 9 - (18 + 12), 12);
         Window_FillTilemap(&param0->unk_04[v5], 15);
 
-        v2 = MessageLoader_GetNewStrbuf(param0->unk_114, 42);
-        v3 = Strbuf_Init((14 * 2 * 2), HEAP_ID_6);
+        v2 = MessageLoader_GetNewString(param0->unk_114, 42);
+        v3 = String_Init((14 * 2 * 2), HEAP_ID_6);
         v1 = &param0->unk_C4->unk_04[param0->unk_C4->unk_64];
 
         ov84_0223F4E8(param0, v1->unk_06 + v1->unk_04 - 1, 0);
         StringTemplate_Format(param0->unk_118, v3, v2);
         Text_AddPrinterWithParams(&param0->unk_04[v5], FONT_MESSAGE, v3, 0, 0, TEXT_SPEED_NO_TRANSFER, NULL);
-        Strbuf_Free(v3);
-        Strbuf_Free(v2);
+        String_Free(v3);
+        String_Free(v2);
         Window_ScheduleCopyToVRAM(&param0->unk_04[v5]);
     }
 
@@ -481,28 +481,28 @@ void ov84_0223FD84(UnkStruct_ov84_0223B5A0 *param0)
 
 void ov84_0223FE18(UnkStruct_ov84_0223B5A0 *param0)
 {
-    Strbuf *v0;
-    Strbuf *v1;
+    String *v0;
+    String *v1;
 
     Window_FillTilemap(&param0->unk_04[1], 0);
 
-    v0 = MessageLoader_GetNewStrbuf(param0->unk_114, 45);
-    v1 = Strbuf_Init(130, HEAP_ID_6);
+    v0 = MessageLoader_GetNewString(param0->unk_114, 45);
+    v1 = String_Init(130, HEAP_ID_6);
 
     ov84_0223F4E8(param0, param0->unk_47B - 1, 0);
 
     StringTemplate_Format(param0->unk_118, v1, v0);
     Text_AddPrinterWithParamsAndColor(&param0->unk_04[1], FONT_SYSTEM, v1, 40, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(15, 14, 0), NULL);
     Window_ScheduleCopyToVRAM(&param0->unk_04[1]);
-    Strbuf_Free(v1);
-    Strbuf_Free(v0);
+    String_Free(v1);
+    String_Free(v0);
 }
 
 void ov84_0223FE94(UnkStruct_ov84_0223B5A0 *param0)
 {
     UnkStruct_ov84_0223BE5C *v0;
-    Strbuf *v1;
-    Strbuf *v2;
+    String *v1;
+    String *v2;
     u16 v3;
 
     Window_DrawStandardFrame(&param0->unk_04[9], 1, 1024 - 9, 14);
@@ -510,8 +510,8 @@ void ov84_0223FE94(UnkStruct_ov84_0223B5A0 *param0)
     Window_DrawMessageBoxWithScrollCursor(&param0->unk_04[3], 1, 1024 - 9 - (18 + 12), 12);
     Window_FillTilemap(&param0->unk_04[3], 15);
 
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 52);
-    v2 = Strbuf_Init(14 * 2 * 2, HEAP_ID_6);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 52);
+    v2 = String_Init(14 * 2 * 2, HEAP_ID_6);
     v0 = &param0->unk_C4->unk_04[param0->unk_C4->unk_64];
 
     ov84_0223F4E8(param0, v0->unk_06 + v0->unk_04 - 1, 0);
@@ -519,25 +519,25 @@ void ov84_0223FE94(UnkStruct_ov84_0223B5A0 *param0)
     StringTemplate_Format(param0->unk_118, v2, v1);
     Text_AddPrinterWithParams(&param0->unk_04[3], FONT_MESSAGE, v2, 0, 0, TEXT_SPEED_NO_TRANSFER, NULL);
     Window_ScheduleCopyToVRAM(&param0->unk_04[3]);
-    Strbuf_Free(v2);
-    Strbuf_Free(v1);
+    String_Free(v2);
+    String_Free(v1);
 }
 
 void ov84_0223FF44(UnkStruct_ov84_0223B5A0 *param0)
 {
     Window *v0;
-    Strbuf *v1;
+    String *v1;
     u32 v2;
 
     v0 = &param0->unk_04[9];
     Window_FillTilemap(v0, 15);
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 84);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 84);
 
     StringTemplate_SetNumber(param0->unk_118, 0, param0->unk_488, 3, 2, 1);
     StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
     Text_AddPrinterWithParams(v0, FONT_SYSTEM, param0->unk_3F8, 16, 8, TEXT_SPEED_NO_TRANSFER, NULL);
     Window_ScheduleCopyToVRAM(v0);
-    Strbuf_Free(v1);
+    String_Free(v1);
 }
 
 void ov84_0223FFC0(UnkStruct_ov84_0223B5A0 *param0)
@@ -552,13 +552,13 @@ void ov84_0223FFC0(UnkStruct_ov84_0223B5A0 *param0)
 void ov84_0223FFF0(UnkStruct_ov84_0223B5A0 *param0)
 {
     UnkStruct_ov84_0223BE5C *v0;
-    Strbuf *v1;
+    String *v1;
     u16 v2;
 
     Window_DrawMessageBoxWithScrollCursor(&param0->unk_04[6], 1, 1024 - 9 - (18 + 12), 12);
     Window_FillTilemap(&param0->unk_04[6], 15);
 
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 54);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 54);
     v0 = &param0->unk_C4->unk_04[param0->unk_C4->unk_64];
 
     if (param0->unk_488 == 1) {
@@ -569,7 +569,7 @@ void ov84_0223FFF0(UnkStruct_ov84_0223B5A0 *param0)
 
     StringTemplate_SetNumber(param0->unk_118, 1, param0->unk_488, 3, 0, 1);
     StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-    Strbuf_Free(v1);
+    String_Free(v1);
 
     param0->unk_426 = ov84_022400A0(param0);
 }
@@ -610,7 +610,7 @@ void ov84_02240120(UnkStruct_ov84_0223B5A0 *param0)
 void ov84_02240148(UnkStruct_ov84_0223B5A0 *param0, u8 param1)
 {
     Window *v0;
-    Strbuf *v1;
+    String *v1;
     u32 v2;
 
     v0 = &param0->unk_04[7];
@@ -621,29 +621,29 @@ void ov84_02240148(UnkStruct_ov84_0223B5A0 *param0, u8 param1)
 
     Window_FillTilemap(v0, 15);
 
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 80);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 80);
 
     StringTemplate_SetNumber(param0->unk_118, 0, param0->unk_488, 2, 2, 1);
     StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
     Text_AddPrinterWithParams(v0, FONT_SYSTEM, param0->unk_3F8, 0, 8, TEXT_SPEED_NO_TRANSFER, NULL);
-    Strbuf_Free(v1);
+    String_Free(v1);
 
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 81);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 81);
 
     StringTemplate_SetNumber(param0->unk_118, 0, param0->unk_48C * param0->unk_488, 6, 1, 1);
     StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
 
-    v2 = Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_3F8, 0);
+    v2 = Font_CalcStringWidth(FONT_SYSTEM, param0->unk_3F8, 0);
 
     Text_AddPrinterWithParams(v0, FONT_SYSTEM, param0->unk_3F8, (12 * 8) - v2, 8, TEXT_SPEED_NO_TRANSFER, NULL);
     Window_ScheduleCopyToVRAM(v0);
-    Strbuf_Free(v1);
+    String_Free(v1);
 }
 
 void ov84_02240248(UnkStruct_ov84_0223B5A0 *param0, u8 param1)
 {
     Window *v0;
-    Strbuf *v1;
+    String *v1;
     u32 v2;
 
     v0 = &param0->unk_04[8];
@@ -652,46 +652,46 @@ void ov84_02240248(UnkStruct_ov84_0223B5A0 *param0, u8 param1)
         Window_FillTilemap(v0, 15);
         Window_DrawStandardFrame(v0, 1, 1024 - 9, 14);
 
-        v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 78);
+        v1 = MessageLoader_GetNewString(param0->unk_114, 78);
 
         Text_AddPrinterWithParams(v0, FONT_SYSTEM, v1, 0, 0, TEXT_SPEED_NO_TRANSFER, NULL);
-        Strbuf_Free(v1);
+        String_Free(v1);
     } else {
         Window_FillRectWithColor(v0, 15, 0, 16, (10 * 8), 16);
     }
 
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 79);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 79);
 
     StringTemplate_SetNumber(param0->unk_118, 0, TrainerInfo_Money(param0->unk_CC), 6, 1, 1);
     StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
 
-    v2 = Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_3F8, 0);
+    v2 = Font_CalcStringWidth(FONT_SYSTEM, param0->unk_3F8, 0);
 
     Text_AddPrinterWithParams(v0, FONT_SYSTEM, param0->unk_3F8, (10 * 8) - v2, 16, TEXT_SPEED_NO_TRANSFER, NULL);
     Window_ScheduleCopyToVRAM(v0);
-    Strbuf_Free(v1);
+    String_Free(v1);
 }
 
 void ov84_02240328(UnkStruct_ov84_0223B5A0 *param0)
 {
     Window *v0;
-    Strbuf *v1;
+    String *v1;
     u32 v2;
 
     v0 = &param0->unk_04[10];
     Window_FillTilemap(v0, 15);
     Window_DrawStandardFrame(v0, 1, 1024 - 9, 14);
 
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 108);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 108);
     Text_AddPrinterWithParams(v0, FONT_SYSTEM, v1, 0, 0, TEXT_SPEED_NO_TRANSFER, NULL);
-    Strbuf_Free(v1);
+    String_Free(v1);
 
-    v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 109);
+    v1 = MessageLoader_GetNewString(param0->unk_114, 109);
     StringTemplate_SetNumber(param0->unk_118, 0, PoffinCase_CountFilledSlots(SaveData_GetPoffinCase(param0->unk_C4->saveData)), 3, 1, 1);
     StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-    Strbuf_Free(v1);
+    String_Free(v1);
 
-    v2 = Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_3F8, 0);
+    v2 = Font_CalcStringWidth(FONT_SYSTEM, param0->unk_3F8, 0);
     Text_AddPrinterWithParams(v0, FONT_SYSTEM, param0->unk_3F8, 11 * 8 - v2, 16, TEXT_SPEED_NO_TRANSFER, NULL);
     Window_ScheduleCopyToVRAM(v0);
 }

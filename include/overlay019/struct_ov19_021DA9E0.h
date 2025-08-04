@@ -11,7 +11,7 @@
 #include "bg_window.h"
 #include "pokemon_sprite.h"
 #include "sprite.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "sys_task_manager.h"
 
 typedef struct {
@@ -31,8 +31,8 @@ typedef struct {
     void *unk_34;
     NNSG2dCellDataBank *unk_38;
     Sprite *unk_3C[2];
-    Strbuf *unk_44;
-    Strbuf *unk_48;
+    String *unk_44;
+    String *unk_48;
     SysTask *unk_4C;
     u8 padding_50[4];
 } UnkStruct_ov19_021DA9E0;

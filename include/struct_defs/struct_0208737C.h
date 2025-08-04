@@ -4,7 +4,7 @@
 #include "struct_decls/pc_boxes_decl.h"
 
 #include "game_options.h"
-#include "strbuf.h"
+#include "string_gf.h"
 
 typedef struct {
     int unk_00;
@@ -13,7 +13,7 @@ typedef struct {
     int unk_0C;
     int unk_10;
     int unk_14;
-    Strbuf *textInputStr;
+    String *textInputStr;
     u16 unk_1C[20];
     int unk_44;
     PCBoxes *pcBoxes;

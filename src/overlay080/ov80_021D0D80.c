@@ -21,7 +21,7 @@
 #include "overlay_manager.h"
 #include "screen_fade.h"
 #include "sound.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "system.h"
 #include "touch_pad.h"
 #include "unk_0208C098.h"
@@ -220,7 +220,7 @@ static int ov80_021D0EC8(UnkStruct_ov80_021D2A08 *param0)
         param0->unk_1C = param0->unk_24;
         param0->unk_80 = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_LOCATION_NAMES, param0->heapID);
         param0->unk_84 = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_TOWN_MAP, param0->heapID);
-        param0->unk_88 = Strbuf_Init(22, param0->heapID);
+        param0->unk_88 = String_Init(22, param0->heapID);
         param0->unk_30 = MainMapMatrixData_Load(param0->heapID);
         param0->unk_40 = ov80_021D2D70("data/tmap_block.dat", param0->heapID);
         break;
@@ -264,7 +264,7 @@ static void ov80_021D0FF4(UnkStruct_ov80_021D2A08 *param0)
     Heap_Free(param0->unk_28);
     ov80_021D2E10(param0->unk_40);
     MainMapMatrixData_Free(param0->unk_30);
-    Strbuf_Free(param0->unk_88);
+    String_Free(param0->unk_88);
     MessageLoader_Free(param0->unk_84);
     MessageLoader_Free(param0->unk_80);
 }

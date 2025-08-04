@@ -18,7 +18,7 @@
 #include "message.h"
 #include "sprite.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 
@@ -38,12 +38,12 @@ typedef struct {
     UnkStruct_0200C440 *unk_698;
     MessageLoader *messageLoader;
     StringTemplate *template;
-    Strbuf *unk_6A4;
-    Strbuf *unk_6A8;
-    Strbuf *unk_6AC[20];
+    String *unk_6A4;
+    String *unk_6A8;
+    String *unk_6AC[20];
     StringList *unk_6FC;
     Menu *unk_700;
-    StrBufWrapper unk_704[6];
+    StringWrapper unk_704[6];
     const GridMenuCursorPosition *unk_7F4;
     DualArrayShortData unk_7F8;
     GenericFunctionPtr unk_B00;

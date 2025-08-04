@@ -38,7 +38,7 @@
 #include "sound_playback.h"
 #include "sprite.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "system.h"
@@ -625,7 +625,7 @@ static int sub_0207E750(GameWindowLayout *param0)
             sub_02082708(param0, 0xffffffff, 1);
             param0->partyManagementData->menuSelectionResult = 0;
             param0->unk_B0E = 25;
-            MessageLoader_GetStrbuf(param0->messageLoader, 105, param0->unk_6A4);
+            MessageLoader_GetString(param0->messageLoader, 105, param0->unk_6A4);
             return 24;
         }
     } else if (v0 == 3) {
@@ -649,14 +649,14 @@ static int sub_0207E7E0(ApplicationManager *appMan, int *param1)
     VramTransfer_Free();
 
     for (v1 = 0; v1 < 6; v1++) {
-        Strbuf_Free(v0->unk_704[v1].unk_00);
+        String_Free(v0->unk_704[v1].unk_00);
     }
 
-    Strbuf_Free(v0->unk_6A4);
-    Strbuf_Free(v0->unk_6A8);
+    String_Free(v0->unk_6A4);
+    String_Free(v0->unk_6A8);
 
     for (v1 = 0; v1 < 20; v1++) {
-        Strbuf_Free(v0->unk_6AC[v1]);
+        String_Free(v0->unk_6AC[v1]);
     }
 
     MessageLoader_Free(v0->messageLoader);
@@ -950,14 +950,14 @@ static GameWindowLayout *sub_0207ECC0(ApplicationManager *appMan)
     v0->template = StringTemplate_Default(HEAP_ID_12);
 
     for (v1 = 0; v1 < 6; v1++) {
-        v0->unk_704[v1].unk_00 = Strbuf_Init(10 + 1, HEAP_ID_12);
+        v0->unk_704[v1].unk_00 = String_Init(10 + 1, HEAP_ID_12);
     }
 
-    v0->unk_6A4 = Strbuf_Init(256, HEAP_ID_12);
-    v0->unk_6A8 = Strbuf_Init(256, HEAP_ID_12);
+    v0->unk_6A4 = String_Init(256, HEAP_ID_12);
+    v0->unk_6A8 = String_Init(256, HEAP_ID_12);
 
     for (v1 = 0; v1 < 20; v1++) {
-        v0->unk_6AC[v1] = Strbuf_Init(32, HEAP_ID_12);
+        v0->unk_6AC[v1] = String_Init(32, HEAP_ID_12);
     }
 
     v0->partySlot = v0->partyManagementData->selectedMonSlot;
@@ -2083,15 +2083,15 @@ static int HandleGameWindowEvent(GameWindowLayout *param0)
             break;
 
         case 1: {
-            Strbuf *v1;
+            String *v1;
             int v2;
 
-            v1 = MessageLoader_GetNewStrbuf(param0->messageLoader, 184);
+            v1 = MessageLoader_GetNewString(param0->messageLoader, 184);
             v2 = sub_02026074(param0->partyManagementData->battleRegulation, 3);
 
             StringTemplate_SetNumber(param0->template, 0, v2, 3, 0, 1);
             StringTemplate_Format(param0->template, param0->unk_6A4, v1);
-            Strbuf_Free(v1);
+            String_Free(v1);
         }
             sub_02082708(param0, 0xffffffff, 1);
             param0->unk_B0E = 23;
@@ -2422,17 +2422,17 @@ static int ProcessWindowInput(GameWindowLayout *param0)
     case 3:
         if (UpdatePokemonStatus(param0, param0->partySlot, 1) == 1) {
             Pokemon *mon;
-            Strbuf *v1;
+            String *v1;
             void *journalEntryLocationEvent;
             FieldSystem *fieldSystem;
 
             mon = Party_GetPokemonBySlotIndex(param0->partyManagementData->party, param0->partySlot);
-            v1 = MessageLoader_GetNewStrbuf(param0->messageLoader, 64);
+            v1 = MessageLoader_GetNewString(param0->messageLoader, 64);
 
             StringTemplate_SetNickname(param0->template, 0, Pokemon_GetBoxPokemon(mon));
             StringTemplate_SetNumber(param0->template, 1, param0->monStats[2], 3, 0, 1);
             StringTemplate_Format(param0->template, param0->unk_6A4, v1);
-            Strbuf_Free(v1);
+            String_Free(v1);
             sub_02082708(param0, 0xffffffff, 1);
 
             journalEntryLocationEvent = JournalEntry_CreateEventUsedMove((u8)param0->monStats[3], 0, 12);
@@ -2618,14 +2618,14 @@ static int ProcessItemApplication(GameWindowLayout *param0)
 
     if (param0->partyManagementData->usedItemID == 112) {
         if (Pokemon_GetValue(v0, MON_DATA_SPECIES, NULL) != SPECIES_GIRATINA) {
-            MessageLoader_GetStrbuf(param0->messageLoader, 203, param0->unk_6A8);
+            MessageLoader_GetString(param0->messageLoader, 203, param0->unk_6A8);
             StringTemplate_SetNickname(param0->template, 0, Pokemon_GetBoxPokemon(v0));
             StringTemplate_SetItemNameWithArticle(param0->template, 1, param0->partyManagementData->usedItemID);
             StringTemplate_Format(param0->template, param0->unk_6A4, param0->unk_6A8);
             v2 = 11;
         } else if (fieldSystem != NULL) {
             if (fieldSystem->location->mapId == MAP_HEADER_UNION_ROOM) {
-                MessageLoader_GetStrbuf(param0->messageLoader, 204, param0->unk_6A8);
+                MessageLoader_GetString(param0->messageLoader, 204, param0->unk_6A8);
                 StringTemplate_SetItemName(param0->template, 0, param0->partyManagementData->usedItemID);
                 StringTemplate_Format(param0->template, param0->unk_6A4, param0->unk_6A8);
                 v2 = 11;
@@ -2643,20 +2643,20 @@ static int ProcessItemApplication(GameWindowLayout *param0)
 
             v2 = UpdatePokemonWithItem(param0, v0, &v3);
 
-            MessageLoader_GetStrbuf(param0->messageLoader, 118, param0->unk_6A8);
+            MessageLoader_GetString(param0->messageLoader, 118, param0->unk_6A8);
             StringTemplate_SetNickname(param0->template, 0, Pokemon_GetBoxPokemon(v0));
             StringTemplate_SetItemName(param0->template, 1, param0->partyManagementData->usedItemID);
             StringTemplate_Format(param0->template, param0->unk_6A4, param0->unk_6A8);
             break;
         case 1:
-            MessageLoader_GetStrbuf(param0->messageLoader, 78, param0->unk_6A8);
+            MessageLoader_GetString(param0->messageLoader, 78, param0->unk_6A8);
             StringTemplate_SetNickname(param0->template, 0, Pokemon_GetBoxPokemon(v0));
             StringTemplate_SetItemNameWithArticle(param0->template, 1, param0->unk_704[param0->partySlot].unk_0C);
             StringTemplate_Format(param0->template, param0->unk_6A4, param0->unk_6A8);
             v2 = 9;
             break;
         case 2:
-            MessageLoader_GetStrbuf(param0->messageLoader, 77, param0->unk_6A4);
+            MessageLoader_GetString(param0->messageLoader, 77, param0->unk_6A4);
             v2 = 11;
             break;
         }
@@ -2768,7 +2768,7 @@ static int ProcessPokemonItemSwap(GameWindowLayout *param0)
 
         if (Bag_TryAddItem(param0->partyManagementData->bag, (u16)v5, 1, HEAP_ID_12) == FALSE) {
             SwapPokemonItem(param0, v2, v4, v5);
-            MessageLoader_GetStrbuf(param0->messageLoader, 83, param0->unk_6A4);
+            MessageLoader_GetString(param0->messageLoader, 83, param0->unk_6A4);
             v0 = 11;
         } else {
             if (Item_IsMail(param0->partyManagementData->usedItemID) == 1) {
@@ -2778,7 +2778,7 @@ static int ProcessPokemonItemSwap(GameWindowLayout *param0)
                 return 32;
             }
 
-            MessageLoader_GetStrbuf(param0->messageLoader, 84, param0->unk_6A8);
+            MessageLoader_GetString(param0->messageLoader, 84, param0->unk_6A8);
             StringTemplate_SetItemName(param0->template, 1, v5);
             StringTemplate_SetItemName(param0->template, 2, v4);
             StringTemplate_Format(param0->template, param0->unk_6A4, param0->unk_6A8);
@@ -2834,13 +2834,13 @@ static int UpdatePokemonFormWithItem(GameWindowLayout *param0)
     }
 
     if (item == ITEM_NONE) {
-        MessageLoader_GetStrbuf(param0->messageLoader, 118, param0->unk_6A8);
+        MessageLoader_GetString(param0->messageLoader, 118, param0->unk_6A8);
         StringTemplate_SetNickname(param0->template, 0, Pokemon_GetBoxPokemon(v0));
         StringTemplate_SetItemName(param0->template, 1, param0->partyManagementData->usedItemID);
         StringTemplate_Format(param0->template, param0->unk_6A4, param0->unk_6A8);
     } else {
         Bag_TryAddItem(param0->partyManagementData->bag, (u16)item, 1, HEAP_ID_12);
-        MessageLoader_GetStrbuf(param0->messageLoader, 84, param0->unk_6A8);
+        MessageLoader_GetString(param0->messageLoader, 84, param0->unk_6A8);
         StringTemplate_SetItemName(param0->template, 1, item);
         StringTemplate_SetItemName(param0->template, 2, v2);
         StringTemplate_Format(param0->template, param0->unk_6A4, param0->unk_6A8);

@@ -7,7 +7,7 @@
 #include "overlay023/struct_ov23_02241A80.h"
 #include "overlay023/struct_ov23_02241A88.h"
 
-#include "strbuf.h"
+#include "string_gf.h"
 
 void ov23_022416E0(void *param0, FieldSystem *fieldSystem);
 int ov23_022417C4(void);
@@ -23,7 +23,7 @@ BOOL IsMiningItemSphere(int miningItemID);
 BOOL ov23_02241D04(int param0, int param1);
 int ov23_02241D18(int param0);
 int ov23_02241D38(int param0);
-BOOL ov23_02241D58(Strbuf *param0);
+BOOL ov23_02241D58(String *param0);
 int ov23_02241DF8(MATHRandContext16 *param0);
 void ov23_02241E6C(void);
 void ov23_02241ED0(void);

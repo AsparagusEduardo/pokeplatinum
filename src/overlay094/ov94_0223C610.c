@@ -22,7 +22,7 @@
 #include "sound.h"
 #include "sound_playback.h"
 #include "sprite.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "system.h"
 #include "text.h"
 #include "trainer_info.h"
@@ -345,14 +345,14 @@ static void ov94_0223CAC8(UnkStruct_ov94_0223FD4C *param0)
 
 static void ov94_0223CB0C(UnkStruct_ov94_0223FD4C *param0)
 {
-    param0->unk_BAC = Strbuf_Init(90 * 2, HEAP_ID_62);
-    param0->unk_BB0 = MessageLoader_GetNewStrbuf(param0->unk_B90, 39);
+    param0->unk_BAC = String_Init(90 * 2, HEAP_ID_62);
+    param0->unk_BB0 = MessageLoader_GetNewString(param0->unk_B90, 39);
 }
 
 static void ov94_0223CB34(UnkStruct_ov94_0223FD4C *param0)
 {
-    Strbuf_Free(param0->unk_BAC);
-    Strbuf_Free(param0->unk_BB0);
+    String_Free(param0->unk_BAC);
+    String_Free(param0->unk_BB0);
 }
 
 static int ov94_0223CB50(UnkStruct_ov94_0223FD4C *param0)
@@ -573,9 +573,9 @@ static void ov94_0223CF3C(UnkStruct_ov94_0223FD4C *param0)
 
 static void ov94_0223CF80(UnkStruct_ov94_0223FD4C *param0, int param1, int param2, int param3, u16 param4)
 {
-    Strbuf *v0;
+    String *v0;
 
-    MessageLoader_GetStrbuf(param0->unk_B90, param1, param0->unk_BAC);
+    MessageLoader_GetString(param0->unk_B90, param1, param0->unk_BAC);
     Window_FillTilemap(&param0->unk_F5C, 0xf0f);
     Window_DrawMessageBoxWithScrollCursor(&param0->unk_F5C, 0, 1, 10);
 
@@ -584,9 +584,9 @@ static void ov94_0223CF80(UnkStruct_ov94_0223FD4C *param0, int param1, int param
 
 static void ov94_0223CFD8(UnkStruct_ov94_0223FD4C *param0, int param1, int param2, int param3, u16 param4)
 {
-    Strbuf *v0;
+    String *v0;
 
-    MessageLoader_GetStrbuf(param0->unk_B90, param1, param0->unk_BAC);
+    MessageLoader_GetString(param0->unk_B90, param1, param0->unk_BAC);
     Window_FillTilemap(&param0->unk_109C, 0xf0f);
     Window_DrawMessageBoxWithScrollCursor(&param0->unk_109C, 0, 1, 10);
 
@@ -595,11 +595,11 @@ static void ov94_0223CFD8(UnkStruct_ov94_0223FD4C *param0, int param1, int param
 
 void ov94_0223D030(Window *param0, MessageLoader *param1, int param2, u16 param3)
 {
-    Strbuf *v0 = MessageLoader_GetNewStrbuf(param1, param2);
+    String *v0 = MessageLoader_GetNewString(param1, param2);
 
     Window_FillTilemap(param0, param3);
     Text_AddPrinterWithParams(param0, FONT_MESSAGE, v0, 0, 0, TEXT_SPEED_INSTANT, NULL);
-    Strbuf_Free(v0);
+    String_Free(v0);
 }
 
 void ov94_0223D068(UnkStruct_ov94_0223FD4C *param0)

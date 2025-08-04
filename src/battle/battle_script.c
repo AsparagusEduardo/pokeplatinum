@@ -59,7 +59,7 @@
 #include "sound_playback.h"
 #include "sprite.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "sys_task.h"
 #include "system.h"
@@ -10905,7 +10905,7 @@ static void BattleScript_CatchMonTask(SysTask *param0, void *param1)
                 v3 = BattleSystem_PartyPokemon(v2->battleSys, v1, v2->battleCtx->selectedPartySlot[v1]);
 
                 if (v19->unk_14 == 0) {
-                    Pokemon_SetValue(v3, MON_DATA_NICKNAME_STRBUF_AND_FLAG, v19->textInputStr);
+                    Pokemon_SetValue(v3, MON_DATA_NICKNAME_STRING_AND_FLAG, v19->textInputStr);
                     ov16_0223F24C(v2->battleSys, (1 + 48));
                 }
 
@@ -12188,7 +12188,7 @@ static void BattleScript_LoadPartyLevelUpIcon(BattleSystem *battleSys, BattleScr
     PaletteData *v3;
     MessageLoader *v4;
     StringTemplate *v5;
-    Strbuf *v6, *v7;
+    String *v6, *v7;
     BgConfig *v8;
     Window v9;
     int v10;
@@ -12231,17 +12231,17 @@ static void BattleScript_LoadPartyLevelUpIcon(BattleSystem *battleSys, BattleScr
     }
 
     if (v13 == 0) {
-        v6 = MessageLoader_GetNewStrbuf(v4, 944);
+        v6 = MessageLoader_GetNewString(v4, 944);
     } else if (v13 == 1) {
-        v6 = MessageLoader_GetNewStrbuf(v4, 945);
+        v6 = MessageLoader_GetNewString(v4, 945);
     } else {
-        v6 = MessageLoader_GetNewStrbuf(v4, 946);
+        v6 = MessageLoader_GetNewString(v4, 946);
     }
 
     StringTemplate_SetNickname(v5, 0, Pokemon_GetBoxPokemon(param2));
     StringTemplate_SetNumber(v5, 1, Pokemon_GetValue(param2, MON_DATA_LEVEL, NULL), 3, 0, 1);
     StringTemplate_Format(v5, v7, v6);
-    Strbuf_Free(v6);
+    String_Free(v6);
     Window_Init(&v9);
     Window_AddToTopLeftCorner(v8, &v9, 12, 4, 0, 0);
     Text_AddPrinterWithParamsAndColor(&v9, FONT_SYSTEM, v7, 0, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 2, 0), NULL);

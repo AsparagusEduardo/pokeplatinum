@@ -29,7 +29,7 @@
 #include "sound_playback.h"
 #include "sprite.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "system.h"
@@ -47,7 +47,7 @@ typedef struct {
     Window unk_08[15];
     MessageLoader *unk_F8;
     StringTemplate *unk_FC;
-    Strbuf *unk_100;
+    String *unk_100;
     ListMenu *unk_104;
     StringList *unk_108;
     Menu *unk_10C;
@@ -624,14 +624,14 @@ static void ov91_021D11B8(UnkStruct_ov91_021D0ED8 *param0)
 {
     param0->unk_F8 = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0645, HEAP_ID_67);
     param0->unk_FC = StringTemplate_Default(HEAP_ID_67);
-    param0->unk_100 = Strbuf_Init(256, HEAP_ID_67);
+    param0->unk_100 = String_Init(256, HEAP_ID_67);
 }
 
 static void ov91_021D11F0(UnkStruct_ov91_021D0ED8 *param0)
 {
     MessageLoader_Free(param0->unk_F8);
     StringTemplate_Free(param0->unk_FC);
-    Strbuf_Free(param0->unk_100);
+    String_Free(param0->unk_100);
 }
 
 static int ov91_021D1214(UnkStruct_ov91_021D0ED8 *param0)
@@ -822,12 +822,12 @@ static void ov91_021D1580(UnkStruct_ov91_021D0ED8 *param0, u32 param1, u32 param
         v2 = 0;
         break;
     case 1:
-        v0 = Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_100, 0);
+        v0 = Font_CalcStringWidth(FONT_SYSTEM, param0->unk_100, 0);
         v1 = Window_GetWidth(&param0->unk_08[param1]) * 8;
         v2 = v1 - v0;
         break;
     case 2:
-        v0 = Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_100, 0);
+        v0 = Font_CalcStringWidth(FONT_SYSTEM, param0->unk_100, 0);
         v1 = Window_GetWidth(&param0->unk_08[param1]) * 8;
         v2 = (v1 - v0) / 2;
         break;
@@ -838,35 +838,35 @@ static void ov91_021D1580(UnkStruct_ov91_021D0ED8 *param0, u32 param1, u32 param
 
 static void ov91_021D1618(UnkStruct_ov91_021D0ED8 *param0, u32 param1, u32 param2, u8 param3, u8 param4)
 {
-    Strbuf *v0 = MessageLoader_GetNewStrbuf(param0->unk_F8, param1);
+    String *v0 = MessageLoader_GetNewString(param0->unk_F8, param1);
     StringTemplate_SetNumber(param0->unk_FC, 0, param2, param3, param4, 1);
     StringTemplate_Format(param0->unk_FC, param0->unk_100, v0);
-    Strbuf_Free(v0);
+    String_Free(v0);
 }
 
 static void ov91_021D1664(UnkStruct_ov91_021D0ED8 *param0)
 {
     u32 v0;
 
-    MessageLoader_GetStrbuf(param0->unk_F8, 26, param0->unk_100);
+    MessageLoader_GetString(param0->unk_F8, 26, param0->unk_100);
     ov91_021D1580(param0, 0, FONT_SYSTEM, TEXT_COLOR(15, 14, 0), 2);
 
-    MessageLoader_GetStrbuf(param0->unk_F8, 28, param0->unk_100);
+    MessageLoader_GetString(param0->unk_F8, 28, param0->unk_100);
     ov91_021D1580(param0, 1, FONT_SYSTEM, TEXT_COLOR(15, 14, 0), 2);
 
-    MessageLoader_GetStrbuf(param0->unk_F8, 22, param0->unk_100);
+    MessageLoader_GetString(param0->unk_F8, 22, param0->unk_100);
     ov91_021D1580(param0, 2, FONT_SYSTEM, TEXT_COLOR(15, 14, 0), 0);
 
-    MessageLoader_GetStrbuf(param0->unk_F8, 23, param0->unk_100);
+    MessageLoader_GetString(param0->unk_F8, 23, param0->unk_100);
     ov91_021D1580(param0, 3, FONT_SYSTEM, TEXT_COLOR(15, 14, 0), 0);
 
-    MessageLoader_GetStrbuf(param0->unk_F8, 24, param0->unk_100);
+    MessageLoader_GetString(param0->unk_F8, 24, param0->unk_100);
     ov91_021D1580(param0, 4, FONT_SYSTEM, TEXT_COLOR(15, 14, 0), 0);
 
-    MessageLoader_GetStrbuf(param0->unk_F8, 25, param0->unk_100);
+    MessageLoader_GetString(param0->unk_F8, 25, param0->unk_100);
     ov91_021D1580(param0, 5, FONT_SYSTEM, TEXT_COLOR(1, 2, 0), 0);
 
-    MessageLoader_GetStrbuf(param0->unk_F8, 27, param0->unk_100);
+    MessageLoader_GetString(param0->unk_F8, 27, param0->unk_100);
     ov91_021D1580(param0, 6, FONT_SYSTEM, TEXT_COLOR(15, 14, 0), 2);
 }
 
@@ -960,7 +960,7 @@ static void ov91_021D18C8(UnkStruct_ov91_021D0ED8 *param0, u32 param1)
         v1 = MoveTable_LoadParam(param1, MOVEATTRIBUTE_POWER);
 
         if (v1 <= 1) {
-            MessageLoader_GetStrbuf(param0->unk_F8, 33, param0->unk_100);
+            MessageLoader_GetString(param0->unk_F8, 33, param0->unk_100);
         } else {
             ov91_021D1618(param0, 29, v1, 3, 1);
         }
@@ -970,7 +970,7 @@ static void ov91_021D18C8(UnkStruct_ov91_021D0ED8 *param0, u32 param1)
         v1 = MoveTable_LoadParam(param1, MOVEATTRIBUTE_ACCURACY);
 
         if (v1 == 0) {
-            MessageLoader_GetStrbuf(param0->unk_F8, 33, param0->unk_100);
+            MessageLoader_GetString(param0->unk_F8, 33, param0->unk_100);
         } else {
             ov91_021D1618(param0, 30, v1, 3, 1);
         }
@@ -982,7 +982,7 @@ static void ov91_021D18C8(UnkStruct_ov91_021D0ED8 *param0, u32 param1)
         ov91_021D1580(param0, 9, FONT_SYSTEM, TEXT_COLOR(1, 2, 0), 2);
 
         v0 = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_MOVE_DESCRIPTIONS, HEAP_ID_67);
-        MessageLoader_GetStrbuf(v0, param1, param0->unk_100);
+        MessageLoader_GetString(v0, param1, param0->unk_100);
         ov91_021D1580(param0, 10, FONT_SYSTEM, TEXT_COLOR(1, 2, 0), 0);
         MessageLoader_Free(v0);
         ov91_021D24B4(param0, param1);
@@ -1017,7 +1017,7 @@ static void ov91_021D1A68(UnkStruct_ov91_021D0ED8 *param0, u32 param1)
         v2 = sub_0209577C(v1);
         v0 = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_CONTEST_EFFECTS, HEAP_ID_67);
 
-        MessageLoader_GetStrbuf(v0, v2, param0->unk_100);
+        MessageLoader_GetString(v0, v2, param0->unk_100);
         Text_AddPrinterWithParamsAndColor(&param0->unk_08[11], FONT_SYSTEM, param0->unk_100, 0, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 2, 0), NULL);
         MessageLoader_Free(v0);
         ov91_021D1BBC(param0, (u16)param1);
@@ -1071,7 +1071,7 @@ static void ov91_021D1BBC(UnkStruct_ov91_021D0ED8 *param0, u16 param1)
 
 static void ov91_021D1C10(UnkStruct_ov91_021D0ED8 *param0, u32 param1)
 {
-    Strbuf *v0;
+    String *v0;
 
     switch (param1) {
     case 0:
@@ -1114,9 +1114,9 @@ static void ov91_021D1C10(UnkStruct_ov91_021D0ED8 *param0, u32 param1)
         break;
     }
 
-    v0 = MessageLoader_GetNewStrbuf(param0->unk_F8, Unk_ov91_021D282C[param0->unk_00->unk_15][param1]);
+    v0 = MessageLoader_GetNewString(param0->unk_F8, Unk_ov91_021D282C[param0->unk_00->unk_15][param1]);
     StringTemplate_Format(param0->unk_FC, param0->unk_100, v0);
-    Strbuf_Free(v0);
+    String_Free(v0);
 }
 
 static u16 ov91_021D1DD0(UnkStruct_ov91_021D0ED8 *param0)

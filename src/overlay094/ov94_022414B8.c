@@ -38,7 +38,7 @@
 #include "render_window.h"
 #include "screen_fade.h"
 #include "sound_playback.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "system.h"
@@ -320,7 +320,7 @@ int ov94_02241568(UnkStruct_ov94_0223FD4C *param0, int param1)
 
 static void ov94_0224158C(UnkStruct_ov94_0223FD4C *param0, int param1, int param2, int param3, u16 param4)
 {
-    Strbuf *v0 = MessageLoader_GetNewStrbuf(param0->unk_B90, param1);
+    String *v0 = MessageLoader_GetNewString(param0->unk_B90, param1);
 
     StringTemplate_Format(param0->unk_B8C, param0->unk_BAC, v0);
     Window_FillTilemap(&param0->unk_F5C, 0xf0f);
@@ -328,7 +328,7 @@ static void ov94_0224158C(UnkStruct_ov94_0223FD4C *param0, int param1, int param
 
     param0->unk_BE0 = Text_AddPrinterWithParams(&param0->unk_F5C, FONT_MESSAGE, param0->unk_BAC, 0, 0, param2, NULL);
 
-    Strbuf_Free(v0);
+    String_Free(v0);
 }
 
 static void ov94_022415F8(BgConfig *param0)
@@ -488,8 +488,8 @@ static void ov94_02241880(UnkStruct_ov94_0223FD4C *param0)
 
 static void ov94_022418B8(UnkStruct_ov94_0223FD4C *param0)
 {
-    param0->unk_BAC = Strbuf_Init(90 * 2, HEAP_ID_62);
-    param0->unk_BB0 = MessageLoader_GetNewStrbuf(param0->unk_B90, 90);
+    param0->unk_BAC = String_Init(90 * 2, HEAP_ID_62);
+    param0->unk_BB0 = MessageLoader_GetNewString(param0->unk_B90, 90);
     param0->unk_10E4 = Heap_AllocFromHeap(HEAP_ID_62, sizeof(UnkStruct_ov94_0223FD4C_sub3));
 
     MI_CpuClearFast(param0->unk_10E4, sizeof(UnkStruct_ov94_0223FD4C_sub3));
@@ -505,8 +505,8 @@ static void ov94_02241920(UnkStruct_ov94_0223FD4C *param0)
     Heap_Free(param0->unk_10E4->unk_14);
     Heap_Free(param0->unk_10E4->unk_18);
     Heap_Free(param0->unk_10E4);
-    Strbuf_Free(param0->unk_BAC);
-    Strbuf_Free(param0->unk_BB0);
+    String_Free(param0->unk_BAC);
+    String_Free(param0->unk_BB0);
 }
 
 static int ov94_0224195C(UnkStruct_ov94_0223FD4C *param0)
@@ -824,27 +824,27 @@ static TextColor Unk_ov94_02246920[] = {
 
 void ov94_02242158(Window *param0, MessageLoader *param1, int param2, int param3, int param4, TextColor param5)
 {
-    Strbuf *v0;
+    String *v0;
 
     if (param2 != 0) {
-        v0 = MessageLoader_GetNewStrbuf(param1, param2);
+        v0 = MessageLoader_GetNewString(param1, param2);
         ov94_02245900(param0, v0, 0, param4, param3, param5);
-        Strbuf_Free(v0);
+        String_Free(v0);
     }
 }
 
 void ov94_0224218C(Window *param0, MessageLoader *param1, MessageLoader *param2, int param3, int param4, int param5, TextColor param6)
 {
-    Strbuf *v0;
+    String *v0;
 
     if (param3 != 0) {
-        v0 = MessageLoader_GetNewStrbuf(param1, param3);
+        v0 = MessageLoader_GetNewString(param1, param3);
         ov94_02245900(param0, v0, 0, param5, param4, param6);
-        Strbuf_Free(v0);
+        String_Free(v0);
     } else {
-        v0 = MessageLoader_GetNewStrbuf(param2, 167);
+        v0 = MessageLoader_GetNewString(param2, 167);
         ov94_02245900(param0, v0, 0, param5, param4, param6);
-        Strbuf_Free(v0);
+        String_Free(v0);
     }
 }
 
@@ -868,13 +868,13 @@ const int Unk_ov94_02245FD8[] = {
 
 void ov94_02242204(Window *param0, MessageLoader *param1, int param2, int param3, int param4, int param5, u32 param6)
 {
-    Strbuf *v0;
+    String *v0;
 
     if ((param3 == 0) && (param2 == 3)) {
         return;
     }
 
-    v0 = MessageLoader_GetNewStrbuf(param1, Unk_ov94_02245FD8[param2]);
+    v0 = MessageLoader_GetNewString(param1, Unk_ov94_02245FD8[param2]);
 
     if (param5 > 3) {
         ov94_02245900(param0, v0, param5, param4, 0, ov94_022421E8(param2, param6));
@@ -882,12 +882,12 @@ void ov94_02242204(Window *param0, MessageLoader *param1, int param2, int param3
         ov94_02245900(param0, v0, 0, param4, param5, ov94_022421E8(param2, param6));
     }
 
-    Strbuf_Free(v0);
+    String_Free(v0);
 }
 
 void ov94_0224226C(Window *param0, MessageLoader *param1, int param2, int param3, int param4, u32 param5, int param6, int param7)
 {
-    Strbuf *v0;
+    String *v0;
     if (param2 != -1) {
         const UnkStruct_ov94_022460AC *v1;
         if (param6 == 0) {
@@ -895,9 +895,9 @@ void ov94_0224226C(Window *param0, MessageLoader *param1, int param2, int param3
         } else {
             v1 = Unk_ov94_022460AC;
         }
-        v0 = MessageLoader_GetNewStrbuf(param1, v1[param2].unk_00);
+        v0 = MessageLoader_GetNewString(param1, v1[param2].unk_00);
         ov94_02245900(param0, v0, param7, param4, param3, param5);
-        Strbuf_Free(v0);
+        String_Free(v0);
     }
 }
 
@@ -908,10 +908,10 @@ void ov94_022422B8(Window *param0, MessageLoader *param1, int param2, int param3
 
 void ov94_022422D4(MessageLoader *param0, MessageLoader *param1, StringTemplate *param2, Window param3[], int param4, int param5, int param6)
 {
-    Strbuf *v0;
+    String *v0;
     int v1;
 
-    v0 = MessageLoader_GetNewStrbuf(param0, 97);
+    v0 = MessageLoader_GetNewString(param0, 97);
     ov94_02245900(&param3[0], v0, 0, 0, 0, TEXT_COLOR(15, 2, 0));
 
     for (v1 = 1; v1 < 3; v1++) {
@@ -927,15 +927,15 @@ void ov94_022422D4(MessageLoader *param0, MessageLoader *param1, StringTemplate 
     }
 
     ov94_022422B8(&param3[2], param0, param6, 2, 0, TEXT_COLOR(15, 2, 0), 0);
-    Strbuf_Free(v0);
+    String_Free(v0);
 }
 
 void ov94_02242368(MessageLoader *param0, MessageLoader *param1, StringTemplate *param2, Window param3[], int param4, int param5, int param6)
 {
-    Strbuf *v0;
+    String *v0;
     int v1;
 
-    v0 = MessageLoader_GetNewStrbuf(param0, 97);
+    v0 = MessageLoader_GetNewString(param0, 97);
     ov94_02245900(&param3[0], v0, 0, 0, 0, TEXT_COLOR(15, 2, 0));
 
     for (v1 = 1; v1 < 3; v1++) {
@@ -951,27 +951,27 @@ void ov94_02242368(MessageLoader *param0, MessageLoader *param1, StringTemplate 
     }
 
     ov94_022422B8(&param3[2], param0, param6, 2, 0, TEXT_COLOR(15, 2, 0), 0);
-    Strbuf_Free(v0);
+    String_Free(v0);
 }
 
 static void ov94_022423FC(MessageLoader *param0, StringTemplate *param1, Window param2[], BoxPokemon *boxMon, UnkStruct_ov94_0223BA88_sub2 *param4)
 {
-    Strbuf *v0, *v1;
-    Strbuf *v2 = Strbuf_Init(10 + 1, HEAP_ID_62);
-    Strbuf *v3 = Strbuf_Init(10 + 1, HEAP_ID_62);
+    String *v0, *v1;
+    String *v2 = String_Init(10 + 1, HEAP_ID_62);
+    String *v3 = String_Init(10 + 1, HEAP_ID_62);
     int gender, level, v6;
 
-    BoxPokemon_GetValue(boxMon, MON_DATA_NICKNAME_STRBUF, v2);
+    BoxPokemon_GetValue(boxMon, MON_DATA_NICKNAME_STRING, v2);
 
     gender = BoxPokemon_GetValue(boxMon, MON_DATA_GENDER, NULL) + 1;
     level = BoxPokemon_GetLevel(boxMon);
-    v0 = MessageLoader_GetNewStrbuf(param0, 100);
+    v0 = MessageLoader_GetNewString(param0, 100);
 
     StringTemplate_SetNumber(param1, 3, level, 3, 0, 1);
-    v1 = MessageUtil_ExpandedStrbuf(param1, param0, 102, HEAP_ID_62);
+    v1 = MessageUtil_ExpandedString(param1, param0, 102, HEAP_ID_62);
 
     if (gender != GENDER_NONE + 1) {
-        MessageLoader_GetStrbuf(param0, Unk_ov94_02245FD8[gender], v3);
+        MessageLoader_GetString(param0, Unk_ov94_02245FD8[gender], v3);
     }
 
     for (v6 = 0; v6 < 3; v6++) {
@@ -990,10 +990,10 @@ static void ov94_022423FC(MessageLoader *param0, StringTemplate *param1, Window 
     param4->gender = gender;
     param4->level = level;
 
-    Strbuf_Free(v1);
-    Strbuf_Free(v3);
-    Strbuf_Free(v2);
-    Strbuf_Free(v0);
+    String_Free(v1);
+    String_Free(v3);
+    String_Free(v2);
+    String_Free(v0);
 }
 
 u16 *ov94_Pokedex_Alphabetical(int heapID, int unused, int *pokedexLength)

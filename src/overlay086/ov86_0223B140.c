@@ -32,7 +32,7 @@
 #include "sound_playback.h"
 #include "sprite.h"
 #include "sprite_util.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
@@ -75,8 +75,8 @@ typedef struct {
     SysTask *unk_1C30;
     SysTask *unk_1C34[4];
     StringTemplate *unk_1C44;
-    Strbuf *unk_1C48;
-    Strbuf *unk_1C4C;
+    String *unk_1C48;
+    String *unk_1C4C;
     MessageLoader *unk_1C50;
     NARC *unk_1C54;
 } UnkStruct_ov86_0223B3C8;
@@ -167,8 +167,8 @@ typedef struct {
     BgConfig *unk_0C;
     Window *unk_10;
     StringTemplate *unk_14;
-    Strbuf *unk_18;
-    Strbuf *unk_1C;
+    String *unk_18;
+    String *unk_1C;
     MessageLoader *unk_20;
     Pokemon *unk_24;
     const TrainerInfo *unk_28;
@@ -293,8 +293,8 @@ int ov86_0223B140(ApplicationManager *appMan, int *param1)
 
     v0->unk_0C = ApplicationManager_Args(appMan);
     v0->unk_1C50 = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0351, HEAP_ID_63);
-    v0->unk_1C48 = Strbuf_Init(500, HEAP_ID_63);
-    v0->unk_1C4C = Strbuf_Init(500, HEAP_ID_63);
+    v0->unk_1C48 = String_Init(500, HEAP_ID_63);
+    v0->unk_1C4C = String_Init(500, HEAP_ID_63);
     v0->unk_1C44 = StringTemplate_Default(HEAP_ID_63);
     v0->unk_1C54 = NARC_ctor(NARC_INDEX_POKETOOL__POKE_EDIT__PL_POKE_DATA, HEAP_ID_63);
 
@@ -353,8 +353,8 @@ int ov86_0223B2E4(ApplicationManager *appMan, int *param1)
         ov86_0223B8C4(v0);
 
         StringTemplate_Free(v0->unk_1C44);
-        Strbuf_Free(v0->unk_1C48);
-        Strbuf_Free(v0->unk_1C4C);
+        String_Free(v0->unk_1C48);
+        String_Free(v0->unk_1C4C);
         MessageLoader_Free(v0->unk_1C50);
         NARC_dtor(v0->unk_1C54);
         ApplicationManager_FreeData(appMan);
@@ -1248,11 +1248,11 @@ static void ov86_0223C47C(UnkStruct_ov86_0223C3E4 *param0, int param1)
 {
     int v0, v1, v2;
 
-    v1 = Strbuf_NumLines(param0->unk_1C);
+    v1 = String_NumLines(param0->unk_1C);
 
     for (v0 = 0; v0 < v1; v0++) {
-        Strbuf_CopyLineNum(param0->unk_18, param0->unk_1C, v0);
-        v2 = (136 - Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_18, 0)) / 2;
+        String_CopyLineNum(param0->unk_18, param0->unk_1C, v0);
+        v2 = (136 - Font_CalcStringWidth(FONT_SYSTEM, param0->unk_18, 0)) / 2;
         Text_AddPrinterWithParamsAndColor(param0->unk_10, FONT_SYSTEM, param0->unk_18, param0->unk_2C + v2, param1 + v0 * 16, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 2, 0), NULL);
     }
 }
@@ -1264,14 +1264,14 @@ static void ov86_0223C4DC(UnkStruct_ov86_0223C3E4 *param0)
 
     switch (Pokemon_GetGender(param0->unk_24)) {
     case 0:
-        MessageLoader_GetStrbuf(param0->unk_20, 1, param0->unk_18);
+        MessageLoader_GetString(param0->unk_20, 1, param0->unk_18);
         break;
     case 1:
-        MessageLoader_GetStrbuf(param0->unk_20, 2, param0->unk_18);
+        MessageLoader_GetString(param0->unk_20, 2, param0->unk_18);
         break;
     case 2:
     default:
-        MessageLoader_GetStrbuf(param0->unk_20, 3, param0->unk_18);
+        MessageLoader_GetString(param0->unk_20, 3, param0->unk_18);
         break;
     }
 
@@ -1289,7 +1289,7 @@ static void ov86_0223C54C(UnkStruct_ov86_0223C3E4 *param0)
         break;
     }
 
-    MessageLoader_GetStrbuf(param0->unk_20, 5 + v0, param0->unk_18);
+    MessageLoader_GetString(param0->unk_20, 5 + v0, param0->unk_18);
     StringTemplate_Format(param0->unk_14, param0->unk_1C, param0->unk_18);
 }
 
@@ -1304,14 +1304,14 @@ static void ov86_0223C58C(SysTask *param0, void *param1)
 
     switch (v0->unk_34) {
     case 0:
-        MessageLoader_GetStrbuf(v0->unk_20, 0, v0->unk_1C);
+        MessageLoader_GetString(v0->unk_20, 0, v0->unk_1C);
         ov86_0223C47C(v0, 16);
         Window_LoadTiles(v0->unk_10);
         v0->unk_30 = 20;
         v0->unk_34++;
         break;
     case 1:
-        Pokemon_GetValue(v0->unk_24, MON_DATA_NICKNAME_STRBUF, v0->unk_1C);
+        Pokemon_GetValue(v0->unk_24, MON_DATA_NICKNAME_STRING, v0->unk_1C);
         ov86_0223C47C(v0, 48);
         ov86_0223C4DC(v0);
         ov86_0223C47C(v0, 64);
@@ -1321,7 +1321,7 @@ static void ov86_0223C58C(SysTask *param0, void *param1)
         break;
     case 2:
         StringTemplate_SetOTName(v0->unk_14, 0, Pokemon_GetBoxPokemon(v0->unk_24));
-        MessageLoader_GetStrbuf(v0->unk_20, 4, v0->unk_18);
+        MessageLoader_GetString(v0->unk_20, 4, v0->unk_18);
         StringTemplate_Format(v0->unk_14, v0->unk_1C, v0->unk_18);
         ov86_0223C47C(v0, 96);
         ov86_0223C54C(v0);
@@ -1386,19 +1386,19 @@ static void ov86_0223C72C(UnkStruct_ov86_0223B3C8 *param0)
 {
     int v0;
 
-    MessageLoader_GetStrbuf(param0->unk_1C50, 12, param0->unk_1C48);
+    MessageLoader_GetString(param0->unk_1C50, 12, param0->unk_1C48);
 
-    v0 = (256 - Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_1C48, 0)) / 2;
+    v0 = (256 - Font_CalcStringWidth(FONT_SYSTEM, param0->unk_1C48, 0)) / 2;
     Text_AddPrinterWithParamsAndColor(&param0->unk_14, FONT_SYSTEM, param0->unk_1C48, v0, 4, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 2, 0), NULL);
     StringTemplate_SetPlayerName(param0->unk_1C44, 0, param0->unk_0C->unk_00);
 
     StringTemplate_SetNumber(param0->unk_1C44, 1, TrainerInfo_ID_LowHalf(param0->unk_0C->unk_00), 5, 2, 1);
     StringTemplate_SetNumber(param0->unk_1C44, 2, PlayTime_GetHours(param0->unk_0C->playTime), 3, 0, 1);
     StringTemplate_SetNumber(param0->unk_1C44, 3, PlayTime_GetMinutes(param0->unk_0C->playTime), 2, 2, 1);
-    MessageLoader_GetStrbuf(param0->unk_1C50, 13, param0->unk_1C4C);
+    MessageLoader_GetString(param0->unk_1C50, 13, param0->unk_1C4C);
     StringTemplate_Format(param0->unk_1C44, param0->unk_1C48, param0->unk_1C4C);
 
-    v0 = (256 - Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_1C48, 0)) / 2;
+    v0 = (256 - Font_CalcStringWidth(FONT_SYSTEM, param0->unk_1C48, 0)) / 2;
     Text_AddPrinterWithParamsAndColor(&param0->unk_14, FONT_SYSTEM, param0->unk_1C48, v0, 172, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 2, 0), NULL);
     Window_LoadTiles(&param0->unk_14);
 }
@@ -1913,10 +1913,10 @@ static int ov86_0223D2A8(UnkStruct_ov86_0223B3C8 *param0, Pokemon *param1, const
                 break;
             }
 
-            TrainerInfo_NameStrbuf(param2, param0->unk_1C48);
-            Pokemon_GetValue(param1, MON_DATA_OTNAME_STRBUF, param0->unk_1C4C);
+            TrainerInfo_NameString(param2, param0->unk_1C48);
+            Pokemon_GetValue(param1, MON_DATA_OTNAME_STRING, param0->unk_1C4C);
 
-            if (Strbuf_Compare(param0->unk_1C48, param0->unk_1C4C)) {
+            if (String_Compare(param0->unk_1C48, param0->unk_1C4C)) {
                 v1 = 2;
                 break;
             }

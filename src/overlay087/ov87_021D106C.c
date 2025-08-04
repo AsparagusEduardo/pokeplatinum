@@ -25,7 +25,7 @@
 #include "sound_playback.h"
 #include "sprite.h"
 #include "sprite_util.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "system.h"
 #include "text.h"
@@ -47,8 +47,8 @@ typedef struct UnkStruct_ov87_021D106C_t {
     MessageLoader *unk_1E8;
     MessageLoader *unk_1EC;
     StringTemplate *unk_1F0;
-    Strbuf *unk_1F4;
-    Strbuf *unk_1F8;
+    String *unk_1F4;
+    String *unk_1F8;
     Pokemon *unk_1FC;
     u8 unk_200[3200];
 } UnkStruct_ov87_021D106C;
@@ -98,8 +98,8 @@ UnkStruct_ov87_021D106C *ov87_021D106C(UnkStruct_ov87_021D0D80 *param0, const Un
         v0->unk_1E8 = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_SPECIES_NAME, HEAP_ID_61);
         v0->unk_1EC = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_MOVE_NAMES, HEAP_ID_61);
         v0->unk_1F0 = StringTemplate_Default(HEAP_ID_61);
-        v0->unk_1F4 = Strbuf_Init(256, HEAP_ID_61);
-        v0->unk_1F8 = Strbuf_Init(256, HEAP_ID_61);
+        v0->unk_1F4 = String_Init(256, HEAP_ID_61);
+        v0->unk_1F8 = String_Init(256, HEAP_ID_61);
         v0->unk_1FC = Pokemon_New(HEAP_ID_61);
 
         SetVBlankCallback(ov87_021D11AC, v0);
@@ -113,8 +113,8 @@ void ov87_021D1140(UnkStruct_ov87_021D106C *param0)
     if (param0) {
         SetVBlankCallback(NULL, NULL);
         Heap_Free(param0->unk_1FC);
-        Strbuf_Free(param0->unk_1F8);
-        Strbuf_Free(param0->unk_1F4);
+        String_Free(param0->unk_1F8);
+        String_Free(param0->unk_1F4);
         StringTemplate_Free(param0->unk_1F0);
         MessageLoader_Free(param0->unk_1EC);
         MessageLoader_Free(param0->unk_1E8);
@@ -372,7 +372,7 @@ static void ov87_021D1590(UnkStruct_ov87_021D106C *param0)
     StringTemplate_SetNumber(param0->unk_1F0, 1, v0->unk_04.year + 2000, 4, 0, 1);
     StringTemplate_SetMonthName(param0->unk_1F0, 2, v0->unk_04.month);
     StringTemplate_SetNumber(param0->unk_1F0, 3, v0->unk_04.day, 2, 0, 1);
-    MessageLoader_GetStrbuf(param0->unk_1E4, 0, param0->unk_1F4);
+    MessageLoader_GetString(param0->unk_1E4, 0, param0->unk_1F4);
     StringTemplate_Format(param0->unk_1F0, param0->unk_1F8, param0->unk_1F4);
     Window_FillTilemap(v1, 15);
     Text_AddPrinterWithParams(v1, FONT_SYSTEM, param0->unk_1F8, 0, 0, TEXT_SPEED_NO_TRANSFER, NULL);
@@ -390,38 +390,38 @@ static void ov87_021D1640(UnkStruct_ov87_021D106C *param0)
     switch (v0->unk_1C) {
     case UnkEnum_ov87_021D12C0_0:
         Text_AddPrinterWithParams(v2, FONT_SYSTEM, v1->unk_00, 0, 0, TEXT_SPEED_NO_TRANSFER, NULL);
-        MessageLoader_GetStrbuf(param0->unk_1E4, 5, param0->unk_1F4);
+        MessageLoader_GetString(param0->unk_1E4, 5, param0->unk_1F4);
         Text_AddPrinterWithParams(v2, FONT_SYSTEM, param0->unk_1F4, 72, 0, TEXT_SPEED_NO_TRANSFER, NULL);
-        MessageLoader_GetStrbuf(param0->unk_1E8, v1->unk_10, param0->unk_1F4);
+        MessageLoader_GetString(param0->unk_1E8, v1->unk_10, param0->unk_1F4);
         Text_AddPrinterWithParams(v2, FONT_SYSTEM, param0->unk_1F4, 94, 0, TEXT_SPEED_NO_TRANSFER, NULL);
 
         switch (Pokemon_GetGenderOf(v1->unk_10, v1->unk_08)) {
         case 0:
-            MessageLoader_GetStrbuf(param0->unk_1E4, 3, param0->unk_1F4);
+            MessageLoader_GetString(param0->unk_1E4, 3, param0->unk_1F4);
             break;
         case 1:
-            MessageLoader_GetStrbuf(param0->unk_1E4, 4, param0->unk_1F4);
+            MessageLoader_GetString(param0->unk_1E4, 4, param0->unk_1F4);
             break;
         default:
-            Strbuf_Clear(param0->unk_1F4);
+            String_Clear(param0->unk_1F4);
             break;
         }
 
         Text_AddPrinterWithParams(v2, FONT_SYSTEM, param0->unk_1F4, 174, 0, TEXT_SPEED_NO_TRANSFER, NULL);
-        MessageLoader_GetStrbuf(param0->unk_1E4, 1, param0->unk_1F4);
+        MessageLoader_GetString(param0->unk_1E4, 1, param0->unk_1F4);
         StringTemplate_SetNumber(param0->unk_1F0, 0, v1->unk_12, 4, 1, 1);
         StringTemplate_Format(param0->unk_1F0, param0->unk_1F8, param0->unk_1F4);
         Text_AddPrinterWithParams(v2, FONT_SYSTEM, param0->unk_1F8, 194, 0, TEXT_SPEED_NO_TRANSFER, NULL);
-        MessageLoader_GetStrbuf(param0->unk_1E4, 2, param0->unk_1F4);
+        MessageLoader_GetString(param0->unk_1E4, 2, param0->unk_1F4);
         Text_AddPrinterWithParams(v2, FONT_SYSTEM, param0->unk_1F4, 0, 16, TEXT_SPEED_NO_TRANSFER, NULL);
-        Text_AddPrinterWithParams(v2, FONT_SYSTEM, v1->unk_04, Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_1F4, 0), 16, TEXT_SPEED_NO_TRANSFER, NULL);
+        Text_AddPrinterWithParams(v2, FONT_SYSTEM, v1->unk_04, Font_CalcStringWidth(FONT_SYSTEM, param0->unk_1F4, 0), 16, TEXT_SPEED_NO_TRANSFER, NULL);
         break;
     case UnkEnum_ov87_021D12C0_1: {
         int v3;
 
         for (v3 = 0; v3 < 4; v3++) {
             if (v1->unk_14[v3]) {
-                MessageLoader_GetStrbuf(param0->unk_1EC, v1->unk_14[v3], param0->unk_1F4);
+                MessageLoader_GetString(param0->unk_1EC, v1->unk_14[v3], param0->unk_1F4);
                 Text_AddPrinterWithParams(v2, FONT_SYSTEM, param0->unk_1F4, (v3 & 1) * 96, (v3 / 2) * 16, TEXT_SPEED_NO_TRANSFER, NULL);
             } else {
                 break;

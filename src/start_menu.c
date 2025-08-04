@@ -64,7 +64,7 @@
 #include "sound_playback.h"
 #include "sprite.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "system_flags.h"
@@ -552,19 +552,19 @@ static void sub_0203ADFC(FieldTask *taskMan)
     for (i = 0; i < optionCount; i++) {
         if (menu->options[i] == MENU_POS_TRAINER_CARD) {
             StringTemplate *v6;
-            Strbuf *v7;
-            Strbuf *v8;
+            String *v7;
+            String *v8;
 
             v6 = StringTemplate_Default(HEAP_ID_FIELDMAP);
-            v7 = Strbuf_Init(8, HEAP_ID_FIELDMAP);
-            v8 = MessageLoader_GetNewStrbuf(v2, sStartMenuActions[menu->options[i]].text);
+            v7 = String_Init(8, HEAP_ID_FIELDMAP);
+            v8 = MessageLoader_GetNewString(v2, sStartMenuActions[menu->options[i]].text);
 
             StringTemplate_SetPlayerName(v6, 0, SaveData_GetTrainerInfo(fieldSystem->saveData));
             StringTemplate_Format(v6, v7, v8);
-            StringList_AddFromStrbuf(menu->unk_24, v7, menu->options[i]);
+            StringList_AddFromString(menu->unk_24, v7, menu->options[i]);
 
-            Strbuf_Free(v8);
-            Strbuf_Free(v7);
+            String_Free(v8);
+            String_Free(v7);
             StringTemplate_Free(v6);
         } else {
             StringList_AddFromMessageBank(
@@ -666,8 +666,8 @@ static void sub_0203B094(FieldTask *taskMan)
     StartMenu *menu;
     MessageLoader *v2;
     StringTemplate *v3;
-    Strbuf *v4;
-    Strbuf *v5;
+    String *v4;
+    String *v5;
     u8 v6;
 
     fieldSystem = FieldTask_GetFieldSystem(taskMan);
@@ -689,17 +689,17 @@ static void sub_0203B094(FieldTask *taskMan)
     v2 = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_START_MENU, HEAP_ID_FIELDMAP);
 
     if (v6 == 0) {
-        v5 = MessageLoader_GetNewStrbuf(v2, 9);
+        v5 = MessageLoader_GetNewString(v2, 9);
     } else {
-        v5 = MessageLoader_GetNewStrbuf(v2, 10);
+        v5 = MessageLoader_GetNewString(v2, 10);
     }
 
     Text_AddPrinterWithParams(&menu->unk_10, FONT_SYSTEM, v5, 0, 0, TEXT_SPEED_NO_TRANSFER, NULL);
-    Strbuf_Free(v5);
+    String_Free(v5);
 
     v3 = StringTemplate_Default(HEAP_ID_FIELDMAP);
-    v4 = Strbuf_Init(32, HEAP_ID_FIELDMAP);
-    v5 = MessageLoader_GetNewStrbuf(v2, 11);
+    v4 = String_Init(32, HEAP_ID_FIELDMAP);
+    v5 = MessageLoader_GetNewString(v2, 11);
 
     if (v6 == 0) {
         u16 *v7 = FieldOverworldState_GetSafariBallCount(SaveData_GetFieldOverworldState(fieldSystem->saveData));
@@ -714,8 +714,8 @@ static void sub_0203B094(FieldTask *taskMan)
     StringTemplate_Format(v3, v4, v5);
     Text_AddPrinterWithParams(&menu->unk_10, FONT_SYSTEM, v4, 0, 16, TEXT_SPEED_NO_TRANSFER, NULL);
 
-    Strbuf_Free(v4);
-    Strbuf_Free(v5);
+    String_Free(v4);
+    String_Free(v5);
     StringTemplate_Free(v3);
     MessageLoader_Free(v2);
     Window_ScheduleCopyToVRAM(&menu->unk_10);

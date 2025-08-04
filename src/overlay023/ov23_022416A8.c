@@ -24,7 +24,7 @@
 #include "heap.h"
 #include "message.h"
 #include "sound_playback.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
@@ -487,11 +487,11 @@ int ov23_02241D38(int param0)
     return 0;
 }
 
-BOOL ov23_02241D58(Strbuf *param0)
+BOOL ov23_02241D58(String *param0)
 {
     int v0;
     StringTemplate *v1 = NULL;
-    Strbuf *v2 = NULL;
+    String *v2 = NULL;
     BOOL v3 = 0;
 
     if (!Unk_ov23_02257744) {
@@ -501,11 +501,11 @@ BOOL ov23_02241D58(Strbuf *param0)
     for (v0 = 0; v0 < (7 + 1); v0++) {
         if (Unk_ov23_02257744->unk_468[v0] != 0) {
             v1 = StringTemplate_Default(HEAP_ID_FIELD);
-            v2 = Strbuf_Init((50 * 2), HEAP_ID_FIELD);
+            v2 = String_Init((50 * 2), HEAP_ID_FIELD);
 
             StringTemplate_SetUndergroundItemNameWithArticle(v1, 2, Unk_ov23_02257744->unk_468[v0]);
             StringTemplate_CapitalizeArgAtIndex(v1, 2);
-            MessageLoader_GetStrbuf(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetCommonTextPrinter()), 95, v2);
+            MessageLoader_GetString(UndergroundTextPrinter_GetMessageLoader(CommManUnderground_GetCommonTextPrinter()), 95, v2);
             StringTemplate_Format(v1, param0, v2);
 
             Unk_ov23_02257744->unk_468[v0] = 0;
@@ -515,7 +515,7 @@ BOOL ov23_02241D58(Strbuf *param0)
     }
 
     if (v2) {
-        Strbuf_Free(v2);
+        String_Free(v2);
     }
 
     if (v1) {

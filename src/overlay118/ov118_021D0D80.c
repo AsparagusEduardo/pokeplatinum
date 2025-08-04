@@ -19,7 +19,7 @@
 #include "pokemon.h"
 #include "sound_playback.h"
 #include "spl.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "text.h"
 #include "unk_0202419C.h"
@@ -136,13 +136,13 @@ int ov118_021D0DBC(GameWindowLayout *param0)
         }
         break;
     case 9: {
-        Strbuf *v2;
+        String *v2;
 
-        v2 = MessageLoader_GetNewStrbuf(param0->messageLoader, 202);
+        v2 = MessageLoader_GetNewString(param0->messageLoader, 202);
 
         StringTemplate_SetNickname(param0->template, 0, Pokemon_GetBoxPokemon(v1));
         StringTemplate_Format(param0->template, param0->unk_6A4, v2);
-        Strbuf_Free(v2);
+        String_Free(v2);
         sub_02082708(param0, 0xffffffff, 1);
     }
         v0->unk_00++;

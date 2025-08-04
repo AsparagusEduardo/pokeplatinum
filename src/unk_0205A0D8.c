@@ -32,7 +32,7 @@
 #include "savedata.h"
 #include "screen_fade.h"
 #include "sound_playback.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "system.h"
 #include "text.h"
@@ -52,8 +52,8 @@ typedef struct {
     PokemonSummary *unk_00;
     PartyManagementData *unk_04;
     UnkFuncPtr_0205AB10 *unk_08;
-    Strbuf *unk_0C;
-    Strbuf *unk_10;
+    String *unk_0C;
+    String *unk_10;
     Window unk_14;
     FieldSystem *fieldSystem;
     StringTemplate *unk_28;
@@ -89,8 +89,8 @@ typedef struct {
 } UnkStruct_0205AD20;
 
 typedef struct {
-    Strbuf *unk_00;
-    Strbuf *unk_04;
+    String *unk_00;
+    String *unk_04;
     Window unk_08;
     StringTemplate *unk_18;
     MessageLoader *unk_1C;
@@ -110,7 +110,7 @@ static BOOL sub_0205AD34(UnkStruct_0205A0D8 *param0);
 static BOOL sub_0205AD70(UnkStruct_0205A0D8 *param0);
 static void sub_0205ADAC(UnkStruct_0205A0D8 *param0);
 static void sub_0205AD80(UnkStruct_0205A0D8 *param0);
-static int sub_0205AA50(UnkStruct_0205A0D8 *param0, const Strbuf *param1);
+static int sub_0205AA50(UnkStruct_0205A0D8 *param0, const String *param1);
 static void sub_0205AAA0(UnkStruct_0205A0D8 *param0, BOOL param1);
 static void sub_0205AF18(UnkStruct_0205A0D8 *param0, int param1);
 static BOOL sub_0205AD20(UnkStruct_0205A0D8 *param0);
@@ -264,7 +264,7 @@ static BOOL sub_0205A324(FieldTask *param0)
         }
         break;
     case 1:
-        MessageLoader_GetStrbuf(v0->unk_2C, 1, v0->unk_0C);
+        MessageLoader_GetString(v0->unk_2C, 1, v0->unk_0C);
         v0->unk_30 = sub_0205AA50(v0, v0->unk_0C);
         v0->unk_34 = 2;
         break;
@@ -331,7 +331,7 @@ static BOOL sub_0205A324(FieldTask *param0)
         break;
     case 11:
         CommPlayer_SetBattleDir();
-        MessageLoader_GetStrbuf(v0->unk_2C, 13, v0->unk_0C);
+        MessageLoader_GetString(v0->unk_2C, 13, v0->unk_0C);
 
         v0->unk_30 = sub_0205AA50(v0, v0->unk_0C);
         v0->unk_34 = 12;
@@ -423,7 +423,7 @@ static BOOL sub_0205A324(FieldTask *param0)
         break;
     case 24:
         CommPlayer_SetBattleDir();
-        MessageLoader_GetStrbuf(v0->unk_2C, 19, v0->unk_0C);
+        MessageLoader_GetString(v0->unk_2C, 19, v0->unk_0C);
         v0->unk_30 = sub_0205AA50(v0, v0->unk_0C);
         v0->unk_34 = 25;
         break;
@@ -441,7 +441,7 @@ static BOOL sub_0205A324(FieldTask *param0)
                 sub_0205AC80(v0, v0->unk_82);
                 CommTiming_StartSync(0);
                 StringTemplate_SetPlayerName(v0->unk_28, 0, v0->unk_74);
-                MessageLoader_GetStrbuf(v0->unk_2C, 14, v0->unk_0C);
+                MessageLoader_GetString(v0->unk_2C, 14, v0->unk_0C);
                 StringTemplate_Format(v0->unk_28, v0->unk_10, v0->unk_0C);
                 v0->unk_30 = sub_0205AA50(v0, v0->unk_10);
                 v0->unk_34 = 27;
@@ -469,7 +469,7 @@ static BOOL sub_0205A324(FieldTask *param0)
             v0->unk_83 = sub_0205AD20(v0);
 
             if (v0->unk_82 && v0->unk_83) {
-                MessageLoader_GetStrbuf(v0->unk_2C, 20, v0->unk_0C);
+                MessageLoader_GetString(v0->unk_2C, 20, v0->unk_0C);
                 v0->unk_30 = sub_0205AA50(v0, v0->unk_0C);
                 v0->unk_34 = 30;
             } else {
@@ -480,7 +480,7 @@ static BOOL sub_0205A324(FieldTask *param0)
     case 30:
         if (FieldMessage_FinishedPrinting(v0->unk_30)) {
             v0->unk_89 = 0;
-            MessageLoader_GetStrbuf(v0->unk_2C, 17, v0->unk_0C);
+            MessageLoader_GetString(v0->unk_2C, 17, v0->unk_0C);
             v0->unk_30 = sub_0205AA50(v0, v0->unk_0C);
             v0->unk_84 = 0;
             v0->unk_34 = 31;
@@ -503,7 +503,7 @@ static BOOL sub_0205A324(FieldTask *param0)
         case 2:
             sub_0205B0B4(v0);
             v0->unk_84 = 255;
-            MessageLoader_GetStrbuf(v0->unk_2C, 15, v0->unk_0C);
+            MessageLoader_GetString(v0->unk_2C, 15, v0->unk_0C);
             v0->unk_30 = sub_0205AA50(v0, v0->unk_0C);
             CommTiming_StartSync(2);
             v0->unk_34 = 39;
@@ -512,7 +512,7 @@ static BOOL sub_0205A324(FieldTask *param0)
         break;
     case 36:
         StringTemplate_SetSpeciesName(v0->unk_28, 1, Pokemon_GetBoxPokemon(Party_GetPokemonBySlotIndex(v0->unk_50, v0->unk_84)));
-        MessageLoader_GetStrbuf(v0->unk_2C, 18, v0->unk_0C);
+        MessageLoader_GetString(v0->unk_2C, 18, v0->unk_0C);
         StringTemplate_Format(v0->unk_28, v0->unk_10, v0->unk_0C);
         v0->unk_30 = sub_0205AA50(v0, v0->unk_10);
         v0->unk_34 = 37;
@@ -527,14 +527,14 @@ static BOOL sub_0205A324(FieldTask *param0)
         switch (sub_0205AFE4(v0)) {
         case 2:
             sub_0205B0B4(v0);
-            MessageLoader_GetStrbuf(v0->unk_2C, 17, v0->unk_0C);
+            MessageLoader_GetString(v0->unk_2C, 17, v0->unk_0C);
             v0->unk_30 = sub_0205AA50(v0, v0->unk_0C);
             v0->unk_34 = 31;
             break;
         case 1:
             if (v0->unk_81 == 1) {
                 sub_0205B0B4(v0);
-                MessageLoader_GetStrbuf(v0->unk_2C, 14, v0->unk_0C);
+                MessageLoader_GetString(v0->unk_2C, 14, v0->unk_0C);
                 StringTemplate_Format(v0->unk_28, v0->unk_10, v0->unk_0C);
                 v0->unk_30 = sub_0205AA50(v0, v0->unk_10);
                 CommTiming_StartSync(2);
@@ -587,7 +587,7 @@ static BOOL sub_0205A324(FieldTask *param0)
         }
         break;
     case 42:
-        MessageLoader_GetStrbuf(v0->unk_2C, 15, v0->unk_0C);
+        MessageLoader_GetString(v0->unk_2C, 15, v0->unk_0C);
         v0->unk_30 = sub_0205AA50(v0, v0->unk_0C);
         v0->unk_43 = 0;
         v0->unk_34 = 43;
@@ -612,7 +612,7 @@ static BOOL sub_0205A324(FieldTask *param0)
     return 0;
 }
 
-static int sub_0205AA50(UnkStruct_0205A0D8 *param0, const Strbuf *param1)
+static int sub_0205AA50(UnkStruct_0205A0D8 *param0, const String *param1)
 {
     Window *v0 = &(param0->unk_14);
 
@@ -623,7 +623,7 @@ static int sub_0205AA50(UnkStruct_0205A0D8 *param0, const Strbuf *param1)
         FieldMessage_ClearWindow(v0);
     }
 
-    return FieldMessage_Print(v0, (Strbuf *)param1, SaveData_GetOptions(param0->fieldSystem->saveData), 1);
+    return FieldMessage_Print(v0, (String *)param1, SaveData_GetOptions(param0->fieldSystem->saveData), 1);
 }
 
 static void sub_0205AAA0(UnkStruct_0205A0D8 *param0, BOOL param1)
@@ -666,8 +666,8 @@ void sub_0205AB10(FieldSystem *fieldSystem, UnkFuncPtr_0205AB10 *param1)
     v0->unk_08 = param1;
     v0->unk_28 = StringTemplate_Default(HEAP_ID_FIELDMAP);
     v0->unk_2C = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0011, HEAP_ID_FIELDMAP);
-    v0->unk_0C = Strbuf_Init((100 * 2), HEAP_ID_FIELDMAP);
-    v0->unk_10 = Strbuf_Init((100 * 2), HEAP_ID_FIELDMAP);
+    v0->unk_0C = String_Init((100 * 2), HEAP_ID_FIELDMAP);
+    v0->unk_10 = String_Init((100 * 2), HEAP_ID_FIELDMAP);
 
     Window_Init(&v0->unk_14);
     Window_Init(&v0->unk_54);
@@ -726,8 +726,8 @@ static void sub_0205AC28(UnkStruct_0205A0D8 *param0)
 
     MessageLoader_Free(param0->unk_2C);
     StringTemplate_Free(param0->unk_28);
-    Strbuf_Free(param0->unk_0C);
-    Strbuf_Free(param0->unk_10);
+    String_Free(param0->unk_0C);
+    String_Free(param0->unk_10);
     ColoredArrow_Free(param0->unk_78);
 
     sub_0205AAA0(param0, 1);
@@ -876,11 +876,11 @@ static void sub_0205ADF8(UnkStruct_0205A0D8 *param0, int param1)
         for (v1 = 0; v1 < 3; v1++) {
             v2 = Pokemon_GetValue((Pokemon *)(&param0->unk_48[v1 * v3]), MON_DATA_SPECIES, NULL);
 
-            MessageLoader_GetStrbuf(v4, v2, param0->unk_0C);
+            MessageLoader_GetString(v4, v2, param0->unk_0C);
             Text_AddPrinterWithParams(v0, FONT_SYSTEM, param0->unk_0C, 16, v1 * 16, TEXT_SPEED_NO_TRANSFER, NULL);
         }
 
-        MessageLoader_GetStrbuf(param0->unk_2C, 21, param0->unk_0C);
+        MessageLoader_GetString(param0->unk_2C, 21, param0->unk_0C);
         Text_AddPrinterWithParams(v0, FONT_SYSTEM, param0->unk_0C, 16, v1 * 16, TEXT_SPEED_NO_TRANSFER, NULL);
         MessageLoader_Free(v4);
     }
@@ -906,7 +906,7 @@ static void sub_0205AF18(UnkStruct_0205A0D8 *param0, int param1)
         Window_FillTilemap(v0, 15);
 
         for (v1 = 0; v1 < 3; v1++) {
-            MessageLoader_GetStrbuf(param0->unk_2C, 22 + v1, param0->unk_0C);
+            MessageLoader_GetString(param0->unk_2C, 22 + v1, param0->unk_0C);
             Text_AddPrinterWithParams(v0, FONT_SYSTEM, param0->unk_0C, 16, v1 * 16, TEXT_SPEED_NO_TRANSFER, NULL);
         }
     }
@@ -1009,10 +1009,10 @@ static BOOL sub_0205B140(FieldTask *param0)
     case 0:
         v1->unk_18 = StringTemplate_Default(HEAP_ID_FIELD);
         v1->unk_1C = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0011, HEAP_ID_FIELD);
-        v1->unk_00 = Strbuf_Init((100 * 2), HEAP_ID_FIELD);
-        v1->unk_04 = Strbuf_Init((100 * 2), HEAP_ID_FIELD);
+        v1->unk_00 = String_Init((100 * 2), HEAP_ID_FIELD);
+        v1->unk_04 = String_Init((100 * 2), HEAP_ID_FIELD);
 
-        MessageLoader_GetStrbuf(v1->unk_1C, 2 + v2->stars, v1->unk_00);
+        MessageLoader_GetString(v1->unk_1C, 2 + v2->stars, v1->unk_00);
         StringTemplate_SetPlayerName(v1->unk_18, 0, CommInfo_TrainerInfo(v1->unk_24));
         StringTemplate_Format(v1->unk_18, v1->unk_04, v1->unk_00);
         FieldMessage_AddWindow(fieldSystem->bgConfig, &v1->unk_08, 3);
@@ -1026,8 +1026,8 @@ static BOOL sub_0205B140(FieldTask *param0)
             if (gSystem.pressedKeys & PAD_BUTTON_A) {
                 MessageLoader_Free(v1->unk_1C);
                 StringTemplate_Free(v1->unk_18);
-                Strbuf_Free(v1->unk_00);
-                Strbuf_Free(v1->unk_04);
+                String_Free(v1->unk_00);
+                String_Free(v1->unk_04);
                 Window_EraseMessageBox(&v1->unk_08, 0);
                 Window_Remove(&v1->unk_08);
                 ov5_021D1744(0);

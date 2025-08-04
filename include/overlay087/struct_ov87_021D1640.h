@@ -1,11 +1,11 @@
 #ifndef POKEPLATINUM_STRUCT_OV87_021D1640_H
 #define POKEPLATINUM_STRUCT_OV87_021D1640_H
 
-#include "strbuf.h"
+#include "string_gf.h"
 
 typedef struct {
-    Strbuf *unk_00;
-    Strbuf *unk_04;
+    String *unk_00;
+    String *unk_04;
     u32 unk_08;
     u32 unk_0C;
     u16 unk_10;

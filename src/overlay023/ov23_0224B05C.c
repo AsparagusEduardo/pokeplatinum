@@ -48,7 +48,7 @@
 #include "savedata.h"
 #include "screen_fade.h"
 #include "sound_playback.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
@@ -2018,7 +2018,7 @@ void ov23_0224CF18(int param0, int param1, void *param2, void *param3)
     }
 }
 
-BOOL ov23_0224D020(Strbuf *param0)
+BOOL ov23_0224D020(String *param0)
 {
     int v0, v1;
     TrainerInfo *v2;

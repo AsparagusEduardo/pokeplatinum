@@ -41,7 +41,7 @@
 #include "sound_playback.h"
 #include "special_encounter.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "system.h"
@@ -137,7 +137,7 @@ static int ov84_0223D94C(UnkStruct_ov84_0223B5A0 *param0);
 static int ov84_0223DA04(UnkStruct_ov84_0223B5A0 *param0);
 static int ov84_0223DA14(UnkStruct_ov84_0223B5A0 *param0);
 static BOOL ov84_0223DBF4(UnkStruct_ov84_0223B5A0 *param0, u16 param1);
-static Strbuf *ov84_0223DC9C(UnkStruct_ov84_0223B5A0 *param0, u16 param1);
+static String *ov84_0223DC9C(UnkStruct_ov84_0223B5A0 *param0, u16 param1);
 static void ov84_0223DCF8(UnkStruct_ov84_0223B5A0 *param0);
 static int ov84_0223DDD0(UnkStruct_ov84_0223B5A0 *param0);
 static void ov84_0223DCF8(UnkStruct_ov84_0223B5A0 *param0);
@@ -580,7 +580,7 @@ int ov84_0223B900(ApplicationManager *appMan, int *param1)
     ov84_0223F800(v0);
     ov84_0223C178(v0);
 
-    Strbuf_Free(v0->unk_3F8);
+    String_Free(v0->unk_3F8);
     MessageLoader_Free(v0->unk_120);
     MessageLoader_Free(v0->unk_11C);
     MessageLoader_Free(v0->unk_114);
@@ -829,7 +829,7 @@ static void ov84_0223BDB4(UnkStruct_ov84_0223B5A0 *param0)
     param0->unk_118 = StringTemplate_Default(HEAP_ID_6);
     param0->unk_11C = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_ITEM_NAMES, HEAP_ID_6);
     param0->unk_120 = MessageLoader_Init(MESSAGE_LOADER_BANK_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_MOVE_NAMES, HEAP_ID_6);
-    param0->unk_3F8 = Strbuf_Init(256, HEAP_ID_6);
+    param0->unk_3F8 = String_Init(256, HEAP_ID_6);
 }
 
 static void ov84_0223BE24(UnkStruct_ov84_0223B5A0 *param0)
@@ -856,14 +856,14 @@ u16 ov84_0223BE5C(UnkStruct_ov84_0223B5A0 *param0, u16 param1, u16 param2)
     return v0->unk_00[param1].quantity;
 }
 
-static void ov84_0223BE84(MessageLoader *param0, Strbuf *param1, u16 param2, u32 param3)
+static void ov84_0223BE84(MessageLoader *param0, String *param1, u16 param2, u32 param3)
 {
-    MessageLoader_GetStrbuf(param0, param2, param1);
+    MessageLoader_GetString(param0, param2, param1);
 }
 
-static void ov84_0223BE94(MessageLoader *param0, Strbuf *param1, u16 param2, u32 param3)
+static void ov84_0223BE94(MessageLoader *param0, String *param1, u16 param2, u32 param3)
 {
-    MessageLoader_GetStrbuf(param0, Item_MoveForTMHM(param2), param1);
+    MessageLoader_GetString(param0, Item_MoveForTMHM(param2), param1);
 }
 
 static void ov84_0223BEAC(UnkStruct_ov84_0223B5A0 *param0)
@@ -956,7 +956,7 @@ static void ov84_0223BFBC(UnkStruct_ov84_0223B5A0 *param0)
             }
 
             ov84_0223BE94(param0->unk_120, param0->unk_164[v1], v0->unk_00[v1].item, 6);
-            StringList_AddFromStrbuf(param0->unk_160, param0->unk_164[v1], v1);
+            StringList_AddFromString(param0->unk_160, param0->unk_164[v1], v1);
         }
 
         StringList_AddFromMessageBank(param0->unk_160, param0->unk_114, 32, 0xfffffffe);
@@ -970,7 +970,7 @@ static void ov84_0223BFBC(UnkStruct_ov84_0223B5A0 *param0)
             }
 
             ov84_0223BE84(param0->unk_11C, param0->unk_164[v1], v0->unk_00[v1].item, 6);
-            StringList_AddFromStrbuf(param0->unk_160, param0->unk_164[v1], v1);
+            StringList_AddFromString(param0->unk_160, param0->unk_164[v1], v1);
         }
 
         if (param0->unk_C4->unk_65 != 5) {
@@ -994,7 +994,7 @@ static void ov84_0223C158(UnkStruct_ov84_0223B5A0 *param0)
     u32 v0;
 
     for (v0 = 0; v0 < 165; v0++) {
-        param0->unk_164[v0] = Strbuf_Init(18, HEAP_ID_6);
+        param0->unk_164[v0] = String_Init(18, HEAP_ID_6);
     }
 }
 
@@ -1003,7 +1003,7 @@ static void ov84_0223C178(UnkStruct_ov84_0223B5A0 *param0)
     u32 v0;
 
     for (v0 = 0; v0 < 165; v0++) {
-        Strbuf_Free(param0->unk_164[v0]);
+        String_Free(param0->unk_164[v0]);
     }
 }
 
@@ -2174,9 +2174,9 @@ static int ov84_0223DA14(UnkStruct_ov84_0223B5A0 *param0)
         StringTemplate_SetMoveName(param0->unk_118, 0, v0);
 
         if (Item_IsHMMove(v0) == 1) {
-            MessageLoader_GetStrbuf(param0->unk_114, 59, param0->unk_3F8);
+            MessageLoader_GetString(param0->unk_114, 59, param0->unk_3F8);
         } else {
-            MessageLoader_GetStrbuf(param0->unk_114, 58, param0->unk_3F8);
+            MessageLoader_GetString(param0->unk_114, 58, param0->unk_3F8);
         }
     }
         Window_FillTilemap(&param0->unk_04[6], 15);
@@ -2191,11 +2191,11 @@ static int ov84_0223DA14(UnkStruct_ov84_0223B5A0 *param0)
         }
 
         if ((gSystem.pressedKeys & (PAD_BUTTON_A | PAD_BUTTON_B)) || gSystem.touchPressed) {
-            Strbuf *v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 60);
+            String *v1 = MessageLoader_GetNewString(param0->unk_114, 60);
 
             Window_FillTilemap(&param0->unk_04[6], 15);
             StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-            Strbuf_Free(v1);
+            String_Free(v1);
 
             param0->unk_426 = ov84_022400A0(param0);
             param0->unk_483 = 2;
@@ -2253,17 +2253,17 @@ static int ov84_0223DA14(UnkStruct_ov84_0223B5A0 *param0)
 
 static BOOL ov84_0223DBF4(UnkStruct_ov84_0223B5A0 *param0, u16 param1)
 {
-    Strbuf *v0;
+    String *v0;
 
     StringTemplate_SetPlayerName(param0->unk_118, 0, param0->unk_CC);
     StringTemplate_SetItemName(param0->unk_118, 1, param1);
 
     if (param1 == ITEM_BLACK_FLUTE) {
-        v0 = MessageLoader_GetNewStrbuf(param0->unk_114, 64);
+        v0 = MessageLoader_GetNewString(param0->unk_114, 64);
         SetBlackWhiteFluteActive(param0, FLUTE_FACTOR_USED_BLACK);
         param0->unk_488 = 0;
     } else if (param1 == ITEM_WHITE_FLUTE) {
-        v0 = MessageLoader_GetNewStrbuf(param0->unk_114, 63);
+        v0 = MessageLoader_GetNewString(param0->unk_114, 63);
         SetBlackWhiteFluteActive(param0, FLUTE_FACTOR_USED_WHITE);
         param0->unk_488 = 0;
     } else if ((param1 == ITEM_MAX_REPEL) || (param1 == ITEM_SUPER_REPEL) || (param1 == ITEM_REPEL)) {
@@ -2273,11 +2273,11 @@ static BOOL ov84_0223DBF4(UnkStruct_ov84_0223B5A0 *param0, u16 param1)
     }
 
     StringTemplate_Format(param0->unk_118, param0->unk_3F8, v0);
-    Strbuf_Free(v0);
+    String_Free(v0);
     return 1;
 }
 
-static Strbuf *ov84_0223DC9C(UnkStruct_ov84_0223B5A0 *param0, u16 param1)
+static String *ov84_0223DC9C(UnkStruct_ov84_0223B5A0 *param0, u16 param1)
 {
     s32 stepCount;
     u8 *v1;
@@ -2285,7 +2285,7 @@ static Strbuf *ov84_0223DC9C(UnkStruct_ov84_0223B5A0 *param0, u16 param1)
     // Repel is still active, show "effects still lingered" message
     if (SpecialEncounter_RepelStepsEmpty(ov84_0223B9E4(param0)) == 0) {
         param0->unk_488 = 0;
-        return MessageLoader_GetNewStrbuf(param0->unk_114, 62);
+        return MessageLoader_GetNewString(param0->unk_114, 62);
     }
 
     stepCount = Item_LoadParam(param1, ITEM_PARAM_HOLD_EFFECT_PARAM, HEAP_ID_6);
@@ -2293,7 +2293,7 @@ static Strbuf *ov84_0223DC9C(UnkStruct_ov84_0223B5A0 *param0, u16 param1)
     param0->unk_488 = 1;
     Sound_PlayEffect(SEQ_SE_DP_CARD2);
 
-    return MessageLoader_GetNewStrbuf(param0->unk_114, 61);
+    return MessageLoader_GetNewString(param0->unk_114, 61);
 }
 
 static void ov84_0223DCF8(UnkStruct_ov84_0223B5A0 *param0)
@@ -2448,7 +2448,7 @@ static int ov84_0223E01C(UnkStruct_ov84_0223B5A0 *param0)
 
     switch (v0) {
     case 0: {
-        Strbuf *v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 53);
+        String *v1 = MessageLoader_GetNewString(param0->unk_114, 53);
 
         if (param0->unk_488 == 1) {
             StringTemplate_SetItemName(param0->unk_118, 0, param0->unk_C4->unk_66);
@@ -2458,7 +2458,7 @@ static int ov84_0223E01C(UnkStruct_ov84_0223B5A0 *param0)
 
         StringTemplate_SetNumber(param0->unk_118, 1, param0->unk_488, 3, 0, 1);
         StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-        Strbuf_Free(v1);
+        String_Free(v1);
     }
         Window_FillTilemap(&param0->unk_04[6], 15);
         param0->unk_426 = ov84_022400A0(param0);
@@ -2564,16 +2564,16 @@ static int ov84_0223E27C(UnkStruct_ov84_0223B5A0 *param0)
 
         if (v0 == 1) {
             if (Item_LoadParam(param0->unk_C4->unk_66, ITEM_PARAM_PREVENT_TOSS, HEAP_ID_6) != 0) {
-                Strbuf *v1;
+                String *v1;
 
                 Window_FillTilemap(&param0->unk_04[6], 15);
                 Window_DrawMessageBoxWithScrollCursor(&param0->unk_04[6], 0, 1024 - 9 - (18 + 12), 12);
                 StringTemplate_SetItemName(param0->unk_118, 0, param0->unk_C4->unk_66);
 
-                v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 46);
+                v1 = MessageLoader_GetNewString(param0->unk_114, 46);
 
                 StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-                Strbuf_Free(v1);
+                String_Free(v1);
                 param0->unk_426 = ov84_022400A0(param0);
                 ov84_02240B34(param0, 2);
 
@@ -2626,7 +2626,7 @@ static int ov84_0223E3BC(UnkStruct_ov84_0223B5A0 *param0)
         u8 v0 = ov84_0223C5B8(param0);
 
         if (v0 == 1) {
-            Strbuf *v1;
+            String *v1;
 
             ov84_02240248(param0, 0);
             Window_FillTilemap(&param0->unk_04[6], 15);
@@ -2637,9 +2637,9 @@ static int ov84_0223E3BC(UnkStruct_ov84_0223B5A0 *param0)
             param0->unk_48C = Item_LoadParam(param0->unk_C4->unk_66, ITEM_PARAM_PRICE, HEAP_ID_6);
 
             if ((Item_LoadParam(param0->unk_C4->unk_66, ITEM_PARAM_PREVENT_TOSS, HEAP_ID_6) != 0) || (param0->unk_48C == 0)) {
-                v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 74);
+                v1 = MessageLoader_GetNewString(param0->unk_114, 74);
                 StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-                Strbuf_Free(v1);
+                String_Free(v1);
 
                 param0->unk_426 = ov84_022400A0(param0);
                 return 22;
@@ -2649,18 +2649,18 @@ static int ov84_0223E3BC(UnkStruct_ov84_0223B5A0 *param0)
             param0->unk_48C >>= 1;
 
             if (Pocket_GetItemQuantity(param0->unk_C4->unk_04[param0->unk_C4->unk_64].unk_00, param0->unk_C4->unk_04[param0->unk_C4->unk_64].unk_09 - 3, param0->unk_C4->unk_66, 6) == 1) {
-                v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 76);
+                v1 = MessageLoader_GetNewString(param0->unk_114, 76);
                 StringTemplate_SetNumber(param0->unk_118, 0, param0->unk_488 * param0->unk_48C, 6, 0, 1);
                 StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-                Strbuf_Free(v1);
+                String_Free(v1);
 
                 param0->unk_426 = ov84_022400A0(param0);
                 return 19;
             }
 
-            v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 75);
+            v1 = MessageLoader_GetNewString(param0->unk_114, 75);
             StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-            Strbuf_Free(v1);
+            String_Free(v1);
 
             param0->unk_426 = ov84_022400A0(param0);
             return 17;
@@ -2694,15 +2694,15 @@ static int ov84_0223E5C4(UnkStruct_ov84_0223B5A0 *param0)
         return 18;
     }
     if (ov84_0223D1F4(param0) == 1) {
-        Strbuf *v0;
+        String *v0;
 
         ov84_02240D3C(param0, 0);
         Window_EraseStandardFrame(&param0->unk_04[7], 1);
         Window_FillTilemap(&param0->unk_04[6], 15);
-        v0 = MessageLoader_GetNewStrbuf(param0->unk_114, 76);
+        v0 = MessageLoader_GetNewString(param0->unk_114, 76);
         StringTemplate_SetNumber(param0->unk_118, 0, param0->unk_488 * param0->unk_48C, 6, 0, 1);
         StringTemplate_Format(param0->unk_118, param0->unk_3F8, v0);
-        Strbuf_Free(v0);
+        String_Free(v0);
         param0->unk_426 = ov84_022400A0(param0);
         param0->unk_490 = 1;
 
@@ -2724,17 +2724,17 @@ static int ov84_0223E5C4(UnkStruct_ov84_0223B5A0 *param0)
         return 18;
     }
     if (gSystem.pressedKeys & PAD_BUTTON_A) {
-        Strbuf *v1;
+        String *v1;
 
         ov84_02240D3C(param0, 0);
         Window_EraseStandardFrame(&param0->unk_04[7], 1);
         Window_FillTilemap(&param0->unk_04[6], 15);
 
-        v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 76);
+        v1 = MessageLoader_GetNewString(param0->unk_114, 76);
 
         StringTemplate_SetNumber(param0->unk_118, 0, param0->unk_488 * param0->unk_48C, 6, 0, 1);
         StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-        Strbuf_Free(v1);
+        String_Free(v1);
         param0->unk_426 = ov84_022400A0(param0);
         Sound_PlayEffect(SEQ_SE_CONFIRM);
 
@@ -2785,7 +2785,7 @@ static int ov84_0223E7CC(UnkStruct_ov84_0223B5A0 *param0)
 
     switch (v0) {
     case 0: {
-        Strbuf *v1 = MessageLoader_GetNewStrbuf(param0->unk_114, 77);
+        String *v1 = MessageLoader_GetNewString(param0->unk_114, 77);
 
         if (param0->unk_488 > 1) {
             StringTemplate_SetItemNamePlural(param0->unk_118, 0, param0->unk_C4->unk_66);
@@ -2795,7 +2795,7 @@ static int ov84_0223E7CC(UnkStruct_ov84_0223B5A0 *param0)
 
         StringTemplate_SetNumber(param0->unk_118, 1, param0->unk_488 * param0->unk_48C, 6, 0, 1);
         StringTemplate_Format(param0->unk_118, param0->unk_3F8, v1);
-        Strbuf_Free(v1);
+        String_Free(v1);
     }
         Window_FillTilemap(&param0->unk_04[6], 15);
         param0->unk_426 = ov84_022400A0(param0);

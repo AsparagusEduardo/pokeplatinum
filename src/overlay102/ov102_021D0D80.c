@@ -16,7 +16,7 @@
 #include "save_player.h"
 #include "savedata.h"
 #include "screen_fade.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "system.h"
 #include "text.h"
@@ -392,17 +392,17 @@ static void ov102_021D1274(UnkStruct_ov102_021D0F8C *param0)
 
 static void ov102_021D1420(UnkStruct_ov102_021D0F8C *param0)
 {
-    Strbuf *v0 = Strbuf_Init(0x200, param0->heapID);
+    String *v0 = String_Init(0x200, param0->heapID);
 
     {
-        Strbuf *v1 = Strbuf_Init(0x200, param0->heapID);
+        String *v1 = String_Init(0x200, param0->heapID);
 
-        MessageLoader_GetStrbuf(param0->unk_34, 0, v1);
+        MessageLoader_GetString(param0->unk_34, 0, v1);
         StringTemplate_SetPlayerName(param0->unk_38, 0, param0->unk_0C);
         StringTemplate_Format(param0->unk_38, v0, v1);
         Text_AddPrinterWithParamsAndColor(&param0->unk_14, FONT_SYSTEM, v0, 48, 32, TEXT_SPEED_INSTANT, TEXT_COLOR(1, 2, 0), NULL);
         Text_AddPrinterWithParamsAndColor(&param0->unk_24, FONT_SYSTEM, v0, 48, 32, TEXT_SPEED_INSTANT, TEXT_COLOR(1, 2, 0), NULL);
-        Strbuf_Free(v1);
+        String_Free(v1);
     }
     {
         int v2;
@@ -413,15 +413,15 @@ static void ov102_021D1420(UnkStruct_ov102_021D0F8C *param0)
             v2 = 2;
         }
 
-        MessageLoader_GetStrbuf(param0->unk_34, v2, v0);
+        MessageLoader_GetString(param0->unk_34, v2, v0);
         Text_AddPrinterWithParamsAndColor(&param0->unk_14, FONT_SYSTEM, v0, 64, 64, TEXT_SPEED_INSTANT, TEXT_COLOR(1, 2, 0), NULL);
         Text_AddPrinterWithParamsAndColor(&param0->unk_24, FONT_SYSTEM, v0, 64, 64, TEXT_SPEED_INSTANT, TEXT_COLOR(1, 2, 0), NULL);
     }
     {
-        MessageLoader_GetStrbuf(param0->unk_34, 3, v0);
+        MessageLoader_GetString(param0->unk_34, 3, v0);
         Text_AddPrinterWithParamsAndColor(&param0->unk_14, FONT_SYSTEM, v0, 138, 144, TEXT_SPEED_INSTANT, TEXT_COLOR(1, 2, 0), NULL);
         Text_AddPrinterWithParamsAndColor(&param0->unk_24, FONT_SYSTEM, v0, 138, 144, TEXT_SPEED_INSTANT, TEXT_COLOR(1, 2, 0), NULL);
     }
 
-    Strbuf_Free(v0);
+    String_Free(v0);
 }

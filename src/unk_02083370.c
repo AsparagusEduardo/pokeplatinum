@@ -132,9 +132,9 @@ static void sub_020833BC(GameWindowLayout *param0, int *param1)
 
     param0->unk_6FC = StringList_New(3, HEAP_ID_12);
 
-    StringList_AddFromStrbuf(param0->unk_6FC, param0->unk_6AC[3], sub_02083370(3));
-    StringList_AddFromStrbuf(param0->unk_6FC, param0->unk_6AC[4], sub_02083370(4));
-    StringList_AddFromStrbuf(param0->unk_6FC, param0->unk_6AC[9], sub_02083370(9));
+    StringList_AddFromString(param0->unk_6FC, param0->unk_6AC[3], sub_02083370(3));
+    StringList_AddFromString(param0->unk_6FC, param0->unk_6AC[4], sub_02083370(4));
+    StringList_AddFromString(param0->unk_6FC, param0->unk_6AC[9], sub_02083370(9));
 
     v0.choices = param0->unk_6FC;
     v0.window = &param0->unk_04[35];
@@ -175,7 +175,7 @@ static void sub_020834B0(GameWindowLayout *param0, int *param1)
 
     if (param0->unk_704[param0->partySlot].unk_0C == 0) {
         mon = Party_GetPokemonBySlotIndex(param0->partyManagementData->party, param0->partySlot);
-        MessageLoader_GetStrbuf(param0->messageLoader, 81, param0->unk_6A8);
+        MessageLoader_GetString(param0->messageLoader, 81, param0->unk_6A8);
         StringTemplate_SetNickname(param0->template, 0, Pokemon_GetBoxPokemon(mon));
         StringTemplate_Format(param0->template, param0->unk_6A4, param0->unk_6A8);
     } else if (Bag_TryAddItem(param0->partyManagementData->bag, param0->unk_704[param0->partySlot].unk_0C, 1, HEAP_ID_12) == TRUE) {
@@ -195,7 +195,7 @@ static void sub_020834B0(GameWindowLayout *param0, int *param1)
             }
         }
 
-        MessageLoader_GetStrbuf(param0->messageLoader, 82, param0->unk_6A8);
+        MessageLoader_GetString(param0->messageLoader, 82, param0->unk_6A8);
         StringTemplate_SetNickname(param0->template, 0, Pokemon_GetBoxPokemon(mon));
         StringTemplate_SetItemName(param0->template, 1, param0->unk_704[param0->partySlot].unk_0C);
         StringTemplate_Format(param0->template, param0->unk_6A4, param0->unk_6A8);
@@ -204,7 +204,7 @@ static void sub_020834B0(GameWindowLayout *param0, int *param1)
 
         sub_02083040(param0, param0->partySlot, param0->unk_704[param0->partySlot].unk_0C);
     } else {
-        MessageLoader_GetStrbuf(param0->messageLoader, 83, param0->unk_6A4);
+        MessageLoader_GetString(param0->messageLoader, 83, param0->unk_6A4);
     }
 
     Window_DrawMessageBoxWithScrollCursor(&param0->unk_04[34], 1, (1 + 9), 15);
@@ -260,9 +260,9 @@ static void sub_02083700(GameWindowLayout *param0, int *param1)
 
     param0->unk_6FC = StringList_New(3, HEAP_ID_12);
 
-    StringList_AddFromStrbuf(param0->unk_6FC, param0->unk_6AC[6], sub_02083370(6));
-    StringList_AddFromStrbuf(param0->unk_6FC, param0->unk_6AC[7], sub_02083370(7));
-    StringList_AddFromStrbuf(param0->unk_6FC, param0->unk_6AC[9], sub_02083370(9));
+    StringList_AddFromString(param0->unk_6FC, param0->unk_6AC[6], sub_02083370(6));
+    StringList_AddFromString(param0->unk_6FC, param0->unk_6AC[7], sub_02083370(7));
+    StringList_AddFromString(param0->unk_6FC, param0->unk_6AC[9], sub_02083370(9));
 
     v0.choices = param0->unk_6FC;
     v0.window = &param0->unk_04[35];
@@ -617,14 +617,14 @@ static void sub_02083FDC(GameWindowLayout *param0, u8 param1, u8 param2)
 
 static void sub_02084134(GameWindowLayout *param0)
 {
-    StrBufWrapper *v0;
+    StringWrapper *v0;
     DualArrayShortData *v1;
     ManagedSprite *v2;
     s16 v3;
 
     v1 = &param0->unk_7F8;
 
-    v0 = Heap_AllocFromHeap(HEAP_ID_12, sizeof(StrBufWrapper));
+    v0 = Heap_AllocFromHeap(HEAP_ID_12, sizeof(StringWrapper));
     *v0 = param0->unk_704[v1->unk_300[0]];
 
     param0->unk_704[v1->unk_300[0]] = param0->unk_704[v1->unk_300[1]];
@@ -842,10 +842,10 @@ int sub_02084780(GameWindowLayout *param0)
     Pokemon *v0 = Party_GetPokemonBySlotIndex(param0->partyManagementData->party, param0->partySlot);
 
     if (Pokemon_GetValue(v0, MON_DATA_BALL_CAPSULE_ID, NULL) == 0) {
-        MessageLoader_GetStrbuf(param0->messageLoader, 129, param0->unk_6A4);
+        MessageLoader_GetString(param0->messageLoader, 129, param0->unk_6A4);
         Sprite_SetDrawFlag(param0->unk_5B0[22 + param0->partySlot], TRUE);
     } else {
-        MessageLoader_GetStrbuf(param0->messageLoader, 130, param0->unk_6A4);
+        MessageLoader_GetString(param0->messageLoader, 130, param0->unk_6A4);
         param0->partySlot = 7;
     }
 

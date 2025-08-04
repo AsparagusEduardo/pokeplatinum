@@ -30,7 +30,7 @@
 #include "sprite.h"
 #include "sprite_resource.h"
 #include "sprite_util.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "sys_task_manager.h"
@@ -91,12 +91,12 @@ typedef struct UnkStruct_ov94_0223FD4C_t {
     MessageLoader *unk_B98;
     MessageLoader *unk_B9C;
     MessageLoader *unk_BA0;
-    Strbuf *unk_BA4;
-    Strbuf *unk_BA8;
-    Strbuf *unk_BAC;
-    Strbuf *unk_BB0;
-    Strbuf *unk_BB4[10];
-    Strbuf *unk_BDC;
+    String *unk_BA4;
+    String *unk_BA8;
+    String *unk_BAC;
+    String *unk_BB0;
+    String *unk_BB4[10];
+    String *unk_BDC;
     int unk_BE0;
     SpriteList *unk_BE4;
     G2dRenderer unk_BE8;

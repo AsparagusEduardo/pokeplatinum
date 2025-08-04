@@ -21,7 +21,7 @@
 #include "heap.h"
 #include "message.h"
 #include "palette.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "sys_task_manager.h"
 #include "text.h"
 
@@ -126,7 +126,7 @@ BOOL PoketchMoveTesterGraphics_New(PoketchMoveTesterGraphics **graphics, const M
         moveTesterGraphics->animMan = PoketchGraphics_GetAnimationManager();
         moveTesterGraphics->msgLoaderTypes = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_POKEMON_TYPE_NAMES, HEAP_ID_POKETCH_APP);
         moveTesterGraphics->msgLoaderEffectiveness = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0456, HEAP_ID_POKETCH_APP);
-        moveTesterGraphics->strBuf = Strbuf_Init(128, HEAP_ID_POKETCH_APP); // Possibly TRAINER_NAME_LEN + 1
+        moveTesterGraphics->string = String_Init(128, HEAP_ID_POKETCH_APP); // Possibly TRAINER_NAME_LEN + 1
         SetupSprites(moveTesterGraphics);
         *graphics = moveTesterGraphics;
 
@@ -175,7 +175,7 @@ static void UnloadSprites(PoketchMoveTesterGraphics *graphics)
 void PoketchMoveTesterGraphics_Free(PoketchMoveTesterGraphics *graphics)
 {
     if (graphics != NULL) {
-        Strbuf_Free(graphics->strBuf);
+        String_Free(graphics->string);
         MessageLoader_Free(graphics->msgLoaderTypes);
         MessageLoader_Free(graphics->msgLoaderEffectiveness);
         UnloadSprites(graphics);
@@ -325,22 +325,22 @@ static void AddTypeText(PoketchMoveTesterGraphics *graphics, Window *window, enu
     Window_FillTilemap(window, 4);
 
     if (type == MOVE_TESTER_NONE_SELECTED) {
-        MessageLoader_GetStrbuf(graphics->msgLoaderEffectiveness, 6, graphics->strBuf); // "None"
+        MessageLoader_GetString(graphics->msgLoaderEffectiveness, 6, graphics->string); // "None"
     } else {
-        MessageLoader_GetStrbuf(graphics->msgLoaderTypes, type, graphics->strBuf);
+        MessageLoader_GetString(graphics->msgLoaderTypes, type, graphics->string);
     }
 
-    stringWidth = Font_CalcStrbufWidth(FONT_SYSTEM, graphics->strBuf, 0);
+    stringWidth = Font_CalcStringWidth(FONT_SYSTEM, graphics->string, 0);
 
-    Text_AddPrinterWithParamsAndColor(window, FONT_SYSTEM, graphics->strBuf, ((6 * 8) - stringWidth) / 2, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
+    Text_AddPrinterWithParamsAndColor(window, FONT_SYSTEM, graphics->string, ((6 * 8) - stringWidth) / 2, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
     Window_LoadTiles(window);
 }
 
 static void AddEffectivenessText(PoketchMoveTesterGraphics *graphics, Window *window, u32 exclamCount)
 {
     Window_FillTilemap(window, 4);
-    MessageLoader_GetStrbuf(graphics->msgLoaderEffectiveness, exclamCount, graphics->strBuf);
-    Text_AddPrinterWithParamsAndColor(window, FONT_SYSTEM, graphics->strBuf, 0, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
+    MessageLoader_GetString(graphics->msgLoaderEffectiveness, exclamCount, graphics->string);
+    Text_AddPrinterWithParamsAndColor(window, FONT_SYSTEM, graphics->string, 0, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(1, 8, 4), NULL);
     Window_LoadTiles(window);
 }
 

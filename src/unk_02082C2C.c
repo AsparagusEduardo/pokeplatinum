@@ -280,7 +280,7 @@ static void sub_02083138(Sprite *param0, u8 param1)
     Sprite_SetAnim(param0, param1);
 }
 
-static u8 sub_02083158(StrBufWrapper *param0)
+static u8 sub_02083158(StringWrapper *param0)
 {
     if (param0->curHP == 0) {
         return 0;
@@ -306,7 +306,7 @@ static u8 sub_02083158(StrBufWrapper *param0)
 
 void sub_020831B4(GameWindowLayout *param0)
 {
-    StrBufWrapper *v0;
+    StringWrapper *v0;
     u16 v1;
     u16 v2;
 

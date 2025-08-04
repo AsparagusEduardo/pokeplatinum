@@ -7,7 +7,7 @@
 #include "overlay023/struct_ov23_0224271C_decl.h"
 
 #include "bg_window.h"
-#include "strbuf.h"
+#include "string_gf.h"
 
 void ov23_022434BC(void *param0, FieldSystem *fieldSystem);
 void ov23_02243520(void);
@@ -46,8 +46,8 @@ void ov23_022445E8(int param0, int param1, void *param2, void *param3);
 void ov23_0224461C(int param0, int param1, void *param2, void *param3);
 void ov23_02244638(void);
 void ov23_0224467C(int param0, int param1, void *param2, void *param3);
-BOOL ov23_022446B0(Strbuf *param0);
-BOOL ov23_02244784(Strbuf *param0);
+BOOL ov23_022446B0(String *param0);
+BOOL ov23_02244784(String *param0);
 void ov23_02244858(int param0, BOOL param1);
 int ov23_02245408(void);
 void ov23_0224540C(int param0, int param1, void *param2, void *param3);

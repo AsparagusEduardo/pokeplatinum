@@ -15,7 +15,7 @@
 #include "message.h"
 #include "render_window.h"
 #include "screen_fade.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "system.h"
 #include "text.h"
@@ -76,8 +76,8 @@ void sub_02039834(int heapID, int param1, int param2)
     BgConfig *v0;
     Window v1;
     MessageLoader *v2;
-    Strbuf *v3;
-    Strbuf *v4;
+    String *v3;
+    String *v4;
     StringTemplate *v5;
     int v6;
 
@@ -143,8 +143,8 @@ void sub_02039834(int heapID, int param1, int param2)
     Bg_MaskPalette(BG_LAYER_SUB_0, 0x6c21);
 
     v2 = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0214, heapID);
-    v3 = Strbuf_Init(0x180, heapID);
-    v4 = Strbuf_Init(0x180, heapID);
+    v3 = String_Init(0x180, heapID);
+    v4 = String_Init(0x180, heapID);
     Text_ResetAllPrinters();
     v5 = StringTemplate_Default(heapID);
 
@@ -153,11 +153,11 @@ void sub_02039834(int heapID, int param1, int param2)
     Window_DrawStandardFrame(&v1, 0, 512 - 9, 2);
 
     StringTemplate_SetNumber(v5, 0, param2, 5, 2, 1);
-    MessageLoader_GetStrbuf(v2, v6, v4);
+    MessageLoader_GetString(v2, v6, v4);
     StringTemplate_Format(v5, v3, v4);
 
     Text_AddPrinterWithParams(&v1, FONT_SYSTEM, v3, 0, 0, TEXT_SPEED_INSTANT, NULL);
-    Strbuf_Free(v3);
+    String_Free(v3);
 
     GXLayers_TurnBothDispOn();
     ResetScreenMasterBrightness(DS_SCREEN_MAIN);

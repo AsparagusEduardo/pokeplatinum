@@ -32,7 +32,7 @@
 #include "screen_fade.h"
 #include "sound_playback.h"
 #include "sprite.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "system.h"
 #include "text.h"
@@ -372,8 +372,8 @@ static void ov94_0223E9B8(UnkStruct_ov94_0223FD4C *param0)
 {
     int v0;
 
-    param0->unk_BAC = Strbuf_Init(90 * 2, HEAP_ID_62);
-    param0->unk_BB0 = MessageLoader_GetNewStrbuf(param0->unk_B90, 41);
+    param0->unk_BAC = String_Init(90 * 2, HEAP_ID_62);
+    param0->unk_BB0 = MessageLoader_GetNewString(param0->unk_B90, 41);
     param0->unk_10E4 = Heap_AllocFromHeap(HEAP_ID_62, sizeof(UnkStruct_ov94_0223FD4C_sub3));
 
     MI_CpuClearFast(param0->unk_10E4, sizeof(UnkStruct_ov94_0223FD4C_sub3));
@@ -389,8 +389,8 @@ static void ov94_0223EA20(UnkStruct_ov94_0223FD4C *param0)
     Heap_Free(param0->unk_10E4->unk_14);
     Heap_Free(param0->unk_10E4->unk_18);
     Heap_Free(param0->unk_10E4);
-    Strbuf_Free(param0->unk_BAC);
-    Strbuf_Free(param0->unk_BB0);
+    String_Free(param0->unk_BAC);
+    String_Free(param0->unk_BB0);
 }
 
 static int ov94_0223EA5C(UnkStruct_ov94_0223FD4C *param0)
@@ -1065,9 +1065,9 @@ static int ov94_0223F970(UnkStruct_ov94_0223FD4C *param0)
 
 static void ov94_0223F9A4(UnkStruct_ov94_0223FD4C *param0, int param1, int param2, int param3, u16 param4)
 {
-    Strbuf *v0;
+    String *v0;
 
-    MessageLoader_GetStrbuf(param0->unk_B90, param1, param0->unk_BAC);
+    MessageLoader_GetString(param0->unk_B90, param1, param0->unk_BAC);
     Window_FillTilemap(&param0->unk_F5C, 0xf0f);
     Window_DrawMessageBoxWithScrollCursor(&param0->unk_F5C, 0, 1, 10);
 
@@ -1076,41 +1076,41 @@ static void ov94_0223F9A4(UnkStruct_ov94_0223FD4C *param0, int param1, int param
 
 static void ov94_0223F9FC(Window *param0, Window *param1, MessageLoader *param2)
 {
-    Strbuf *v0, *v1, *v2;
+    String *v0, *v1, *v2;
 
-    v0 = MessageLoader_GetNewStrbuf(param2, 59);
+    v0 = MessageLoader_GetNewString(param2, 59);
     ov94_02245900(&param0[0], v0, 0, 0, 0, TEXT_COLOR(15, 2, 0));
-    Strbuf_Free(v0);
+    String_Free(v0);
 
-    v2 = MessageLoader_GetNewStrbuf(param2, 61);
+    v2 = MessageLoader_GetNewString(param2, 61);
     ov94_02245900(&param0[2], v2, 0, 0, 0, TEXT_COLOR(15, 2, 0));
-    Strbuf_Free(v2);
+    String_Free(v2);
 
-    v1 = MessageLoader_GetNewStrbuf(param2, 63);
+    v1 = MessageLoader_GetNewString(param2, 63);
     ov94_02245900(&param0[4], v1, 0, 0, 0, TEXT_COLOR(15, 2, 0));
-    Strbuf_Free(v1);
+    String_Free(v1);
 
-    v1 = MessageLoader_GetNewStrbuf(param2, 165);
+    v1 = MessageLoader_GetNewString(param2, 165);
     ov94_02245900(&param1[0], v1, 0, 0, 0, TEXT_COLOR(15, 2, 0));
-    Strbuf_Free(v1);
+    String_Free(v1);
 
-    v0 = MessageLoader_GetNewStrbuf(param2, 65);
+    v0 = MessageLoader_GetNewString(param2, 65);
 
     {
         int v3 = Font_CalcCenterAlignment(FONT_SYSTEM, v0, 0, param0[6].width * 8);
         ov94_02245900(&param0[6], v0, v3, 0, 0, TEXT_COLOR(1, 2, 0));
     }
 
-    Strbuf_Free(v0);
+    String_Free(v0);
 
-    v0 = MessageLoader_GetNewStrbuf(param2, 66);
+    v0 = MessageLoader_GetNewString(param2, 66);
 
     {
         int v4 = Font_CalcCenterAlignment(FONT_SYSTEM, v0, 0, param0[7].width * 8);
         ov94_02245900(&param0[7], v0, v4, 0, 0, TEXT_COLOR(1, 2, 0));
     }
 
-    Strbuf_Free(v0);
+    String_Free(v0);
 }
 
 static int ov94_0223FB0C(const UnkStruct_ov94_0223BA88_sub3 *param0, const UnkStruct_ov94_0223BA88_sub3 *param1, int param2, int param3)
