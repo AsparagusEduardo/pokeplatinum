@@ -20,13 +20,13 @@
 #include "strbuf.h"
 #include "unk_020298BC.h"
 
-void ov61_0222AE60(SaveData *saveData, const UnkStruct_02029C68 *param1, UnkStruct_ov61_0222AE80 *param2)
+void ov61_0222AE60(SaveData *saveData, const ImageClipsPhoto *param1, UnkStruct_ov61_0222AE80 *param2)
 {
     sub_0202A75C(param1, param2);
     param2->unk_5C.unk_00 = SaveData_CalculateChecksum(saveData, param2, sizeof(UnkStruct_ov61_0222AE80) - (sizeof(UnkStruct_ov62_02239DA4_sub1)));
 }
 
-void ov61_0222AE80(const UnkStruct_ov61_0222AE80 *param0, UnkStruct_02029C68 *param1)
+void ov61_0222AE80(const UnkStruct_ov61_0222AE80 *param0, ImageClipsPhoto *param1)
 {
     sub_0202A824(param0, param1);
 }

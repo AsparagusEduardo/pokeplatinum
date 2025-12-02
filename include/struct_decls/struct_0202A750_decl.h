@@ -1,6 +1,6 @@
 #ifndef POKEPLATINUM_STRUCT_0202A750_DECL_H
 #define POKEPLATINUM_STRUCT_0202A750_DECL_H
 
-typedef struct UnkStruct_0202A750_t UnkStruct_0202A750;
+typedef struct ImageClips_t ImageClips;
 
 #endif // POKEPLATINUM_STRUCT_0202A750_DECL_H

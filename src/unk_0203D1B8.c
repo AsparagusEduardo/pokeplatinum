@@ -823,8 +823,8 @@ static UnkStruct_0203DA00 *sub_0203DA00(int heapID, SaveData *saveData, int para
     UnkStruct_0203DA00 *v0;
     Pokemon *v1;
     int v2;
-    UnkStruct_0202A750 *v3;
-    UnkStruct_02029C68 *v4;
+    ImageClips *clips;
+    ImageClipsPhoto *v4;
     UnkStruct_02029D04 *v5;
 
     v0 = Heap_Alloc(heapID, sizeof(UnkStruct_0203DA00));
@@ -833,9 +833,9 @@ static UnkStruct_0203DA00 *sub_0203DA00(int heapID, SaveData *saveData, int para
 
     v0->unk_00 = v1;
 
-    v3 = sub_0202A750(saveData);
-    v4 = sub_02029CA8(v3, 0);
-    v5 = sub_02029D04(v3);
+    clips = SaveData_GetImageClips(saveData);
+    v4 = ImageClips_GetImageClipsPhoto(clips, 0);
+    v5 = sub_02029D04(clips);
 
     v0->unk_04 = v4;
     v0->unk_08 = v5;

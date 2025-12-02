@@ -68,17 +68,17 @@ static void ov59_021D2FBC(const UnkStruct_ov59_021D2FBC *param0)
 
 static u32 ov59_021D2FD4(SaveData *saveData)
 {
-    UnkStruct_0202A750 *v0 = sub_0202A750(saveData);
-    return sub_02029C60();
+    ImageClips *clips = SaveData_GetImageClips(saveData);
+    return ImageClipsPhoto_Size();
 }
 
 static void *ov59_021D2FE0(SaveData *saveData, int heapID, u32 param2)
 {
-    UnkStruct_02029C68 *v0;
-    UnkStruct_0202A750 *v1 = sub_0202A750(saveData);
+    ImageClipsPhoto *v0;
+    ImageClips *clips = SaveData_GetImageClips(saveData);
     void *v2 = Heap_AllocAtEnd(heapID, param2);
 
-    v0 = sub_02029CA8(v1, 0);
+    v0 = ImageClips_GetImageClipsPhoto(clips, 0);
     MI_CpuCopyFast(v0, v2, param2);
 
     return v2;
@@ -86,8 +86,8 @@ static void *ov59_021D2FE0(SaveData *saveData, int heapID, u32 param2)
 
 static void ov59_021D300C(const UnkStruct_ov59_021D2FBC *param0)
 {
-    UnkStruct_0202A750 *v0 = sub_0202A750(param0->saveData);
-    sub_0202A6A8(param0->unk_08, param0->unk_0C, v0, param0->unk_10);
+    ImageClips *clips = SaveData_GetImageClips(param0->saveData);
+    sub_0202A6A8(param0->unk_08, param0->unk_0C, clips, param0->unk_10);
 }
 
 static void ov59_021D3028(const UnkStruct_ov59_021D2FBC *param0)

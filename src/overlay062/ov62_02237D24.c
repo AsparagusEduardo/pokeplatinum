@@ -57,7 +57,7 @@ FS_EXTERN_OVERLAY(overlay22);
 typedef struct {
     int unk_00;
     int unk_04;
-    UnkStruct_02029C68 *unk_08;
+    ImageClipsPhoto *unk_08;
     UnkStruct_ov61_0222BC90 *unk_0C[5];
 } UnkStruct_ov62_02237D24_sub1;
 
@@ -77,7 +77,7 @@ typedef struct {
     UnkStruct_ov62_02248CDC unk_1EC;
     UnkStruct_ov22_0225AF8C unk_218;
     UnkStruct_ov22_0225B1BC *unk_228;
-    UnkStruct_02029C68 *unk_22C;
+    ImageClipsPhoto *unk_22C;
     UnkStruct_ov62_02237D24_sub1 unk_230;
     UnkStruct_ov62_022323B8 unk_250;
     UnkStruct_02030A80 *unk_2DC;
@@ -217,7 +217,7 @@ static BOOL ov62_02237D24(UnkStruct_0208C06C *param0)
     }
 
     {
-        v0->unk_230.unk_08 = sub_02029C68(HEAP_ID_102);
+        v0->unk_230.unk_08 = ImageClipsPhoto_New(HEAP_ID_102);
         v0->unk_250.unk_00 = sub_02030A80(HEAP_ID_102);
     }
 
@@ -295,7 +295,7 @@ static BOOL ov62_02237F08(UnkStruct_0208C06C *param0)
         GXLayers_EngineAToggleLayers(GX_PLANEMASK_BG3, 1);
         ov62_02234540(param0, 1);
 
-        v0->unk_22C = sub_02029CA8(sub_0202A750(param0->saveData), 0);
+        v0->unk_22C = ImageClips_GetImageClipsPhoto(SaveData_GetImageClips(param0->saveData), 0);
 
         if (v0->unk_228 == NULL) {
             v0->unk_228 = ov22_0225AF8C(&v0->unk_218, v0->unk_22C);
@@ -1380,9 +1380,9 @@ static void ov62_02239724(UnkStruct_0208C06C *param0)
     v2 = MessageLoader_GetNewStrbuf(param0->unk_14.unk_34, 56);
 
     v1 = Strbuf_Init(255, HEAP_ID_102);
-    sub_0202A1A0(v5->unk_22C, v1);
+    ImageClipsPhoto_CopyTrainerName(v5->unk_22C, v1);
     ov62_022349A8(param0, v1);
-    v6 = sub_0202A1F4(v5->unk_22C);
+    v6 = ImageClipsPhoto_GetSentenceWord(v5->unk_22C);
 
     StringTemplate_SetStrbuf(v4, 0, v1, 0, 1, 2);
     StringTemplate_SetCustomMessageWord(v4, 1, v6);
@@ -1429,9 +1429,9 @@ static void ov62_02239854(UnkStruct_0208C06C *param0, int param1)
     v2 = MessageLoader_GetNewStrbuf(param0->unk_14.unk_34, 56);
 
     v1 = Strbuf_Init(255, HEAP_ID_102);
-    sub_0202A1A0(v5->unk_230.unk_08, v1);
+    ImageClipsPhoto_CopyTrainerName(v5->unk_230.unk_08, v1);
     ov62_022349A8(param0, v1);
-    v6 = sub_0202A1F4(v5->unk_230.unk_08);
+    v6 = ImageClipsPhoto_GetSentenceWord(v5->unk_230.unk_08);
 
     StringTemplate_SetStrbuf(v4, 0, v1, 0, 1, 2);
     StringTemplate_SetCustomMessageWord(v4, 1, v6);

@@ -1772,10 +1772,10 @@ void FieldSystem_SaveTVEpisodeSegment_RightOnPhotoCorner(FieldSystem *fieldSyste
 
     rightOnPhotoCorner->customMessageWord = customMessageWord;
 
-    UnkStruct_0202A750 *v2 = sub_0202A750(fieldSystem->saveData);
-    UnkStruct_02029C68 *v3 = sub_02029CA8(v2, 0);
+    ImageClips *clips = SaveData_GetImageClips(fieldSystem->saveData);
+    ImageClipsPhoto *v3 = ImageClips_GetImageClipsPhoto(clips, 0);
 
-    rightOnPhotoCorner->species = sub_0202A184(v3);
+    rightOnPhotoCorner->species = ImageClipsPhoto_GetSpecies(v3);
 
     FieldSystem_SaveTVEpisodeSegment(fieldSystem, TV_PROGRAM_TYPE_INTERVIEWS, TV_PROGRAM_SEGMENT_RIGHT_ON_PHOTO_CORNER, rightOnPhotoCorner);
 }
@@ -2581,26 +2581,26 @@ static BOOL FieldSystem_IsRoamerActive(FieldSystem *fieldSystem, UnkStruct_ov6_0
     return FALSE;
 }
 
-static int sub_0206EE9C(UnkStruct_0202A750 *param0)
+static int sub_0206EE9C(ImageClips *clips)
 {
-    int v0, v1;
+    int i, count;
 
-    for (v0 = 0, v1 = 0; v0 < 11; v0++) {
-        if (sub_02029D10(param0, v0) == 1) {
-            v1++;
+    for (i = 0, count = 0; i < RECORD_MIXING_PHOTOS; i++) {
+        if (sub_02029D10(clips, i) == TRUE) {
+            count++;
         }
     }
 
-    return v1;
+    return count;
 }
 
-static int sub_0206EEBC(FieldSystem *fieldSystem, StringTemplate *param1, UnkStruct_ov6_022465F4 *param2)
+static int sub_0206EEBC(FieldSystem *fieldSystem, StringTemplate *template, UnkStruct_ov6_022465F4 *param2)
 {
-    UnkStruct_02029C68 *v0;
-    int v1, v2, v3, v4;
-    UnkStruct_0202A750 *v5 = sub_0202A750(fieldSystem->saveData);
+    ImageClipsPhoto *photo;
+    int i, v2, v3, v4;
+    ImageClips *clips = SaveData_GetImageClips(fieldSystem->saveData);
 
-    v2 = sub_0206EE9C(v5);
+    v2 = sub_0206EE9C(clips);
 
     if (v2 > 1) {
         v3 = MTRNG_Next() % v2;
@@ -2608,10 +2608,10 @@ static int sub_0206EEBC(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
         v3 = 0;
     }
 
-    for (v1 = 0; v1 < 11; v1++) {
-        if (sub_02029D10(v5, v1) == 1) {
+    for (i = 0; i < RECORD_MIXING_PHOTOS; i++) {
+        if (sub_02029D10(clips, i) == 1) {
             if (v3 == 0) {
-                v4 = v1;
+                v4 = i;
                 break;
             } else {
                 v3--;
@@ -2619,30 +2619,28 @@ static int sub_0206EEBC(FieldSystem *fieldSystem, StringTemplate *param1, UnkStr
         }
     }
 
-    GF_ASSERT(v1 < 11);
-    v0 = sub_02029CA8(v5, v4);
+    GF_ASSERT(i < RECORD_MIXING_PHOTOS);
+    photo = ImageClips_GetImageClipsPhoto(clips, v4);
 
-    {
-        u16 v6;
-        Strbuf *v7 = Strbuf_Init(7 + 1, HEAP_ID_FIELD1);
-        int v8 = sub_0202A1C0(v0);
+    u16 word;
+    Strbuf *trainerName = Strbuf_Init(TRAINER_NAME_LEN + 1, HEAP_ID_FIELD1);
+    int gender = ImageClipsPhoto_GetTrainerGender(photo);
 
-        sub_0202A1A0(v0, v7);
-        StringTemplate_SetStrbuf(param1, 0, v7, v8, 1, sub_0202A200(v0));
-        Strbuf_Free(v7);
+    ImageClipsPhoto_CopyTrainerName(photo, trainerName);
+    StringTemplate_SetStrbuf(template, 0, trainerName, gender, 1, ImageClipsPhoto_GetLanguage(photo));
+    Strbuf_Free(trainerName);
 
-        v6 = sub_0202A1F4(v0);
-        StringTemplate_SetCustomMessageWord(param1, 1, v6);
-    }
+    word = ImageClipsPhoto_GetSentenceWord(photo);
+    StringTemplate_SetCustomMessageWord(template, 1, word);
 
     return 52;
 }
 
 static BOOL sub_0206EF64(FieldSystem *fieldSystem, UnkStruct_ov6_022465F4 *param1)
 {
-    UnkStruct_0202A750 *v0 = sub_0202A750(fieldSystem->saveData);
+    ImageClips *clips = SaveData_GetImageClips(fieldSystem->saveData);
 
-    if (sub_0206EE9C(v0) != 0) {
+    if (sub_0206EE9C(clips) != 0) {
         return 1;
     } else {
         return 0;

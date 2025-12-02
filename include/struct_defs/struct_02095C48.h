@@ -39,7 +39,7 @@ typedef struct {
     u8 unk_197D;
     u8 unk_197E;
     u8 padding_197F;
-    UnkStruct_0202A750 *unk_1980;
+    ImageClips *clips;
     UnkStruct_02095C60 unk_1984;
     void *unk_199C;
     UnkStruct_02094A58 *unk_19A0;

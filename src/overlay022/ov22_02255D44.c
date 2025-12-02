@@ -155,7 +155,7 @@ static void ov22_02256C70(SysTask *param0, void *param1);
 static void ov22_02256DB8(UnkStruct_ov22_02255D44 *param0, BOOL *param1);
 static void ov22_02256DE0(SysTask *param0, void *param1);
 static BOOL ov22_02257098(UnkStruct_ov22_02256C48 *param0, int param1, int param2, int param3);
-static void ov22_02256F38(UnkStruct_02029C68 *param0, UnkStruct_ov22_02257964 *param1, const TrainerInfo *param2);
+static void ov22_02256F38(ImageClipsPhoto *param0, UnkStruct_ov22_02257964 *param1, const TrainerInfo *trainerInfo);
 static void ov22_02256FD8(UnkStruct_02029C88 *param0, UnkStruct_ov22_02257964 *param1, int param2, const TrainerInfo *param3);
 static void ov22_02257104(UnkStruct_ov22_02255D44 *param0);
 static void ov22_0225718C(UnkStruct_ov22_02255D44 *param0);
@@ -1124,21 +1124,21 @@ static void ov22_02256DE0(SysTask *param0, void *param1)
     }
 }
 
-static void ov22_02256F38(UnkStruct_02029C68 *param0, UnkStruct_ov22_02257964 *param1, const TrainerInfo *param2)
+static void ov22_02256F38(ImageClipsPhoto *photo, UnkStruct_ov22_02257964 *param1, const TrainerInfo *trainerInfo)
 {
     UnkStruct_ov22_02259560 *v0;
     int v1;
-    Strbuf *v2;
-    int v3;
+    Strbuf *trainerName;
+    int gender;
 
-    sub_02029F84(param0);
-    sub_02029FAC(param0, param1->unk_2C.unk_4C.unk_0C, &param1->unk_2C.unk_4C);
+    sub_02029F84(photo);
+    sub_02029FAC(photo, param1->unk_2C.unk_4C.unk_0C, &param1->unk_2C.unk_4C);
 
-    if (param2) {
-        v2 = TrainerInfo_NameNewStrbuf(param2, 13);
-        v3 = TrainerInfo_Gender(param2);
-        sub_0202A0EC(param0, v2, v3);
-        Strbuf_Free(v2);
+    if (trainerInfo) {
+        trainerName = TrainerInfo_NameNewStrbuf(trainerInfo, 13);
+        gender = TrainerInfo_Gender(trainerInfo);
+        ImageClipsPhoto_SetTrainerInfo(photo, trainerName, gender);
+        Strbuf_Free(trainerName);
     }
 
     v1 = 0;
@@ -1146,7 +1146,7 @@ static void ov22_02256F38(UnkStruct_02029C68 *param0, UnkStruct_ov22_02257964 *p
 
     while (v0 != &param1->unk_00.unk_14) {
         if (v0->unk_04 == 0) {
-            sub_02029FD0(param0, v0->unk_00, v1);
+            sub_02029FD0(photo, v0->unk_00, v1);
             v1++;
         }
 
@@ -1157,15 +1157,15 @@ static void ov22_02256F38(UnkStruct_02029C68 *param0, UnkStruct_ov22_02257964 *p
 
     while (v0 != &param1->unk_00.unk_04) {
         if (v0->unk_04 == 0) {
-            sub_02029FD0(param0, v0->unk_00, v1);
+            sub_02029FD0(photo, v0->unk_00, v1);
             v1++;
         }
 
         v0 = v0->unk_08;
     }
 
-    sub_0202A084(param0, param1->unk_2C.unk_48);
-    sub_02029F5C(param0);
+    sub_0202A084(photo, param1->unk_2C.unk_48);
+    sub_02029F5C(photo);
 }
 
 static void ov22_02256FD8(UnkStruct_02029C88 *param0, UnkStruct_ov22_02257964 *param1, int param2, const TrainerInfo *param3)
@@ -1174,8 +1174,8 @@ static void ov22_02256FD8(UnkStruct_02029C88 *param0, UnkStruct_ov22_02257964 *p
     int v1;
     UnkStruct_ov22_02256FD8 *v2;
     UnkStruct_ov22_02259560 *v3;
-    Strbuf *v4;
-    int v5;
+    Strbuf *trainerName;
+    int gender;
 
     v2 = Heap_Alloc(HEAP_ID_13, sizeof(UnkStruct_ov22_02256FD8));
     ov22_0225764C(v2);
@@ -1183,10 +1183,10 @@ static void ov22_02256FD8(UnkStruct_02029C88 *param0, UnkStruct_ov22_02257964 *p
     sub_0202A284(param0, param1->unk_2C.unk_4C.unk_0C, &param1->unk_2C.unk_4C);
 
     if (param3) {
-        v4 = TrainerInfo_NameNewStrbuf(param3, 13);
-        v5 = TrainerInfo_Gender(param3);
-        sub_0202A4B4(param0, v4, v5);
-        Strbuf_Free(v4);
+        trainerName = TrainerInfo_NameNewStrbuf(param3, 13);
+        gender = TrainerInfo_Gender(param3);
+        sub_0202A4B4(param0, trainerName, gender);
+        Strbuf_Free(trainerName);
     }
 
     ov22_02257778(v2, &param1->unk_00.unk_14, 1);

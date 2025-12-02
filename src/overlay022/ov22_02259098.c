@@ -38,7 +38,7 @@ void ov22_022590D4(UnkStruct_020298D8 *param0, PokemonSpriteManager *param1, Pok
     int v0 = Pokemon_GetValue(param2, MON_DATA_SPECIES, NULL);
 
     Pokemon_BuildSpriteTemplateDP(param3, param2, 2);
-    param0->unk_00 = PokemonSpriteManager_CreateSprite(param1, param3, 192, 56, 0, 0, NULL, NULL);
+    param0->monSprite = PokemonSpriteManager_CreateSprite(param1, param3, 192, 56, 0, 0, NULL, NULL);
 
     {
         int v1, v2;
@@ -83,18 +83,18 @@ void ov22_022590D4(UnkStruct_020298D8 *param0, PokemonSpriteManager *param1, Pok
 
 void ov22_022591B8(UnkStruct_020298D8 *param0)
 {
-    PokemonSprite_Delete(param0->unk_00);
+    PokemonSprite_Delete(param0->monSprite);
     memset(param0, 0, sizeof(UnkStruct_020298D8));
 }
 
 void ov22_022591D0(UnkStruct_020298D8 *param0, int param1)
 {
-    PokemonSprite_SetAttribute(param0->unk_00, MON_SPRITE_Z_CENTER, param1);
+    PokemonSprite_SetAttribute(param0->monSprite, MON_SPRITE_Z_CENTER, param1);
 }
 
 int ov22_022591E0(UnkStruct_020298D8 *param0)
 {
-    return PokemonSprite_GetAttribute(param0->unk_00, MON_SPRITE_Z_CENTER);
+    return PokemonSprite_GetAttribute(param0->monSprite, MON_SPRITE_Z_CENTER);
 }
 
 void ov22_022591EC(UnkStruct_020298D8 *param0, int param1, int param2)
@@ -102,8 +102,8 @@ void ov22_022591EC(UnkStruct_020298D8 *param0, int param1, int param2)
     int v0, v1;
 
     ov22_02259270(param0, &v0, &v1);
-    PokemonSprite_SetAttribute(param0->unk_00, MON_SPRITE_X_CENTER, param1);
-    PokemonSprite_SetAttribute(param0->unk_00, MON_SPRITE_Y_CENTER, param2);
+    PokemonSprite_SetAttribute(param0->monSprite, MON_SPRITE_X_CENTER, param1);
+    PokemonSprite_SetAttribute(param0->monSprite, MON_SPRITE_Y_CENTER, param2);
 
     v1 /= 2;
     v0 /= 2;
@@ -121,10 +121,10 @@ BOOL ov22_02259244(UnkStruct_020298D8 *param0, int param1, int param2)
     return TouchScreen_IsTouchInHitTable(&param0->unk_04, param1, param2);
 }
 
-void ov22_02259250(UnkStruct_020298D8 *param0, int *param1, int *param2)
+void ov22_02259250(UnkStruct_020298D8 *param0, int *x, int *y)
 {
-    *param1 = PokemonSprite_GetAttribute(param0->unk_00, MON_SPRITE_X_CENTER);
-    *param2 = PokemonSprite_GetAttribute(param0->unk_00, MON_SPRITE_Y_CENTER);
+    *x = PokemonSprite_GetAttribute(param0->monSprite, MON_SPRITE_X_CENTER);
+    *y = PokemonSprite_GetAttribute(param0->monSprite, MON_SPRITE_Y_CENTER);
 }
 
 void ov22_02259270(UnkStruct_020298D8 *param0, int *param1, int *param2)

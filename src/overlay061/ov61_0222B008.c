@@ -163,7 +163,7 @@ static int ov61_0222B190(UnkStruct_ov62_022349A8 *param0, UnkStruct_ov61_0222B13
     return 0;
 }
 
-int ov61_0222B1B4(UnkStruct_ov62_022349A8 *param0, UnkStruct_02030A80 *param1, UnkStruct_02029C68 *param2)
+int ov61_0222B1B4(UnkStruct_ov62_022349A8 *param0, UnkStruct_02030A80 *param1, ImageClipsPhoto *param2)
 {
     if (ov61_0222BBBC(param0) == 0) {
         return 0;

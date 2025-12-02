@@ -9,7 +9,7 @@
 #include "overlay022/struct_ov22_0225AF8C.h"
 #include "overlay022/struct_ov22_0225B1BC_decl.h"
 
-UnkStruct_ov22_0225B1BC *ov22_0225AF8C(const UnkStruct_ov22_0225AF8C *param0, const UnkStruct_02029C68 *param1);
+UnkStruct_ov22_0225B1BC *ov22_0225AF8C(const UnkStruct_ov22_0225AF8C *param0, const ImageClipsPhoto *param1);
 UnkStruct_ov22_0225B1BC *ov22_0225AFB0(const UnkStruct_ov22_0225AF8C *param0, const UnkStruct_02029C88 *param1);
 UnkStruct_ov22_0225B1BC *ov22_0225AFD4(const UnkStruct_ov22_0225AF8C *param0, const UnkStruct_02029C88 *param1);
 void ov22_0225AFF8(UnkStruct_ov22_0225B1BC *param0);

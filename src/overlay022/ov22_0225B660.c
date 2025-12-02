@@ -34,7 +34,7 @@
 #include "unk_02094EDC.h"
 
 typedef struct {
-    const UnkStruct_02029C68 *unk_00;
+    const ImageClipsPhoto *unk_00;
     const UnkStruct_02029C88 *unk_04;
     u32 unk_08;
     u32 unk_0C;
@@ -72,9 +72,9 @@ int ov22_0225B660(ApplicationManager *appMan, int *param1)
     v1 = ApplicationManager_Args(appMan);
 
     if (v1->unk_08 == 0) {
-        v0->unk_00 = sub_02029CA8(v1->unk_00, v1->unk_04);
+        v0->unk_00 = ImageClips_GetImageClipsPhoto(v1->clips, v1->unk_04);
     } else {
-        v0->unk_04 = sub_02029CD0(v1->unk_00, v1->unk_04);
+        v0->unk_04 = sub_02029CD0(v1->clips, v1->unk_04);
     }
 
     v0->unk_08 = v1->unk_04;
@@ -287,7 +287,7 @@ static void ov22_0225BB00(UnkStruct_ov22_0225B85C *param0)
     Sprite_SetPosition(param0->unk_1FC, &v0);
 
     v7 = Strbuf_Init(12, HEAP_ID_13);
-    sub_0202A1A0(param0->unk_00, v7);
+    ImageClipsPhoto_CopyTrainerName(param0->unk_00, v7);
 
     v3 = Font_CalcStrbufWidth(FONT_SYSTEM, v7, 0);
     v1 = 128 - (v3 / 2);
@@ -296,7 +296,7 @@ static void ov22_0225BB00(UnkStruct_ov22_0225B85C *param0)
     Text_AddPrinterWithParamsAndColor(param0->unk_200, FONT_SYSTEM, v7, v1, v2, TEXT_SPEED_INSTANT, TEXT_COLOR(1, 2, 0), NULL);
     Strbuf_Free(v7);
 
-    v4 = sub_0202A1F4(param0->unk_00);
+    v4 = ImageClipsPhoto_GetSentenceWord(param0->unk_00);
     StringTemplate_SetCustomMessageWord(v5, 0, v4);
 
     v7 = Strbuf_Init(200, HEAP_ID_13);
