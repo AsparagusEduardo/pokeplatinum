@@ -264,7 +264,7 @@ static BOOL sub_0209A0F4(UnkStruct_02099DFC *param0)
         case 0:
             param0->unk_04 = 2;
             break;
-        case 0xfffffffe:
+        case MENU_CANCEL:
             param0->unk_04 = 6;
             break;
         }
@@ -282,7 +282,7 @@ static BOOL sub_0209A0F4(UnkStruct_02099DFC *param0)
         case 0:
             param0->unk_04 = 4;
             break;
-        case 0xfffffffe:
+        case MENU_CANCEL:
             param0->unk_04 = 6;
             break;
         }

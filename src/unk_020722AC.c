@@ -255,8 +255,8 @@ static void sub_02072390(SysTask *param0, void *param1)
         Sound_PlayEffect(SE_CONFIRM_sseq_3);
 
         switch (v1) {
-        case 0xffffffff:
-        case 0xfffffffe:
+        case MENU_NOTHING_CHOSEN:
+        case MENU_CANCEL:
         case 0xFFFF:
             sub_02072EA4(v0, sub_02072518, sub_02072364);
             break;
@@ -309,8 +309,8 @@ static void sub_02072470(SysTask *param0, void *param1)
         Sound_PlayEffect(SE_CONFIRM_sseq_3);
 
         switch (v1) {
-        case 0xffffffff:
-        case 0xfffffffe:
+        case MENU_NOTHING_CHOSEN:
+        case MENU_CANCEL:
         case 3:
             sub_02072EA4(v0, sub_02072534, sub_02072370);
             break;

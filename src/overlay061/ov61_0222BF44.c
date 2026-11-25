@@ -624,8 +624,8 @@ static int ov61_0222C960(UnkStruct_ov61_0222C664 *param0)
     case 3: {
         int v0 = Menu_ProcessInputAndHandleExit(param0->unk_84, 117);
 
-        if (v0 != 0xffffffff) {
-            if (v0 == 0xfffffffe) {
+        if (v0 != MENU_NOTHING_CHOSEN) {
+            if (v0 == MENU_CANCEL) {
                 param0->unk_08 = 8;
             } else {
                 param0->unk_90++;

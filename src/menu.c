@@ -171,7 +171,7 @@ ListIndex Menu_ProcessExternalInput(Menu *menu, u8 input)
 
     case MENU_INPUT_CANCEL:
         Sound_PlayEffect(SE_CONFIRM_sseq_3);
-        return 0xfffffffe;
+        return MENU_CANCEL;
 
     case MENU_INPUT_MOVE_UP:
         TryMovingCursorAndPlaySound(menu, SCROLL_DIRECTION_UP, SE_CONFIRM_sseq_3);
