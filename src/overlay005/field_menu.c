@@ -60,8 +60,8 @@ static void _FieldMenuManager_ShowListMenuWithWidth(FieldMenuManager *menuManage
 static void _FieldMenuManager_AddListMenuEntry(FieldMenuManager *menuManager, u32 entryID, u32 altTextStringID, u32 entryIndex);
 static u32 CalcListMenuWidth(FieldMenuManager *menuManager);
 static void FieldMenuManager_InitListMenuTemplate(FieldMenuManager *menuManager);
-static void ListMenuPrintCallback(ListMenu *listMenu, u32 index, u8 yOffset);
-static void ListMenuCursorCallback(ListMenu *listMenu, u32 index, u8 onInit);
+static void ListMenuPrintCallback(ListMenu *listMenu, ListIndex index, u8 yOffset);
+static void ListMenuCursorCallback(ListMenu *listMenu, ListIndex index, u8 onInit);
 static void ListMenuSysTaskCallback(SysTask *sysTask, void *param);
 static void FieldMenuManager_DeleteWithListMenu(FieldMenuManager *menuManager);
 static void FieldMenuManager_PrintListMenuAltText(FieldMenuManager *menuManager, u16 entryID, u32 printerDelay);
@@ -413,7 +413,7 @@ static void FieldMenuManager_InitListMenuTemplate(FieldMenuManager *menuManager)
     menuManager->listMenuTemplate.parent = (void *)menuManager;
 }
 
-static void ListMenuPrintCallback(ListMenu *listMenu, u32 index, u8 yOffset)
+static void ListMenuPrintCallback(ListMenu *listMenu, ListIndex index, u8 yOffset)
 {
     if (index == MENU_HEADER) {
         ListMenu_SetAltTextColors(listMenu, 3, 15, 4);
@@ -422,7 +422,7 @@ static void ListMenuPrintCallback(ListMenu *listMenu, u32 index, u8 yOffset)
     }
 }
 
-static void ListMenuCursorCallback(ListMenu *listMenu, u32 index, u8 onInit)
+static void ListMenuCursorCallback(ListMenu *listMenu, ListIndex index, u8 onInit)
 {
     u16 v2 = 0;
     u16 v3 = 0;
@@ -449,7 +449,7 @@ static void ListMenuSysTaskCallback(SysTask *sysTask, void *param)
         return;
     }
 
-    u32 selectedOption = ListMenu_ProcessInput(menuManager->listMenu);
+    ListIndex selectedOption = ListMenu_ProcessInput(menuManager->listMenu);
     u16 cursorPos = menuManager->cursorPos;
 
     ListMenu_CalcTrueCursorPos(menuManager->listMenu, &menuManager->cursorPos);

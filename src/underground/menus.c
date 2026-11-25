@@ -796,7 +796,7 @@ void UndergroundMenu_RemoveSelectedTrap(enum Trap trapID)
     }
 }
 
-void UndergroundMenu_PrintTrapDescription(ListMenu *listMenu, u32 index, u8 onInit)
+void UndergroundMenu_PrintTrapDescription(ListMenu *listMenu, ListIndex index, u8 onInit)
 {
     UndergroundMenu *menu = (UndergroundMenu *)ListMenu_GetAttribute(listMenu, LIST_MENU_PARENT);
     GetItemFunc getTrap = menu->getItem;
@@ -1148,7 +1148,7 @@ static BOOL UndergroundMenu_HandleSphereSelectedMenu(SysTask *sysTask, void *dat
     return TRUE;
 }
 
-void UndergroundMenu_PrintTreasureDescription(ListMenu *listMenu, u32 index, u8 onInit)
+void UndergroundMenu_PrintTreasureDescription(ListMenu *listMenu, ListIndex index, u8 onInit)
 {
     UndergroundMenu *menu = (UndergroundMenu *)ListMenu_GetAttribute(listMenu, LIST_MENU_PARENT);
     GetItemFunc getTreasure = menu->getItem;
@@ -1500,7 +1500,7 @@ static void UndergroundMenu_MainHoldingFlag(SysTask *sysTask, void *data)
     }
 }
 
-void UndergroundMenu_PrintGoodDescription(ListMenu *listMenu, u32 index, u8 onInit)
+void UndergroundMenu_PrintGoodDescription(ListMenu *listMenu, ListIndex index, u8 onInit)
 {
     UndergroundMenu *menu = (UndergroundMenu *)ListMenu_GetAttribute(listMenu, LIST_MENU_PARENT);
     GetItemFunc getGood = menu->getItem;

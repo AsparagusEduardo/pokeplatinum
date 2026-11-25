@@ -16,7 +16,7 @@
 #include "string_list.h"
 #include "text.h"
 
-static void TradeRoom_PlayCursorMoveSound(ListMenu *listMenu, u32 unused, u8 onInit);
+static void TradeRoom_PlayCursorMoveSound(ListMenu *listMenu, ListIndex unused, u8 onInit);
 
 enum TradeRoomYesNoStep {
     YES_NO_STEP_CREATE_MENU,
@@ -216,7 +216,7 @@ ListMenu *TradeRoom_NewFriendListMenu(StringList *strList, int friendCount, Wind
     return listMenu;
 }
 
-static void TradeRoom_PlayCursorMoveSound(ListMenu *listMenu, u32 unused, u8 onInit)
+static void TradeRoom_PlayCursorMoveSound(ListMenu *listMenu, ListIndex unused, u8 onInit)
 {
     if (onInit == 0) {
         Sound_PlayEffect(SE_CONFIRM_sseq_3);

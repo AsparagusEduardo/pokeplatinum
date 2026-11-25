@@ -771,7 +771,7 @@ static int GTSSearch_CreateSpeciesMenu(GTSApplicationState *appState)
 
 static int GTSSearch_HandleSpeciesMenuInput(GTSApplicationState *appState)
 {
-    u32 result;
+    ListIndex result;
 
     switch (result = GTS_ProcessListMenuInput(appState->activeListMenu, &appState->listMenuCursorIndex)) {
     case MENU_NOTHING_CHOSEN:
@@ -834,7 +834,7 @@ static int GTSSearch_CreateGenderMenu(GTSApplicationState *appState)
 
 static int GTSSearch_HandleGenderMenuInput(GTSApplicationState *appState)
 {
-    u32 result;
+    ListIndex result;
 
     switch (result = GTS_ProcessListMenuInput(appState->activeListMenu, &appState->listMenuCursorIndex)) {
     case MENU_CANCEL:
@@ -888,7 +888,7 @@ static int GTSSearch_CreateLevelMenu(GTSApplicationState *appState)
 
 static int GTSSearch_HandleLevelMenuInput(GTSApplicationState *appState)
 {
-    u32 result;
+    ListIndex result;
 
     switch (result = GTS_ProcessListMenuInput(appState->activeListMenu, &appState->listMenuCursorIndex)) {
     case MENU_NOTHING_CHOSEN:
@@ -943,7 +943,7 @@ static int GTSSearch_CreateCountryMenu(GTSApplicationState *appState)
 
 static int GTSSearch_HandleCountryMenuInput(GTSApplicationState *appState)
 {
-    u32 result = GTS_ProcessListMenuInput(appState->activeListMenu, &appState->listMenuCursorIndex);
+    ListIndex result = GTS_ProcessListMenuInput(appState->activeListMenu, &appState->listMenuCursorIndex);
 
     if (result == MENU_NOTHING_CHOSEN) {
         (void)0;

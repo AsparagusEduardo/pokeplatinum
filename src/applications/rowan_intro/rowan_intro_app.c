@@ -232,7 +232,7 @@ typedef struct RowanIntro {
     Window choiceBoxWindow;
     ListMenu *listMenu;
     StringList *choices;
-    int playerChoice;
+    ListIndex playerChoice;
     MessageLoader *msgLoader;
     enum DisplayMessageState displayMessageState;
     enum DisplayTextBlockState displayTextBlockState;
@@ -1042,7 +1042,7 @@ static BOOL RowanIntro_DisplayMessage(RowanIntro *manager, u32 textID, BOOL endE
     return isFinished;
 }
 
-static void RowanIntro_ListMenuCursorCallback(ListMenu *menu, u32 index, u8 onInit)
+static void RowanIntro_ListMenuCursorCallback(ListMenu *menu, ListIndex index, u8 onInit)
 {
     if (onInit == FALSE) {
         Sound_PlayEffect(SE_CONFIRM_sseq_3);

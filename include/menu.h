@@ -54,15 +54,15 @@ Menu *Menu_New(const MenuTemplate *template, u8 xOffset, u8 yOffset, u8 cursorSt
 Menu *Menu_NewAndCopyToVRAM(const MenuTemplate *template, u8 xOffset, u8 yOffset, u8 cursorStart, u8 heapID, u32 cancelKeys);
 Menu *Menu_NewSimple(const MenuTemplate *template, u8 cursorStart, u8 heapID);
 void Menu_Free(Menu *menu, u8 *outCursorPos);
-u32 Menu_ProcessInput(Menu *menu);
-u32 Menu_ProcessInputWithSound(Menu *menu, u16 sdatID);
-u32 Menu_ProcessExternalInput(Menu *menu, u8 input);
+ListIndex Menu_ProcessInput(Menu *menu);
+ListIndex Menu_ProcessInputWithSound(Menu *menu, u16 sdatID);
+ListIndex Menu_ProcessExternalInput(Menu *menu, u8 input);
 u8 Menu_GetCursorPos(Menu *menu);
 u8 Menu_GetLastAction(Menu *menu);
 Menu *Menu_MakeYesNoChoiceWithCursorAt(BgConfig *bgConfig, const WindowTemplate *winTemplate, u16 borderTileStart, u8 borderPalette, u8 cursorStart, u32 heapID);
 Menu *Menu_MakeYesNoChoice(BgConfig *bgConfig, const WindowTemplate *winTemplate, u16 borderTileStart, u8 borderPalette, u32 heapID);
-u32 Menu_ProcessInputAndHandleExit(Menu *menu, u32 heapID);
-u32 Menu_ProcessExternalInputAndHandleExit(Menu *menu, u8 input, u32 heapID);
+ListIndex Menu_ProcessInputAndHandleExit(Menu *menu, u32 heapID);
+ListIndex Menu_ProcessExternalInputAndHandleExit(Menu *menu, u8 input, u32 heapID);
 void Menu_DestroyForExit(Menu *menu, u32 heapID);
 void Window_DrawMenuCursor(Window *window, u32 x, u32 y);
 

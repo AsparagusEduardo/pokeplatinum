@@ -64,7 +64,7 @@ void Menu_Free(Menu *menu, u8 *outCursorPos)
     Heap_FreeExplicit(menu->heapID, menu);
 }
 
-u32 Menu_ProcessInput(Menu *menu)
+ListIndex Menu_ProcessInput(Menu *menu)
 {
     menu->lastAction = MENU_ACTION_NONE;
 
@@ -113,7 +113,7 @@ u32 Menu_ProcessInput(Menu *menu)
     return MENU_NOTHING_CHOSEN;
 }
 
-u32 Menu_ProcessInputWithSound(Menu *menu, u16 sdatID)
+ListIndex Menu_ProcessInputWithSound(Menu *menu, u16 sdatID)
 {
     menu->lastAction = MENU_ACTION_NONE;
 
@@ -162,7 +162,7 @@ u32 Menu_ProcessInputWithSound(Menu *menu, u16 sdatID)
     return MENU_NOTHING_CHOSEN;
 }
 
-u32 Menu_ProcessExternalInput(Menu *menu, u8 input)
+ListIndex Menu_ProcessExternalInput(Menu *menu, u8 input)
 {
     switch (input) {
     case MENU_INPUT_CONFIRM:
@@ -378,9 +378,9 @@ Menu *Menu_MakeYesNoChoice(BgConfig *bgConfig, const WindowTemplate *winTemplate
     return Menu_MakeYesNoChoiceWithCursorAt(bgConfig, winTemplate, borderTileStart, borderPalette, 0, heapID);
 }
 
-u32 Menu_ProcessInputAndHandleExit(Menu *menu, u32 heapID)
+ListIndex Menu_ProcessInputAndHandleExit(Menu *menu, u32 heapID)
 {
-    u32 result = Menu_ProcessInput(menu);
+    ListIndex result = Menu_ProcessInput(menu);
     if (result != MENU_NOTHING_CHOSEN) {
         Menu_DestroyForExit(menu, heapID);
     }
@@ -388,9 +388,9 @@ u32 Menu_ProcessInputAndHandleExit(Menu *menu, u32 heapID)
     return result;
 }
 
-u32 Menu_ProcessExternalInputAndHandleExit(Menu *menu, u8 input, u32 heapID)
+ListIndex Menu_ProcessExternalInputAndHandleExit(Menu *menu, u8 input, u32 heapID)
 {
-    u32 result = Menu_ProcessExternalInput(menu, input);
+    ListIndex result = Menu_ProcessExternalInput(menu, input);
     if (result != MENU_NOTHING_CHOSEN) {
         Menu_DestroyForExit(menu, heapID);
     }

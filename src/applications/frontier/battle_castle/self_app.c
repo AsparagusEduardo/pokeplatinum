@@ -377,16 +377,16 @@ static void InitYesNoMenu(BattleCastleSelfApp *app, Window *window, u8 numOption
 static void AddStringToYesNoMenu(BattleCastleSelfApp *app, u8 strIndex, u8 listIndex, int entryID);
 static void OpenYesNoMenu(BattleCastleSelfApp *app);
 static void DrawItemSelectMenuAndMonInfo(BattleCastleSelfApp *app, u8 menuOption);
-static void UpdateItemSelectMenuDisplay(ListMenu *menu, u32 item, u8 onInit);
-static void PrintItemPrice(ListMenu *menu, u32 item, u8 yOffset);
+static void UpdateItemSelectMenuDisplay(ListMenu *menu, ListIndex item, u8 onInit);
+static void PrintItemPrice(ListMenu *menu, ListIndex item, u8 yOffset);
 static void InitHealMenu(BattleCastleSelfApp *app);
-static void UpdateHealMenuEntryDescription(ListMenu *menu, u32 item, u8 onInit);
-static void SetHealMenuEntryColor(ListMenu *menu, u32 item, u8 yOffset);
+static void UpdateHealMenuEntryDescription(ListMenu *menu, ListIndex item, u8 onInit);
+static void SetHealMenuEntryColor(ListMenu *menu, ListIndex item, u8 yOffset);
 static void InitRentalMenu(BattleCastleSelfApp *app);
-static void UpdateRentalMenuEntryDescription(ListMenu *menu, u32 item, u8 onInit);
-static void SetRentalMenuEntryColor(ListMenu *menu, u32 item, u8 onInit);
+static void UpdateRentalMenuEntryDescription(ListMenu *menu, ListIndex item, u8 onInit);
+static void SetRentalMenuEntryColor(ListMenu *menu, ListIndex item, u8 onInit);
 static void InitMonOptionsMenu(BattleCastleSelfApp *app);
-static void UpdateMonMenuEntryDescription(ListMenu *menu, u32 item, u8 onInit);
+static void UpdateMonMenuEntryDescription(ListMenu *menu, ListIndex item, u8 onInit);
 static void SetStringTemplateNumber(BattleCastleSelfApp *app, u32 idx, s32 num, u32 maxDigits, enum PaddingMode paddingMode);
 static void SetStringTemplateSpecies(BattleCastleSelfApp *app, u32 idx, BoxPokemon *boxMon);
 static void SetStringTemplatePlayerName(BattleCastleSelfApp *app, u32 idx);
@@ -707,7 +707,7 @@ static BOOL State_MainAppFlow(BattleCastleSelfApp *app)
 {
     u8 rank;
     u16 currentCP;
-    u32 input;
+    ListIndex input;
     Pokemon *mon;
 
     switch (app->subState) {
@@ -2217,7 +2217,7 @@ static void DrawItemSelectMenuAndMonInfo(BattleCastleSelfApp *app, u8 menuOption
     MessageLoader_Free(itemMsgLoader);
 }
 
-static void UpdateItemSelectMenuDisplay(ListMenu *menu, u32 item, u8 onInit)
+static void UpdateItemSelectMenuDisplay(ListMenu *menu, ListIndex item, u8 onInit)
 {
     u16 listPos, cursorPos, pos;
     BattleCastleSelfApp *app = (BattleCastleSelfApp *)ListMenu_GetAttribute(menu, LIST_MENU_PARENT);
@@ -2260,7 +2260,7 @@ static void UpdateItemSelectMenuDisplay(ListMenu *menu, u32 item, u8 onInit)
     }
 }
 
-static void PrintItemPrice(ListMenu *menu, u32 item, u8 yOffset)
+static void PrintItemPrice(ListMenu *menu, ListIndex item, u8 yOffset)
 {
     BattleCastleSelfApp *app = (BattleCastleSelfApp *)ListMenu_GetAttribute(menu, LIST_MENU_PARENT);
 
@@ -2297,7 +2297,7 @@ static void InitHealMenu(BattleCastleSelfApp *app)
     MarkListMenuAsOpen(app, &app->windows[SELF_APP_WINDOW_HEAL_MENU]);
 }
 
-static void UpdateHealMenuEntryDescription(ListMenu *menu, u32 item, u8 onInit)
+static void UpdateHealMenuEntryDescription(ListMenu *menu, ListIndex item, u8 onInit)
 {
     BattleCastleSelfApp *app = (BattleCastleSelfApp *)ListMenu_GetAttribute(menu, LIST_MENU_PARENT);
 
@@ -2329,7 +2329,7 @@ static void UpdateHealMenuEntryDescription(ListMenu *menu, u32 item, u8 onInit)
     PrintLeftAlignedMessageWithBg(app, &app->windows[SELF_APP_WINDOW_MSG_BOX], entryID, 1, 1, TEXT_SPEED_NO_TRANSFER, 1, 2, 15, FONT_MESSAGE);
 }
 
-static void SetHealMenuEntryColor(ListMenu *menu, u32 item, u8 yOffset)
+static void SetHealMenuEntryColor(ListMenu *menu, ListIndex item, u8 yOffset)
 {
     BattleCastleSelfApp *app = (BattleCastleSelfApp *)ListMenu_GetAttribute(menu, LIST_MENU_PARENT);
 
@@ -2399,7 +2399,7 @@ static void InitRentalMenu(BattleCastleSelfApp *app)
     Bg_ToggleLayer(BG_LAYER_MAIN_0, 1);
 }
 
-static void UpdateRentalMenuEntryDescription(ListMenu *menu, u32 item, u8 onInit)
+static void UpdateRentalMenuEntryDescription(ListMenu *menu, ListIndex item, u8 onInit)
 {
     BattleCastleSelfApp *app = (BattleCastleSelfApp *)ListMenu_GetAttribute(menu, LIST_MENU_PARENT);
 
@@ -2434,7 +2434,7 @@ static void UpdateRentalMenuEntryDescription(ListMenu *menu, u32 item, u8 onInit
     PrintLeftAlignedMessageWithBg(app, &app->windows[SELF_APP_WINDOW_MSG_BOX], entryID, 1, 1, TEXT_SPEED_NO_TRANSFER, 1, 2, 15, FONT_MESSAGE);
 }
 
-static void SetRentalMenuEntryColor(ListMenu *menu, u32 item, u8 onInit)
+static void SetRentalMenuEntryColor(ListMenu *menu, ListIndex item, u8 onInit)
 {
     BattleCastleSelfApp *app = (BattleCastleSelfApp *)ListMenu_GetAttribute(menu, LIST_MENU_PARENT);
 
@@ -2507,7 +2507,7 @@ static void InitMonOptionsMenu(BattleCastleSelfApp *app)
     Window_ScheduleCopyToVRAM(&app->windows[SELF_APP_WINDOW_MON_OPTIONS_MENU]);
 }
 
-static void UpdateMonMenuEntryDescription(ListMenu *menu, u32 item, u8 onInit)
+static void UpdateMonMenuEntryDescription(ListMenu *menu, ListIndex item, u8 onInit)
 {
     BattleCastleSelfApp *app = (BattleCastleSelfApp *)ListMenu_GetAttribute(menu, LIST_MENU_PARENT);
 

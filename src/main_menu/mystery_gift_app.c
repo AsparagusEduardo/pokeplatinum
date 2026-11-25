@@ -973,7 +973,7 @@ static void ProcessStateTransitionMenuInput(ApplicationManager *appMan, enum Mys
     MysteryGiftAppData *appData = ApplicationManager_Data(appMan);
     static StateTransitionFuncPtr optionStateTransitionFunc;
 
-    u32 input = ListMenu_ProcessInput(appData->listMenu);
+    ListIndex input = ListMenu_ProcessInput(appData->listMenu);
 
     switch (input) {
     case MENU_NOTHING_CHOSEN:

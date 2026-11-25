@@ -494,7 +494,7 @@ static int GTSMainMenu_ShowConfirmationMenu(GTSApplicationState *appState)
 
 static int GTSMainMenu_HandleConfirmationMenu(GTSApplicationState *appState)
 {
-    int input = Menu_ProcessInputAndHandleExit(appState->yesNoMenu, HEAP_ID_62);
+    ListIndex input = Menu_ProcessInputAndHandleExit(appState->yesNoMenu, HEAP_ID_62);
 
     if (input != MENU_NOTHING_CHOSEN) {
         if (input == MENU_CANCEL) {

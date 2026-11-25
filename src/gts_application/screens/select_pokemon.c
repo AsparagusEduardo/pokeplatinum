@@ -854,7 +854,7 @@ static int GTSSelectMon_CreateExitConfirmMenu(GTSApplicationState *appState)
 
 static int GTSSelectMon_HandleExitConfirm(GTSApplicationState *appState)
 {
-    int result = Menu_ProcessInputAndHandleExit(appState->yesNoMenu, HEAP_ID_62);
+    ListIndex result = Menu_ProcessInputAndHandleExit(appState->yesNoMenu, HEAP_ID_62);
 
     if (result != MENU_NOTHING_CHOSEN) {
         if (result == MENU_CANCEL) {
@@ -886,7 +886,7 @@ static int GTSSelectMon_CreateTradeConfirmMenu(GTSApplicationState *appState)
 
 static int GTSSelectMon_HandleTradeConfirm(GTSApplicationState *appState)
 {
-    int result = Menu_ProcessInputAndHandleExit(appState->yesNoMenu, HEAP_ID_62);
+    ListIndex result = Menu_ProcessInputAndHandleExit(appState->yesNoMenu, HEAP_ID_62);
 
     if (result != MENU_NOTHING_CHOSEN) {
         if (result == MENU_CANCEL) {
@@ -942,7 +942,7 @@ static int GTSSelectMon_CreateBallCapsuleTradeConfirmMenu(GTSApplicationState *a
 
 static int GTSSelectMon_HandleBallCapsuleTradeConfirm(GTSApplicationState *appState)
 {
-    int result = Menu_ProcessInputAndHandleExit(appState->yesNoMenu, HEAP_ID_62);
+    ListIndex result = Menu_ProcessInputAndHandleExit(appState->yesNoMenu, HEAP_ID_62);
 
     if (result != MENU_NOTHING_CHOSEN) {
         if (result == MENU_CANCEL) {

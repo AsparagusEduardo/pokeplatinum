@@ -241,7 +241,7 @@ static int ProcessTouchScreenAction(PoffinManager *app)
 
 static BOOL State_SelectPoffin(PoffinManager *app)
 {
-    u32 menuSelection = MENU_NOTHING_CHOSEN;
+    ListIndex menuSelection = MENU_NOTHING_CHOSEN;
 
     if (app->poffinMenu == NULL) {
         return FALSE;

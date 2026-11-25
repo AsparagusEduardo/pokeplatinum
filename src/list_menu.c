@@ -56,7 +56,7 @@ ListMenu *ListMenu_New(const ListMenuTemplate *template, u16 startListPos, u16 s
     return menu;
 }
 
-u32 ListMenu_ProcessInput(ListMenu *menu)
+ListIndex ListMenu_ProcessInput(ListMenu *menu)
 {
     menu->lastAction = LIST_MENU_ACTION_NONE;
 

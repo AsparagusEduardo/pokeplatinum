@@ -95,7 +95,7 @@ struct ListMenu {
 };
 
 ListMenu *ListMenu_New(const ListMenuTemplate *template, u16 startListPos, u16 startCursorPos, u8 heapID);
-u32 ListMenu_ProcessInput(ListMenu *menu);
+ListIndex ListMenu_ProcessInput(ListMenu *menu);
 void ListMenu_Free(ListMenu *menu, u16 *outListPos, u16 *outCursorPos);
 void ListMenu_Draw(ListMenu *menu);
 void ListMenu_SetTextColors(ListMenu *menu, u8 fg, u8 bg, u8 shadow);

@@ -232,10 +232,10 @@ static void AddStringToSimpleMenu(BattleCastleOpponentApp *app, u8 strIndex, u8 
 static void OpenYesNoMenu(BattleCastleOpponentApp *app);
 static void OpenLevelMenu(BattleCastleOpponentApp *app);
 static void InitMonOptionsMenu(BattleCastleOpponentApp *app);
-static void UpdateMonMenuEntryDescription(ListMenu *menu, u32 item, u8 onInit);
+static void UpdateMonMenuEntryDescription(ListMenu *menu, ListIndex item, u8 onInit);
 static void InitSummaryMenu(BattleCastleOpponentApp *app);
-static void UpdateSummaryMenuEntryDescription(ListMenu *menu, u32 item, u8 onInit);
-static void SetSummaryMenuEntryColor(ListMenu *menu, u32 item, u8 yOffset);
+static void UpdateSummaryMenuEntryDescription(ListMenu *menu, ListIndex item, u8 onInit);
+static void SetSummaryMenuEntryColor(ListMenu *menu, ListIndex item, u8 yOffset);
 static void SetStringTemplatePlayerName(BattleCastleOpponentApp *app, u32 idx);
 static void CloseMonSelectionMessageBox(BattleCastleOpponentApp *app);
 static void OpenMonOptionsMenu(BattleCastleOpponentApp *app);
@@ -504,7 +504,8 @@ static void ShowAppMainDisplay(BattleCastleOpponentApp *app)
 static BOOL State_MainAppFlow(BattleCastleOpponentApp *app)
 {
     u16 currentCP, cost;
-    u32 rank, input;
+    u32 rank;
+    ListIndex input;
 
     switch (app->subState) {
     case MAIN_SUBSTATE_INIT:
@@ -1728,7 +1729,7 @@ static void InitMonOptionsMenu(BattleCastleOpponentApp *app)
     Window_ScheduleCopyToVRAM(&app->windows[OPPONENT_APP_WINDOW_MON_OPTIONS_MENU]);
 }
 
-static void UpdateMonMenuEntryDescription(ListMenu *menu, u32 item, u8 onInit)
+static void UpdateMonMenuEntryDescription(ListMenu *menu, ListIndex item, u8 onInit)
 {
     BattleCastleOpponentApp *app = (BattleCastleOpponentApp *)ListMenu_GetAttribute(menu, LIST_MENU_PARENT);
 
@@ -1783,7 +1784,7 @@ static void InitSummaryMenu(BattleCastleOpponentApp *app)
     Window_ScheduleCopyToVRAM(&app->windows[OPPONENT_APP_WINDOW_SUMMARY_MENU]);
 }
 
-static void UpdateSummaryMenuEntryDescription(ListMenu *menu, u32 item, u8 onInit)
+static void UpdateSummaryMenuEntryDescription(ListMenu *menu, ListIndex item, u8 onInit)
 {
     BattleCastleOpponentApp *app = (BattleCastleOpponentApp *)ListMenu_GetAttribute(menu, 19);
 
@@ -1800,7 +1801,7 @@ static void UpdateSummaryMenuEntryDescription(ListMenu *menu, u32 item, u8 onIni
     PrintLeftAlignedMessageWithBg(app, &app->windows[OPPONENT_APP_WINDOW_MSG_BOX], sSummaryMenuDescriptions[pos][index], 1, 1, TEXT_SPEED_NO_TRANSFER, 1, 2, 15, FONT_MESSAGE);
 }
 
-static void SetSummaryMenuEntryColor(ListMenu *menu, u32 item, u8 yOffset)
+static void SetSummaryMenuEntryColor(ListMenu *menu, ListIndex item, u8 yOffset)
 {
     BattleCastleOpponentApp *app = (BattleCastleOpponentApp *)ListMenu_GetAttribute(menu, LIST_MENU_PARENT);
 

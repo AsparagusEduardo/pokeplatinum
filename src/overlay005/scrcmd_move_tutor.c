@@ -79,7 +79,7 @@ void MoveTutorManager_AddMenuEntry(MoveTutorManager *moveTutorManager, u32 strin
 static void MoveTutorManager_ShowMoveSelectionMenu(MoveTutorManager *moveTutorManager);
 static void _MoveTutorManager_AddMenuEntry(MoveTutorManager *moveTutorManager, u32 stringEntryID, u32 param2, u32 index);
 static void MoveTutorManager_InitMenuTemplate(MoveTutorManager *moveTutorManager);
-static void MoveSelectionMenuCursorCallback(ListMenu *moveTutorManager, u32 index, u8 onInit);
+static void MoveSelectionMenuCursorCallback(ListMenu *moveTutorManager, ListIndex index, u8 onInit);
 static void SysTaskCallback(SysTask *sysTask, void *moveTutorManager);
 static void MoveTutorManager_Delete(MoveTutorManager *moveTutorManager);
 
@@ -505,7 +505,7 @@ static void MoveTutorManager_InitMenuTemplate(MoveTutorManager *moveTutorManager
     moveTutorManager->menuTemplate.parent = (void *)moveTutorManager;
 }
 
-static void MoveSelectionMenuCursorCallback(ListMenu *listMenu, u32 index, u8 onInit)
+static void MoveSelectionMenuCursorCallback(ListMenu *listMenu, ListIndex index, u8 onInit)
 {
     MoveTutorManager *moveTutorManager = (MoveTutorManager *)ListMenu_GetAttribute(listMenu, LIST_MENU_PARENT);
 }
@@ -523,7 +523,7 @@ static void SysTaskCallback(SysTask *sysTask, void *_moveTutorManager)
         return;
     }
 
-    u32 selectedEntry = ListMenu_ProcessInput(moveTutorManager->moveSelectionMenu);
+    ListIndex selectedEntry = ListMenu_ProcessInput(moveTutorManager->moveSelectionMenu);
     u16 previousCursorPos = moveTutorManager->cursorPos;
 
     ListMenu_CalcTrueCursorPos(moveTutorManager->moveSelectionMenu, &moveTutorManager->cursorPos);

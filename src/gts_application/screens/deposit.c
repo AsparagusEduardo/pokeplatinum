@@ -754,7 +754,7 @@ static int GTSDeposit_ShowConfirmationMenu(GTSApplicationState *appState)
 
 static int GTSDeposit_HandleConfirmationInput(GTSApplicationState *appState)
 {
-    int input = Menu_ProcessInputAndHandleExit(appState->yesNoMenu, HEAP_ID_62);
+    ListIndex input = Menu_ProcessInputAndHandleExit(appState->yesNoMenu, HEAP_ID_62);
 
     if (input != MENU_NOTHING_CHOSEN) {
         if (input == MENU_CANCEL) {
@@ -1240,10 +1240,10 @@ void GTS_SetSelectedCountry(GTSApplicationState *appState, int selectedCountryIn
     }
 }
 
-u32 GTS_ProcessListMenuInput(ListMenu *menu, u16 *input)
+ListIndex GTS_ProcessListMenuInput(ListMenu *menu, u16 *input)
 {
     u16 pos;
-    u32 menuInput = ListMenu_ProcessInput(menu);
+    ListIndex menuInput = ListMenu_ProcessInput(menu);
 
     ListMenu_CalcTrueCursorPos(menu, &pos);
 
