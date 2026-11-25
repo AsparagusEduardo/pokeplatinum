@@ -167,15 +167,15 @@ static const ItemUseFuncDat sItemUseFuncs[] = {
 };
 // clang-format on
 
-u32 ItemUseFunction_Get(u16 funcType, u16 functionIdx)
+uPtr ItemUseFunction_Get(u16 funcType, u16 functionIdx)
 {
     if (funcType == ITEM_FUNC_USE_FROM_MENU) {
-        return (u32)sItemUseFuncs[functionIdx].useItemFromMenuFunc;
+        return (uPtr)sItemUseFuncs[functionIdx].useItemFromMenuFunc;
     } else if (funcType == ITEM_FUNC_USE_IN_FIELD) {
-        return (u32)sItemUseFuncs[functionIdx].useItemInFieldFunc;
+        return (uPtr)sItemUseFuncs[functionIdx].useItemInFieldFunc;
     }
 
-    return (u32)sItemUseFuncs[functionIdx].canUseItemFunc;
+    return (uPtr)sItemUseFuncs[functionIdx].canUseItemFunc;
 }
 
 void ItemUseContext_Init(FieldSystem *fieldSystem, ItemUseContext *ctxOut)

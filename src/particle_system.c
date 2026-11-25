@@ -118,7 +118,7 @@ ParticleSystem *ParticleSystem_New(SPLTexVRAMAllocFunc texAllocFunc, SPLPalVRAMA
     memset(heap, 0, heapSize);
     particleSystem->heapStart = heap;
     particleSystem->heap = heap;
-    particleSystem->heapEnd = (void *)((u32)heap + heapSize);
+    particleSystem->heapEnd = (void *)((uPtr)heap + heapSize);
     particleSystem->id = id;
     sParticleSystems[id] = particleSystem;
 

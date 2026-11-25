@@ -126,7 +126,7 @@ struct CustomBgScrollContext {
     BufferManager *bufferManager;
     u32 buffer1[HW_LCD_HEIGHT];
     u32 buffer2[HW_LCD_HEIGHT];
-    u32 offsetReg;
+    uPtr offsetReg;
 };
 
 typedef struct BgScrollContext {
@@ -209,7 +209,7 @@ BOOL Afterimage_Update(AfterimageContext *ctx);
 void RevolutionContext_InitOvalRevolutions(XYTransformContext *ctx, int revs, int stepsPerRev);
 void AlphaFadeContext_Init(AlphaFadeContext *ctx, s16 startEv1, s16 endEv1, s16 startEv2, s16 endEv2, int steps);
 BOOL AlphaFadeContext_IsDone(const AlphaFadeContext *ctx);
-CustomBgScrollContext *CustomBgScrollContext_New(u32 offsetReg, u32 initValue, enum HeapID heapID);
+CustomBgScrollContext *CustomBgScrollContext_New(uPtr offsetReg, u32 initValue, enum HeapID heapID);
 void CustomBgScrollContext_Free(CustomBgScrollContext *ctx);
 void *CustomBgScrollContext_GetWriteBuffer(const CustomBgScrollContext *ctx);
 void CustomBgScrollContext_Stop(CustomBgScrollContext *ctx);
@@ -218,7 +218,7 @@ void BgScrollContext_Free(BgScrollContext *ctx);
 void *BgScrollContext_GetWriteBuffer(const BgScrollContext *ctx);
 void BgScrollContext_Stop(BgScrollContext *ctx);
 u32 BattleAnimUtil_MakeBgOffsetValue(u16 x, u16 y);
-u32 BattleAnimUtil_GetHOffsetRegisterForBg(int bgID);
+uPtr BattleAnimUtil_GetHOffsetRegisterForBg(int bgID);
 void BattleAnimUtil_GetXYMean(s16 x1, s16 y1, s16 x2, s16 y2, s16 *mx, s16 *my);
 void BattleAnimUtil_DistanceBetween(s16 x1, s16 y1, s16 x2, s16 y2, fx32 *distance);
 void BattleAnimUtil_CalcAngleFromPoints(s16 x1, s16 y1, s16 x2, s16 y2, u16 *angle);

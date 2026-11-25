@@ -213,17 +213,17 @@ u32 ListMenu_GetIndexOfChoice(ListMenu *menu, u16 choice)
     return menu->template.choices[choice].index;
 }
 
-u32 ListMenu_GetAttribute(ListMenu *menu, u8 attribute)
+uPtr ListMenu_GetAttribute(ListMenu *menu, u8 attribute)
 {
-    u32 result;
+    uPtr result;
 
     switch (attribute) {
     case LIST_MENU_CURSOR_CALLBACK:
-        result = (u32)menu->template.cursorCallback;
+        result = (uPtr)menu->template.cursorCallback;
         break;
 
     case LIST_MENU_PRINT_CALLBACK:
-        result = (u32)menu->template.printCallback;
+        result = (uPtr)menu->template.printCallback;
         break;
 
     case LIST_MENU_COUNT:
@@ -287,11 +287,11 @@ u32 ListMenu_GetAttribute(ListMenu *menu, u8 attribute)
         break;
 
     case LIST_MENU_WINDOW:
-        result = (u32)menu->template.window;
+        result = (uPtr)menu->template.window;
         break;
 
     case LIST_MENU_PARENT:
-        result = (u32)menu->template.parent;
+        result = (uPtr)menu->template.parent;
         break;
 
     default:

@@ -70,7 +70,7 @@ typedef struct UnkStruct_ov104_0223F174_t {
     BufferManager *bufferManager;
     UnkStruct_ov104_0223F1B4 unk_20[192];
     UnkStruct_ov104_0223F1B4 unk_1820[192];
-    u32 unk_3020;
+    uPtr unk_3020;
 } UnkStruct_ov104_0223F174;
 
 static void ov104_0223EA14(SysTask *param0, void *param1);

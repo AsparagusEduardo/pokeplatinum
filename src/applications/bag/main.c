@@ -2062,7 +2062,7 @@ static void ToggleHideItemSprite(BagController *controller, u8 hide)
     Bg_ScheduleTilemapTransfer(controller->bgConfig, BG_LAYER_MAIN_1);
 }
 
-const u32 BagApplication_GetItemActionFunc(enum ItemAction action)
+const uPtr BagApplication_GetItemActionFunc(enum ItemAction action)
 {
     return sItemActionFuncs[action];
 }

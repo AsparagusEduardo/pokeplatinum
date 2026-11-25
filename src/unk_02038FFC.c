@@ -17,7 +17,7 @@ int sub_02038FFC(enum HeapID heapID)
     Overlay_LoadHttpOverlay();
 
     u8 *v1 = Heap_Alloc(heapID, DWC_INIT_WORK_SIZE + 32);
-    u8 *v2 = (u8 *)(((u32)v1 + 31) / 32 * 32);
+    u8 *v2 = (u8 *)(((uPtr)v1 + 31) / 32 * 32);
     int v0 = DWC_Init(v2);
 
     Heap_Free(v1);

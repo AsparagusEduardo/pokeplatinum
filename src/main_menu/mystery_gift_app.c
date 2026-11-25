@@ -885,7 +885,7 @@ static void MakeStateChangeListMenuFromEntryTemplates(ApplicationManager *appMan
     appData->msgLoader = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_MYSTERY_GIFT_MENU, HEAP_ID_MYSTERY_GIFT_APP);
 
     for (int i = 0; i < numEntries; i++) {
-        StringList_AddFromMessageBank(appData->listMenuOptions, appData->msgLoader, entries[i].textEntryId, (u32)entries[i].stateTransitionFuncPtr);
+        StringList_AddFromMessageBank(appData->listMenuOptions, appData->msgLoader, entries[i].textEntryId, (uPtr)entries[i].stateTransitionFuncPtr);
     }
 
     MessageLoader_Free(appData->msgLoader);

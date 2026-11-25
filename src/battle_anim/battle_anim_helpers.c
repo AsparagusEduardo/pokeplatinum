@@ -851,7 +851,7 @@ static void CustomBgScrollContext_DoDMA(void *param)
     CustomBgScrollContext_DoDMAImpl(ctx);
 }
 
-CustomBgScrollContext *CustomBgScrollContext_New(u32 offsetReg, u32 initValue, enum HeapID heapID)
+CustomBgScrollContext *CustomBgScrollContext_New(uPtr offsetReg, u32 initValue, enum HeapID heapID)
 {
     CustomBgScrollContext *ctx = Heap_Alloc(heapID, sizeof(CustomBgScrollContext));
     memset(ctx, 0, sizeof(CustomBgScrollContext));
@@ -916,7 +916,7 @@ BgScrollContext *BgScrollContext_New(u8 startY, u8 endY, u16 angleIncrement, fx3
 
     memset(ctx, 0, sizeof(BgScrollContext));
 
-    u32 offsetReg = BattleAnimUtil_GetHOffsetRegisterForBg(bgID);
+    uPtr offsetReg = BattleAnimUtil_GetHOffsetRegisterForBg(bgID);
     ctx->screenScrollMgr = ScreenScrollManager_New(heapID);
 
     ScreenScrollManager_ScrollX(ctx->screenScrollMgr, startY, endY, angleIncrement, amplitude, speed, offsetReg, initValue, priority);
@@ -955,17 +955,17 @@ u32 BattleAnimUtil_MakeBgOffsetValue(u16 x, u16 y)
     return (y << BG_OFFSET_Y_SHIFT) | x;
 }
 
-u32 BattleAnimUtil_GetHOffsetRegisterForBg(int bgID)
+uPtr BattleAnimUtil_GetHOffsetRegisterForBg(int bgID)
 {
     switch (bgID) {
     case BATTLE_BG_INTERNAL_ID_UNUSED:
-        return REG_BG0HOFS_ADDR;
+        return (uPtr)REG_BG0HOFS_ADDR;
     case BATTLE_BG_INTERNAL_ID_WINDOW:
-        return REG_BG1HOFS_ADDR;
+        return (uPtr)REG_BG1HOFS_ADDR;
     case BATTLE_BG_INTERNAL_ID_BASE:
-        return REG_BG2HOFS_ADDR;
+        return (uPtr)REG_BG2HOFS_ADDR;
     case BATTLE_BG_INTERNAL_ID_EFFECT:
-        return REG_BG3HOFS_ADDR;
+        return (uPtr)REG_BG3HOFS_ADDR;
     }
 }
 

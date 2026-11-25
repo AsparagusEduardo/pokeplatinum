@@ -34,4 +34,6 @@ typedef struct {
     int z;
 } Vec32;
 
+typedef u32 uPtr;
+
 #endif // POKEPLATINUM_GLOBAL_H
