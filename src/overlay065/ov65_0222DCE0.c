@@ -1646,7 +1646,7 @@ static int ov65_0222F1A8(UnkStruct_ov65_0222EBE0 *param0, int param1)
     int v0;
     int v1 = Menu_ProcessInputAndHandleExit(param0->unk_184, 54);
 
-    if (v1 == 0xffffffff) {
+    if (v1 == MENU_NOTHING_CHOSEN) {
         return param1;
     } else {
         if (v1 == 0) {
@@ -1684,7 +1684,7 @@ static int ov65_0222F288(UnkStruct_ov65_0222EBE0 *param0, int param1)
     int v0;
     int v1 = Menu_ProcessInputAndHandleExit(param0->unk_184, 54);
 
-    if (v1 == 0xffffffff) {
+    if (v1 == MENU_NOTHING_CHOSEN) {
         return param1;
     } else {
         Window_EraseMessageBox(&param0->unk_360, 0);
@@ -1707,7 +1707,7 @@ static int ov65_0222F304(UnkStruct_ov65_0222EBE0 *param0, int param1)
     int v0;
     int v1 = Menu_ProcessInputAndHandleExit(param0->unk_184, 54);
 
-    if (v1 == 0xffffffff) {
+    if (v1 == MENU_NOTHING_CHOSEN) {
         return param1;
     } else {
         Bg_SetPriority(BG_LAYER_MAIN_3, 0);
@@ -1740,7 +1740,7 @@ static int ov65_0222F3DC(UnkStruct_ov65_0222EBE0 *param0, int param1)
     int v0;
     int v1 = Menu_ProcessInputAndHandleExit(param0->unk_184, 54);
 
-    if (v1 == 0xffffffff) {
+    if (v1 == MENU_NOTHING_CHOSEN) {
         return param1;
     } else {
         Bg_SetPriority(BG_LAYER_MAIN_0, 3);
@@ -1996,7 +1996,7 @@ static int ov65_0222F8AC(UnkStruct_ov65_0222EBE0 *param0, int param1)
     int v0;
     int v1 = Menu_ProcessInputAndHandleExit(param0->unk_184, 54);
 
-    if (v1 == 0xffffffff) {
+    if (v1 == MENU_NOTHING_CHOSEN) {
         return param1;
     } else if (v1 == 0) {
         CommManager_LogoutWifi();
@@ -2835,7 +2835,7 @@ static int ov65_02230A30(UnkStruct_ov65_0222EBE0 *param0, int param1)
     int v0;
     int v1 = Menu_ProcessInputAndHandleExit(param0->unk_184, 54);
 
-    if (v1 == 0xffffffff) {
+    if (v1 == MENU_NOTHING_CHOSEN) {
         if ((CommManager_GetMatchmakingState() >= 4) || CommManager_GetDisconnectedWifi() || !CommSys_IsPlayerConnected(0)) {
             ov65_02232DFC(param0);
 
@@ -3027,14 +3027,14 @@ static int ov65_02230D6C(UnkStruct_ov65_0222EBE0 *param0, int param1)
     if ((param0->unk_3D0 == -1) && (NintendoWFC_GetLatestNewClientFriendIdx() != WFC_NOT_A_FRIEND)) {
         NintendoWFC_SetVoiceChatEnabled(param0->unk_04->unk_00.unk_21);
 
-        if (v1 == 0xffffffff) {
+        if (v1 == MENU_NOTHING_CHOSEN) {
             Menu_DestroyForExit(param0->unk_184, 54);
         }
 
         v1 = 1;
     }
 
-    if (v1 == 0xffffffff) {
+    if (v1 == MENU_NOTHING_CHOSEN) {
         return param1;
     } else if (v1 == 0) {
         ov65_02232E58(param0, 16);
@@ -3253,13 +3253,13 @@ static int ov65_02230FBC(UnkStruct_ov65_0222EBE0 *param0, int param1)
     v0 = ListMenu_ProcessInput(param0->unk_158);
 
     if (0 != ov65_02230140(param0)) {
-        v0 = 0xfffffffe;
+        v0 = MENU_CANCEL;
     }
 
     switch (v0) {
-    case 0xffffffff:
+    case MENU_NOTHING_CHOSEN:
         return param1;
-    case 0xfffffffe:
+    case MENU_CANCEL:
         param0->unk_3A8 = 19;
         ov65_02232DFC(param0);
         Sound_PlayEffect(SEQ_SE_DP_DECIDE_sseq);
@@ -3442,9 +3442,9 @@ static int ov65_02231440(UnkStruct_ov65_0222EBE0 *param0, int param1)
     v0 = ListMenu_ProcessInput(param0->unk_158);
 
     switch (v0) {
-    case 0xffffffff:
+    case MENU_NOTHING_CHOSEN:
         return param1;
-    case 0xfffffffe:
+    case MENU_CANCEL:
         Sound_PlayEffect(SEQ_SE_DP_DECIDE_sseq);
         param0->unk_3A8 = 36;
         break;
@@ -3782,7 +3782,7 @@ static int ov65_02231A98(UnkStruct_ov65_0222EBE0 *param0, int param1)
     v6 = ov65_02230140(param0);
 
     if (0 != v6) {
-        v0 = 0xfffffffe;
+        v0 = MENU_CANCEL;
     }
 
     v2 = ov65_02235254(&param0->unk_3EC);
@@ -3803,7 +3803,7 @@ static int ov65_02231A98(UnkStruct_ov65_0222EBE0 *param0, int param1)
     }
 
     switch (v0) {
-    case 0xffffffff:
+    case MENU_NOTHING_CHOSEN:
         if (v7 == NULL) {
             ListMenu_Free(param0->unk_158, NULL, NULL);
             ov65_02232DC0(param0, v2 - 1);
@@ -3827,7 +3827,7 @@ static int ov65_02231A98(UnkStruct_ov65_0222EBE0 *param0, int param1)
 
         return param1;
 
-    case 0xfffffffe:
+    case MENU_CANCEL:
         Sound_PlayEffect(SEQ_SE_DP_DECIDE_sseq);
         param0->unk_3A8 = 19;
         break;
@@ -4384,14 +4384,14 @@ static int ov65_02232608(UnkStruct_ov65_0222EBE0 *param0, int param1)
     }
 
     if (0 != ov65_02230140(param0)) {
-        if (v1 == 0xffffffff) {
+        if (v1 == MENU_NOTHING_CHOSEN) {
             Menu_DestroyForExit(param0->unk_184, 54);
         }
 
-        v1 = 0xfffffffe;
+        v1 = MENU_CANCEL;
     }
 
-    if (v1 == 0xffffffff) {
+    if (v1 == MENU_NOTHING_CHOSEN) {
         return param1;
     } else if (v1 == 0) {
         ov65_02232B58(param0, 26, 1);
@@ -4480,7 +4480,7 @@ static int ov65_0223278C(UnkStruct_ov65_0222EBE0 *param0, int param1)
     } else {
         v1 = Menu_ProcessInputAndHandleExit(param0->unk_184, 54);
 
-        if (v1 == 0xffffffff) {
+        if (v1 == MENU_NOTHING_CHOSEN) {
             return param1;
         } else if (v1 == 0) {
             ov65_02232B58(param0, 138, 0);
@@ -4587,7 +4587,7 @@ static int ov65_0223294C(UnkStruct_ov65_0222EBE0 *param0, int param1)
     } else {
         v1 = Menu_ProcessInputAndHandleExit(param0->unk_184, 54);
 
-        if (v1 == 0xffffffff) {
+        if (v1 == MENU_NOTHING_CHOSEN) {
             return param1;
         } else if (v1 == 0) {
             v2 = ov65_0222DED4(param0->unk_3DE);
